@@ -1,0 +1,8 @@
+﻿Dr_Cr,Tax_Code,Tax_Name,Tax_Category_Code,Tax_Category_Name
+,00,対象外,O,対象外
+Cr,B5,売上10%,S10,標準10%
+Dr,C5,売返10%,S10,標準10%
+Dr,P0,非仕入,X,非仕入
+Dr,Q5,仕入10%,S10,標準10%
+Dr,Q6,仕入8%軽,AA8,軽減8%
+Cr,R5,仕返10%,S10,標準10%
