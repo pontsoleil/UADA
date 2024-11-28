@@ -1,0 +1,56 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            // JP extension
+            // iso21926specialization.py
+            // "args": ["../ISO21926/FSM/ISO21926_FSM.csv", "../ISO21926/BSM/ISO21926_BSM.csv", "-s ../ISO21926/FSM/JP_FSM.csv", "-l ../ISO21926/BSM/JP_BSM.csv"]//, "-t", "-d"]
+
+            // iso21926SgraphWalk.py
+            // "args": ["../ISO21926/BSM/ISO21926_BSM.csv", "../ISO21926/LHM/ISO21926_LHM.csv", "-l ../ISO21926/BSM/JP_BSM.csv", "-m ../ISO21926/LHM/JP_LHM.csv"]//,"-t","-d"]
+
+            // csv2tidy.py
+            // "args": ["../data/_PCA/entryGL_2021-08-31_75_21.csv", "-o ../data/_PCA/tidyGL_2021-08-31_75_21.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig", "-t"]//, "-d"] // csv2tidy.py
+            // "args": ["../data/_PCA/entryGL.csv", "-o ../data/_PCA/tidyGL.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig"]//, "-t", "-d"] // csv2tidy.py
+            // "args": ["../data/_PCA/entryGL_translated.csv", "-o ../data/_PCA/tidyGL_translated.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig"]//, "-t", "-d"] // csv2tidy.py
+
+            // tidy2csv.py
+            // "args": ["../data/_PCA/try/tidyGL_translated.csv", "-o ../data/_PCA/try/entryPCA_translated2411.csv", "-m ../ISO21926/LHM/ISO21926_LHM.csv", "-b ../data/bindingPCA_21926.csv", "-e utf-8-sig", "-t", "-d"] // csv2tidy.py
+
+            // xBRL
+            // iso21926xBRL-taxonomy.py
+            // "args": ["../ISO21926/LHM/JP_LHM.csv","-s JP07", "-o ../taxonomy/core.xsd", "-e utf-8-sig", "-d", "-v"] // iso21926xBRL-taxonomy.py
+
+            // Trial_balance_carried_forward.py
+            // "args": ["Accounting_OIM-CSV/parameters.json"]
+
+            // pptx Powerpoint
+            // "args": ["data/pptx/pages.csv","data/pptx/pages.pptx"] // pptxSlide.py
+
+            // XBRL-GL
+            // iso21926specialization.py
+            // "args": ["ISO21926/FSM/XBRL-GL_FSM.csv", "ISO21926/BSM/XBRL-GL_BSM.csv"]//,"-t","-d"]
+            // iso21926SgraphWalk.py
+            // "args": ["ISO21926/BSM/XBRL-GL_BSM.csv", " ISO21926/LHM/XBRL-GL_LHM.csv"]//,"-t","-d"]
+
+            // ADS
+            // iso21926specialization.py
+            // "args": ["ISO21926/FSM/ADS_FSM.csv", "ISO21926/BSM/ADS_BSM.csv", "-t", "-d"]
+            // iso21926SgraphWalk.py
+            // "args": ["ISO21926/BSM/ADS_BSM.csv", " ISO21926/LHM/ADS_LHM.csv", "-t", "-d"]
+
+            // LedgerExplorer/structured_ledger_explorer.py
+            "args": ["LedgerExplorer/parameters.json"]
+
+        }
+    ]
+}

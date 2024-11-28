@@ -150,7 +150,7 @@ class TidyData:
 
             # 借方と貸方の合計金額が一致するか確認
             if total_debit_amount != total_credit_amount:
-                print(f"伝票貸借不一致 {transction_date} {transaction_id}: 借方金額 {total_debit_amount} 貸方金額 {total_credit_amount}")
+                self.trace_print(f"伝票貸借不一致 {transction_date} {transaction_id}: 借方金額 {total_debit_amount} 貸方金額 {total_credit_amount}")
 
             if first_debit_amount == total_debit_amount:
                 trace_print(f"借方金額が合計金額 {transction_date} {transaction_id} {first_debit_acct_number} {first_debit_acct_name}: {total_debit_amount}")
@@ -313,7 +313,7 @@ class TidyData:
             account_number = row["Ledger_Account_Number"]
             # 初期残高が存在しない場合、初期化
             if not account_number:
-                self.debug_print(f"** general_ledger empty account_number{row}")
+                self.trace_print(f"** general_ledger empty account_number{row}")
                 continue
             if account_number not in balance_dict:
                 balance_dict[account_number] = self.beginning_balances.get(account_number, 0)
@@ -321,7 +321,7 @@ class TidyData:
         for _, row in final_entry.iterrows():
             account_number = row["Ledger_Account_Number"]
             if not account_number:
-                self.debug_print(f"** general_ledger empty account_number{row}")
+                self.trace_print(f"** general_ledger empty account_number{row}")
                 continue
             transaction_date  = pd.Timestamp(row["Transaction_Date"])  # 日付をTimestamp型に変換
             transaction_month = transaction_date.strftime('%Y-%m')  # YYYY-MM形式の文字列に変換
@@ -363,7 +363,7 @@ class TidyData:
                 balance_dict[account_number] += credit - debit
             else:
                 # 例外処理やデフォルト動作を定義
-                print(f"未分類の勘定科目: {account_number}")
+                self.trace_print(f"未分類の勘定科目: {account_number}")
 
             balances.append({
                 "Transaction_Date": transaction_date.strftime('%Y-%m-%d'),
@@ -531,7 +531,7 @@ class TidyData:
                         ending_balance = beginning_balance + row["Credit_Amount"] - row["Debit_Amount"]
                     else:
                         # 未分類の場合は残高を変更しない
-                        print(f"未分類の勘定科目: {account_number}")
+                        self.debug_print(f"未分類の勘定科目: {account_number}")
                         ending_balance = beginning_balance
                 else:
                     # 該当月のデータが存在しない場合、前月のEnding_Balanceを引き継ぐ
@@ -784,10 +784,10 @@ class TidyData:
                         max_level = level
                     if min_level > level:
                         min_level = level
-                    print(f"level: {level}, Ledger_Account_Number: {child} Parent: {parent}, Beginning_Balance: {beginning_balance} Ending_Balance: {ending_balance}")
+                    self.debug_print(f"level: {level}, Ledger_Account_Number: {child} Parent: {parent}, Beginning_Balance: {beginning_balance} Ending_Balance: {ending_balance}")
                     self.bs_parent_dict[child] = {"Level": level, "Parent": parent, "Beginning_Balance": beginning_balance, "Ending_Balance": ending_balance}
                 else:
-                    print(f"Ledger_Account_Number {child} not found.")
+                    self.trace_print(f"Ledger_Account_Number {child} not found.")
         # max_level から min_level の範囲でループ
         for level in range(max_level, min_level - 1, -1):
             # target_level に該当する要素を抽出
@@ -893,9 +893,9 @@ class TidyData:
         missing_codes = [code for code in codes_to_check if code not in self.pl_data_df["Ledger_Account_Number"].values]
         # 結果を表示
         if missing_codes:
-            print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
+            self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
         else:
-            print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+            self.trace_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
         def build_pl_parent_child_relationship_with_level(pl_data_df, level_range=(1, 10), exclude_empty_children=True):
             # 初期化: 各レベルの最新の要素を保持（レベル範囲を指定）
             level_list = {lvl: None for lvl in range(level_range[0], level_range[1] + 1)}
@@ -935,10 +935,10 @@ class TidyData:
                         max_level = level
                     if min_level > level:
                         min_level = level
-                    print(f"level: {level}, Ledger_Account_Number: {child} Parent: {parent}, Total_Debit: {total_debit} Total_Credit: {total_credit}")
+                    self.debug_print(f"level: {level}, Ledger_Account_Number: {child} Parent: {parent}, Total_Debit: {total_debit} Total_Credit: {total_credit}")
                     self.pl_parent_dict[child] = {"Level": level, "Parent": parent, "Total_Debit": total_debit, "Total_Credit": total_credit}
                 else:
-                    print(f"Ledger_Account_Number {child} not found.")
+                    self.trace_print(f"Ledger_Account_Number {child} not found.")
         # max_level から min_level の範囲でループ
         for level in range(max_level, min_level - 1, -1):
             # target_level に該当する要素を抽出
@@ -1093,10 +1093,10 @@ class TidyData:
 
         # エラーがあれば出力
         if errors:
-            print("\n".join(errors))
+            self.trace_print("\n".join(errors))
 
         # 結果を確認
-        print(self.tidy_gl_df.head())
+        self.debug_print(self.tidy_gl_df.head())
 
         # 新しいデータフレームを CSV に保存（必要に応じて）
         self.etax_file_path = f"{self.file_path[:-4]}_etax.csv"
@@ -1115,11 +1115,10 @@ class TidyData:
             if pd.isna(account_code):
                 return row
             else:
-                print(f'{account_code}')
+                self.debug_print(f'{account_code}')
                 # 科目コードと名称の変換
                 row["Account_Code"] = self.map_account_code(account_code, errors)
                 row["Account_Name"] = self.map_account_name(account_code, errors)
-
                 return row
 
         # データフレーム全体に行単位で関数を適用
@@ -1133,9 +1132,9 @@ class TidyData:
 
         # エラーログの表示
         if errors:
-            print("以下のエラーが発生しました：")
+            self.trace_print("以下のエラーが発生しました：")
             for error in errors:
-                print(error)
+                self.trace_print(error)
 
     def csv2dataframe(self, param_file_path):
         # 開始、終了、経過時間ラベルを追加
@@ -1194,13 +1193,14 @@ class TidyData:
             df[print_columns].head()
         )
 
-        # JP12a=0かつJP12b=0かつBS04cZ=0かつBS04c0=0の行を抽出し、対象の借方金額と貸方金額の値を収集する
+        # 伝票と明細行に値があり、借方補助科目、貸方補助科目、借方部門、貸方部門がすべてNaNの行を抽出し、対象の借方金額と貸方金額の値を収集する
         initial_rows = df[
-            (df[self.columns["借方補助科目"]] == 0)
-            & (df[self.columns["貸方補助科目"]] == 0)
-            & (df[self.columns["借方部門"]] == 0)
-            & (df[self.columns["貸方部門"]] == 0)
-            & (df[self.columns["明細行"]] != 0)
+            (pd.notna(df[self.columns["伝票"]])) &
+            (pd.notna(df[self.columns["明細行"]])) &
+            (pd.isna(df[self.columns["借方補助科目"]])) &
+            (pd.isna(df[self.columns["貸方補助科目"]])) &
+            (pd.isna(df[self.columns["借方部門"]])) &
+            (pd.isna(df[self.columns["貸方部門"]])) 
         ][
             [
                 self.columns["伝票"],
@@ -1209,10 +1209,6 @@ class TidyData:
                 self.columns["貸方金額"],
             ]
         ].drop_duplicates()
-
-        # initial_rowsに含まれる列名を確認
-        self.debug_print("Columns in initial_rows:")
-        self.debug_print(initial_rows.columns)
 
         # マージ前に対象列を明確にするために列名を変更する
         initial_rows = initial_rows.rename(
@@ -1225,14 +1221,14 @@ class TidyData:
         self.debug_print("\n2. initial_rows:")
         self.debug_print(initial_rows.head())
 
-        # JP04a（仕訳ヘッダ）に値があり、JP05a（仕訳明細）、JP12a（借方補助科目）、
-        # JP12b（貸方補助科目）、BS04cZ（借方部門）、BS04c0（貸方部門）がすべてゼロの行を抽出し、伝票日付を取り出す。
+        # 伝票に値があり、明細行、借方補助科目、貸方補助科目、借方部門、貸方部門がすべてNaNの行を抽出し、伝票日付を取り出す。
         entry_df = df[
-            (df[self.columns["借方補助科目"]] == 0)
-            & (df[self.columns["貸方補助科目"]] == 0)
-            & (df[self.columns["借方部門"]] == 0)
-            & (df[self.columns["貸方部門"]] == 0)
-            & (df[self.columns["明細行"]] == 0)
+            (pd.notna(df[self.columns["伝票"]])) &
+            (pd.isna(df[self.columns["明細行"]])) &
+            (pd.isna(df[self.columns["借方補助科目"]])) &
+            (pd.isna(df[self.columns["貸方補助科目"]])) &
+            (pd.isna(df[self.columns["借方部門"]])) &
+            (pd.isna(df[self.columns["貸方部門"]]))
         ][
             [self.columns["伝票"], self.columns["伝票日付"], "Month"]
         ].drop_duplicates()
@@ -1398,12 +1394,16 @@ class TidyData:
         self.amount_rows = line_df[
             (pd.notna(line_df[self.columns["伝票"]]))
             & (pd.notna(line_df[self.columns["明細行"]]))
-            & (line_df[self.columns["借方補助科目"]] == 0)
-            & (line_df[self.columns["貸方補助科目"]] == 0)
-            & (line_df[self.columns["借方部門"]] == 0)
-            & (line_df[self.columns["貸方部門"]] == 0)
-            & (line_df["Debit_Amount"].notna() | line_df["Credit_Amount"].notna())
+            & (pd.isna(line_df[self.columns["借方補助科目"]]))
+            & (pd.isna(line_df[self.columns["貸方補助科目"]]))
+            & (pd.isna(line_df[self.columns["借方部門"]]))
+            & (pd.isna(line_df[self.columns["貸方部門"]]))
+            & (pd.notna(line_df["Debit_Amount"]) | pd.notna(line_df["Credit_Amount"]))
+            # & (pd.notna(line_df[self.columns["借方金額"]]) | pd.notna(line_df[self.columns["貸方金額"]]))
         ].drop_duplicates()
+        self.debug_print("\nOR条件で借方金額または貸方金額のいずれかに値があるもの:")
+        self.debug_print(self.amount_rows.head())
+
         # 貸方科目コードが"10D100100"の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
         self.amount_rows[self.columns["貸方科目コード"]] = np.where(
             (self.amount_rows[self.columns["貸方科目コード"]] == "10D100100") &
@@ -2243,7 +2243,7 @@ class GUI:
 
     def view_data(self, event=None):
         frame_number = self.frame_number
-        print(f"frame number: {frame_number}")
+        self.debug_print(f"frame number: {frame_number}")
         # Get the selected item
         if 0 == frame_number:
             item = self.result_tree0.selection()[0]

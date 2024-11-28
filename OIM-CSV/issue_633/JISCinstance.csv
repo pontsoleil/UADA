@@ -1,0 +1,15 @@
+d_JISC03,d_JISC04b,d_BS05bC,JISC03_GL02_01,JISC03_GL02_03,JISC03_GL02_06,JISC04b_GL03_01,JISC04b_GL03_02,JISC04b_GL03_06,CC04w_01,JISC04b_GL03_03,BS05bC_01,BS05bC_02,BS05bC_04
+1,,,0001-20090401-18-1-1-463,2008-08-01,gj,,,,,,,,
+1,1,,,,,726,Travel expense,true,18572,,,,
+1,1,1,,,,,,,,,10,Sapporo,Department
+1,2,,,,,191,"Provisional payment consumption tax, etc.",true,928,,,,
+1,2,1,,,,,,,,,10,Sapporo,Department
+1,3,,,,,111,Cash,false,19500,Travel expense,,,
+1,3,1,,,,,,,,,0,Common,Department
+2,,,0001-20090401-246-2-1-465,2008-08-19,gj,,,,,,,,
+2,1,,,,,726,Travel expense,true,9524,,,,
+2,1,1,,,,,,,,,30,Nagoya,Department
+2,2,,,,,191,"Provisional payment consumption tax, etc.",true,476,,,,
+2,2,1,,,,,,,,,30,Nagoya,Department
+2,3,,,,,111,Cash,false,10000,,,,
+2,3,1,,,,,,,,,0,Common,Department

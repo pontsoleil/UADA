@@ -1,0 +1,492 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) 2023 XBRL Japan inc. -->
+<link:linkbase
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!-- roleRef -->
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC03" xlink:type="simple" xlink:href="core.xsd#link_JISC03"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_GL05b" xlink:type="simple" xlink:href="core.xsd#link_GL05b"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_BS02y" xlink:type="simple" xlink:href="core.xsd#link_BS02y"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_BS18m" xlink:type="simple" xlink:href="core.xsd#link_BS18m"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC02b" xlink:type="simple" xlink:href="core.xsd#link_JISC02b"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC04b" xlink:type="simple" xlink:href="core.xsd#link_JISC04b"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC20b" xlink:type="simple" xlink:href="core.xsd#link_JISC20b"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC04w" xlink:type="simple" xlink:href="core.xsd#link_CC04w"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC10B" xlink:type="simple" xlink:href="core.xsd#link_CC10B"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC06B" xlink:type="simple" xlink:href="core.xsd#link_CC06B"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC07B" xlink:type="simple" xlink:href="core.xsd#link_CC07B"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC08B" xlink:type="simple" xlink:href="core.xsd#link_CC08B"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_CC09e" xlink:type="simple" xlink:href="core.xsd#link_CC09e"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_GL01d" xlink:type="simple" xlink:href="core.xsd#link_GL01d"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_BS10e" xlink:type="simple" xlink:href="core.xsd#link_BS10e"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_BS05bC" xlink:type="simple" xlink:href="core.xsd#link_BS05bC"/>
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC02c" xlink:type="simple" xlink:href="core.xsd#link_JISC02c"/>
+	<!-- arcroleRef -->
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_JISC03">
+		<!-- JISC03 all (has-hypercube) h_JISC03 link_JISC03 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03" xlink:label="JISC03" xlink:title="JISC03"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JISC03" xlink:label="h_JISC03" xlink:title="h_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JISC03" xlink:to="h_JISC03" xlink:title="all (has-hypercube): JISC03 to h_JISC03" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC03" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_JISC03 to d_JISC03" order="1"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_01" xlink:label="JISC03_GL02_01" xlink:title="JISC03_GL02_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_01" xlink:title="domain-member: JISC03 to JISC03_GL02_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_02" xlink:label="JISC03_GL02_02" xlink:title="JISC03_GL02_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_02" xlink:title="domain-member: JISC03 to JISC03_GL02_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_03" xlink:label="JISC03_GL02_03" xlink:title="JISC03_GL02_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_03" xlink:title="domain-member: JISC03 to JISC03_GL02_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_04" xlink:label="JISC03_GL02_04" xlink:title="JISC03_GL02_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_04" xlink:title="domain-member: JISC03 to JISC03_GL02_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_06" xlink:label="JISC03_GL02_06" xlink:title="JISC03_GL02_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_06" xlink:title="domain-member: JISC03 to JISC03_GL02_06" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_07" xlink:label="JISC03_GL02_07" xlink:title="JISC03_GL02_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_07" xlink:title="domain-member: JISC03 to JISC03_GL02_07" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_08" xlink:label="JISC03_GL02_08" xlink:title="JISC03_GL02_08"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_08" xlink:title="domain-member: JISC03 to JISC03_GL02_08" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_09" xlink:label="JISC03_GL02_09" xlink:title="JISC03_GL02_09"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_09" xlink:title="domain-member: JISC03 to JISC03_GL02_09" order="8"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_10" xlink:label="JISC03_GL02_10" xlink:title="JISC03_GL02_10"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_10" xlink:title="domain-member: JISC03 to JISC03_GL02_10" order="9"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_11" xlink:label="JISC03_GL02_11" xlink:title="JISC03_GL02_11"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_11" xlink:title="domain-member: JISC03 to JISC03_GL02_11" order="10"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_12" xlink:label="JISC03_GL02_12" xlink:title="JISC03_GL02_12"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC03" xlink:to="JISC03_GL02_12" xlink:title="domain-member: JISC03 to JISC03_GL02_12" order="11"/>
+		<!-- GL05b targetRole link_GL05b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b" xlink:label="GL05b" xlink:title="GL05b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_GL05b" xlink:from="JISC03" xlink:to="GL05b" xlink:title="domain-member: JISC03 to GL05b in link_GL05b" order="12"/>
+		<!-- BS02y targetRole link_BS02y -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y" xlink:label="BS02y" xlink:title="BS02y"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_BS02y" xlink:from="JISC03" xlink:to="BS02y" xlink:title="domain-member: JISC03 to BS02y in link_BS02y" order="13"/>
+		<!-- BS18m targetRole link_BS18m -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m" xlink:label="BS18m" xlink:title="BS18m"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_BS18m" xlink:from="JISC03" xlink:to="BS18m" xlink:title="domain-member: JISC03 to BS18m in link_BS18m" order="14"/>
+		<!-- JISC02b targetRole link_JISC02b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b" xlink:label="JISC02b" xlink:title="JISC02b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_JISC02b" xlink:from="JISC03" xlink:to="JISC02b" xlink:title="domain-member: JISC03 to JISC02b in link_JISC02b" order="15"/>
+		<!-- JISC04b targetRole link_JISC04b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b" xlink:label="JISC04b" xlink:title="JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_JISC04b" xlink:from="JISC03" xlink:to="JISC04b" xlink:title="domain-member: JISC03 to JISC04b in link_JISC04b" order="16"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_GL05b">
+		<!-- GL05b all (has-hypercube) h_GL05b link_GL05b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b" xlink:label="GL05b" xlink:title="GL05b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GL05b" xlink:label="h_GL05b" xlink:title="h_GL05b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GL05b" xlink:to="h_GL05b" xlink:title="all (has-hypercube): GL05b to h_GL05b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GL05b" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_GL05b to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GL05b" xlink:label="d_GL05b" xlink:title="d_GL05b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GL05b" xlink:to="d_GL05b" xlink:title="hypercube-dimension: h_GL05b to d_GL05b" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_01" xlink:label="GL05b_01" xlink:title="GL05b_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_01" xlink:title="domain-member: GL05b to GL05b_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_02" xlink:label="GL05b_02" xlink:title="GL05b_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_02" xlink:title="domain-member: GL05b to GL05b_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_03" xlink:label="GL05b_03" xlink:title="GL05b_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_03" xlink:title="domain-member: GL05b to GL05b_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_04" xlink:label="GL05b_04" xlink:title="GL05b_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_04" xlink:title="domain-member: GL05b to GL05b_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_05" xlink:label="GL05b_05" xlink:title="GL05b_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_05" xlink:title="domain-member: GL05b to GL05b_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_06" xlink:label="GL05b_06" xlink:title="GL05b_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL05b" xlink:to="GL05b_06" xlink:title="domain-member: GL05b to GL05b_06" order="6"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_BS02y">
+		<!-- BS02y all (has-hypercube) h_BS02y link_BS02y -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y" xlink:label="BS02y" xlink:title="BS02y"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS02y" xlink:label="h_BS02y" xlink:title="h_BS02y"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS02y" xlink:to="h_BS02y" xlink:title="all (has-hypercube): BS02y to h_BS02y" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS02y" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_BS02y to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS02y" xlink:label="d_BS02y" xlink:title="d_BS02y"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS02y" xlink:to="d_BS02y" xlink:title="hypercube-dimension: h_BS02y to d_BS02y" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_01" xlink:label="BS02y_01" xlink:title="BS02y_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS02y" xlink:to="BS02y_01" xlink:title="domain-member: BS02y to BS02y_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_02" xlink:label="BS02y_02" xlink:title="BS02y_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS02y" xlink:to="BS02y_02" xlink:title="domain-member: BS02y to BS02y_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_03" xlink:label="BS02y_03" xlink:title="BS02y_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS02y" xlink:to="BS02y_03" xlink:title="domain-member: BS02y to BS02y_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_04" xlink:label="BS02y_04" xlink:title="BS02y_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS02y" xlink:to="BS02y_04" xlink:title="domain-member: BS02y to BS02y_04" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_BS18m">
+		<!-- BS18m all (has-hypercube) h_BS18m link_BS18m -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m" xlink:label="BS18m" xlink:title="BS18m"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS18m" xlink:label="h_BS18m" xlink:title="h_BS18m"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS18m" xlink:to="h_BS18m" xlink:title="all (has-hypercube): BS18m to h_BS18m" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS18m" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_BS18m to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS18m" xlink:label="d_BS18m" xlink:title="d_BS18m"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS18m" xlink:to="d_BS18m" xlink:title="hypercube-dimension: h_BS18m to d_BS18m" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_01" xlink:label="BS18m_01" xlink:title="BS18m_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS18m" xlink:to="BS18m_01" xlink:title="domain-member: BS18m to BS18m_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_02" xlink:label="BS18m_02" xlink:title="BS18m_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS18m" xlink:to="BS18m_02" xlink:title="domain-member: BS18m to BS18m_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_03" xlink:label="BS18m_03" xlink:title="BS18m_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS18m" xlink:to="BS18m_03" xlink:title="domain-member: BS18m to BS18m_03" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_JISC02b">
+		<!-- JISC02b all (has-hypercube) h_JISC02b link_JISC02b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b" xlink:label="JISC02b" xlink:title="JISC02b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JISC02b" xlink:label="h_JISC02b" xlink:title="h_JISC02b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JISC02b" xlink:to="h_JISC02b" xlink:title="all (has-hypercube): JISC02b to h_JISC02b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC02b" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_JISC02b to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC02b" xlink:label="d_JISC02b" xlink:title="d_JISC02b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC02b" xlink:to="d_JISC02b" xlink:title="hypercube-dimension: h_JISC02b to d_JISC02b" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_01" xlink:label="JISC02b_BS21_01" xlink:title="JISC02b_BS21_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_BS21_01" xlink:title="domain-member: JISC02b to JISC02b_BS21_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_02" xlink:label="JISC02b_BS21_02" xlink:title="JISC02b_BS21_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_BS21_02" xlink:title="domain-member: JISC02b to JISC02b_BS21_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_05" xlink:label="JISC02b_BS21_05" xlink:title="JISC02b_BS21_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_BS21_05" xlink:title="domain-member: JISC02b to JISC02b_BS21_05" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_04" xlink:label="JISC02b_04" xlink:title="JISC02b_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_04" xlink:title="domain-member: JISC02b to JISC02b_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_05" xlink:label="JISC02b_05" xlink:title="JISC02b_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_05" xlink:title="domain-member: JISC02b to JISC02b_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_06" xlink:label="JISC02b_06" xlink:title="JISC02b_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_06" xlink:title="domain-member: JISC02b to JISC02b_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_07" xlink:label="JISC02b_07" xlink:title="JISC02b_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02b" xlink:to="JISC02b_07" xlink:title="domain-member: JISC02b to JISC02b_07" order="7"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_JISC04b">
+		<!-- JISC04b all (has-hypercube) h_JISC04b link_JISC04b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b" xlink:label="JISC04b" xlink:title="JISC04b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JISC04b" xlink:label="h_JISC04b" xlink:title="h_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JISC04b" xlink:to="h_JISC04b" xlink:title="all (has-hypercube): JISC04b to h_JISC04b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC04b" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_JISC04b to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC04b" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_JISC04b to d_JISC04b" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_01" xlink:label="JISC04b_GL03_01" xlink:title="JISC04b_GL03_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_01" xlink:title="domain-member: JISC04b to JISC04b_GL03_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_02" xlink:label="JISC04b_GL03_02" xlink:title="JISC04b_GL03_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_02" xlink:title="domain-member: JISC04b to JISC04b_GL03_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_03" xlink:label="JISC04b_GL03_03" xlink:title="JISC04b_GL03_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_03" xlink:title="domain-member: JISC04b to JISC04b_GL03_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_04" xlink:label="JISC04b_GL03_04" xlink:title="JISC04b_GL03_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_04" xlink:title="domain-member: JISC04b to JISC04b_GL03_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_05" xlink:label="JISC04b_GL03_05" xlink:title="JISC04b_GL03_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_05" xlink:title="domain-member: JISC04b to JISC04b_GL03_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_06" xlink:label="JISC04b_GL03_06" xlink:title="JISC04b_GL03_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_06" xlink:title="domain-member: JISC04b to JISC04b_GL03_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_07" xlink:label="JISC04b_GL03_07" xlink:title="JISC04b_GL03_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_07" xlink:title="domain-member: JISC04b to JISC04b_GL03_07" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_08" xlink:label="JISC04b_GL03_08" xlink:title="JISC04b_GL03_08"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_08" xlink:title="domain-member: JISC04b to JISC04b_GL03_08" order="8"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_09" xlink:label="JISC04b_GL03_09" xlink:title="JISC04b_GL03_09"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC04b" xlink:to="JISC04b_GL03_09" xlink:title="domain-member: JISC04b to JISC04b_GL03_09" order="9"/>
+		<!-- JISC20b targetRole link_JISC20b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b" xlink:label="JISC20b" xlink:title="JISC20b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_JISC20b" xlink:from="JISC04b" xlink:to="JISC20b" xlink:title="domain-member: JISC04b to JISC20b in link_JISC20b" order="10"/>
+		<!-- CC04w targetRole link_CC04w -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w" xlink:label="CC04w" xlink:title="CC04w"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC04w" xlink:from="JISC04b" xlink:to="CC04w" xlink:title="domain-member: JISC04b to CC04w in link_CC04w" order="11"/>
+		<!-- CC10B targetRole link_CC10B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC10B" xlink:label="CC10B" xlink:title="CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC10B" xlink:from="JISC04b" xlink:to="CC10B" xlink:title="domain-member: JISC04b to CC10B in link_CC10B" order="12"/>
+		<!-- CC09e targetRole link_CC09e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e" xlink:label="CC09e" xlink:title="CC09e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC09e" xlink:from="JISC04b" xlink:to="CC09e" xlink:title="domain-member: JISC04b to CC09e in link_CC09e" order="13"/>
+		<!-- GL01d targetRole link_GL01d -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d" xlink:label="GL01d" xlink:title="GL01d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_GL01d" xlink:from="JISC04b" xlink:to="GL01d" xlink:title="domain-member: JISC04b to GL01d in link_GL01d" order="14"/>
+		<!-- BS05bC targetRole link_BS05bC -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC" xlink:label="BS05bC" xlink:title="BS05bC"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_BS05bC" xlink:from="JISC04b" xlink:to="BS05bC" xlink:title="domain-member: JISC04b to BS05bC in link_BS05bC" order="15"/>
+		<!-- JISC02c targetRole link_JISC02c -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c" xlink:label="JISC02c" xlink:title="JISC02c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_JISC02c" xlink:from="JISC04b" xlink:to="JISC02c" xlink:title="domain-member: JISC04b to JISC02c in link_JISC02c" order="16"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_JISC20b">
+		<!-- JISC20b all (has-hypercube) h_JISC20b link_JISC20b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b" xlink:label="JISC20b" xlink:title="JISC20b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JISC20b" xlink:label="h_JISC20b" xlink:title="h_JISC20b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JISC20b" xlink:to="h_JISC20b" xlink:title="all (has-hypercube): JISC20b to h_JISC20b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC20b" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_JISC20b to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC20b" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_JISC20b to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC20b" xlink:label="d_JISC20b" xlink:title="d_JISC20b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC20b" xlink:to="d_JISC20b" xlink:title="hypercube-dimension: h_JISC20b to d_JISC20b" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_01" xlink:label="JISC20b_BS13_01" xlink:title="JISC20b_BS13_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_01" xlink:title="domain-member: JISC20b to JISC20b_BS13_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_02" xlink:label="JISC20b_BS13_02" xlink:title="JISC20b_BS13_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_02" xlink:title="domain-member: JISC20b to JISC20b_BS13_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_03" xlink:label="JISC20b_BS13_03" xlink:title="JISC20b_BS13_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_03" xlink:title="domain-member: JISC20b to JISC20b_BS13_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_04" xlink:label="JISC20b_BS13_04" xlink:title="JISC20b_BS13_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_04" xlink:title="domain-member: JISC20b to JISC20b_BS13_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_05" xlink:label="JISC20b_BS13_05" xlink:title="JISC20b_BS13_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_05" xlink:title="domain-member: JISC20b to JISC20b_BS13_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_06" xlink:label="JISC20b_BS13_06" xlink:title="JISC20b_BS13_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_06" xlink:title="domain-member: JISC20b to JISC20b_BS13_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_07" xlink:label="JISC20b_BS13_07" xlink:title="JISC20b_BS13_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_07" xlink:title="domain-member: JISC20b to JISC20b_BS13_07" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_08" xlink:label="JISC20b_BS13_08" xlink:title="JISC20b_BS13_08"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC20b" xlink:to="JISC20b_BS13_08" xlink:title="domain-member: JISC20b to JISC20b_BS13_08" order="8"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC04w">
+		<!-- CC04w all (has-hypercube) h_CC04w link_CC04w -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w" xlink:label="CC04w" xlink:title="CC04w"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC04w" xlink:label="h_CC04w" xlink:title="h_CC04w"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC04w" xlink:to="h_CC04w" xlink:title="all (has-hypercube): CC04w to h_CC04w" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC04w" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC04w to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC04w" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC04w to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC04w" xlink:label="d_CC04w" xlink:title="d_CC04w"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC04w" xlink:to="d_CC04w" xlink:title="hypercube-dimension: h_CC04w to d_CC04w" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_01" xlink:label="CC04w_01" xlink:title="CC04w_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC04w" xlink:to="CC04w_01" xlink:title="domain-member: CC04w to CC04w_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_02" xlink:label="CC04w_02" xlink:title="CC04w_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC04w" xlink:to="CC04w_02" xlink:title="domain-member: CC04w to CC04w_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_03" xlink:label="CC04w_03" xlink:title="CC04w_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC04w" xlink:to="CC04w_03" xlink:title="domain-member: CC04w to CC04w_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_04" xlink:label="CC04w_04" xlink:title="CC04w_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC04w" xlink:to="CC04w_04" xlink:title="domain-member: CC04w to CC04w_04" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC10B">
+		<!-- CC10B all (has-hypercube) h_CC10B link_CC10B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC10B" xlink:label="CC10B" xlink:title="CC10B"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC10B" xlink:label="h_CC10B" xlink:title="h_CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC10B" xlink:to="h_CC10B" xlink:title="all (has-hypercube): CC10B to h_CC10B" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC10B" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC10B to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC10B" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC10B to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC10B" xlink:label="d_CC10B" xlink:title="d_CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC10B" xlink:to="d_CC10B" xlink:title="hypercube-dimension: h_CC10B to d_CC10B" order="3"/>
+		<!-- domain-member -->
+		<!-- CC06B targetRole link_CC06B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B" xlink:label="CC06B" xlink:title="CC06B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC06B" xlink:from="CC10B" xlink:to="CC06B" xlink:title="domain-member: CC10B to CC06B in link_CC06B" order="1"/>
+		<!-- CC07B targetRole link_CC07B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B" xlink:label="CC07B" xlink:title="CC07B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC07B" xlink:from="CC10B" xlink:to="CC07B" xlink:title="domain-member: CC10B to CC07B in link_CC07B" order="2"/>
+		<!-- CC08B targetRole link_CC08B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B" xlink:label="CC08B" xlink:title="CC08B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_CC08B" xlink:from="CC10B" xlink:to="CC08B" xlink:title="domain-member: CC10B to CC08B in link_CC08B" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC06B">
+		<!-- CC06B all (has-hypercube) h_CC06B link_CC06B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B" xlink:label="CC06B" xlink:title="CC06B"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC06B" xlink:label="h_CC06B" xlink:title="h_CC06B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC06B" xlink:to="h_CC06B" xlink:title="all (has-hypercube): CC06B to h_CC06B" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC06B" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC06B to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC06B" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC06B to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC10B" xlink:label="d_CC10B" xlink:title="d_CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC06B" xlink:to="d_CC10B" xlink:title="hypercube-dimension: h_CC06B to d_CC10B" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC06B" xlink:label="d_CC06B" xlink:title="d_CC06B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC06B" xlink:to="d_CC06B" xlink:title="hypercube-dimension: h_CC06B to d_CC06B" order="4"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_01" xlink:label="CC06B_CC05_01" xlink:title="CC06B_CC05_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC06B" xlink:to="CC06B_CC05_01" xlink:title="domain-member: CC06B to CC06B_CC05_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_02" xlink:label="CC06B_CC05_02" xlink:title="CC06B_CC05_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC06B" xlink:to="CC06B_CC05_02" xlink:title="domain-member: CC06B to CC06B_CC05_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_03" xlink:label="CC06B_CC05_03" xlink:title="CC06B_CC05_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC06B" xlink:to="CC06B_CC05_03" xlink:title="domain-member: CC06B to CC06B_CC05_03" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC07B">
+		<!-- CC07B all (has-hypercube) h_CC07B link_CC07B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B" xlink:label="CC07B" xlink:title="CC07B"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC07B" xlink:label="h_CC07B" xlink:title="h_CC07B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC07B" xlink:to="h_CC07B" xlink:title="all (has-hypercube): CC07B to h_CC07B" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC07B" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC07B to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC07B" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC07B to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC10B" xlink:label="d_CC10B" xlink:title="d_CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC07B" xlink:to="d_CC10B" xlink:title="hypercube-dimension: h_CC07B to d_CC10B" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC07B" xlink:label="d_CC07B" xlink:title="d_CC07B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC07B" xlink:to="d_CC07B" xlink:title="hypercube-dimension: h_CC07B to d_CC07B" order="4"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_01" xlink:label="CC07B_CC05_01" xlink:title="CC07B_CC05_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC07B" xlink:to="CC07B_CC05_01" xlink:title="domain-member: CC07B to CC07B_CC05_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_02" xlink:label="CC07B_CC05_02" xlink:title="CC07B_CC05_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC07B" xlink:to="CC07B_CC05_02" xlink:title="domain-member: CC07B to CC07B_CC05_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_03" xlink:label="CC07B_CC05_03" xlink:title="CC07B_CC05_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC07B" xlink:to="CC07B_CC05_03" xlink:title="domain-member: CC07B to CC07B_CC05_03" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC08B">
+		<!-- CC08B all (has-hypercube) h_CC08B link_CC08B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B" xlink:label="CC08B" xlink:title="CC08B"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC08B" xlink:label="h_CC08B" xlink:title="h_CC08B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC08B" xlink:to="h_CC08B" xlink:title="all (has-hypercube): CC08B to h_CC08B" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC08B" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC08B to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC08B" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC08B to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC10B" xlink:label="d_CC10B" xlink:title="d_CC10B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC08B" xlink:to="d_CC10B" xlink:title="hypercube-dimension: h_CC08B to d_CC10B" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC08B" xlink:label="d_CC08B" xlink:title="d_CC08B"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC08B" xlink:to="d_CC08B" xlink:title="hypercube-dimension: h_CC08B to d_CC08B" order="4"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_01" xlink:label="CC08B_CC05_01" xlink:title="CC08B_CC05_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC08B" xlink:to="CC08B_CC05_01" xlink:title="domain-member: CC08B to CC08B_CC05_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_02" xlink:label="CC08B_CC05_02" xlink:title="CC08B_CC05_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC08B" xlink:to="CC08B_CC05_02" xlink:title="domain-member: CC08B to CC08B_CC05_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_03" xlink:label="CC08B_CC05_03" xlink:title="CC08B_CC05_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC08B" xlink:to="CC08B_CC05_03" xlink:title="domain-member: CC08B to CC08B_CC05_03" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_CC09e">
+		<!-- CC09e all (has-hypercube) h_CC09e link_CC09e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e" xlink:label="CC09e" xlink:title="CC09e"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_CC09e" xlink:label="h_CC09e" xlink:title="h_CC09e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="CC09e" xlink:to="h_CC09e" xlink:title="all (has-hypercube): CC09e to h_CC09e" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC09e" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_CC09e to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC09e" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_CC09e to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_CC09e" xlink:label="d_CC09e" xlink:title="d_CC09e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_CC09e" xlink:to="d_CC09e" xlink:title="hypercube-dimension: h_CC09e to d_CC09e" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_01" xlink:label="CC09e_CC05_01" xlink:title="CC09e_CC05_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC09e" xlink:to="CC09e_CC05_01" xlink:title="domain-member: CC09e to CC09e_CC05_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_02" xlink:label="CC09e_CC05_02" xlink:title="CC09e_CC05_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC09e" xlink:to="CC09e_CC05_02" xlink:title="domain-member: CC09e to CC09e_CC05_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_03" xlink:label="CC09e_CC05_03" xlink:title="CC09e_CC05_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="CC09e" xlink:to="CC09e_CC05_03" xlink:title="domain-member: CC09e to CC09e_CC05_03" order="3"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_GL01d">
+		<!-- GL01d all (has-hypercube) h_GL01d link_GL01d -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d" xlink:label="GL01d" xlink:title="GL01d"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GL01d" xlink:label="h_GL01d" xlink:title="h_GL01d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GL01d" xlink:to="h_GL01d" xlink:title="all (has-hypercube): GL01d to h_GL01d" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GL01d" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_GL01d to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GL01d" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_GL01d to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GL01d" xlink:label="d_GL01d" xlink:title="d_GL01d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GL01d" xlink:to="d_GL01d" xlink:title="hypercube-dimension: h_GL01d to d_GL01d" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_01" xlink:label="GL01d_01" xlink:title="GL01d_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_01" xlink:title="domain-member: GL01d to GL01d_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_02" xlink:label="GL01d_02" xlink:title="GL01d_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_02" xlink:title="domain-member: GL01d to GL01d_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_03" xlink:label="GL01d_03" xlink:title="GL01d_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_03" xlink:title="domain-member: GL01d to GL01d_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_04" xlink:label="GL01d_04" xlink:title="GL01d_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_04" xlink:title="domain-member: GL01d to GL01d_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_05" xlink:label="GL01d_05" xlink:title="GL01d_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_05" xlink:title="domain-member: GL01d to GL01d_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_06" xlink:label="GL01d_06" xlink:title="GL01d_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_06" xlink:title="domain-member: GL01d to GL01d_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_08" xlink:label="GL01d_08" xlink:title="GL01d_08"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="GL01d" xlink:to="GL01d_08" xlink:title="domain-member: GL01d to GL01d_08" order="7"/>
+		<!-- BS10e targetRole link_BS10e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e" xlink:label="BS10e" xlink:title="BS10e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/awi21926_jisc/role/link_BS10e" xlink:from="GL01d" xlink:to="BS10e" xlink:title="domain-member: GL01d to BS10e in link_BS10e" order="8"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_BS10e">
+		<!-- BS10e all (has-hypercube) h_BS10e link_BS10e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e" xlink:label="BS10e" xlink:title="BS10e"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS10e" xlink:label="h_BS10e" xlink:title="h_BS10e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS10e" xlink:to="h_BS10e" xlink:title="all (has-hypercube): BS10e to h_BS10e" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS10e" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_BS10e to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS10e" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_BS10e to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GL01d" xlink:label="d_GL01d" xlink:title="d_GL01d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS10e" xlink:to="d_GL01d" xlink:title="hypercube-dimension: h_BS10e to d_GL01d" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS10e" xlink:label="d_BS10e" xlink:title="d_BS10e"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS10e" xlink:to="d_BS10e" xlink:title="hypercube-dimension: h_BS10e to d_BS10e" order="4"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_01" xlink:label="BS10e_01" xlink:title="BS10e_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_01" xlink:title="domain-member: BS10e to BS10e_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_02" xlink:label="BS10e_02" xlink:title="BS10e_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_02" xlink:title="domain-member: BS10e to BS10e_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_03" xlink:label="BS10e_03" xlink:title="BS10e_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_03" xlink:title="domain-member: BS10e to BS10e_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_04" xlink:label="BS10e_04" xlink:title="BS10e_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_04" xlink:title="domain-member: BS10e to BS10e_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_05" xlink:label="BS10e_05" xlink:title="BS10e_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_05" xlink:title="domain-member: BS10e to BS10e_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_06" xlink:label="BS10e_06" xlink:title="BS10e_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_06" xlink:title="domain-member: BS10e to BS10e_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_07" xlink:label="BS10e_07" xlink:title="BS10e_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_07" xlink:title="domain-member: BS10e to BS10e_07" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_08" xlink:label="BS10e_08" xlink:title="BS10e_08"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS10e" xlink:to="BS10e_08" xlink:title="domain-member: BS10e to BS10e_08" order="8"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_BS05bC">
+		<!-- BS05bC all (has-hypercube) h_BS05bC link_BS05bC -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC" xlink:label="BS05bC" xlink:title="BS05bC"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS05bC" xlink:label="h_BS05bC" xlink:title="h_BS05bC"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS05bC" xlink:to="h_BS05bC" xlink:title="all (has-hypercube): BS05bC to h_BS05bC" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS05bC" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_BS05bC to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS05bC" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_BS05bC to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS05bC" xlink:label="d_BS05bC" xlink:title="d_BS05bC"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS05bC" xlink:to="d_BS05bC" xlink:title="hypercube-dimension: h_BS05bC to d_BS05bC" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_01" xlink:label="BS05bC_01" xlink:title="BS05bC_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS05bC" xlink:to="BS05bC_01" xlink:title="domain-member: BS05bC to BS05bC_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_02" xlink:label="BS05bC_02" xlink:title="BS05bC_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS05bC" xlink:to="BS05bC_02" xlink:title="domain-member: BS05bC to BS05bC_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_03" xlink:label="BS05bC_03" xlink:title="BS05bC_03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS05bC" xlink:to="BS05bC_03" xlink:title="domain-member: BS05bC to BS05bC_03" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_04" xlink:label="BS05bC_04" xlink:title="BS05bC_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS05bC" xlink:to="BS05bC_04" xlink:title="domain-member: BS05bC to BS05bC_04" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/awi21926_jisc/role/link_JISC02c">
+		<!-- JISC02c all (has-hypercube) h_JISC02c link_JISC02c -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c" xlink:label="JISC02c" xlink:title="JISC02c"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JISC02c" xlink:label="h_JISC02c" xlink:title="h_JISC02c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JISC02c" xlink:to="h_JISC02c" xlink:title="all (has-hypercube): JISC02c to h_JISC02c" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC03" xlink:label="d_JISC03" xlink:title="d_JISC03"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC02c" xlink:to="d_JISC03" xlink:title="hypercube-dimension: h_JISC02c to d_JISC03" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC04b" xlink:label="d_JISC04b" xlink:title="d_JISC04b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC02c" xlink:to="d_JISC04b" xlink:title="hypercube-dimension: h_JISC02c to d_JISC04b" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JISC02c" xlink:label="d_JISC02c" xlink:title="d_JISC02c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JISC02c" xlink:to="d_JISC02c" xlink:title="hypercube-dimension: h_JISC02c to d_JISC02c" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_01" xlink:label="JISC02c_BS21_01" xlink:title="JISC02c_BS21_01"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_BS21_01" xlink:title="domain-member: JISC02c to JISC02c_BS21_01" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_02" xlink:label="JISC02c_BS21_02" xlink:title="JISC02c_BS21_02"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_BS21_02" xlink:title="domain-member: JISC02c to JISC02c_BS21_02" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_05" xlink:label="JISC02c_BS21_05" xlink:title="JISC02c_BS21_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_BS21_05" xlink:title="domain-member: JISC02c to JISC02c_BS21_05" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_04" xlink:label="JISC02c_04" xlink:title="JISC02c_04"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_04" xlink:title="domain-member: JISC02c to JISC02c_04" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_05" xlink:label="JISC02c_05" xlink:title="JISC02c_05"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_05" xlink:title="domain-member: JISC02c to JISC02c_05" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_06" xlink:label="JISC02c_06" xlink:title="JISC02c_06"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_06" xlink:title="domain-member: JISC02c to JISC02c_06" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_07" xlink:label="JISC02c_07" xlink:title="JISC02c_07"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JISC02c" xlink:to="JISC02c_07" xlink:title="domain-member: JISC02c to JISC02c_07" order="7"/>
+	</link:definitionLink>
+</link:linkbase>

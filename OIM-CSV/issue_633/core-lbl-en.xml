@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--  (c) 2023 XBRL Japan inc. -->
+<link:linkbase
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+	<link:roleRef roleURI="http://www.iso.org/awi21926_jisc/role/description" xlink:type="simple" xlink:href="core.xsd#description"/>
+	<link:arcroleRef arcroleURI="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:type="simple" xlink:href="core.xsd#concept-description"/>
+	<link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+		<!-- JISC03 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03" xlink:label="JISC03" xlink:title="JISC03"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03" xlink:title="label_JISC03" id="label_JISC03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03" xlink:to="label_JISC03" xlink:title="label: JISC03 to label_JISC03"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03" xlink:title="description_JISC03" id="description_JISC03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains all of the journal entry details for each transaction (e.g. associated journal entry ID, associated account number, debits or credits associated with the journal entry line). This table should be at the journal entry line level.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03" xlink:to="description_JISC03" xlink:title="label: JISC03 to label_JISC03"/>
+		<!-- JISC03_GL02_01 Journal ID -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_01" xlink:label="JISC03_GL02_01" xlink:title="JISC03_GL02_01"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_01" xlink:title="label_JISC03_GL02_01" id="label_JISC03_GL02_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal ID</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_01" xlink:to="label_JISC03_GL02_01" xlink:title="label: JISC03_GL02_01 to label_JISC03_GL02_01"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_01" xlink:title="description_JISC03_GL02_01" id="description_JISC03_GL02_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Unique identifier for each journal entry.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_01" xlink:to="description_JISC03_GL02_01" xlink:title="label: JISC03_GL02_01 to label_JISC03_GL02_01"/>
+		<!-- JISC03_GL02_02 Journal Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_02" xlink:label="JISC03_GL02_02" xlink:title="JISC03_GL02_02"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_02" xlink:title="label_JISC03_GL02_02" id="label_JISC03_GL02_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_02" xlink:to="label_JISC03_GL02_02" xlink:title="label: JISC03_GL02_02 to label_JISC03_GL02_02"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_02" xlink:title="description_JISC03_GL02_02" id="description_JISC03_GL02_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the journal entry.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_02" xlink:to="description_JISC03_GL02_02" xlink:title="label: JISC03_GL02_02 to label_JISC03_GL02_02"/>
+		<!-- JISC03_GL02_03 Effective Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_03" xlink:label="JISC03_GL02_03" xlink:title="JISC03_GL02_03"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_03" xlink:title="label_JISC03_GL02_03" id="label_JISC03_GL02_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Effective Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_03" xlink:to="label_JISC03_GL02_03" xlink:title="label: JISC03_GL02_03 to label_JISC03_GL02_03"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_03" xlink:title="description_JISC03_GL02_03" id="description_JISC03_GL02_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Date of the journal entry, no matter when the entry is received or created. This sometimes refers to the accounting date or accounting effective date.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_03" xlink:to="description_JISC03_GL02_03" xlink:title="label: JISC03_GL02_03 to label_JISC03_GL02_03"/>
+		<!-- JISC03_GL02_04 Journal Entry Header Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_04" xlink:label="JISC03_GL02_04" xlink:title="JISC03_GL02_04"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_04" xlink:title="label_JISC03_GL02_04" id="label_JISC03_GL02_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal Entry Header Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_04" xlink:to="label_JISC03_GL02_04" xlink:title="label: JISC03_GL02_04 to label_JISC03_GL02_04"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_04" xlink:title="description_JISC03_GL02_04" id="description_JISC03_GL02_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Description of the entire journal entry as described by the journal entry header.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_04" xlink:to="description_JISC03_GL02_04" xlink:title="label: JISC03_GL02_04 to label_JISC03_GL02_04"/>
+		<!-- JISC03_GL02_06 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_06" xlink:label="JISC03_GL02_06" xlink:title="JISC03_GL02_06"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_06" xlink:title="label_JISC03_GL02_06" id="label_JISC03_GL02_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_06" xlink:to="label_JISC03_GL02_06" xlink:title="label: JISC03_GL02_06 to label_JISC03_GL02_06"/>
+		<!-- JISC03_GL02_07 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_07" xlink:label="JISC03_GL02_07" xlink:title="JISC03_GL02_07"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_07" xlink:title="label_JISC03_GL02_07" id="label_JISC03_GL02_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_07" xlink:to="label_JISC03_GL02_07" xlink:title="label: JISC03_GL02_07 to label_JISC03_GL02_07"/>
+		<!-- JISC03_GL02_08 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_08" xlink:label="JISC03_GL02_08" xlink:title="JISC03_GL02_08"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_08" xlink:title="label_JISC03_GL02_08" id="label_JISC03_GL02_08" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_08" xlink:to="label_JISC03_GL02_08" xlink:title="label: JISC03_GL02_08 to label_JISC03_GL02_08"/>
+		<!-- JISC03_GL02_09 Bill Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_09" xlink:label="JISC03_GL02_09" xlink:title="JISC03_GL02_09"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_09" xlink:title="label_JISC03_GL02_09" id="label_JISC03_GL02_09" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Bill Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_09" xlink:to="label_JISC03_GL02_09" xlink:title="label: JISC03_GL02_09 to label_JISC03_GL02_09"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_09" xlink:title="description_JISC03_GL02_09" id="description_JISC03_GL02_09" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the bill. A bill usually includes bank drafts, promissory notes and checks. A bill may be issued by the drawer who agreed upon themselves or entrusts the drawee at sight. A specified date to the payee or bearer unconditionally pays a certain amount of securities.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_09" xlink:to="description_JISC03_GL02_09" xlink:title="label: JISC03_GL02_09 to label_JISC03_GL02_09"/>
+		<!-- JISC03_GL02_10 Bill Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_10" xlink:label="JISC03_GL02_10" xlink:title="JISC03_GL02_10"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_10" xlink:title="label_JISC03_GL02_10" id="label_JISC03_GL02_10" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Bill Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_10" xlink:to="label_JISC03_GL02_10" xlink:title="label: JISC03_GL02_10 to label_JISC03_GL02_10"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC03_GL02_10" xlink:title="description_JISC03_GL02_10" id="description_JISC03_GL02_10" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Date of the bill.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC03_GL02_10" xlink:to="description_JISC03_GL02_10" xlink:title="label: JISC03_GL02_10 to label_JISC03_GL02_10"/>
+		<!-- JISC03_GL02_11 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_11" xlink:label="JISC03_GL02_11" xlink:title="JISC03_GL02_11"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_11" xlink:title="label_JISC03_GL02_11" id="label_JISC03_GL02_11" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_11" xlink:to="label_JISC03_GL02_11" xlink:title="label: JISC03_GL02_11 to label_JISC03_GL02_11"/>
+		<!-- JISC03_GL02_12 JISC General Ledger -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC03_GL02_12" xlink:label="JISC03_GL02_12" xlink:title="JISC03_GL02_12"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC03_GL02_12" xlink:title="label_JISC03_GL02_12" id="label_JISC03_GL02_12" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC General Ledger</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC03_GL02_12" xlink:to="label_JISC03_GL02_12" xlink:title="label: JISC03_GL02_12 to label_JISC03_GL02_12"/>
+		<!-- GL05b GL05b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b" xlink:label="GL05b" xlink:title="GL05b"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b" xlink:title="label_GL05b" id="label_GL05b" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">GL05b</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b" xlink:to="label_GL05b" xlink:title="label: GL05b to label_GL05b"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b" xlink:title="description_GL05b" id="description_GL05b" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains additional information about the sources provided in the GL Details table. Each source shall include a description of the ERP system or accounting package, from which the data is extracted, and information related to the business process the data represents.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b" xlink:to="description_GL05b" xlink:title="label: GL05b to label_GL05b"/>
+		<!-- GL05b_01 Source Code -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_01" xlink:label="GL05b_01" xlink:title="GL05b_01"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_01" xlink:title="label_GL05b_01" id="label_GL05b_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Source Code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_01" xlink:to="label_GL05b_01" xlink:title="label: GL05b_01 to label_GL05b_01"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_01" xlink:title="description_GL05b_01" id="description_GL05b_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Code for the posting source (code for the source from which the journal entry originated).</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_01" xlink:to="description_GL05b_01" xlink:title="label: GL05b_01 to label_GL05b_01"/>
+		<!-- GL05b_02 Source Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_02" xlink:label="GL05b_02" xlink:title="GL05b_02"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_02" xlink:title="label_GL05b_02" id="label_GL05b_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Source Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_02" xlink:to="label_GL05b_02" xlink:title="label: GL05b_02 to label_GL05b_02"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_02" xlink:title="description_GL05b_02" id="description_GL05b_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Description of the source system.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_02" xlink:to="description_GL05b_02" xlink:title="label: GL05b_02 to label_GL05b_02"/>
+		<!-- GL05b_03 ERP Subledger Module -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_03" xlink:label="GL05b_03" xlink:title="GL05b_03"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_03" xlink:title="label_GL05b_03" id="label_GL05b_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">ERP Subledger Module</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_03" xlink:to="label_GL05b_03" xlink:title="label: GL05b_03 to label_GL05b_03"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_03" xlink:title="description_GL05b_03" id="description_GL05b_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Description of the subledger or ERP module from which the journal entry originated. This should tie back to a system or significant accounting process. In some instances, it can be represented by the source system.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_03" xlink:to="description_GL05b_03" xlink:title="label: GL05b_03 to label_GL05b_03"/>
+		<!-- GL05b_04 System Manual Identifier -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_04" xlink:label="GL05b_04" xlink:title="GL05b_04"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_04" xlink:title="label_GL05b_04" id="label_GL05b_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">System Manual Identifier</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_04" xlink:to="label_GL05b_04" xlink:title="label: GL05b_04 to label_GL05b_04"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_04" xlink:title="description_GL05b_04" id="description_GL05b_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether the journal entry is system-generated or manually-entered.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_04" xlink:to="description_GL05b_04" xlink:title="label: GL05b_04 to label_GL05b_04"/>
+		<!-- GL05b_05 Business Process Major -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_05" xlink:label="GL05b_05" xlink:title="GL05b_05"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_05" xlink:title="label_GL05b_05" id="label_GL05b_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Business Process Major</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_05" xlink:to="label_GL05b_05" xlink:title="label: GL05b_05 to label_GL05b_05"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_05" xlink:title="description_GL05b_05" id="description_GL05b_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Major class of transaction associated with a business process.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_05" xlink:to="description_GL05b_05" xlink:title="label: GL05b_05 to label_GL05b_05"/>
+		<!-- GL05b_06 Business Process Minor -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05b_06" xlink:label="GL05b_06" xlink:title="GL05b_06"/>
+		<link:label xlink:type="resource" xlink:label="label_GL05b_06" xlink:title="label_GL05b_06" id="label_GL05b_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Business Process Minor</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL05b_06" xlink:to="label_GL05b_06" xlink:title="label: GL05b_06 to label_GL05b_06"/>
+		<link:label xlink:type="resource" xlink:label="description_GL05b_06" xlink:title="description_GL05b_06" id="description_GL05b_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Sub-process of a major business process.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL05b_06" xlink:to="description_GL05b_06" xlink:title="label: GL05b_06 to label_GL05b_06"/>
+		<!-- BS02y BS02y -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y" xlink:label="BS02y" xlink:title="BS02y"/>
+		<link:label xlink:type="resource" xlink:label="label_BS02y" xlink:title="label_BS02y" id="label_BS02y" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">BS02y</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS02y" xlink:to="label_BS02y" xlink:title="label: BS02y to label_BS02y"/>
+		<link:label xlink:type="resource" xlink:label="description_BS02y" xlink:title="description_BS02y" id="description_BS02y" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains information related to the accounting period, including corresponding fiscal year, beginning date and ending date. The table captures the time range within a specific reporting period and year, in which business transactions and entries are accumulated into financial statements and other reports.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS02y" xlink:to="description_BS02y" xlink:title="label: BS02y to label_BS02y"/>
+		<!-- BS02y_01 Fiscal Year -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_01" xlink:label="BS02y_01" xlink:title="BS02y_01"/>
+		<link:label xlink:type="resource" xlink:label="label_BS02y_01" xlink:title="label_BS02y_01" id="label_BS02y_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Fiscal Year</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS02y_01" xlink:to="label_BS02y_01" xlink:title="label: BS02y_01 to label_BS02y_01"/>
+		<link:label xlink:type="resource" xlink:label="description_BS02y_01" xlink:title="description_BS02y_01" id="description_BS02y_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Fiscal year in which the calendar date occurs. The year shall be shown in four digits as YYYY, which is part of the extended format and the YYYY-MM-DD from ISO 8601-1.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS02y_01" xlink:to="description_BS02y_01" xlink:title="label: BS02y_01 to label_BS02y_01"/>
+		<!-- BS02y_02 Accounting Period -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_02" xlink:label="BS02y_02" xlink:title="BS02y_02"/>
+		<link:label xlink:type="resource" xlink:label="label_BS02y_02" xlink:title="label_BS02y_02" id="label_BS02y_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Accounting Period</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS02y_02" xlink:to="label_BS02y_02" xlink:title="label: BS02y_02 to label_BS02y_02"/>
+		<link:label xlink:type="resource" xlink:label="description_BS02y_02" xlink:title="description_BS02y_02" id="description_BS02y_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Accounting period in which the calendar date occurs.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS02y_02" xlink:to="description_BS02y_02" xlink:title="label: BS02y_02 to label_BS02y_02"/>
+		<!-- BS02y_03 Accounting Period Beginning Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_03" xlink:label="BS02y_03" xlink:title="BS02y_03"/>
+		<link:label xlink:type="resource" xlink:label="label_BS02y_03" xlink:title="label_BS02y_03" id="label_BS02y_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Accounting Period Beginning Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS02y_03" xlink:to="label_BS02y_03" xlink:title="label: BS02y_03 to label_BS02y_03"/>
+		<link:label xlink:type="resource" xlink:label="description_BS02y_03" xlink:title="description_BS02y_03" id="description_BS02y_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Calendar beginning date of the current accounting period.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS02y_03" xlink:to="description_BS02y_03" xlink:title="label: BS02y_03 to label_BS02y_03"/>
+		<!-- BS02y_04 Accounting Period Ending Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02y_04" xlink:label="BS02y_04" xlink:title="BS02y_04"/>
+		<link:label xlink:type="resource" xlink:label="label_BS02y_04" xlink:title="label_BS02y_04" id="label_BS02y_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Accounting Period Ending Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS02y_04" xlink:to="label_BS02y_04" xlink:title="label: BS02y_04 to label_BS02y_04"/>
+		<link:label xlink:type="resource" xlink:label="description_BS02y_04" xlink:title="description_BS02y_04" id="description_BS02y_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Calendar ending date of the current accounting period.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS02y_04" xlink:to="description_BS02y_04" xlink:title="label: BS02y_04 to label_BS02y_04"/>
+		<!-- BS18m BS18m -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m" xlink:label="BS18m" xlink:title="BS18m"/>
+		<link:label xlink:type="resource" xlink:label="label_BS18m" xlink:title="label_BS18m" id="label_BS18m" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">BS18m</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS18m" xlink:to="label_BS18m" xlink:title="label: BS18m to label_BS18m"/>
+		<link:label xlink:type="resource" xlink:label="description_BS18m" xlink:title="description_BS18m" id="description_BS18m" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains information on methods used to settle transactions. Businesses can adopt various methods to settle transactions and transfer money, especially in sales and purchase activities. Typical settlement methods include cash settlements, issuing bills, using credit cards, bank remittances and bank collections.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS18m" xlink:to="description_BS18m" xlink:title="label: BS18m to label_BS18m"/>
+		<!-- BS18m_01 Settlement Method Code -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_01" xlink:label="BS18m_01" xlink:title="BS18m_01"/>
+		<link:label xlink:type="resource" xlink:label="label_BS18m_01" xlink:title="label_BS18m_01" id="label_BS18m_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Settlement Method Code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS18m_01" xlink:to="label_BS18m_01" xlink:title="label: BS18m_01 to label_BS18m_01"/>
+		<link:label xlink:type="resource" xlink:label="description_BS18m_01" xlink:title="description_BS18m_01" id="description_BS18m_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Code for the settlement method. Various methods can be used to settle transactions and transfer money.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS18m_01" xlink:to="description_BS18m_01" xlink:title="label: BS18m_01 to label_BS18m_01"/>
+		<!-- BS18m_02 Settlement Method Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_02" xlink:label="BS18m_02" xlink:title="BS18m_02"/>
+		<link:label xlink:type="resource" xlink:label="label_BS18m_02" xlink:title="label_BS18m_02" id="label_BS18m_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Settlement Method Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS18m_02" xlink:to="label_BS18m_02" xlink:title="label: BS18m_02 to label_BS18m_02"/>
+		<link:label xlink:type="resource" xlink:label="description_BS18m_02" xlink:title="description_BS18m_02" id="description_BS18m_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Name of the settlement method.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS18m_02" xlink:to="description_BS18m_02" xlink:title="label: BS18m_02 to label_BS18m_02"/>
+		<!-- BS18m_03 Active Flag -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18m_03" xlink:label="BS18m_03" xlink:title="BS18m_03"/>
+		<link:label xlink:type="resource" xlink:label="label_BS18m_03" xlink:title="label_BS18m_03" id="label_BS18m_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Active Flag</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS18m_03" xlink:to="label_BS18m_03" xlink:title="label: BS18m_03 to label_BS18m_03"/>
+		<link:label xlink:type="resource" xlink:label="description_BS18m_03" xlink:title="description_BS18m_03" id="description_BS18m_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether the settlement method is active or inactive.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS18m_03" xlink:to="description_BS18m_03" xlink:title="label: BS18m_03 to label_BS18m_03"/>
+		<!-- JISC02b JISC02b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b" xlink:label="JISC02b" xlink:title="JISC02b"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b" xlink:title="label_JISC02b" id="label_JISC02b" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC02b</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b" xlink:to="label_JISC02b" xlink:title="label: JISC02b to label_JISC02b"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b" xlink:title="description_JISC02b" id="description_JISC02b" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Consumption Tax Subtotal by Tax Category information.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b" xlink:to="description_JISC02b" xlink:title="label: JISC02b to label_JISC02b"/>
+		<!-- JISC02b_BS21_01 Tax Local Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_01" xlink:label="JISC02b_BS21_01" xlink:title="JISC02b_BS21_01"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_BS21_01" xlink:title="label_JISC02b_BS21_01" id="label_JISC02b_BS21_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Local Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_BS21_01" xlink:to="label_JISC02b_BS21_01" xlink:title="label: JISC02b_BS21_01 to label_JISC02b_BS21_01"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_BS21_01" xlink:title="description_JISC02b_BS21_01" id="description_JISC02b_BS21_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The amount of Tax included in the transaction. Recorded in local currency.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_BS21_01" xlink:to="description_JISC02b_BS21_01" xlink:title="label: JISC02b_BS21_01 to label_JISC02b_BS21_01"/>
+		<!-- JISC02b_BS21_02 Tax Transaction Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_02" xlink:label="JISC02b_BS21_02" xlink:title="JISC02b_BS21_02"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_BS21_02" xlink:title="label_JISC02b_BS21_02" id="label_JISC02b_BS21_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Transaction Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_BS21_02" xlink:to="label_JISC02b_BS21_02" xlink:title="label: JISC02b_BS21_02 to label_JISC02b_BS21_02"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_BS21_02" xlink:title="description_JISC02b_BS21_02" id="description_JISC02b_BS21_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The amount of Tax included in the transaction. Recorded in transaction currency.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_BS21_02" xlink:to="description_JISC02b_BS21_02" xlink:title="label: JISC02b_BS21_02 to label_JISC02b_BS21_02"/>
+		<!-- JISC02b_BS21_05 Consumption Tax Subtotal -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_BS21_05" xlink:label="JISC02b_BS21_05" xlink:title="JISC02b_BS21_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_BS21_05" xlink:title="label_JISC02b_BS21_05" id="label_JISC02b_BS21_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Consumption Tax Subtotal</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_BS21_05" xlink:to="label_JISC02b_BS21_05" xlink:title="label: JISC02b_BS21_05 to label_JISC02b_BS21_05"/>
+		<!-- JISC02b_04 Tax Category -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_04" xlink:label="JISC02b_04" xlink:title="JISC02b_04"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_04" xlink:title="label_JISC02b_04" id="label_JISC02b_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Category</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_04" xlink:to="label_JISC02b_04" xlink:title="label: JISC02b_04 to label_JISC02b_04"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_04" xlink:title="description_JISC02b_04" id="description_JISC02b_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Duty or tax or fee category code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_04" xlink:to="description_JISC02b_04" xlink:title="label: JISC02b_04 to label_JISC02b_04"/>
+		<!-- JISC02b_05 Tax Ratio -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_05" xlink:label="JISC02b_05" xlink:title="JISC02b_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_05" xlink:title="label_JISC02b_05" id="label_JISC02b_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Ratio</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_05" xlink:to="label_JISC02b_05" xlink:title="label: JISC02b_05 to label_JISC02b_05"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_05" xlink:title="description_JISC02b_05" id="description_JISC02b_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The tax rate for this category, expressed as a percentage.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_05" xlink:to="description_JISC02b_05" xlink:title="label: JISC02b_05 to label_JISC02b_05"/>
+		<!-- JISC02b_06 Transaction Taxable Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_06" xlink:label="JISC02b_06" xlink:title="JISC02b_06"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_06" xlink:title="label_JISC02b_06" id="label_JISC02b_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Transaction Taxable Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_06" xlink:to="label_JISC02b_06" xlink:title="label: JISC02b_06 to label_JISC02b_06"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_06" xlink:title="description_JISC02b_06" id="description_JISC02b_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The net amount to which the tax percent (rate) is applied to calculate the tax amount in transaction currency code.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_06" xlink:to="description_JISC02b_06" xlink:title="label: JISC02b_06 to label_JISC02b_06"/>
+		<!-- JISC02b_07 Local Taxable Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02b_07" xlink:label="JISC02b_07" xlink:title="JISC02b_07"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02b_07" xlink:title="label_JISC02b_07" id="label_JISC02b_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Local Taxable Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02b_07" xlink:to="label_JISC02b_07" xlink:title="label: JISC02b_07 to label_JISC02b_07"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02b_07" xlink:title="description_JISC02b_07" id="description_JISC02b_07" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The net amount to which the tax percent (rate) is applied to calculate the tax amount in local currency code.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02b_07" xlink:to="description_JISC02b_07" xlink:title="label: JISC02b_07 to label_JISC02b_07"/>
+		<!-- JISC04b JISC04b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b" xlink:label="JISC04b" xlink:title="JISC04b"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b" xlink:title="label_JISC04b" id="label_JISC04b" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC04b</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b" xlink:to="label_JISC04b" xlink:title="label: JISC04b to label_JISC04b"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b" xlink:title="description_JISC04b" id="description_JISC04b" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains all of the journal entry line details for each transaction (e.g. associated journal entry ID, associated account number, debits or credits associated with the journal entry line). This table should be at the journal entry line level.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b" xlink:to="description_JISC04b" xlink:title="label: JISC04b to label_JISC04b"/>
+		<!-- JISC04b_GL03_01 Journal Line ID -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_01" xlink:label="JISC04b_GL03_01" xlink:title="JISC04b_GL03_01"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_01" xlink:title="label_JISC04b_GL03_01" id="label_JISC04b_GL03_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal Line ID</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_01" xlink:to="label_JISC04b_GL03_01" xlink:title="label: JISC04b_GL03_01 to label_JISC04b_GL03_01"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_01" xlink:title="description_JISC04b_GL03_01" id="description_JISC04b_GL03_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Unique identifier for each journal entry.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_01" xlink:to="description_JISC04b_GL03_01" xlink:title="label: JISC04b_GL03_01 to label_JISC04b_GL03_01"/>
+		<!-- JISC04b_GL03_02 Journal Line Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_02" xlink:label="JISC04b_GL03_02" xlink:title="JISC04b_GL03_02"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_02" xlink:title="label_JISC04b_GL03_02" id="label_JISC04b_GL03_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal Line Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_02" xlink:to="label_JISC04b_GL03_02" xlink:title="label: JISC04b_GL03_02 to label_JISC04b_GL03_02"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_02" xlink:title="description_JISC04b_GL03_02" id="description_JISC04b_GL03_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the line within a journal entry.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_02" xlink:to="description_JISC04b_GL03_02" xlink:title="label: JISC04b_GL03_02 to label_JISC04b_GL03_02"/>
+		<!-- JISC04b_GL03_03 Journal Entry Line Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_03" xlink:label="JISC04b_GL03_03" xlink:title="JISC04b_GL03_03"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_03" xlink:title="label_JISC04b_GL03_03" id="label_JISC04b_GL03_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Journal Entry Line Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_03" xlink:to="label_JISC04b_GL03_03" xlink:title="label: JISC04b_GL03_03 to label_JISC04b_GL03_03"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_03" xlink:title="description_JISC04b_GL03_03" id="description_JISC04b_GL03_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Description of the individual line within the journal entry.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_03" xlink:to="description_JISC04b_GL03_03" xlink:title="label: JISC04b_GL03_03 to label_JISC04b_GL03_03"/>
+		<!-- JISC04b_GL03_04 Quantity -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_04" xlink:label="JISC04b_GL03_04" xlink:title="JISC04b_GL03_04"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_04" xlink:title="label_JISC04b_GL03_04" id="label_JISC04b_GL03_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Quantity</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_04" xlink:to="label_JISC04b_GL03_04" xlink:title="label: JISC04b_GL03_04 to label_JISC04b_GL03_04"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_04" xlink:title="description_JISC04b_GL03_04" id="description_JISC04b_GL03_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Quantity of items referenced in the journal entry line. When the GL Account Number is for inventories or fixed assets, this field is effective. If not, this field is NULL.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_04" xlink:to="description_JISC04b_GL03_04" xlink:title="label: JISC04b_GL03_04 to label_JISC04b_GL03_04"/>
+		<!-- JISC04b_GL03_05 Unit Price -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_05" xlink:label="JISC04b_GL03_05" xlink:title="JISC04b_GL03_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_05" xlink:title="label_JISC04b_GL03_05" id="label_JISC04b_GL03_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Unit Price</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_05" xlink:to="label_JISC04b_GL03_05" xlink:title="label: JISC04b_GL03_05 to label_JISC04b_GL03_05"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_05" xlink:title="description_JISC04b_GL03_05" id="description_JISC04b_GL03_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Per unit price of the inventory or PPE. This field is associated with Quantity and Amount.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_05" xlink:to="description_JISC04b_GL03_05" xlink:title="label: JISC04b_GL03_05 to label_JISC04b_GL03_05"/>
+		<!-- JISC04b_GL03_06 Credit Debit Indicator -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_06" xlink:label="JISC04b_GL03_06" xlink:title="JISC04b_GL03_06"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_06" xlink:title="label_JISC04b_GL03_06" id="label_JISC04b_GL03_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Credit Debit Indicator</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_06" xlink:to="label_JISC04b_GL03_06" xlink:title="label: JISC04b_GL03_06 to label_JISC04b_GL03_06"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_06" xlink:title="description_JISC04b_GL03_06" id="description_JISC04b_GL03_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether the amount is a credit or a debit.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_06" xlink:to="description_JISC04b_GL03_06" xlink:title="label: JISC04b_GL03_06 to label_JISC04b_GL03_06"/>
+		<!-- JISC04b_GL03_07 Reversal Indicator -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_07" xlink:label="JISC04b_GL03_07" xlink:title="JISC04b_GL03_07"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_07" xlink:title="label_JISC04b_GL03_07" id="label_JISC04b_GL03_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Reversal Indicator</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_07" xlink:to="label_JISC04b_GL03_07" xlink:title="label: JISC04b_GL03_07 to label_JISC04b_GL03_07"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_07" xlink:title="description_JISC04b_GL03_07" id="description_JISC04b_GL03_07" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether this entry is a reversal or to be reversed.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_07" xlink:to="description_JISC04b_GL03_07" xlink:title="label: JISC04b_GL03_07 to label_JISC04b_GL03_07"/>
+		<!-- JISC04b_GL03_08 Reversal Journal ID -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_08" xlink:label="JISC04b_GL03_08" xlink:title="JISC04b_GL03_08"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_08" xlink:title="label_JISC04b_GL03_08" id="label_JISC04b_GL03_08" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Reversal Journal ID</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_08" xlink:to="label_JISC04b_GL03_08" xlink:title="label: JISC04b_GL03_08 to label_JISC04b_GL03_08"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_08" xlink:title="description_JISC04b_GL03_08" id="description_JISC04b_GL03_08" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">When the Reversal Indicator = 1, this field identifies the Journal ID of the entry being reversed.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_08" xlink:to="description_JISC04b_GL03_08" xlink:title="label: JISC04b_GL03_08 to label_JISC04b_GL03_08"/>
+		<!-- JISC04b_GL03_09 Cancellation Sign -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC04b_GL03_09" xlink:label="JISC04b_GL03_09" xlink:title="JISC04b_GL03_09"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC04b_GL03_09" xlink:title="label_JISC04b_GL03_09" id="label_JISC04b_GL03_09" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Cancellation Sign</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC04b_GL03_09" xlink:to="label_JISC04b_GL03_09" xlink:title="label: JISC04b_GL03_09 to label_JISC04b_GL03_09"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC04b_GL03_09" xlink:title="description_JISC04b_GL03_09" id="description_JISC04b_GL03_09" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Sign of cancellation of a journal entry already formed but not yet posted.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC04b_GL03_09" xlink:to="description_JISC04b_GL03_09" xlink:title="label: JISC04b_GL03_09 to label_JISC04b_GL03_09"/>
+		<!-- JISC20b JISC20b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b" xlink:label="JISC20b" xlink:title="JISC20b"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b" xlink:title="label_JISC20b" id="label_JISC20b" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC20b</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b" xlink:to="label_JISC20b" xlink:title="label: JISC20b to label_JISC20b"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b" xlink:title="description_JISC20b" id="description_JISC20b" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Pertains to Ledger Account data, with the exclusion of Business Segment information.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b" xlink:to="description_JISC20b" xlink:title="label: JISC20b to label_JISC20b"/>
+		<!-- JISC20b_BS13_01 General Ledger Account Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_01" xlink:label="JISC20b_BS13_01" xlink:title="JISC20b_BS13_01"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_01" xlink:title="label_JISC20b_BS13_01" id="label_JISC20b_BS13_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_01" xlink:to="label_JISC20b_BS13_01" xlink:title="label: JISC20b_BS13_01 to label_JISC20b_BS13_01"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_01" xlink:title="description_JISC20b_BS13_01" id="description_JISC20b_BS13_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the GL account.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_01" xlink:to="description_JISC20b_BS13_01" xlink:title="label: JISC20b_BS13_01 to label_JISC20b_BS13_01"/>
+		<!-- JISC20b_BS13_02 General Ledger Account Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_02" xlink:label="JISC20b_BS13_02" xlink:title="JISC20b_BS13_02"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_02" xlink:title="label_JISC20b_BS13_02" id="label_JISC20b_BS13_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_02" xlink:to="label_JISC20b_BS13_02" xlink:title="label: JISC20b_BS13_02 to label_JISC20b_BS13_02"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_02" xlink:title="description_JISC20b_BS13_02" id="description_JISC20b_BS13_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Name of the GL account.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_02" xlink:to="description_JISC20b_BS13_02" xlink:title="label: JISC20b_BS13_02 to label_JISC20b_BS13_02"/>
+		<!-- JISC20b_BS13_03 General Ledger Account Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_03" xlink:label="JISC20b_BS13_03" xlink:title="JISC20b_BS13_03"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_03" xlink:title="label_JISC20b_BS13_03" id="label_JISC20b_BS13_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_03" xlink:to="label_JISC20b_BS13_03" xlink:title="label: JISC20b_BS13_03 to label_JISC20b_BS13_03"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_03" xlink:title="description_JISC20b_BS13_03" id="description_JISC20b_BS13_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Label or description associated with the GL Account Number.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_03" xlink:to="description_JISC20b_BS13_03" xlink:title="label: JISC20b_BS13_03 to label_JISC20b_BS13_03"/>
+		<!-- JISC20b_BS13_04 Financial Statement Caption -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_04" xlink:label="JISC20b_BS13_04" xlink:title="JISC20b_BS13_04"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_04" xlink:title="label_JISC20b_BS13_04" id="label_JISC20b_BS13_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Financial Statement Caption</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_04" xlink:to="label_JISC20b_BS13_04" xlink:title="label: JISC20b_BS13_04 to label_JISC20b_BS13_04"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_04" xlink:title="description_JISC20b_BS13_04" id="description_JISC20b_BS13_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Financial statement caption that represents a related group of accounts. , AP, cost of sales. The caption can be at the trial balance level.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_04" xlink:to="description_JISC20b_BS13_04" xlink:title="label: JISC20b_BS13_04 to label_JISC20b_BS13_04"/>
+		<!-- JISC20b_BS13_05 Account Type -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_05" xlink:label="JISC20b_BS13_05" xlink:title="JISC20b_BS13_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_05" xlink:title="label_JISC20b_BS13_05" id="label_JISC20b_BS13_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Type</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_05" xlink:to="label_JISC20b_BS13_05" xlink:title="label: JISC20b_BS13_05 to label_JISC20b_BS13_05"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_05" xlink:title="description_JISC20b_BS13_05" id="description_JISC20b_BS13_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Type of account.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_05" xlink:to="description_JISC20b_BS13_05" xlink:title="label: JISC20b_BS13_05 to label_JISC20b_BS13_05"/>
+		<!-- JISC20b_BS13_06 Account Subtype -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_06" xlink:label="JISC20b_BS13_06" xlink:title="JISC20b_BS13_06"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_06" xlink:title="label_JISC20b_BS13_06" id="label_JISC20b_BS13_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Subtype</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_06" xlink:to="label_JISC20b_BS13_06" xlink:title="label: JISC20b_BS13_06 to label_JISC20b_BS13_06"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_06" xlink:title="description_JISC20b_BS13_06" id="description_JISC20b_BS13_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Subtype of the account.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_06" xlink:to="description_JISC20b_BS13_06" xlink:title="label: JISC20b_BS13_06 to label_JISC20b_BS13_06"/>
+		<!-- JISC20b_BS13_07 Account Hierarchy -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_07" xlink:label="JISC20b_BS13_07" xlink:title="JISC20b_BS13_07"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_07" xlink:title="label_JISC20b_BS13_07" id="label_JISC20b_BS13_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Hierarchy</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_07" xlink:to="label_JISC20b_BS13_07" xlink:title="label: JISC20b_BS13_07 to label_JISC20b_BS13_07"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_07" xlink:title="description_JISC20b_BS13_07" id="description_JISC20b_BS13_07" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Corresponding level for account number in the account hierarchy.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_07" xlink:to="description_JISC20b_BS13_07" xlink:title="label: JISC20b_BS13_07 to label_JISC20b_BS13_07"/>
+		<!-- JISC20b_BS13_08 Balance Debit Or Credit Code -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC20b_BS13_08" xlink:label="JISC20b_BS13_08" xlink:title="JISC20b_BS13_08"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC20b_BS13_08" xlink:title="label_JISC20b_BS13_08" id="label_JISC20b_BS13_08" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Balance Debit Or Credit Code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC20b_BS13_08" xlink:to="label_JISC20b_BS13_08" xlink:title="label: JISC20b_BS13_08 to label_JISC20b_BS13_08"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC20b_BS13_08" xlink:title="description_JISC20b_BS13_08" id="description_JISC20b_BS13_08" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether the natural balance of the account is a debit or credit balance by indicating D or C, where assets and expenses have a natural balance of debit, and liabilities, equity and revenues have a natural balance of credit.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC20b_BS13_08" xlink:to="description_JISC20b_BS13_08" xlink:title="label: JISC20b_BS13_08 to label_JISC20b_BS13_08"/>
+		<!-- CC04w CC04w -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w" xlink:label="CC04w" xlink:title="CC04w"/>
+		<link:label xlink:type="resource" xlink:label="label_CC04w" xlink:title="label_CC04w" id="label_CC04w" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC04w</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC04w" xlink:to="label_CC04w" xlink:title="label: CC04w to label_CC04w"/>
+		<link:label xlink:type="resource" xlink:label="description_CC04w" xlink:title="description_CC04w" id="description_CC04w" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Class for monetary amounts in multi currency .</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC04w" xlink:to="description_CC04w" xlink:title="label: CC04w to label_CC04w"/>
+		<!-- CC04w_01 Functional Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_01" xlink:label="CC04w_01" xlink:title="CC04w_01"/>
+		<link:label xlink:type="resource" xlink:label="label_CC04w_01" xlink:title="label_CC04w_01" id="label_CC04w_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Functional Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC04w_01" xlink:to="label_CC04w_01" xlink:title="label: CC04w_01 to label_CC04w_01"/>
+		<link:label xlink:type="resource" xlink:label="description_CC04w_01" xlink:title="description_CC04w_01" id="description_CC04w_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">A monetary amount in functional currency</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC04w_01" xlink:to="description_CC04w_01" xlink:title="label: CC04w_01 to label_CC04w_01"/>
+		<!-- CC04w_02 Reporting Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_02" xlink:label="CC04w_02" xlink:title="CC04w_02"/>
+		<link:label xlink:type="resource" xlink:label="label_CC04w_02" xlink:title="label_CC04w_02" id="label_CC04w_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Reporting Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC04w_02" xlink:to="label_CC04w_02" xlink:title="label: CC04w_02 to label_CC04w_02"/>
+		<link:label xlink:type="resource" xlink:label="description_CC04w_02" xlink:title="description_CC04w_02" id="description_CC04w_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">A monetary amount in reporting currency</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC04w_02" xlink:to="description_CC04w_02" xlink:title="label: CC04w_02 to label_CC04w_02"/>
+		<!-- CC04w_03 Local Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_03" xlink:label="CC04w_03" xlink:title="CC04w_03"/>
+		<link:label xlink:type="resource" xlink:label="label_CC04w_03" xlink:title="label_CC04w_03" id="label_CC04w_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Local Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC04w_03" xlink:to="label_CC04w_03" xlink:title="label: CC04w_03 to label_CC04w_03"/>
+		<link:label xlink:type="resource" xlink:label="description_CC04w_03" xlink:title="description_CC04w_03" id="description_CC04w_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">A monetary amount in local currency</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC04w_03" xlink:to="description_CC04w_03" xlink:title="label: CC04w_03 to label_CC04w_03"/>
+		<!-- CC04w_04 Transaction Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC04w_04" xlink:label="CC04w_04" xlink:title="CC04w_04"/>
+		<link:label xlink:type="resource" xlink:label="label_CC04w_04" xlink:title="label_CC04w_04" id="label_CC04w_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Transaction Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC04w_04" xlink:to="label_CC04w_04" xlink:title="label: CC04w_04 to label_CC04w_04"/>
+		<link:label xlink:type="resource" xlink:label="description_CC04w_04" xlink:title="description_CC04w_04" id="description_CC04w_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">A monetary amount in transaction currency</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC04w_04" xlink:to="description_CC04w_04" xlink:title="label: CC04w_04 to label_CC04w_04"/>
+		<!-- CC10B CC10B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC10B" xlink:label="CC10B" xlink:title="CC10B"/>
+		<link:label xlink:type="resource" xlink:label="label_CC10B" xlink:title="label_CC10B" id="label_CC10B" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC10B</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC10B" xlink:to="label_CC10B" xlink:title="label: CC10B to label_CC10B"/>
+		<link:label xlink:type="resource" xlink:label="description_CC10B" xlink:title="description_CC10B" id="description_CC10B" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Class for the user activities including creation, approval, and last modification.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC10B" xlink:to="description_CC10B" xlink:title="label: CC10B to label_CC10B"/>
+		<!-- CC06B CC06B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B" xlink:label="CC06B" xlink:title="CC06B"/>
+		<link:label xlink:type="resource" xlink:label="label_CC06B" xlink:title="label_CC06B" id="label_CC06B" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC06B</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC06B" xlink:to="label_CC06B" xlink:title="label: CC06B to label_CC06B"/>
+		<link:label xlink:type="resource" xlink:label="description_CC06B" xlink:title="description_CC06B" id="description_CC06B" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Information about the data that was created into the system.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC06B" xlink:to="description_CC06B" xlink:title="label: CC06B to label_CC06B"/>
+		<!-- CC06B_CC05_01 Created -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_01" xlink:label="CC06B_CC05_01" xlink:title="CC06B_CC05_01"/>
+		<link:label xlink:type="resource" xlink:label="label_CC06B_CC05_01" xlink:title="label_CC06B_CC05_01" id="label_CC06B_CC05_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Created</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC06B_CC05_01" xlink:to="label_CC06B_CC05_01" xlink:title="label: CC06B_CC05_01 to label_CC06B_CC05_01"/>
+		<!-- CC06B_CC05_02 Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_02" xlink:label="CC06B_CC05_02" xlink:title="CC06B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="label_CC06B_CC05_02" xlink:title="label_CC06B_CC05_02" id="label_CC06B_CC05_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC06B_CC05_02" xlink:to="label_CC06B_CC05_02" xlink:title="label: CC06B_CC05_02 to label_CC06B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="description_CC06B_CC05_02" xlink:title="description_CC06B_CC05_02" id="description_CC06B_CC05_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The date of activity. This should be a system generated date (rather than user-created date), when possible. This is sometimes referred to as the creation date.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC06B_CC05_02" xlink:to="description_CC06B_CC05_02" xlink:title="label: CC06B_CC05_02 to label_CC06B_CC05_02"/>
+		<!-- CC06B_CC05_03 Time -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC06B_CC05_03" xlink:label="CC06B_CC05_03" xlink:title="CC06B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="label_CC06B_CC05_03" xlink:title="label_CC06B_CC05_03" id="label_CC06B_CC05_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Time</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC06B_CC05_03" xlink:to="label_CC06B_CC05_03" xlink:title="label: CC06B_CC05_03 to label_CC06B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="description_CC06B_CC05_03" xlink:title="description_CC06B_CC05_03" id="description_CC06B_CC05_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The time of activity.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC06B_CC05_03" xlink:to="description_CC06B_CC05_03" xlink:title="label: CC06B_CC05_03 to label_CC06B_CC05_03"/>
+		<!-- CC07B CC07B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B" xlink:label="CC07B" xlink:title="CC07B"/>
+		<link:label xlink:type="resource" xlink:label="label_CC07B" xlink:title="label_CC07B" id="label_CC07B" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC07B</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC07B" xlink:to="label_CC07B" xlink:title="label: CC07B to label_CC07B"/>
+		<link:label xlink:type="resource" xlink:label="description_CC07B" xlink:title="description_CC07B" id="description_CC07B" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Information about the data was approved within the system.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC07B" xlink:to="description_CC07B" xlink:title="label: CC07B to label_CC07B"/>
+		<!-- CC07B_CC05_01 Approved -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_01" xlink:label="CC07B_CC05_01" xlink:title="CC07B_CC05_01"/>
+		<link:label xlink:type="resource" xlink:label="label_CC07B_CC05_01" xlink:title="label_CC07B_CC05_01" id="label_CC07B_CC05_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Approved</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC07B_CC05_01" xlink:to="label_CC07B_CC05_01" xlink:title="label: CC07B_CC05_01 to label_CC07B_CC05_01"/>
+		<!-- CC07B_CC05_02 Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_02" xlink:label="CC07B_CC05_02" xlink:title="CC07B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="label_CC07B_CC05_02" xlink:title="label_CC07B_CC05_02" id="label_CC07B_CC05_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC07B_CC05_02" xlink:to="label_CC07B_CC05_02" xlink:title="label: CC07B_CC05_02 to label_CC07B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="description_CC07B_CC05_02" xlink:title="description_CC07B_CC05_02" id="description_CC07B_CC05_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The date of activity. This should be a system generated date (rather than user-created date), when possible. This is sometimes referred to as the creation date.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC07B_CC05_02" xlink:to="description_CC07B_CC05_02" xlink:title="label: CC07B_CC05_02 to label_CC07B_CC05_02"/>
+		<!-- CC07B_CC05_03 Time -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC07B_CC05_03" xlink:label="CC07B_CC05_03" xlink:title="CC07B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="label_CC07B_CC05_03" xlink:title="label_CC07B_CC05_03" id="label_CC07B_CC05_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Time</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC07B_CC05_03" xlink:to="label_CC07B_CC05_03" xlink:title="label: CC07B_CC05_03 to label_CC07B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="description_CC07B_CC05_03" xlink:title="description_CC07B_CC05_03" id="description_CC07B_CC05_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The time of activity.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC07B_CC05_03" xlink:to="description_CC07B_CC05_03" xlink:title="label: CC07B_CC05_03 to label_CC07B_CC05_03"/>
+		<!-- CC08B CC08B -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B" xlink:label="CC08B" xlink:title="CC08B"/>
+		<link:label xlink:type="resource" xlink:label="label_CC08B" xlink:title="label_CC08B" id="label_CC08B" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC08B</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC08B" xlink:to="label_CC08B" xlink:title="label: CC08B to label_CC08B"/>
+		<link:label xlink:type="resource" xlink:label="description_CC08B" xlink:title="description_CC08B" id="description_CC08B" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Information about the data was  last modified within the system.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC08B" xlink:to="description_CC08B" xlink:title="label: CC08B to label_CC08B"/>
+		<!-- CC08B_CC05_01 Last Modified -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_01" xlink:label="CC08B_CC05_01" xlink:title="CC08B_CC05_01"/>
+		<link:label xlink:type="resource" xlink:label="label_CC08B_CC05_01" xlink:title="label_CC08B_CC05_01" id="label_CC08B_CC05_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Last Modified</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC08B_CC05_01" xlink:to="label_CC08B_CC05_01" xlink:title="label: CC08B_CC05_01 to label_CC08B_CC05_01"/>
+		<!-- CC08B_CC05_02 Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_02" xlink:label="CC08B_CC05_02" xlink:title="CC08B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="label_CC08B_CC05_02" xlink:title="label_CC08B_CC05_02" id="label_CC08B_CC05_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC08B_CC05_02" xlink:to="label_CC08B_CC05_02" xlink:title="label: CC08B_CC05_02 to label_CC08B_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="description_CC08B_CC05_02" xlink:title="description_CC08B_CC05_02" id="description_CC08B_CC05_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The date of activity. This should be a system generated date (rather than user-created date), when possible. This is sometimes referred to as the creation date.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC08B_CC05_02" xlink:to="description_CC08B_CC05_02" xlink:title="label: CC08B_CC05_02 to label_CC08B_CC05_02"/>
+		<!-- CC08B_CC05_03 Time -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC08B_CC05_03" xlink:label="CC08B_CC05_03" xlink:title="CC08B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="label_CC08B_CC05_03" xlink:title="label_CC08B_CC05_03" id="label_CC08B_CC05_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Time</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC08B_CC05_03" xlink:to="label_CC08B_CC05_03" xlink:title="label: CC08B_CC05_03 to label_CC08B_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="description_CC08B_CC05_03" xlink:title="description_CC08B_CC05_03" id="description_CC08B_CC05_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The time of activity.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC08B_CC05_03" xlink:to="description_CC08B_CC05_03" xlink:title="label: CC08B_CC05_03 to label_CC08B_CC05_03"/>
+		<!-- CC09e CC09e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e" xlink:label="CC09e" xlink:title="CC09e"/>
+		<link:label xlink:type="resource" xlink:label="label_CC09e" xlink:title="label_CC09e" id="label_CC09e" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">CC09e</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC09e" xlink:to="label_CC09e" xlink:title="label: CC09e to label_CC09e"/>
+		<link:label xlink:type="resource" xlink:label="description_CC09e" xlink:title="description_CC09e" id="description_CC09e" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Information about the data that was posted.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC09e" xlink:to="description_CC09e" xlink:title="label: CC09e to label_CC09e"/>
+		<!-- CC09e_CC05_01 Posted -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_01" xlink:label="CC09e_CC05_01" xlink:title="CC09e_CC05_01"/>
+		<link:label xlink:type="resource" xlink:label="label_CC09e_CC05_01" xlink:title="label_CC09e_CC05_01" id="label_CC09e_CC05_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Posted</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC09e_CC05_01" xlink:to="label_CC09e_CC05_01" xlink:title="label: CC09e_CC05_01 to label_CC09e_CC05_01"/>
+		<!-- CC09e_CC05_02 Date -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_02" xlink:label="CC09e_CC05_02" xlink:title="CC09e_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="label_CC09e_CC05_02" xlink:title="label_CC09e_CC05_02" id="label_CC09e_CC05_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Date</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC09e_CC05_02" xlink:to="label_CC09e_CC05_02" xlink:title="label: CC09e_CC05_02 to label_CC09e_CC05_02"/>
+		<link:label xlink:type="resource" xlink:label="description_CC09e_CC05_02" xlink:title="description_CC09e_CC05_02" id="description_CC09e_CC05_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The date of activity. This should be a system generated date (rather than user-created date), when possible. This is sometimes referred to as the creation date.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC09e_CC05_02" xlink:to="description_CC09e_CC05_02" xlink:title="label: CC09e_CC05_02 to label_CC09e_CC05_02"/>
+		<!-- CC09e_CC05_03 Time -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#CC09e_CC05_03" xlink:label="CC09e_CC05_03" xlink:title="CC09e_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="label_CC09e_CC05_03" xlink:title="label_CC09e_CC05_03" id="label_CC09e_CC05_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Time</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="CC09e_CC05_03" xlink:to="label_CC09e_CC05_03" xlink:title="label: CC09e_CC05_03 to label_CC09e_CC05_03"/>
+		<link:label xlink:type="resource" xlink:label="description_CC09e_CC05_03" xlink:title="description_CC09e_CC05_03" id="description_CC09e_CC05_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The time of activity.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="CC09e_CC05_03" xlink:to="description_CC09e_CC05_03" xlink:title="label: CC09e_CC05_03 to label_CC09e_CC05_03"/>
+		<!-- GL01d GL01d -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d" xlink:label="GL01d" xlink:title="GL01d"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d" xlink:title="label_GL01d" id="label_GL01d" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">GL01d</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d" xlink:to="label_GL01d" xlink:title="label: GL01d to label_GL01d"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d" xlink:title="description_GL01d" id="description_GL01d" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Contains the code and name for the account segment, as well as the GL Account Number to which the account segment is related. Account Segment provides additional information for particular GL Accounts. Such information would be treated as an Account Segment below A/R, thus resulting in a lengthy account structure. The Account Segment structure is therefore defined as a set to record related information, which efficiently stops account names and numbers from becoming too long and too complex. Account Segment is more flexible to capture the complicated information. Some of the most frequently used account segments are defined as fixed fields in tables, such as GL Details. These segments are called "fixed account segments" in the document. Fixed account segments and other customized account segments are covered in this table.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d" xlink:to="description_GL01d" xlink:title="label: GL01d to label_GL01d"/>
+		<!-- GL01d_01 General Ledger Account Segment ID -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_01" xlink:label="GL01d_01" xlink:title="GL01d_01"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_01" xlink:title="label_GL01d_01" id="label_GL01d_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Segment ID</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_01" xlink:to="label_GL01d_01" xlink:title="label: GL01d_01 to label_GL01d_01"/>
+		<!-- GL01d_02 General Ledger Account Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_02" xlink:label="GL01d_02" xlink:title="GL01d_02"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_02" xlink:title="label_GL01d_02" id="label_GL01d_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_02" xlink:to="label_GL01d_02" xlink:title="label: GL01d_02 to label_GL01d_02"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d_02" xlink:title="description_GL01d_02" id="description_GL01d_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the GL account.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d_02" xlink:to="description_GL01d_02" xlink:title="label: GL01d_02 to label_GL01d_02"/>
+		<!-- GL01d_03 Account Segment Number -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_03" xlink:label="GL01d_03" xlink:title="GL01d_03"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_03" xlink:title="label_GL01d_03" id="label_GL01d_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Segment Number</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_03" xlink:to="label_GL01d_03" xlink:title="label: GL01d_03 to label_GL01d_03"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d_03" xlink:title="description_GL01d_03" id="description_GL01d_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Number of the Account Segment. Case 1: If the value of this field is 0, the record is used to explain a fixed account segment that is distinguished by the Account Segment Name of the record. Case 2: If the value of this field is 5, the record is used to explain the No.5 field of Account Segment X, named Account Segment 5 in the tables, such as GL Details.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d_03" xlink:to="description_GL01d_03" xlink:title="label: GL01d_03 to label_GL01d_03"/>
+		<!-- GL01d_04 Account Segment Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_04" xlink:label="GL01d_04" xlink:title="GL01d_04"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_04" xlink:title="label_GL01d_04" id="label_GL01d_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Segment Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_04" xlink:to="label_GL01d_04" xlink:title="label: GL01d_04 to label_GL01d_04"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d_04" xlink:title="description_GL01d_04" id="description_GL01d_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Name of the Account Segment. Case 1: If the value of the Account Segment Number of the record is 0, the field contains the name of a fixed account segment, such as Account Segment Employee. Case 2: If the value of the Account Segment Number of the record is 5, the field value should be the name of a customized account segment, such as welfare expenditure.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d_04" xlink:to="description_GL01d_04" xlink:title="label: GL01d_04 to label_GL01d_04"/>
+		<!-- GL01d_05 Corresponding File -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_05" xlink:label="GL01d_05" xlink:title="GL01d_05"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_05" xlink:title="label_GL01d_05" id="label_GL01d_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Corresponding File</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_05" xlink:to="label_GL01d_05" xlink:title="label: GL01d_05 to label_GL01d_05"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d_05" xlink:title="description_GL01d_05" id="description_GL01d_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Table corresponding to the account segment. Case 1: If the value of the Account Segment Number of the record is 0, the field contains the table name corresponding to the fixed account segment, such as BAS Employee for Account Segment Employee. Case 2: If the value of the Account Segment Number is larger than 0, and no other table besides BAS Customized ACC Segment contains the basic information of the customized account segment, the field value should be BAS Customized ACC Segment. Case 3: If the value of the Account Segment Number is larger than 0, and there is a table containing the basic information of the customized account segment, the field value should be the table's name, such as BAS Customer.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d_05" xlink:to="description_GL01d_05" xlink:title="label: GL01d_05 to label_GL01d_05"/>
+		<!-- GL01d_06 Account Segment Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_06" xlink:label="GL01d_06" xlink:title="GL01d_06"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_06" xlink:title="label_GL01d_06" id="label_GL01d_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Account Segment Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_06" xlink:to="label_GL01d_06" xlink:title="label: GL01d_06 to label_GL01d_06"/>
+		<link:label xlink:type="resource" xlink:label="description_GL01d_06" xlink:title="description_GL01d_06" id="description_GL01d_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Detailed description of the Account Segment Name.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="GL01d_06" xlink:to="description_GL01d_06" xlink:title="label: GL01d_06 to label_GL01d_06"/>
+		<!-- GL01d_08 General Ledger Account Segment -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL01d_08" xlink:label="GL01d_08" xlink:title="GL01d_08"/>
+		<link:label xlink:type="resource" xlink:label="label_GL01d_08" xlink:title="label_GL01d_08" id="label_GL01d_08" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">General Ledger Account Segment</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="GL01d_08" xlink:to="label_GL01d_08" xlink:title="label: GL01d_08 to label_GL01d_08"/>
+		<!-- BS10e BS10e -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e" xlink:label="BS10e" xlink:title="BS10e"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e" xlink:title="label_BS10e" id="label_BS10e" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">BS10e</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e" xlink:to="label_BS10e" xlink:title="label: BS10e to label_BS10e"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e" xlink:title="description_BS10e" id="description_BS10e" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">An Account Segment is a customized file item, which includes the information of the customized account segments that are not fixed account segments and no other table contains their description information. This table is used together with the BAS Customized ACC Value.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e" xlink:to="description_BS10e" xlink:title="label: BS10e to label_BS10e"/>
+		<!-- BS10e_01 Customized Account Segment ID -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_01" xlink:label="BS10e_01" xlink:title="BS10e_01"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_01" xlink:title="label_BS10e_01" id="label_BS10e_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Customized Account Segment ID</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_01" xlink:to="label_BS10e_01" xlink:title="label: BS10e_01 to label_BS10e_01"/>
+		<!-- BS10e_02 Customized Account Segment Code -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_02" xlink:label="BS10e_02" xlink:title="BS10e_02"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_02" xlink:title="label_BS10e_02" id="label_BS10e_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Customized Account Segment Code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_02" xlink:to="label_BS10e_02" xlink:title="label: BS10e_02 to label_BS10e_02"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_02" xlink:title="description_BS10e_02" id="description_BS10e_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Code for the customized account segment that audit data need to be used. This does not include the fixed account segment having been identified.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_02" xlink:to="description_BS10e_02" xlink:title="label: BS10e_02 to label_BS10e_02"/>
+		<!-- BS10e_03 Customized Account Segment Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_03" xlink:label="BS10e_03" xlink:title="BS10e_03"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_03" xlink:title="label_BS10e_03" id="label_BS10e_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Customized Account Segment Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_03" xlink:to="label_BS10e_03" xlink:title="label: BS10e_03 to label_BS10e_03"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_03" xlink:title="description_BS10e_03" id="description_BS10e_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Customized account segment name that audit data need to be used.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_03" xlink:to="description_BS10e_03" xlink:title="label: BS10e_03 to label_BS10e_03"/>
+		<!-- BS10e_04 Customized Account Description -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_04" xlink:label="BS10e_04" xlink:title="BS10e_04"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_04" xlink:title="label_BS10e_04" id="label_BS10e_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Customized Account Description</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_04" xlink:to="label_BS10e_04" xlink:title="label: BS10e_04 to label_BS10e_04"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_04" xlink:title="description_BS10e_04" id="description_BS10e_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Customized account segment description that audit data need to be used.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_04" xlink:to="description_BS10e_04" xlink:title="label: BS10e_04 to label_BS10e_04"/>
+		<!-- BS10e_05 Customized Account Encoding Rule -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_05" xlink:label="BS10e_05" xlink:title="BS10e_05"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_05" xlink:title="label_BS10e_05" id="label_BS10e_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Customized Account Encoding Rule</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_05" xlink:to="label_BS10e_05" xlink:title="label: BS10e_05 to label_BS10e_05"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_05" xlink:title="description_BS10e_05" id="description_BS10e_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Encoding rules of the value of a customized account segment. If the encoding rule has a hierarchy feature, each level is separated by "-".</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_05" xlink:to="description_BS10e_05" xlink:title="label: BS10e_05 to label_BS10e_05"/>
+		<!-- BS10e_06 Hierarchy Flag -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_06" xlink:label="BS10e_06" xlink:title="BS10e_06"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_06" xlink:title="label_BS10e_06" id="label_BS10e_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Hierarchy Flag</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_06" xlink:to="label_BS10e_06" xlink:title="label: BS10e_06 to label_BS10e_06"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_06" xlink:title="description_BS10e_06" id="description_BS10e_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Whether or not the table value has a hierarchy feature.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_06" xlink:to="description_BS10e_06" xlink:title="label: BS10e_06 to label_BS10e_06"/>
+		<!-- BS10e_07 Active Flag -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_07" xlink:label="BS10e_07" xlink:title="BS10e_07"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_07" xlink:title="label_BS10e_07" id="label_BS10e_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Active Flag</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_07" xlink:to="label_BS10e_07" xlink:title="label: BS10e_07 to label_BS10e_07"/>
+		<link:label xlink:type="resource" xlink:label="description_BS10e_07" xlink:title="description_BS10e_07" id="description_BS10e_07" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates whether the Customized ACC Segment Code is active or inactive.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS10e_07" xlink:to="description_BS10e_07" xlink:title="label: BS10e_07 to label_BS10e_07"/>
+		<!-- BS10e_08 Parent -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS10e_08" xlink:label="BS10e_08" xlink:title="BS10e_08"/>
+		<link:label xlink:type="resource" xlink:label="label_BS10e_08" xlink:title="label_BS10e_08" id="label_BS10e_08" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Parent</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS10e_08" xlink:to="label_BS10e_08" xlink:title="label: BS10e_08 to label_BS10e_08"/>
+		<!-- BS05bC BS05bC -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC" xlink:label="BS05bC" xlink:title="BS05bC"/>
+		<link:label xlink:type="resource" xlink:label="label_BS05bC" xlink:title="label_BS05bC" id="label_BS05bC" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">BS05bC</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS05bC" xlink:to="label_BS05bC" xlink:title="label: BS05bC to label_BS05bC"/>
+		<link:label xlink:type="resource" xlink:label="description_BS05bC" xlink:title="description_BS05bC" id="description_BS05bC" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The BAS Business Segment and the BAS Business Segment Hierarchy have been designed to tabularize the portions of an organizational chart that is reflected in the business transactions as structural units e.g. business unit, department, cost center and project). The fields within the BAS Business Segment are used to capture the individual organizational unit represented by each box on an organizational diagram.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS05bC" xlink:to="description_BS05bC" xlink:title="label: BS05bC to label_BS05bC"/>
+		<!-- BS05bC_01 Business Segment Code -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_01" xlink:label="BS05bC_01" xlink:title="BS05bC_01"/>
+		<link:label xlink:type="resource" xlink:label="label_BS05bC_01" xlink:title="label_BS05bC_01" id="label_BS05bC_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Business Segment Code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS05bC_01" xlink:to="label_BS05bC_01" xlink:title="label: BS05bC_01 to label_BS05bC_01"/>
+		<link:label xlink:type="resource" xlink:label="description_BS05bC_01" xlink:title="description_BS05bC_01" id="description_BS05bC_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Code for each business segment.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS05bC_01" xlink:to="description_BS05bC_01" xlink:title="label: BS05bC_01 to label_BS05bC_01"/>
+		<!-- BS05bC_02 Business Segment Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_02" xlink:label="BS05bC_02" xlink:title="BS05bC_02"/>
+		<link:label xlink:type="resource" xlink:label="label_BS05bC_02" xlink:title="label_BS05bC_02" id="label_BS05bC_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Business Segment Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS05bC_02" xlink:to="label_BS05bC_02" xlink:title="label: BS05bC_02 to label_BS05bC_02"/>
+		<link:label xlink:type="resource" xlink:label="description_BS05bC_02" xlink:title="description_BS05bC_02" id="description_BS05bC_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Name of the business segment.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS05bC_02" xlink:to="description_BS05bC_02" xlink:title="label: BS05bC_02 to label_BS05bC_02"/>
+		<!-- BS05bC_03 Segment Reference Level -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_03" xlink:label="BS05bC_03" xlink:title="BS05bC_03"/>
+		<link:label xlink:type="resource" xlink:label="label_BS05bC_03" xlink:title="label_BS05bC_03" id="label_BS05bC_03" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Segment Reference Level</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS05bC_03" xlink:to="label_BS05bC_03" xlink:title="label: BS05bC_03 to label_BS05bC_03"/>
+		<link:label xlink:type="resource" xlink:label="description_BS05bC_03" xlink:title="description_BS05bC_03" id="description_BS05bC_03" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Relative level of the segment, with 1 being the consolidated level and the numbers increasing through the lower levels of the organizational chart.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS05bC_03" xlink:to="description_BS05bC_03" xlink:title="label: BS05bC_03 to label_BS05bC_03"/>
+		<!-- BS05bC_04 Organization Type Name -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS05bC_04" xlink:label="BS05bC_04" xlink:title="BS05bC_04"/>
+		<link:label xlink:type="resource" xlink:label="label_BS05bC_04" xlink:title="label_BS05bC_04" id="label_BS05bC_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Organization Type Name</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="BS05bC_04" xlink:to="label_BS05bC_04" xlink:title="label: BS05bC_04 to label_BS05bC_04"/>
+		<link:label xlink:type="resource" xlink:label="description_BS05bC_04" xlink:title="description_BS05bC_04" id="description_BS05bC_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Indicates the name of the organization type.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="BS05bC_04" xlink:to="description_BS05bC_04" xlink:title="label: BS05bC_04 to label_BS05bC_04"/>
+		<!-- JISC02c JISC02c -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c" xlink:label="JISC02c" xlink:title="JISC02c"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c" xlink:title="label_JISC02c" id="label_JISC02c" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">JISC02c</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c" xlink:to="label_JISC02c" xlink:title="label: JISC02c to label_JISC02c"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c" xlink:title="description_JISC02c" id="description_JISC02c" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Consumption Tax Subtotal by Tax Category information.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c" xlink:to="description_JISC02c" xlink:title="label: JISC02c to label_JISC02c"/>
+		<!-- JISC02c_BS21_01 Tax Local Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_01" xlink:label="JISC02c_BS21_01" xlink:title="JISC02c_BS21_01"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_BS21_01" xlink:title="label_JISC02c_BS21_01" id="label_JISC02c_BS21_01" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Local Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_BS21_01" xlink:to="label_JISC02c_BS21_01" xlink:title="label: JISC02c_BS21_01 to label_JISC02c_BS21_01"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_BS21_01" xlink:title="description_JISC02c_BS21_01" id="description_JISC02c_BS21_01" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The amount of Tax included in the transaction. Recorded in local currency.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_BS21_01" xlink:to="description_JISC02c_BS21_01" xlink:title="label: JISC02c_BS21_01 to label_JISC02c_BS21_01"/>
+		<!-- JISC02c_BS21_02 Tax Transaction Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_02" xlink:label="JISC02c_BS21_02" xlink:title="JISC02c_BS21_02"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_BS21_02" xlink:title="label_JISC02c_BS21_02" id="label_JISC02c_BS21_02" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Transaction Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_BS21_02" xlink:to="label_JISC02c_BS21_02" xlink:title="label: JISC02c_BS21_02 to label_JISC02c_BS21_02"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_BS21_02" xlink:title="description_JISC02c_BS21_02" id="description_JISC02c_BS21_02" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The amount of Tax included in the transaction. Recorded in transaction currency.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_BS21_02" xlink:to="description_JISC02c_BS21_02" xlink:title="label: JISC02c_BS21_02 to label_JISC02c_BS21_02"/>
+		<!-- JISC02c_BS21_05 Consumption Tax Subtotal -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_BS21_05" xlink:label="JISC02c_BS21_05" xlink:title="JISC02c_BS21_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_BS21_05" xlink:title="label_JISC02c_BS21_05" id="label_JISC02c_BS21_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Consumption Tax Subtotal</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_BS21_05" xlink:to="label_JISC02c_BS21_05" xlink:title="label: JISC02c_BS21_05 to label_JISC02c_BS21_05"/>
+		<!-- JISC02c_04 Tax Category -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_04" xlink:label="JISC02c_04" xlink:title="JISC02c_04"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_04" xlink:title="label_JISC02c_04" id="label_JISC02c_04" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Category</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_04" xlink:to="label_JISC02c_04" xlink:title="label: JISC02c_04 to label_JISC02c_04"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_04" xlink:title="description_JISC02c_04" id="description_JISC02c_04" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">Duty or tax or fee category code</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_04" xlink:to="description_JISC02c_04" xlink:title="label: JISC02c_04 to label_JISC02c_04"/>
+		<!-- JISC02c_05 Tax Ratio -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_05" xlink:label="JISC02c_05" xlink:title="JISC02c_05"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_05" xlink:title="label_JISC02c_05" id="label_JISC02c_05" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Tax Ratio</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_05" xlink:to="label_JISC02c_05" xlink:title="label: JISC02c_05 to label_JISC02c_05"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_05" xlink:title="description_JISC02c_05" id="description_JISC02c_05" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The tax rate for this category, expressed as a percentage.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_05" xlink:to="description_JISC02c_05" xlink:title="label: JISC02c_05 to label_JISC02c_05"/>
+		<!-- JISC02c_06 Transaction Taxable Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_06" xlink:label="JISC02c_06" xlink:title="JISC02c_06"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_06" xlink:title="label_JISC02c_06" id="label_JISC02c_06" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Transaction Taxable Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_06" xlink:to="label_JISC02c_06" xlink:title="label: JISC02c_06 to label_JISC02c_06"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_06" xlink:title="description_JISC02c_06" id="description_JISC02c_06" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The net amount to which the tax percent (rate) is applied to calculate the tax amount in transaction currency code.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_06" xlink:to="description_JISC02c_06" xlink:title="label: JISC02c_06 to label_JISC02c_06"/>
+		<!-- JISC02c_07 Local Taxable Amount -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JISC02c_07" xlink:label="JISC02c_07" xlink:title="JISC02c_07"/>
+		<link:label xlink:type="resource" xlink:label="label_JISC02c_07" xlink:title="label_JISC02c_07" id="label_JISC02c_07" xml:lang="en" xlink:role="http://www.xbrl.org/2003/role/label">Local Taxable Amount</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="JISC02c_07" xlink:to="label_JISC02c_07" xlink:title="label: JISC02c_07 to label_JISC02c_07"/>
+		<link:label xlink:type="resource" xlink:label="description_JISC02c_07" xlink:title="description_JISC02c_07" id="description_JISC02c_07" xml:lang="en" xlink:role="http://www.iso.org/awi21926_jisc/role/description">The net amount to which the tax percent (rate) is applied to calculate the tax amount in local currency code.</link:label>
+		<link:labelArc xlink:type="arc" xlink:arcrole="http://www.iso.org/awi21926_jisc/arcrole/concept-description" xlink:from="JISC02c_07" xlink:to="description_JISC02c_07" xlink:title="label: JISC02c_07 to label_JISC02c_07"/>
+	</link:labelLink>
+</link:linkbase>

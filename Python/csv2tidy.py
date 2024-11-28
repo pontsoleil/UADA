@@ -200,7 +200,7 @@ class DataProcessor:
             self.list_process(d, path)
 
 
-class CsvHierarchical:
+class StructuredCSV:
     def __init__(self, binding_dict, semantic_dict):
         self.binding_dict = binding_dict
         self.semantic_dict = semantic_dict
@@ -384,7 +384,7 @@ class CsvHierarchical:
         value_num = None
         if 'd'==column[0]:
             column = column[1:]
-            value_num = int(value)
+            value_num = int(value) if str(value).isdigit() else value
         else:
             if not columnValue:
                 return True
@@ -518,9 +518,10 @@ class CsvHierarchical:
             if ',' in column:
                 # Split the columns and columnValues
                 column_names = [c.strip() for c in column.split(',')]
-                columnValues = [v.strip() for v in columnValue.split(' ')]
-                # Clean up the columnValues list by removing empty strings
-                columnValues = [v for v in columnValues if v]
+                # Pattern to match the parts within square brackets
+                pattern = r'\[.*?\]'
+                # Find all matches
+                columnValues = re.findall(pattern, columnValue)
                 # Create the dictionary
                 columns = [{column_names[i]: columnValues[i]} for i in range(len(column_names)) if columnValues[i]]
             else:
@@ -580,6 +581,9 @@ class CsvHierarchical:
             else:
                 dimension = self.dimension[dimension_id]
                 counter = dimension['counter']
+                if counter < 0:
+                    counter = 0
+                    # Fix *** ERROR node with specified leading_part ['JP07a[1839]', 'JP08a[-1]'] condition BS04c6 must exists.
                 dimension_path += f"[{counter}]"
                 dimension_path = self.swap_patterns(dimension_path)
                 path_elements.append(dimension_path)
@@ -696,6 +700,22 @@ class CsvHierarchical:
         else:
             return input_string  # Return the original string if patterns are not found
 
+    # def is_object_defined(self, data, leading_part):
+    #     try:
+    #         current_level = data  # Start at the top-level dictionary
+    #         for part in leading_part:
+    #             # Split the key and index
+    #             key, index = part.split('[')
+    #             index = int(index[:-1])  # Remove the closing bracket and convert to int
+    #             # Check if the key exists and navigate further
+    #             if key not in current_level or index not in current_level[key]:
+    #                 return False  # If key or index doesn't exist, return False
+    #             # Descend into the next level
+    #             current_level = current_level[key][index]
+    #         return True  # If all levels exist, the object is defined
+    #     except (KeyError, IndexError, ValueError, TypeError):
+    #         return False  # Any error implies the object is not defined
+        
     def refrect_dimension(self, leading_part):
         # Define the regex patterns for ([key=val] or [not(..)]) and [number]
         key_val_pattern = re.compile(r'\[([^\[\]]*?=.*?|not\(.*?\))\]')
@@ -720,7 +740,13 @@ class CsvHierarchical:
                 num = int(match_number[-1].strip('[]')) if match_number else None
                 counter = dim['counter']
                 if num and int(num) != counter:
-                    debug_print(f"** {num} {counter}")
+                    self.debug_print(f"** {num} {counter}")
+                elif counter < 0:
+                    match_element_number = number_pattern.findall(dim['element'])
+                    element_num = int(match_element_number[-1].strip('[]')) if match_element_number else None
+                    if None != element_num and int(element_num) != counter:
+                        self.debug_print(f"** {element_num} {counter}")
+                        counter = element_num
                 new_path = f"{dim_id}[{counter}]"
             element = dim['element']
             if match_key_val and '[[' in element:
@@ -736,11 +762,22 @@ class CsvHierarchical:
                 if len(key_vals) > 1:
                     if match_key_val:
                         new_path += f"[{match_key_val[-1]}]"
-                    # else:
-                    #     new_path += "[__any__]"
             if '][' in new_path:
                 new_path = self.swap_patterns(new_path)
             new_leading_part.append(new_path)
+        # if self.is_object_defined(self.tidy_data, new_leading_part):
+        #     # Regular expression to find the last index in the path
+        #     match = re.search(r'\[([0-9]+)\]$', new_leading_part)
+        #     if match:
+        #         # Extract the current index
+        #         current_index = int(match.group(1))
+        #         # Increment the index
+        #         new_index = current_index + 1
+        #         # Replace the last index with the incremented one
+        #         new_leading_part = re.sub(r'\[([0-9]+)\]$', f'[{new_index}]', new_leading_part)
+        #         self.debug_print(f"** incremented counter {new_leading_part}")
+        #     else:
+        #         self.debug_print("No index found in the last segment of the path")
         return new_leading_part
 
     def process_element_column(self, record, column, datatype, semPath, value):
@@ -871,7 +908,7 @@ class CsvHierarchical:
                 leading_part[-1] = re.sub(pattern, "", leading_part[-1])
             found_node = self.lookup(node, leading_part)
             if None == found_node:
-                print("*** ERROR node with specified condition must exists.")
+                print(f"*** ERROR node with specified path {path} must exists.")
                 return None
             if isinstance(found_node, dict):
                 key_, conditions_ = self.split_query(condition)
@@ -905,7 +942,7 @@ class CsvHierarchical:
                 if not isinstance(selected_node_, list):
                     print("*** ERROR node with specified condition must be a list.")
                     return None
-                condition_ = conditions_[0]
+                condition_ = conditions_[0] if conditions_ else ""
                 query = condition_
                 if '-1' == query:
                     return selected_node_[-1]
@@ -983,9 +1020,11 @@ class CsvHierarchical:
                             if len(search_condition) > 1:
                                 num = int(condition)
                                 while len(node[key]) <= num:
-                                    node[key].append([])
+                                    node[key].append({})
                                 value_condition = search_condition[1]
                                 self.check_node_condition(node[key][num], value_condition)
+                            if len(node[key]) == 0:
+                                node[key].append({})
                             return node[key][-1]
                         else:
                             if '=' in condition:
@@ -1246,13 +1285,17 @@ def tidy_to_csv(data, filename, encoding="utf-8-sig"):
         writer.writeheader()
         for record in records:
             row = {}
+            data_exists = False
             for id, d in record.items():
                 if id in dim_line:
                     id_ = re.sub(r"\[.*?\]", "", id)
-                    row[id_] = 0 == d and None or d
+                    if d and "0" != str(d):
+                        row[id_] = d
                 else:
+                    data_exists = True
                     row[id] = d
-            writer.writerow(row)
+            if data_exists:
+                writer.writerow(row)
 
     return header
 
@@ -1261,7 +1304,7 @@ def fill_json_meta(out_csv, out_json, header):
     document_info = {
         "documentType": "https://xbrl.org/2021/xbrl-csv",
         "namespaces": {
-            "cor": "http://www.iso.org/21926_jisc",
+            "cor": "http://www.iso.org/iso21926",
             "ns0": "http://www.example.com",
             "link": "http://www.xbrl.org/2003/linkbase",
             "iso4217": "http://www.xbrl.org/2003/iso4217",
@@ -1270,7 +1313,7 @@ def fill_json_meta(out_csv, out_json, header):
             "xbrldi": "http://xbrl.org/2006/xbrldi",
             "xlink": "http://www.w3.org/1999/xlink",
         },
-        "taxonomy": ["../../xbrl/core.xsd"],
+        "taxonomy": ["../../taxonomy/core.xsd"],
     }
 
     table_templates = {}
@@ -1319,14 +1362,14 @@ def fill_json_meta(out_csv, out_json, header):
     cor_template["dimensions"]["period"] = "2024-03-01T00:00:00"
     cor_template["dimensions"]["entity"] = "ns0:Example co."
 
-    table_templates["cor_japan_template"] = cor_template
+    table_templates["iso21926_template"] = cor_template
 
     tables = {}
     cor_table = {
-        "template": "cor_japan_template",
+        "template": "iso21926_template",
         "url": out_csv[1 + out_csv.rindex(SEP) :],
     }
-    tables["cor_japan_table"] = cor_table
+    tables["iso21926_table"] = cor_table
 
     json_obj = {
         "documentInfo": document_info,
@@ -1426,7 +1469,18 @@ def main():
             if bool(re.match(pattern, list(row.values())[0])):
                 dataList.append(row)
 
-    converter = CsvHierarchical(binding_dict, semantic_dict)
+    converter = StructuredCSV(binding_dict, semantic_dict)
+
+    # Find keys starting with 'dColumn' and having line: '[*]'
+    line_key = [
+        key[1:] for key, value in binding_dict.items()
+        if key.startswith('dColumn') and value.get('line') == '[*]'
+    ]
+    # Update dataList
+    for row in dataList:
+        for key in line_key:
+            if key in row and row[key] == '':
+                row[key] = '\u3000'  # Replace empty string with full-width space
 
     for n, record in enumerate(dataList):
         converter.process_record(record, n)

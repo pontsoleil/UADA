@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--extracted from OIM C:\Users\nobuy\GitHub\UADC\data\instance\JISCinstance.json-->
+<xbrl
+  xmlns="http://www.xbrl.org/2003/instance"
+  xmlns:cor="http://www.iso.org/awi21926_jisc"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+    <link:schemaRef xlink:href="core.xsd" xlink:type="simple"/>
+    <context id="c-01">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC03_GL02_01 contextRef="c-01" id="cor.r_1.JISC03_GL02_01">0001-20090401-18-1-1-463</cor:JISC03_GL02_01>
+    <cor:JISC03_GL02_03 contextRef="c-01" id="cor.r_1.JISC03_GL02_03">2008-08-01</cor:JISC03_GL02_03>
+    <cor:JISC03_GL02_06 contextRef="c-01" id="cor.r_1.JISC03_GL02_06">gj</cor:JISC03_GL02_06>
+    <context id="c-02">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-02" id="cor.r_2.JISC04b_GL03_01">726</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-02" id="cor.r_2.JISC04b_GL03_02">Travel expense</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-02" id="cor.r_2.JISC04b_GL03_06">true</cor:JISC04b_GL03_06>
+    <unit id="u-01">
+        <measure>iso4217:JPY</measure>
+    </unit>
+    <cor:CC04w_01
+      contextRef="c-02"
+      decimals="INF"
+      id="cor.r_2.CC04w_01"
+      unitRef="u-01">18572</cor:CC04w_01>
+    <context id="c-03">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-03" id="cor.r_3.BS05bC_01">10</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-03" id="cor.r_3.BS05bC_02">Sapporo</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-03" id="cor.r_3.BS05bC_04">Department</cor:BS05bC_04>
+    <context id="c-04">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-04" id="cor.r_4.JISC04b_GL03_01">191</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-04" id="cor.r_4.JISC04b_GL03_02">Provisional payment consumption tax, etc.</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-04" id="cor.r_4.JISC04b_GL03_06">true</cor:JISC04b_GL03_06>
+    <cor:CC04w_01
+      contextRef="c-04"
+      decimals="INF"
+      id="cor.r_4.CC04w_01"
+      unitRef="u-01">928</cor:CC04w_01>
+    <context id="c-05">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-05" id="cor.r_5.BS05bC_01">10</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-05" id="cor.r_5.BS05bC_02">Sapporo</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-05" id="cor.r_5.BS05bC_04">Department</cor:BS05bC_04>
+    <context id="c-06">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>3</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-06" id="cor.r_6.JISC04b_GL03_01">111</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-06" id="cor.r_6.JISC04b_GL03_02">Cash</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-06" id="cor.r_6.JISC04b_GL03_06">false</cor:JISC04b_GL03_06>
+    <cor:CC04w_01
+      contextRef="c-06"
+      decimals="INF"
+      id="cor.r_6.CC04w_01"
+      unitRef="u-01">19500</cor:CC04w_01>
+    <cor:JISC04b_GL03_03 contextRef="c-06" id="cor.r_6.JISC04b_GL03_03">Travel expense</cor:JISC04b_GL03_03>
+    <context id="c-07">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>3</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-07" id="cor.r_7.BS05bC_01">0</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-07" id="cor.r_7.BS05bC_02">Common</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-07" id="cor.r_7.BS05bC_04">Department</cor:BS05bC_04>
+    <context id="c-08">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC03_GL02_01 contextRef="c-08" id="cor.r_8.JISC03_GL02_01">0001-20090401-246-2-1-465</cor:JISC03_GL02_01>
+    <cor:JISC03_GL02_03 contextRef="c-08" id="cor.r_8.JISC03_GL02_03">2008-08-19</cor:JISC03_GL02_03>
+    <cor:JISC03_GL02_06 contextRef="c-08" id="cor.r_8.JISC03_GL02_06">gj</cor:JISC03_GL02_06>
+    <context id="c-09">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-09" id="cor.r_9.JISC04b_GL03_01">726</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-09" id="cor.r_9.JISC04b_GL03_02">Travel expense</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-09" id="cor.r_9.JISC04b_GL03_06">true</cor:JISC04b_GL03_06>
+    <cor:CC04w_01
+      contextRef="c-09"
+      decimals="INF"
+      id="cor.r_9.CC04w_01"
+      unitRef="u-01">9524</cor:CC04w_01>
+    <context id="c-10">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-10" id="cor.r_10.BS05bC_01">30</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-10" id="cor.r_10.BS05bC_02">Nagoya</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-10" id="cor.r_10.BS05bC_04">Department</cor:BS05bC_04>
+    <context id="c-11">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-11" id="cor.r_11.JISC04b_GL03_01">191</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-11" id="cor.r_11.JISC04b_GL03_02">Provisional payment consumption tax, etc.</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-11" id="cor.r_11.JISC04b_GL03_06">true</cor:JISC04b_GL03_06>
+    <cor:CC04w_01
+      contextRef="c-11"
+      decimals="INF"
+      id="cor.r_11.CC04w_01"
+      unitRef="u-01">476</cor:CC04w_01>
+    <context id="c-12">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-12" id="cor.r_12.BS05bC_01">30</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-12" id="cor.r_12.BS05bC_02">Nagoya</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-12" id="cor.r_12.BS05bC_04">Department</cor:BS05bC_04>
+    <context id="c-13">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>3</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:JISC04b_GL03_01 contextRef="c-13" id="cor.r_13.JISC04b_GL03_01">111</cor:JISC04b_GL03_01>
+    <cor:JISC04b_GL03_02 contextRef="c-13" id="cor.r_13.JISC04b_GL03_02">Cash</cor:JISC04b_GL03_02>
+    <cor:JISC04b_GL03_06 contextRef="c-13" id="cor.r_13.JISC04b_GL03_06">false</cor:JISC04b_GL03_06>
+    <cor:CC04w_01
+      contextRef="c-13"
+      decimals="INF"
+      id="cor.r_13.CC04w_01"
+      unitRef="u-01">10000</cor:CC04w_01>
+    <context id="c-14">
+        <entity>
+            <identifier scheme="http://www.example.com">Example Co.</identifier>
+            <segment>
+                <xbrldi:typedMember dimension="cor:d_BS05bC">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC03">
+                    <cor:_v>2</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_JISC04b">
+                    <cor:_v>3</cor:_v>
+                </xbrldi:typedMember>
+            </segment>
+        </entity>
+        <period>
+            <instant>2023-10-31</instant>
+        </period>
+    </context>
+    <cor:BS05bC_01 contextRef="c-14" id="cor.r_14.BS05bC_01">0</cor:BS05bC_01>
+    <cor:BS05bC_02 contextRef="c-14" id="cor.r_14.BS05bC_02">Common</cor:BS05bC_02>
+    <cor:BS05bC_04 contextRef="c-14" id="cor.r_14.BS05bC_04">Department</cor:BS05bC_04>
+</xbrl>

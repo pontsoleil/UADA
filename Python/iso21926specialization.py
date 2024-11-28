@@ -64,7 +64,7 @@ Key Features:
    - Uses DEBUG and TRACE flags to print diagnostic messages, aiding in understanding the flow and for troubleshooting purposes.
 
 Example Usage:
-Python awi21926specialization.py AWI21926_FSM.csv AWI21926_BSM.csv -s JISC_FSM.csv -l JISC_BSM.csv
+Python awi21926specialization.py AWI21926_FSM.csv AWI21926_BSM.csv -s JP_FSM.csv -l JP_BSM.csv
 
 Where:
 - The first parameter is the input FSM file.
@@ -117,7 +117,7 @@ module_dict = {
     'Property Plant Equipment': 'PE'
 }
 
-module_dict['JISC'] = 'JP'
+module_dict['JP'] = 'JP'
 
 module_num = {}
 

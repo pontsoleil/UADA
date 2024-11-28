@@ -1,0 +1,91 @@
+{
+  "documentInfo": {
+    "documentType": "https://xbrl.org/2021/xbrl-csv",
+    "namespaces": {
+      "cor": "http://www.iso.org/awi21926_jisc",
+      "iso4217": "http://www.xbrl.org/2003/iso4217",
+      "scheme": "http://www.example.com",
+      "xbrl": "https://xbrl.org/2021"
+    },
+    "taxonomy": [
+      "core.xsd"
+    ]
+  },
+  "tables": {
+    "cor": {
+      "url": "JISCinstance.csv"
+    }
+  },
+  "tableTemplates": {
+    "cor": {
+      "dimensions": {
+		"period": "2023-11-01T00:00:00",
+		"entity": "scheme:Example Co.",
+        "cor:d_JISC03": "$d_JISC03",
+        "cor:d_JISC04b": "$d_JISC04b",
+        "cor:d_BS05bC": "$d_BS05bC"
+      },
+      "columns": {
+        "d_JISC03": {},
+        "d_JISC04b": {},
+        "d_BS05bC": {},
+        "JISC03_GL02_01": {
+          "dimensions": {
+              "concept": "cor:JISC03_GL02_01"
+          }
+        },
+        "JISC03_GL02_03": {
+          "dimensions": {
+              "concept": "cor:JISC03_GL02_03"
+          }
+        },
+        "JISC03_GL02_06": {
+          "dimensions": {
+              "concept": "cor:JISC03_GL02_06"
+          }
+        },
+        "JISC04b_GL03_01": {
+          "dimensions": {
+              "concept": "cor:JISC04b_GL03_01"
+          }
+        },
+        "JISC04b_GL03_02": {
+          "dimensions": {
+              "concept": "cor:JISC04b_GL03_02"
+          }
+        },
+        "JISC04b_GL03_06": {
+          "dimensions": {
+              "concept": "cor:JISC04b_GL03_06"
+          }
+        },
+        "CC04w_01": {
+          "dimensions": {
+              "concept": "cor:CC04w_01",
+              "unit": "iso4217:JPY"
+          }
+        },
+        "JISC04b_GL03_03": {
+          "dimensions": {
+              "concept": "cor:JISC04b_GL03_03"
+          }
+        },
+        "BS05bC_01": {
+          "dimensions": {
+              "concept": "cor:BS05bC_01"
+          }
+        },
+        "BS05bC_02": {
+          "dimensions": {
+              "concept": "cor:BS05bC_02"
+          }
+        },
+        "BS05bC_04": {
+          "dimensions": {
+              "concept": "cor:BS05bC_04"
+          }
+        }
+      }
+    }
+  }
+}

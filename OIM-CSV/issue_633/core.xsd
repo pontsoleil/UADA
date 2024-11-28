@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) 2022 XBRL Japan  inc. -->
+<schema 
+	targetNamespace="http://www.iso.org/awi21926_jisc" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cor="http://www.iso.org/awi21926_jisc" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xl="http://www.xbrl.org/2003/XLink" 
+	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" 
+	xmlns:num="http://www.xbrl.org/dtr/type/numeric" 
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
+	xmlns:label="http://xbrl.org/2008/label" 
+	xmlns:reference="http://xbrl.org/2008/reference">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+	<import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+	<import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+	<import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+	<import namespace="http://xbrl.org/2008/reference" schemaLocation="http://www.xbrl.org/2008/generic-reference.xsd"/>
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-lbl-ja.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-lbl-en.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-pre.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-def.xml"/>
+			<!-- 
+				role type
+			-->
+			<link:roleType id="awi21926_jisc-role" roleURI="http://www.iso.org/awi21926_jisc/role">
+				<link:definition>link awi21926_jisc</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+				<link:usedOn>link:presentationLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_JISC03" roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC03">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_GL05b" roleURI="http://www.iso.org/awi21926_jisc/role/link_GL05b">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_BS02y" roleURI="http://www.iso.org/awi21926_jisc/role/link_BS02y">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_BS18m" roleURI="http://www.iso.org/awi21926_jisc/role/link_BS18m">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_JISC02b" roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC02b">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_JISC04b" roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC04b">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_JISC20b" roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC20b">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC04w" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC04w">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC10B" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC10B">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC06B" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC06B">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC07B" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC07B">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC08B" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC08B">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_CC09e" roleURI="http://www.iso.org/awi21926_jisc/role/link_CC09e">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_GL01d" roleURI="http://www.iso.org/awi21926_jisc/role/link_GL01d">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_BS10e" roleURI="http://www.iso.org/awi21926_jisc/role/link_BS10e">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_BS05bC" roleURI="http://www.iso.org/awi21926_jisc/role/link_BS05bC">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_JISC02c" roleURI="http://www.iso.org/awi21926_jisc/role/link_JISC02c">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!--
+				description: roleType arcroleType
+			-->
+			<link:roleType id="description" roleURI="http://www.iso.org/awi21926_jisc/role/description">
+				<link:definition>description</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:arcroleType id="concept-description" cyclesAllowed="undirected" arcroleURI="http://www.iso.org/awi21926_jisc/arcrole/concept-description">
+				<link:definition>concept to description</link:definition>
+				<link:usedOn>link:labelArc</link:usedOn>
+			</link:arcroleType>
+		</appinfo>
+	</annotation>
+	<!-- typed dimension referenced element -->
+	<element name="_v" id="_v">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<!-- Hypercube -->
+	<element name="h_JISC03" id="h_JISC03" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_GL05b" id="h_GL05b" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_BS02y" id="h_BS02y" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_BS18m" id="h_BS18m" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_JISC02b" id="h_JISC02b" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_JISC04b" id="h_JISC04b" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_JISC20b" id="h_JISC20b" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC04w" id="h_CC04w" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC10B" id="h_CC10B" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC06B" id="h_CC06B" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC07B" id="h_CC07B" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC08B" id="h_CC08B" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_CC09e" id="h_CC09e" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_GL01d" id="h_GL01d" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_BS10e" id="h_BS10e" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_BS05bC" id="h_BS05bC" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_JISC02c" id="h_JISC02c" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<!-- Dimension -->
+	<element name="d_JISC03" id="d_JISC03" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_GL05b" id="d_GL05b" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_BS02y" id="d_BS02y" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_BS18m" id="d_BS18m" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_JISC02b" id="d_JISC02b" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_JISC04b" id="d_JISC04b" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_JISC20b" id="d_JISC20b" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC04w" id="d_CC04w" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC10B" id="d_CC10B" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC06B" id="d_CC06B" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC07B" id="d_CC07B" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC08B" id="d_CC08B" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_CC09e" id="d_CC09e" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_GL01d" id="d_GL01d" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_BS10e" id="d_BS10e" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_BS05bC" id="d_BS05bC" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_JISC02c" id="d_JISC02c" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<!-- item type -->
+	<complexType name="stringItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="amountItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="unitPriceAmountItemType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="binaryObjectItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="codeItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="dateItemType">
+		<simpleContent>
+			<restriction base="xbrli:dateItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="timeItemType">
+		<simpleContent>
+			<restriction base="xbrli:timeItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="documentReferenceItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierItemType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="indicatorItemType">
+		<simpleContent>
+			<restriction base="xbrli:booleanItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="textItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="percentageItemType">
+		<simpleContent>
+			<restriction base="xbrli:pureItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="quantityItemType">
+		<simpleContent>
+			<restriction base="xbrli:intItemType"/>
+		</simpleContent>
+	</complexType>
+	<!-- element -->
+	<element name="JISC03" id="JISC03" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_01" id="JISC03_GL02_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_02" id="JISC03_GL02_02" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_03" id="JISC03_GL02_03" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_04" id="JISC03_GL02_04" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_06" id="JISC03_GL02_06" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_07" id="JISC03_GL02_07" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_08" id="JISC03_GL02_08" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_09" id="JISC03_GL02_09" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_10" id="JISC03_GL02_10" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_11" id="JISC03_GL02_11" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC03_GL02_12" id="JISC03_GL02_12" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b" id="GL05b" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_01" id="GL05b_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_02" id="GL05b_02" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_03" id="GL05b_03" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_04" id="GL05b_04" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_05" id="GL05b_05" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL05b_06" id="GL05b_06" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS02y" id="BS02y" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS02y_01" id="BS02y_01" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS02y_02" id="BS02y_02" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS02y_03" id="BS02y_03" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS02y_04" id="BS02y_04" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS18m" id="BS18m" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS18m_01" id="BS18m_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS18m_02" id="BS18m_02" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS18m_03" id="BS18m_03" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b" id="JISC02b" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_BS21_01" id="JISC02b_BS21_01" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_BS21_02" id="JISC02b_BS21_02" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_BS21_05" id="JISC02b_BS21_05" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_04" id="JISC02b_04" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_05" id="JISC02b_05" type="cor:percentageItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_06" id="JISC02b_06" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02b_07" id="JISC02b_07" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b" id="JISC04b" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_01" id="JISC04b_GL03_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_02" id="JISC04b_GL03_02" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_03" id="JISC04b_GL03_03" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_04" id="JISC04b_GL03_04" type="cor:quantityItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_05" id="JISC04b_GL03_05" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_06" id="JISC04b_GL03_06" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_07" id="JISC04b_GL03_07" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_08" id="JISC04b_GL03_08" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC04b_GL03_09" id="JISC04b_GL03_09" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b" id="JISC20b" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_01" id="JISC20b_BS13_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_02" id="JISC20b_BS13_02" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_03" id="JISC20b_BS13_03" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_04" id="JISC20b_BS13_04" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_05" id="JISC20b_BS13_05" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_06" id="JISC20b_BS13_06" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_07" id="JISC20b_BS13_07" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC20b_BS13_08" id="JISC20b_BS13_08" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC04w" id="CC04w" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC04w_01" id="CC04w_01" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC04w_02" id="CC04w_02" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC04w_03" id="CC04w_03" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC04w_04" id="CC04w_04" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC10B" id="CC10B" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC06B" id="CC06B" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC06B_CC05_01" id="CC06B_CC05_01" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC06B_CC05_02" id="CC06B_CC05_02" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC06B_CC05_03" id="CC06B_CC05_03" type="cor:timeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC07B" id="CC07B" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC07B_CC05_01" id="CC07B_CC05_01" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC07B_CC05_02" id="CC07B_CC05_02" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC07B_CC05_03" id="CC07B_CC05_03" type="cor:timeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC08B" id="CC08B" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC08B_CC05_01" id="CC08B_CC05_01" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC08B_CC05_02" id="CC08B_CC05_02" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC08B_CC05_03" id="CC08B_CC05_03" type="cor:timeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC09e" id="CC09e" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC09e_CC05_01" id="CC09e_CC05_01" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC09e_CC05_02" id="CC09e_CC05_02" type="cor:dateItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="CC09e_CC05_03" id="CC09e_CC05_03" type="cor:timeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d" id="GL01d" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_01" id="GL01d_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_02" id="GL01d_02" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_03" id="GL01d_03" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_04" id="GL01d_04" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_05" id="GL01d_05" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_06" id="GL01d_06" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="GL01d_08" id="GL01d_08" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e" id="BS10e" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_01" id="BS10e_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_02" id="BS10e_02" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_03" id="BS10e_03" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_04" id="BS10e_04" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_05" id="BS10e_05" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_06" id="BS10e_06" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_07" id="BS10e_07" type="cor:indicatorItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS10e_08" id="BS10e_08" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS05bC" id="BS05bC" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS05bC_01" id="BS05bC_01" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS05bC_02" id="BS05bC_02" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS05bC_03" id="BS05bC_03" type="cor:identifierItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="BS05bC_04" id="BS05bC_04" type="cor:textItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c" id="JISC02c" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_BS21_01" id="JISC02c_BS21_01" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_BS21_02" id="JISC02c_BS21_02" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_BS21_05" id="JISC02c_BS21_05" type="xbrli:stringItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_04" id="JISC02c_04" type="cor:codeItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_05" id="JISC02c_05" type="cor:percentageItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_06" id="JISC02c_06" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="JISC02c_07" id="JISC02c_07" type="cor:amountItemType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+</schema>

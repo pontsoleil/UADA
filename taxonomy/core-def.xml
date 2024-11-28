@@ -1,0 +1,950 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!--(c) 2023 XBRL Japan inc. -->
+<link:linkbase
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+	xmlns:link="http://www.xbrl.org/2003/linkbase"
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+	xmlns:xlink="http://www.w3.org/1999/xlink">
+	<!-- roleRef -->
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP07a" xlink:type="simple" xlink:href="core.xsd#link_JP07a"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE02a1" xlink:type="simple" xlink:href="core.xsd#link_GE02a1"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE03dk" xlink:type="simple" xlink:href="core.xsd#link_GE03dk"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE03dl" xlink:type="simple" xlink:href="core.xsd#link_GE03dl"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE03dm" xlink:type="simple" xlink:href="core.xsd#link_GE03dm"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE03dn" xlink:type="simple" xlink:href="core.xsd#link_GE03dn"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP08a" xlink:type="simple" xlink:href="core.xsd#link_JP08a"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gN" xlink:type="simple" xlink:href="core.xsd#link_GE05gN"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE07b" xlink:type="simple" xlink:href="core.xsd#link_GE07b"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE15aa" xlink:type="simple" xlink:href="core.xsd#link_GE15aa"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP06b" xlink:type="simple" xlink:href="core.xsd#link_JP06b"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP05a" xlink:type="simple" xlink:href="core.xsd#link_JP05a"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE06t" xlink:type="simple" xlink:href="core.xsd#link_GE06t"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gO" xlink:type="simple" xlink:href="core.xsd#link_GE05gO"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gP" xlink:type="simple" xlink:href="core.xsd#link_GE05gP"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gQ" xlink:type="simple" xlink:href="core.xsd#link_GE05gQ"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gR" xlink:type="simple" xlink:href="core.xsd#link_GE05gR"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP03b" xlink:type="simple" xlink:href="core.xsd#link_JP03b"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gS" xlink:type="simple" xlink:href="core.xsd#link_GE05gS"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gT" xlink:type="simple" xlink:href="core.xsd#link_GE05gT"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP02c" xlink:type="simple" xlink:href="core.xsd#link_JP02c"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gU" xlink:type="simple" xlink:href="core.xsd#link_GE05gU"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05gV" xlink:type="simple" xlink:href="core.xsd#link_GE05gV"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP06d" xlink:type="simple" xlink:href="core.xsd#link_JP06d"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP05b" xlink:type="simple" xlink:href="core.xsd#link_JP05b"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE06u" xlink:type="simple" xlink:href="core.xsd#link_GE06u"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05hW" xlink:type="simple" xlink:href="core.xsd#link_GE05hW"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05hX" xlink:type="simple" xlink:href="core.xsd#link_GE05hX"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05hY" xlink:type="simple" xlink:href="core.xsd#link_GE05hY"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05hZ" xlink:type="simple" xlink:href="core.xsd#link_GE05hZ"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP03c" xlink:type="simple" xlink:href="core.xsd#link_JP03c"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05h0" xlink:type="simple" xlink:href="core.xsd#link_GE05h0"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05h1" xlink:type="simple" xlink:href="core.xsd#link_GE05h1"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_JP02d" xlink:type="simple" xlink:href="core.xsd#link_JP02d"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05h2" xlink:type="simple" xlink:href="core.xsd#link_GE05h2"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_GE05h3" xlink:type="simple" xlink:href="core.xsd#link_GE05h3"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_BS04c5" xlink:type="simple" xlink:href="core.xsd#link_BS04c5"/>
+	<link:roleRef roleURI="http://www.iso.org/iso21926/role/link_BS04c6" xlink:type="simple" xlink:href="core.xsd#link_BS04c6"/>
+	<!-- arcroleRef -->
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+	<link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP07a">
+		<!-- JP07a all (has-hypercube) h_JP07a link_JP07a -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP07a" xlink:label="JP07a" xlink:title="JP07a"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP07a" xlink:label="h_JP07a" xlink:title="h_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP07a" xlink:to="h_JP07a" xlink:title="all (has-hypercube): JP07a to h_JP07a" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP07a" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP07a to d_JP07a" order="1"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP07a_GL02_01" xlink:label="JP07a_GL02_01" xlink:title="JP07a_GL02_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="JP07a_GL02_01" xlink:title="domain-member: JP07a to JP07a_GL02_01 ID" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP07a_GL02_02" xlink:label="JP07a_GL02_02" xlink:title="JP07a_GL02_02 Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="JP07a_GL02_02" xlink:title="domain-member: JP07a to JP07a_GL02_02 Number" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP07a_GL02_03" xlink:label="JP07a_GL02_03" xlink:title="JP07a_GL02_03 Effective Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="JP07a_GL02_03" xlink:title="domain-member: JP07a to JP07a_GL02_03 Effective Date" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP07a_GL02_04" xlink:label="JP07a_GL02_04" xlink:title="JP07a_GL02_04 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="JP07a_GL02_04" xlink:title="domain-member: JP07a to JP07a_GL02_04 Description" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE02a1" xlink:label="GE02a1" xlink:title="GE02a1 Activities"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE02a1" xlink:title="domain-member: JP07a to GE02a1 Activities" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dk" xlink:label="GE03dk" xlink:title="GE03dk (Approved) Activity"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dk" xlink:title="domain-member: JP07a to GE03dk (Approved) Activity" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dk_01" xlink:label="GE03dk_01" xlink:title="GE03dk_01 Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dk_01" xlink:title="domain-member: JP07a to GE03dk_01 Date" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dk_02" xlink:label="GE03dk_02" xlink:title="GE03dk_02 Time"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dk_02" xlink:title="domain-member: JP07a to GE03dk_02 Time" order="8"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dm" xlink:label="BS29dm" xlink:title="BS29dm User"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dm" xlink:title="domain-member: JP07a to BS29dm User" order="9"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dm_01" xlink:label="BS29dm_01" xlink:title="BS29dm_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dm_01" xlink:title="domain-member: JP07a to BS29dm_01 ID" order="10"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dl" xlink:label="GE03dl" xlink:title="GE03dl (Created) Activity"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dl" xlink:title="domain-member: JP07a to GE03dl (Created) Activity" order="11"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dl_01" xlink:label="GE03dl_01" xlink:title="GE03dl_01 Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dl_01" xlink:title="domain-member: JP07a to GE03dl_01 Date" order="12"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dl_02" xlink:label="GE03dl_02" xlink:title="GE03dl_02 Time"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dl_02" xlink:title="domain-member: JP07a to GE03dl_02 Time" order="13"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dn" xlink:label="BS29dn" xlink:title="BS29dn User"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dn" xlink:title="domain-member: JP07a to BS29dn User" order="14"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dn_01" xlink:label="BS29dn_01" xlink:title="BS29dn_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dn_01" xlink:title="domain-member: JP07a to BS29dn_01 ID" order="15"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dm" xlink:label="GE03dm" xlink:title="GE03dm (Last Modified) Activity"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dm" xlink:title="domain-member: JP07a to GE03dm (Last Modified) Activity" order="16"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dm_01" xlink:label="GE03dm_01" xlink:title="GE03dm_01 Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dm_01" xlink:title="domain-member: JP07a to GE03dm_01 Date" order="17"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dm_02" xlink:label="GE03dm_02" xlink:title="GE03dm_02 Time"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dm_02" xlink:title="domain-member: JP07a to GE03dm_02 Time" order="18"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29do" xlink:label="BS29do" xlink:title="BS29do User"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29do" xlink:title="domain-member: JP07a to BS29do User" order="19"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29do_01" xlink:label="BS29do_01" xlink:title="BS29do_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29do_01" xlink:title="domain-member: JP07a to BS29do_01 ID" order="20"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dn" xlink:label="GE03dn" xlink:title="GE03dn (Posted) Activity"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dn" xlink:title="domain-member: JP07a to GE03dn (Posted) Activity" order="21"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dn_01" xlink:label="GE03dn_01" xlink:title="GE03dn_01 Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dn_01" xlink:title="domain-member: JP07a to GE03dn_01 Date" order="22"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dn_02" xlink:label="GE03dn_02" xlink:title="GE03dn_02 Time"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GE03dn_02" xlink:title="domain-member: JP07a to GE03dn_02 Time" order="23"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dp" xlink:label="BS29dp" xlink:title="BS29dp User"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dp" xlink:title="domain-member: JP07a to BS29dp User" order="24"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS29dp_01" xlink:label="BS29dp_01" xlink:title="BS29dp_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS29dp_01" xlink:title="domain-member: JP07a to BS29dp_01 ID" order="25"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS01y" xlink:label="BS01y" xlink:title="BS01y Accounting Period"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS01y" xlink:title="domain-member: JP07a to BS01y Accounting Period" order="26"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS01y_01" xlink:label="BS01y_01" xlink:title="BS01y_01 Fiscal Year"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS01y_01" xlink:title="domain-member: JP07a to BS01y_01 Fiscal Year" order="27"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS01y_02" xlink:label="BS01y_02" xlink:title="BS01y_02 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS01y_02" xlink:title="domain-member: JP07a to BS01y_02 ID" order="28"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05c" xlink:label="GL05c" xlink:title="GL05c General Ledger Source"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GL05c" xlink:title="domain-member: JP07a to GL05c General Ledger Source" order="29"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GL05c_01" xlink:label="GL05c_01" xlink:title="GL05c_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="GL05c_01" xlink:title="domain-member: JP07a to GL05c_01 Code" order="30"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS15c" xlink:label="BS15c" xlink:title="BS15c Journal Entry Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS15c" xlink:title="domain-member: JP07a to BS15c Journal Entry Type" order="31"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS15c_01" xlink:label="BS15c_01" xlink:title="BS15c_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP07a" xlink:to="BS15c_01" xlink:title="domain-member: JP07a to BS15c_01 Code" order="32"/>
+		<!-- JP08a targetRole link_JP08a -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a" xlink:label="JP08a" xlink:title="JP08a JP Journal Entry Line"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/iso21926/role/link_JP08a" xlink:from="JP07a" xlink:to="JP08a" xlink:title="domain-member: JP07a to JP08a in link_JP08a" order="33"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE02a1">
+		<!-- GE02a1 all (has-hypercube) h_GE02a1 link_GE02a1 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE02a1" xlink:label="GE02a1" xlink:title="GE02a1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE02a1" xlink:label="h_GE02a1" xlink:title="h_GE02a1"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE02a1" xlink:to="h_GE02a1" xlink:title="all (has-hypercube): GE02a1 to h_GE02a1" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE02a1" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE02a1 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE02a1" xlink:label="d_GE02a1" xlink:title="d_GE02a1"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE02a1" xlink:to="d_GE02a1" xlink:title="hypercube-dimension: h_GE02a1 to d_GE02a1" order="2"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE03dk">
+		<!-- GE03dk all (has-hypercube) h_GE03dk link_GE03dk -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dk" xlink:label="GE03dk" xlink:title="GE03dk"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE03dk" xlink:label="h_GE03dk" xlink:title="h_GE03dk"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE03dk" xlink:to="h_GE03dk" xlink:title="all (has-hypercube): GE03dk to h_GE03dk" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dk" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE03dk to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE03dk" xlink:label="d_GE03dk" xlink:title="d_GE03dk"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dk" xlink:to="d_GE03dk" xlink:title="hypercube-dimension: h_GE03dk to d_GE03dk" order="2"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE03dl">
+		<!-- GE03dl all (has-hypercube) h_GE03dl link_GE03dl -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dl" xlink:label="GE03dl" xlink:title="GE03dl"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE03dl" xlink:label="h_GE03dl" xlink:title="h_GE03dl"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE03dl" xlink:to="h_GE03dl" xlink:title="all (has-hypercube): GE03dl to h_GE03dl" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dl" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE03dl to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE03dl" xlink:label="d_GE03dl" xlink:title="d_GE03dl"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dl" xlink:to="d_GE03dl" xlink:title="hypercube-dimension: h_GE03dl to d_GE03dl" order="2"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE03dm">
+		<!-- GE03dm all (has-hypercube) h_GE03dm link_GE03dm -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dm" xlink:label="GE03dm" xlink:title="GE03dm"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE03dm" xlink:label="h_GE03dm" xlink:title="h_GE03dm"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE03dm" xlink:to="h_GE03dm" xlink:title="all (has-hypercube): GE03dm to h_GE03dm" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dm" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE03dm to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE03dm" xlink:label="d_GE03dm" xlink:title="d_GE03dm"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dm" xlink:to="d_GE03dm" xlink:title="hypercube-dimension: h_GE03dm to d_GE03dm" order="2"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE03dn">
+		<!-- GE03dn all (has-hypercube) h_GE03dn link_GE03dn -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE03dn" xlink:label="GE03dn" xlink:title="GE03dn"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE03dn" xlink:label="h_GE03dn" xlink:title="h_GE03dn"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE03dn" xlink:to="h_GE03dn" xlink:title="all (has-hypercube): GE03dn to h_GE03dn" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dn" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE03dn to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE03dn" xlink:label="d_GE03dn" xlink:title="d_GE03dn"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE03dn" xlink:to="d_GE03dn" xlink:title="hypercube-dimension: h_GE03dn to d_GE03dn" order="2"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP08a">
+		<!-- JP08a all (has-hypercube) h_JP08a link_JP08a -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a" xlink:label="JP08a" xlink:title="JP08a"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP08a" xlink:label="h_JP08a" xlink:title="h_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP08a" xlink:to="h_JP08a" xlink:title="all (has-hypercube): JP08a to h_JP08a" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP08a" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP08a to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP08a" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP08a to d_JP08a" order="2"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_01" xlink:label="JP08a_GL03_01" xlink:title="JP08a_GL03_01 Journal ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_01" xlink:title="domain-member: JP08a to JP08a_GL03_01 Journal ID" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_02" xlink:label="JP08a_GL03_02" xlink:title="JP08a_GL03_02 Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_02" xlink:title="domain-member: JP08a to JP08a_GL03_02 Number" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_03" xlink:label="JP08a_GL03_03" xlink:title="JP08a_GL03_03 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_03" xlink:title="domain-member: JP08a to JP08a_GL03_03 Description" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_05" xlink:label="JP08a_GL03_05" xlink:title="JP08a_GL03_05 Reversal Indicator"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_05" xlink:title="domain-member: JP08a to JP08a_GL03_05 Reversal Indicator" order="4"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_06" xlink:label="JP08a_GL03_06" xlink:title="JP08a_GL03_06 Reversal Journal ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_06" xlink:title="domain-member: JP08a to JP08a_GL03_06 Reversal Journal ID" order="5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP08a_GL03_07" xlink:label="JP08a_GL03_07" xlink:title="JP08a_GL03_07 Cancellation Indicator"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP08a_GL03_07" xlink:title="domain-member: JP08a to JP08a_GL03_07 Cancellation Indicator" order="6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gN" xlink:label="GE05gN" xlink:title="GE05gN (Unit Price) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gN" xlink:title="domain-member: JP08a to GE05gN (Unit Price) Amount" order="7"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gN_01" xlink:label="GE05gN_01" xlink:title="GE05gN_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gN_01" xlink:title="domain-member: JP08a to GE05gN_01 Value" order="8"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06gV" xlink:label="BS06gV" xlink:title="BS06gV Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06gV" xlink:title="domain-member: JP08a to BS06gV Currency" order="9"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06gV_01" xlink:label="BS06gV_01" xlink:title="BS06gV_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06gV_01" xlink:title="domain-member: JP08a to BS06gV_01 Code" order="10"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE07b" xlink:label="GE07b" xlink:title="GE07b Bill"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE07b" xlink:title="domain-member: JP08a to GE07b Bill" order="11"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE07b_01" xlink:label="GE07b_01" xlink:title="GE07b_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE07b_01" xlink:title="domain-member: JP08a to GE07b_01 ID" order="12"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE07b_02" xlink:label="GE07b_02" xlink:title="GE07b_02 Date"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE07b_02" xlink:title="domain-member: JP08a to GE07b_02 Date" order="13"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS03c" xlink:label="BS03c" xlink:title="BS03c Bill Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS03c" xlink:title="domain-member: JP08a to BS03c Bill Type" order="14"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS03c_01" xlink:label="BS03c_01" xlink:title="BS03c_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS03c_01" xlink:title="domain-member: JP08a to BS03c_01 Code" order="15"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE15aa" xlink:label="GE15aa" xlink:title="GE15aa Quantity"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE15aa" xlink:title="domain-member: JP08a to GE15aa Quantity" order="16"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE15aa_01" xlink:label="GE15aa_01" xlink:title="GE15aa_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE15aa_01" xlink:title="domain-member: JP08a to GE15aa_01 Value" order="17"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18bs" xlink:label="BS18bs" xlink:title="BS18bs Measurement Unit"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS18bs" xlink:title="domain-member: JP08a to BS18bs Measurement Unit" order="18"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS18bs_01" xlink:label="BS18bs_01" xlink:title="BS18bs_01 UOM Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS18bs_01" xlink:title="domain-member: JP08a to BS18bs_01 UOM Code" order="19"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02d" xlink:label="BS02d" xlink:title="BS02d (Account Segment) Bank Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS02d" xlink:title="domain-member: JP08a to BS02d (Account Segment) Bank Account" order="20"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS02d_01" xlink:label="BS02d_01" xlink:title="BS02d_01 Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS02d_01" xlink:title="domain-member: JP08a to BS02d_01 Number" order="21"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS14i" xlink:label="BS14i" xlink:title="BS14i (Account Segment) Employee"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS14i" xlink:title="domain-member: JP08a to BS14i (Account Segment) Employee" order="22"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS14i_01" xlink:label="BS14i_01" xlink:title="BS14i_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS14i_01" xlink:title="domain-member: JP08a to BS14i_01 ID" order="23"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS21l" xlink:label="BS21l" xlink:title="BS21l (Account Segment) Project"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS21l" xlink:title="domain-member: JP08a to BS21l (Account Segment) Project" order="24"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS21l_01" xlink:label="BS21l_01" xlink:title="BS21l_01 ID"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS21l_01" xlink:title="domain-member: JP08a to BS21l_01 ID" order="25"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS22n" xlink:label="BS22n" xlink:title="BS22n Settlement Method"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS22n" xlink:title="domain-member: JP08a to BS22n Settlement Method" order="26"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS22n_01" xlink:label="BS22n_01" xlink:title="BS22n_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS22n_01" xlink:title="domain-member: JP08a to BS22n_01 Code" order="27"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b" xlink:label="JP06b" xlink:title="JP06b (Debit) JP Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b" xlink:title="domain-member: JP08a to JP06b (Debit) JP Ledger Account" order="28"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_01" xlink:label="JP06b_BS16_01" xlink:title="JP06b_BS16_01 Account Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_01" xlink:title="domain-member: JP08a to JP06b_BS16_01 Account Number" order="29"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_02" xlink:label="JP06b_BS16_02" xlink:title="JP06b_BS16_02 Account Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_02" xlink:title="domain-member: JP08a to JP06b_BS16_02 Account Name" order="30"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_03" xlink:label="JP06b_BS16_03" xlink:title="JP06b_BS16_03 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_03" xlink:title="domain-member: JP08a to JP06b_BS16_03 Description" order="31"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_04" xlink:label="JP06b_BS16_04" xlink:title="JP06b_BS16_04 Financial Statement Caption"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_04" xlink:title="domain-member: JP08a to JP06b_BS16_04 Financial Statement Caption" order="32"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_05" xlink:label="JP06b_BS16_05" xlink:title="JP06b_BS16_05 Account Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_05" xlink:title="domain-member: JP08a to JP06b_BS16_05 Account Type" order="33"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_06" xlink:label="JP06b_BS16_06" xlink:title="JP06b_BS16_06 Account Subtype"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_06" xlink:title="domain-member: JP08a to JP06b_BS16_06 Account Subtype" order="34"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_07" xlink:label="JP06b_BS16_07" xlink:title="JP06b_BS16_07 Account Hierarchy"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_07" xlink:title="domain-member: JP08a to JP06b_BS16_07 Account Hierarchy" order="35"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b_BS16_08" xlink:label="JP06b_BS16_08" xlink:title="JP06b_BS16_08 Balance Debit Or Credit Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06b_BS16_08" xlink:title="domain-member: JP08a to JP06b_BS16_08 Balance Debit Or Credit Code" order="36"/>
+		<!-- JP05a targetRole link_JP05a -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a" xlink:label="JP05a" xlink:title="JP05a Subsidiary Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/iso21926/role/link_JP05a" xlink:from="JP08a" xlink:to="JP05a" xlink:title="domain-member: JP08a to JP05a in link_JP05a" order="37"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE06t" xlink:label="GE06t" xlink:title="GE06t (Debit) Amounts"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE06t" xlink:title="domain-member: JP08a to GE06t (Debit) Amounts" order="38"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gO" xlink:label="GE05gO" xlink:title="GE05gO (Functional) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gO" xlink:title="domain-member: JP08a to GE05gO (Functional) Amount" order="39"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gO_01" xlink:label="GE05gO_01" xlink:title="GE05gO_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gO_01" xlink:title="domain-member: JP08a to GE05gO_01 Value" order="40"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hW" xlink:label="BS06hW" xlink:title="BS06hW Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hW" xlink:title="domain-member: JP08a to BS06hW Currency" order="41"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hW_01" xlink:label="BS06hW_01" xlink:title="BS06hW_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hW_01" xlink:title="domain-member: JP08a to BS06hW_01 Code" order="42"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gP" xlink:label="GE05gP" xlink:title="GE05gP (Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gP" xlink:title="domain-member: JP08a to GE05gP (Local) Amount" order="43"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gP_01" xlink:label="GE05gP_01" xlink:title="GE05gP_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gP_01" xlink:title="domain-member: JP08a to GE05gP_01 Value" order="44"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hX" xlink:label="BS06hX" xlink:title="BS06hX Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hX" xlink:title="domain-member: JP08a to BS06hX Currency" order="45"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hX_01" xlink:label="BS06hX_01" xlink:title="BS06hX_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hX_01" xlink:title="domain-member: JP08a to BS06hX_01 Code" order="46"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gQ" xlink:label="GE05gQ" xlink:title="GE05gQ (Reporting) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gQ" xlink:title="domain-member: JP08a to GE05gQ (Reporting) Amount" order="47"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gQ_01" xlink:label="GE05gQ_01" xlink:title="GE05gQ_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gQ_01" xlink:title="domain-member: JP08a to GE05gQ_01 Value" order="48"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hY" xlink:label="BS06hY" xlink:title="BS06hY Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hY" xlink:title="domain-member: JP08a to BS06hY Currency" order="49"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hY_01" xlink:label="BS06hY_01" xlink:title="BS06hY_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hY_01" xlink:title="domain-member: JP08a to BS06hY_01 Code" order="50"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gR" xlink:label="GE05gR" xlink:title="GE05gR (Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gR" xlink:title="domain-member: JP08a to GE05gR (Transaction) Amount" order="51"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gR_01" xlink:label="GE05gR_01" xlink:title="GE05gR_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gR_01" xlink:title="domain-member: JP08a to GE05gR_01 Value" order="52"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hZ" xlink:label="BS06hZ" xlink:title="BS06hZ Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hZ" xlink:title="domain-member: JP08a to BS06hZ Currency" order="53"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hZ_01" xlink:label="BS06hZ_01" xlink:title="BS06hZ_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hZ_01" xlink:title="domain-member: JP08a to BS06hZ_01 Code" order="54"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP03b" xlink:label="JP03b" xlink:title="JP03b (Debit) Consumption Tax Subtotal"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP03b" xlink:title="domain-member: JP08a to JP03b (Debit) Consumption Tax Subtotal" order="55"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gS" xlink:label="GE05gS" xlink:title="GE05gS (Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gS" xlink:title="domain-member: JP08a to GE05gS (Local) Amount" order="56"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gS_01" xlink:label="GE05gS_01" xlink:title="GE05gS_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gS_01" xlink:title="domain-member: JP08a to GE05gS_01 Value" order="57"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h0" xlink:label="BS06h0" xlink:title="BS06h0 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h0" xlink:title="domain-member: JP08a to BS06h0 Currency" order="58"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h0_01" xlink:label="BS06h0_01" xlink:title="BS06h0_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h0_01" xlink:title="domain-member: JP08a to BS06h0_01 Code" order="59"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gT" xlink:label="GE05gT" xlink:title="GE05gT (Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gT" xlink:title="domain-member: JP08a to GE05gT (Transaction) Amount" order="60"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gT_01" xlink:label="GE05gT_01" xlink:title="GE05gT_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gT_01" xlink:title="domain-member: JP08a to GE05gT_01 Value" order="61"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h1" xlink:label="BS06h1" xlink:title="BS06h1 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h1" xlink:title="domain-member: JP08a to BS06h1 Currency" order="62"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h1_01" xlink:label="BS06h1_01" xlink:title="BS06h1_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h1_01" xlink:title="domain-member: JP08a to BS06h1_01 Code" order="63"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06c" xlink:label="JP06c" xlink:title="JP06c JP Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06c" xlink:title="domain-member: JP08a to JP06c JP Ledger Account" order="64"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06c_BS16_01" xlink:label="JP06c_BS16_01" xlink:title="JP06c_BS16_01 Account Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06c_BS16_01" xlink:title="domain-member: JP08a to JP06c_BS16_01 Account Number" order="65"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c" xlink:label="JP02c" xlink:title="JP02c JP Tax Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c" xlink:title="domain-member: JP08a to JP02c JP Tax Type" order="66"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_BS28_01" xlink:label="JP02c_BS28_01" xlink:title="JP02c_BS28_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_BS28_01" xlink:title="domain-member: JP08a to JP02c_BS28_01 Code" order="67"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_BS28_02" xlink:label="JP02c_BS28_02" xlink:title="JP02c_BS28_02 Tax Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_BS28_02" xlink:title="domain-member: JP08a to JP02c_BS28_02 Tax Name" order="68"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_BS28_03" xlink:label="JP02c_BS28_03" xlink:title="JP02c_BS28_03 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_BS28_03" xlink:title="domain-member: JP08a to JP02c_BS28_03 Description" order="69"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_BS28_04" xlink:label="JP02c_BS28_04" xlink:title="JP02c_BS28_04 Tax Code Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_BS28_04" xlink:title="domain-member: JP08a to JP02c_BS28_04 Tax Code Description" order="70"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_BS28_05" xlink:label="JP02c_BS28_05" xlink:title="JP02c_BS28_05 Tax Percentage"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_BS28_05" xlink:title="domain-member: JP08a to JP02c_BS28_05 Tax Percentage" order="71"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c_01" xlink:label="JP02c_01" xlink:title="JP02c_01 Tax Category Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02c_01" xlink:title="domain-member: JP08a to JP02c_01 Tax Category Code" order="72"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS27e" xlink:label="BS27e" xlink:title="BS27e Tax Regulatory"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS27e" xlink:title="domain-member: JP08a to BS27e Tax Regulatory" order="73"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS27e_01" xlink:label="BS27e_01" xlink:title="BS27e_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS27e_01" xlink:title="domain-member: JP08a to BS27e_01 Code" order="74"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gU" xlink:label="GE05gU" xlink:title="GE05gU (Taxable Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gU" xlink:title="domain-member: JP08a to GE05gU (Taxable Local) Amount" order="75"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gU_01" xlink:label="GE05gU_01" xlink:title="GE05gU_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gU_01" xlink:title="domain-member: JP08a to GE05gU_01 Value" order="76"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h2" xlink:label="BS06h2" xlink:title="BS06h2 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h2" xlink:title="domain-member: JP08a to BS06h2 Currency" order="77"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h2_01" xlink:label="BS06h2_01" xlink:title="BS06h2_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h2_01" xlink:title="domain-member: JP08a to BS06h2_01 Code" order="78"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gV" xlink:label="GE05gV" xlink:title="GE05gV (Taxable Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gV" xlink:title="domain-member: JP08a to GE05gV (Taxable Transaction) Amount" order="79"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gV_01" xlink:label="GE05gV_01" xlink:title="GE05gV_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05gV_01" xlink:title="domain-member: JP08a to GE05gV_01 Value" order="80"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h3" xlink:label="BS06h3" xlink:title="BS06h3 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h3" xlink:title="domain-member: JP08a to BS06h3 Currency" order="81"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h3_01" xlink:label="BS06h3_01" xlink:title="BS06h3_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h3_01" xlink:title="domain-member: JP08a to BS06h3_01 Code" order="82"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d" xlink:label="JP06d" xlink:title="JP06d (Credit) JP Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d" xlink:title="domain-member: JP08a to JP06d (Credit) JP Ledger Account" order="83"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_01" xlink:label="JP06d_BS16_01" xlink:title="JP06d_BS16_01 Account Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_01" xlink:title="domain-member: JP08a to JP06d_BS16_01 Account Number" order="84"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_02" xlink:label="JP06d_BS16_02" xlink:title="JP06d_BS16_02 Account Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_02" xlink:title="domain-member: JP08a to JP06d_BS16_02 Account Name" order="85"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_03" xlink:label="JP06d_BS16_03" xlink:title="JP06d_BS16_03 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_03" xlink:title="domain-member: JP08a to JP06d_BS16_03 Description" order="86"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_04" xlink:label="JP06d_BS16_04" xlink:title="JP06d_BS16_04 Financial Statement Caption"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_04" xlink:title="domain-member: JP08a to JP06d_BS16_04 Financial Statement Caption" order="87"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_05" xlink:label="JP06d_BS16_05" xlink:title="JP06d_BS16_05 Account Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_05" xlink:title="domain-member: JP08a to JP06d_BS16_05 Account Type" order="88"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_06" xlink:label="JP06d_BS16_06" xlink:title="JP06d_BS16_06 Account Subtype"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_06" xlink:title="domain-member: JP08a to JP06d_BS16_06 Account Subtype" order="89"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_07" xlink:label="JP06d_BS16_07" xlink:title="JP06d_BS16_07 Account Hierarchy"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_07" xlink:title="domain-member: JP08a to JP06d_BS16_07 Account Hierarchy" order="90"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d_BS16_08" xlink:label="JP06d_BS16_08" xlink:title="JP06d_BS16_08 Balance Debit Or Credit Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06d_BS16_08" xlink:title="domain-member: JP08a to JP06d_BS16_08 Balance Debit Or Credit Code" order="91"/>
+		<!-- JP05b targetRole link_JP05b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b" xlink:label="JP05b" xlink:title="JP05b Subsidiary Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/iso21926/role/link_JP05b" xlink:from="JP08a" xlink:to="JP05b" xlink:title="domain-member: JP08a to JP05b in link_JP05b" order="92"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE06u" xlink:label="GE06u" xlink:title="GE06u (Credit) Amounts"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE06u" xlink:title="domain-member: JP08a to GE06u (Credit) Amounts" order="93"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hW" xlink:label="GE05hW" xlink:title="GE05hW (Functional) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hW" xlink:title="domain-member: JP08a to GE05hW (Functional) Amount" order="94"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hW_01" xlink:label="GE05hW_01" xlink:title="GE05hW_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hW_01" xlink:title="domain-member: JP08a to GE05hW_01 Value" order="95"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h4" xlink:label="BS06h4" xlink:title="BS06h4 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h4" xlink:title="domain-member: JP08a to BS06h4 Currency" order="96"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h4_01" xlink:label="BS06h4_01" xlink:title="BS06h4_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h4_01" xlink:title="domain-member: JP08a to BS06h4_01 Code" order="97"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hX" xlink:label="GE05hX" xlink:title="GE05hX (Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hX" xlink:title="domain-member: JP08a to GE05hX (Local) Amount" order="98"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hX_01" xlink:label="GE05hX_01" xlink:title="GE05hX_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hX_01" xlink:title="domain-member: JP08a to GE05hX_01 Value" order="99"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h5" xlink:label="BS06h5" xlink:title="BS06h5 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h5" xlink:title="domain-member: JP08a to BS06h5 Currency" order="100"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h5_01" xlink:label="BS06h5_01" xlink:title="BS06h5_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h5_01" xlink:title="domain-member: JP08a to BS06h5_01 Code" order="101"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hY" xlink:label="GE05hY" xlink:title="GE05hY (Reporting) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hY" xlink:title="domain-member: JP08a to GE05hY (Reporting) Amount" order="102"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hY_01" xlink:label="GE05hY_01" xlink:title="GE05hY_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hY_01" xlink:title="domain-member: JP08a to GE05hY_01 Value" order="103"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h6" xlink:label="BS06h6" xlink:title="BS06h6 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h6" xlink:title="domain-member: JP08a to BS06h6 Currency" order="104"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h6_01" xlink:label="BS06h6_01" xlink:title="BS06h6_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h6_01" xlink:title="domain-member: JP08a to BS06h6_01 Code" order="105"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hZ" xlink:label="GE05hZ" xlink:title="GE05hZ (Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hZ" xlink:title="domain-member: JP08a to GE05hZ (Transaction) Amount" order="106"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hZ_01" xlink:label="GE05hZ_01" xlink:title="GE05hZ_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05hZ_01" xlink:title="domain-member: JP08a to GE05hZ_01 Value" order="107"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h7" xlink:label="BS06h7" xlink:title="BS06h7 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h7" xlink:title="domain-member: JP08a to BS06h7 Currency" order="108"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h7_01" xlink:label="BS06h7_01" xlink:title="BS06h7_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h7_01" xlink:title="domain-member: JP08a to BS06h7_01 Code" order="109"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP03c" xlink:label="JP03c" xlink:title="JP03c (Credit) Consumption Tax Subtotal"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP03c" xlink:title="domain-member: JP08a to JP03c (Credit) Consumption Tax Subtotal" order="110"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h0" xlink:label="GE05h0" xlink:title="GE05h0 (Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h0" xlink:title="domain-member: JP08a to GE05h0 (Local) Amount" order="111"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h0_01" xlink:label="GE05h0_01" xlink:title="GE05h0_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h0_01" xlink:title="domain-member: JP08a to GE05h0_01 Value" order="112"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h8" xlink:label="BS06h8" xlink:title="BS06h8 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h8" xlink:title="domain-member: JP08a to BS06h8 Currency" order="113"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h8_01" xlink:label="BS06h8_01" xlink:title="BS06h8_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h8_01" xlink:title="domain-member: JP08a to BS06h8_01 Code" order="114"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h1" xlink:label="GE05h1" xlink:title="GE05h1 (Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h1" xlink:title="domain-member: JP08a to GE05h1 (Transaction) Amount" order="115"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h1_01" xlink:label="GE05h1_01" xlink:title="GE05h1_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h1_01" xlink:title="domain-member: JP08a to GE05h1_01 Value" order="116"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h9" xlink:label="BS06h9" xlink:title="BS06h9 Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h9" xlink:title="domain-member: JP08a to BS06h9 Currency" order="117"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06h9_01" xlink:label="BS06h9_01" xlink:title="BS06h9_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06h9_01" xlink:title="domain-member: JP08a to BS06h9_01 Code" order="118"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06e" xlink:label="JP06e" xlink:title="JP06e JP Ledger Account"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06e" xlink:title="domain-member: JP08a to JP06e JP Ledger Account" order="119"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06e_BS16_01" xlink:label="JP06e_BS16_01" xlink:title="JP06e_BS16_01 Account Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP06e_BS16_01" xlink:title="domain-member: JP08a to JP06e_BS16_01 Account Number" order="120"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d" xlink:label="JP02d" xlink:title="JP02d JP Tax Type"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d" xlink:title="domain-member: JP08a to JP02d JP Tax Type" order="121"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_BS28_01" xlink:label="JP02d_BS28_01" xlink:title="JP02d_BS28_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_BS28_01" xlink:title="domain-member: JP08a to JP02d_BS28_01 Code" order="122"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_BS28_02" xlink:label="JP02d_BS28_02" xlink:title="JP02d_BS28_02 Tax Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_BS28_02" xlink:title="domain-member: JP08a to JP02d_BS28_02 Tax Name" order="123"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_BS28_03" xlink:label="JP02d_BS28_03" xlink:title="JP02d_BS28_03 Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_BS28_03" xlink:title="domain-member: JP08a to JP02d_BS28_03 Description" order="124"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_BS28_04" xlink:label="JP02d_BS28_04" xlink:title="JP02d_BS28_04 Tax Code Description"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_BS28_04" xlink:title="domain-member: JP08a to JP02d_BS28_04 Tax Code Description" order="125"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_BS28_05" xlink:label="JP02d_BS28_05" xlink:title="JP02d_BS28_05 Tax Percentage"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_BS28_05" xlink:title="domain-member: JP08a to JP02d_BS28_05 Tax Percentage" order="126"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d_01" xlink:label="JP02d_01" xlink:title="JP02d_01 Tax Category Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="JP02d_01" xlink:title="domain-member: JP08a to JP02d_01 Tax Category Code" order="127"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS27f" xlink:label="BS27f" xlink:title="BS27f Tax Regulatory"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS27f" xlink:title="domain-member: JP08a to BS27f Tax Regulatory" order="128"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS27f_01" xlink:label="BS27f_01" xlink:title="BS27f_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS27f_01" xlink:title="domain-member: JP08a to BS27f_01 Code" order="129"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h2" xlink:label="GE05h2" xlink:title="GE05h2 (Taxable Local) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h2" xlink:title="domain-member: JP08a to GE05h2 (Taxable Local) Amount" order="130"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h2_01" xlink:label="GE05h2_01" xlink:title="GE05h2_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h2_01" xlink:title="domain-member: JP08a to GE05h2_01 Value" order="131"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06ha" xlink:label="BS06ha" xlink:title="BS06ha Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06ha" xlink:title="domain-member: JP08a to BS06ha Currency" order="132"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06ha_01" xlink:label="BS06ha_01" xlink:title="BS06ha_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06ha_01" xlink:title="domain-member: JP08a to BS06ha_01 Code" order="133"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h3" xlink:label="GE05h3" xlink:title="GE05h3 (Taxable Transaction) Amount"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h3" xlink:title="domain-member: JP08a to GE05h3 (Taxable Transaction) Amount" order="134"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h3_01" xlink:label="GE05h3_01" xlink:title="GE05h3_01 Value"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="GE05h3_01" xlink:title="domain-member: JP08a to GE05h3_01 Value" order="135"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hb" xlink:label="BS06hb" xlink:title="BS06hb Currency"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hb" xlink:title="domain-member: JP08a to BS06hb Currency" order="136"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS06hb_01" xlink:label="BS06hb_01" xlink:title="BS06hb_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP08a" xlink:to="BS06hb_01" xlink:title="domain-member: JP08a to BS06hb_01 Code" order="137"/>
+		<!-- BS04c5 targetRole link_BS04c5 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5" xlink:label="BS04c5" xlink:title="BS04c5 (Debit) Business Segment"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/iso21926/role/link_BS04c5" xlink:from="JP08a" xlink:to="BS04c5" xlink:title="domain-member: JP08a to BS04c5 in link_BS04c5" order="138"/>
+		<!-- BS04c6 targetRole link_BS04c6 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6" xlink:label="BS04c6" xlink:title="BS04c6 (Credit) Business Segment"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.iso.org/iso21926/role/link_BS04c6" xlink:from="JP08a" xlink:to="BS04c6" xlink:title="domain-member: JP08a to BS04c6 in link_BS04c6" order="139"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gN">
+		<!-- GE05gN all (has-hypercube) h_GE05gN link_GE05gN -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gN" xlink:label="GE05gN" xlink:title="GE05gN"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gN" xlink:label="h_GE05gN" xlink:title="h_GE05gN"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gN" xlink:to="h_GE05gN" xlink:title="all (has-hypercube): GE05gN to h_GE05gN" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gN" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gN to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gN" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gN to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gN" xlink:label="d_GE05gN" xlink:title="d_GE05gN"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gN" xlink:to="d_GE05gN" xlink:title="hypercube-dimension: h_GE05gN to d_GE05gN" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE07b">
+		<!-- GE07b all (has-hypercube) h_GE07b link_GE07b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE07b" xlink:label="GE07b" xlink:title="GE07b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE07b" xlink:label="h_GE07b" xlink:title="h_GE07b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE07b" xlink:to="h_GE07b" xlink:title="all (has-hypercube): GE07b to h_GE07b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE07b" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE07b to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE07b" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE07b to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE07b" xlink:label="d_GE07b" xlink:title="d_GE07b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE07b" xlink:to="d_GE07b" xlink:title="hypercube-dimension: h_GE07b to d_GE07b" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE15aa">
+		<!-- GE15aa all (has-hypercube) h_GE15aa link_GE15aa -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE15aa" xlink:label="GE15aa" xlink:title="GE15aa"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE15aa" xlink:label="h_GE15aa" xlink:title="h_GE15aa"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE15aa" xlink:to="h_GE15aa" xlink:title="all (has-hypercube): GE15aa to h_GE15aa" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE15aa" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE15aa to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE15aa" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE15aa to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE15aa" xlink:label="d_GE15aa" xlink:title="d_GE15aa"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE15aa" xlink:to="d_GE15aa" xlink:title="hypercube-dimension: h_GE15aa to d_GE15aa" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP06b">
+		<!-- JP06b all (has-hypercube) h_JP06b link_JP06b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06b" xlink:label="JP06b" xlink:title="JP06b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP06b" xlink:label="h_JP06b" xlink:title="h_JP06b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP06b" xlink:to="h_JP06b" xlink:title="all (has-hypercube): JP06b to h_JP06b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06b" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP06b to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06b" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP06b to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP06b" xlink:label="d_JP06b" xlink:title="d_JP06b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06b" xlink:to="d_JP06b" xlink:title="hypercube-dimension: h_JP06b to d_JP06b" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP05a">
+		<!-- JP05a all (has-hypercube) h_JP05a link_JP05a -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a" xlink:label="JP05a" xlink:title="JP05a"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP05a" xlink:label="h_JP05a" xlink:title="h_JP05a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP05a" xlink:to="h_JP05a" xlink:title="all (has-hypercube): JP05a to h_JP05a" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05a" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP05a to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05a" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP05a to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP05a" xlink:label="d_JP05a" xlink:title="d_JP05a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05a" xlink:to="d_JP05a" xlink:title="hypercube-dimension: h_JP05a to d_JP05a" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a_01" xlink:label="JP05a_01" xlink:title="JP05a_01 Subsidiary Item Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05a" xlink:to="JP05a_01" xlink:title="domain-member: JP05a to JP05a_01 Subsidiary Item Number" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a_02" xlink:label="JP05a_02" xlink:title="JP05a_02 Subsidiary Item Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05a" xlink:to="JP05a_02" xlink:title="domain-member: JP05a to JP05a_02 Subsidiary Item Name" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a_03" xlink:label="JP05a_03" xlink:title="JP05a_03 Code List Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05a" xlink:to="JP05a_03" xlink:title="domain-member: JP05a to JP05a_03 Code List Name" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05a_04" xlink:label="JP05a_04" xlink:title="JP05a_04 Description of Code List Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05a" xlink:to="JP05a_04" xlink:title="domain-member: JP05a to JP05a_04 Description of Code List Name" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE06t">
+		<!-- GE06t all (has-hypercube) h_GE06t link_GE06t -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE06t" xlink:label="GE06t" xlink:title="GE06t"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE06t" xlink:label="h_GE06t" xlink:title="h_GE06t"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE06t" xlink:to="h_GE06t" xlink:title="all (has-hypercube): GE06t to h_GE06t" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06t" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE06t to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06t" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE06t to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE06t" xlink:label="d_GE06t" xlink:title="d_GE06t"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06t" xlink:to="d_GE06t" xlink:title="hypercube-dimension: h_GE06t to d_GE06t" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gO">
+		<!-- GE05gO all (has-hypercube) h_GE05gO link_GE05gO -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gO" xlink:label="GE05gO" xlink:title="GE05gO"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gO" xlink:label="h_GE05gO" xlink:title="h_GE05gO"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gO" xlink:to="h_GE05gO" xlink:title="all (has-hypercube): GE05gO to h_GE05gO" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gO" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gO to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gO" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gO to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gO" xlink:label="d_GE05gO" xlink:title="d_GE05gO"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gO" xlink:to="d_GE05gO" xlink:title="hypercube-dimension: h_GE05gO to d_GE05gO" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gP">
+		<!-- GE05gP all (has-hypercube) h_GE05gP link_GE05gP -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gP" xlink:label="GE05gP" xlink:title="GE05gP"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gP" xlink:label="h_GE05gP" xlink:title="h_GE05gP"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gP" xlink:to="h_GE05gP" xlink:title="all (has-hypercube): GE05gP to h_GE05gP" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gP" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gP to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gP" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gP to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gP" xlink:label="d_GE05gP" xlink:title="d_GE05gP"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gP" xlink:to="d_GE05gP" xlink:title="hypercube-dimension: h_GE05gP to d_GE05gP" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gQ">
+		<!-- GE05gQ all (has-hypercube) h_GE05gQ link_GE05gQ -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gQ" xlink:label="GE05gQ" xlink:title="GE05gQ"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gQ" xlink:label="h_GE05gQ" xlink:title="h_GE05gQ"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gQ" xlink:to="h_GE05gQ" xlink:title="all (has-hypercube): GE05gQ to h_GE05gQ" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gQ" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gQ to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gQ" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gQ to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gQ" xlink:label="d_GE05gQ" xlink:title="d_GE05gQ"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gQ" xlink:to="d_GE05gQ" xlink:title="hypercube-dimension: h_GE05gQ to d_GE05gQ" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gR">
+		<!-- GE05gR all (has-hypercube) h_GE05gR link_GE05gR -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gR" xlink:label="GE05gR" xlink:title="GE05gR"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gR" xlink:label="h_GE05gR" xlink:title="h_GE05gR"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gR" xlink:to="h_GE05gR" xlink:title="all (has-hypercube): GE05gR to h_GE05gR" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gR" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gR to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gR" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gR to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gR" xlink:label="d_GE05gR" xlink:title="d_GE05gR"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gR" xlink:to="d_GE05gR" xlink:title="hypercube-dimension: h_GE05gR to d_GE05gR" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP03b">
+		<!-- JP03b all (has-hypercube) h_JP03b link_JP03b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP03b" xlink:label="JP03b" xlink:title="JP03b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP03b" xlink:label="h_JP03b" xlink:title="h_JP03b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP03b" xlink:to="h_JP03b" xlink:title="all (has-hypercube): JP03b to h_JP03b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03b" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP03b to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03b" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP03b to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP03b" xlink:label="d_JP03b" xlink:title="d_JP03b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03b" xlink:to="d_JP03b" xlink:title="hypercube-dimension: h_JP03b to d_JP03b" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gS">
+		<!-- GE05gS all (has-hypercube) h_GE05gS link_GE05gS -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gS" xlink:label="GE05gS" xlink:title="GE05gS"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gS" xlink:label="h_GE05gS" xlink:title="h_GE05gS"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gS" xlink:to="h_GE05gS" xlink:title="all (has-hypercube): GE05gS to h_GE05gS" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gS" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gS to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gS" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gS to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gS" xlink:label="d_GE05gS" xlink:title="d_GE05gS"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gS" xlink:to="d_GE05gS" xlink:title="hypercube-dimension: h_GE05gS to d_GE05gS" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gT">
+		<!-- GE05gT all (has-hypercube) h_GE05gT link_GE05gT -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gT" xlink:label="GE05gT" xlink:title="GE05gT"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gT" xlink:label="h_GE05gT" xlink:title="h_GE05gT"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gT" xlink:to="h_GE05gT" xlink:title="all (has-hypercube): GE05gT to h_GE05gT" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gT" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gT to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gT" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gT to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gT" xlink:label="d_GE05gT" xlink:title="d_GE05gT"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gT" xlink:to="d_GE05gT" xlink:title="hypercube-dimension: h_GE05gT to d_GE05gT" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP02c">
+		<!-- JP02c all (has-hypercube) h_JP02c link_JP02c -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02c" xlink:label="JP02c" xlink:title="JP02c"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP02c" xlink:label="h_JP02c" xlink:title="h_JP02c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP02c" xlink:to="h_JP02c" xlink:title="all (has-hypercube): JP02c to h_JP02c" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02c" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP02c to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02c" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP02c to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP02c" xlink:label="d_JP02c" xlink:title="d_JP02c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02c" xlink:to="d_JP02c" xlink:title="hypercube-dimension: h_JP02c to d_JP02c" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gU">
+		<!-- GE05gU all (has-hypercube) h_GE05gU link_GE05gU -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gU" xlink:label="GE05gU" xlink:title="GE05gU"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gU" xlink:label="h_GE05gU" xlink:title="h_GE05gU"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gU" xlink:to="h_GE05gU" xlink:title="all (has-hypercube): GE05gU to h_GE05gU" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gU" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gU to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gU" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gU to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gU" xlink:label="d_GE05gU" xlink:title="d_GE05gU"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gU" xlink:to="d_GE05gU" xlink:title="hypercube-dimension: h_GE05gU to d_GE05gU" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05gV">
+		<!-- GE05gV all (has-hypercube) h_GE05gV link_GE05gV -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05gV" xlink:label="GE05gV" xlink:title="GE05gV"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05gV" xlink:label="h_GE05gV" xlink:title="h_GE05gV"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05gV" xlink:to="h_GE05gV" xlink:title="all (has-hypercube): GE05gV to h_GE05gV" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gV" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05gV to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gV" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05gV to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05gV" xlink:label="d_GE05gV" xlink:title="d_GE05gV"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05gV" xlink:to="d_GE05gV" xlink:title="hypercube-dimension: h_GE05gV to d_GE05gV" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP06d">
+		<!-- JP06d all (has-hypercube) h_JP06d link_JP06d -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP06d" xlink:label="JP06d" xlink:title="JP06d"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP06d" xlink:label="h_JP06d" xlink:title="h_JP06d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP06d" xlink:to="h_JP06d" xlink:title="all (has-hypercube): JP06d to h_JP06d" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06d" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP06d to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06d" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP06d to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP06d" xlink:label="d_JP06d" xlink:title="d_JP06d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP06d" xlink:to="d_JP06d" xlink:title="hypercube-dimension: h_JP06d to d_JP06d" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP05b">
+		<!-- JP05b all (has-hypercube) h_JP05b link_JP05b -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b" xlink:label="JP05b" xlink:title="JP05b"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP05b" xlink:label="h_JP05b" xlink:title="h_JP05b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP05b" xlink:to="h_JP05b" xlink:title="all (has-hypercube): JP05b to h_JP05b" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05b" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP05b to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05b" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP05b to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP05b" xlink:label="d_JP05b" xlink:title="d_JP05b"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP05b" xlink:to="d_JP05b" xlink:title="hypercube-dimension: h_JP05b to d_JP05b" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b_01" xlink:label="JP05b_01" xlink:title="JP05b_01 Subsidiary Item Number"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05b" xlink:to="JP05b_01" xlink:title="domain-member: JP05b to JP05b_01 Subsidiary Item Number" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b_02" xlink:label="JP05b_02" xlink:title="JP05b_02 Subsidiary Item Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05b" xlink:to="JP05b_02" xlink:title="domain-member: JP05b to JP05b_02 Subsidiary Item Name" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b_03" xlink:label="JP05b_03" xlink:title="JP05b_03 Code List Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05b" xlink:to="JP05b_03" xlink:title="domain-member: JP05b to JP05b_03 Code List Name" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP05b_04" xlink:label="JP05b_04" xlink:title="JP05b_04 Description of Code List Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="JP05b" xlink:to="JP05b_04" xlink:title="domain-member: JP05b to JP05b_04 Description of Code List Name" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE06u">
+		<!-- GE06u all (has-hypercube) h_GE06u link_GE06u -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE06u" xlink:label="GE06u" xlink:title="GE06u"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE06u" xlink:label="h_GE06u" xlink:title="h_GE06u"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE06u" xlink:to="h_GE06u" xlink:title="all (has-hypercube): GE06u to h_GE06u" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06u" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE06u to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06u" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE06u to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE06u" xlink:label="d_GE06u" xlink:title="d_GE06u"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE06u" xlink:to="d_GE06u" xlink:title="hypercube-dimension: h_GE06u to d_GE06u" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05hW">
+		<!-- GE05hW all (has-hypercube) h_GE05hW link_GE05hW -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hW" xlink:label="GE05hW" xlink:title="GE05hW"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05hW" xlink:label="h_GE05hW" xlink:title="h_GE05hW"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05hW" xlink:to="h_GE05hW" xlink:title="all (has-hypercube): GE05hW to h_GE05hW" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hW" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05hW to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hW" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05hW to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05hW" xlink:label="d_GE05hW" xlink:title="d_GE05hW"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hW" xlink:to="d_GE05hW" xlink:title="hypercube-dimension: h_GE05hW to d_GE05hW" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05hX">
+		<!-- GE05hX all (has-hypercube) h_GE05hX link_GE05hX -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hX" xlink:label="GE05hX" xlink:title="GE05hX"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05hX" xlink:label="h_GE05hX" xlink:title="h_GE05hX"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05hX" xlink:to="h_GE05hX" xlink:title="all (has-hypercube): GE05hX to h_GE05hX" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hX" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05hX to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hX" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05hX to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05hX" xlink:label="d_GE05hX" xlink:title="d_GE05hX"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hX" xlink:to="d_GE05hX" xlink:title="hypercube-dimension: h_GE05hX to d_GE05hX" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05hY">
+		<!-- GE05hY all (has-hypercube) h_GE05hY link_GE05hY -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hY" xlink:label="GE05hY" xlink:title="GE05hY"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05hY" xlink:label="h_GE05hY" xlink:title="h_GE05hY"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05hY" xlink:to="h_GE05hY" xlink:title="all (has-hypercube): GE05hY to h_GE05hY" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hY" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05hY to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hY" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05hY to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05hY" xlink:label="d_GE05hY" xlink:title="d_GE05hY"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hY" xlink:to="d_GE05hY" xlink:title="hypercube-dimension: h_GE05hY to d_GE05hY" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05hZ">
+		<!-- GE05hZ all (has-hypercube) h_GE05hZ link_GE05hZ -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05hZ" xlink:label="GE05hZ" xlink:title="GE05hZ"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05hZ" xlink:label="h_GE05hZ" xlink:title="h_GE05hZ"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05hZ" xlink:to="h_GE05hZ" xlink:title="all (has-hypercube): GE05hZ to h_GE05hZ" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hZ" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05hZ to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hZ" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05hZ to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05hZ" xlink:label="d_GE05hZ" xlink:title="d_GE05hZ"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05hZ" xlink:to="d_GE05hZ" xlink:title="hypercube-dimension: h_GE05hZ to d_GE05hZ" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP03c">
+		<!-- JP03c all (has-hypercube) h_JP03c link_JP03c -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP03c" xlink:label="JP03c" xlink:title="JP03c"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP03c" xlink:label="h_JP03c" xlink:title="h_JP03c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP03c" xlink:to="h_JP03c" xlink:title="all (has-hypercube): JP03c to h_JP03c" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03c" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP03c to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03c" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP03c to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP03c" xlink:label="d_JP03c" xlink:title="d_JP03c"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP03c" xlink:to="d_JP03c" xlink:title="hypercube-dimension: h_JP03c to d_JP03c" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05h0">
+		<!-- GE05h0 all (has-hypercube) h_GE05h0 link_GE05h0 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h0" xlink:label="GE05h0" xlink:title="GE05h0"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05h0" xlink:label="h_GE05h0" xlink:title="h_GE05h0"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05h0" xlink:to="h_GE05h0" xlink:title="all (has-hypercube): GE05h0 to h_GE05h0" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h0" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05h0 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h0" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05h0 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05h0" xlink:label="d_GE05h0" xlink:title="d_GE05h0"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h0" xlink:to="d_GE05h0" xlink:title="hypercube-dimension: h_GE05h0 to d_GE05h0" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05h1">
+		<!-- GE05h1 all (has-hypercube) h_GE05h1 link_GE05h1 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h1" xlink:label="GE05h1" xlink:title="GE05h1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05h1" xlink:label="h_GE05h1" xlink:title="h_GE05h1"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05h1" xlink:to="h_GE05h1" xlink:title="all (has-hypercube): GE05h1 to h_GE05h1" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h1" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05h1 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h1" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05h1 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05h1" xlink:label="d_GE05h1" xlink:title="d_GE05h1"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h1" xlink:to="d_GE05h1" xlink:title="hypercube-dimension: h_GE05h1 to d_GE05h1" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_JP02d">
+		<!-- JP02d all (has-hypercube) h_JP02d link_JP02d -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#JP02d" xlink:label="JP02d" xlink:title="JP02d"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_JP02d" xlink:label="h_JP02d" xlink:title="h_JP02d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="JP02d" xlink:to="h_JP02d" xlink:title="all (has-hypercube): JP02d to h_JP02d" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02d" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_JP02d to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02d" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_JP02d to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP02d" xlink:label="d_JP02d" xlink:title="d_JP02d"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_JP02d" xlink:to="d_JP02d" xlink:title="hypercube-dimension: h_JP02d to d_JP02d" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05h2">
+		<!-- GE05h2 all (has-hypercube) h_GE05h2 link_GE05h2 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h2" xlink:label="GE05h2" xlink:title="GE05h2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05h2" xlink:label="h_GE05h2" xlink:title="h_GE05h2"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05h2" xlink:to="h_GE05h2" xlink:title="all (has-hypercube): GE05h2 to h_GE05h2" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h2" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05h2 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h2" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05h2 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05h2" xlink:label="d_GE05h2" xlink:title="d_GE05h2"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h2" xlink:to="d_GE05h2" xlink:title="hypercube-dimension: h_GE05h2 to d_GE05h2" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_GE05h3">
+		<!-- GE05h3 all (has-hypercube) h_GE05h3 link_GE05h3 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#GE05h3" xlink:label="GE05h3" xlink:title="GE05h3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_GE05h3" xlink:label="h_GE05h3" xlink:title="h_GE05h3"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="GE05h3" xlink:to="h_GE05h3" xlink:title="all (has-hypercube): GE05h3 to h_GE05h3" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h3" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_GE05h3 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h3" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_GE05h3 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_GE05h3" xlink:label="d_GE05h3" xlink:title="d_GE05h3"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_GE05h3" xlink:to="d_GE05h3" xlink:title="hypercube-dimension: h_GE05h3 to d_GE05h3" order="3"/>
+		<!-- domain-member -->
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_BS04c5">
+		<!-- BS04c5 all (has-hypercube) h_BS04c5 link_BS04c5 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5" xlink:label="BS04c5" xlink:title="BS04c5"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS04c5" xlink:label="h_BS04c5" xlink:title="h_BS04c5"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS04c5" xlink:to="h_BS04c5" xlink:title="all (has-hypercube): BS04c5 to h_BS04c5" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c5" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_BS04c5 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c5" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_BS04c5 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS04c5" xlink:label="d_BS04c5" xlink:title="d_BS04c5"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c5" xlink:to="d_BS04c5" xlink:title="hypercube-dimension: h_BS04c5 to d_BS04c5" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5_01" xlink:label="BS04c5_01" xlink:title="BS04c5_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c5" xlink:to="BS04c5_01" xlink:title="domain-member: BS04c5 to BS04c5_01 Code" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5_02" xlink:label="BS04c5_02" xlink:title="BS04c5_02 Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c5" xlink:to="BS04c5_02" xlink:title="domain-member: BS04c5 to BS04c5_02 Name" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5_03" xlink:label="BS04c5_03" xlink:title="BS04c5_03 Segment Reference Level"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c5" xlink:to="BS04c5_03" xlink:title="domain-member: BS04c5 to BS04c5_03 Segment Reference Level" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c5_04" xlink:label="BS04c5_04" xlink:title="BS04c5_04 Organization Type Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c5" xlink:to="BS04c5_04" xlink:title="domain-member: BS04c5 to BS04c5_04 Organization Type Name" order="4"/>
+	</link:definitionLink>
+	<link:definitionLink xlink:type="extended" xlink:role="http://www.iso.org/iso21926/role/link_BS04c6">
+		<!-- BS04c6 all (has-hypercube) h_BS04c6 link_BS04c6 -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6" xlink:label="BS04c6" xlink:title="BS04c6"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#h_BS04c6" xlink:label="h_BS04c6" xlink:title="h_BS04c6"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="BS04c6" xlink:to="h_BS04c6" xlink:title="all (has-hypercube): BS04c6 to h_BS04c6" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>
+		<!-- hypercube-dimension -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP07a" xlink:label="d_JP07a" xlink:title="d_JP07a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c6" xlink:to="d_JP07a" xlink:title="hypercube-dimension: h_BS04c6 to d_JP07a" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_JP08a" xlink:label="d_JP08a" xlink:title="d_JP08a"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c6" xlink:to="d_JP08a" xlink:title="hypercube-dimension: h_BS04c6 to d_JP08a" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#d_BS04c6" xlink:label="d_BS04c6" xlink:title="d_BS04c6"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="h_BS04c6" xlink:to="d_BS04c6" xlink:title="hypercube-dimension: h_BS04c6 to d_BS04c6" order="3"/>
+		<!-- domain-member -->
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6_01" xlink:label="BS04c6_01" xlink:title="BS04c6_01 Code"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c6" xlink:to="BS04c6_01" xlink:title="domain-member: BS04c6 to BS04c6_01 Code" order="1"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6_02" xlink:label="BS04c6_02" xlink:title="BS04c6_02 Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c6" xlink:to="BS04c6_02" xlink:title="domain-member: BS04c6 to BS04c6_02 Name" order="2"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6_03" xlink:label="BS04c6_03" xlink:title="BS04c6_03 Segment Reference Level"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c6" xlink:to="BS04c6_03" xlink:title="domain-member: BS04c6 to BS04c6_03 Segment Reference Level" order="3"/>
+		<link:loc xlink:type="locator" xlink:href="core.xsd#BS04c6_04" xlink:label="BS04c6_04" xlink:title="BS04c6_04 Organization Type Name"/>
+		<link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="BS04c6" xlink:to="BS04c6_04" xlink:title="domain-member: BS04c6 to BS04c6_04 Organization Type Name" order="4"/>
+	</link:definitionLink>
+</link:linkbase>
