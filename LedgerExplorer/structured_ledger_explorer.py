@@ -66,6 +66,10 @@ class TidyData:
         self.file_path = None
         self.BS_path = None,
         self.PL_path = None,
+        self.trading_partner_path = None
+        self.trading_partner_dict = None
+        self.LHM_path = None,
+        self.LHM_dict = None,
         self.account_category_dict = None
         self.beginning_balances = None
         self.amount_rows = None
@@ -153,9 +157,9 @@ class TidyData:
                 self.trace_print(f"伝票貸借不一致 {transction_date} {transaction_id}: 借方金額 {total_debit_amount} 貸方金額 {total_credit_amount}")
 
             if first_debit_amount == total_debit_amount:
-                trace_print(f"借方金額が合計金額 {transction_date} {transaction_id} {first_debit_acct_number} {first_debit_acct_name}: {total_debit_amount}")
+                self.debug_print(f"借方金額が合計金額 {transction_date} {transaction_id} {first_debit_acct_number} {first_debit_acct_name}: {total_debit_amount}")
             elif first_credit_amount == total_credit_amount:
-                trace_print(f"貸方金額が合計金額 {transction_date} {transaction_id} {first_credit_acct_number} {first_credit_acct_name}: {total_credit_amount}")
+                self.debug_print(f"貸方金額が合計金額 {transction_date} {transaction_id} {first_credit_acct_number} {first_credit_acct_name}: {total_credit_amount}")
 
             # 金額と摘要文の転記を行う
             for idx, row in group.iterrows():
@@ -676,7 +680,7 @@ class TidyData:
         combined_summary["Beginning_Balance"] = combined_summary["Beginning_Balance"].fillna(0).astype("int64")
         combined_summary["Total_Debit"] = combined_summary["Total_Debit"].fillna(0).astype("int64")
         combined_summary["Total_Credit"] = combined_summary["Total_Credit"].fillna(0).astype("int64")
-        # 
+        #
         # BS
         #
         # e-Tax CSV Sheet for BS
@@ -888,14 +892,15 @@ class TidyData:
         # Set Beginning_Balance and Ending_Balance to 0 for rows where Type is "T"
         self.pl_data_df.loc[self.pl_data_df["Type"] == "T", ["Total_Debit", "Total_Credit"]] = 0
         # PLの親子関係を構築する関数
-        codes_to_check = ["10D100101", "10D100102"]
+        codes_to_check = [self.params["account"]["電子取引売上高"], self.params["account"]["電子取引以外売上高"]]
+        # codes_to_check = ["10D100101", "10D100102"]
         # DataFrameに含まれているか確認
         missing_codes = [code for code in codes_to_check if code not in self.pl_data_df["Ledger_Account_Number"].values]
         # 結果を表示
         if missing_codes:
             self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
         else:
-            self.trace_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+            self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
         def build_pl_parent_child_relationship_with_level(pl_data_df, level_range=(1, 10), exclude_empty_children=True):
             # 初期化: 各レベルの最新の要素を保持（レベル範囲を指定）
             level_list = {lvl: None for lvl in range(level_range[0], level_range[1] + 1)}
@@ -950,17 +955,11 @@ class TidyData:
                 parent = self.pl_parent_dict[row['Parent']]
                 total_debit = 0 if pd.isna(row["Total_Debit"]) else row["Total_Debit"]
                 total_credit = 0 if pd.isna(row["Total_Credit"]) else row["Total_Credit"]
-                # account_category = self.etax_code_mapping_dict[key]['Category']
-                # if "収益" == account_category:
                 if total_debit > 0:
                     parent["Total_Debit"] += int(total_debit)
                 if total_credit > 0:
                     parent["Total_Credit"] += int(total_credit)
-                # elif "費用" == account_category:
-                #     if total_debit > 0:
-                #         parent["Total_Debit"] -= int(total_debit)
-                #     if total_credit > 0:
-                #         parent["Total_Credit"] += int(total_credit)
+
         # Filter pl_parent_dict to remove entries with Total_Debit and Total_Credit both 0
         self.pl_parent_dict = {
             key: value
@@ -1051,7 +1050,28 @@ class TidyData:
         self.etax_code_mapping_dict = etax_unique_df.set_index("eTax_Account_Code")[['Category', "eTax_Account_Name", "eTax_Category"]].to_dict('index')
 
         # tidyGL.csv を読み込み、列名の空白を除去
-        self.tidy_gl_df = pd.read_csv(self.file_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
+        # Datatype を Pandas dtype に変換するマッピング
+        datatype_mapping = {
+            'Identifier': 'str',
+            'Char': 'str',
+            'Code': 'str',
+            'Name': 'str',
+            'Text': 'str',
+            'Date': 'str',  # 日付形式は後で変換する場合に備えてstrにしておく
+            'Time': 'str',
+            'Decimal': 'float',
+            'Integer': 'int64',
+            'Indicator': 'str',
+        }
+        # 辞書形式で取得
+        first_row_dict = pd.read_csv(self.file_path, nrows=1).iloc[0].to_dict()
+        # 辞書から dtype を生成
+        dtype_dict = {}
+        for column_id, properties in self.LHM_dict.items():
+            datatype = properties.get('datatype', '')  # datatype を取得
+            if datatype in datatype_mapping:  # マッピングに存在する場合のみ処理
+                dtype_dict[column_id] = datatype_mapping[datatype]
+        self.tidy_gl_df = pd.read_csv(self.file_path, dtype=dtype_dict)
         self.tidy_gl_df.columns = self.tidy_gl_df.columns.str.strip()  # 列名の空白を除去
 
         # tax_category.csv を読み込み、変換用の辞書を作成
@@ -1150,9 +1170,31 @@ class TidyData:
         self.beginning_balance_path = params["beginning_balance_path"]
         self.account_path = params["account_path"]
         self.tax_category_path = params["tax_category_path"]
+        self.trading_partner_path = params["trading_partner_path"]
+        self.LHM_path = params["LHM_path"]
         self.BS_path = params["HOT010_3.0_BS_10"]
         self.PL_path = params["HOT010_3.0_PL_10"]
         self.columns  = params["columns"]
+
+        self.trading_partner_dict = {"supplier":{}, "customer": {}, "bank": {}}
+        with open(self.trading_partner_path, mode='r', encoding='utf-8-sig') as csv_file:
+            reader = csv.DictReader(csv_file)  # ヘッダー行をキーとして利用
+            for row in reader:
+                category = row['category']
+                code = row['code']
+                if "仕入先" == category:
+                    self.trading_partner_dict["supplier"][code] = row
+                elif "得意先" == category:
+                    self.trading_partner_dict["customer"][code] = row
+                elif "預金" in category:
+                    self.trading_partner_dict["bank"][code] = row
+
+        self.LHM_dict = {}
+        with open(self.LHM_path, mode='r', encoding='utf-8-sig') as csv_file:
+            reader = csv.DictReader(csv_file)  # ヘッダー行をキーとして利用
+            for row in reader:
+                id = row['id']
+                self.LHM_dict[id] = row
 
         self.code2etax()
 
@@ -1176,7 +1218,7 @@ class TidyData:
         df["Month"] = pd.to_datetime(df[self.columns["伝票日付"]], errors="coerce").dt.to_period("M").astype(str)
 
         self.debug_print("1. 初期のDataFrame:")
-        print_columns = [
+        columns_to_show_df = [
             self.columns["伝票"],
             self.columns["明細行"],
             self.columns["借方補助科目"],
@@ -1190,17 +1232,17 @@ class TidyData:
         ]
         self.debug_print("\ndf")
         self.debug_print(
-            df[print_columns].head()
+            df[columns_to_show_df].head()
         )
 
         # 伝票と明細行に値があり、借方補助科目、貸方補助科目、借方部門、貸方部門がすべてNaNの行を抽出し、対象の借方金額と貸方金額の値を収集する
         initial_rows = df[
-            (pd.notna(df[self.columns["伝票"]])) &
-            (pd.notna(df[self.columns["明細行"]])) &
-            (pd.isna(df[self.columns["借方補助科目"]])) &
-            (pd.isna(df[self.columns["貸方補助科目"]])) &
-            (pd.isna(df[self.columns["借方部門"]])) &
-            (pd.isna(df[self.columns["貸方部門"]])) 
+            (pd.notna(df[self.columns["伝票"]]))
+            & (pd.notna(df[self.columns["明細行"]]))
+            & (pd.isna(df[self.columns["借方補助科目"]]))
+            & (pd.isna(df[self.columns["貸方補助科目"]]))
+            & (pd.isna(df[self.columns["借方部門"]]))
+            & (pd.isna(df[self.columns["貸方部門"]])) 
         ][
             [
                 self.columns["伝票"],
@@ -1223,12 +1265,12 @@ class TidyData:
 
         # 伝票に値があり、明細行、借方補助科目、貸方補助科目、借方部門、貸方部門がすべてNaNの行を抽出し、伝票日付を取り出す。
         entry_df = df[
-            (pd.notna(df[self.columns["伝票"]])) &
-            (pd.isna(df[self.columns["明細行"]])) &
-            (pd.isna(df[self.columns["借方補助科目"]])) &
-            (pd.isna(df[self.columns["貸方補助科目"]])) &
-            (pd.isna(df[self.columns["借方部門"]])) &
-            (pd.isna(df[self.columns["貸方部門"]]))
+            (pd.notna(df[self.columns["伝票"]]))
+            & (pd.isna(df[self.columns["明細行"]]))
+            & (pd.isna(df[self.columns["借方補助科目"]]))
+            & (pd.isna(df[self.columns["貸方補助科目"]]))
+            & (pd.isna(df[self.columns["借方部門"]]))
+            & (pd.isna(df[self.columns["貸方部門"]]))
         ][
             [self.columns["伝票"], self.columns["伝票日付"], "Month"]
         ].drop_duplicates()
@@ -1255,12 +1297,27 @@ class TidyData:
         line_df.drop(columns=[f"{self.columns['伝票日付']}_value", "Month_value"], inplace=True)
 
         self.debug_print("\nline_df")
-        self.debug_print(line_df.head())
+        columns_to_show = [
+            self.columns["伝票"],self.columns["明細行"],
+            self.columns["借方補助科目"],self.columns["貸方補助科目"],
+            self.columns["借方科目コード"], self.columns["借方補助科目コード"], "Debit_Amount",
+            self.columns["貸方科目コード"], self.columns["貸方補助科目コード"], "Credit_Amount"
+        ]  # 必要なカラムを指定
+        self.debug_print(line_df[columns_to_show].head())
 
-        # JP12a（借方補助科目）に値があり、JP12a_03（借方補助区分）が"補助科目"の行を抽出し、借方補助科目コード、借方補助科目名を取り出す。
+        # 借方補助科目コードに値があり、借方補助区分が["補助科目", "sub-account"]にある行を抽出し、借方補助科目コード、借方補助科目名を取り出す。
+        self.debug_print("\ndf")
+        columns_to_show_df = [
+            self.columns["伝票"], self.columns["明細行"],
+            self.columns["借方補助科目"], self.columns["貸方補助科目"],
+            self.columns["借方科目コード"], self.columns["借方補助科目コード"], self.columns["借方補助区分"], self.columns["借方金額"],
+            self.columns["貸方科目コード"], self.columns["貸方補助科目コード"], self.columns["貸方補助区分"], self.columns["貸方金額"]
+        ]  # 必要なカラムを指定
+        self.debug_print(df[columns_to_show_df].head())
+        df[self.columns["借方補助区分"]] = df[self.columns["借方補助区分"]].fillna('')
         debit_subaccount_df = df[
-            (df[self.columns["借方補助科目"]] > 0)
-            & (df[self.columns["借方補助区分"]] == "補助科目")
+            (pd.notna(df[self.columns["借方補助科目コード"]]))
+            & (df[self.columns["借方補助区分"]].isin(["補助科目", "sub-account"]))
         ][
             [self.columns["伝票"], self.columns["明細行"], self.columns["借方補助科目コード"], self.columns["借方補助科目名"]]
         ].drop_duplicates()
@@ -1271,6 +1328,8 @@ class TidyData:
                 self.columns["借方補助科目名"]: f"{self.columns['借方補助科目名']}_value",
             }
         )
+        self.debug_print("\ndebit_subaccount_df")
+        self.debug_print(debit_subaccount_df.head())
         # 補助科目の値をメインのDataFrameにマージする
         if not debit_subaccount_df.empty:
             line_df = pd.merge(line_df, debit_subaccount_df, on=[self.columns["伝票"], self.columns["明細行"]], how="left")
@@ -1282,22 +1341,24 @@ class TidyData:
                 f"{self.columns['借方補助科目コード']}_value", f"{self.columns['借方補助科目名']}_value"
             ], inplace=True)
 
-            print_columns =[
+            columns_to_show =[
                 self.columns["伝票"], self.columns["明細行"],
                 self.columns["借方補助科目"], self.columns["借方補助科目コード"], self.columns["借方補助科目名"],
             ]
             self.debug_print("\nline_df")
-            self.debug_print(line_df[print_columns].head())
+            self.debug_print(line_df[columns_to_show].head())
 
-        # JP12b（貸方補助科目）に値があり、JP12b_03（貸方補助区分）が"補助科目"の行を抽出し、貸方補助科目コード、貸方補助科目名を取り出す。
+        # 貸方補助科目コードに値があり、貸方補助区分が["補助科目", "sub-account"]にある行を抽出し、貸方補助科目コード、貸方補助科目名を取り出す。
+        df[self.columns["貸方補助区分"]] = df[self.columns["貸方補助区分"]].fillna('')
         credit_subaccount_df = df[
-            (df[self.columns["貸方補助科目"]] > 0)
-            & (df[self.columns["貸方補助区分"]] == "補助科目")
+            (pd.notna(df[self.columns["貸方補助科目コード"]]))
+            & (df[self.columns["貸方補助区分"]].isin(["補助科目", "sub-account"]))
         ][
             [
                 self.columns["伝票"], self.columns["明細行"], self.columns["貸方補助科目コード"], self.columns["貸方補助科目名"],
             ]
         ].drop_duplicates()
+
         # マージ前に列名を明確にするために列名を変更する
         credit_subaccount_df = credit_subaccount_df.rename(
             columns={
@@ -1316,11 +1377,12 @@ class TidyData:
                 f"{self.columns['貸方補助科目コード']}_value",  f"{self.columns['貸方補助科目名']}_value"
             ], inplace=True)
 
-            print_columns =[
-                self.columns["伝票"], self.columns["明細行"], self.columns["貸方補助科目コード"], self.columns["貸方補助科目名"],
-            ]
+            columns_to_show = [self.columns["伝票"],self.columns["明細行"],
+                                self.columns["借方補助科目"],self.columns["貸方補助科目"],
+                                self.columns["借方科目コード"], self.columns["借方補助科目コード"],"Debit_Amount",
+                                self.columns["貸方科目コード"], self.columns["貸方補助科目コード"],"Debit_Amount"]  # 必要なカラムを指定
             self.debug_print("\nline_df")
-            self.debug_print(line_df[print_columns].head())
+            self.debug_print(line_df[columns_to_show].head())
 
         # BS04cZ（借方部門）に値があり、BS04cZ_03（借方部門区分）が"部門"の行を抽出し、借方部門コードと借方部門名を取り出す。
         debit_department_df = df[
@@ -1338,7 +1400,7 @@ class TidyData:
                 self.columns["借方部門名"]: f"{self.columns['借方部門名']}_value",
             }
         )
-        # 補助科目の値をメインのDataFrameにマージする
+        # 部門の値をメインのDataFrameにマージする
         if not debit_department_df.empty:
             line_df = pd.merge(line_df, debit_department_df, on=[self.columns["伝票"], self.columns["明細行"]], how="left")
 
@@ -1347,12 +1409,12 @@ class TidyData:
 
             line_df.drop(columns=[f"{self.columns['借方部門コード']}_value", f"{self.columns['借方部門名']}_value"], inplace=True)
 
-            print_columns =[
+            columns_to_show =[
                 self.columns["伝票"], self.columns["明細行"],
                 self.columns["借方部門"], self.columns["借方部門コード"], self.columns["借方部門名"],
             ]
             self.debug_print("\nline_df")
-            self.debug_print(line_df[print_columns].head())
+            self.debug_print(line_df[columns_to_show].head())
 
         # BS04c0（貸方部門）に値があり、BS04c0_03（貸方部門区分）が"部門"の行を抽出し、貸方部門コードと貸方部門名を取り出す。
         credit_department_df = df[
@@ -1379,12 +1441,12 @@ class TidyData:
 
             line_df.drop(columns=[f"{self.columns['貸方部門コード']}_value", f"{self.columns['貸方部門名']}_value"], inplace=True)
 
-            print_columns =[
+            columns_to_show =[
                 self.columns["伝票"], self.columns["明細行"],
                 self.columns["貸方部門"], self.columns["貸方部門コード"], self.columns["貸方部門名"],
             ]
             self.debug_print("\nline_df")
-            self.debug_print(line_df[print_columns].head())
+            self.debug_print(line_df[columns_to_show].head())
 
         # マージと更新後のDataFrameを表示する
         self.debug_print("\n3. マージと更新後のDataFrame:")
@@ -1399,35 +1461,69 @@ class TidyData:
             & (pd.isna(line_df[self.columns["借方部門"]]))
             & (pd.isna(line_df[self.columns["貸方部門"]]))
             & (pd.notna(line_df["Debit_Amount"]) | pd.notna(line_df["Credit_Amount"]))
-            # & (pd.notna(line_df[self.columns["借方金額"]]) | pd.notna(line_df[self.columns["貸方金額"]]))
         ].drop_duplicates()
-        self.debug_print("\nOR条件で借方金額または貸方金額のいずれかに値があるもの:")
-        self.debug_print(self.amount_rows.head())
+        self.debug_print("\namount_rows OR条件で借方金額または貸方金額のいずれかに値があるもの:")
+        columns_to_show = [self.columns["伝票"],self.columns["明細行"],
+                           self.columns["借方補助科目"],self.columns["貸方補助科目"],
+                           self.columns["借方科目コード"], self.columns["借方補助科目コード"],"Debit_Amount",
+                           self.columns["貸方科目コード"], self.columns["貸方補助科目コード"],"Debit_Amount"]  # 必要なカラムを指定
+        self.debug_print(self.amount_rows[columns_to_show].head())
 
-        # 貸方科目コードが"10D100100"の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
+        # 貸方科目コードが self.params["account"]["売上高"] "10D100100"の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
+        # digital_transaction == 1 の電子取引の顧客コードリストを作成
+        digital_transaction_customer_codes = [
+            code for code, details in self.trading_partner_dict["customer"].items()
+            if details.get("digital_transaction")
+        ]
+
         self.amount_rows[self.columns["貸方科目コード"]] = np.where(
-            (self.amount_rows[self.columns["貸方科目コード"]] == "10D100100") &
-            (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]])) &
-            (self.amount_rows[self.columns["借方補助科目コード"]].astype(float) > 20),
-            "10D100101",
-            np.where(
-                (self.amount_rows[self.columns["貸方科目コード"]] == "10D100100") &
-                (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]])) &
-                (self.amount_rows[self.columns["借方補助科目コード"]].astype(float) <= 20),
-                "10D100102",
+            (
                 self.amount_rows[self.columns["貸方科目コード"]]
+                == self.params["account"]["売上高"]
             )
+            & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
+            & (
+                self.amount_rows[self.columns["借方補助科目コード"]]
+                .astype(str)
+                .isin(digital_transaction_customer_codes)
+            ),
+            self.params["account"]["電子取引売上高"],
+            np.where(
+                (
+                    self.amount_rows[self.columns["貸方科目コード"]]
+                    == self.params["account"]["売上高"]
+                )
+                & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
+                & (
+                    ~self.amount_rows[self.columns["借方補助科目コード"]]
+                    .astype(str)
+                    .isin(digital_transaction_customer_codes)
+                ),
+                self.params["account"]["電子取引以外売上高"],
+                self.amount_rows[self.columns["貸方科目コード"]],
+            ),
         )
         # 貸方科目名を変更
         self.amount_rows[self.columns["貸方科目名"]] = np.where(
-            (self.amount_rows[self.columns["貸方科目コード"]] == "10D100101"),
+            (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引売上高"]),
             "電子取引売上高",
             np.where(
-                (self.amount_rows[self.columns["貸方科目コード"]] == "10D100102"),
+                (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引以外売上高"]),
                 "電子取引以外売上高",
                 self.amount_rows[self.columns["貸方科目名"]]  # その他は変更しない
             )
         )
+
+        codes_to_check = [self.params["account"]["電子取引売上高"], self.params["account"]["電子取引以外売上高"]]
+        # codes_to_check = ["10D100101", "10D100102"]
+        # DataFrameに含まれているか確認
+        missing_codes = [code for code in codes_to_check if code not in self.amount_rows[self.columns["貸方科目コード"]].values]
+        # 結果を表示
+        if missing_codes:
+            self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
+        else:
+            self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+
         self.amount_rows = self.amount_rows[
             [
                 self.columns["伝票"],
@@ -2119,13 +2215,13 @@ class GUI:
                 row[5], # Subaccount_Name
                 row[6], # Department_Code
                 row[7], # Department_Name
-                (# 'Debit_Amount'
+                ( # 'Debit_Amount'
                     f"{row[8]:,.0f}" if pd.notna(row[8]) and row[8] != 0 and isinstance(row[8], (int, float)) else ""
                 ),
-                (# 'Credit_Amount'
+                ( # 'Credit_Amount'
                     f"{row[9]:,.0f}" if pd.notna(row[9]) and row[9] != 0 and isinstance(row[9], (int, float)) else ""
                 ),
-                (# 'Balance'
+                ( # 'Balance'
                     f"{row[10]:,.0f}" if pd.notna(row[10]) and row[10] != 0 and isinstance(row[10], (int, float)) else ""
                 ),
                 row[11], # Counterpart_Account_Number
@@ -2139,16 +2235,16 @@ class GUI:
                 row[0], # Month
                 row[1], # Ledger_Account_Number
                 row[2], # Ledger_Account_Name
-                (# 'Debit_Amount'
+                ( # 'Debit_Amount'
                     f"{row[3]:,.0f}" if pd.notna(row[3]) and row[3] != 0 and isinstance(row[3], (int, float)) else ""
                 ),
-                (# 'Credit_Amount'
+                ( # 'Credit_Amount'
                     f"{row[4]:,.0f}" if pd.notna(row[4]) and row[4] != 0 and isinstance(row[4], (int, float)) else ""
                 ),
-                (# 'Beginning_Balance'
+                ( # 'Beginning_Balance'
                     f"{row[5]:,.0f}" if pd.notna(row[5]) and row[5] != 0 and isinstance(row[5], (int, float)) else ""
                 ),
-                (# 'Ending_Balance'
+                ( # 'Ending_Balance'
                     f"{float(row[10]):,.0f}" if pd.notna(row[10]) and row[10] != 0 and isinstance(row[10], (int, float)) else ""
                 )
             )
@@ -2156,7 +2252,7 @@ class GUI:
 
     def search_keyword(self):
         self.is_processing = True
-        self.show_progress_window()
+        # self.show_progress_window()
         columns = self.columns
         search_term = self.search_entry.get().lower()
         frame_number = self.frame_number
@@ -2225,7 +2321,7 @@ class GUI:
             result_tree.insert("", "end", values=self.format_searched_row(row, frame_number))
 
         self.is_processing = False
-        self.close_progress_window()
+        # self.close_progress_window()
 
     def reset_search(self):
         frame_number = self.frame_number
@@ -2341,11 +2437,9 @@ class GUI:
                 input_BS_path = tidy_data.BS_path[1+tidy_data.BS_path.index('/'):] # BS Template CSV
                 output_BS_path = os.path.join(directory, input_BS_path)
                 self.save_dict2csv(output_BS_path, tidy_data.bs_parent_dict)
-                # tidy_data.bs_data_df.to_csv(output_BS_path, index=False, encoding="utf-8-sig")
                 input_PL_path = tidy_data.PL_path[1+tidy_data.PL_path.index('/'):]  # PL Template CSV
                 output_PL_path = os.path.join(directory, input_PL_path)
                 self.save_dict2csv(output_PL_path, tidy_data.pl_parent_dict)
-                # tidy_data.pl_data_df.to_csv(output_PL_path, index=False, encoding="utf-8-sig")
                 if self.lang == "ja":
                     messagebox.showinfo("成功", f"DataFrameをCSVファイルとして {amount_path}, {general_ledger_path}, {summary_path}, {output_BS_path}, {output_PL_path} に保存しました。")
                 else:
