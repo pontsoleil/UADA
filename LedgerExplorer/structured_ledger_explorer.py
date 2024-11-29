@@ -88,6 +88,7 @@ class TidyData:
             "費用": "借方増",
             "収益": "貸方増"
         }
+        self.lang = "ja"
 
     def debug_print(self, message):
         if self.DEBUG:
@@ -686,28 +687,28 @@ class TidyData:
         # e-Tax CSV Sheet for BS
         input_BS_path = self.BS_path  # BS Template CSV
         # Load the CSV file and use the first row as the header
-        bs_template_df = pd.read_csv(input_BS_path, header=0)
+        self.bs_template_df = pd.read_csv(input_BS_path, header=0)
         # カラム名に余分なスペースがある場合の対応
-        bs_template_df.columns = bs_template_df.columns.str.strip()
+        self.bs_template_df.columns = self.bs_template_df.columns.str.strip()
         # Ensure the Ledger_Account_Number column is present by checking its existence
-        if "Ledger_Account_Number" not in bs_template_df.columns:
+        if "Ledger_Account_Number" not in self.bs_template_df.columns:
             raise KeyError("Ledger_Account_Number column is missing. Check the CSV file structure.")
         # Select only the desired columns and drop rows where "Ledger_Account_Number" is NaN
-        bs_template_df = bs_template_df[["name", "category", "seq", "account_name", "type", "level", "Ledger_Account_Number"]].dropna(subset=["Ledger_Account_Number"])
-        bs_template_df.rename(
+        self.bs_template_df = self.bs_template_df[["name", "category", "seq", "account_name", "type", "level", "Ledger_Account_Number", "English_Label"]].dropna(subset=["Ledger_Account_Number"])
+        self.bs_template_df.rename(
             columns={
                 "name": "Name",
                 "category": "Category",
-                "account_name": "Account_Nname",
+                "account_name": "Account_Name",
                 "type": "Type",
                 "level": "Level"
             },
             inplace=True
         )
-        bs_template_df["Level"] = bs_template_df["Level"].fillna(0).astype(int)
-        # Iterate through bs_template_df to populate the dictionary
+        self.bs_template_df["Level"] = self.bs_template_df["Level"].fillna(0).astype(int)
+        # Iterate through self.bs_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
-        for _, row in bs_template_df.iterrows():
+        for _, row in self.bs_template_df.iterrows():
             ledger_account_number = row["Ledger_Account_Number"]
             if pd.notna(ledger_account_number):  # Only process rows with valid Ledger_Account_Number
                 i += 1
@@ -732,7 +733,7 @@ class TidyData:
         )
         # Merge the sheet's Ledger_Account_Number with balance_sheet_df to get balances
         self.bs_data_df = pd.merge(
-            bs_template_df,
+            self.bs_template_df,
             balance_sheet_df[["Ledger_Account_Number", "Beginning_Balance", "Total_Debit", "Total_Credit", "Ending_Balance"]],
             on="Ledger_Account_Number",
             how="left"
@@ -839,28 +840,28 @@ class TidyData:
         # Paths for input and output PL files
         input_PL_path = self.PL_path  # Replace with your input CSV file path
         # Load the CSV file
-        pl_template_df = pd.read_csv(input_PL_path, header=0)
+        self.pl_template_df = pd.read_csv(input_PL_path, header=0)
         # カラム名に余分なスペースがある場合の対応
-        pl_template_df.columns = pl_template_df.columns.str.strip()
+        self.pl_template_df.columns = self.pl_template_df.columns.str.strip()
         # Ensure the Ledger_Account_Number column is present by checking its existence
-        if "Ledger_Account_Number" not in pl_template_df.columns:
+        if "Ledger_Account_Number" not in self.pl_template_df.columns:
             raise KeyError("Ledger_Account_Number column is missing. Check the CSV file structure.")
         # Drop rows where Ledger_Account_Number is missing (i.e., NaN values in that column)
-        pl_template_df = pl_template_df[["name", "category", "seq", "account_name", "type", "level", "Ledger_Account_Number"]].dropna(subset=["Ledger_Account_Number"])
-        pl_template_df.rename(
+        self.pl_template_df = self.pl_template_df[["name", "category", "seq", "account_name", "type", "level", "Ledger_Account_Number", "English_Label"]].dropna(subset=["Ledger_Account_Number"])
+        self.pl_template_df.rename(
             columns={
                 "name": "Name",
                 "category": "Category",
-                "account_name": "Account_Nname",
+                "account_name": "Account_Name",
                 "type": "Type",
                 "level": "Level"
             },
             inplace=True
         )
-        pl_template_df["Level"] = pl_template_df["Level"].fillna(0).astype(int)
-        # Iterate through pl_template_df to populate the dictionary
+        self.pl_template_df["Level"] = self.pl_template_df["Level"].fillna(0).astype(int)
+        # Iterate through self.pl_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
-        for _, row in pl_template_df.iterrows():
+        for _, row in self.pl_template_df.iterrows():
             ledger_account_number = row["Ledger_Account_Number"]
             if pd.notna(ledger_account_number):  # Only process rows with valid Ledger_Account_Number
                 i += 1
@@ -875,7 +876,7 @@ class TidyData:
         ]
         # Merge the sheet Ledger_Account_Number with the income_statement_df to get balances
         self.pl_data_df = pd.merge(
-            pl_template_df,
+            self.pl_template_df,
             income_statement_df[["Ledger_Account_Number", "Total_Debit", "Total_Credit"]],
             on="Ledger_Account_Number",
             how="left"
@@ -898,9 +899,10 @@ class TidyData:
         missing_codes = [code for code in codes_to_check if code not in self.pl_data_df["Ledger_Account_Number"].values]
         # 結果を表示
         if missing_codes:
-            self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
+            self.debug_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
         else:
             self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+
         def build_pl_parent_child_relationship_with_level(pl_data_df, level_range=(1, 10), exclude_empty_children=True):
             # 初期化: 各レベルの最新の要素を保持（レベル範囲を指定）
             level_list = {lvl: None for lvl in range(level_range[0], level_range[1] + 1)}
@@ -921,6 +923,7 @@ class TidyData:
             if exclude_empty_children:
                 children_list = {k: v for k, v in children_list.items() if v["children"]}
             return children_list
+
         # PLの親子関係を構築
         pl_parent_child_hierarchy = build_pl_parent_child_relationship_with_level(self.pl_data_df, level_range=(1, 10), exclude_empty_children=True)
         # PLの結果を表示
@@ -1032,7 +1035,10 @@ class TidyData:
         if pd.isna(code):
             return code
         if code in self.tax_category_mapping_dict:
-            return self.tax_category_mapping_dict[code]["Tax_Category_Name"]
+            if "en" == self.lang:
+                return self.tax_category_mapping_dict[code]["Tax_Category_Name_en"]
+            else:
+                return self.tax_category_mapping_dict[code]["Tax_Category_Name_ja"]
         else:
             errors.append(f"Error: Tax_Code {code} is not found in the mapping dictionary.")
             return code  # 未対応のコードはそのまま返す
@@ -1078,7 +1084,7 @@ class TidyData:
         tax_category_list_df = pd.read_csv(self.tax_category_path, dtype=str)
         tax_category_list_df.columns = tax_category_list_df.columns.str.strip()  # 列名の空白を除去
         # Account_Code をキーにして eTax_Account_Code と eTax_Account_Name を持つ辞書を作成
-        self.tax_category_mapping_dict = tax_category_list_df.set_index('Tax_Code')[['Dr_Cr', 'Tax_Name', "Tax_Category_Code", "Tax_Category_Name"]].to_dict('index')
+        self.tax_category_mapping_dict = tax_category_list_df.set_index('Tax_Code')[['Dr_Cr', 'Tax_Name', "Tax_Category_Code", "Tax_Category_Name_ja", "Tax_Category_Name_en"]].to_dict('index')
 
         # 対応先がない場合のエラーログリスト
         errors = []
@@ -1105,7 +1111,6 @@ class TidyData:
                 # 貸方科目コードと名称の変換
                 row[self.columns["貸方税区分コード"]] = self.map_tax_category_code(credit_tax_category_code, errors)
                 row[self.columns["貸方税区分名"]] = self.map_tax_category_name(credit_tax_category_code, errors)
-
                 return row
 
         # データフレーム全体に行単位で関数を適用
@@ -1463,10 +1468,12 @@ class TidyData:
             & (pd.notna(line_df["Debit_Amount"]) | pd.notna(line_df["Credit_Amount"]))
         ].drop_duplicates()
         self.debug_print("\namount_rows OR条件で借方金額または貸方金額のいずれかに値があるもの:")
-        columns_to_show = [self.columns["伝票"],self.columns["明細行"],
-                           self.columns["借方補助科目"],self.columns["貸方補助科目"],
-                           self.columns["借方科目コード"], self.columns["借方補助科目コード"],"Debit_Amount",
-                           self.columns["貸方科目コード"], self.columns["貸方補助科目コード"],"Debit_Amount"]  # 必要なカラムを指定
+        columns_to_show = [
+            self.columns["伝票"],self.columns["明細行"],
+            self.columns["借方補助科目"],self.columns["貸方補助科目"],
+            self.columns["借方科目コード"], self.columns["借方補助科目コード"], "Debit_Amount",
+            self.columns["貸方科目コード"], self.columns["貸方補助科目コード"], "Credit_Amount"
+        ]
         self.debug_print(self.amount_rows[columns_to_show].head())
 
         # 貸方科目コードが self.params["account"]["売上高"] "10D100100"の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
@@ -1625,6 +1632,14 @@ class GUI:
         self.width_subaccount = 40
         self.lang = "ja"  # 初期言語を日本語に設定
 
+    def debug_print(self, message):
+        if self.DEBUG:
+            print(message)
+
+    def trace_print(self, message):
+        if self.TRACE:
+            print(message)
+
     def show_progress_window(self):
         if self.progress_window is None:
             self.progress_window = tk.Toplevel(self.root)
@@ -1648,8 +1663,10 @@ class GUI:
     def toggle_language(self):
         if self.lang == "ja":
             self.lang = "en"
+            tidy_data.lang = "en"
         else:
             self.lang = "ja"
+            tidy_data.lang = "ja"
         self.update_labels()
 
     def update_labels(self):
@@ -1905,7 +1922,65 @@ class GUI:
 
         tidy_data.csv2dataframe(param_file)
 
+    def map_tax_category_name(self, code, errors):
+        if not code:
+            return code
+        tax_category_mapping_dict = [
+            details
+            for details in tidy_data.tax_category_mapping_dict.values()
+            if details.get('Tax_Category_Code') == code
+        ]
+        if len(tax_category_mapping_dict) == 0:
+            return code
+        if "en" == self.lang:
+            return tax_category_mapping_dict[0]["Tax_Category_Name_en"]
+        else:
+            return tax_category_mapping_dict[0]["Tax_Category_Name_ja"]
+
     def format_row(self, row, frame_number):
+        bs_dict = tidy_data.bs_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
+        pl_dict = tidy_data.pl_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
+        debit_account_name = None
+        debit_account_number = row[self.columns["借方科目コード"]]
+        if debit_account_number in bs_dict:
+            if "ja" == self.lang:
+                debit_account_name = bs_dict[debit_account_number]["Account_Name"]
+            elif "en" == self.lang:
+                debit_account_name = bs_dict[debit_account_number]["English_Label"]
+        elif debit_account_number in pl_dict:
+            if "ja" == self.lang:
+                debit_account_name = pl_dict[debit_account_number]["Account_Name"]
+            elif "en" == self.lang:
+                debit_account_name = pl_dict[debit_account_number]["English_Label"]
+        if debit_account_name:
+            row[self.columns["借方科目名"]] = debit_account_name
+        debit_account_name = None
+        credit_account_number = row[self.columns["貸方科目コード"]]
+        if credit_account_number in bs_dict:            
+            if "ja" == self.lang:
+                debit_account_name = bs_dict[credit_account_number]["Account_Name"]
+            elif "en" == self.lang:
+                debit_account_name = bs_dict[credit_account_number]["English_Label"]
+        elif credit_account_number in pl_dict:
+            if "ja" == self.lang:
+                debit_account_name = pl_dict[credit_account_number]["Account_Name"]
+            elif "en" == self.lang:
+                debit_account_name = pl_dict[credit_account_number]["English_Label"]
+        if debit_account_name:
+            row[self.columns["貸方科目名"]] = debit_account_name
+        errors = []
+        debit_tax_name = credit_tax_name = None
+        debit_tax_code = row[self.columns["借方税区分コード"]]
+        if debit_tax_code:
+            debit_tax_name = self.map_tax_category_name(debit_tax_code, errors)
+        credit_tax_code = row[self.columns["貸方税区分コード"]]
+        if credit_tax_code:
+            credit_tax_name = self.map_tax_category_name(credit_tax_code, errors)
+        if debit_tax_name:
+            row[self.columns["借方税区分名"]] = debit_tax_name
+        if credit_tax_name:
+            row[self.columns["貸方税区分名"]] = credit_tax_name
+
         if 0 == frame_number: # Journal
             formatted_row = (
                 row[self.columns["伝票"]],
@@ -2052,7 +2127,7 @@ class GUI:
         self.columns = tidy_data.get_columns()
         if 0 == frame_number:
             selected_month = self.month_combobox.get()
-            amount_rows = tidy_data.get_amount_rows()
+            amount_rows = tidy_data.get_amount_rows()            
             self.amount_df = pd.DataFrame(amount_rows).copy()
             result_tree = self.result_tree0
             if selected_month:
@@ -2123,6 +2198,7 @@ class GUI:
         # Treeviewの行削除
         for i in result_tree.get_children():
             result_tree.delete(i)
+        
         self.insert_data(filtered_df, result_tree, frame_number)
         # # スレッドを開始してデータを挿入 注：これは遅い
         # self.processing_thread = threading.Thread(target=self.insert_data, args=(filtered_df, result_tree, frame_number))
@@ -2351,7 +2427,7 @@ class GUI:
             description = row_data[1]  # Assuming "Description" is the 2nd column
         else:
             return
-        pdf_path = f'Accounting_OIM-CSV/slip/{description}.pdf'
+        pdf_path = f'LedgerExplorer/slip/{description}.pdf'
         pdf_path = os.path.abspath(pdf_path)
         if os.path.isfile(pdf_path):
             webbrowser.open(f'file://{pdf_path}')

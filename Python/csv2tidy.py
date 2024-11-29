@@ -1408,13 +1408,7 @@ def main():
     )
     parser.add_argument("-m", "--lhm_file", required=True, help="LHM file path")
     parser.add_argument("-b", "--binding_file", required=True, help="Binding file path")
-    parser.add_argument(
-        "-e",
-        "--encoding",
-        required=False,
-        default="utf-8-sig",
-        help="File encoding, default is utf-8-sig",
-    )
+    parser.add_argument("-e", "--encoding", required=False, default="utf-8-sig", help="File encoding, default is utf-8-sig")
     parser.add_argument("-t", "--trace", required=False, action="store_true")
     parser.add_argument("-d", "--debug", required=False, action="store_true")
 

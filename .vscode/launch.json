@@ -21,7 +21,7 @@
             // csv2tidy.py
             // "args": ["../data/_PCA/entryGL_2021-08-31_75_21.csv", "-o ../data/_PCA/tidyGL_2021-08-31_75_21.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig", "-t"]//, "-d"] // csv2tidy.py
             // "args": ["../data/_PCA/entryGL.csv", "-o ../data/_PCA/tidyGL.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig"]//, "-t", "-d"] // csv2tidy.py
-            // "args": ["../data/_PCA/entryGL_translated.csv", "-o ../data/_PCA/tidyGL_translated.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig"]//, "-t", "-d"] // csv2tidy.py
+            // "args": ["../data/_PCA/entryGL_translated.csv", "-o ../data/_PCA/tidyGL_translated.csv", "-m ../ISO21926/LHM/JP_LHM.csv", "-b ../data/_PCA/bindingPCA_GL.csv", "-e utf-8-sig", "-l en"]//, "-t", "-d"] // csv2tidy.py
 
             // tidy2csv.py
             // "args": ["../data/_PCA/try/tidyGL_translated.csv", "-o ../data/_PCA/try/entryPCA_translated2411.csv", "-m ../ISO21926/LHM/ISO21926_LHM.csv", "-b ../data/bindingPCA_21926.csv", "-e utf-8-sig", "-t", "-d"] // csv2tidy.py

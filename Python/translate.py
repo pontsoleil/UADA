@@ -607,7 +607,7 @@ def translate_text(text, column=None):
             return text
 
 print('# Define the base directory and file paths')
-base_dir = 'data/_PCA/try'
+base_dir = 'data/_PCA'
 input_file_path = f'{base_dir}/entryGL.csv'
 output_file_path = f'{base_dir}/entryGL_translated.csv'
 company_file_path = f'{base_dir}/company_names.csv'
