@@ -2845,7 +2845,7 @@ class GUI:
         self.toggle_language_button = tk.Button(search_frame, text="日本語/English", command=self.toggle_language)
         self.toggle_language_button.pack(side="left", padx=5)
 
-        account_dict = tidy_data.get_account_dict(lang)
+        account_dict = tidy_data.get_account_dict()
         accounts = list(account_dict.keys())
         self.account_combobox["values"] = accounts
 
