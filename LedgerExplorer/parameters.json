@@ -1,5 +1,6 @@
 {
-    "file_path": "data/_PCA/tidyGL_translated.csv",
+    "file_path": "data/_PCA/tidyGL_en.csv",
+    "e-tax_file_path": "data/_PCA/tidyGL_en_etax.csv",
     "LHM_path": "ISO21926/LHM/JP_LHM.csv",
     "beginning_balance_path": "data/_PCA/beginning_balance.csv",
     "account_path": "data/_PCA/account_list.csv",
@@ -51,7 +52,7 @@
         "電子取引売上高": "10D100101",
         "電子取引以外売上高": "10D100102"
     },
-    "lang": "ja",
+    "lang": "en",
     "DEBUG": 0,
     "TRACE": 1
 }
