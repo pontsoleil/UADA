@@ -48,7 +48,7 @@
             // iso21926SgraphWalk.py
             // "args": ["ISO21926/BSM/ADS_BSM.csv", " ISO21926/LHM/ADS_LHM.csv", "-t", "-d"]
 
-            // LedgerExplorer/structured_ledger_explorer.py
+            // LedgerExplorer/structured_ledger_explorer.py, LedgerExplorer/e-Tax_account_code.py
             "args": ["LedgerExplorer/parameters.json"]
 
         }
