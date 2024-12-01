@@ -990,58 +990,37 @@ class TidyData:
         # Replace the original dictionary with the sorted one
         self.pl_parent_dict = sorted_pl_parent_dict
 
-    # Account_Codeを置き換え
-    def map_account_code(self, code, errors):
-        if pd.isna(code):
-            return code
-        try: # 小数の形式になっている場合は整数に変換
-            code = str(int(code))
-        except ValueError:
-            errors.append(f"Error: Account_Code {code} is not a valid integer.")
-            return code
-        if code in self.code_mapping_dict:
-            return self.code_mapping_dict[code]["eTax_Account_Code"]
-        else:
-            errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
-            return code  # 未対応のコードはそのまま返す
+    # # Account_Codeを置き換え
+    # def map_account_code(self, code, errors):
+    #     if pd.isna(code):
+    #         return code
+    #     try: # 小数の形式になっている場合は整数に変換
+    #         code = str(int(code))
+    #     except ValueError:
+    #         errors.append(f"Error: Account_Code {code} is not a valid integer.")
+    #         return code
+    #     if code in self.code_mapping_dict:
+    #         return self.code_mapping_dict[code]["eTax_Account_Code"]
+    #     else:
+    #         errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
+    #         return code  # 未対応のコードはそのまま返す
 
-    # Account_Name を置き換え
-    def map_account_name(self, code, errors):
-        if pd.isna(code):
-            return code
-        try: # 小数の形式になっている場合は整数に変換
-            code = str(int(code))
-        except ValueError:
-            errors.append(f"Error: Account_Code {code} is not a valid integer.")
-            return code
-        if code in self.code_mapping_dict:
-            return self.code_mapping_dict[code]["eTax_Account_Name"]
-        else:
-            # エラーをリストに追加
-            if code not in errors:  # 重複エラーを避ける
-                errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
-            return self.tidy_gl_df.loc[self.tidy_gl_df["Account_Code"] == code, 'Account_Name'].values[0]
-
-    def map_tax_category_code(self, code, errors):
-        if pd.isna(code):
-            return code
-        if code in self.tax_category_mapping_dict:
-            return self.tax_category_mapping_dict[code]["Tax_Category_Code"]
-        else:
-            errors.append(f"Error: Tax_Code {code} is not found in the mapping dictionary.")
-            return code  # 未対応のコードはそのまま返す
-
-    def map_tax_category_name(self, code, errors):
-        if pd.isna(code):
-            return code
-        if code in self.tax_category_mapping_dict:
-            if "en" == self.lang:
-                return self.tax_category_mapping_dict[code]["Tax_Category_Name_en"]
-            else:
-                return self.tax_category_mapping_dict[code]["Tax_Category_Name_ja"]
-        else:
-            errors.append(f"Error: Tax_Code {code} is not found in the mapping dictionary.")
-            return code  # 未対応のコードはそのまま返す
+    # # Account_Name を置き換え
+    # def map_account_name(self, code, errors):
+    #     if pd.isna(code):
+    #         return code
+    #     try: # 小数の形式になっている場合は整数に変換
+    #         code = str(int(code))
+    #     except ValueError:
+    #         errors.append(f"Error: Account_Code {code} is not a valid integer.")
+    #         return code
+    #     if code in self.code_mapping_dict:
+    #         return self.code_mapping_dict[code]["eTax_Account_Name"]
+    #     else:
+    #         # エラーをリストに追加
+    #         if code not in errors:  # 重複エラーを避ける
+    #             errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
+    #         return self.tidy_gl_df.loc[self.tidy_gl_df["Account_Code"] == code, 'Account_Name'].values[0]
 
     def code2etax(self):
         # account_list.csv を読み込み、変換用の辞書を作成
@@ -1080,74 +1059,27 @@ class TidyData:
         self.tidy_gl_df = pd.read_csv(self.file_path, dtype=dtype_dict)
         self.tidy_gl_df.columns = self.tidy_gl_df.columns.str.strip()  # 列名の空白を除去
 
-        # tax_category.csv を読み込み、変換用の辞書を作成
-        tax_category_list_df = pd.read_csv(self.tax_category_path, dtype=str)
-        tax_category_list_df.columns = tax_category_list_df.columns.str.strip()  # 列名の空白を除去
-        # Account_Code をキーにして eTax_Account_Code と eTax_Account_Name を持つ辞書を作成
-        self.tax_category_mapping_dict = tax_category_list_df.set_index('Tax_Code')[['Dr_Cr', 'Tax_Name', "Tax_Category_Code", "Tax_Category_Name_ja", "Tax_Category_Name_en"]].to_dict('index')
-
-        # 対応先がない場合のエラーログリスト
-        errors = []
-
-        # 借方と貸方の科目コード及び税コードに対してコードのマッピングを適用
-        # 行ごとに繰り返し処理を行い、借方と貸方の科目コード、名称、借方税区分コード、借方税区分名をマッピング
-        def process_row(row):
-            debit_account_code = row[self.columns["借方科目コード"]]
-            credit_account_code = row[self.columns["貸方科目コード"]]
-            debit_tax_category_code = row[self.columns["借方税区分コード"]]
-            credit_tax_category_code = row[self.columns["貸方税区分コード"]]
-            if pd.isna(debit_account_code) and pd.isna(credit_account_code):
-                return row
-            else:
-                # 借方科目コードと名称の変換
-                row[self.columns["借方科目コード"]] = self.map_account_code(debit_account_code, errors)
-                row[self.columns["借方科目名"]] = self.map_account_name(debit_account_code, errors)
-                # 貸方科目コードと名称の変換
-                row[self.columns["貸方科目コード"]] = self.map_account_code(credit_account_code, errors)
-                row[self.columns["貸方科目名"]] = self.map_account_name(credit_account_code, errors)
-                # 借方科目コードと名称の変換
-                row[self.columns["借方税区分コード"]] = self.map_tax_category_code(debit_tax_category_code, errors)
-                row[self.columns["借方税区分名"]] = self.map_tax_category_name(debit_tax_category_code, errors)
-                # 貸方科目コードと名称の変換
-                row[self.columns["貸方税区分コード"]] = self.map_tax_category_code(credit_tax_category_code, errors)
-                row[self.columns["貸方税区分名"]] = self.map_tax_category_name(credit_tax_category_code, errors)
-                return row
-
-        # データフレーム全体に行単位で関数を適用
-        self.tidy_gl_df = self.tidy_gl_df.apply(process_row, axis=1)
-
-        # エラーがあれば出力
-        if errors:
-            self.trace_print("\n".join(errors))
-
-        # 結果を確認
-        self.debug_print(self.tidy_gl_df.head())
-
-        # 新しいデータフレームを CSV に保存（必要に応じて）
-        self.etax_file_path = f"{self.file_path[:-4]}_etax.csv"
-        self.tidy_gl_df.to_csv(self.etax_file_path, index=False, encoding="utf-8-sig")
-
         # beginning_balance_pathを読み込む
         beginning_balance_df = pd.read_csv(self.beginning_balance_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
 
         # エラーログを初期化
         errors = []
 
-        # Account_Codeをマッピングして置き換え
-        # Account_Code, Account_Name, Beginning_Balance
-        def process_balance(row):
-            account_code = row["Account_Code"]
-            if pd.isna(account_code):
-                return row
-            else:
-                self.debug_print(f'{account_code}')
-                # 科目コードと名称の変換
-                row["Account_Code"] = self.map_account_code(account_code, errors)
-                row["Account_Name"] = self.map_account_name(account_code, errors)
-                return row
+        # # Account_Codeをマッピングして置き換え
+        # # Account_Code, Account_Name, Beginning_Balance
+        # def process_balance(row):
+        #     account_code = row["Account_Code"]
+        #     if pd.isna(account_code):
+        #         return row
+        #     else:
+        #         self.debug_print(f'{account_code}')
+        #         # # 科目コードと名称の変換
+        #         # row["Account_Code"] = self.map_account_code(account_code, errors)
+        #         # row["Account_Name"] = self.map_account_name(account_code, errors)
+        #         return row
 
-        # データフレーム全体に行単位で関数を適用
-        beginning_balance_df = beginning_balance_df.apply(process_balance, axis=1)
+        # # データフレーム全体に行単位で関数を適用
+        # beginning_balance_df = beginning_balance_df.apply(process_balance, axis=1)
 
         # 勘定科目の開始残高を辞書に変換
         beginning_balance_df["Account_Code"] = beginning_balance_df["Account_Code"].astype(str)
@@ -1171,7 +1103,7 @@ class TidyData:
         self.params = params
         self.DEBUG = 1 == params["DEBUG"]
         self.TRACE = 1 == params["TRACE"]
-        self.file_path = params["file_path"]
+        self.file_path = params["e-tax_file_path"]
         self.beginning_balance_path = params["beginning_balance_path"]
         self.account_path = params["account_path"]
         self.tax_category_path = params["tax_category_path"]
@@ -1180,6 +1112,7 @@ class TidyData:
         self.BS_path = params["HOT010_3.0_BS_10"]
         self.PL_path = params["HOT010_3.0_PL_10"]
         self.columns  = params["columns"]
+        self.lang = params["lang"]
 
         self.trading_partner_dict = {"supplier":{}, "customer": {}, "bank": {}}
         with open(self.trading_partner_path, mode='r', encoding='utf-8-sig') as csv_file:
@@ -1203,7 +1136,7 @@ class TidyData:
 
         self.code2etax()
 
-        df = pd.read_csv(self.etax_file_path, encoding="utf-8-sig", dtype=str) # read tidy data csv
+        df = pd.read_csv(self.file_path, encoding="utf-8-sig", dtype=str) # read tidy data csv
         df.columns = df.columns.str.strip()
 
         # 関連する列を適切なデータ型に変換する
@@ -1592,9 +1525,6 @@ class TidyData:
         time_tracker.stop()
 
 
-tidy_data = TidyData()
-
-
 class GUI:
     def __init__(self, root):
         self.root = root
@@ -1630,7 +1560,7 @@ class GUI:
         self.column_visible = False
         self.width_account = 80
         self.width_subaccount = 40
-        self.lang = "ja"  # 初期言語を日本語に設定
+        self.lang = tidy_data.lang
 
     def debug_print(self, message):
         if self.DEBUG:
@@ -1922,64 +1852,49 @@ class GUI:
 
         tidy_data.csv2dataframe(param_file)
 
-    def map_tax_category_name(self, code, errors):
-        if not code:
-            return code
-        tax_category_mapping_dict = [
-            details
-            for details in tidy_data.tax_category_mapping_dict.values()
-            if details.get('Tax_Category_Code') == code
-        ]
-        if len(tax_category_mapping_dict) == 0:
-            return code
-        if "en" == self.lang:
-            return tax_category_mapping_dict[0]["Tax_Category_Name_en"]
-        else:
-            return tax_category_mapping_dict[0]["Tax_Category_Name_ja"]
-
     def format_row(self, row, frame_number):
-        bs_dict = tidy_data.bs_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
-        pl_dict = tidy_data.pl_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
-        debit_account_name = None
-        debit_account_number = row[self.columns["借方科目コード"]]
-        if debit_account_number in bs_dict:
-            if "ja" == self.lang:
-                debit_account_name = bs_dict[debit_account_number]["Account_Name"]
-            elif "en" == self.lang:
-                debit_account_name = bs_dict[debit_account_number]["English_Label"]
-        elif debit_account_number in pl_dict:
-            if "ja" == self.lang:
-                debit_account_name = pl_dict[debit_account_number]["Account_Name"]
-            elif "en" == self.lang:
-                debit_account_name = pl_dict[debit_account_number]["English_Label"]
-        if debit_account_name:
-            row[self.columns["借方科目名"]] = debit_account_name
-        debit_account_name = None
-        credit_account_number = row[self.columns["貸方科目コード"]]
-        if credit_account_number in bs_dict:            
-            if "ja" == self.lang:
-                debit_account_name = bs_dict[credit_account_number]["Account_Name"]
-            elif "en" == self.lang:
-                debit_account_name = bs_dict[credit_account_number]["English_Label"]
-        elif credit_account_number in pl_dict:
-            if "ja" == self.lang:
-                debit_account_name = pl_dict[credit_account_number]["Account_Name"]
-            elif "en" == self.lang:
-                debit_account_name = pl_dict[credit_account_number]["English_Label"]
-        if debit_account_name:
-            row[self.columns["貸方科目名"]] = debit_account_name
-        errors = []
-        debit_tax_name = credit_tax_name = None
-        debit_tax_code = row[self.columns["借方税区分コード"]]
-        if debit_tax_code:
-            debit_tax_name = self.map_tax_category_name(debit_tax_code, errors)
-        credit_tax_code = row[self.columns["貸方税区分コード"]]
-        if credit_tax_code:
-            credit_tax_name = self.map_tax_category_name(credit_tax_code, errors)
-        if debit_tax_name:
-            row[self.columns["借方税区分名"]] = debit_tax_name
-        if credit_tax_name:
-            row[self.columns["貸方税区分名"]] = credit_tax_name
+        # bs_dict = tidy_data.bs_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
+        # pl_dict = tidy_data.pl_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
+        # debit_account_name = None
+        # debit_account_number = row[self.columns["借方科目コード"]]
+        # if debit_account_number in bs_dict:
+        #     # if "ja" == self.lang:
+        #     debit_account_name = bs_dict[debit_account_number]["Account_Name"]
+        #     # elif "en" == self.lang:
+        #     #     debit_account_name = bs_dict[debit_account_number]["English_Label"]
+        # elif debit_account_number in pl_dict:
+        #     # if "ja" == self.lang:
+        #     debit_account_name = pl_dict[debit_account_number]["Account_Name"]
+        #     # elif "en" == self.lang:
+        #     #     debit_account_name = pl_dict[debit_account_number]["English_Label"]
+        # if debit_account_name:
+        #     row[self.columns["借方科目名"]] = debit_account_name
+        # debit_account_name = None
+        # credit_account_number = row[self.columns["貸方科目コード"]]
+        # if credit_account_number in bs_dict:            
+        #     # if "ja" == self.lang:
+        #     debit_account_name = bs_dict[credit_account_number]["Account_Name"]
+        #     # elif "en" == self.lang:
+        #     #     debit_account_name = bs_dict[credit_account_number]["English_Label"]
+        # elif credit_account_number in pl_dict:
+        #     # if "ja" == self.lang:
+        #     debit_account_name = pl_dict[credit_account_number]["Account_Name"]
+        #     # elif "en" == self.lang:
+        #     #     debit_account_name = pl_dict[credit_account_number]["English_Label"]
+        # if debit_account_name:
+        #     row[self.columns["貸方科目名"]] = debit_account_name
+        # errors = []
+        # debit_tax_name = credit_tax_name = None
+        # debit_tax_code = row[self.columns["借方税区分コード"]]
+        # if debit_tax_code:
+        #     debit_tax_name = self.map_tax_category_name(debit_tax_code, errors)
+        # credit_tax_code = row[self.columns["貸方税区分コード"]]
+        # if credit_tax_code:
+        #     credit_tax_name = self.map_tax_category_name(credit_tax_code, errors)
+        # if debit_tax_name:
+            # row[self.columns["借方税区分名"]] = debit_tax_name
+        # if credit_tax_name:
+            # row[self.columns["貸方税区分名"]] = credit_tax_name
 
         if 0 == frame_number: # Journal
             formatted_row = (
@@ -2930,7 +2845,7 @@ class GUI:
         self.toggle_language_button = tk.Button(search_frame, text="日本語/English", command=self.toggle_language)
         self.toggle_language_button.pack(side="left", padx=5)
 
-        account_dict = tidy_data.get_account_dict()
+        account_dict = tidy_data.get_account_dict(lang)
         accounts = list(account_dict.keys())
         self.account_combobox["values"] = accounts
 
@@ -2939,6 +2854,7 @@ class GUI:
         self.month_combobox["values"] = months
 
         self.show_frame(self.frame0, 0)  # 最初に表示する frame を指定
+        self.update_labels()
         self.update_time_labels()
 
 
@@ -2949,6 +2865,7 @@ if __name__ == "__main__":
     param_file_path = sys.argv[1]
 
     # Then process the CSV
+    tidy_data = TidyData()
     tidy_data.csv2dataframe(param_file_path)
 
     # Initialize the GUI
