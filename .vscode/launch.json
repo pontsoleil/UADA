@@ -11,6 +11,8 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": true,
+            "redirectOutput": false,
+
             // JP extension
             // iso21926specialization.py
             // "args": ["../ISO21926/FSM/ISO21926_FSM.csv", "../ISO21926/BSM/ISO21926_BSM.csv", "-s ../ISO21926/FSM/JP_FSM.csv", "-l ../ISO21926/BSM/JP_BSM.csv"]//, "-t", "-d"]
