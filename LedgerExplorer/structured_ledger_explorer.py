@@ -706,6 +706,18 @@ class TidyData:
             inplace=True
         )
         self.bs_template_df["Level"] = self.bs_template_df["Level"].fillna(0).astype(int)
+
+        if "en" == self.lang:
+            # Replacing the "Category" values using the mapping dictionary
+            self.bs_template_df["Category"] = self.bs_template_df["Category"].map(self.account_category)
+            # Preserve the leading full-width spaces while replacing the rest of the "Name" with "English_Label"
+            self.bs_template_df["Name"] = self.bs_template_df.apply(
+                lambda row: ''.join(ch for ch in row["Name"] if ch == '\u3000' or ch == ' ') + row["English_Label"],
+                axis=1
+            )
+            # Display the modified DataFrame
+            self.debug_print(self.bs_template_df.head())
+
         # Iterate through self.bs_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
         for _, row in self.bs_template_df.iterrows():
@@ -859,6 +871,18 @@ class TidyData:
             inplace=True
         )
         self.pl_template_df["Level"] = self.pl_template_df["Level"].fillna(0).astype(int)
+
+        if "en" == self.lang:
+            # Replacing the "Category" values using the mapping dictionary
+            self.pl_template_df["Category"] = self.pl_template_df["Category"].map(self.account_category)
+            # Preserve the leading full-width spaces while replacing the rest of the "Name" with "English_Label"
+            self.pl_template_df["Name"] = self.pl_template_df.apply(
+                lambda row: ''.join(ch for ch in row["Name"] if ch == '\u3000' or ch == ' ') + row["English_Label"],
+                axis=1
+            )
+            # Display the modified DataFrame
+            self.debug_print(self.pl_template_df.head())
+
         # Iterate through self.pl_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
         for _, row in self.pl_template_df.iterrows():
@@ -990,37 +1014,6 @@ class TidyData:
         # Replace the original dictionary with the sorted one
         self.pl_parent_dict = sorted_pl_parent_dict
 
-    # # Account_Codeを置き換え
-    # def map_account_code(self, code, errors):
-    #     if pd.isna(code):
-    #         return code
-    #     try: # 小数の形式になっている場合は整数に変換
-    #         code = str(int(code))
-    #     except ValueError:
-    #         errors.append(f"Error: Account_Code {code} is not a valid integer.")
-    #         return code
-    #     if code in self.code_mapping_dict:
-    #         return self.code_mapping_dict[code]["eTax_Account_Code"]
-    #     else:
-    #         errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
-    #         return code  # 未対応のコードはそのまま返す
-
-    # # Account_Name を置き換え
-    # def map_account_name(self, code, errors):
-    #     if pd.isna(code):
-    #         return code
-    #     try: # 小数の形式になっている場合は整数に変換
-    #         code = str(int(code))
-    #     except ValueError:
-    #         errors.append(f"Error: Account_Code {code} is not a valid integer.")
-    #         return code
-    #     if code in self.code_mapping_dict:
-    #         return self.code_mapping_dict[code]["eTax_Account_Name"]
-    #     else:
-    #         # エラーをリストに追加
-    #         if code not in errors:  # 重複エラーを避ける
-    #             errors.append(f"Error: Account_Code {code} is not found in the mapping dictionary.")
-    #         return self.tidy_gl_df.loc[self.tidy_gl_df["Account_Code"] == code, 'Account_Name'].values[0]
 
     def code2etax(self):
         # account_list.csv を読み込み、変換用の辞書を作成
@@ -1048,8 +1041,6 @@ class TidyData:
             'Integer': 'int64',
             'Indicator': 'str',
         }
-        # 辞書形式で取得
-        first_row_dict = pd.read_csv(self.file_path, nrows=1).iloc[0].to_dict()
         # 辞書から dtype を生成
         dtype_dict = {}
         for column_id, properties in self.LHM_dict.items():
@@ -1062,36 +1053,12 @@ class TidyData:
         # beginning_balance_pathを読み込む
         beginning_balance_df = pd.read_csv(self.beginning_balance_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
 
-        # エラーログを初期化
-        errors = []
-
-        # # Account_Codeをマッピングして置き換え
-        # # Account_Code, Account_Name, Beginning_Balance
-        # def process_balance(row):
-        #     account_code = row["Account_Code"]
-        #     if pd.isna(account_code):
-        #         return row
-        #     else:
-        #         self.debug_print(f'{account_code}')
-        #         # # 科目コードと名称の変換
-        #         # row["Account_Code"] = self.map_account_code(account_code, errors)
-        #         # row["Account_Name"] = self.map_account_name(account_code, errors)
-        #         return row
-
-        # # データフレーム全体に行単位で関数を適用
-        # beginning_balance_df = beginning_balance_df.apply(process_balance, axis=1)
-
         # 勘定科目の開始残高を辞書に変換
         beginning_balance_df["Account_Code"] = beginning_balance_df["Account_Code"].astype(str)
         # beginning_balance_dfに複数のAccount_Codeが存在する場合、それぞれのAccount_CodeごとにBeginning_Balanceを合計し、beginning_balancesを作成する
         beginning_balances = beginning_balance_df.groupby("Account_Code")['Beginning_Balance'].sum().to_dict()
         self.beginning_balances = beginning_balances
 
-        # エラーログの表示
-        if errors:
-            self.trace_print("以下のエラーが発生しました：")
-            for error in errors:
-                self.trace_print(error)
 
     def csv2dataframe(self, param_file_path):
         # 開始、終了、経過時間ラベルを追加
@@ -1112,6 +1079,7 @@ class TidyData:
         self.BS_path = params["HOT010_3.0_BS_10"]
         self.PL_path = params["HOT010_3.0_PL_10"]
         self.columns  = params["columns"]
+        self.account_category = params["account_category"]
         self.lang = params["lang"]
 
         self.trading_partner_dict = {"supplier":{}, "customer": {}, "bank": {}}
