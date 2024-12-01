@@ -9,7 +9,6 @@ import os
 import webbrowser
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
-import ace_tools as tools
 
 DEBUG = False
 TRACE = False
@@ -1057,8 +1056,7 @@ class TidyData:
         combined_template_df = pd.concat([self.bs_template_df, self.pl_template_df], ignore_index=True)
 
         # Display the combined DataFrame
-        tools.display_dataframe_to_user(name="Combined BS and PL Template DataFrame", dataframe=combined_template_df)
-
+        print(combined_template_df.head())
 
         # account_list.csv を読み込み、変換用の辞書を作成
         account_list_df = pd.read_csv(self.account_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
