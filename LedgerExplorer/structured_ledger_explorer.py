@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import csv
 import json
+import re
 from collections import OrderedDict
 from datetime import datetime
 import sys
@@ -24,10 +25,12 @@ def trace_print(message):
         print(message)
 
 
-class TimeTracker:
+class LogTracker:
     def __init__(self):
+        self.line = "0.0"
         self.start_time = None
-        self.end_time = None
+        self.current_time = None
+        self.start_time = datetime.now()
 
     def debug_print(message):
         if DEBUG:
@@ -37,24 +40,31 @@ class TimeTracker:
         if TRACE:
             print(message)
 
-    def start(self):
-        self.start_time = datetime.now()
-
-    def stop(self):
-        self.end_time = datetime.now()
-
-    def elapsed(self):
-        if self.start_time and self.end_time:
-            elapsed_time = self.end_time - self.start_time
+    def get_elapsed(self):
+        start = self.get_start()
+        current = self.get_current()
+        if start and current:
+            elapsed_time = current - start
             total_seconds = elapsed_time.total_seconds()
             minutes = int(total_seconds // 60)
             seconds = total_seconds % 60
             return f"{minutes}:{seconds:.1f}"
         return None
 
+    def get_start(self):
+        return self.start_time        
 
-# グローバル変数としてtime_trackerを定義
-time_tracker = TimeTracker()
+    def get_current(self):
+        self.current_time = datetime.now()
+        return self.current_time
+
+    def write_log_text(self, message):
+        line = self.line
+        line = f"{int(line[:line.index('.')]) + 1}.0"
+        log_tracker.line = line
+        elapsed = log_tracker.get_elapsed()
+        if None != gui and gui.log_text:
+            gui.log_text.insert(line, f"{elapsed} {message}\n")
 
 
 class TidyData:
@@ -88,7 +98,22 @@ class TidyData:
             "費用": "借方増",
             "収益": "貸方増"
         }
-        self.lang = "ja"
+        with open(param_file_path, "r", encoding="utf-8-sig") as param_file:
+            params = json.load(param_file)
+        self.params = params
+        self.DEBUG = 1 == params["DEBUG"]
+        self.TRACE = 1 == params["TRACE"]
+        self.file_path = params["e-tax_file_path"]
+        self.etax_beginning_balance_path = params["e-tax_beginning_balance_path"]
+        self.account_path = params["account_path"]
+        self.tax_category_path = params["tax_category_path"]
+        self.trading_partner_path = params["trading_partner_path"]
+        self.LHM_path = params["LHM_path"]
+        self.BS_path = params["HOT010_3.0_BS_10"]
+        self.PL_path = params["HOT010_3.0_PL_10"]
+        self.columns  = params["columns"]
+        self.account_category = params["account_category"]
+        self.lang = params["lang"]
 
     def debug_print(self, message):
         if self.DEBUG:
@@ -114,7 +139,17 @@ class TidyData:
         return self.summary_df
 
     def get_account_dict(self):
-        return self.account_dict
+        account_dict = {}
+        for id, d in self.account_dict.items():
+            if len(id) > 3:
+                match = re.match(r"([ 0-9a-zA-Z¥-]+)", id[11:])
+                if 'en' == self.lang:
+                    if match:
+                        account_dict[id] = d
+                else:
+                    if not match:
+                        account_dict[id] = d
+        return account_dict
 
     # 月初日を取得する関数
     def get_month_start(self, date):
@@ -157,10 +192,10 @@ class TidyData:
             if total_debit_amount != total_credit_amount:
                 self.trace_print(f"伝票貸借不一致 {transction_date} {transaction_id}: 借方金額 {total_debit_amount} 貸方金額 {total_credit_amount}")
 
-            if first_debit_amount == total_debit_amount:
-                self.debug_print(f"借方金額が合計金額 {transction_date} {transaction_id} {first_debit_acct_number} {first_debit_acct_name}: {total_debit_amount}")
-            elif first_credit_amount == total_credit_amount:
-                self.debug_print(f"貸方金額が合計金額 {transction_date} {transaction_id} {first_credit_acct_number} {first_credit_acct_name}: {total_credit_amount}")
+            # if first_debit_amount == total_debit_amount:
+            #     self.debug_print(f"借方金額が合計金額 {transction_date} {transaction_id} {first_debit_acct_number} {first_debit_acct_name}: {total_debit_amount}")
+            # elif first_credit_amount == total_credit_amount:
+            #     self.debug_print(f"貸方金額が合計金額 {transction_date} {transaction_id} {first_credit_acct_number} {first_credit_acct_name}: {total_credit_amount}")
 
             # 金額と摘要文の転記を行う
             for idx, row in group.iterrows():
@@ -1051,7 +1086,8 @@ class TidyData:
         self.tidy_gl_df.columns = self.tidy_gl_df.columns.str.strip()  # 列名の空白を除去
 
         # beginning_balance_pathを読み込む
-        beginning_balance_df = pd.read_csv(self.beginning_balance_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
+        beginning_balance_df = pd.read_csv(self.etax_beginning_balance_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
+        # beginning_balance_df = pd.read_csv(self.beginning_balance_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
 
         # 勘定科目の開始残高を辞書に変換
         beginning_balance_df["Account_Code"] = beginning_balance_df["Account_Code"].astype(str)
@@ -1059,28 +1095,10 @@ class TidyData:
         beginning_balances = beginning_balance_df.groupby("Account_Code")['Beginning_Balance'].sum().to_dict()
         self.beginning_balances = beginning_balances
 
-
     def csv2dataframe(self, param_file_path):
         # 開始、終了、経過時間ラベルを追加
-        time_tracker.start()
-
-        with open(param_file_path, "r", encoding="utf-8-sig") as param_file:
-            params = json.load(param_file)
-
-        self.params = params
-        self.DEBUG = 1 == params["DEBUG"]
-        self.TRACE = 1 == params["TRACE"]
-        self.file_path = params["e-tax_file_path"]
-        self.beginning_balance_path = params["beginning_balance_path"]
-        self.account_path = params["account_path"]
-        self.tax_category_path = params["tax_category_path"]
-        self.trading_partner_path = params["trading_partner_path"]
-        self.LHM_path = params["LHM_path"]
-        self.BS_path = params["HOT010_3.0_BS_10"]
-        self.PL_path = params["HOT010_3.0_PL_10"]
-        self.columns  = params["columns"]
-        self.account_category = params["account_category"]
-        self.lang = params["lang"]
+        # log_tracker.start()
+        log_tracker.write_log_text("CSV to DataFrame")
 
         self.trading_partner_dict = {"supplier":{}, "customer": {}, "bank": {}}
         with open(self.trading_partner_path, mode='r', encoding='utf-8-sig') as csv_file:
@@ -1104,7 +1122,7 @@ class TidyData:
 
         self.code2etax()
 
-        df = pd.read_csv(self.file_path, encoding="utf-8-sig", dtype=str) # read tidy data csv
+        df = pd.read_csv(self.file_path, encoding="utf-8-sig", dtype=str) # f tidy data csv
         df.columns = df.columns.str.strip()
 
         # 関連する列を適切なデータ型に変換する
@@ -1374,7 +1392,7 @@ class TidyData:
             self.columns["借方補助科目"],self.columns["貸方補助科目"],
             self.columns["借方科目コード"], self.columns["借方補助科目コード"], "Debit_Amount",
             self.columns["貸方科目コード"], self.columns["貸方補助科目コード"], "Credit_Amount"
-        ]
+        ] 
         self.debug_print(self.amount_rows[columns_to_show].head())
 
         # 貸方科目コードが self.params["account"]["売上高"] "10D100100"の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
@@ -1463,6 +1481,8 @@ class TidyData:
                 self.columns["貸方部門名"],
             ]
         ]
+        self.amount_rows[self.columns["借方消費税額"]] = self.amount_rows[self.columns["借方消費税額"]].fillna(0).astype(float).astype(int)
+        self.amount_rows[self.columns["貸方消費税額"]] = self.amount_rows[self.columns["貸方消費税額"]].fillna(0).astype(float).astype(int)
 
         # List of columns to process
         columns_to_process = [
@@ -1479,9 +1499,13 @@ class TidyData:
             )
 
         self.debug_print(f"\nself.amount_rows \n{self.amount_rows}")
+        log_tracker.write_log_text("General Ledger")
         self.general_ledger()
+        log_tracker.write_log_text("Account Dict")
         self.fill_account_dict()
+        log_tracker.write_log_text("Trial Balance")
         self.trial_balance_carried_forward()
+        log_tracker.write_log_text("BS/PL")
         self.bs_pl()
 
         for column in self.amount_rows:
@@ -1490,29 +1514,30 @@ class TidyData:
             else:
                 self.amount_rows[column].fillna("", inplace=True)
 
-        time_tracker.stop()
+        log_tracker.write_log_text("END CSV too DataFrame")
 
 
 class GUI:
     def __init__(self, root):
         self.root = root
+        self.base_frame = None
         self.previous_selection = None
         self.processing_thread = None  # スレッドを追跡するための変数
         self.is_processing = False  # 処理中かどうかを示すフラグ
-        self.progress_window = None  # 進捗ウィンドウを追跡するための変数
+        # self.progress_window = None  # 進捗ウィンドウを追跡するための変数
         self.original_data = []  # TreeViewの元のデータを保持するリスト
         self.params = None
         self.columns = None
         self.amount_df = None
         self.general_ledger_df = None
         self.summary_df = None
-        self.time_label = None
-        self.elapsed_time_label = None
+        self.log_text = None
         self.month_title = None
         self.month_combobox = None
         self.account_title = None
         self.account_combobox = None
         self.combobox = None
+        self.menu = None
         self.frame0 = None
         self.frame1 = None
         self.frame2 = None
@@ -1526,10 +1551,35 @@ class GUI:
         self.result_tree4 = None
         self.result_tree1_data = None
         self.column_visible = False
+        self.width_dimension = 20
         self.width_account = 80
-        self.width_subaccount = 40
-        self.lang = tidy_data.lang
-
+        self.width_subaccount = 35
+        self.width_amount = 100
+        self.width_taxamount = 60
+        self.width_name = 120
+        self.width_longname = 180
+        self.width_codename = 120
+        self.width_text = 240
+        self.width_month = 66
+        self.width_date = 90
+        self.line = None
+        with open(param_file_path, "r", encoding="utf-8-sig") as param_file:
+            params = json.load(param_file)
+        self.params = params
+        self.DEBUG = 1 == params["DEBUG"]
+        self.TRACE = 1 == params["TRACE"]
+        self.file_path = params["e-tax_file_path"]
+        self.etax_beginning_balance_path = params["e-tax_beginning_balance_path"]
+        self.account_path = params["account_path"]
+        self.tax_category_path = params["tax_category_path"]
+        self.trading_partner_path = params["trading_partner_path"]
+        self.LHM_path = params["LHM_path"]
+        self.BS_path = params["HOT010_3.0_BS_10"]
+        self.PL_path = params["HOT010_3.0_PL_10"]
+        self.columns  = params["columns"]
+        self.account_category = params["account_category"]
+        self.lang = params["lang"]
+        
     def debug_print(self, message):
         if self.DEBUG:
             print(message)
@@ -1538,46 +1588,50 @@ class GUI:
         if self.TRACE:
             print(message)
 
-    def show_progress_window(self):
-        if self.progress_window is None:
-            self.progress_window = tk.Toplevel(self.root)
-            self.progress_window.title("Processing")
-            if self.lang == "ja":
-                tk.Label(self.progress_window, text="処理中です。お待ちください...").pack(padx=20, pady=20)
-            else:
-                tk.Label(self.progress_window, text="Processing, please wait until the process is finished.").pack(padx=20, pady=20)
-            # self.progress_window.protocol("WM_DELETE_WINDOW", self.on_close_progress_window)
-
-    def on_close_progress_window(self):
-        if not self.is_processing:
-            self.progress_window.destroy()
-            self.progress_window = None
-
-    def close_progress_window(self):
-        if self.progress_window:
-            self.progress_window.destroy()
-            self.progress_window = None
-
     def toggle_language(self):
-        if self.lang == "ja":
-            self.lang = "en"
-            tidy_data.lang = "en"
-        else:
+        if self.lang == "en":
             self.lang = "ja"
             tidy_data.lang = "ja"
+        else:
+            self.lang = "en"
+            tidy_data.lang = "en"
         self.update_labels()
 
     def update_labels(self):
         # Update labels based on the selected language
-        if self.lang == "ja":
+        if self.lang == "en":
+            self.show_button.config(text="Show")
+            self.account_title.config(text="Account:")
+            self.month_title.config(text="Month:")
+            self.load_button.config(text="Load Parameters")
+            self.reset_button.config(text="Reset Selection")
+            self.combobox["values"] = ["Journal Entry", "General Ledger", "Trial Balance", "Balance Sheet", "Profit and Loss"]
+            if self.combobox.get() == "仕訳帳":
+                self.combobox.set("Journal Entry")
+            elif self.combobox.get() == "総勘定元帳画面":
+                self.combobox.set("General Ledger")
+            elif self.combobox.get() == "試算表画面":
+                self.combobox.set("Trial Balance")
+            elif self.combobox.get() == "貸借対照表":
+                self.combobox.set("Balance Sheet")
+            elif self.combobox.get() == "損益計算書":
+                self.combobox.set("Profit and Loss")
+            # self.file_path_label.config(text=tidy_data.get_file_path())
+            self.search_label.config(text="Description Search Term:")
+            self.search_button.config(text="Search")
+            self.reset_search_button.config(text="Reset Search")
+            self.view_button.config(text="View Data")
+            self.toggle_column_button.config(text="Toggle Code Columns")
+            self.save_button.config(text="Save CSV")
+            self.toggle_language_button.config(text="日本語/English")
+        else:
             self.show_button.config(text="表示")
             self.account_title.config(text="科目:")
             self.month_title.config(text="対象月:")
             self.load_button.config(text="パラメタファイル")
             self.reset_button.config(text="選択解除")
-            self.time_label.config(text="開始時刻:  終了時刻:  経過時間: ")
             self.combobox["values"] = ["仕訳帳", "総勘定元帳画面", "試算表画面", "貸借対照表", "損益計算書"]
-            if self.combobox.get() == "Journal":
+            if self.combobox.get() == "Journal Entry":
                 self.combobox.set("仕訳帳")
             elif self.combobox.get() == "General Ledger":
                 self.combobox.set("総勘定元帳画面")
@@ -1587,7 +1641,7 @@ class GUI:
                 self.combobox.set("貸借対照表")
             elif self.combobox.get() == "Profit and Loss":
                 self.combobox.set("損益計算書")
-            self.file_path_label.config(text=tidy_data.get_file_path())
+            # self.file_path_label.config(text=tidy_data.get_file_path())
             self.search_label.config(text="摘要文 検索語:")
             self.search_button.config(text="検索")
             self.reset_search_button.config(text="検索解除")
@@ -1595,39 +1649,39 @@ class GUI:
             self.toggle_column_button.config(text="コード列の表示/非表示")
             self.save_button.config(text="CSV保存")
             self.toggle_language_button.config(text="日本語/English")
-        else:
-            self.show_button.config(text="Show")
-            self.account_title.config(text="Account:")
-            self.month_title.config(text="Month:")
-            self.load_button.config(text="Load Parameters")
-            self.reset_button.config(text="Reset Selection")
-            self.time_label.config(text="Start Time:  End Time:  Elapsed Time: ")
-            self.combobox["values"] = ["Journal", "General Ledger", "Trial Balance", "Balance Sheet", "Profit and Loss"]
-            if self.combobox.get() == "仕訳帳":
-                self.combobox.set("Journal")
-            elif self.combobox.get() == "総勘定元帳画面":
-                self.combobox.set("General Ledger")
-            elif self.combobox.get() == "試算表画面":
-                self.combobox.set("Trial Balance")
-            elif self.combobox.get() == "貸借対照表":
-                self.combobox.set("Balance Sheet")
-            elif self.combobox.get() == "損益計算書":
-                self.combobox.set("Profit and Loss")
-            self.file_path_label.config(text=tidy_data.get_file_path())
-            self.search_label.config(text="Description Search Term:")
-            self.search_button.config(text="Search")
-            self.reset_search_button.config(text="Reset Search")
-            self.view_button.config(text="View Data")
-            self.toggle_column_button.config(text="Toggle Code Columns")
-            self.save_button.config(text="Save CSV")
-            self.toggle_language_button.config(text="日本語/English")
-
         self.update_tree_headings()
-        self.update_time_labels()
 
     def update_tree_headings(self):
         if 0 == self.frame_number:
-            if self.lang == "ja":
+            if self.lang == "en":
+                headings = {
+                    "Journal": "JNL",
+                    "DetailRow": "LN",
+                    "Month": "",
+                    "TransactionDate": "Date",
+                    "Description": "Description",
+                    "DebitAccountCode": "Cebit Account Code",
+                    "DebitAccountName": "Debit Account Name",
+                    "Debit_Amount": "Debit Amount",
+                    "DebitTaxCode": "Debit Tax Code",
+                    "DebitTaxName": "Debit Tax Name",
+                    "DebitTaxAmount": "Debit Tax Amount",
+                    "DebitSubaccountCode": "Debit Sub Code ",
+                    "DebitSubaccountName": "Debit Sub Name",
+                    "DebitDepartmentCode": "Debit Dpt. Code",
+                    "DebitDepartmentName": "Debit Dpt. Name",
+                    "CreditAccountCode": "Credit Account Code",
+                    "CreditAccountName": "Credit Account Name",
+                    "Credit_Amount": "Credit Amount",
+                    "CreditTaxCode": "Credit Tax Code",
+                    "CreditTaxName": "Credit Tax Name",
+                    "CreditTaxAmount": "Credit Tax Amount",
+                    "CreditSubaccountCode": "Credit Sub Code",
+                    "CreditSubaccountName": "Credit Sub Name",
+                    "CreditDepartmentCode": "Credit Dpt. Code",
+                    "CreditDepartmentName": "Credit Dpt. Name",
+                }
+            else:
                 headings = {
                     "Journal": "伝票",
                     "DetailRow": "行",
@@ -1655,58 +1709,10 @@ class GUI:
                     "CreditDepartmentCode": "コード",
                     "CreditDepartmentName": "貸方部門",
                 }
-            else:
-                headings = {
-                    "Journal": "Journal",
-                    "DetailRow": "Row",
-                    "Month": "Month",
-                    "TransactionDate": "Transaction Date",
-                    "Description": "Description",
-                    "DebitAccountCode": "Code",
-                    "DebitAccountName": "Debit Account",
-                    "Debit_Amount": "Debit Amount",
-                    "DebitTaxCode": "Code",
-                    "DebitTaxName": "Debit Tax Type",
-                    "DebitTaxAmount": "Debit Tax Amount",
-                    "DebitSubaccountCode": "Code",
-                    "DebitSubaccountName": "Debit Subaccount",
-                    "DebitDepartmentCode": "Code",
-                    "DebitDepartmentName": "Debit Department",
-                    "CreditAccountCode": "Code",
-                    "CreditAccountName": "Credit Account",
-                    "Credit_Amount": "Credit Amount",
-                    "CreditTaxCode": "Code",
-                    "CreditTaxName": "Credit Tax Type",
-                    "CreditTaxAmount": "Credit Tax Amount",
-                    "CreditSubaccountCode": "Code",
-                    "CreditSubaccountName": "Credit Subaccount",
-                    "CreditDepartmentCode": "Code",
-                    "CreditDepartmentName": "Credit Department",
-                }
             for col, text in headings.items():
                 self.result_tree0.heading(col, text=text)
         elif 1 == self.frame_number:
-            if self.lang == "ja":
-                headings = {
-                    "Transaction_Date": "伝票日付",
-                    "Ledger_Account_Number": "コード",
-                    "Ledger_Account_Name": "科目",
-                    "Subaccount_Code": "コード",
-                    "Subaccount_Name": "補助科目",
-                    "Department_Code": "コード",
-                    "Department_Name": "部門",
-                    "Debit_Amount": "借方金額",
-                    "Credit_Amount": "貸方金額",
-                    "Balance": "残高",
-                    "Counterpart_Account_Number": "コード",
-                    "Counterpart_Account_Name": "相手科目",
-                    "Counterpart_Subaccount_Code": "コード",
-                    "Counterpart_Subaccount_Name": "相手補助科目",
-                    "Counterpart_Department_Code": "コード",
-                    "Counterpart_Department_Name": "相手部門",
-                    "Description": "摘要文",
-                }
-            else:
+            if self.lang == "en":
                 headings = {
                     "Transaction_Date":"Transaction Date",
                     "Ledger_Account_Number":"Ledger Account Number",
@@ -1726,21 +1732,30 @@ class GUI:
                     "Counterpart_Department_Name":"Counterpart Department Name",
                     "Description": "Description",
                 }
+            else:
+                headings = {
+                    "Transaction_Date": "伝票日付",
+                    "Ledger_Account_Number": "コード",
+                    "Ledger_Account_Name": "科目",
+                    "Subaccount_Code": "コード",
+                    "Subaccount_Name": "補助科目",
+                    "Department_Code": "コード",
+                    "Department_Name": "部門",
+                    "Debit_Amount": "借方金額",
+                    "Credit_Amount": "貸方金額",
+                    "Balance": "残高",
+                    "Counterpart_Account_Number": "コード",
+                    "Counterpart_Account_Name": "相手科目",
+                    "Counterpart_Subaccount_Code": "コード",
+                    "Counterpart_Subaccount_Name": "相手補助科目",
+                    "Counterpart_Department_Code": "コード",
+                    "Counterpart_Department_Name": "相手部門",
+                    "Description": "摘要文",
+                }
             for col, text in headings.items():
                 self.result_tree1.heading(col, text=text)
         elif 2 == self.frame_number:
-            if self.lang == "ja":
-                headings = {
-                    "Month": "年月",
-                    "Account_Number": "コード",
-                    "eTax_Category": "勘定科目区分",
-                    "Account_Name": "科目",
-                    "Beginning_Balance": "月初残高",
-                    "Debit_Amount": "借方金額",
-                    "Credit_Amount": "貸方金額",
-                    "Ending_Balance": "月末残高",
-                }
-            else:
+            if self.lang == "en":
                 headings = {
                     "Month": "Month",
                     "Account_Number":"Account Number",
@@ -1751,20 +1766,21 @@ class GUI:
                     "Credit_Amount":"Credit Amount",
                     "Ending_Balance":"Ending Balance",
                 }
+            else:
+                headings = {
+                    "Month": "年月",
+                    "Account_Number": "コード",
+                    "eTax_Category": "勘定科目区分",
+                    "Account_Name": "科目",
+                    "Beginning_Balance": "月初残高",
+                    "Debit_Amount": "借方金額",
+                    "Credit_Amount": "貸方金額",
+                    "Ending_Balance": "月末残高",
+                }
             for col, text in headings.items():
                 self.result_tree2.heading(col, text=text)
         elif 3 == self.frame_number:
-            if self.lang == "ja":
-                headings = {
-                    "seq": "順序",
-                    "Account_Number": "勘定科目番号",
-                    "Level": "レベル",
-                    "eTax_Category": "勘定科目区分",
-                    "eTax_Account_Name": "勘定科目名",
-                    "Beginning_Balance": "期初残高",
-                    "Ending_Balance": "期末残高",
-                }
-            else:
+            if self.lang == "en":
                 headings = {
                     "seq": "Seq",
                     "Account_Number":"Account Number",
@@ -1774,20 +1790,21 @@ class GUI:
                     "Beginning_Balance":"Starting Balance",
                     "Ending_Balance":"Ending Balance",
                 }
-            for col, text in headings.items():
-                self.result_tree3.heading(col, text=text)
-        elif 4 == self.frame_number:
-            if self.lang == "ja":
+            else:
                 headings = {
                     "seq": "順序",
                     "Account_Number": "勘定科目番号",
                     "Level": "レベル",
                     "eTax_Category": "勘定科目区分",
                     "eTax_Account_Name": "勘定科目名",
-                    "Debit_Amount": "借方金額",
-                    "Credit_Amount": "貸方金額",
+                    "Beginning_Balance": "期初残高",
+                    "Ending_Balance": "期末残高",
                 }
-            else:
+
+            for col, text in headings.items():
+                self.result_tree3.heading(col, text=text)
+        elif 4 == self.frame_number:
+            if self.lang == "en":
                 headings = {
                     "seq": "SEq",
                     "Account_Number":"Account Number",
@@ -1797,16 +1814,18 @@ class GUI:
                     "Debit_Amount":"Debit Amount",
                     "Credit_Amount":"Credit Amount",
                 }
+            else:
+                headings = {
+                    "seq": "順序",
+                    "Account_Number": "勘定科目番号",
+                    "Level": "レベル",
+                    "eTax_Category": "勘定科目区分",
+                    "eTax_Account_Name": "勘定科目名",
+                    "Debit_Amount": "借方金額",
+                    "Credit_Amount": "貸方金額",
+                }
             for col, text in headings.items():
                 self.result_tree4.heading(col, text=text)
-
-    def update_time_labels(self):
-        elapsed = time_tracker.elapsed()
-        if time_tracker.start_time and time_tracker.end_time:
-            if self.lang == "ja":
-                self.time_label.config(text=f"開始時刻: {time_tracker.start_time.strftime('%H:%M:%S')} 終了時刻: {time_tracker.end_time.strftime('%H:%M:%S')} 経過時間: {elapsed}")
-            else:
-                self.time_label.config(text=f"Start Time: {time_tracker.start_time.strftime('%H:%M:%S')} End Time: {time_tracker.end_time.strftime('%H:%M:%S')} Elapsed Time: {elapsed}")
 
     def load_json(self):
         # Open file dialog to select a JSON file
@@ -1817,54 +1836,10 @@ class GUI:
         with open(param_file_path, "r", encoding="utf-8-sig") as param_file:
             params = json.load(param_file)
             self.columns = params['columns']
-
         tidy_data.csv2dataframe(param_file)
 
     def format_row(self, row, frame_number):
-        # bs_dict = tidy_data.bs_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
-        # pl_dict = tidy_data.pl_template_df.set_index('Ledger_Account_Number').to_dict(orient="index")
-        # debit_account_name = None
-        # debit_account_number = row[self.columns["借方科目コード"]]
-        # if debit_account_number in bs_dict:
-        #     # if "ja" == self.lang:
-        #     debit_account_name = bs_dict[debit_account_number]["Account_Name"]
-        #     # elif "en" == self.lang:
-        #     #     debit_account_name = bs_dict[debit_account_number]["English_Label"]
-        # elif debit_account_number in pl_dict:
-        #     # if "ja" == self.lang:
-        #     debit_account_name = pl_dict[debit_account_number]["Account_Name"]
-        #     # elif "en" == self.lang:
-        #     #     debit_account_name = pl_dict[debit_account_number]["English_Label"]
-        # if debit_account_name:
-        #     row[self.columns["借方科目名"]] = debit_account_name
-        # debit_account_name = None
-        # credit_account_number = row[self.columns["貸方科目コード"]]
-        # if credit_account_number in bs_dict:            
-        #     # if "ja" == self.lang:
-        #     debit_account_name = bs_dict[credit_account_number]["Account_Name"]
-        #     # elif "en" == self.lang:
-        #     #     debit_account_name = bs_dict[credit_account_number]["English_Label"]
-        # elif credit_account_number in pl_dict:
-        #     # if "ja" == self.lang:
-        #     debit_account_name = pl_dict[credit_account_number]["Account_Name"]
-        #     # elif "en" == self.lang:
-        #     #     debit_account_name = pl_dict[credit_account_number]["English_Label"]
-        # if debit_account_name:
-        #     row[self.columns["貸方科目名"]] = debit_account_name
-        # errors = []
-        # debit_tax_name = credit_tax_name = None
-        # debit_tax_code = row[self.columns["借方税区分コード"]]
-        # if debit_tax_code:
-        #     debit_tax_name = self.map_tax_category_name(debit_tax_code, errors)
-        # credit_tax_code = row[self.columns["貸方税区分コード"]]
-        # if credit_tax_code:
-        #     credit_tax_name = self.map_tax_category_name(credit_tax_code, errors)
-        # if debit_tax_name:
-            # row[self.columns["借方税区分名"]] = debit_tax_name
-        # if credit_tax_name:
-            # row[self.columns["貸方税区分名"]] = credit_tax_name
-
-        if 0 == frame_number: # Journal
+        if 0 == frame_number: # Journal Entry
             formatted_row = (
                 row[self.columns["伝票"]],
                 row[self.columns["明細行"]],
@@ -1990,18 +1965,23 @@ class GUI:
                 result_tree.update_idletasks()  # Update the GUI to keep it responsive
         finally:
             self.is_processing = False  # 処理が終わったらフラグをリセット
-            self.progress_window.destroy()  # 処理終了時に進捗ウィンドウを閉じる
+            # self.progress_window.destroy()  # 処理終了時に進捗ウィンドウを閉じる
 
     def show_results(self, frame_number, event=None):
         if self.is_processing:  # 処理中であれば新しいスレッドを開始しない
-            if self.lang == "ja":
-                messagebox.showwarning("警告", "処理が終了するまでお待ちください。")
-            else:
+            if self.lang == "en":
                 messagebox.showwarning("Warning", "Please wait until the process is finished.")
+            else:
+                messagebox.showwarning("警告", "処理が終了するまでお待ちください。")
             return
+        else:
+            if self.lang == "en":
+                log_tracker.write_log_text(f"START {self.menu[frame_number]}")
+            else:
+                log_tracker.write_log_text(f" {self.menu[frame_number]} 開始")
         self.is_processing = True  # 処理を開始する前にフラグをセット
         # 進捗メッセージウィンドウを作成
-        self.show_progress_window()
+        # self.show_progress_window()
         # self.progress_window = tk.Toplevel()
         # if self.lang == "ja":
         #     tk.Label(self.progress_window, text="処理中です。お待ちください...").pack(padx=20, pady=20)
@@ -2019,10 +1999,10 @@ class GUI:
             else:
                 filtered_df = self.amount_df.copy()
             if filtered_df.empty:
-                if self.lang == "ja":
-                    messagebox.showwarning("警告", "データが見つかりません。")
-                else:
+                if self.lang == "en":
                     messagebox.showwarning("Warning", "No data found.")
+                else:
+                    messagebox.showwarning("警告", "データが見つかりません。")
                 return
         elif 1 == frame_number:
             selected_account = self.account_combobox.get()
@@ -2043,36 +2023,36 @@ class GUI:
                 if account_number:
                     filtered_df = filtered_df[filtered_df["Ledger_Account_Number"] == account_number]
             else:
-                if self.lang == "ja":
-                    messagebox.showwarning("警告", "科目名を選択してください。")
-                else:
+                if self.lang == "en":
                     messagebox.showwarning("Warning", "Please select an account name.")
+                else:
+                    messagebox.showwarning("警告", "科目名を選択してください。")
                 return
             if filtered_df.empty:
-                if self.lang == "ja":
-                    messagebox.showwarning("警告", "データが見つかりません。")
-                else:
+                if self.lang == "en":
                     messagebox.showwarning("Warning", "No data found.")
+                else:
+                    messagebox.showwarning("警告", "データが見つかりません。")
                 return
         elif 2 == frame_number:
             selected_month = self.month_combobox.get()
             if not selected_month:
-                if self.lang == "ja":
-                    messagebox.showwarning("警告", "対象月を選択してください。")
-                else:
+                if self.lang == "en":
                     messagebox.showwarning("Warning", "Please select a target month.")
+                else:
+                    messagebox.showwarning("警告", "対象月を選択してください。")
                 return
             target_month = pd.Period(selected_month)
             self.summary_df = tidy_data.get_summary_df().copy()
             filtered_df = self.summary_df[self.summary_df['Month'] == str(target_month)]
             result_tree = self.result_tree2
-        elif frame_number == 3:  # Balance Sheet (BS)
+        elif 3 == frame_number:  # Balance Sheet (BS)
             result_tree = self.result_tree3
             # Convert dictionary to DataFrame
             filtered_df = pd.DataFrame.from_dict(tidy_data.bs_parent_dict, orient='index').reset_index()
             # Rename the index column to `Ledger_Account_Number`
             filtered_df.rename(columns={'index': "Ledger_Account_Number"}, inplace=True)
-        elif frame_number == 4:  # Profit and Loss (PL)
+        elif 4 == frame_number:  # Profit and Loss (PL)
             result_tree = self.result_tree4
             # Convert dictionary to DataFrame
             filtered_df = pd.DataFrame.from_dict(tidy_data.pl_parent_dict, orient='index').reset_index()
@@ -2087,7 +2067,11 @@ class GUI:
         # self.processing_thread = threading.Thread(target=self.insert_data, args=(filtered_df, result_tree, frame_number))
         # self.processing_thread.start()
         self.is_processing = False
-        self.close_progress_window()
+        # self.close_progress_window()
+        if self.lang == "en":
+            log_tracker.write_log_text(f"END {self.menu[frame_number]} listing")
+        else:
+            log_tracker.write_log_text(f"{self.menu[frame_number]} 表示終了")
 
     def reset_filters(self, event=None):
         self.account_combobox.set('')
@@ -2097,7 +2081,7 @@ class GUI:
         self.frame_number = frame_number
         self.is_processing = False
         frame.tkraise()
-        if 0 == frame_number: # Journal
+        if 0 == frame_number: # Journal Entry
             self.hide_account()
             self.show_month()
         elif 1 == frame_number: # General Ledger
@@ -2114,16 +2098,16 @@ class GUI:
             self.hide_month()
 
     def show_account(self):
-        self.account_title.grid(row=0, column=2, sticky=tk.E, padx=(5, 5), pady=5)
-        self.account_combobox.grid(row=0, column=3, sticky=tk.W, padx=(5, 5), pady=5)
+        self.account_title.grid(row=0, column=2, sticky=tk.E, padx=(4, 4), pady=4)
+        self.account_combobox.grid(row=0, column=3, sticky=tk.W, padx=(4, 4), pady=4)
 
     def hide_account(self):
         self.account_title.grid_forget()
         self.account_combobox.grid_forget()
 
     def show_month(self):
-        self.month_title.grid(row=1, column=2, sticky=tk.E, padx=(5, 5), pady=5)
-        self.month_combobox.grid(row=1, column=3, sticky=tk.W, padx=(5, 5), pady=5)
+        self.month_title.grid(row=1, column=2, sticky=tk.E, padx=(4, 4), pady=4)
+        self.month_combobox.grid(row=1, column=3, sticky=tk.W, padx=(4, 4), pady=4)
 
     def hide_month(self):
         self.month_title.grid_forget()
@@ -2315,10 +2299,10 @@ class GUI:
         if os.path.isfile(pdf_path):
             webbrowser.open(f'file://{pdf_path}')
         else:
-            if self.lang == "ja":
-                messagebox.showwarning("警告", "該当するPDFが見つかりませんでした。")
-            else:
+            if self.lang == "en":
                 messagebox.showwarning("Warning", "No corresponding PDF found.")
+            else:
+                messagebox.showwarning("警告", "該当するPDFが見つかりませんでした。")
 
     def toggle_column(self):
         frame_number = self.frame_number
@@ -2412,7 +2396,19 @@ class GUI:
     def on_combobox_select(self, event=None):
         self.is_processing = False
         selected_option = self.combobox.get()
-        if self.lang == "ja":
+        log_tracker.write_log_text(selected_option)
+        if self.lang == "en":
+            if selected_option == "Journal Entry":
+                self.show_frame(self.frame0, 0)
+            elif selected_option == "General Ledger":
+                self.show_frame(self.frame1, 1)
+            elif selected_option == "Trial Balance":
+                self.show_frame(self.frame2, 2)
+            elif selected_option == "Balance Sheet":
+                self.show_frame(self.frame3, 3)
+            elif selected_option == "Profit and Loss":
+                self.show_frame(self.frame4, 4)
+        else:
             if selected_option == "仕訳帳":
                 self.show_frame(self.frame0, 0)
             elif selected_option == "総勘定元帳画面":
@@ -2423,86 +2419,89 @@ class GUI:
                 self.show_frame(self.frame3, 3)
             elif selected_option == "損益計算書":
                 self.show_frame(self.frame4, 4)
-        else:
-            if selected_option == "Journal":
-                self.show_frame(self.frame0, 0)
-            elif selected_option == "General Ledger":
-                self.show_frame(self.frame1, 1)
-            elif selected_option == "Trial Balance":
-                self.show_frame(self.frame2, 2)
-            elif selected_option == "Balance Sheet":
-                self.show_frame(self.frame3, 3)
-            elif selected_option == "Profit and Loss":
-                self.show_frame(self.frame4, 4)
 
-    def create_gui(self):
+    def create_base(self):
         root = self.root
         self.previous_selection = None
-        if self.lang == "ja":
-            root.title("会計帳簿表示")
+        if self.lang == "en":
+            root.title("Accounting Ledgers")
         else:
-            root.title("Accounting Book Display")
+            root.title("会計帳簿")
 
-        base_frame = tk.Frame(root)
-        base_frame.pack(side="top", fill="x")
+        self.base_frame = tk.Frame(root)
+        self.base_frame.pack(side="top", fill="x", padx=10, pady=10)
+        # rootウィンドウのサイズが決まってから幅を取得
+        root.update_idletasks()  # ウィンドウのレイアウトを更新
+        root_width = root.winfo_width()  # rootウィンドウの幅を取得
+        root_height = root.winfo_height()  # rootウィンドウの高さを取得
+        # self.base_frameの幅と高さをrootのサイズに合わせる
+        self.base_frame.config(width=root_width, height=root_height)
+        self.log_text = tk.Text(
+            self.base_frame,
+            spacing1=3, spacing2=2, spacing3=3,
+            height=3, width=80, wrap='char'
+        )
+        self.log_text.grid(row=0, column=5, rows=2, padx=(4, 8), pady=4, sticky="nw")
+        # Scrollbarを作成
+        scrollbar = tk.Scrollbar(self.base_frame, orient=tk.VERTICAL, command=self.log_text.yview)
+        scrollbar.grid(row=0, column=6, sticky="ns")  # y方向にスクロールを表示
+        # Textウィジェットにスクロールバーを関連付け
+        self.log_text.config(yscrollcommand=scrollbar.set)
 
+        self.line = "0.0"
+        log_tracker.write_log_text(self.file_path)
+
+    def create_gui(self):
         # Comboboxの作成
-        if self.lang == "ja":
-            self.combobox = ttk.Combobox(base_frame, values=["仕訳帳", "総勘定元帳画面", "試算表画面", "貸借対照表", "損益計算書"])
-            self.combobox.set("仕訳帳")
-            self.show_button_text = "表示"
-            self.account_title_text = "科目:"
-            self.month_title_text = "対象月:"
-            self.load_button_text = "パラメタファイル"
-            self.reset_button_text = "選択解除"
-            self.time_label_text = "開始時刻:  終了時刻:  経過時間: "
-        else:
-            self.combobox = ttk.Combobox(base_frame, values=["Journal", "General Ledger", "Trial Balance", "Balance Sheet", "Profit and Loss"])
-            self.combobox.set("Journal")
+        if self.lang == "en":
             self.show_button_text = "Show"
             self.account_title_text = "Account:"
             self.month_title_text = "Month:"
             self.load_button_text = "Load Parameters"
             self.reset_button_text = "Reset Selection"
-            self.time_label_text = "Start Time:  End Time:  Elapsed Time: "
-
-        self.combobox.grid(row=0, column=0, padx=(10, 5), pady=5, sticky="ew")
+            self.menu = ["Journal Entry", "General Ledger", "Trial Balance", "Balance Sheet", "Profit and Loss"]
+            self.combobox = ttk.Combobox(self.base_frame, values=self.menu)
+            self.combobox.set("Journal Entry")
+        else:
+            self.show_button_text = "表示"
+            self.account_title_text = "科目:"
+            self.month_title_text = "対象月:"
+            self.load_button_text = "パラメタファイル"
+            self.reset_button_text = "選択解除"
+            self.menu = ["仕訳帳", "総勘定元帳画面", "試算表画面", "貸借対照表", "損益計算書"]
+            self.combobox = ttk.Combobox(self.base_frame, values=self.menu)
+            self.combobox.set("仕訳帳")
+        self.combobox.grid(row=0, column=0, padx=(8, 4), pady=4, sticky="ew")
         # Comboboxの選択イベントをバインド
         self.combobox.bind("<<ComboboxSelected>>", self.on_combobox_select)
 
-        self.show_button = tk.Button(base_frame, text=self.show_button_text, command=lambda: self.show_results(self.frame_number))
-        self.show_button.grid(row=1, column=0, padx=(10, 5), pady=5, sticky="ew")
+        self.show_button = tk.Button(self.base_frame, text=self.show_button_text, command=lambda: self.show_results(self.frame_number))
+        self.show_button.grid(row=1, column=0, padx=(8, 4), pady=4, sticky="ew")
 
-        self.account_title = tk.Label(base_frame, text=self.account_title_text)
-        self.account_title.grid(row=0, column=1, padx=(5, 5), pady=5, sticky="w")
-        self.account_combobox = ttk.Combobox(base_frame)
-        self.account_combobox.grid(row=0, column=2, padx=(5, 5), pady=5, sticky="ew")
+        self.account_title = tk.Label(self.base_frame, text=self.account_title_text)
+        self.account_title.grid(row=0, column=1, padx=(4, 4), pady=4, sticky="w")
+        self.account_combobox = ttk.Combobox(self.base_frame)
+        self.account_combobox.grid(row=0, column=2, padx=(4, 4), pady=4, sticky="ew")
 
-        self.month_title = tk.Label(base_frame, text=self.month_title_text)
-        self.month_title.grid(row=1, column=1, padx=(5, 5), pady=5, sticky="w")
-        self.month_combobox = ttk.Combobox(base_frame)
-        self.month_combobox.grid(row=1, column=2, padx=(5, 5), pady=5, sticky="ew")
+        self.month_title = tk.Label(self.base_frame, text=self.month_title_text)
+        self.month_title.grid(row=1, column=1, padx=(4, 4), pady=4, sticky="w")
+        self.month_combobox = ttk.Combobox(self.base_frame)
+        self.month_combobox.grid(row=1, column=2, padx=(4, 4), pady=4, sticky="ew")
 
-        self.load_button = tk.Button(base_frame, text=self.load_button_text, command=lambda: self.load_json()) #, relief="raised", borderwidth=3)
-        self.load_button.grid(row=0, column=4, padx=(5, 5), pady=5, sticky="ew")
+        self.load_button = tk.Button(self.base_frame, text=self.load_button_text, command=lambda: self.load_json()) #, relief="raised", borderwidth=3)
+        self.load_button.grid(row=0, column=4, padx=(4, 4), pady=4, sticky="ew")
 
-        self.reset_button = tk.Button(base_frame, text=self.reset_button_text, command=lambda: self.reset_filters())
-        self.reset_button.grid(row=1, column=4, padx=(5, 5), pady=5, sticky="ew")
-
-        self.time_label = tk.Label(base_frame, text=self.time_label_text)
-        self.time_label.grid(row=0, column=5, padx=(5, 15), pady=5, sticky="e")
-
-        self.file_path_label = tk.Label(base_frame, text=tidy_data.get_file_path())
-        self.file_path_label.grid(row=1, column=5, padx=(5, 15), pady=5, sticky="e")
+        self.reset_button = tk.Button(self.base_frame, text=self.reset_button_text, command=lambda: self.reset_filters())
+        self.reset_button.grid(row=1, column=4, padx=(4, 4), pady=4, sticky="ew")
 
         # カラム幅の設定
-        base_frame.grid_columnconfigure(5, weight=1, minsize=30)
+        self.base_frame.grid_columnconfigure(5, weight=1, minsize=30)
 
-        self.frame0 = tk.Frame(base_frame)
-        self.frame1 = tk.Frame(base_frame)
-        self.frame2 = tk.Frame(base_frame)
-        self.frame3 = tk.Frame(base_frame)
-        self.frame4 = tk.Frame(base_frame)
+        self.frame0 = tk.Frame(self.base_frame)
+        self.frame1 = tk.Frame(self.base_frame)
+        self.frame2 = tk.Frame(self.base_frame)
+        self.frame3 = tk.Frame(self.base_frame)
+        self.frame4 = tk.Frame(self.base_frame)
         # Configure the frame to center the Treeview
         for fr in [self.frame0, self.frame1, self.frame2, self.frame3, self.frame4]:
             fr.grid_rowconfigure(0, weight=1)  # Add space above/below
@@ -2539,36 +2538,37 @@ class GUI:
                 "CreditDepartmentName",
             ),
             show="headings",
-            height=40,
+            height=40
         )
         self.update_tree_headings()
+
         self.result_tree0.grid(row=2, column=0, columnspan=6, sticky="nsew")
 
-        self.result_tree0.column("Journal", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("DetailRow", width=30, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("Month", width=80, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("TransactionDate", width=80, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("Description", width=250, anchor="w")
+        self.result_tree0.column("Journal", width=self.width_dimension, anchor="center", stretch=tk.NO)
+        self.result_tree0.column("DetailRow", width=self.width_dimension, anchor="center", stretch=tk.NO)
+        self.result_tree0.column("Month", width=self.width_month, anchor="center", stretch=tk.NO)
+        self.result_tree0.column("TransactionDate", width=self.width_date, anchor="center", stretch=tk.NO)
+        self.result_tree0.column("Description", width=self.width_text, anchor="w")
         self.result_tree0.column("DebitAccountCode", width=self.width_account, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("DebitAccountName", width=120, anchor="w")
-        self.result_tree0.column("Debit_Amount", width=80, anchor="e")
+        self.result_tree0.column("DebitAccountName", width=self.width_longname, anchor="w")
+        self.result_tree0.column("Debit_Amount", width=self.width_amount, anchor="e")
         self.result_tree0.column("DebitTaxCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("DebitTaxName", width=80, anchor="w")
-        self.result_tree0.column("DebitTaxAmount", width=80, anchor="e")
+        self.result_tree0.column("DebitTaxName", width=self.width_codename, anchor="w")
+        self.result_tree0.column("DebitTaxAmount", width=self.width_taxamount, anchor="e")
         self.result_tree0.column("DebitSubaccountCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("DebitSubaccountName", width=100, anchor="w")
+        self.result_tree0.column("DebitSubaccountName", width=self.width_name, anchor="w")
         self.result_tree0.column("DebitDepartmentCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("DebitDepartmentName", width=80, anchor="w")
+        self.result_tree0.column("DebitDepartmentName", width=self.width_codename, anchor="w")
         self.result_tree0.column("CreditAccountCode", width=self.width_account, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("CreditAccountName", width=120, anchor="w")
-        self.result_tree0.column("Credit_Amount", width=80, anchor="e")
+        self.result_tree0.column("CreditAccountName", width=self.width_longname, anchor="w")
+        self.result_tree0.column("Credit_Amount", width=self.width_amount, anchor="e")
         self.result_tree0.column("CreditTaxCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("CreditTaxName", width=80, anchor="w")
-        self.result_tree0.column("CreditTaxAmount", width=80, anchor="e")
+        self.result_tree0.column("CreditTaxName", width=self.width_codename, anchor="w")
+        self.result_tree0.column("CreditTaxAmount", width=self.width_taxamount, anchor="e")
         self.result_tree0.column("CreditSubaccountCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("CreditSubaccountName", width=100, anchor="w")
+        self.result_tree0.column("CreditSubaccountName", width=self.width_codename, anchor="w")
         self.result_tree0.column("CreditDepartmentCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
-        self.result_tree0.column("CreditDepartmentName", width=80, anchor="w")
+        self.result_tree0.column("CreditDepartmentName", width=self.width_codename, anchor="w")
 
         self.result_tree0.heading("Journal", text="仕訳" if self.lang=="ja" else "Journal")
         self.result_tree0.heading("DetailRow", text="明細行" if self.lang=="ja" else "Detail Row")
@@ -2595,10 +2595,14 @@ class GUI:
         self.result_tree0.heading("CreditSubaccountName", text="貸方補助科目名" if self.lang=="ja" else "Credit Subaccount Name")
         self.result_tree0.heading("CreditDepartmentCode", text="貸方部門コード" if self.lang=="ja" else "Credit Department Code")
         self.result_tree0.heading("CreditDepartmentName", text="貸方部門名" if self.lang=="ja" else "Credit Department Name")
-
-        scrollbar0 = ttk.Scrollbar(self.frame0, orient=tk.VERTICAL, command=self.result_tree0.yview)
-        self.result_tree0.configure(yscroll=scrollbar0.set)
-        scrollbar0.grid(row=2, column=6, sticky="ns")
+        # Add horizontal scrollbar for Treeview
+        scrollbar0x = tk.Scrollbar(self.frame0, orient=tk.HORIZONTAL, command=self.result_tree0.xview)
+        scrollbar0x.grid(row=3, column=0, columnspan=6, sticky="ew")
+        self.result_tree0.configure(xscrollcommand=scrollbar0x.set)
+        # Add vertical scrollbar for Treeview
+        scrollbar0y = ttk.Scrollbar(self.frame0, orient=tk.VERTICAL, command=self.result_tree0.yview)
+        scrollbar0y.grid(row=2, column=1, sticky="ns")
+        self.result_tree0.configure(yscroll=scrollbar0y.set)
 
         self.result_tree0.bind("<Double-1>", self.view_data)
         # 注： Threadにしないとダブルクリックが検出できないが、Threadだと応答が遅くなるので、データ参照ボタンを追加した。
@@ -2629,11 +2633,12 @@ class GUI:
             height=self.width_subaccount,
         )
         self.update_tree_headings()
+
         self.result_tree1.grid(row=2, column=0, columnspan=6, sticky="nsew")
 
         self.result_tree1.column("Transaction_Date", width=80, anchor="center", stretch=tk.NO)
         self.result_tree1.column("Ledger_Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
-        self.result_tree1.column("Ledger_Account_Name", width=120, anchor="w")
+        self.result_tree1.column("Ledger_Account_Name", width=self.width_name, anchor="w")
         self.result_tree1.column("Subaccount_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
         self.result_tree1.column("Subaccount_Name", width=100, anchor="w")
         self.result_tree1.column("Department_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
@@ -2642,7 +2647,7 @@ class GUI:
         self.result_tree1.column("Credit_Amount", width=80, anchor="e")
         self.result_tree1.column("Balance", width=80, anchor="e")
         self.result_tree1.column("Counterpart_Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
-        self.result_tree1.column("Counterpart_Account_Name", width=120, anchor="w")
+        self.result_tree1.column("Counterpart_Account_Name", width=self.width_name, anchor="w")
         self.result_tree1.column("Counterpart_Subaccount_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
         self.result_tree1.column("Counterpart_Subaccount_Name", width=100, anchor="w")
         self.result_tree1.column("Counterpart_Department_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
@@ -2672,7 +2677,7 @@ class GUI:
 
         scrollbar1 = ttk.Scrollbar(self.frame1, orient=tk.VERTICAL, command=self.result_tree1.yview)
         self.result_tree1.configure(yscroll=scrollbar1.set)
-        scrollbar1.grid(row=2, column=6, sticky="ns")
+        scrollbar1.grid(row=2, column=1, sticky="ns")
 
         self.result_tree1.bind("<Double-1>", self.view_data)
 
@@ -2693,12 +2698,13 @@ class GUI:
             height=40,
         )
         self.update_tree_headings()
+
         self.result_tree2.grid(row=2, column=0, columnspan=6, sticky="nsew")
 
         self.result_tree2.column("Month", width=80, anchor="center")
         self.result_tree2.column("Account_Number", width=self.width_account, anchor="center")
         self.result_tree2.column("eTax_Category", width=100, anchor="w")
-        self.result_tree2.column("Account_Name", width=120, anchor="w")
+        self.result_tree2.column("Account_Name", width=self.width_name, anchor="w")
         self.result_tree2.column("Beginning_Balance", width=80, anchor="e")
         self.result_tree2.column("Debit_Amount", width=80, anchor="e")
         self.result_tree2.column("Credit_Amount", width=80, anchor="e")
@@ -2718,7 +2724,7 @@ class GUI:
 
         scrollbar2 = ttk.Scrollbar(self.frame2, orient=tk.VERTICAL, command=self.result_tree2.yview)
         self.result_tree2.configure(yscroll=scrollbar2.set)
-        scrollbar2.grid(row=2, column=6, sticky="ns")
+        scrollbar2.grid(row=2, column=0, sticky="ns")
 
         # Frame 3: Balance Sheet (BS) Display
         self.result_tree3 = ttk.Treeview(
@@ -2728,6 +2734,7 @@ class GUI:
             height=40,
         )
         self.update_tree_headings()
+
         self.result_tree3.grid(row=2, column=0, columnspan=6, sticky="nsew")
 
         self.result_tree3.column("seq", width=20, anchor="w")
@@ -2748,7 +2755,7 @@ class GUI:
 
         scrollbar3 = ttk.Scrollbar(self.frame3, orient=tk.VERTICAL, command=self.result_tree3.yview)
         self.result_tree3.configure(yscroll=scrollbar3.set)
-        scrollbar3.grid(row=2, column=6, sticky="ns")
+        scrollbar3.grid(row=2, column=0, sticky="ns")
 
         # Frame 4: Profit and Loss (PL) Display
         self.result_tree4 = ttk.Treeview(
@@ -2758,6 +2765,7 @@ class GUI:
             height=40,
         )
         self.update_tree_headings()
+
         self.result_tree4.grid(row=2, column=0, columnspan=6, sticky="nsew")
 
         self.result_tree4.column("seq", width=20, anchor="w")
@@ -2778,40 +2786,40 @@ class GUI:
 
         scrollbar4 = ttk.Scrollbar(self.frame4, orient=tk.VERTICAL, command=self.result_tree4.yview)
         self.result_tree4.configure(yscroll=scrollbar4.set)
-        scrollbar4.grid(row=2, column=6, sticky="ns")
+        scrollbar4.grid(row=2, column=1, sticky="ns")
 
-        # Add frames to base_frame
+        # Add frames to self.base_frame
         for frame in (self.frame0, self.frame1, self.frame2, self.frame3, self.frame4):
-            frame.grid(row=2, column=0, columnspan=6, padx=(10, 10), pady=(10, 10), sticky="nsew")
+            frame.grid(row=4, column=0, columnspan=6, padx=(4, 4), pady=(4, 4), sticky="nsew")
 
         # Add search functionality
         search_frame = tk.Frame(root)
-        search_frame.pack(side="top", fill="x", padx=10, pady=10)
+        search_frame.pack(side="top", fill="x", padx=4, pady=4)
 
         self.search_label = tk.Label(search_frame, text="摘要文 検索語:")
         self.search_label.pack(side="left")
 
         self.search_entry = tk.Entry(search_frame)
-        self.search_entry.pack(side="left", padx=5)
+        self.search_entry.pack(side="left", padx=4)
 
         self.search_button = tk.Button(search_frame, text="検索", command=self.search_keyword)
-        self.search_button.pack(side="left", padx=5)
+        self.search_button.pack(side="left", padx=4)
 
         self.reset_search_button = tk.Button(search_frame, text="検索解除", command=self.reset_search)
-        self.reset_search_button.pack(side="left", padx=5)
+        self.reset_search_button.pack(side="left", padx=4)
 
         self.view_button = tk.Button(search_frame, text="データ参照", command=self.view_data)
-        self.view_button.pack(side="left", padx=5)
+        self.view_button.pack(side="left", padx=4)
 
         # 列の表示/非表示を切り替えるボタンを追加
         self.toggle_column_button = tk.Button(search_frame, text="コード列の表示/非表示", command=self.toggle_column)
-        self.toggle_column_button.pack(side="left", padx=5)
+        self.toggle_column_button.pack(side="left", padx=4)
 
         self.save_button = tk.Button(search_frame, text="CSV保存", command=self.save_csv)
-        self.save_button.pack(side="left", padx=5)
+        self.save_button.pack(side="left", padx=4)
 
         self.toggle_language_button = tk.Button(search_frame, text="日本語/English", command=self.toggle_language)
-        self.toggle_language_button.pack(side="left", padx=5)
+        self.toggle_language_button.pack(side="left", padx=4)
 
         account_dict = tidy_data.get_account_dict()
         accounts = list(account_dict.keys())
@@ -2823,7 +2831,11 @@ class GUI:
 
         self.show_frame(self.frame0, 0)  # 最初に表示する frame を指定
         self.update_labels()
-        self.update_time_labels()
+
+        if "en" == self.lang:
+            log_tracker.write_log_text("window created.")
+        else:
+            log_tracker.write_log_text("ウィンドウ生成")
 
 
 if __name__ == "__main__":
@@ -2832,13 +2844,18 @@ if __name__ == "__main__":
         sys.exit(1)
     param_file_path = sys.argv[1]
 
-    # Then process the CSV
-    tidy_data = TidyData()
-    tidy_data.csv2dataframe(param_file_path)
+    # グローバル変数としてlog_trackerを定義
+    log_tracker = LogTracker()
 
     # Initialize the GUI
     root = tk.Tk()
     gui = GUI(root)
+    gui.create_base()
+
+    # Then process the CSV
+    tidy_data = TidyData()
+    tidy_data.csv2dataframe(param_file_path)
+
     gui.create_gui()
 
     root.mainloop()
