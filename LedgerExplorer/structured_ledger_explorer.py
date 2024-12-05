@@ -1559,7 +1559,7 @@ class GUI:
         self.width_name = 120
         self.width_longname = 180
         self.width_codename = 120
-        self.width_text = 240
+        self.width_text = 300
         self.width_month = 66
         self.width_date = 90
         self.line = None
@@ -1617,7 +1617,7 @@ class GUI:
             elif self.combobox.get() == "損益計算書":
                 self.combobox.set("Profit and Loss")
             # self.file_path_label.config(text=tidy_data.get_file_path())
-            self.search_label.config(text="Description Search Term:")
+            self.search_label.config(text="Search Term:")
             self.search_button.config(text="Search")
             self.reset_search_button.config(text="Reset Search")
             self.view_button.config(text="View Data")
@@ -2422,18 +2422,19 @@ class GUI:
 
     def create_base(self):
         root = self.root
+        # 13インチMacBook Air（M2/M3）は1,470×956ピクセル、14インチMacBook Pro（M3/M3 Pro/M3 Max）は1,512×982ピクセルの解像度
+        root.geometry("1450x950") 
+        root.update_idletasks()  # ウィンドウのレイアウトを更新
+        root_width = root.winfo_width()  # rootウィンドウの幅を取得
+        root_height = root.winfo_height()  # rootウィンドウの高さを取得
+
         self.previous_selection = None
         if self.lang == "en":
             root.title("Accounting Ledgers")
         else:
             root.title("会計帳簿")
-
         self.base_frame = tk.Frame(root)
         self.base_frame.pack(side="top", fill="x", padx=10, pady=10)
-        # rootウィンドウのサイズが決まってから幅を取得
-        root.update_idletasks()  # ウィンドウのレイアウトを更新
-        root_width = root.winfo_width()  # rootウィンドウの幅を取得
-        root_height = root.winfo_height()  # rootウィンドウの高さを取得
         # self.base_frameの幅と高さをrootのサイズに合わせる
         self.base_frame.config(width=root_width, height=root_height)
         self.log_text = tk.Text(
