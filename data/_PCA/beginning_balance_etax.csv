@@ -1,0 +1,10 @@
+﻿Account_Code,Account_Name,English_Label,Beginning_Balance
+10A100020,現金及び預金,Cash and deposits,250000000
+10A100060,受取手形,Notes receivable - trade,50000000
+10A100200,電子記録債権,Electronically recorded monetary claims - operating,10000000
+10A100090,売掛金,Accounts receivable - trade,50000000
+10A100280,商品,Merchandise,50000000
+10A100610,短期貸付金,Short-term loans receivable,10000000
+10A210130,構築物,Structures,100000000
+10A210410,工具、器具及び備品,"Tools, furniture and fixtures",100000000
+10A230570,保険積立金,Insurance funds,50000000
