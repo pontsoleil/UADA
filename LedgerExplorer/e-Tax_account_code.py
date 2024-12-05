@@ -46,7 +46,9 @@ class TidyData:
         self.bs_template_df = None
         self.pl_template_df = None
         self.combined_template_df = None
-        self.account_dict = None
+        # self.account_dict = None
+        self.beginning_balance_path = None
+        self.etax_beginning_balance_path = None
         # self.account_dict2 = None
         # self.bs_parent_dict = None
         # self.pl_parent_dict = None
@@ -117,6 +119,39 @@ class TidyData:
             errors.append(f"Error: Tax_Code {code} is not found in the mapping dictionary.")
             return code  # 未対応のコードはそのまま返す
 
+    def beginning_balance(self):
+        # beginning_balance_pathを読み込む
+        # rows = []
+        data = {}
+        with open(self.beginning_balance_path, mode='r', encoding='utf-8-sig') as csv_file:
+            reader = csv.DictReader(csv_file)  # ヘッダー行をキーとして利用
+            for row in reader:
+                account_code = row['Account_Code']
+                mapping_row = self.code_mapping_dict[account_code]
+                etax_account_code = mapping_row['eTax_Account_Code']
+                balance = int(row['Beginning_Balance'])
+                if etax_account_code in data:
+                    balance += data[etax_account_code]['Beginning_Balance']
+                else:
+                    data[etax_account_code] = {}
+                data[etax_account_code]['Account_Code'] = mapping_row['eTax_Account_Code']
+                data[etax_account_code]['Account_Name'] = mapping_row['eTax_Account_Name']
+                data[etax_account_code]['English_Label'] = mapping_row['English_Label']
+                data[etax_account_code]['Beginning_Balance'] = balance
+        # Save the dictionary as a CSV
+        with open(self.etax_beginning_balance_path, mode='w', encoding='utf-8-sig', newline='') as etax_csv_file:
+            writer = csv.writer(etax_csv_file)
+            # Write the header row
+            header = ['Account_Code', 'Account_Name', 'English_Label', 'Beginning_Balance']
+            writer.writerow(header)
+            # Write each row of data
+            for key, row in data.items():
+                writer.writerow([row['Account_Code'], row['Account_Name'], row['English_Label'], row['Beginning_Balance']])
+
+        # with open(self.etax_beginning_balance_path, mode='w', encoding='utf-8-sig') as etax_csv_file:
+        #     writer = csv.DictWriter(etax_csv_file, fieldnames = ['Account_Code', 'Account_Name', 'English_Label', 'Beginning_Balance'] )
+        #     writer.writerows(data)
+        
     def code2etax(self):
         # e-Tax CSV Sheet for BS
         input_BS_path = self.BS_path  # BS Template CSV
@@ -276,6 +311,7 @@ class TidyData:
         self.file_path = params["file_path"]
         self.etax_file_path = params["e-tax_file_path"]
         self.beginning_balance_path = params["beginning_balance_path"]
+        self.etax_beginning_balance_path = params["e-tax_beginning_balance_path"]
         self.account_path = params["account_path"]
         self.tax_category_path = params["tax_category_path"]
         self.trading_partner_path = params["trading_partner_path"]
@@ -306,6 +342,8 @@ class TidyData:
                 self.LHM_dict[id] = row
 
         self.code2etax()
+
+        self.beginning_balance()
 
 
 if __name__ == "__main__":
