@@ -3,6 +3,7 @@
     "e-tax_file_path": "data/_PCA/tidyGL_en_etax.csv",
     "LHM_path": "ISO21926/LHM/JP_LHM.csv",
     "beginning_balance_path": "data/_PCA/beginning_balance.csv",
+    "e-tax_beginning_balance_path": "data/_PCA/beginning_balance_etax.csv",
     "account_path": "data/_PCA/account_list.csv",
     "tax_category_path": "data/_PCA/tax_category.csv",
     "HOT010_3.0_BS_10": "data/HOT010_3.0_BS_10.csv",
