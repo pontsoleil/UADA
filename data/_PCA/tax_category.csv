@@ -1,5 +1,5 @@
 ﻿Dr_Cr,Tax_Code,Tax_Name,Tax_Category_Code,Tax_Category_Name_ja,Tax_Category_Name_en
-,00,対象外,O,対象外,Exempt
+,00,-,O,-,-
 Cr,B5,売上10%,S10,標準10%,Standard 10%
 Dr,C5,売返10%,S10,標準10%,Standard 10%
 Dr,P0,非仕入,X,非仕入,Non-Purchase
