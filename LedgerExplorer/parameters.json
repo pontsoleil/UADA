@@ -1,6 +1,6 @@
 {
-    "file_path": "data/_PCA/tidyGL_en.csv",
-    "e-tax_file_path": "data/_PCA/tidyGL_en_etax.csv",
+    "file_path": "data/_PCA/tidyGL.csv",
+    "e-tax_file_path": "data/_PCA/tidyGL_etax.csv",
     "LHM_path": "ISO21926/LHM/JP_LHM.csv",
     "beginning_balance_path": "data/_PCA/beginning_balance.csv",
     "e-tax_beginning_balance_path": "data/_PCA/beginning_balance_etax.csv",
@@ -16,12 +16,10 @@
         "貸方補助科目": "JP05b",
         "借方部門": "BS04c5",
         "貸方部門": "BS04c6",
-
         "伝票番号": "JP07a_GL02_01",
         "仕訳区分": "BS15c_01",
         "伝票日付": "JP07a_GL02_03",
         "摘要文": "JP08a_GL03_03",
-
         "借方科目コード": "JP06b_BS16_01",
         "借方科目名": "JP06b_BS16_02",
         "借方金額": "GE05gP_01",
@@ -34,7 +32,6 @@
         "借方部門コード": "BS04c5_01",
         "借方部門名": "BS04c5_02",
         "借方部門区分": "BS04c5_03",
-
         "貸方科目コード": "JP06d_BS16_01",
         "貸方科目名": "JP06d_BS16_02",
         "貸方金額": "GE05hX_01",
@@ -82,7 +79,7 @@
         "電子取引売上高": "10D100101",
         "電子取引以外売上高": "10D100102"
     },
-    "lang": "en",
+    "lang": "ja",
     "DEBUG": 0,
     "TRACE": 1
 }
