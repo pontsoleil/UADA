@@ -1,10 +1,33 @@
 ﻿Account_Code,Account_Name,English_Label,Beginning_Balance
-10A100020,現金及び預金,Cash and deposits,250000000
-10A100060,受取手形,Notes receivable - trade,50000000
-10A100200,電子記録債権,Electronically recorded monetary claims - operating,10000000
-10A100090,売掛金,Accounts receivable - trade,50000000
-10A100280,商品,Merchandise,50000000
-10A100610,短期貸付金,Short-term loans receivable,10000000
-10A210130,構築物,Structures,100000000
-10A210410,工具、器具及び備品,"Tools, furniture and fixtures",100000000
-10A230570,保険積立金,Insurance funds,50000000
+10A100020,現金及び預金,Cash and deposits,73659897
+10A100060,受取手形,Notes receivable - trade,77631436
+10A100040,貸倒引当金,Allowance for doubtful accounts,822674000
+10A100090,売掛金,Accounts receivable - trade,8130812723
+10A100230,有価証券,Securities,1271350
+10A100280,商品,Merchandise,63013226
+10A100610,短期貸付金,Short-term loans receivable,480000
+10A100851,仮払消費税等,nan,2762581
+10A100800,差入保証金,Guarantee deposits,1200000
+10A210130,構築物,Structures,2001693400
+10A210410,工具、器具及び備品,"Tools, furniture and fixtures",953769200
+10A220190,電話加入権,Telephone subscription right,512000
+10A230570,保険積立金,Insurance funds,1528000
+10A230650,敷金,Leasehold deposits,3140000
+10B100030,支払手形,Notes payable - trade,52251735
+10B100040,買掛金,Accounts payable - trade,264051101
+10B100320,賞与引当金,Provision for bonuses,32000000
+10B100630,未払金,Accounts payable - other,57584692
+10B100640,未払法人税等,Income taxes payable,2864378
+10B100650,未払事業所税,Accrued business office tax,1862000
+10B100660,未払消費税等,Accrued consumption taxes,4947100
+10B100690,預り金,Deposits received,2309575
+10B100790,短期借入金,Short-term borrowings,7842000
+10B100890,仮受消費税等,Suspense receipt of consumption taxes,6540636
+10B200080,長期借入金,Long-term borrowings,14000000
+10B200120,退職給付引当金,Provision for retirement benefits,18560000
+10B200300,その他の引当金、固定負債,Other provisions,22000000
+10C120020,資本準備金,Legal capital surplus,1085000000
+10C130020,利益準備金,Legal retained earnings,7200000
+10C130360,別途積立金,General reserve,4830000
+10C130370,繰越利益剰余金,Retained earnings brought forward,4956596
+10C110010,資本金,Share capital,8900000000
