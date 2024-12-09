@@ -5,8 +5,8 @@ import json
 from collections import OrderedDict
 from datetime import datetime
 import sys
-import os
-import webbrowser
+# import os
+# import webbrowser
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
 
@@ -34,25 +34,14 @@ class TidyData:
         self.PL_path = None,
         self.trading_partner_path = None
         self.trading_partner_dict = None
-        self.LHM_path = None,
-        self.LHM_dict = None,
-        # self.account_category_dict = None
-        # self.beginning_balances = None
-        # self.amount_rows = None
-        # self.general_ledger_df = None
-        # self.summary_df = None
-        # self.bs_data_df = None
-        # self.pl_data_df = None
+        self.LHM_path = None
+        self.LHM_dict = None
         self.bs_template_df = None
         self.pl_template_df = None
         self.combined_template_df = None
-        # self.account_dict = None
         self.beginning_balance_path = None
         self.etax_beginning_balance_path = None
-        # self.account_dict2 = None
-        # self.bs_parent_dict = None
-        # self.pl_parent_dict = None
-        self.lang = "ja",
+        self.lang = "ja"
         self.etax_file_path = None
 
     def debug_print(self, message):
@@ -147,10 +136,6 @@ class TidyData:
             # Write each row of data
             for key, row in data.items():
                 writer.writerow([row['Account_Code'], row['Account_Name'], row['English_Label'], row['Beginning_Balance']])
-
-        # with open(self.etax_beginning_balance_path, mode='w', encoding='utf-8-sig') as etax_csv_file:
-        #     writer = csv.DictWriter(etax_csv_file, fieldnames = ['Account_Code', 'Account_Name', 'English_Label', 'Beginning_Balance'] )
-        #     writer.writerows(data)
         
     def code2etax(self):
         # e-Tax CSV Sheet for BS
@@ -197,21 +182,17 @@ class TidyData:
             inplace=True
         )
         self.pl_template_df["Level"] = self.pl_template_df["Level"].fillna(0).astype(int)
-
         # Combine self.bs_template_df and self.pl_template_df into a single DataFrame
         # Add a distinguishing column to identify the source of data
         self.bs_template_df['Source'] = 'BS'
         self.pl_template_df['Source'] = 'PL'
         # Combine both DataFrames using pd.concat
         self.combined_template_df = pd.concat([self.bs_template_df, self.pl_template_df], ignore_index=True)
-
         # Display the combined DataFrame
         self.debug_print(self.combined_template_df.head())
-
         # account_list.csv を読み込み、変換用の辞書を作成
         self.account_list_df = pd.read_csv(self.account_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
         self.account_list_df.columns = self.account_list_df.columns.str.strip()  # 列名の空白を除去
-
         # Merge English_Label from self.pl_template_df
         self.account_list_df = self.account_list_df.merge(
             self.combined_template_df[['Ledger_Account_Number', 'English_Label']],
@@ -219,10 +200,8 @@ class TidyData:
             right_on='Ledger_Account_Number',
             how='left'
         )
-
         # Display the combined DataFrame
         self.debug_print(self.account_list_df.head())
-
         # Account_Code をキーにして eTax_Account_Code と eTax_Account_Name を持つ辞書を作成
         self.code_mapping_dict = self.account_list_df.set_index("Account_Code")[["eTax_Account_Code", "eTax_Account_Name", "English_Label"]].to_dict('index')
         # eTax_Account_Code をキーにして、'Category' と "eTax_Account_Name" を持つ辞書を作成
@@ -230,7 +209,6 @@ class TidyData:
         etax_unique_df = self.account_list_df.drop_duplicates(subset="eTax_Account_Code", keep='first')
         # eTax_Account_Code をキーにして辞書を作成
         self.etax_code_mapping_dict = etax_unique_df.set_index("eTax_Account_Code")[['Category', "eTax_Account_Name", "eTax_Category", "English_Label"]].to_dict('index')
-
         # tidyGL.csv を読み込み、列名の空白を除去
         # Datatype を Pandas dtype に変換するマッピング
         datatype_mapping = {
@@ -255,16 +233,13 @@ class TidyData:
                 dtype_dict[column_id] = datatype_mapping[datatype]
         self.tidy_gl_df = pd.read_csv(self.file_path, dtype=dtype_dict)
         self.tidy_gl_df.columns = self.tidy_gl_df.columns.str.strip()  # 列名の空白を除去
-
         # tax_category.csv を読み込み、変換用の辞書を作成
         tax_category_list_df = pd.read_csv(self.tax_category_path, dtype=str)
         tax_category_list_df.columns = tax_category_list_df.columns.str.strip()  # 列名の空白を除去
         # Account_Code をキーにして eTax_Account_Code と eTax_Account_Name を持つ辞書を作成
         self.tax_category_mapping_dict = tax_category_list_df.set_index('Tax_Code')[['Dr_Cr', 'Tax_Name', "Tax_Category_Code", "Tax_Category_Name_ja", "Tax_Category_Name_en"]].to_dict('index')
-
         # 対応先がない場合のエラーログリスト
         errors = []
-
         # 借方と貸方の科目コード及び税コードに対してコードのマッピングを適用
         # 行ごとに繰り返し処理を行い、借方と貸方の科目コード、名称、借方税区分コード、借方税区分名をマッピング
         def process_row(row):
@@ -288,17 +263,13 @@ class TidyData:
                 row[self.columns["貸方税区分コード"]] = self.map_tax_category_code(credit_tax_category_code, errors)
                 row[self.columns["貸方税区分名"]] = self.map_tax_category_name(credit_tax_category_code, errors)
                 return row
-
         # データフレーム全体に行単位で関数を適用
         self.tidy_gl_df = self.tidy_gl_df.apply(process_row, axis=1)
-
         # エラーがあれば出力
         if errors:
             self.trace_print("\n".join(errors))
-
         # 結果を確認
         self.debug_print(self.tidy_gl_df.head())
-
         # 新しいe-Taxコードに変換したデータフレームを CSV に保存
         self.tidy_gl_df.to_csv(self.etax_file_path, index=False, encoding="utf-8-sig")
 
