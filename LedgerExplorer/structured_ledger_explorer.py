@@ -2155,7 +2155,6 @@ class GUI:
             elif selected_option == "損益計算書":
                 self.show_frame(self.frame4, 4)
         
-
     def create_base(self):
         root = self.root
         # 13インチMacBook Air（M2/M3）は1,470×956ピクセル、14インチMacBook Pro（M3/M3 Pro/M3 Max）は1,512×982ピクセルの解像度
@@ -2175,13 +2174,18 @@ class GUI:
         self.base_frame.config(width=root_width, height=root_height)
 
     def insert_data(self, filtered_df, result_tree, frame_number):
-        # 元のデータを保存するリスト
+        # 複数タグを設定
+        result_tree.tag_configure("emphasis", background="gray", foreground="white")
+        result_tree.tag_configure("normal", background="white", foreground="black")
         self.original_data = []
         for index, row in filtered_df.iterrows():
             # フォーマット済みのデータを取得
             formatted_row = self.format_row(row, frame_number)
             # TreeView にデータを挿入
-            result_tree.insert("", "end", values=formatted_row)
+            tag = "normal"
+            if "Description" in row and "* "==row["Description"][:2]:
+                tag = "emphasis"               
+            result_tree.insert("", "end", values=formatted_row, tags=(tag,))
             # フォーマット済みのデータを保存
             self.original_data.append(formatted_row)
             # レスポンス性を維持するための更新処理
@@ -3010,7 +3014,6 @@ class GUI:
         tree.heading("eTax_Account_Name", text="Account Name" if self.lang=="en" else "勘定科目名")
         tree.heading("eTax_Category", text="Account Category" if self.lang=="en" else "勘定科目区分")
         tree.heading("Beginning_Balance", text="Starting Balance" if self.lang=="en" else "期首残高")
-        tree.heading("Beginning_Balance", text="Starting Balance" if self.lang=="en" else "期首残高")
         tree.heading("Total_Debit", text="Debit" if self.lang=="en" else "借方")
         tree.heading("Total_Credit", text="Credit" if self.lang=="en" else "貸方")
         tree.heading("Ending_Balance", text="Ending Balance" if self.lang=="en" else "期末残高")
@@ -3073,6 +3076,17 @@ class GUI:
 
     def scroll_to_end(self, event=None):
         self.log_text.see("end")
+
+    def open_link(self, event, url):
+        """指定されたURLを開く"""
+        webbrowser.open(url) 
+    def on_hover(self, event):
+        """マウスホバー時にアンダーラインを表示"""
+        event.widget.configure(font=("Arial", 10, "underline"))
+
+    def on_leave(self, event):
+        """マウスホバーが外れたときにアンダーラインを解除"""
+        event.widget.configure(font=("Arial", 10))
 
     def create_gui(self):
         # Combobox
@@ -3190,6 +3204,20 @@ class GUI:
         # toggle language
         self.toggle_language_button = tk.Button(search_frame, text="日本語/English", command=self.toggle_language)
         self.toggle_language_button.pack(side="left", padx=4)
+        # Copyright
+        copyright_label = tk.Label(
+            search_frame,
+            text="Copyright 2024 Sambuichi Professional Engineers Office, CC-BY 4.0",
+            anchor="center",
+            font=("Arial", 10),
+            fg="gray",
+            cursor="hand2"  # マウスポインタを手の形に
+        )
+        copyright_label.pack(side="right", padx=4)
+        url = "https://www.sambuichi.jp"
+        copyright_label.bind("<Button-1>", lambda event: self.open_link(event, url)) # クリックでリンクを開く
+        copyright_label.bind("<Enter>", self.on_hover)            # ホバー時のアンダーライン表示
+        copyright_label.bind("<Leave>", self.on_leave)            # ホバー終了時のアンダーライン解除
         # account combobox
         account_dict = tidy_data.get_account_dict()
         accounts = [key.split(" ", 1)[1] for key in account_dict.keys()]
