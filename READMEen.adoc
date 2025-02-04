@@ -1,0 +1,177 @@
+= Hierarchical Tidy Data Parser
+
+== Overview
+
+The `TidyDataParser` class processes hierarchical data, enabling the following operations:
+
+1. **Convert CSV to a hierarchical JSON format**
+2. **Convert JSON back to a normalized (tidy) CSV format**
+
+== Directory Structure
+
+[source,plaintext]
+----
+ProjectRoot/
+│
+├── Python/
+│   ├── data/
+│   │   ├── company.csv       # Input CSV file
+│   │   ├── params.json       # Parameter file
+│   │   ├── company.json      # Output JSON file
+│   │   └── company2.csv      # Output CSV file
+│   │
+│   ├── tidy_data_parser.py   # Main parser module
+│   └── main.py               # Execution script
+│
+└── READMEen.adoc             # English documentation
+└── READMEja.adoc             # Japanese documentation
+----
+
+== Prerequisites
+
+Python 3.x and the pandas library are required.
+
+[source,bash]
+----
+pip install pandas
+----
+
+== Input Files
+
+**CSV File**
+
+Prepare a CSV file containing hierarchical data.  
+Example: `Python/data/company.csv`
+
+[source,csv]
+----
+D_Company,D_Department,D_Employee,D_Skill,D_Color,Company,Department,Employee,Role,Skill,Color
+1,,2,,,Acme Inc,,,,,
+1,1,,,,,Sales,,,,
+1,1,1,,,,,Alice,Manager,,
+1,1,1,1,,,,,,Accounting,
+----
+
+**Parameter File (params.json)**
+
+Define the data structure and file paths in JSON format.
+
+[source,json]
+----
+{
+    "dimension_prefixes": ["D_"],
+    "dimension": {
+        "D_Company": ["D_Department"],
+        "D_Department": ["D_Employee"],
+        "D_Employee": ["D_Skill", "D_Color"],
+        "D_Skill": [],
+        "D_Color": []
+    },
+    "dimension_names": {
+        "D_Company": "Company",
+        "D_Department": "Department",
+        "D_Employee": "Employee",
+        "D_Skill": "Skill",
+        "D_Color": "Color"
+    },
+    "file_path": "Python/data/company.csv",
+    "json_path": "Python/data/company.json",
+    "file2_path": "Python/data/company2.csv"
+}
+----
+
+== Execution
+
+Run the following command to execute the script:
+
+[source,bash]
+----
+cd Python
+python main.py
+----
+
+== Output
+
+**JSON File (Hierarchical Data)**
+
+Example: `Python/data/company.json`
+
+[source,json]
+----
+{
+    "D_Company": [
+        {
+            "id": 1,
+            "Company": "Acme Inc",
+            "D_Department": [
+                {
+                    "id": 1,
+                    "Department": "Sales",
+                    "D_Employee": [
+                        {
+                            "id": 1,
+                            "Employee": "Alice",
+                            "Role": "Manager",
+                            "D_Skill": [{"id": 1, "Skill": "Accounting"}]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
+----
+
+**CSV File (Normalized Data)**
+
+Example: `Python/data/company2.csv`
+
+[source,csv]
+----
+D_Company,D_Department,D_Employee,D_Skill,D_Color,Company,Department,Employee,Role,Skill,Color
+1,1,1,1.0,,Acme Inc,Sales,Alice,Manager,Accounting,
+----
+
+== Error Handling
+
+* Missing or incorrect files:
+[source,plaintext]
+----
+FileNotFoundError: Parameters file not found: params.json
+----
+
+* JSON parsing errors:
+[source,plaintext]
+----
+ValueError: Error parsing JSON file: params.json
+----
+
+* Output file locked:
+[source,plaintext]
+----
+PermissionError: Output file is in use or not writable.
+----
+
+== Using as a Module
+
+You can import `TidyDataParser` into other Python scripts:
+
+[source,python]
+----
+from tidy_data_parser import TidyDataParser
+
+params_path = "Python/data/params.json"
+parser = TidyDataParser(params_path)
+hierarchy = parser.process_hierarchy()
+print(hierarchy)
+----
+
+== License
+
+This project is licensed under the MIT License.
+
+== Author
+
+* 名前: SAMBUICHI, Nobuyuki
+* Email: nobuyuki@sambuichi.jp
+* GitHub: https://www.sambuichi.jp

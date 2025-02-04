@@ -1,0 +1,298 @@
+﻿No.,Level,Property type,Identifier,Class,Property term,Representation term,Associated class,Mult.,Definition,ISO 21378 Module,ISO 21378 Table,Value Domain,Action,要素名,要素定義,
+1001,1,Class,,Document Information SA,,,,,Parent for descriptive information about the accountingEntries section in which it is contained.,gl-cor,,,,【文書情報】,この会計仕訳に関する情報の親タグ。,gl-cor:documentInfo
+1002,2,Specialization,,Document Information SA,,,Document Information,1,,gl-cor,,,,,,
+1003,2,Attribute,,Document Information SA,Revises Audit Number,Char,,0..0,"If this batch of information revises a previous batch of information, this field identifies the previous batch that is being revised. 'uniqueID' of the previous batch goes here. Developers should consider exception reporting.",gl-cor,,,,改訂前監査番号,この仕訳の束が以前の仕訳の束を改訂する場合に、以前の束を示す。元の文書のuniqueIDが指定される。開発者は、例外報告を考慮すべきである。,gl-cor:revisesUniqueID
+1004,2,Attribute,,Document Information SA,Action to Take with Previous Data,Char,,0..0,Provides guidance on action to take with previous set of data: supersedes - old data should be considered as obsolete/overwritten; supplements - belongs with that data as if it was included with it.,gl-cor,,,,改訂前データ処置,"以前のデータの束に対する操作のガイダンス。 取替え-古いデータを無効にし上書きする。
+補完-元々含まれていたかのように、そのデータに所属させる。
+[設定値のリスト]
+(supplement：補完)、(supersede：取替え)",gl-cor:revisesUniqueIDAction
+1005,2,Attribute,,Document Information SA,Period Count,Integer,,0..0,"Number of periods or buckets, used by postingCode. Used to interpret posting date. It may be preferable to limit entries by period covered to be by individual reporting period.",gl-cor,,,,期間数,postingCodeで使用される期間又はバケットの数。 転記日付を説明するために使用される。対象期間の仕訳を個々の報告期間に限定することが望ましいかもしれない。,gl-bus:periodCount
+1006,2,Attribute,,Document Information SA,Period Unit,Char,,0..0,Type of periods covered by periodCount,gl-cor,,,,期間単位,"periodCountで対象とする期間の種別。
+[設定値のリスト]
+(daily：日次)、(weekly：週次)、(bi-weekly：隔週)、(semi-monthly：半月ごと)、(monthly：月次)、(quarterly：四半期ごと)、(thirdly：年3回)、(semiannual：半年ごと)、(annual：年次)、(ad-hoc：随時)、(current-period-only：当期)、(other：その他) ",gl-bus:periodUnit
+1007,2,Attribute,,Document Information SA,Period Unit Description,Text,,0..0,Free format description of the period unit,gl-cor,,,,期間単位説明,対象期間単位の説明。,gl-bus:periodUnitDescription
+1008,2,Attribute,,Document Information SA,Target Application,Name,,0..0,Particular use for which file was generated.,gl-cor,,,,対象アプリケーション,ファイルが作成された用途。,gl-bus:targetApplication
+1009,2,Composition,,Document Information SA,,,Summary Reporting Taxonomies,0..0,0,gl-cor,,,,【集約報告タクソノミ】,この文書で示されたデータのロールアップ先となる、1つ以上の報告タクソノミの情報を、識別し提供する。,gl-srcd:summaryReportingTaxonomies
+1010,1,Class,,Entity Information SA,,,,,Holder for entity information - information about the reporting organization.,gl-cor,,,,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。,gl-cor:entityInformation
+1011,2,Specialization,,Entity Information SA,,,Entity Information,1,,gl-cor,,,,,,
+1012,2,Attribute,,Entity Information SA,Business Description,Text,,0..0,Description of the nature of the gl-business of the entity.,gl-cor,,,,業種説明,事業体の事業の種類についての説明。,
+1013,2,Attribute,,Entity Information SA,Fiscal Year Start,Date,,0..0,"Start of fiscal year. Where appropriate, gl-corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.",gl-bus,,,,会計年度開始日付,会計年度の開始日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。,gl-bus:fiscalYearStart
+1014,2,Attribute,,Entity Information SA,Fiscal Year End,Date,,0..0,"End of fiscal year. Where appropriate, gl-corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.",gl-bus,,,,会計年度終了日付,会計年度の終了日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。,gl-bus:fiscalYearEnd
+1015,2,Composition,,Entity Information SA,,,Accountant,0..0,Information about the relevant external accountant,gl-cor,,,,【会計士情報】,関連する外部会計士に関する情報。,gl-bus:accountantInformation
+1016,2,Composition,,Entity Information SA,,,Reporting Calendar,0..0,A tool to collect the periods used to summarise results from transactions.,gl-cor,,,,【報告カレンダー】,取引の結果をまとめるための期間を集めるもの。,gl-bus:reportingCalendar
+1017,2,Composition,,Entity Information SA,,,Registered Entity Identifier,0..0,,gl-cor,,,,,,
+1018,2,Composition,,Entity Information SA,,,Phone Number,0..0,Primary phone number of the entity.,gl-cor,,,,【事業体電話番号】,事業体の主要電話番号情報。,gl-cor:identifierPhoneNumber
+1019,2,Composition,,Entity Information SA,,,Fax Number,0..0,Tuple for holding company fax information.,gl-cor,,,,【事業体FAX番号】,事業体のFAX番号情報のタプル。,gl-bus:entityFaxNumberStructure
+1020,2,Composition,,Entity Information SA,,,Email Address,0..0,Tuple for holding company email information.,gl-cor,,,,【事業体Eメールアドレス】,事業体のEメールアドレス情報のタプル。,gl-cor:identifierEMail
+1021,2,Composition,,Entity Information SA,,,Web Site,0..0,Primary web site of the entity.,gl-cor,,,,【事業体Webサイト】,事業体の代表ウェブサイト。,gl-bus:entityWebSite
+1022,2,Composition,,Entity Information SA,,,Address,0..0,Address structure for the reporting entity,gl-cor,,,,【住所】,報告事業体の住所構造体。,gl-bus:organizationAddress
+1023,2,Composition,,Entity Information SA,,,Contact,0..0,Information about contacts.,gl-cor,,,,【担当者情報】,担当者に関する情報。,gl-bus:contactInformation
+1024,2,Composition,,Entity Information SA,,,Accounting Method,0..0,Section for identifying the methods of accounting used by the entity for different reporting purposes,gl-cor,,,,【会計処理方法】,異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのセクション。,gl-bus:organizationAccountingMethodStructure
+1025,2,Composition,,Entity Information SA,,,,,,,,,,,,
+1026,1,Class,,Entry Header SA,,,,,Parent for entry headers/journal entry headers.,gl-cor,,,,【仕訳情報】,エントリヘッダー/仕訳記入ヘッダーの親タグ。,gl-cor:entryHeader
+1027,2,Specialization,,Entry Header SA,,,Entry Header,1,,gl-cor,,,,,,
+1028,2,Attribute,,Entry Header SA,Date Posted,Date,,0..0,Date this entry was posted (validated) to the general ledger. May not represent the date of accounting significance which is represented by 'postingDate'.,gl-cor,,,,転記済日付,この仕訳が総勘定元帳に転記された(検証された)日付。 postingDateで示されるような会計上意味のある日付を表さないかもしれない。,gl-cor:postedDate
+1029,2,Attribute,,Entry Header SA,Entry Creator,Name,,0..0,Initials/name of operator originally entering.,gl-cor,,,,仕訳作成者,最初に入力したオペレータのイニシャル/名前。,gl-cor:enteredBy
+1030,2,Attribute,,Entry Header SA,Entry Last Modifier,Name,,0..0,Identification for the last person modifying this entry before posting.,gl-cor,,,,仕訳最終更新者,転記前に最後にこの仕訳を修正した者の識別子。,gl-bus:enteredByModified
+1031,2,Attribute,,Entry Header SA,Entry Date,Date,,0..0,"Represents the actual date/time of entry into computer (automated from system date, often misrepresented by changing system clock). Posting dates are maintained separately.",gl-cor,,,,入力日付,コンピュータへ入力した実際の日付/時刻(システム日付から自動的に与えられ、システム時計の変更により、しばしば誤った値になる)を示す。 転記日付とは別に管理される。,gl-cor:enteredDate
+1032,2,Attribute,,Entry Header SA,Responsible Person,Name,,0..0,Identifier of person who created or originated or is otherwise responsible for the entry.,gl-cor,,,,責任者,仕訳を作成したか、仕訳に責任を持つ者の識別子。,gl-bus:entryResponsiblePerson
+1033,2,Attribute,,Entry Header SA,Source Journal,Char,,0..0,"Source journal. The code of the journal in which the entry is processed. The code must be a unique indication for a journal and is selected from the following enumerated list:\ncd      cash disbursements (sending cheques to vendors)\ncr      cash receipts (receiving cheques from others)\nfa      fixed assets\ngi      giro/other bank adjustments\ngj      general journal\nim      inventory management\njc      job cost\npj      purchase journal (liabilities from purchases)\npl      payroll journal\nsj      sales journal\nse      standard entries\nud      user defined\not      other sources of entries""",gl-cor,,,,元仕訳帳種別,元仕訳帳。仕訳が処理される仕訳帳のコード。コードは仕訳帳に一意な指標であり、以下から選択する。\n出金(仕入先への小切手送付)、入金(他者からの小切手受領)、固定資産、振替、一般仕訳帳、在庫管理、個別原価、仕入帳(仕入による負債)、賃金台帳、売上台帳、通常仕訳、ユーザ定義、その他\n[設定値のリスト]\n(cd：出金)、(cr：入金)、(fa：固定資産)、(gi：振替)、(gj：一般仕訳帳)、(im：在庫管理)、(jc：個別原価)、(pj：仕入帳)、(pl：賃金台帳)、(sj：売上台帳)、(se：通常仕訳)、(ud：ユーザ定義)、(ot：その他),gl-cor:sourceJournalID
+1034,2,Attribute,,Entry Header SA,Journal Description,Text,,0..0,"Source journal (full description of general journal, payroll journal, accountant entries). A more easily readable journal indication. The most common journals are: Purchases, Sales, Cash, and General Journal.",gl-cor,,,,元仕訳帳説明,元仕訳帳(一般仕訳、給与台帳、会計士入力の完全な説明)。 よりわかりやすい仕訳帳の指標。 最も一般的な仕訳帳は、次の通り。 仕入、売上、現金、一般仕訳。,gl-bus:sourceJournalDescription
+1035,2,Attribute,,Entry Header SA,Type Identifier,Char,,0..0,"One of the following enumerated list: adjusting, budget, comparative, external-accountant, standard, passed-adjusting, eliminating, proposed, recurring, reclassifying, simulated, tax, other",gl-cor,,,,種別識別子,以下の値のうちのひとつ。\n整理、予算、比較、外部会計士、通常、無視、消去、提案、反復、組替、シミュレーション、税、その他\n[設定値のリスト]\n(adjusting：整理)、(budget：予算)、(comparative：比較)、(external-accountant：外部会計士)、(standard：通常)、(passed-adjusting：無視)、(eliminating：消去)、(proposed：提案)、(recurring：反復)、(reclassifying：組替)、(simulated：シミュレーション)、(tax：税)、(other：その他),gl-cor:entryType
+1036,2,Attribute,,Entry Header SA,Entry Origin,Char,,0..0,"Origin of entry: accrual, manual entry, imported entry, exchange gain or loss",gl-cor,,,,仕訳起源,仕訳の起源。発生、手入力、インポート入力、為替換算による損益。,gl-bus:entryOrigin
+1037,2,Attribute,,Entry Header SA,Entry Description,Char,,0..0,Description of entry described by this entry header (e.g. Opening Balance),gl-cor,,,,仕訳説明,このエントリヘッダーによって説明された仕訳の説明(例えば、期首残高)\n,gl-cor:entryComment
+1038,2,Attribute,,Entry Header SA,Entry Qualifier,Char,,0..0,"Entry Qualifier - An enumerated field that qualifies the type of entry, specifically useful for general ledger and trial balance environments when it is important to state the values represented are summarized as of the reporting date - opening or closing balances. In accounting systems, this is often known as BBF (balance brought forward.) Permitted values are: standard, balance-brought-forward and other.",gl-cor,,,,仕訳修飾子,仕訳の修飾子。総勘定元帳や試算表で、開始残高や決算残高のように、記された値が報告日で集約されていることを明示することが重要なときに有用な、仕訳の種別を修飾するもの。会計システムにおいて、BBF（繰越残高）として知られるもの。指定可能な値は以下。標準、繰越残高、その他\n[設定値のリスト]\n(standard：標準)、(balance-brought-forward：繰越残高)、(other：その他) ,gl-cor:qualifierEntry
+1039,2,Attribute,,Entry Header SA,Entry Qualifier Description,Char,,0..0,Free format description of the entry qualifier,gl-cor,,,,仕訳修飾子説明,仕訳の修飾子の説明。,gl-cor:qualifierEntryDescription
+1040,2,Attribute,,Entry Header SA,Posting Code,Char,,0..0,"Code for posting to period, e.g., period 1-13, based on codes in an accounting period file. We do not recommend that software vendors export here, but suggest providing period end numbers for the buckets. Possibilities W1 through W53, M1 through M13, Q1-Q4. Developers and others creating output files are encouraged to supply an actual end date.",gl-cor,,,,転記コード,転記の期間を表すコード。例えば、会計期間ファイルのコードにもとづく期間１～１３。ソフトウエアベンダーが、この値をエクスポートすることは推奨しない。期間の最終番号を提供することを勧める。可能な値としては、W1からW53、M1からM13、Q1からQ4など。開発者や出力ファイルの作成者には、実際の終了日付を提供することを勧める。,gl-bus:postingCode
+1041,2,Attribute,,Entry Header SA,Batch ID for Entry Group,Char,,0..0,ID for a batch for this group of entries,gl-cor,,,,仕訳グループ識別子,この仕訳の集合に付ける、束の識別子。,gl-bus:batchID
+1042,2,Attribute,,Entry Header SA,Batch Description,Char,,0..0,Description of this batch,gl-cor,,,,仕訳グループ説明,この仕訳の束の説明。,gl-bus:batchDescription
+1043,2,Attribute,,Entry Header SA,Number of Entries,Char,,0..0,The total number of entries.,gl-cor,,,,仕訳総数,仕訳の総数。,gl-bus:numberOfEntries
+1044,2,Attribute,,Entry Header SA,Type of Difference Between Book and Tax,Char,,0..0,"Enumerated field with possible values of permanent, temporary or none indicating the type of difference between book and tax accounting methods. Omission of this field is equivalent to ""none""",gl-cor,,,,帳簿価税務簿価差異種別,帳簿と税務会計処理方法との差異の種別を示す値。永久か一時的かまたは無し。値の省略時は「無し」と同じ。\n[設定値のリスト]\n(permanent：永久)、(temporary：一時的)、(none：無し),gl-cor:bookTaxDifference
+1045,2,Attribute,,Entry Header SA,Elimination Code,Char,,0..0,Informs destination ledger this is an intracompany entry which eliminates in consolidation,gl-cor,,,,相殺消去コード,連結決算時に消去される連結会社間仕訳であることを、受取側の元帳に通知する。,gl-bus:eliminationCode
+1046,2,Attribute,,Entry Header SA,Budget Scenario Period Start,Date,,0..0,Start of period covered by associated budgetScenario,gl-cor,,,,予算シナリオ期間開始日付,関係付けられたbudgetScenarioがカバーする期間の開始日。,gl-bus:budgetScenarioPeriodStart
+1047,2,Attribute,,Entry Header SA,Budget Scenario Period End,Date,,0..0,End of period covered by associated budgetScenario,gl-cor,,,,予算シナリオ期間終了日付,関係付けられたbudgetScenarioがカバーする期間の終了日。,gl-bus:budgetScenarioPeriodEnd
+1048,2,Attribute,,Entry Header SA,Scenario Description,Text,,0..0,Text related to budgetScenario,gl-cor,,,,シナリオ説明,budgetScenarioに関する記述。,gl-bus:budgetScenarioText
+1049,2,Attribute,,Entry Header SA,Scenario Code,Char,,0..0,"Code for a budget scenario identifier (such as PB for 'preliminary budget', or RB for 'revised budget', or other identifier for entryType)",gl-cor,,,,シナリオコード,予算シナリオの識別コード。例えば、「PB」（予備予算）、「RB」（補正予算）、または他の仕訳種別の識別子。,gl-bus:budgetScenario
+1050,2,Attribute,,Entry Header SA,Budget Allocation Code,Char,,0..0,"Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given",gl-cor,,,,予算配分コード,計算式に関係付けられたコード。例えば、期間数での分割、与えられた期間の合計\n[設定値のリスト]\n(D：期間数での分割)、(T：与えられた期間の合計) ,gl-bus:budgetAllocationCode
+1051,2,Attribute,,Entry Header SA,Recurring Standard Description,Text,,0..0,Description to accompany standard or recurring ID,gl-cor,,,,反復通常仕訳説明,通常仕訳または反復仕訳のIDの説明。,gl-usk:recurringStdDescription
+1052,2,Attribute,,Entry Header SA,Frequency Interval,Decimal,,0..0,"For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the interval.\n",gl-cor,,,,頻度間隔,通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、intervalを示す。,gl-usk:frequencyInterval
+1053,2,Attribute,,Entry Header SA,Frequency Unit,Char,,0..0,"For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the unit.\n",gl-cor,,,,頻度単位,通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、unitを示す。,gl-usk:frequencyUnit
+1054,2,Attribute,,Entry Header SA,Repetitions Remaining,Decimal,,0..0,Number of times that the recurring entry will repeat,gl-cor,,,,反復残回数,反復仕訳の繰り返し予定数。,gl-usk:repetitionsRemaining
+1055,2,Attribute,,Entry Header SA,Next Date Repeat,Date,,0..0,Date next repeated or standard posted,gl-cor,,,,次回反復日付,次回の反復あるいは通常の転記日。,gl-usk:nextDateRepeat
+1056,2,Attribute,,Entry Header SA,Last Date Repeat,Date,,0..0,Date last repeated or standard posted,gl-cor,,,,前回反復日付,前回の反復あるいは通常の転記日。,gl-usk:lastDateRepeat
+1057,2,Attribute,,Entry Header SA,End Date of Repeating Entry,Date,,0..0,"For standard or recurring journals, stop date/time for repetitive entry.",gl-cor,,,,反復仕訳終了日付,通常仕訳または反復仕訳のための、反復入力の終了日付/時刻。,gl-usk:endDateRepeatingEntry
+1058,2,Attribute,,Entry Header SA,Reverse,Boolean,,0..0,Should entry be reversed?,gl-cor,,,,反対仕訳要否,仕訳が取り消されるべきか。,gl-usk:reverse
+1059,2,Attribute,,Entry Header SA,Reversing Date,Date,,0..0,Date this entry should be reversed,gl-cor,,,,反対仕訳日付,この仕訳が取り消されるべき日付。,gl-usk:reversingDate
+1060,2,Attribute,,Entry Header SA,Entry Number Counter,Char,,0..0,Unique reference for the entry - a numeric counter,gl-cor,,,,仕訳番号カウンタ,仕訳の一意なリファレンス　　カウンタ,gl-cor:entryNumberCounter
+1061,2,Reference Association,,Entry Header SA,,,(Reversing ID) Entry Header,0..0,,gl-cor,,,,,,
+1062,2,Composition,,Entry Header SA,,,(Total Debits) Amount,0..0,,gl-cor,,,,,,
+1063,2,Composition,,Entry Header SA,,,(Total Credits) Amount,0..0,,gl-cor,,,,,,
+1064,2,Composition,,Entry Header SA,,,Entry Detail,0..0,,gl-cor,,,,,,
+1065,2,Composition,,Entry Header SA,,,Entry Detail SA,0..*,,gl-cor,,,,,,
+1066,1,Class,,Entry Detail SA,,,,,Parent for entry detail,gl-cor,,,,【仕訳明細】,仕訳明細の親タグ。,gl-cor:entryDetail
+1067,2,Specialization,,Entry Detail SA,,,Entry Detail,1,,gl-cor,,,,,,
+1068,4,Attribute,,Entry Detail SA,Original Exchange Rate Date,Date,,0..0,Date of exchange rate used to regl-cord the original transaction.,gl-cor,,,,原取引通貨換算レート日付,原取引の記録に使われた通貨換算レートの日付。,gl-muc:amountOriginalExchangeRateDate
+1069,4,Attribute,,Entry Detail SA,Sign Indication for Amount,Char,,0..0,Sign of amount; provides 4 possible fields only when used in conjunction with debitCreditCode; primarily used for gl-correcting entries so total debits and credits after an entry error are not inflated. D + increase DebitsD - decrease debitsC + decreases creditC - increases credit,gl-cor,,,,金額符号,"金額の符号。貸借識別子と関連して使用される場合にだけ、4つの可能なフィールドを提供する。記入エラー後の総貸借が膨張しないように、おもに仕訳の訂正に使用される。 D+は借方を増加させる。D-は借方を減少させる。C+は貸方を減少させる。C-は貸方を増加させる。
+[設定値のリスト]
+(+)、(-)、(plus：プラス)、(minus：マイナス) ",gl-cor:signOfAmount
+1070,4,Attribute,,Entry Detail SA,Debit/Credit Identifier,Char,,0..0,"Optional identifier of whether the amount is a (D)ebit, a (C)redit or Undefined",gl-cor,,,,貸借区分コード,"金額が借方か貸方か不定かを示す識別子。
+[設定値のリスト]
+(D)、(C)、(debit：借方)、(credit：貸方)、(undefined：不定) ",gl-cor:debitCreditCode
+1071,4,Attribute,,Entry Detail SA,Posting Date,Date,,0..0,"At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.",gl-cor,,,,転記日付,明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。,gl-cor:postingDate
+1072,4,Attribute,,Entry Detail SA,Memo Line,Char,,0..0,A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.,gl-cor,,,,メモ行フラグ,明細行が単に追加の詳細を与えるものであり、転記金額に含めるべきでないことを示すブール値。,gl-bus:amountMemo
+1073,4,Attribute,,Entry Detail SA,Allocation Code,Char,,0..0,"Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given",gl-cor,,,,配分コード,計算方式に関するコード。例えば、(D)期間数で分割、(T)与えられた期間の合計。,gl-bus:allocationCode
+1074,4,Attribute,,Entry Detail SA,Document Type,Char,,0..0,"account: information to fill in a chart of accounts file. 
+balance: the results of accumulation of a complete and validated list of entries for an account (or a list of account) in a specific period - sometimes called general ledger 
+entries:  a list of individual accounting entries, which might be posted/validated or nonposted/validated  
+journal: a self-balancing (Dr = Cr) list of entries for a specific period including beginning balance for that period.  
+ledger: a complete list of entries for a specific account (or list of accounts) for a specific period; note - debits do not have to equal credits.   
+assets: a listing of open receivables, payables, inventory, fixed assets or other information that can be extracted from but are not necessarily included as part of a journal entry.  
+trialBalance: the self-balancing (Dr = Cr) result of accumulation of a complete and validated list of entries for the entity in a complete list of accounts in a specific period. 
+taxtables:  aids automated interpretation of instances that represent tax tables; 
+Tax table are defined by using multiple [taxes] structures to gather the population of codes, authorities and rates; through [taxTableCode] cross-references in the [taxes] structure, these ""master file"" tax tables can be referenced. 
+Often sorted by date or by account, these terms have specific, and sometimes different, meanings in different areas. Common practice will drive accounting method/term matches.",gl-cor,,,,文書種別,"・科目:科目体系ファイルの情報。
+・残高:特定の期間について、勘定科目(または勘定科目リスト)の、完了し検証された仕訳リストの累算結果。時に総勘定元帳と呼ばれる。
+・仕訳:個々の勘定記入のリスト。転記/検証されていることもあり、されていないこともある。
+・仕訳帳:特定の期間における、その期間の開始残高を含む貸借が一致(Dr=Cr)した仕訳のリスト 。
+・元帳:特定の期間における特定の勘定科目(または勘定科目リスト)についての、仕訳の全リスト 。注意－貸借が一致する必要はない。
+・資産:仕訳記入の一部として必ずしも含まれていないが、そこから抽出可能な売掛金、買掛金、在庫、固定資産、その他の情報のリスト。
+・試算表:事業体に対する、特定期間の全勘定科目リストでの、完了し検証された仕訳リストの、貸借が一致（Dr=Cr)した累算結果。
+・税率表:税率表をあらわすデータを自動的に解釈できるようにする。税率表は、コード、税務当局情報、レートをあらわす複数のtaxes構造データを使って定義される。taxTableCodeはtaxes構造データ内で相互に参照されるが、これらのマスタファイルが参照可能。
+多くの場合、日付または科目によりソートされる。会計処理方法や用語は慣行により適合させる。
+[設定値のリスト]
+(account：科目)、(balance：残高)、(entries：仕訳)、(journal：仕訳帳)、(ledger：元帳)、(assets：資産)、(trialbalance：試算表)、(taxtables：税率表)、(other：その他)",gl-cor:entriesType
+1075,4,Attribute,,Entry Detail SA,Document Type Description,Text,,0..0,Free format description of the document type,gl-cor,,,,元文書種別説明,元文書の種別の説明。,gl-cor:documentTypeDescription
+1076,4,Attribute,,Entry Detail SA,Invoice Type,Char,,0..0,"Invoice Type  (self-billed, ePoS enumerated values)",gl-cor,,,,請求書種別,"請求書の種別。(self-billed、ePoS)
+[設定値のリスト]
+(ePos：POSシステムからの発行)、(self-billed：買い手が発行)",gl-cor:invoiceType
+1077,4,Attribute,,Entry Detail SA,Document Date,Date,,0..0,"Date (and less likely in the paper world but possible in the e-world, time) on actual document (invoice, voucher, check date). Other dates control posting information.",gl-cor,,,,元文書日付,実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。,gl-cor:documentDate
+1078,4,Attribute,,Entry Detail SA,Received Date,Date,,0..0,Date/time document was noted as received (if necessary). Represents actual date received. Posting dates are maintained separately.,gl-cor,,,,元文書受領日付,（必要であれば）文書の受領が記録された日付/時刻。実際に受領された日付をあらわす。転記日付は別に管理される。,gl-bus:documentReceivedDate
+1079,4,Attribute,,Entry Detail SA,Chargeable or Reimbursable,Char,,0..0,"Is this entry chargeable to client, reimbursable? Used by some systems to indicate that account on posting/validation should be posted to a customer or vendor's account.",gl-cor,,,,請求支払可能フラグ,この仕訳は顧客に請求、支払可能か。いくつかのシステムでは転記/検証対象の科目が顧客や仕入先の科目に転記されるべきかどうかを示すために使用される。,gl-bus:documentChargeReimb
+1080,4,Attribute,,Entry Detail SA,Payment Method,Text,,0..0,Method used or to be used to make the payment,gl-cor,,,,支払方法,支払いのために使用された、または使用される方法。,gl-bus:paymentMethod
+1081,4,Attribute,,Entry Detail SA,Posting Status,Char,,0..0,"deferred: although entered, it cannot be posted until a later time
+posted: already posted
+proposed: a proposed item that must be approved
+simulated: a simulated item, for what-if
+tax: a tax-specific entry
+unposted:entered but not yet posted or validated
+cancelled:entered and later cancelled
+nother:other status - should be described in postingStatusDescription",gl-cor,,,,転記状態,"・据置：入力されたが、まだ転記できない。
+・転記済：転記済み。
+・提案済：検証が必要な項目。
+・シミュレーション：仮定のためにシミュレートされた項目。
+・税：税項目。
+・未転記：入力されたが、まだ検証も転記もされていない。
+・取消済：入力されたが、取り消された。
+・その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)",gl-cor:postingStatus
+1082,4,Attribute,,Entry Detail SA,Posting Status Description,Text,,0..0,Free format description of the posting status,gl-cor,,,,転記状態説明,転記状態の説明。,gl-cor:postingStatusDescription
+1083,4,Attribute,,Entry Detail SA,Description,Text,,0..0,Description of this line of detail only,gl-cor,,,,説明,この明細行のみに対する説明。,gl-cor:detailComment
+1084,4,Attribute,,Entry Detail SA,Acknowledgement Date,Date,,0..0,Date of acknowledgement of goods/services shipped/received.,gl-cor,,,,承認日付,出荷/受領済みの物品/サービスを承認した日付。,gl-cor:dateAcknowledged
+1085,4,Attribute,,Entry Detail SA,Confirmation Date,Date,,0..0,Date of confirmation of shipment/receipt.,gl-cor,,,,確認日付,出荷/受領を確認した日付。,gl-cor:confirmedDate
+1086,4,Attribute,,Entry Detail SA,Ship From,Name,,0..0,References organizationAddressLocationIdentifier where used. Otherwise freeform.,gl-cor,,,,出荷元,organizationAddressLocationIdentifierの参照情報。または自由記述。,gl-cor:shipFrom
+1087,4,Attribute,,Entry Detail SA,Date Shipped/Received,Date,,0..0,Date goods/services are shipped/received.,gl-cor,,,,出荷/受領日付,物品/サービスを出荷/受領した日付。,gl-cor:shipReceivedDate
+1088,4,Attribute,,Entry Detail SA,Maturity Date or Date Due,Date,,0..0,Due date or other maturity date.,gl-cor,,,,支払期日,支払期日やその他の期日。,gl-cor:maturityDate
+1089,4,Attribute,,Entry Detail SA,Payment Terms,Name,,0..0,Discount/payment terms.,gl-cor,,,,支払条件,割引/支払い条件。,gl-cor:terms
+1090,4,Attribute,,Entry Detail SA,Ticking Field,Name,,0..0,"Signifies that an item has been cleared, finished, finalized. When checking accounts are called for, the tick or letter showing this was done appears in this field. Can also be used for identifying that the
+original document against which a payment or DR/CR memo applies has been reconciled.",gl-cor,,,,チェック欄,項目が消去または完了されたことを示す。勘定のチェックが要求される場合、処理済を示すチェックマークまたは文字が指定される。支払またはDR/CRのメモに対する元文書が、消し込まれたことを確認するためにも使用可能。,gl-taf:tickingField
+1091,4,Attribute,,Entry Detail SA,UCR,Char,,0..0,"Unique Consignment Reference or UCR. An ""origin to destination"" reference code for international consignments, developed in cooperation with the World Customs Organization and EAN International (EAN). (http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)",gl-cor,,,,UCRコード,"Unique Consignment ReferenceまたはUCR。国際委託販売のための""origin to destination""参照コード。World Customs OrganizationとEAN International (EAN)が共同で開発している。
+(http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)",gl-taf:uniqueConsignmentReference
+1092,4,Attribute,,Entry Detail SA,Document Location,Text,,0..0,"Document location as URI, file name or other reference. Alternatively, text of document can be placed here.",gl-cor,,,,元文書格納場所,文書の格納場所である、URI、ファイル名またはその他の参照情報。代わりに、文書のテキストも記述可能。,gl-bus:documentLocation
+1093,4,Reference Association,,Entry Detail SA,,,(Document Number) Originating Document,0..0,,gl-cor,,,,,,
+1094,4,Reference Association,,Entry Detail SA,,,(Apply To Number) Originating Document,0..0,,gl-cor,,,,,,
+1095,4,Reference Association,,Entry Detail SA,,,(Document Reference) Originating Document,0..0,,gl-cor,,,,,,
+1096,4,Composition,,Entry Detail SA,,,(Original Currency) Amount,0..0,,gl-cor,,,,,,
+1097,4,Composition,,Entry Detail SA,,,(Document Remaining Balance) Amount,0..0,,gl-cor,,,,,,
+1098,4,Composition,,Entry Detail SA,,,Identifier Reference,0..0,"Identification for customer, vendor, or employee.",gl-cor,,,,【CVE情報】,顧客、仕入先、従業員のための識別子。,gl-cor:identifierReference
+1099,4,Composition,,Entry Detail SA,,,Measurable,0..0,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",gl-cor,,,,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。,gl-bus:measurable
+1100,4,Composition,,Entry Detail SA,,,Originating Document,0..0,"A tool to capture the flow of related documents in the gl-business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive structure of related documents.",gl-cor,,,,【発生元文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。,gl-taf:originatingDocumentStructure
+1101,4,Composition,,Entry Detail SA,,,Account,0..0,"Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so:
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department 
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",gl-cor,,,,【科目識別子】,"勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000
+/account/accountMainDescription Cash
+/account/accountSub/accountSubID 4783HG
+/account/accountSub/accountSubDescription Department
+/account/accountSub/accountSubID QOWI
+/account/accountSub/accountSubDescription Branch
+/account/accountSub/accountSubID 192837
+/account/accountSub/accountSubDescription Division",gl-cor:account
+1102,4,Composition,,Entry Detail SA,,,Multicurrency Amount,0..0,,gl-cor,,,,,,
+1103,2,Composition,,Entry Detail SA,Document Remaining Balance,,Amount,0..0,Balance remaining on the document,gl-taf,,,,文書上残高,文書上の残高。,
+1104,2,Aggregation,,Entry Detail SA,,,Identifier Reference,0..0,"Identification for customer, vendor, or employee.",gl-cor,,,,CVE情報,顧客、仕入先、従業員のための識別子。,gl-cor:identifierReference
+1105,4,Aggregation,,Entry Detail SA,,,Identifier Reference SA,0..*,"Identification for customer, vendor, or employee.",gl-cor,,,,【CVE情報】,顧客、仕入先、従業員のための識別子。,gl-cor:identifierReference
+1106,4,Composition,,Entry Detail SA,,,XBRL Information,0..0,This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.,gl-cor,,,,【XBRL情報】,XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。,gl-cor:xbrlInfo
+1107,4,Composition,,Entry Detail SA,,,Job,0..0,"Tuple for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo tuple for each entry line, but there may be a need to express more than one.",gl-cor,,,,【ジョブ情報】,科目識別子で表現されるジョブとは別の、ジョブに関係する情報のタプル。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。,gl-bus:jobInfo
+1108,4,Composition,,Entry Detail SA,,,Depreciation Mortgage,0..0,"Parent for information related to depreciation, mortgages, etc.",gl-cor,,,,【減価償却/抵当債務情報】,減価償却、抵当債務等に関連する情報の親タグ。,gl-bus:depreciationMortgage
+1109,4,Composition,,Entry Detail SA,,,Tax,0..0,Tuple for holding tax related information,gl-cor,,,,【税情報】,税関連の情報のタプル。,gl-cor:taxes
+1110,4,Composition,,Entry Detail SA,,,Measurable SA,0..*,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",gl-cor,,,,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。,gl-bus:measurable
+1111,4,Composition,,Entry Detail SA,,,Account SA,0..*,"Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so:
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department 
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",gl-cor,,,,【科目識別子】,"勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000
+/account/accountMainDescription Cash
+/account/accountSub/accountSubID 4783HG
+/account/accountSub/accountSubDescription Department
+/account/accountSub/accountSubID QOWI
+/account/accountSub/accountSubDescription Branch
+/account/accountSub/accountSubID 192837
+/account/accountSub/accountSubDescription Division",gl-cor:account
+1112,1,Class,,Identifier Reference SA,,,,,"Identification for customer, vendor, or employee.",gl-cor,,,,【CVE情報】,顧客、仕入先、従業員のための識別子。,gl-cor:identifierReference
+1113,2,Specialization,,Identifier Reference SA,,,Identifier Reference,1,,gl-cor,,,,,,
+1114,2,Attribute,,Identifier Reference SA,Identifier Purpose,Name,,0..0,"Freeform for codes like purchasing, billing, manufacturing at identifier level.",gl-cor,,,,CVE目的,購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。,gl-bus:identifierPurpose
+1115,2,Attribute,,Identifier Reference SA,Organization Type,Char,,0..0,Identifier Organization Type,gl-cor,,,,CVE組織種別,"CVE識別子の組織種別。
+[設定値のリスト]
+(individual：個人)、(organization：組織)、(other：その他) ",gl-cor:identifierOrganizationType
+1116,2,Attribute,,Identifier Reference SA,Organization Type Description,Text,,0..0,Free format description of the identifier organization type,gl-cor,,,,CVE組織種別説明,CVE識別子の組織種別の説明。,gl-cor:identifierOrganizationTypeDescription
+1117,2,Attribute,,Identifier Reference SA,Description,Text,,0..0,Textual description of identifierReference.,gl-cor,,,,CVE説明,identifierReferenceの説明。,gl-cor:identifierDescription
+1118,2,Attribute,,Identifier Reference SA,Type,Char,,0..0,"Entity type (enumerated): e.g., customer, vendor, employee.",gl-cor,,,,CVE種別,"実体の種別。例えば、顧客、仕入先、従業員。
+[設定値のリスト]
+(C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者) ",gl-cor:identifierType
+1119,2,Attribute,,Identifier Reference SA,Category,Name,,0..0,"For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by gl-business).",gl-cor,,,,CVEカテゴリ,顧客、仕入先、従業員の分類に使用する。　（住居/商業/機関/政府や、小売/卸や、ビジネスで使用されるその他の分類）。,gl-cor:identifierCategory
+1120,2,Attribute,,Identifier Reference SA,Tax Identification Number,Char,,0..0,,gl-cor,,,,,,
+1121,2,Composition,,Identifier Reference SA,,,Registered Entity Identifier,0..0,Structure containing references to an external authority associated with identifier,gl-cor,,,,【登録法人識別子】,識別子と関係付けられる外部機関への参照情報を含む構造体。,gl-cor:identifierExternalReference
+1122,2,Composition,,Identifier Reference SA,,,Email Address,0..0,Tuple for holding company email information.,gl-cor,,,,【事業体Eメールアドレス】,事業体のEメールアドレス情報のタプル。,gl-cor:identifierEMail
+1123,2,Composition,,Identifier Reference SA,,,Phone Number,0..0,Primary phone number of the entity.,gl-cor,,,,【事業体電話番号】,事業体の主要電話番号情報。,gl-cor:identifierPhoneNumber
+1124,2,Composition,,Identifier Reference SA,,,Fax Number,0..0,Tuple for holding company fax information.,gl-cor,,,,【事業体FAX番号】,事業体のFAX番号情報のタプル。,gl-cor:identifierFaxNumber
+1125,2,Composition,,Identifier Reference SA,,,Contact,0..0,Information about contacts.,gl-cor,,,,【担当者情報】,担当者に関する情報。,gl-cor:identifierContactInformationStructure
+1126,2,Composition,,Identifier Reference SA,,,Address,0..0,Address structure for the reporting entity,gl-cor,,,,【住所】,報告事業体の住所構造体。,gl-bus:identifierAddress
+1127,2,Composition,,Identifier Reference SA,,,Registered Entity Identifier SA,0..*,,gl-cor,,,,,,
+1128,2,Composition,,Identifier Reference SA,,,Contact SA,0..*,,gl-cor,,,,,,
+1129,1,Class,,Registered Entity Identifier SA,,,,,Structure containing references to an external authority associated with identifier,gl-cor,,,,【登録法人識別子】,識別子と関係付けられる外部機関への参照情報を含む構造体。,gl-cor:identifierExternalReference
+1130,2,Specialization,,Registered Entity Identifier SA,,,Registered Entity Identifier,1,,gl-cor,,,,,,
+1131,2,Attribute,PK,Registered Entity Identifier SA,ID,Identifier,,0..0,"External Authority (e,g, Tax Authority) ID Number associated with identifierReference",gl-cor,,,,外部機関付与識別番号,identifierReferenceと関係付けられる、外部機関（たとえば、税務署）によるID番号。,gl-cor:identifierAuthorityCode
+1132,2,Attribute,,Registered Entity Identifier SA,Authority Name,Name,,0..0,Name of External Authority (e.g. Tax Authority),gl-cor,,,,外部機関名,外部機関の名前（たとえば、税務署）,gl-cor:identifierAuthority
+1133,1,Class,,Contact SA,,,,,Information about contacts.,gl-cor,,,,【担当者情報】,担当者に関する情報。,gl-cor:identifierContactInformationStructure
+1134,2,Specialization,,Contact SA,,,Contact,1,,gl-cor,,,,,,
+1135,2,Attribute,,Contact SA,Prefix,Char,,0..0,"Prefix (e.g. Dr., Mr., Mrs.)",gl-cor,,,,敬称,敬称(Dr.、Mr.、Mrs.など),gl-cor:identifierContactPrefix
+1136,2,Attribute,,Contact SA,Suffix,Char,,0..0,"Suffix (e.g. MD, CPA, Jr.)",gl-cor,,,,付加名称,付加名称(MD、CPA、Jr.など),gl-cor:identifierContactSuffix
+1137,2,Attribute,,Contact SA,Attention Line,Name,,0..0,Attention Line,gl-cor,,,,アテンションライン,アテンションライン,gl-cor:identifierContactAttentionLine
+1138,2,Attribute,,Contact SA,Position/Role,Name,,0..0,Position or role,gl-cor,,,,地位/役職,地位や役職。,gl-cor:identifierContactPositionRole
+1139,2,Attribute,,Contact SA,Role of Contact,Name,,0..0,"Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant",gl-cor,,,,担当者役割,担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計士。,gl-cor:identifierContactType
+1140,2,Attribute,,Contact SA,Location ID cross reference,Name,,0..0,This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier,gl-cor,,,,所在地相互参照情報,担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。,gl-bus:identifierLocationIdentifierCrossReference
+1141,2,Composition,,Contact SA,,,Phone Number,0..0,Primary phone number of the entity.,gl-cor,,,,【事業体電話番号】,事業体の主要電話番号情報。,gl-cor:identifierContactPhone
+1142,2,Composition,,Contact SA,,,Fax Number,0..0,Tuple for holding company fax information.,gl-cor,,,,【事業体FAX番号】,事業体のFAX番号情報のタプル。,gl-cor:identifierContactFax
+1143,2,Composition,,Contact SA,,,Email Address,0..0,Tuple for holding company email information.,gl-cor,,,,【事業体Eメールアドレス】,事業体のEメールアドレス情報のタプル。,gl-cor:identifierContactEmail
+1144,1,Class,,Measurable SA,,,,,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",gl-cor,,,,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。,gl-bus:measurable
+1145,2,Specialization,,Measurable SA,,,Measurable,1,,gl-cor,,,,,,
+1146,2,Attribute,,Measurable SA,Code,Char,,0..0,"Code for measurable item including BP - gl-business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other",gl-cor,,,,計測可能物コード,"計測可能物のコード。ビジネスプロセス、固定資産/資産化項目、在庫、測定基準、無形資産、貯蔵品、従業員/提供元/請負者によるサービス、装置/機械によるサービス、その他
+[設定値のリスト]
+(BP：ビジネスプロセス)、(FA：固定資産/資産化項目)、(IN：在庫)、(KPI：測定基準)、(NT：無形資産)、(SP：貯蔵品)、(SV-P：従業員/提供元/請負者によるサービス)、(SV-M：装置/機械によるサービス)、(OT：その他)",gl-bus:measurableCode
+1147,2,Attribute,,Measurable SA,Code Description,Text,,0..0,Free format description of the measurable code,gl-cor,,,,計測可能物コード説明,計測可能物のコードの説明。,gl-bus:measurableCodeDescription
+1148,2,Attribute,,Measurable SA,Measurable Category,Char,,0..0,Category of the measurable,gl-cor,,,,計測可能物カテゴリ,計測可能物のカテゴリ。,gl-bus:measurableCategory
+1149,2,Attribute,,Measurable SA,Secondary Measurable Identifier,Char,,0..0,Second identifier (such as vendor's item number),gl-cor,,,,計測可能物第二識別子,第二識別子。（例えば、ベンダーでの品目番号）。,gl-bus:measurableIDOther
+1150,2,Attribute,,Measurable SA,Schema for Secondary Measurable Identification,Char,,0..0,URI or other identifier for schema with which measurable ID Other can be validated,gl-cor,,,,計測可能物第二識別子スキーマ,計測可能物の第二IDを検証するスキーマの、URIまたはその他の識別子。,gl-bus:measurableIDOtherSchema
+1151,2,Attribute,,Measurable SA,Qualifier,Char,,0..0,"Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Sgl-corecard information",gl-cor,,,,修飾子,PKI又はバランススコアカード情報を適正に把握するための、等級付け、検査コード、格付けその他の修飾子を示す。,gl-bus:measurableQualifier
+1152,2,Attribute,,Measurable SA,Measurable Class ID,Char,,0..0,"An enumerated code to identify the inventory, fixed asset or other measurable class. Enumerated as: raw material, work-in-process, finished goods, assemblies, supplies, land, building, machinery, furniture, vehicles, other.",gl-cor,,,,測定可能なクラスID,在庫、固定資産、またはその他の測定可能なクラスを識別するための列挙されたコード。列挙：原材料、仕掛品、完成品、組立品、消耗品、土地、建物、機械、家具、車両、その他。,gl-ehm:measurableClassID
+1153,2,Attribute,,Measurable SA,Measurable Class Description,Text,,0..0,Free format description associated with gl-ehm:measurableClassID to provide specialization or clarification for the enumerated value of other.,gl-cor,,,,測定可能なクラスの説明,gl-ehm：measurableClassIDに関連付けられた自由形式の説明で、他の列挙値の特殊化または明確化を提供します。,gl-ehm:measurableClassDescription
+1154,2,Attribute,,Measurable SA,Costing Method Code,Char,,0..0,"An enumerated code for the inventory (or other measurable) costing method. Enumerated as: LIFO, FIFO, average, weighted-average, standard-cost, tax-basis, book-basis, other.",gl-cor,,,,原価計算方法コード,在庫（または他の測定可能な）原価計算方法の列挙されたコード。列挙：LIFO、FIFO、平均、加重平均、標準コスト、税ベース、帳簿ベース、その他。,gl-ehm:costingMethodCode
+1155,2,Attribute,,Measurable SA,Costing Method Description,Text,,0..0,Free format description associated with gl-ehm:costingMethodCode to provide specialization of clarification for the enumerated value of other.,gl-cor,,,,原価計算方法の説明,gl-ehm：costingMethodCodeに関連付けられた自由形式の説明。他の列挙値の明確化を専門化します。,gl-ehm:costingMethodDescription
+1156,2,Attribute,,Measurable SA,Geospatial Coordinate,Char,,0..0,"Enter a relevant location for this item. Format can be either:
+- Degrees, minutes, and seconds (DMS): 41°24'12.2""N 2°10'26.5""E
+- Degrees and decimal minutes (DMM): 41 24.2028, 2 10.4418
+- Decimal degrees (DD): 41.40338, 2.17403",gl-cor,,,,地理空間座標,"このアイテムに関連する場所を入力します。形式は次のいずれかになります。
+-度、分、秒（DMS）：41°24'12.2""N2°10'26.5""E
+-度と小数分（DMM）：41 24.2028、2 10.4418
+-10度（DD）：41.40338、2.17403",gl-ehm:geospatialCoordinate
+1157,2,Composition,,Measurable SA,,,Unit Price,0..0,,gl-cor,,,,,,
+1158,2,Composition,,Measurable SA,,,Serial Lot,0..0,"Tuple for holding information about serial numbers or lots (batches). As a tuple, this permits multiple serial numbers or multiple lot number batches within a single gl-gl-cor:measurable structure.",gl-cor,,,,【シリアルロット】,シリアル番号またはロット（バッチ）に関する情報を保持するためのタプル。タプルとして、これにより、単一のgl-gl-cor：measurable構造内で複数のシリアル番号または複数のロット番号のバッチが許可されます。,gl-ehm:serialLot
+1159,1,Class,,Account SA,,,,,"Tuple: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so:
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department 
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",gl-cor,,,,【科目識別子】,"勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000
+/account/accountMainDescription Cash
+/account/accountSub/accountSubID 4783HG
+/account/accountSub/accountSubDescription Department
+/account/accountSub/accountSubID QOWI
+/account/accountSub/accountSubDescription Branch
+/account/accountSub/accountSubID 192837
+/account/accountSub/accountSubDescription Division",gl-cor:account
+1160,2,Specialization,,Account SA,,,Account,1,,gl-cor,,,,,,
+1161,5,Attribute,,Account SA,Description,Text,,0..0,Description of accountMainID - the human readable describer that accompanies the code used in accountMainID,gl-cor,,,,主勘定科目説明,主勘定科目コードの説明。主勘定科目コードとして使用されるコードについての、人が読める記述。,gl-cor:accountMainDescription
+1162,5,Attribute,,Account SA,Classification,Char,,0..0,"Account type - FASB Concepts 6 and similar international designs. When xbrlInfo is used to associate other XBRL reporting items, this field is more suited to representing existing systems (audit) than data interchange.",gl-cor,,,,主勘定科目区分,"主勘定科目の種別。FASB Concepts 6および、同様の国際的な様式。xbrlInfoが他のXBRL項目と関係付けられる場合、データ交換より現存システム(audit)を示すべき。
+[設定値のリスト]
+(asset：資産)、(liability：負債)、(equity：資本)、(income：収益)、(gain：利得)、(expense：費用)、(loss：損失)、(contr-to-equity：資本増加)、(distr-from-equity：資本減少)、(comprehensive-income：包括利益)、(other：その他) ",gl-cor:mainAccountType
+1163,5,Attribute,,Account SA,Classification Description,Text,,0..0,Free format description of the account classification,gl-cor,,,,主勘定科目区分説明,主勘定科目の区分の説明。,gl-cor:mainAccountTypeDescription
+1164,5,Attribute,,Account SA,Parent Account,Char,,0..0,Roll up item from child natural account to parent natural account.,gl-cor,,,,親勘定科目コード,子勘定科目から親勘定科目に包み込む科目。,gl-cor:parentAccountMainID
+1165,5,Attribute,,Account SA,Purpose,Char,,0..0,"Code related to usage for account aggregate - Consolidating, European, IFRS, Offsetting, Primary, Tax, USGAAP, Japanese, Other. Japanese companies will use this for the tax required offsetting entry. If left blank, assumes default accounting method for company.",gl-cor,,,,勘定科目目的,"勘定科目群の使用法を示すコード。連結、European, IFRS, 見返、プライマリ, 税, USGAAP, Japanese,その他。日本企業では、見返仕訳で要求される税務処理に利用するかもしれない。空白の場合、企業の既定の勘定方法とみなす。
+[設定値のリスト]
+(consolidating：連結)、(european：ヨーロッパ)、(ifrs：IFRS)、(offsetting：見返)、(primary：プライマリ)、(tax：税)、(usgaap：US GAAP)、(japanese：日本)、(other：その他)",gl-bus:entryAccountingMethodPurpose
+1166,5,Attribute,,Account SA,Purpose Description,Text,,0..0,Description of usage for aggregate account,gl-cor,,,,勘定科目目的説明,勘定科目群の使用法の説明。,gl-bus:entryAccountingMethodPurposeDescription
+1167,5,Attribute,,Account SA,Type,Char,,0..0,Type of account,gl-cor,,,,科目種別,"科目の種別。
+[設定値のリスト]
+(account：勘定科目)、(bank：銀行)、(employee：従業員)、(customer：顧客)、(job：ジョブ)、(vendor：仕入先)、(measurable：計測可能物)、(statistical：統計)、(other：その他) ",gl-cor:accountType
+1168,5,Attribute,,Account SA,Type Description,Text,,0..0,Free format description of the account type,gl-cor,,,,科目種別説明,科目の種別の説明。,gl-cor:accountTypeDescription
+1169,5,Composition,,Account SA,,,Accounting Method,0..0,,gl-cor,,,,,,
+1170,5,Composition,,Account SA,,,Subaccount,0..0,Tuple to hold multiple accountSubIDs and Descriptions,gl-cor,,,,【サブ科目情報】,複数のaccountSubIDと説明文を含むタプル。,gl-cor:accountSub
+1171,5,Composition,,Account SA,,,Subaccount SA,0..*,Tuple to hold multiple accountSubIDs and Descriptions,gl-cor,,,,【サブ科目情報】,複数のaccountSubIDと説明文を含むタプル。,gl-cor:accountSub
+1172,1,Class,,Subaccount SA,,,,,Tuple to hold multiple accountSubIDs and Descriptions,gl-cor,,,,【サブ科目情報】,複数のaccountSubIDと説明文を含むタプル。,gl-cor:accountSub
+1173,2,Specialization,,Subaccount SA,,,Subaccount,1,,gl-cor,,,,,,
+1174,6,Attribute,,Subaccount SA,Description,Text,,0..0,The description that accompanies accountSubID belongs here.,gl-cor,,,,サブ科目説明,accountSubIDに関する説明。,gl-cor:accountSubDescription
+1175,6,Composition,,Subaccount SA,,,Segment Parent Information,0..0,Tuple for showing the detail necessary to roll up from one segment (type of subaccount) to another.),gl-cor,,,,【親セグメント情報】,セグメント（小勘定科目の種別）間のロールアップ時に必要な詳細情報を示すタプル。,gl-cor:segmentParentTuple
+1176,1,Class,,Accounting Entries SA,,,,,Root for XBRL GL. No entry made here.,gl-cor,,,,【会計仕訳】,XBRL GLのルート要素。 この要素にはデータは登録されない。,gl-cor:accountingEntries
+1177,2,Specialization,,Accounting Entries SA,,,Accounting Entries,1,,gl-cor,,,,,,
+1178,2,Composition,,Accounting Entries SA,,,Document Information,0..0,,gl-cor,,,,,,
+1179,2,Composition,,Accounting Entries SA,,,Entity Information,0..0,,gl-cor,,,,,,
+1180,2,Composition,,Accounting Entries SA,,,Entry Header,0..0,,gl-cor,,,,,,
+1181,2,Composition,,Accounting Entries SA,,,Document Information SA,0..*,Parent for descriptive information about the accountingEntries section in which it is contained.,gl-cor,,,,【文書情報】,この会計仕訳に関する情報の親タグ。,gl-cor:documentInfo
+1182,2,Composition,,Accounting Entries SA,,,Entity Information SA,0..*,Holder for entity information - information about the reporting organization.,gl-cor,,,,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。,gl-cor:entityInformation
+1183,2,Composition,,Accounting Entries SA,,,Entry Header SA,0..*,Parent for entry headers/journal entry headers.,gl-cor,,,,【仕訳情報】,エントリヘッダー/仕訳記入ヘッダーの親タグ。,gl-cor:entryHeader

@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- XML Definition of message hierarchy                                              -->
+<!-- Message:             ADC SAL Invoices Generated v1.0                             -->
+<!-- Message Rev.:        6                                                           -->
+<!-- Transaction:         AA - Audit Data Collection                                  -->
+<!-- Transaction Rev.:    320                                                         -->
+<!-- Datamodel:           Audit Data Collection Datamodel 1, version HEAD             -->
+<!-- Datamodel Rev.:      435                                                         -->
+<!-- Definition type:     W3C Schema (http://www.w3.org/XML/Schema)                   -->
+<!-- XML tagset used:     AdcsML                                                      -->
+<!-- Generated at:        25-05-2022 16:51:48                                         -->
+<!-- Generated using:     EC-Design 2.5.1 (http://www.ec-design.nl)                   -->
+<!-- Organisation:        This schema is part of ISO 21377 Technical Specification    -->
+<!-- NOTE:    This schema was generated automatically: manual modifications will be lost -->
+<!-- NOTE:    Additional rules/conditions regarding the definition may exist, see functional hierarchical specification -->
+<xsd:schema targetNamespace="http://schemas.iso.org/AdcsML/Messages/AdcSalInvoicesGenerated-v1"
+		elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.0"
+		xmlns:str="http://schemas.iso.org/AdcsML/Messages/AdcSalInvoicesGenerated-v1"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="AdcSalInvoicesGenerated">
+		<xsd:annotation>
+			<xsd:documentation>MESSAGE</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="SalInvoiGen" minOccurs="0" maxOccurs="unbounded">
+					<xsd:annotation>
+						<xsd:documentation>SAL INVOICE GENERATED</xsd:documentation>
+					</xsd:annotation>
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="InvoiId" minOccurs="1" maxOccurs="1" type="str:TypId60">
+								<xsd:annotation>
+									<xsd:documentation>Invoice ID</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiNr" minOccurs="0" maxOccurs="1" type="str:TypText100">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Number</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="FiscYr" minOccurs="0" maxOccurs="1" type="str:TypYrId">
+								<xsd:annotation>
+									<xsd:documentation>Fiscal Year</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="AcntingPer" minOccurs="0" maxOccurs="1" type="str:TypPerId">
+								<xsd:annotation>
+									<xsd:documentation>Accounting Period</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="OfficialInvoiCd" minOccurs="0" maxOccurs="1" type="str:TypText25">
+								<xsd:annotation>
+									<xsd:documentation>Official Invoice Code</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiTypNm" minOccurs="0" maxOccurs="1" type="str:TypText60">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Type Name</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiDt" minOccurs="0" maxOccurs="1" type="str:TypDt">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiDueDt" minOccurs="0" maxOccurs="1" type="str:TypDt">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Due Date</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="CustAcntId" minOccurs="0" maxOccurs="1" type="str:TypId100">
+								<xsd:annotation>
+									<xsd:documentation>Customer Account ID</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="SetlMthdCd" minOccurs="0" maxOccurs="1" type="str:TypId60">
+								<xsd:annotation>
+									<xsd:documentation>Settlement Method Code</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiTrAmt" minOccurs="0" maxOccurs="1" type="str:TypAmt">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Transaction Amount</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="InvoiTrCurCd" minOccurs="0" maxOccurs="1" type="str:TypCurCd">
+								<xsd:annotation>
+									<xsd:documentation>Invoice Transaction CUR Code</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="PayTermCd" minOccurs="0" maxOccurs="1" type="str:TypPayTermCd">
+								<xsd:annotation>
+									<xsd:documentation>Payment Term Code</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="TrmsDscntPerc" minOccurs="0" maxOccurs="1" type="str:TypPerc">
+								<xsd:annotation>
+									<xsd:documentation>Terms Discount Percentage</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="TrmsDscntDays" minOccurs="0" maxOccurs="1" type="str:TypNr6">
+								<xsd:annotation>
+									<xsd:documentation>Terms Discount Days</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="TrmsDueDays" minOccurs="0" maxOccurs="1" type="str:TypNr6">
+								<xsd:annotation>
+									<xsd:documentation>Terms Due Days</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="GrpCd" minOccurs="0" maxOccurs="1" type="str:TypText100">
+								<xsd:annotation>
+									<xsd:documentation>Grouping Code</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Stat" minOccurs="0" maxOccurs="1" type="str:TypStatCd">
+								<xsd:annotation>
+									<xsd:documentation>Status</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Rmrk" minOccurs="0" maxOccurs="1" type="str:TypText500">
+								<xsd:annotation>
+									<xsd:documentation>Remark</xsd:documentation>
+								</xsd:annotation>
+							</xsd:element>
+							<xsd:element name="Tax" minOccurs="0" maxOccurs="4">
+								<xsd:annotation>
+									<xsd:documentation>sal invoice generated - TAX</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="TaxTypCd" minOccurs="0" maxOccurs="1" type="str:TypTaxTypCd">
+											<xsd:annotation>
+												<xsd:documentation>Tax Type Code</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="TaxTrAmt" minOccurs="0" maxOccurs="1" type="str:TypAmt">
+											<xsd:annotation>
+												<xsd:documentation>Tax Transaction Amount</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Crea" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation>sal invoice generated - CREATED</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="UserId" minOccurs="0" maxOccurs="1" type="str:TypId25">
+											<xsd:annotation>
+												<xsd:documentation>User ID</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Dt" minOccurs="0" maxOccurs="1" type="str:TypDt">
+											<xsd:annotation>
+												<xsd:documentation>Date</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Tm" minOccurs="0" maxOccurs="1" type="str:TypTm">
+											<xsd:annotation>
+												<xsd:documentation>Time</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Aprv" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation>sal invoice generated - APPROVED</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="UserId" minOccurs="0" maxOccurs="1" type="str:TypId25">
+											<xsd:annotation>
+												<xsd:documentation>User ID</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Dt" minOccurs="0" maxOccurs="1" type="str:TypDt">
+											<xsd:annotation>
+												<xsd:documentation>Date</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Tm" minOccurs="0" maxOccurs="1" type="str:TypTm">
+											<xsd:annotation>
+												<xsd:documentation>Time</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="LstMdf" minOccurs="0" maxOccurs="1">
+								<xsd:annotation>
+									<xsd:documentation>sal invoice generated - LAST MODIFIED</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="UserId" minOccurs="0" maxOccurs="1" type="str:TypId25">
+											<xsd:annotation>
+												<xsd:documentation>User ID</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Dt" minOccurs="0" maxOccurs="1" type="str:TypDt">
+											<xsd:annotation>
+												<xsd:documentation>Date</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="Tm" minOccurs="0" maxOccurs="1" type="str:TypTm">
+											<xsd:annotation>
+												<xsd:documentation>Time</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="BusSg" minOccurs="0" maxOccurs="unbounded">
+								<xsd:annotation>
+									<xsd:documentation>sal invoice generated - BUSINESS SEGMENT</xsd:documentation>
+								</xsd:annotation>
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="SqNr" minOccurs="0" maxOccurs="1" type="str:TypText60">
+											<xsd:annotation>
+												<xsd:documentation>Sequence Number</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+										<xsd:element name="BusSgCd" minOccurs="0" maxOccurs="1" type="str:TypId25">
+											<xsd:annotation>
+												<xsd:documentation>Business Segment Code</xsd:documentation>
+											</xsd:annotation>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!-- AMOUNT: FORMAT: N..22,4 -->
+	<xsd:simpleType name="TypAmt">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="22"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- CURRENCY CODE: FORMAT: AN3 -->
+	<xsd:simpleType name="TypCurCd">
+		<xsd:annotation>
+			<xsd:documentation>ISO 4217</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="3"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- DATE: FORMAT: AN10 -->
+	<xsd:simpleType name="TypDt">
+		<xsd:annotation>
+			<xsd:documentation>YYYY-MM-DD</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:date"/>
+	</xsd:simpleType>
+	<!-- IDENTIFIER 100: FORMAT: AN..100 -->
+	<xsd:simpleType name="TypId100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- IDENTIFIER 25: FORMAT: AN..25 -->
+	<xsd:simpleType name="TypId25">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- IDENTIFIER 60: FORMAT: AN..60 -->
+	<xsd:simpleType name="TypId60">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- NUMBER 6: FORMAT: N..6 -->
+	<xsd:simpleType name="TypNr6">
+		<xsd:restriction base="xsd:integer">
+			<xsd:totalDigits value="6"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- PAYMENT TERM CODE: FORMAT: AN..80 -->
+	<xsd:simpleType name="TypPayTermCd">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="80"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- PERIOD IDENTIFIER: FORMAT: AN..15 -->
+	<xsd:simpleType name="TypPerId">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="15"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- PERCENTAGE: FORMAT: N..5,4 -->
+	<xsd:simpleType name="TypPerc">
+		<xsd:restriction base="xsd:decimal">
+			<xsd:totalDigits value="5"/>
+			<xsd:fractionDigits value="4"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- STATUS CODE: FORMAT: AN..30 -->
+	<xsd:simpleType name="TypStatCd">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="30"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TAX TYPE CODE: FORMAT: AN..25 -->
+	<xsd:simpleType name="TypTaxTypCd">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TEXT 100: FORMAT: AN..100 -->
+	<xsd:simpleType name="TypText100">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="100"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TEXT 25: FORMAT: AN..25 -->
+	<xsd:simpleType name="TypText25">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="25"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TEXT 500: FORMAT: AN..500 -->
+	<xsd:simpleType name="TypText500">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="500"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TEXT 60: FORMAT: AN..60 -->
+	<xsd:simpleType name="TypText60">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="60"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!-- TIME: FORMAT: AN8 -->
+	<xsd:simpleType name="TypTm">
+		<xsd:annotation>
+			<xsd:documentation>hh:mm:ss</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:time"/>
+	</xsd:simpleType>
+	<!-- YEAR IDENTIFIER: FORMAT: N4 -->
+	<xsd:simpleType name="TypYrId">
+		<xsd:annotation>
+			<xsd:documentation>YYYY</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:length value="4"/>
+			<xsd:pattern value="\d*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

@@ -1,0 +1,184 @@
+type,shape,label,description,uri,thumbnail,source_seq,target_seq,group,visible,text_color,text_size,color,style,size,width,height,radius,x,y,seq
+Topic,RECTANGLE,Sales Invoice,,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-800,-800,1
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-760,2
+Topic,RECTANGLE,Due Date(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-720,3
+Topic,RECTANGLE,Accounting Period(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-680,4
+Topic,RECTANGLE,Fiscal Year(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-640,5
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-600,6
+Topic,RECTANGLE,Activities(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-560,7
+Topic,RECTANGLE,(Created) Activity(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-520,8
+Topic,RECTANGLE,Date(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,-480,9
+Topic,RECTANGLE,Time(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,-440,10
+Topic,RECTANGLE,User(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,-400,11
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-181,-357,12
+Topic,RECTANGLE,(Transaction) Amount(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-320,13
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-280,14
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-240,15
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,-200,16
+Topic,RECTANGLE,Customer(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-160,17
+Topic,RECTANGLE,Account ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-120,18
+Topic,RECTANGLE,Tax(0..*),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,-80,19
+Topic,RECTANGLE,(Transaction) Amount(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,-40,20
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-201,-0,21
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,40,22
+Topic,RECTANGLE,Tax Type(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,120,23
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,160,24
+Topic,RECTANGLE,Sales Invoice Line(1..*),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-600,200,25
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,240,26
+Topic,RECTANGLE,Number(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,280,27
+Topic,RECTANGLE,(Tax Exclude) Amount(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,320,28
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,360,29
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,400,30
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-186,437,31
+Topic,RECTANGLE,Inventory Product(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,480,32
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-200,520,33
+Topic,RECTANGLE,Tax(0..*),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-400,560,34
+Topic,RECTANGLE,(Transaction) Amount(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-345,601,35
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-212,641,36
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-213,681,37
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-180,720,38
+Topic,RECTANGLE,Tax Type(0..1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-206,761,39
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-176,804,40
+Topic,RECTANGLE,/Sales Invoice,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-800,41
+Topic,RECTANGLE,/Sales Invoice/ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-760,42
+Topic,RECTANGLE,/Sales Invoice/Due Date,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-720,43
+Topic,RECTANGLE,/Sales Invoice/Accounting Period,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-680,44
+Topic,RECTANGLE,/Sales Invoice/Accounting Period/Fiscal Year,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-640,45
+Topic,RECTANGLE,/Sales Invoice/Accounting Period/ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-600,46
+Topic,RECTANGLE,/Sales Invoice/Activities,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-560,47
+Topic,RECTANGLE,/Sales Invoice/Activities/(Created) Activity,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-520,48
+Topic,RECTANGLE,/Sales Invoice/Activities/(Created) Activity/Date,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-480,49
+Topic,RECTANGLE,/Sales Invoice/Activities/(Created) Activity/Time,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-440,50
+Topic,RECTANGLE,/Sales Invoice/Activities/(Created) Activity/User,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-400,51
+Topic,RECTANGLE,/Sales Invoice/Activities/(Created) Activity/User/ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,205,-361,52
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-318,53
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount/Value,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-280,54
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount/Currency,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-240,55
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount/Currency/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-200,56
+Topic,RECTANGLE,/Sales Invoice/Customer,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-160,57
+Topic,RECTANGLE,/Sales Invoice/Customer/Account ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-120,58
+Topic,RECTANGLE,/Sales Invoice/Tax,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-80,59
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,-40,60
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount/Value,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,198,-1,61
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount/Currency,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,40,62
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount/Currency/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,80,63
+Topic,RECTANGLE,/Sales Invoice/TaxTax Type,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,120,64
+Topic,RECTANGLE,/Sales Invoice/TaxTax Type/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,160,65
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,200,66
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,240,67
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Number,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,280,68
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,320,69
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount/Value,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,360,70
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount/Currency,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,400,71
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount/Currency/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,440,72
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Inventory Product,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,480,73
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Inventory Product/ID,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,520,74
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,560,75
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/(Transaction) Amount,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,600,76
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/(Transaction) Amount/Value,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,640,77
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/(Transaction) Amount/Currency,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,680,78
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/(Transaction) Amount/Currency/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,201,720,79
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/Tax Type,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,760,80
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Tax/Tax Type/Code,,,,,,,TRUE,DarkSlateGray,M,LightCyan,,,480,32,,200,800,81
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,DarkSlateGray,M,Ivory,,,240,32,,-178,80,82
+Link,NORMAL,,,,,28,29,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-300,340,1
+Link,HORIZONTAL,,,,,32,33,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,193,500,2
+Link,NORMAL,,,,,41,1,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-360,-800,3
+Link,NORMAL,,,,,42,2,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-760,4
+Link,NORMAL,,,,,43,3,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-720,5
+Link,NORMAL,,,,,44,4,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-680,6
+Link,NORMAL,,,,,5,45,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-640,7
+Link,NORMAL,,,,,6,46,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-600,8
+Link,NORMAL,,,,,7,47,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-560,9
+Link,NORMAL,,,,,8,48,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-520,10
+Link,NORMAL,,,,,9,49,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-60,-480,11
+Link,NORMAL,,,,,10,50,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-60,-440,12
+Link,NORMAL,,,,,11,51,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-60,-400,13
+Link,NORMAL,,,,,14,54,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-280,14
+Link,NORMAL,,,,,15,55,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-240,15
+Link,NORMAL,,,,,20,60,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-40,16
+Link,NORMAL,,,,,22,62,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-60,40,17
+Link,NORMAL,,,,,23,64,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,120,19
+Link,NORMAL,,,,,24,65,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-60,160,20
+Link,NORMAL,,,,,25,66,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-260,200,23
+Link,NORMAL,,,,,26,67,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,240,25
+Link,NORMAL,,,,,27,68,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,280,27
+Link,NORMAL,,,,,28,69,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,320,29
+Link,NORMAL,,,,,29,70,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-60,360,30
+Link,NORMAL,,,,,30,71,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-60,400,32
+Link,NORMAL,,,,,32,73,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,480,35
+Link,NORMAL,,,,,33,74,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-60,520,36
+Link,NORMAL,,,,,34,75,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-160,560,39
+Link,HORIZONTAL,,,,,44,45,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1126,-660,44
+Link,HORIZONTAL,,,,,45,46,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1126,-620,45
+Link,HORIZONTAL,,,,,58,59,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1194,-100,46
+Link,NORMAL,,,,,19,59,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-80,47
+Link,HORIZONTAL,,,,,59,60,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1100,-60,48
+Link,HORIZONTAL,,,,,57,58,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1172,-140,49
+Link,HORIZONTAL,,,,,54,55,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1137,-260,50
+Link,HORIZONTAL,,,,,46,47,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1128,-580,51
+Link,HORIZONTAL,,,,,48,49,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1123,-500,52
+Link,HORIZONTAL,,,,,49,50,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1131,-460,53
+Link,HORIZONTAL,,,,,50,51,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1130,-420,54
+Link,HORIZONTAL,,,,,55,56,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1133,-220,55
+Link,HORIZONTAL,,,,,56,57,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1130,-180,56
+Link,NORMAL,,,,,17,57,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-260,-160,57
+Link,NORMAL,,,,,18,58,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-160,-120,58
+Link,NORMAL,,,,,16,56,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-60,-200,59
+Link,HORIZONTAL,,,,,1,17,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-480,60
+Link,HORIZONTAL,,,,,1,25,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-300,61
+Link,HORIZONTAL,,,,,1,19,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-440,62
+Link,HORIZONTAL,,,,,1,13,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-560,63
+Link,HORIZONTAL,,,,,1,7,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-680,64
+Link,HORIZONTAL,,,,,1,4,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-740,65
+Link,HORIZONTAL,,,,,1,3,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-760,66
+Link,HORIZONTAL,,,,,1,2,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-801,-780,67
+Link,HORIZONTAL,,,,,4,6,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,-640,68
+Link,HORIZONTAL,,,,,4,5,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-606,-660,69
+Link,HORIZONTAL,,,,,7,8,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-601,-540,70
+Link,HORIZONTAL,,,,,8,10,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-401,-480,71
+Link,HORIZONTAL,,,,,8,11,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-401,-460,72
+Link,HORIZONTAL,,,,,8,9,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-401,-500,73
+Link,HORIZONTAL,,,,,13,14,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-602,-300,74
+Link,HORIZONTAL,,,,,13,15,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-602,-280,75
+Link,HORIZONTAL,,,,,15,16,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-403,-220,76
+Link,HORIZONTAL,,,,,17,18,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-599,-140,77
+Link,HORIZONTAL,,,,,19,23,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-592,20,78
+Link,HORIZONTAL,,,,,19,20,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-592,-60,79
+Link,HORIZONTAL,,,,,20,22,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-389,0,80
+Link,NORMAL,,,,,61,62,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,199,19,81
+Link,HORIZONTAL,,,,,60,61,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1110,-20,82
+Link,HORIZONTAL,,,,,25,34,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,380,84
+Link,HORIZONTAL,,,,,25,32,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,340,85
+Link,HORIZONTAL,,,,,25,28,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,260,86
+Link,HORIZONTAL,,,,,25,27,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,240,87
+Link,HORIZONTAL,,,,,25,26,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-607,220,88
+Link,HORIZONTAL,,,,,23,24,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-393,140,89
+Link,HORIZONTAL,,,,,20,21,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-389,-20,90
+Link,NORMAL,,,,,21,61,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-61,-1,91
+Link,HORIZONTAL,,,,,22,82,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-232,60,92
+Link,NORMAL,,,,,82,63,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-49,80,93
+Link,HORIZONTAL,,,,,28,30,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-398,360,94
+Link,NORMAL,,,,,31,72,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-53,439,95
+Link,HORIZONTAL,,,,,30,31,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-178,418,96
+Link,NORMAL,,,,,34,35,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-373,581,97
+Link,NORMAL,,,,,35,76,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-133,601,98
+Link,NORMAL,,,,,36,77,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-66,641,99
+Link,NORMAL,,,,,37,78,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-67,681,100
+Link,HORIZONTAL,,,,,35,36,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-363,621,101
+Link,HORIZONTAL,,,,,35,37,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-363,641,102
+Link,NORMAL,,,,,39,80,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-63,761,103
+Link,HORIZONTAL,,,,,34,39,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-481,660,104
+Link,NORMAL,,,,,40,81,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-48,803,105
+Link,HORIZONTAL,,,,,37,38,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-321,700,106
+Link,HORIZONTAL,,,,,39,40,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-306,782,107
+Link,NORMAL,,,,,38,79,,TRUE,DarkSlateGray,M,Silver,DASHED,2,,,,-50,720,110
+Link,HORIZONTAL,,,,,41,42,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,209,-780,111
+Link,HORIZONTAL,,,,,42,43,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,209,-740,112
+Link,HORIZONTAL,,,,,43,44,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,733,-700,113
+Link,HORIZONTAL,,,,,11,12,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-287,-378,114
+Link,NORMAL,,,,,12,52,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,-48,-359,115
+Link,HORIZONTAL,,,,,51,52,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1131,-380,116
+Link,HORIZONTAL,,,,,13,53,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,800,-319,117
+Link,HORIZONTAL,,,,,53,54,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1137,-299,118
+Link,HORIZONTAL,,,,,52,53,,TRUE,DarkSlateGray,M,Silver,SOLID,2,,,,1133,-339,119

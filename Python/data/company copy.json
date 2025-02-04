@@ -1,0 +1,223 @@
+{
+    "D_Company": [
+        {
+            "Company": "Acme Inc",
+            "D_Color": [
+                {
+                    "Color": "Green"
+                },
+                {
+                    "Color": "Blue"
+                }
+            ],
+            "D_Department": [
+                {
+                    "Department": "Sales",
+                    "D_Color": [
+                        {
+                            "Color": "Green"
+                        },
+                        {
+                            "Color": "Blue"
+                        }
+                    ],
+                    "D_Employee": [
+                        {
+                            "Employee": "Alice",
+                            "Role": "Manager",
+                            "D_Color": [
+                                {
+                                    "Color": "Green"
+                                }
+                            ],
+                            "D_Skill": [
+                                {
+                                    "Skill": "Accounting"
+                                }
+                            ]
+                        },
+                        {
+                            "Employee": "Bob",
+                            "Role": "Sales Person",
+                            "D_Color": [
+                                {
+                                    "Color": "Yellow"
+                                },
+                                {
+                                    "Color": "Blue"
+                                }
+                            ],
+                            "D_Skill": [
+                                {
+                                    "Skill": "Promotion"
+                                },
+                                {
+                                    "Skill": "Communication"
+                                }
+                            ]
+                        }
+                    ],
+                    "D_Skill": [
+                        {
+                            "Skill": "Accounting"
+                        },
+                        {
+                            "Skill": "Communication"
+                        }
+                    ]
+                },
+                {
+                    "Department": "Engineering",
+                    "D_Color": [
+                        {
+                            "Color": "Red"
+                        },
+                        {
+                            "Color": "White"
+                        }
+                    ],
+                    "D_Employee": [
+                        {
+                            "Employee": "Charlie",
+                            "Role": "Manager",
+                            "D_Skill": [
+                                {
+                                    "Skill": "Management"
+                                }
+                            ]
+                        },
+                        {
+                            "Employee": "Dave",
+                            "Role": "Researcher",
+                            "D_Color": [
+                                {
+                                    "Color": "Red"
+                                },
+                                {
+                                    "Color": "White"
+                                }
+                            ],
+                            "D_Skill": [
+                                {
+                                    "Skill": "Math"
+                                },
+                                {
+                                    "Skill": "Labo"
+                                }
+                            ]
+                        }
+                    ],
+                    "D_Skill": [
+                        {
+                            "Skill": "Management"
+                        },
+                        {
+                            "Skill": "Labo"
+                        }
+                    ]
+                }
+            ],
+            "D_Employee": [
+                {
+                    "Employee": "nan",
+                    "Company": "Acme Inc",
+                    "D_Color": [
+                        {
+                            "Color": "Yellow"
+                        },
+                        {
+                            "Color": "Blue"
+                        }
+                    ],
+                    "D_Skill": [
+                        {
+                            "Skill": "Promotion"
+                        },
+                        {
+                            "Skill": "Communication"
+                        }
+                    ]
+                },
+                {
+                    "Employee": "Alice",
+                    "Role": "Manager",
+                    "D_Color": [
+                        {
+                            "Color": "Green"
+                        }
+                    ],
+                    "D_Skill": [
+                        {
+                            "Skill": "Accounting"
+                        }
+                    ]
+                }
+            ],
+            "D_Skill": [
+                {
+                    "Skill": "Accounting"
+                },
+                {
+                    "Skill": "Communication"
+                }
+            ]
+        },
+        {
+            "Company": "Billy Ltd.",
+            "D_Department": [
+                {
+                    "Department": "Purchase",
+                    "D_Employee": [
+                        {
+                            "Employee": "Ellie",
+                            "Role": "Manager"
+                        },
+                        {
+                            "Employee": "Frans",
+                            "Role": "Staff",
+                            "D_Skill": [
+                                {
+                                    "Skill": "Budget"
+                                }
+                            ]
+                        }
+                    ],
+                    "D_Skill": [
+                        {
+                            "Skill": "Budget"
+                        }
+                    ]
+                },
+                {
+                    "Department": "Shop",
+                    "D_Employee": [
+                        {
+                            "Employee": "Gill",
+                            "Role": "Seller"
+                        }
+                    ]
+                }
+            ],
+            "D_Employee": [
+                {
+                    "Employee": "Ellie",
+                    "Role": "Manager"
+                },
+                {
+                    "Employee": "Frans",
+                    "Role": "Staff",
+                    "D_Skill": [
+                        {
+                            "Skill": "Budget"
+                        }
+                    ]
+                }
+            ],
+            "D_Skill": [
+                {
+                    "Skill": "Budget"
+                }
+            ]
+        }
+    ]
+}

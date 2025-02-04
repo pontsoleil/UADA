@@ -1,0 +1,31 @@
+﻿column,name,card,datatype,semSort,semPath,value,Term
+dO,,,,-4,/JC00,[JC0a/JC0a_15='*'],
+dE,,,,-3,/JC00/JC44_JC4f,[JC4d_JC23/JC4d_JC23_01='*'],
+"dR,dT",,,,-2,/JC00/JC44_JC4f/JC55_a_JC2d,"[JC55_a_JC2d_04='S'] [JC55_a_JC2d_04='AA']",
+dW,,,,-1,/JC00/JC44_JC4f/JC6e_JC62,[JC6e_JC62_01='*'],
+A,自会社コード,0..1,Identifier,102,/JC00/JC33_2_JC23/JC33_2_JC23_01,,発注者ID
+B,ＥＤＩ対象企業コード,0..n,Identifier,67,/JC00/JC32_1_JC23/JC32_1_JC23_01,,受注者ID
+C,発注ＳＥＱＮＯ,0..1,Document Reference,565,/JC00/JC44_JC4f/JC6e_JC62/JC68_JC13/JC68_JC13_01,,明細行注文書ID
+D,受注担当,0..1,Text,77,/JC00/JC32_1_JC23/JC32_1_JC23_07,,受注者担当名
+E,出荷先コード,0..1,Identifier,414,/JC00/JC44_JC4f/JC4d_JC23/JC4d_JC23_01,,納入先ID
+F,出荷先名称　＜漢字＞,0..1,Text,417,/JC00/JC44_JC4f/JC4d_JC23/JC4d_JC23_03,,納入先名称
+G,出荷先住所　＜漢字＞,0..1,Text,421,/JC00/JC44_JC4f/JC4d_JC23/JC4d_JC23_05,,納入先住所1
+H,コメント ＜漢字＞,0..1,Text,41,/JC00/JC30_JC10/JC30_JC10_02,,ヘッダ注釈内容
+I,商品コード,0..1,Identifier,655,/JC00/JC44_JC4f/JC6e_JC62/JC70_JC29/JC70_JC29_04,,発注者品目ID
+J,商品名＜半角英数カナ＞,1..1,Text,657,/JC00/JC44_JC4f/JC6e_JC62/JC70_JC29/JC70_JC29_06,,品目名
+K,数量,1..1,Quantity,597,/JC00/JC44_JC4f/JC6e_JC62/JC64_JC6b/JC64_JC6b_04,,請求数量
+L,単価,1..1,Unit Price Amount,589,/JC00/JC44_JC4f/JC6e_JC62/JC6a_JC28/JC6a_JC28_02,,契約単価
+M,納品書番号,0..1,Document Reference,570,/JC00/JC44_JC4f/JC6e_JC62/JC69_e_JC13/JC69_e_JC13_01,,明細行出荷案内書ID
+N,納品日,0..1,Date,427,/JC00/JC44_JC4f/JC4d_JC23/JC4d_JC23_09,,配送日
+O,請求書番号,1..1,Identifier,30,/JC00/JC0a/JC0a_15,,インボイスID
+P,請求書発行日,1..1,Date,33,/JC00/JC0a/JC0a_18,,インボイス発効日
+Q,事業者登録番号,0..1,Identifier,72,/JC00/JC32_1_JC23/JC32_1_JC23_04,,適格請求書発行事業者登録番号
+R,税額合計1,1..1,Amount,470,/JC00/JC44_JC4f/JC55_a_JC2d[JC55_a_JC2d_04='S']/JC55_a_JC2d_01,,文書レベル課税分類税額
+S,税率1,0..1,Percentage,476,/JC00/JC44_JC4f/JC55_a_JC2d[JC55_a_JC2d_04='S']/JC55_a_JC2d_07,,文書レベル税率
+T,税額合計2,1..1,Amount,470,/JC00/JC44_JC4f/JC55_a_JC2d[JC55_a_JC2d_04='AA']/JC55_a_JC2d_01,,文書レベル課税分類税額
+U,税率2,0..1,Percentage,476,/JC00/JC44_JC4f/JC55_a_JC2d[JC55_a_JC2d_04='AA']/JC55_a_JC2d_07,,文書レベル税率
+V,税込み合計金額,1..1,Amount,499,/JC00/JC44_JC4f/JC58_c_JC5c/JC58_c_JC5c_06,,文書レベル譲渡資産合計金額(税込み)
+W,請求明細番号,1..1,Identifier,549,/JC00/JC44_JC4f/JC6e_JC62/JC6e_JC62_01,,明細行ID
+X,税抜き明細金額,1..1,Amount,605,/JC00/JC44_JC4f/JC6e_JC62/JC6d_JC2d/JC6d_JC2d_02,,明細行譲渡資産金額（税抜き）
+Y,明細行税率,0..1,Percentage,608,/JC00/JC44_JC4f/JC6e_JC62/JC6d_JC2d/JC6d_JC2d_05,,明細行税率
+Z,明細行課税分類コード,1..1,Code,606,/JC00/JC44_JC4f/JC6e_JC62/JC6d_JC2d/JC6d_JC2d_03,,明細行課税分類コード

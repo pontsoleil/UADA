@@ -1,7 +1,7 @@
 {
     "file_path": "data/_PCA/tidyGL.csv",
     "e-tax_file_path": "data/_PCA/tidyGL_etax.csv",
-    "LHM_path": "ISO21926/LHM/JP_LHM.csv",
+    "LHM_path": "ISO21926/LHM/2024-12-11/JP_LHM.csv",
     "beginning_balance_path": "data/_PCA/beginning_balance.csv",
     "e-tax_beginning_balance_path": "data/_PCA/beginning_balance_etax.csv",
     "account_path": "data/_PCA/account_list.csv",

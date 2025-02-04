@@ -10,6 +10,9 @@ import os
 import webbrowser
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox, font
+from threading import Thread
+import time
+
 
 DEBUG = False
 TRACE = False
@@ -36,6 +39,7 @@ class LogTracker:
         self.DEBUG = 1 == params["DEBUG"]
         self.TRACE = 1 == params["TRACE"]
         self.lang = params["lang"]
+        self.buffer = []
 
     def debug_print(self, message):
         if self.DEBUG:
@@ -66,14 +70,49 @@ class LogTracker:
     def write_log_text(self, message):
         line = self.line
         line = f"{int(line[:line.index('.')]) + 1}.0"
-        log_tracker.line = line
-        elapsed = log_tracker.get_elapsed()
+        self.line = line
+        elapsed = self.get_elapsed()
         text = f"{elapsed} {message}\n"
-        if None != gui and gui.log_text:
+        self.trace_print(text)
+        if gui is None or not gui.log_text:
+            self.buffer.append(text)
+            self.line = '1.0'
+        else:            
+            for i in range(len(self.buffer)):
+                _text = self.buffer[i]
+                line = f"{1+i}.0"
+                gui.log_text.insert(line, _text)
             gui.log_text.insert(line, text)
             # 最後の行にスクロールする
             gui.scroll_to_end()
-        self.trace_print(text)
+
+
+class ExecutionMessage:
+    """ 処理中メッセージウィンドウを管理するクラス """
+    custom_window = None
+    @staticmethod
+    def start(root, callback, *args):
+        """ メッセージウィンドウを表示し、指定された処理を非同期に実行 """
+        if ExecutionMessage.custom_window is None:
+            ExecutionMessage.custom_window = tk.Toplevel(root)
+            ExecutionMessage.custom_window.title("処理中")
+            ExecutionMessage.custom_window.geometry("300x100")
+            # ウィンドウを画面中央に配置
+            root.update_idletasks()  # ウィンドウサイズの更新を確定
+            x = root.winfo_x() + (root.winfo_width() // 2) - (300 // 2)
+            y = root.winfo_y() + (root.winfo_height() // 2) - (100 // 2)
+            ExecutionMessage.custom_window.geometry(f"300x100+{x}+{y}")
+            tk.Label(ExecutionMessage.custom_window, text="処理中...しばらくお待ちください。", padx=20, pady=20).pack()
+            ExecutionMessage.custom_window.protocol("WM_DELETE_WINDOW", lambda: None)  # 閉じる操作を無効化
+        # 非同期処理の開始
+        root.after(100, lambda: callback(*args))
+
+    @staticmethod
+    def end():
+        """ メッセージウィンドウを閉じる """
+        if ExecutionMessage.custom_window:
+            ExecutionMessage.custom_window.destroy()
+            ExecutionMessage.custom_window = None
 
 
 class TidyData:
@@ -1297,8 +1336,8 @@ class TidyData:
         self.beginning_balances = beginning_balances
 
     def csv2dataframe(self, param_file_path):
+        ExecutionMessage.start(root, gui.create_gui, root)
         # 開始、終了、経過時間ラベルを追加
-        # log_tracker.start()
         log_tracker.write_log_text("CSV to DataFrame")
         self.trading_partner_dict = {"supplier":{}, "customer": {}, "bank": {}}
         with open(self.trading_partner_path, mode='r', encoding='utf-8-sig') as csv_file:
@@ -1722,10 +1761,10 @@ class GUI:
         self.width_subaccount = 40
         self.width_amount = 90
         self.width_taxamount = 40
-        self.width_name = 180
-        self.width_taxname = 80
-        self.width_longname = 240
-        self.width_codename = 120
+        self.width_name = 160
+        self.width_taxname = 60
+        self.width_longname = 180
+        self.width_codename = 80
         self.width_text = 360
         self.width_month = 60
         self.width_date = 80
@@ -1926,7 +1965,18 @@ class GUI:
         self.reset_button.config(fg=self.reset_button.cget("bg"))
 
     def search_keyword(self):
-        # columns = self.columns
+        ExecutionMessage.start(root, self.search_keyword_body, None)
+
+    def search_keyword_body(self):
+        def filter_data(original_data, search_term, columns_to_search):
+            """
+            指定されたカラムに基づいてデータをフィルタリングする関数
+            """
+            filtered_data = []
+            for row in original_data:
+                if any(pd.notna(row[col]) and search_term in row[col].lower() for col in columns_to_search):
+                    filtered_data.append(row)
+            return filtered_data
         search_term = self.search_entry.get().lower()
         frame_number = self.frame_number
         if 0 == frame_number:
@@ -1958,39 +2008,15 @@ class GUI:
             23  row[self.columns["貸方部門コード"]],
             *24 row[self.columns["貸方部門名"]],
             """
-            n_description = 4 # 摘要文
-            n_debit_account = 6 # 借方科目
-            n_credit_account = 12 # 貸方科目
-            n_debit_subaccount = 18 # 借方補助科目名
-            n_debit_department = 20 # 借方部門名
-            n_credit_subaccount = 22 # 貸方補助科目名
-            n_credit_department = 24 # 貸方部門名
-            filtered_data = []
-            for row in self.original_data:
-                if (
-                    (
-                        pd.notna(row[n_description]) and search_term in row[n_description].lower()
-                    )
-                    or (
-                        pd.notna(row[n_debit_account]) and search_term in row[n_debit_account].lower()
-                    )
-                    or (
-                        pd.notna(row[n_credit_account]) and search_term in row[n_credit_account].lower()
-                    )
-                    or (
-                        pd.notna(row[n_debit_subaccount]) and search_term in row[n_debit_subaccount].lower()
-                    )
-                    or (
-                        pd.notna(row[n_debit_department]) and search_term in row[n_debit_department].lower()
-                    )
-                    or (
-                        pd.notna(row[n_credit_subaccount]) and search_term in row[n_credit_subaccount].lower()
-                    )
-                    or (
-                        pd.notna(row[n_credit_department]) and search_term in row[n_credit_department].lower()
-                    )
-                ):
-                    filtered_data.append(row)
+            columns_to_search = [
+                4,  # 摘要文
+                6,  # 借方科目名
+                12, # 貸方科目名
+                18, # 借方補助科目名
+                20, # 借方部門名
+                22, # 貸方補助科目名
+                24  # 貸方部門名
+            ]
         elif 1 == frame_number:
             result_tree = self.result_tree1
             """
@@ -2010,43 +2036,23 @@ class GUI:
             13  row["Counterpart_Department_Code"],
             *14 row["Counterpart_Department_Name"],
             """
-            n_description = 1 # 1 '制服代' 摘要文
-            n_counterpart_account = 6 # 6 '福利厚生費' 相手科目
-            n_subaccount = 8 # 8 補助科目名
-            n_department = 10 # 10 '共通部門' 部門
-            n_counterpart_subaccount = 12 # 12 相手補助科目名
-            n_counterpart_department = 14 # 14 '札幌営業所' 相手部門
-            filtered_data = []
-            for row in self.original_data:
-                if (
-                    (
-                        pd.notna(row[n_description]) and search_term in row[n_description].lower()
-                    )
-                    or (
-                        pd.notna(row[n_counterpart_account]) and search_term in row[n_counterpart_account].lower()
-                    )
-                    or (
-                        pd.notna(row[n_department]) and search_term in row[n_department].lower()
-                    )
-                    or (
-                        pd.notna(row[n_counterpart_department]) and search_term in row[n_counterpart_department].lower()
-                    )
-                    or (
-                        pd.notna(row[n_subaccount]) and search_term in row[n_subaccount].lower()
-                    )
-                    or (
-                        pd.notna(row[n_counterpart_subaccount]) and search_term in row[n_counterpart_subaccount].lower()
-                    )
-                ):
-                    filtered_data.append(row)
+            columns_to_search = [
+                1,  # 摘要文
+                6,  # 相手科目
+                8,  # 補助科目名
+                10, # 部門
+                12, # 相手補助科目名
+                14  # 相手部門
+            ]
         else:
             return
-
+        # 共通関数を呼び出してフィルタリング
+        filtered_data = filter_data(self.original_data, search_term, columns_to_search)
         for i in result_tree.get_children():
             result_tree.delete(i)
-
         for row in filtered_data:
             result_tree.insert("", "end", values=self.format_searched_row(row, frame_number))
+        ExecutionMessage.end()
 
     def reset_search(self):
         frame_number = self.frame_number
@@ -2155,14 +2161,12 @@ class GUI:
             elif selected_option == "損益計算書":
                 self.show_frame(self.frame4, 4)
         
-    def create_base(self):
-        root = self.root
+    def create_base(self, root):
         # 13インチMacBook Air（M2/M3）は1,470×956ピクセル、14インチMacBook Pro（M3/M3 Pro/M3 Max）は1,512×982ピクセルの解像度
         root.geometry("1450x950")
         root.update_idletasks()  # ウィンドウのレイアウトを更新
         root_width = root.winfo_width()  # rootウィンドウの幅を取得
         root_height = root.winfo_height()  # rootウィンドウの高さを取得
-
         self.previous_selection = None
         if self.lang == "en":
             root.title("Accounting Ledgers")
@@ -2193,10 +2197,15 @@ class GUI:
                 result_tree.update_idletasks()  # Update the GUI to keep it responsive
 
     def show_results(self, frame_number, event=None):
+        """ 処理を開始し、メッセージウィンドウを表示 """
+        # メッセージウィンドウを表示
+        ExecutionMessage.start(root, self.show_results_body, frame_number)
+
+    def show_results_body(self, frame_number, event=None):
         if self.lang == "en":
             log_tracker.write_log_text(f"START {self.menu[frame_number]}")
         else:
-            log_tracker.write_log_text(f" {self.menu[frame_number]} 開始")
+            log_tracker.write_log_text(f"{self.menu[frame_number]} 開始")
         self.columns = tidy_data.get_columns()
         if 0 == frame_number: # Journal Entry
             selected_month = self.month_combobox.get()
@@ -2260,14 +2269,10 @@ class GUI:
             result_tree = self.result_tree3
             # Convert dictionary to DataFrame
             filtered_df = pd.DataFrame.from_dict(tidy_data.bs_dict, orient='index').reset_index()
-            # Rename the index column to `Ledger_Account_Number`
-            # filtered_df.rename(columns={'index': "Ledger_Account_Number"}, inplace=True)
         elif 4 == frame_number:  # Profit and Loss (PL)
             result_tree = self.result_tree4
             # Convert dictionary to DataFrame
             filtered_df = pd.DataFrame.from_dict(tidy_data.pl_dict, orient='index').reset_index()
-            # Rename the index column to `Ledger_Account_Number`
-            # filtered_df.rename(columns={'index': "Ledger_Account_Number"}, inplace=True)
         # Treeviewの行削除
         for i in result_tree.get_children():
             result_tree.delete(i)
@@ -2276,6 +2281,7 @@ class GUI:
             log_tracker.write_log_text(f"END {self.menu[frame_number]} listing")
         else:
             log_tracker.write_log_text(f"{self.menu[frame_number]} 表示終了")
+        ExecutionMessage.end()
 
     def update_tree_headings(self):
         if 0 == self.frame_number:
@@ -2461,20 +2467,23 @@ class GUI:
                 row[5], # 借方科目コード
                 row[6], # 借方科目名
                 (#'Debit_Amount'
-                    f"{row[7]:,.0f}" if pd.notna(row[7]) and pd.notna(row[7]) and row[6] != 0 and isinstance(row[7], (int, float)) else ""
+                    f"{row[7]:,.0f}" if pd.notna(row[7]) and pd.notna(row[7]) and row[6] != 0 and isinstance(row[7], (int, float)) else row[7]
                 ),
                 row[8], # 借方税区分コード
                 row[9], # 借方税区分名
-                row[10], # 借方消費税額
-                # 貸方
+                (# 借方消費税額
+                    f"{row[10]:,.0f}" if pd.notna(row[10]) and pd.notna(row[10]) and row[10] != 0 and isinstance(row[10], (int, float)) else row[10]
+                ),                # 貸方
                 row[11], # 貸方科目コード
                 row[12], # 貸方科目名
                 (# 'Credit_Amount'
-                    f"{row[13]:,.0f}" if pd.notna(row[13]) and pd.notna(row[13]) and row[13] != 0 and isinstance(row[13], (int, float)) else ""
+                    f"{row[13]:,.0f}" if pd.notna(row[13]) and pd.notna(row[13]) and row[13] != 0 and isinstance(row[13], (int, float)) else row[13]
                 ),
                 row[14], # 貸方税区分コード
                 row[15], # 貸方税区分名
-                row[16], # 貸方消費税額
+                (# 貸方消費税額
+                    f"{row[16]:,.0f}" if pd.notna(row[16]) and pd.notna(row[16]) and row[16] != 0 and isinstance(row[16], (int, float)) else row[16]
+                ),
                 row[17], # 借方補助科目コード
                 row[18], # 借方補助科目名
                 row[19], # 借方部門コード
@@ -2489,13 +2498,13 @@ class GUI:
                 row[0], # Transaction_Date  # オリジナルの日付列を使用
                 row[1], # Description
                 ( # 'Debit_Amount'
-                    f"{row[2]:,.0f}" if pd.notna(row[2]) and row[2] != 0 and isinstance(row[2], (int, float)) else ""
+                    f"{row[2]:,.0f}" if pd.notna(row[2]) and row[2] != 0 and isinstance(row[2], (int, float)) else row[2]
                 ),
                 ( # 'Credit_Amount'
-                    f"{row[3]:,.0f}" if pd.notna(row[3]) and row[3] != 0 and isinstance(row[3], (int, float)) else ""
+                    f"{row[3]:,.0f}" if pd.notna(row[3]) and row[3] != 0 and isinstance(row[3], (int, float)) else row[3]
                 ),
                 ( # 'Balance'
-                    f"{row[4]:,.0f}" if pd.notna(row[4]) and row[4] != 0 and isinstance(row[4], (int, float)) else ""
+                    f"{row[4]:,.0f}" if pd.notna(row[4]) and row[4] != 0 and isinstance(row[4], (int, float)) else row[4]
                 ),
                 row[5], # Counterpart_Account_Number
                 row[6], # Counterpart_Account_Name
@@ -2514,16 +2523,16 @@ class GUI:
                 row[2], # Ledger_Account_Name
                 row[3], # e-Tax Category
                 ( # 'Beginning_Balance'
-                    f"{row[4]:,.0f}" if pd.notna(row[4]) and row[4] != 0 and isinstance(row[4], (int, float)) else ""
+                    f"{row[4]:,.0f}" if pd.notna(row[4]) and row[4] != 0 and isinstance(row[4], (int, float)) else row[4]
                 ),
                 ( # 'Debit_Amount'
-                    f"{row[5]:,.0f}" if pd.notna(row[5]) and row[5] != 0 and isinstance(row[5], (int, float)) else ""
+                    f"{row[5]:,.0f}" if pd.notna(row[5]) and row[5] != 0 and isinstance(row[5], (int, float)) else row[5]
                 ),
                 ( # 'Credit_Amount'
-                    f"{row[6]:,.0f}" if pd.notna(row[6]) and row[6] != 0 and isinstance(row[6], (int, float)) else ""
+                    f"{row[6]:,.0f}" if pd.notna(row[6]) and row[6] != 0 and isinstance(row[6], (int, float)) else row[6]
                 ),
                 ( # 'Ending_Balance'
-                    f"{float(row[7]):,.0f}" if pd.notna(row[7]) and row[7] != 0 and isinstance(row[7], (int, float)) else ""
+                    f"{float(row[7]):,.0f}" if pd.notna(row[7]) and row[7] != 0 and isinstance(row[7], (int, float)) else row[7]
                 )
             )
         else:
@@ -2708,7 +2717,6 @@ class GUI:
                 tree.column("CreditSubaccountCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
                 tree.column("CreditDepartmentCode", width=self.width_subaccount, anchor="center", stretch=tk.NO)
             elif 1 == frame_number:
-                tree.column("Ledger_Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
                 tree.column("Subaccount_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
                 tree.column("Department_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
                 tree.column("Counterpart_Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
@@ -2731,7 +2739,6 @@ class GUI:
                 tree.column("CreditSubaccountCode", width=0, stretch=tk.NO)
                 tree.column("CreditDepartmentCode", width=0, stretch=tk.NO)
             elif 1 == frame_number:
-                tree.column("Ledger_Account_Number", width=0, stretch=tk.NO)
                 tree.column("Subaccount_Code", width=0, stretch=tk.NO)
                 tree.column("Department_Code", width=0, stretch=tk.NO)
                 tree.column("Counterpart_Account_Number", width=0, stretch=tk.NO)
@@ -2895,7 +2902,7 @@ class GUI:
         tree.column("Subaccount_Name", width=self.width_codename, anchor="w", stretch=tk.NO)
         tree.column("Department_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
         tree.column("Department_Name", width=self.width_codename, anchor="w", stretch=tk.NO)
-        tree.column("Counterpart_Account_Number", width=0, anchor="center", stretch=tk.NO)
+        tree.column("Counterpart_Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
         tree.column("Counterpart_Account_Name", width=self.width_longname, anchor="w", stretch=tk.NO)
         tree.column("Counterpart_Subaccount_Code", width=self.width_subaccount, anchor="center", stretch=tk.NO)
         tree.column("Counterpart_Subaccount_Name", width=self.width_codename, anchor="w", stretch=tk.NO)
@@ -2951,8 +2958,8 @@ class GUI:
         )
         tree = self.result_tree2
         # width
-        tree.column("Month", width=self.width_month, anchor="center")
-        tree.column("Account_Number", width=0, anchor="center")
+        tree.column("Month", width=self.width_month, anchor="center", stretch=tk.NO)
+        tree.column("Account_Number", width=self.width_account, anchor="center", stretch=tk.NO)
         tree.column("Account_Name", width=self.width_longname, anchor="w", stretch=tk.NO)
         tree.column("eTax_Category", width=self.width_name, anchor="w", stretch=tk.NO)
         tree.column("Beginning_Balance", width=self.width_amount, anchor="e", stretch=tk.NO)
@@ -3000,8 +3007,8 @@ class GUI:
         # width
         tree.column("seq", width=self.width_dimension, anchor="e", stretch=tk.NO)
         tree.column("Level", width=self.width_dimension, anchor="e", stretch=tk.NO)
-        tree.column("Ledger_Account_Number", width=0, anchor="w", stretch=tk.NO)
-        tree.column("eTax_Account_Name", width=self.width_text, anchor="w", stretch=tk.NO)
+        tree.column("Ledger_Account_Number", width=self.width_account, anchor="w", stretch=tk.NO)
+        tree.column("eTax_Account_Name", width=self.width_text, anchor="w") #, stretch=tk.NO)
         tree.column("eTax_Category", width=self.width_longname, anchor="w", stretch=tk.NO)
         tree.column("Beginning_Balance", width=self.width_amount, anchor="e", stretch=tk.NO)
         tree.column("Total_Debit", width=self.width_amount, anchor="e", stretch=tk.NO)
@@ -3049,9 +3056,9 @@ class GUI:
         # width
         tree.column("seq", width=self.width_dimension, anchor="e", stretch=tk.NO)
         tree.column("Level", width=self.width_dimension, anchor="e", stretch=tk.NO)
-        tree.column("Ledger_Account_Number", width=0, anchor="w", stretch=tk.NO)
-        tree.column("eTax_Account_Name", width=self.width_text, anchor="w", stretch=tk.NO)
-        tree.column("eTax_Category", width=self.width_longname, anchor="w", stretch=tk.NO)
+        tree.column("Ledger_Account_Number", width=self.width_account, anchor="w", stretch=tk.NO)
+        tree.column("eTax_Account_Name", width=self.width_text, anchor="w") #, stretch=tk.NO)
+        tree.column("eTax_Category", width=self.width_longname, anchor="w") #, stretch=tk.NO)
         # tree.column("Beginning_Balance", width=self.width_amount, anchor="e", stretch=tk.NO)
         tree.column("Total_Debit", width=self.width_amount, anchor="e", stretch=tk.NO)
         tree.column("Total_Credit", width=self.width_amount, anchor="e", stretch=tk.NO)
@@ -3080,6 +3087,7 @@ class GUI:
     def open_link(self, event, url):
         """指定されたURLを開く"""
         webbrowser.open(url) 
+
     def on_hover(self, event):
         """マウスホバー時にアンダーラインを表示"""
         event.widget.configure(font=("Arial", 10, "underline"))
@@ -3088,7 +3096,7 @@ class GUI:
         """マウスホバーが外れたときにアンダーラインを解除"""
         event.widget.configure(font=("Arial", 10))
 
-    def create_gui(self):
+    def create_gui(self, root):
         # Combobox
         if self.lang == "en":
             self.show_button_text = "Show"
@@ -3147,7 +3155,6 @@ class GUI:
         # Reset filter Button
         self.reset_button = tk.Button(self.base_frame, text=self.reset_button_text, command=lambda: self.reset_filters())
         self.reset_button.grid(row=1, column=4, padx=(4, 4), pady=4, sticky="ew")
-
         # log_text
         self.log_text = tk.Text(
             self.base_frame,
@@ -3180,8 +3187,149 @@ class GUI:
         # Search Frtame
         search_frame = tk.Frame(self.base_frame)
         search_frame.grid(row=5, column=0, columnspan=6, padx=(4, 4), pady=(4, 4), sticky="nsew")
+
+        def on_entity_type_click():
+            entity_type = _entity_type.get()
+            entities = [val["name"] for key, val in tidy_data.trading_partner_dict.get(entity_type, {}).items()]
+            entity_combobox.config(values=entities)
+
+        # コンボボックスの選択時に呼ばれる関数
+        def on_entity_combobox_select(event):
+            selected_value = entity_combobox.get()
+            # 検索ロジックをここに追加
+            search_trading_partner(selected_value)
+
+        def get_aliases(name):
+            """
+            指定された名前から alias1 と alias2 を取得する関数。
+            """
+            # name に一致するエントリを検索
+            for _, values in tidy_data.trading_partner_dict[self.entity_type].items():
+                if values.get("name") == name:
+                    # alias1 と alias2 を返す
+                    return values.get("alias1", ""), values.get("alias2", "")
+            # 見つからなかった場合
+            return None, None  
+
+        def search_trading_partner(selected_value):
+            name = selected_value
+            alias1, alias2 = get_aliases(name)
+            ExecutionMessage.start(root, search_trading_partner_body, name, alias1, alias2)
+
+        def search_trading_partner_body(name, alias1, alias2):
+            def filter_data(original_data, search_terms, columns_to_search):
+                """
+                指定されたカラムに基づいてデータをフィルタリングする関数
+                """
+                filtered_data = []
+                for row in original_data:
+                    for search_term in search_terms:
+                        if search_term and any(pd.notna(row[col]) and search_term in row[col].lower() for col in columns_to_search):
+                            filtered_data.append(row)
+                return filtered_data
+            search_terms = [name, alias1, alias2]
+            frame_number = self.frame_number
+            if 0 == frame_number:
+                # Frame 0: 仕訳帳表示 Journal entry
+                result_tree = self.result_tree0
+                """
+                0   row[self.columns["伝票"]],
+                1   row[self.columns["明細行"]],
+                2   row[self.columns["伝票日付"]],
+                3   row[self.columns["伝票番号"]],
+                *4  row[self.columns["摘要文"]],
+                5   row[self.columns["借方科目コード"]],
+                *6  row[self.columns["借方科目名"]],
+                7   row["Debit_Amount"],
+                8   row[self.columns["借方税区分コード"]],
+                9   row[self.columns["借方税区分名"]],
+                10  row[self.columns["借方消費税額"]],
+                11  row[self.columns["貸方科目コード"]],
+                *12 row[self.columns["貸方科目名"]],
+                13  row["Credit_Amount"],
+                14  row[self.columns["貸方税区分コード"]],
+                15  row[self.columns["貸方税区分名"]],
+                16  row[self.columns["貸方消費税額"]],
+                17  row[self.columns["借方補助科目コード"]],
+                *18 row[self.columns["借方補助科目名"]],
+                19  row[self.columns["借方部門コード"]],
+                *20 row[self.columns["借方部門名"]],
+                21  row[self.columns["貸方補助科目コード"]],
+                *22 row[self.columns["貸方補助科目名"]],
+                23  row[self.columns["貸方部門コード"]],
+                *24 row[self.columns["貸方部門名"]],
+                """
+                columns_to_search = [
+                    4,  # 摘要文
+                    6,  # 借方科目名
+                    12, # 貸方科目名
+                    18, # 借方補助科目名
+                    20, # 借方部門名
+                    22, # 貸方補助科目名
+                    24  # 貸方部門名
+                ]
+            elif 1 == frame_number:
+                result_tree = self.result_tree1
+                """
+                0   row["Transaction_Date"],  # オリジナルの日付列を使用
+                *1  row["Description"],
+                2   row["Debit_Amount"],
+                3   row["Credit_Amount"],
+                4   row["Balance"],
+                5   row["Counterpart_Account_Number"],
+                *6  row["Counterpart_Account_Name"],
+                7   row["Subaccount_Code"],
+                *8  row["Subaccount_Name"],
+                9   row["Department_Code"],
+                *10 row["Department_Name"],
+                11  row["Counterpart_Subaccount_Code"],
+                *12 row["Counterpart_Subaccount_Name"],
+                13  row["Counterpart_Department_Code"],
+                *14 row["Counterpart_Department_Name"],
+                """
+                columns_to_search = [
+                    1,  # 摘要文
+                    6,  # 相手科目
+                    8,  # 補助科目名
+                    10, # 部門
+                    12, # 相手補助科目名
+                    14  # 相手部門
+                ]
+            else:
+                return
+            # 共通関数を呼び出してフィルタリング
+            filtered_data = filter_data(self.original_data, search_terms, columns_to_search)
+
+            for i in result_tree.get_children():
+                result_tree.delete(i)
+            for row in filtered_data:
+                result_tree.insert("", "end", values=self.format_searched_row(row, frame_number))
+            ExecutionMessage.end()
+
+        # ラジオボタンの作成
+        # ラジオボタンのクリック時に呼ばれる関数
+        self.entity_type = None
+        def on_entity_type_click():
+            self.entity_type = _entity_type.get()
+            entities = [val["name"] for key, val in tidy_data.trading_partner_dict[self.entity_type].items()]
+            entity_combobox["values"] = entities
+        _entity_type = tk.StringVar(value="")
+        radio1 = ttk.Radiobutton(search_frame, text="得意先", value="customer", variable=_entity_type, command=on_entity_type_click)
+        radio1.pack(side="left", padx=4)
+        radio2 = ttk.Radiobutton(search_frame, text="仕入先", value="supplier", variable=_entity_type, command=on_entity_type_click)
+        radio2.pack(side="left", padx=4)
+        radio3 = ttk.Radiobutton(search_frame, text="銀行", value="bank", variable=_entity_type, command=on_entity_type_click)
+        radio3.pack(side="left", padx=4)
+        # Comboboxの作成
+        entity_combobox = ttk.Combobox(
+            search_frame,
+            values=[""],
+            width=20  # 幅を20文字分に指定
+        )
+        entity_combobox.pack(side="left", padx=4)
+        entity_combobox.bind("<<ComboboxSelected>>", on_entity_combobox_select)  # 選択イベントのバインド
         # search label
-        self.search_label = tk.Label(search_frame, text="摘要文 検索語:")
+        self.search_label = tk.Label(search_frame, text="検索語:")
         self.search_label.pack(side="left")
         # search entry
         self.search_entry = tk.Entry(search_frame)
@@ -3234,6 +3382,7 @@ class GUI:
             log_tracker.write_log_text("window created.")
         else:
             log_tracker.write_log_text("ウィンドウ生成")
+        ExecutionMessage.end()
 
 
 if __name__ == "__main__":
@@ -3246,11 +3395,11 @@ if __name__ == "__main__":
     # Initialize the GUI
     root = tk.Tk()
     gui = GUI(root)
-    gui.create_base()
+    gui.create_base(root)
     # Then process the CSV
     tidy_data = TidyData()
     tidy_data.csv2dataframe(param_file_path)
     # Create the GUI
-    gui.create_gui()
+    # gui.create_gui(root)
     # Main Loop
     root.mainloop()

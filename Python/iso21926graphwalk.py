@@ -7,11 +7,11 @@ Generates ADC Logical Hierarchical (LHM)  Model from Business Semantic Model (BS
 Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
-Creation Date: 2024-05-12
+Creation Date: 2025-01-17
 
 MIT License
 
-(c) 2023, 2024 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+(c) 2023-2025 SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -160,9 +160,8 @@ def update_class_term(row):
         return None
     _type = row['property_type']
     class_term = row['class_term']
-    if '.' in class_term:
-        class_term = class_term[:class_term.index('.')]
-
+    # if '.' in class_term:
+    #     class_term = class_term[:class_term.index('.')]
     # associated_class_term = row['associated_class']
     if _type in ['Class','Specialized Class']:
         if not class_term in object_class_dict:
@@ -231,13 +230,34 @@ def get_semantic_path(record):
     class_term = record['class_term']
     class_list = class_term.split('-')
     class_list = [f"({x[:x.index('_')]}) {x[1 + x.index('_'):]}" if "_" in x else x for x in class_list]
-    _class_term = "/".join(class_list)
+    _class_term = ".".join(class_list)
     property_term = record['property_term']
     if property_term:
-        semantic_path = f"/{_class_term}/{property_term}"
+        semantic_path = f"$.{_class_term}.{property_term}"
     else:
-        semantic_path = f"/{_class_term}"
+        semantic_path = f"$.{_class_term}"
     return semantic_path
+
+
+# Function to get abbreviate path
+def get_abbreviate_path(record):
+    class_term = record['class_term']
+    class_list = class_term.split('-')
+    class_list = [
+        f"({x[:x.index('_')]}) {x[1 + x.index('_'):]}" if "_" in x else x for x in class_list
+    ]
+    # Generate abbreviations for the transformed list
+    abbreviated_list = [
+        abbreviation_generator.process_term(term)['Generated Abbreviation'] for term in class_list
+    ]
+    _abbreviated_term = ".".join(abbreviated_list)
+    property_term = record['property_term']
+    abbreviated_property_term = abbreviation_generator.process_term(property_term)['Generated Abbreviation']
+    if property_term:
+        abbreviated_path = f"{_abbreviated_term}.{abbreviated_property_term}"
+    else:
+        abbreviated_path = f"{_abbreviated_term}"
+    return abbreviated_path
 
 
 # Function to transform hierarchical model to records suitable for CSV output
@@ -260,6 +280,9 @@ def model2record(LHM_model):
         semantic_path = get_semantic_path(record)
         record['semantic_path'] = semantic_path
 
+        abbreviation_path = get_abbreviate_path(record)
+        record['abbreviation_path'] = abbreviation_path
+
         path = set_path(data, aggregates)
         record['path'] = path
 
@@ -268,10 +291,10 @@ def model2record(LHM_model):
 
         i += 1
 
-        class_term = semantic_path
         if 'A' == data['type']:
-            class_term = class_term[:class_term.rindex('/')]
-        class_term = class_term.strip('/').split('/')[-1]
+            class_term = semantic_path[:semantic_path.rindex('.')][2:].split('.')[-1]
+        else:
+            class_term = semantic_path[2:].split('.')[-1]
         if 'A' != data['type']:
             current_class = class_term
         record['class_term'] = class_term
@@ -341,7 +364,7 @@ def parse_class(class_term, REFERENCE_OF = False):
     the LIFO list.
     """
     _class_term = class_term
-    if '_' in _class_term: # romove property_term
+    if '_' in _class_term: # romove originating class name for this associated class
         _class_term = _class_term[1+_class_term.index('_'):]
     if _class_term not in object_class_dict:
         print(f"#### '{_class_term}' not in object_class_dict")
@@ -385,10 +408,23 @@ def parse_class(class_term, REFERENCE_OF = False):
             - Datatype: Leave empty as datatype is not applicable for reference association's associated class.
         """
         object_class['class_term'] += f"-{class_term}"
+        if DEBUG:
+            print(f"class_term:{class_term} _class_term:{_class_term} object_class['class_term']:{object_class['class_term']}")
         definition = object_class['definition']
         definition = definition.replace('A class', f"The reference association to the {class_term.replace('_', ' ')} class, which is a class")
         object_class['definition'] = definition
         object_class['type'] = 'R'
+        properties_list = {}
+        for key in object_class_dict:
+            if key.startswith(_class_term):
+                properties = object_class_dict[_class_term].get('properties', [])
+                for key, prop in properties.items():
+                    properties_list[key] = prop
+        for key, prop in properties_list.items():
+            object_class['properties'][key] = prop
+        hasPK = any(property.get('identifier', '') == 'PK' for property in properties_list.values())
+        if '-' not in object_class['class_term'] and not hasPK:
+            print(f"**ERROR Referenced class {object_class['class_term']} has no PK(primary Key).")
     else:
         object_class['type'] = 'C'
     if level > 1 and not object_class['multiplicity'] and current_multiplicity:
@@ -412,6 +448,8 @@ def parse_class(class_term, REFERENCE_OF = False):
             Attributes and reference associations are prioritized over composition/aggregation associations
             to maintain clarity and order. The copying logic is detailed as follows:
             """
+            if 'Active' in  property['property_term']:
+                continue
             property['level'] = level
             property['type'] = 'A'
             propertyclass_term = property['class_term']
@@ -516,13 +554,6 @@ def parse_class(class_term, REFERENCE_OF = False):
     C. Singular.
     Pick any navigable association that is (0,1) and leads to needed information.
     """
-    # singular_classes = [
-    #     cls
-    #     for cls in properties.values()
-    #     if cls["property_type"]
-    #     in ["Reference Association", "Aggregation", "Composition"]
-    #     and "0..1" == cls["multiplicity"]
-    # ]
     for _class in singular_classes:
         property_type = _class['property_type']
         property_term = _class['property_term']
@@ -543,13 +574,6 @@ def parse_class(class_term, REFERENCE_OF = False):
     E. Other Plural.
     Pick any navigable association that leads to needed information.
     """
-    # other_classes = [
-    #     cls
-    #     for cls in properties.values()
-    #     if cls["property_type"]
-    #     in ["Reference Association", "Aggregation", "Composition"]
-    #     and cls["multiplicity"] in ["0..*", "1..*"]
-    # ]
     for _class in other_classes:
         property_type = _class['property_type']
         property_term = _class['property_term']
@@ -630,6 +654,259 @@ def parse_class(class_term, REFERENCE_OF = False):
                     LHM_model.append(property)
                     if DEBUG: print(f"  {property['level']} {property['class_term']} {property['property_type']} {property['identifier']} [{property['multiplicity']}] {property['property_term']}{property['associated_class']}")
 
+
+class AbbreviationGenerator:
+    def __init__(self):
+        """
+        Initialize with a predefined abbreviation list if provided.
+        :param abbreviation_list: A dictionary of terms and their abbreviations.
+        """
+        self.common_abbreviations = {
+            "abbreviation": "Abrv",
+            "academic": "Acad",
+            "account": "Acnt",
+            "accumulated": "Accum",
+            "acquisition": "Acq",
+            "activities": "Acts",
+            "activity": "Act",
+            "addition": "Add",
+            "address": "Adr",
+            "adjusted": "Adjd",
+            "adjustment": "Adj",
+            "after": "Aft",
+            "allocation": "Alloc",
+            "amount": "Amt",
+            "application": "Apl",
+            "approval": "Aprv",
+            "approved": "Aprv",
+            "balance": "Bal",
+            "before": "Bef",
+            "beginning": "Beg",
+            "billing": "Bill",
+            "branch": "Bra",
+            "business": "Bus",
+            "cancellation": "Cncl",
+            "characteristic": "Char",
+            "contact": "Cnt",
+            "content": "Cont",
+            "contract": "Contr",
+            "corresponding": "Corr",
+            "created": "Crea",
+            "credit": "Cr",
+            "currency": "Cur",
+            "customer": "Cust",
+            "date": "Dt",
+            "debit": "Db",
+            "default": "Dft",
+            "department": "Dep",
+            "depreciable": "Dprcbl",
+            "depreciation": "Depre",
+            "description": "Dscr",
+            "details": "Dtls",
+            "developer": "Dvlpr",
+            "discount": "Dscnt",
+            "dispatch": "Disp",
+            "document": "Doc",
+            "employee": "Emp",
+            "employment": "Emplmnt",
+            "encoding": "Enc",
+            "ending": "End",
+            "exclude": "Excl",
+            "external": "Ext",
+            "fiscal": "Fisc",
+            "functional": "Func",
+            "general": "Genr",
+            "generated": "Gen",
+            "grouping": "Grp",
+            "hierarchy": "Hrchy",
+            "impairment": "Impr",
+            "include": "Incl",
+            "indicator": "Ind",
+            "inventory": "Inv",
+            "invoice": "Invoi",
+            "journal": "Jrn",
+            "language": "Lang",
+            "local": "Loc",
+            "location": "Lct",
+            "material": "Mat",
+            "measurement": "Mea",
+            "modified": "Mdf",
+            "module": "Mod",
+            "number": "Nr",
+            "order": "Ord",
+            "organization": "Org",
+            "parent": "Par",
+            "payable": "Pbl",
+            "payment": "Pay",
+            "percentage": "Perc",
+            "period": "Per",
+            "physical": "Phys",
+            "primary": "Prim",
+            "process": "Proc",
+            "project": "Proj",
+            "proportion": "Prop",
+            "provision": "Prov",
+            "purchase": "Pur",
+            "purchasing": "Prchsng",
+            "quantity": "Qt",
+            "realized": "Rlzd",
+            "receipt": "Rcpt",
+            "receivable": "Rcvbl",
+            "received": "Rcvd",
+            "records": "Rec",
+            "reference": "Ref",
+            "regulator": "Rgltr",
+            "remaining": "Rmng",
+            "removal": "Rmv",
+            "replacement": "Rplc",
+            "report": "Rprt",
+            "reporting": "Rprt",
+            "requisition": "Rqstn",
+            "residual": "Resi",
+            "responsibility": "Resp",
+            "reversal": "Rev",
+            "sales": "Sal",
+            "segment": "Sg",
+            "sequence": "Sq",
+            "service": "Srvc",
+            "settlement": "Setl",
+            "shipment": "Shp",
+            "shipping": "Shpng",
+            "software": "Sftw",
+            "standard": "Std",
+            "status": "Stat",
+            "stocking": "Stck",
+            "supplier": "Supl",
+            "tax": "Tx",
+            "total": "Tot",
+            "transaction": "Tr",
+            "version": "Vers",
+            "year": "Yr",
+        }
+        # "identifier": "Id",
+
+    def abbreviate(self, term, max_length=5):
+        """
+        Abbreviate a given term based on improved rules and track the rules applied.
+        :param term: The term to abbreviate.
+        :param max_length: Maximum allowed abbreviation length.
+        :return: Generated abbreviation, rules applied, and reason if applicable.
+        """
+        rules_applied = []
+        term_lower = term.lower()
+        parts = term.split()  # Split the term into parts based on spaces
+        abbreviated_parts = []
+        max_length = max_length - 2 if len(term) <= max_length else max_length #if len(term) <= 8 else 6
+
+        if term_lower in self.common_abbreviations:
+            abbreviation = self.common_abbreviations[term_lower]
+            rules_applied.append("a: Predefined abbreviation for common terms")
+            return abbreviation, ", ".join(rules_applied)
+
+        # Process each part of the term
+        for part in parts:
+            part_rules = []
+
+            if part.lower() in self.common_abbreviations:
+                # Rule a: Check predefined abbreviations for parts
+                abbreviation = self.common_abbreviations[part.lower()]
+                part_rules.append("a: Predefined abbreviation for common terms")
+            else:
+                # Rule b: Preserve critical consonants
+                part = ''.join([ch for ch in part if ch.isalpha()])
+                part_rules.append("b: Preserve critical consonants")
+                
+                # Rule c: Preserve the initial letter
+                abbreviation = part[0]
+                part_rules.append("c: Preserve the initial letter")
+
+                # Rule d: Preserve the second letter if it is not vowel or term length > 6
+                # if part[1] not in 'aeiou' or len(term) > max_length:
+                if part[1] not in 'aeiou' or (part[1] not in 'iou' and len(term) > max_length):
+                    abbreviation += part[1]
+                    part_rules.append(f"d: Preserve the second letter if it is not in 'aeiou' or not in 'iou' for terms longer than {max_length}")
+
+                # Rule e: Remove vowels after the third letter
+                abbreviation += ''.join([ch for ch in part[2:] if ch not in 'aeiou'])
+                part_rules.append("e: Remove vowels after the third letter")
+
+                # Rule f: Truncate abbreviation to logical length
+                abbreviation = abbreviation[:max_length]
+                rules_applied.append(f"f: Truncate to max length {max_length}")
+
+            # Add the rules applied for this part
+            rules_applied.extend(part_rules)
+            abbreviated_parts.append(abbreviation.capitalize())
+
+        # Concatenate the abbreviated parts
+        final_abbreviation = ''.join(abbreviated_parts)
+        # Ensure abbreviation is unique
+        if final_abbreviation in self.common_abbreviations.values():
+            final_abbreviation = self._make_unique_abbreviation(final_abbreviation, term, max_length)
+
+        return final_abbreviation, ", ".join(rules_applied)
+    
+    def register_abbreviation(self, term, abbreviation, max_length = 5):
+        """
+        Register a new abbreviation to self.common_abbreviations.
+        :param term: The term to be abbreviated.
+        :param abbreviation: The abbreviation to register.
+        :param max_length: Maximum allowed abbreviation length.
+        """
+        term_lower = term.lower()
+        if len(abbreviation) > max_length:
+            raise ValueError("Abbreviation length must not exceed 5 characters.")
+        if abbreviation in self.common_abbreviations.values():
+            raise ValueError("Abbreviation already exists.")
+        self.common_abbreviations[term_lower] = abbreviation
+
+    def _make_unique_abbreviation(self, abbreviation, term, max_length=5):
+        """
+        Modify the abbreviation to make it unique by appending an unused consonant from the term.
+        If no unique abbreviation can be generated, return the original term.
+        :param abbreviation: The current abbreviation.
+        :param term: The original term to extract available consonants.
+        :param max_length: Maximum allowed abbreviation length.
+        :return: A unique abbreviation or the original term.
+        """
+        all_consonants = 'bcdfghjklmnpqrstvwxyz'
+
+        # Extract consonants from the original term in order of appearance
+        term_consonants = [ch.lower() for ch in term if ch.lower() in all_consonants]
+
+        # Track used consonants from the abbreviation
+        used_consonants = [ch for ch in abbreviation.lower() if ch in term_consonants]
+
+        # Determine remaining consonants in the term (preserving order)
+        remaining_consonants = term_consonants[len(used_consonants):]
+
+        # Try appending remaining consonants in order
+        for consonant in remaining_consonants:
+            new_abbreviation = abbreviation + consonant
+            if new_abbreviation not in self.common_abbreviations.values():
+                self.register_abbreviation(term, new_abbreviation, 1 + max_length)
+                return new_abbreviation
+            
+        # Return the original term if no unique abbreviation can be generated
+        return term
+
+    def process_term(self, term):
+        """
+        Process a list of terms and validate against initial abbreviations.
+        :param term: term to process.
+        :return: Dictionary of term with their abbreviations and validation results.
+        """
+        generated_abbreviation, rules = self.abbreviate(term)
+        processed_term = {
+            "Term": term,
+            "Generated Abbreviation": generated_abbreviation,
+            "Applied Rules": rules,
+        }
+        return processed_term
+
+abbreviation_generator = AbbreviationGenerator()
+
+
 # IndexManager class to manage class and property indexing
 class IndexManager:
     def __init__(self):
@@ -672,6 +949,7 @@ class IndexManager:
         return modified
 
 index_manager = IndexManager()
+
 
 # Main function to execute the script
 def main():
@@ -749,8 +1027,10 @@ def main():
 
     selected_class = set()
     exception_class = set()
-    header = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'multiplicity', 'representation_term', 'domain_name', 'associated_class', 'definition', 'module', 'table', 'id']
-    header2 = ['sequence', 'level', 'type', 'identifier', 'name', 'datatype', 'multiplicity', 'domain_name', 'definition', 'module', 'table', 'class_term', 'id', 'path', 'semantic_path']
+    # read
+    header = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'multiplicity', 'representation_term', 'domain_name', 'associated_class', 'definition', 'module', 'table', 'id', 'label_local', 'definition_local', 'xpath']
+    # write
+    header2 = ['sequence', 'level', 'type', 'identifier', 'name', 'datatype', 'multiplicity', 'domain_name', 'definition', 'module', 'table', 'class_term', 'id', 'path', 'semantic_path', 'abbreviation_path', 'label_local', 'definition_local', 'xpath']
     with open(BSM_file, encoding = encoding, newline='') as f:
         reader = csv.DictReader(f, fieldnames = header)
         next(reader)
@@ -763,18 +1043,20 @@ def main():
                 else:
                     record[key] = ''
             class_term = update_class_term(record)
+            property_type = row['property_type']
+            associated_class = row['associated_class']
             if DEBUG:
                 print(f"{class_term}({record['property_type']}) {record['associated_class'] or record['property_term']}")
             if class_term:
-                if row['property_type'] in ['Composition', 'Aggregation']:
-                    associated_class = object_class_dict[class_term]
-                    if 'Base' != associated_class['module']:
-                        exception_class.add(row['associated_class'])
+                if property_type in ['Composition']:#, 'Aggregation']:
+                    if 'Base' != row['module']:
+                        exception_class.add(associated_class)
                 if 'General' != object_class_dict[class_term]['module']:
                     selected_class.add(class_term)
 
     LHM_model = []
     selected_class = object_class_dict.keys()
+
     sorted_classes = sorted(selected_class, key = lambda x: object_class_dict[x]['table'] if object_class_dict[x]['table'] else 0)
     if DNM:
         exception_class = [cls for cls in exception_class if not (cls.endswith(" Line") and cls.replace(" Line", "") in selected_class)]

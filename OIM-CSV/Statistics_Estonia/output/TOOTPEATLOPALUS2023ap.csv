@@ -1,0 +1,1095 @@
+Klassifikaatori elementide täielik loetelu. Viimati uuendatud seisuga 11.2023,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24
+Klassifikaatori API:,https://estat.stat.ee/codelists/codelist/TOOTPEATLOPALUS2023ap,,,,,,,,,,,,,,,,,,,,,,,
+codeListCode,TOOTPEATLOPALUS2023ap,,,,,,,,,,,,,,,,,,,,,,,
+codeListName,Töötamise peatumine ja lõpetamine,,,,,,,,,,,,,,,,,,,,,,,
+Klassifikaatori elemendi kood,Hierarhias kõrgemal oleva selle elemendi grupi kood,Hierarhilise klassifikaatori elemendi taseme kood,Klassifikaatori elemendi valitavus: 0 = ei ole valitav; 1 = valitav,Elemendi nimetus eesti keeles,Elemendi nimetus inglise keeles,Elemendi nimetus vene keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst eesti keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst inglise keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst vene keeles,"Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - eesti keeles","Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), eesti keeles","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla), inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla), vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)",Klassifikaatori elemendil kasutatava mõõtühiku kood,Klassifikaatori elemendil kasutatava mõõtühiku tähis eesti keeles,"Sama, mis eelmine, inglise keeles","Sama, mis eelmine, vene keeles",Elemendi kehtivuse algusaeg (YYYY-MM-DD),Elemendi kehtivuse lõpuaeg (YYYY-MM-DD)
+code,parentCode,level,selectable,name_ET,name_EN,name_RU,explanation_ET,explanation_EN,explanation_RU,included_ET,included_EN,included_RU,included_extra_ET,included_extra_EN,included_extra_RU,excluded_ET,excluded_EN,excluded_RU,unitCode,unit_ET,unit_EN,unit_RU,validFromDate,validUntilDate
+A,,1,0,Peatamise alus,Basis for suspension,Основание для приостановки,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+A2,A,2,1,Aja- ja asendusteenistus,Conscription and alternative service,Срочная/альтернативная служба,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+A3,A,2,1,Tasustamata puhkus ,Unpaid leave ,Неоплачиваемый отпуск ,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+A4,A,2,1,Töötamise peatumine muul põhjusel,Suspension of service relationship for other reasons,Приостановка работы по иной причине,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+A6,A,2,1,Vanemapuhkus,Parental leave,Pодительский отпуск,,,,,,,,,,,,,,,,,2022-04-01 00:00:00,
+A7,A,2,1,Emapuhkus,Maternity leave,Mатеринский отпуск,,,,,,,,,,,,,,,,,2022-04-01 00:00:00,
+A8,A,2,1,Isapuhkus,Paternity leave,Oтцовский отпуск,,,,,,,,,,,,,,,,,2020-07-01 00:00:00,
+B,,1,0,Lõpetamise alus,Basis of termination,Основание для завершения,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B5,B,2,0,Töölepingu seadus (TLS) ja vabatahtlik töö,Employment Contracts Act and volunteering ,Закон о трудовом договоре и волонтёрская работа (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B501,B5,3,0,Koondamine sh likvideerimine (TLS),"Lay-off, incl cessation of activities (Employment Contracts Act)","Сокращение, в т.ч. ликвидация (TLS)",,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50101,B501,4,1,TLS § 89 lg 1 koondamine,"Lay-off, § 89 (1) of Employment Contracts Act ","Сокращение, ч.1 ст.89 (TLS)","TLS § 89. Töölepingu erakorraline ülesütlemine tööandja poolt majanduslikel põhjustel 
+(1) Tööandja võib töölepingu erakorraliselt üles öelda, kui töösuhte jätkamine kokkulepitud tingimustel muutub võimatuks töömahu vähenemise või töö ümberkorraldamise tõttu või muul töö lõppemise juhul (koondamine).","§ 89 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for economic reasons
+(1) An employer may extraordinarily cancel an employment contract if the continuance of the employment relationship on the agreed conditions becomes impossible due to a decrease in the work volume or reorganisation of work or other cessation of work (lay-off).","Статья 89 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по экономическим причинам
+(1)  Работодатель может отказаться от трудового договора в чрезвычайном порядке, если продолжение трудовых отношений на оговоренных условиях становится невозможным вследствие уменьшения объёма работы, реорганизации работы или в ином случае прекращения работы (сокращение).",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50102,B501,4,1,TLS § 89 lg 2 p 1 likvideerimine,"Cessation of activities, § 89 (2) 1) of Employment Contracts Act ","Ликвидация, п.1 ч.2 ст.89 (TLS)","TLS § 89. Töölepingu erakorraline ülesütlemine tööandja poolt majanduslikel põhjustel
+(2) Koondamine on ka töölepingu erakorraline ülesütlemine:
+1) tööandja tegevuse lõppemisel;","§ 89 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for economic reasons
+(2) Lay-off is also extraordinary cancellation of an employment contract:
+1) upon cessation of the activities of employer;","Статья 89 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по экономическим причинам
+(2) Сокращение также является отказом от трудового договора в чрезвычайном порядке:
+1) при прекращении деятельности работодателя;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50103,B501,4,1,TLS § 89 lg 2 p 2 pankrot,"Bankruptcy, § 89 (2) 2) of Employment Contracts Act","Банкротство, п.2 ч.2 ст.89 (TLS)","TLS § 89. Töölepingu erakorraline ülesütlemine tööandja poolt majanduslikel põhjustel
+(2) Koondamine on ka töölepingu erakorraline ülesütlemine:
+2) tööandja pankroti väljakuulutamisel või pankrotimenetluse lõpetamisel, pankrotti välja kuulutamata, raugemise tõttu.","§ 89 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for economic reasons
+(2) Lay-off is also extraordinary cancellation of an employment contract:
+2) upon declaration of bankruptcy of employer or termination of bankruptcy proceedings, without declaring bankruptcy, by abatement.","Статья 89 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по экономическим причинам
+(2) Сокращение также является отказом от трудового договора в чрезвычайном порядке:
+2) при объявлении банкротства работодателя или прекращении производства по делу о банкротстве, без объявления банкротства вследствие угасания.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B502,B5,3,0,Tähtaja möödumine (TLS),Expiry of term (Employment Contracts Act),Истечение срока (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50201,B502,4,1,TLS § 80 lg 1 tähtaja möödumine,"Expiry of term, § 80 (1) of Employment Contracts Act ","По истечении срока, ч.1 ст.80 (TLS)","TLS § 80. Töölepingu lõppemine tähtaja möödumisel
+(1) Tähtajaline tööleping lõpeb tähtaja möödumisel.","§ 80 of the Employment Contracts Act. Expiry of employment contract upon expiry of term
+(1) An employment contract entered into for a specified term expires upon the expiry of the term.","Статья 80 Закона о трудовом договоре. Прекращение трудового договора по истечении срока
+(1) Срочный трудовой договор прекращается по истечении срока.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B503,B5,3,0,Poolte kokkuleppel (TLS),Agreement between parties (Employment Contracts Act),Договорённость сторон (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50303,B503,4,1,TLS § 79 poolte kokkuleppel,"Agreement between parties, § 79 of Employment Contracts Act ","По соглашению сторон, ст.79 (TLS)","TLS § 79. Töölepingu lõpetamine kokkuleppel
+Pooled võivad nii tähtajalise kui tähtajatu töölepingu igal ajal kokkuleppel lõpetada.","§ 79 of the Employment Contracts Act. Termination of employment contract by agreement
+Parties may terminate both an employment contract entered into for a specified term and an employment contract entered into for an unspecified term at any time by agreement.","Статья 79 Закона о трудовом договоре. Расторжение трудового договора по соглашению
+Стороны могут в любое время расторгнуть по соглашению как срочный, так и бессрочный трудовой договор.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B504,B5,3,0,Surma tõttu (TLS),Because of death (Employment Contracts Act),Случай смерти (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50401,B504,4,1,TLS § 81 töötaja surm,"Death of employee, § 81 of Employment Contracts Act ","Смерть работника, ст.81 (TLS)","TLS § 81. Töölepingu lõppemine töötaja surmaga
+Tööleping lõpeb töötaja surmaga.","§ 81 of the Employment Contracts Act. Expiry of employment contract upon death of employee
+An employment contract expires upon the death of the employee.","Статья 81 Закона о трудовом договоре. Прекращение трудового договора в связи со смертью работника
+Трудовой договор прекращается в связи со смертью работника.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50402,B504,4,1,TLS § 111 lg 3 tööandja surm,"Death of employer, § 111 (3) of Employment Contracts Act ","Смерть работодателя, ч.3 ст.111 (TLS)","TLS § 111.  Töölepingu kehtivus tööandja surma korral.
+(3) Tööleping lõpeb füüsilisest isikust tööandja surmaga, kui tööleping on sõlmitud oluliselt tööandja isikut arvestades.
+","§ 111 of the Employment Contracts Act. Validity of employment contract in case of death of employer
+(3) An employment contract expires upon the death of an employer who is a natural person if the employment contract has been entered into significantly considering the person of the employer.","Статья 111 Закона о трудовом договоре. Действительность трудового договора в случае смерти работодателя.
+(3) Трудовой договор прекращается со смертью работодателя–физического лица, если трудовой договор был заключен с существенным учётом личности работодателя.
+",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B505,B5,3,0,Töötaja algatusel (TLS),At the initiative of an employee (Employment Contracts Act),Инициатива работника (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50501,B505,4,1,TLS § 37 lg 5 töötasu vähendamine ,"Reduction of wages, § 37 (5) of Employment Contracts Act ","Уменьшение вознаграждения за труд, ч.5 ст.37 (TLS)","TLS § 37. Töötasu vähendamine töö mitteandmise korral
+(5) Töötajal on õigus tööleping üles öelda käesoleva paragrahvi lõikes 1 sätestatud põhjusel, teatades sellest viis tööpäeva ette. Töötajale makstakse töölepingu ülesütlemisel hüvitist käesoleva seaduse § 100 lõigetes 1 ja 2 sätestatud ulatuses.","§ 37 of the Employment Contracts Act. Reduction of wages upon failure to provide work
+(5) An employee has the right to cancel the employment contract on the grounds provided in subsection 1 of this section, notifying thereof five working days in advance. Upon cancellation of the employment contract, the employee is paid compensation to the extent provided in subsections 1 and 2 of § 100 of this Act.","Статья 37 Закона о трудовом договоре. Уменьшение вознаграждения за труд при непредоставлении работы
+(5) Работник имеет право отказаться от трудового договора по причине, предусмотренной частью 1 настоящей статьи, предупредив об этом за пять рабочих дней. При отказе от трудового договора работнику выплачивается возмещение в размере, предусмотренном частями 1 и 2 статьи 100 настоящего Закона.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50502,B505,4,1,TLS § 85 lg 1 töötaja soovil ,"Ordinary cancellation by employee, § 85 (1) of Employment Contracts","По желанию работника, ч.1 ст.85 (TLS)","TLS § 85. Töölepingu korraline ülesütlemine
+(1) Töötaja võib tähtajatu töölepingu igal ajal korraliselt üles öelda.","§ 85 of the Employment Contracts Act. Ordinary cancellation of employment contract
+ (1) An employee may ordinarily cancel an employment contract entered into for an unspecified term at any time.","Статья 85 Закона о трудовом договоре. Отказ от трудового договора в обычном порядке
+(1) Работник может в любое время отказаться от бессрочного трудового договора в обычном
+порядке.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50503,B505,4,1,TLS § 91 lg 1 mõjuval põhjusel ,"Extraordinary cancellation with good reason, § 91 (1) of Employment Contracts Act ","По уважительной причине, ч.1 ст.91 (TLS)","TLS § 91. Töölepingu erakorraline ülesütlemine töötaja poolt
+(1) Töötaja võib töölepingu erakorraliselt üles öelda mõjuval põhjusel, eelkõige kui kõiki asjaolusid ja mõlemapoolset huvi arvestades ei või mõistlikult nõuda lepingu jätkamist","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(1) An employee may cancel an employment contract extraordinarily with good reason, in particular, if taking into account all circumstances and mutual interests, continuance of the contract cannot be reasonably demanded.","Статья 91 Закона о трудовом договоре. Отказ работника от трудового договора в чрезвычайном порядке
+(1) Работник может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, прежде всего, если с учётом всех обстоятельств и интересов обеих сторон нельзя разумно требовать продолжения договора.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50504,B505,4,1,TLS § 91 lg 2 p 1 ebaväärikas kohtlemine ,"Degrading treatment, § 91 (2) 1) of Employment Contracts Act ","Несправедливое обращение, п.1 ч.2 ст.91 (TLS)","TLS § 91.  Töölepingu erakorraline ülesütlemine töötaja poolt
+(2) Töötaja võib töölepingu erakorraliselt üles öelda tööandjapoolse kohustuse olulise rikkumise tõttu, eelkõige kui:
+1) tööandja on kohelnud töötajat ebaväärikalt või ähvardanud sellega või lubanud seda teha kaastöötajatel või kolmandatel isikutel;","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(2) An employee may cancel an employment contract extraordinarily due to a fundamental breach of the employer's obligation, in particular if:
+1) the employer has degraded the employee or threatened to do so or allowed the employee's colleagues or third parties to do so;","Статья 91 Закона о трудовом договоре. Отказ работника от трудового договора в чрезвычайном порядке
+(2) Работник может отказаться от трудового договора в чрезвычайном порядке вследствие существенного нарушения обязанности работодателем, прежде всего, если:
+1)  работодатель обращался с работником недостойно или угрожал этим, либо позволял делать это другим сотрудникам или третьим лицам;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50505,B505,4,1,TLS § 91 lg 2 p 2 viivitus töötasuga,"Delayed payment of wages, § 91 (2) 2) of Employment Contracts Act ","Задержка зарплаты, п.2 ч.2 ст.91 (TLS)","TLS § 91. Töölepingu erakorraline ülesütlemine töötaja poolt
+(2) Töötaja võib töölepingu erakorraliselt üles öelda tööandjapoolse kohustuse olulise rikkumise tõttu, eelkõige kui:
+2) tööandja on oluliselt viivitanud töötasu maksmisega;","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(2) An employee may cancel an employment contract extraordinarily due to a fundamental breach of the employer's obligation, in particular if:
+2) the employer has considerably delayed with payment of wages;","Статья 91 Закона о трудовом договоре.  Отказ работника от трудового договора в чрезвычайном порядке
+(2) Работник может отказаться от трудового договора в чрезвычайном порядке вследствие существенного нарушения обязанности работодателем, прежде всего, если:
+2)  работодатель существенно задержал выплату вознаграждения за труд;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50506,B505,4,1,TLS § 91 lg 2 p 3 oht elule ja tervisele,"Threat to life and health, § 91 (2) 3) of Employment Contracts Act","Опасность для жизни и здоровья, п.3 ч.2 ст.91 (TLS)","TLS § 91. Töölepingu erakorraline ülesütlemine töötaja poolt
+(2) Töötaja võib töölepingu erakorraliselt üles öelda tööandjapoolse kohustuse olulise rikkumise tõttu, eelkõige kui:
+3) töö jätkamine on seotud reaalse ohuga töötaja elule, tervisele, kõlbelisusele või heale nimele.","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(2) An employee may cancel an employment contract extraordinarily due to a fundamental breach of the employer's obligation, in particular if:
+3) continuance of work is related to a real threat to the employee's life, health, morals or good name.","Статья 91 Закона о трудовом договоре. Отказ работника от трудового договора в чрезвычайном порядке
+(2) Работник может отказаться от трудового договора в чрезвычайном порядке вследствие существенного нарушения обязанности работодателем, прежде всего, если:
+3) продолжение работы связано с реальной опасностью для жизни, здоровья, нравственности или доброго имени работника.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50507,B505,4,1,TLS § 91 lg 2 erakorraline ülesütlemine,"Extraordinary cancellation, § 91 (2) of Employment Contracts Act ","Чрезвычайное расторжение договора, ч.2 ст.91 (TLS)","TLS § 91. Töölepingu erakorraline ülesütlemine töötaja poolt
+(2) Töötaja võib töölepingu erakorraliselt üles öelda tööandjapoolse kohustuse olulise rikkumise tõttu","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(2) An employee may cancel an employment contract extraordinarily due to a fundamental breach of the employer's obligation","Статья 91 Закона о трудовом договоре. Отказ работника от трудового договора в чрезвычайном порядке
+(2) Работник может отказаться от трудового договора в чрезвычайном порядке вследствие существенного нарушения обязанности работодателем",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50508,B505,4,1,TLS § 91 lg 3 töötaja isikust tulenev põhjus,"Reason arising from the employee, § 91 (3) of Employment Contracts Act ","Причина, исходящая от личности работника, ч.3 ст.91 (TLS)","TLS § 91. Töölepingu erakorraline ülesütlemine töötaja poolt
+(3) Töötaja võib töölepingu erakorraliselt üles öelda töötaja isikust tuleneval põhjusel, eelkõige kui töötaja terviseseisund või perekondlikud kohustused ei võimalda tal kokkulepitud tööd teha ja tööandja ei võimalda talle sobivat tööd.
+
+","§ 91 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employee
+(3) An employee may cancel an employment contract extraordinarily due to a reason arising from the employee, in particular if the employee's state of health or family duties do not allow them to perform the agreed work and the employer does not provide them with suitable work.","Статья 91 Закона о трудовом договоре. Отказ работника от трудового договора в чрезвычайном порядке
+(3) Работник может отказаться от трудового договора в чрезвычайном порядке по причине, исходящей от личности работника, прежде всего, если состояние здоровья или семейные обязанности работника не позволяют ему выполнять оговоренную работу, и работодатель не предоставляет ему подходящую работу.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50509,B505,4,1,TLS § 85 lg 2 töötaja soovil (asendamine),"Ordinary cancellation by employee (substitution), § 85 (2) of Employment Contracts Act ","По желанию работника (замещение), ч.2 ст.85 (TLS)","TLS § 85. Töölepingu korraline ülesütlemine
+(2) Töötaja ei või tähtajalist töölepingut korraliselt üles öelda, välja arvatud töötaja asendamise ajaks sõlmitud töölepingut.","§ 85 of the Employment Contracts Act. Ordinary cancellation of employment contract
+(2) An employee may not ordinarily cancel an employment contract entered into for a specified term, except for an employment contract entered into for the period of substitution of employee.","Статья 85 Закона о трудовом договоре. Отказ от трудового договора в обычном порядке
+(2) Работник не может в обычном порядке отказаться от срочного трудового договора, за исключением отказа от трудового договора, заключенного на время замещения работника.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B506,B5,3,0,Katseaeg (TLS),Probationary period (Employment Contracts Act),Испытательный срок (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50601,B506,4,1,TLS § 86 lg 1 ülesütlemine katseajal,"Cancellation during probationary period, § 86 (1) of Employment Contracts Act ","Отказ во время испытательного срока, ч.1 ст.86 (TLS)","TLS § 86. Töölepingu ülesütlemine katseajal
+(1) Tööandja ja töötaja võivad tähtajalise ja tähtajatu töölepingu üles öelda katseaja jooksul.","§ 86 of the Employment Contracts Act. Cancellation of employment contract during probationary period
+(1) An employer and employee may cancel an employment contract entered into for a specified term and an employment contract entered into for an unspecified term during a probationary period.","Статья 86 Закона о трудовом договоре. Отказ от трудового договора во время испытательного срока
+(1) Работодатель и работник могут отказаться от срочного и бессрочного трудового договора в течение испытательного срока.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B507,B5,3,0,Tööandja algatusel (TLS),At the initiative of an employer (Employment Contracts Act),Инициатива работодателя (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50701,B507,4,1,TLS § 88 lg 1 töötajast tuleneval põhjusel,"Reason arising from the employee, § 88 (1) of Employment Contracts Act ","По причине, обусловленной работником, ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50702,B507,4,1,TLS § 88 lg 1 p 1 terviseseisundi tõttu ,"Due to state of health, § 88 (1) 1) of Employment Contracts Act ","По состоянию здоровья, п.1 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+1) ei ole pikka aega tulnud toime tööülesannete täitmisega terviseseisundi tõttu, mis ei võimalda töösuhet jätkata (töövõime vähenemine terviseseisundi tõttu). Töövõime vähenemist terviseseisundi tõttu eeldatakse, kui töötaja terviseseisund ei võimalda tööülesandeid täita nelja kuu jooksul;","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+1) for a long time been unable to perform their duties due to their state of health which does not allow for the continuance of the employment relationship (decrease in capacity for work due to state of health). A decrease in capacity for work due to state of health is presumed if the employee's state of health does not allow for the performance of duties over four months;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+1) долгое время не справлялся с выполнением трудовых заданий в связи с состоянием здоровья, что не позволяет продолжать трудовые отношения (снижение трудоспособности в связи с состоянием здоровья). Снижение трудоспособности в связи с состоянием здоровья предполагается, если состояние здоровья работника не позволяет выполнять трудовые задания в течение четырех месяцев;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50703,B507,4,1,TLS § 88 lg 1 p 2 sobimatuse tõttu,"Non-suitability for the position, § 88 (1) 2) of Employment Contracts Act ","По причине непригодности, п.2 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+2) ei ole pikka aega tulnud toime tööülesannete täitmisega ebapiisava tööoskuse, töökohale sobimatuse või kohanematuse tõttu, mis ei võimalda töösuhet jätkata (töövõime vähenemine);","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+2) for a long time been unable to perform their duties due to their insufficient work skills, non-suitability for the position or inadaptability, which does not allow for the continuance of the employment relationship (decrease in capacity for work);","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+2) долгое время не справлялся с выполнением трудовых заданий вследствие недостаточной квалификации, непригодности или неприспособленности к рабочему месту, что не позволяет продолжать трудовые отношения (снижение трудоспособности);",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50704,B507,4,1,TLS § 88 lg 1 p 3 töökohustuste rikkumine,"Due to breach of duties, § 88 (1) 3) of Employment Contracts Act ","Нарушение трудовых обязанностей, п.3 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+3) on hoiatusest hoolimata eiranud tööandja mõistlikke korraldusi või rikkunud töökohustusi;","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+3) in spite of a warning, disregarded the employer’s reasonable instructions or breached their duties;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+3) несмотря на предупреждение, игнорировал разумные распоряжения работодателя или нарушал трудовые обязанности;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50705,B507,4,1,TLS § 88 lg 1 p 4 joobeseisundi tõttu,"Due to state of intoxication, § 88 (1) 4) of Employment Contracts Act ","Состояние опьянения, п.4 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+4) on tööandja hoiatusest hoolimata viibinud tööl joobeseisundis;","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+4) in spite of the employer’s warning been at work in a state of intoxication;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+4) несмотря на предупреждение работодателя, находился на работе в состоянии опьянения;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50706,B507,4,1,"TLS § 88 lg 1 p 5 vargus, pettus","Due to theft, fraud, § 88 (1) 5) of Employment Contracts Act","Кража, обман, п.5 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+5) on pannud toime varguse, pettuse või muu teo, millega põhjustas tööandja usalduse kaotuse enda vastu;","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+5) committed a theft, fraud or another act bringing about the loss of the employer’s trust in the employee;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+5)  совершил кражу, обман или иное деяние, что стало причиной утраты доверия к нему со стороны работодателя;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50707,B507,4,1,TLS § 88 lg 1 p 6 usaldamatuse tekitamine,"Due to bringing about distrust, § 88 (1) 6) of Employment Contracts Act ","Недоверие, п.6 ч.1 ст.88 (TLS)","TLS § 88. Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+6) on põhjustanud kolmanda isiku usaldamatuse tööandja vastu;","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+6) brought about a third party’s distrust in the employer;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+6) вызвал недоверие третьего лица к работодателю;",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50708,B507,4,1,TLS § 88 lg 1 p 7 kahju tekitamine ,"Due to damage caused, § 88 (1) 7) of Employment Contracts Act ","Причинение ущерба, п.7 ч.1 ст.88 (TLS)","TLS § 88.   Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+7) on tekitanud süüliselt ja olulisel määral kahju tööandja varale või lõi kahju tekkimise ohu;
+","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+7) wrongfully and to a significant extent damaged the employer’s property or caused a threat of such damage;","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+7) виновно и в существенной мере причинил ущерб имуществу работодателя или создал опасность возникновения вреда;
+",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50709,B507,4,1,TLS § 88 lg 1 p 8 konkurentsipiirang,"Due to restriction of trade, § 88 (1) 8) of Employment Contracts Act ","Ограничение конкуренции, п.8 ч.1 ст.88 (TLS)","TLS § 88.   Töölepingu erakorraline ülesütlemine tööandja poolt töötajast tuleneval põhjusel
+(1) Tööandja võib töölepingu erakorraliselt üles öelda töötajast tuleneval mõjuval põhjusel, mille tõttu ei saa mõlemapoolseid huve järgides eeldada töösuhte jätkamist, eelkõige kui töötaja:
+8) on rikkunud saladuse hoidmise või konkurentsipiirangu kohustust.","§ 88 of the Employment Contracts Act. Extraordinary cancellation of employment contract by employer for reason arising from employee
+(1) An employer may extraordinarily cancel an employment contract with good reason arising from the employee as a result of which, upon respecting mutual interests, the continuance of the employment relationship cannot be expected, especially if the employee has:
+8) violated the obligation of maintaining confidentiality or restriction of trade.","Статья 88 Закона о трудовом договоре. Отказ работодателя от трудового договора в чрезвычайном порядке по причине, обусловленной работником
+(1) Работодатель может отказаться от трудового договора в чрезвычайном порядке по уважительной причине, исходящей от работника, вследствие которой, соблюдая интересы обеих сторон, нельзя предполагать продолжение трудовых отношений, прежде всего, если работник:
+8) нарушил обязанность сохранения тайны или ограничения конкуренции.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B508,B5,3,0,Töövaidlusorgani otsus (TLS),Decision of the labour dispute resolution body (Employment Contracts Act),"Решение органа, рассматривающего трудовые споры (TLS)",,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50801,B508,4,1,TLS § 107 lg 2 töövaidlusorgani otsusega,"Decision of the labour dispute resolution body, § 107 (2) of Employment Contracts Act ","По решению комиссии по трудовым спорам, ч.2 ст.107 (TLS)","TLS § 107. Töölepingu lõpetamine kohtus või töövaidluskomisjonis
+(2) Käesoleva paragrahvi lõikes 1 sätestatud juhul lõpetab kohus või töövaidluskomisjon tööandja või töötaja taotlusel töölepingu alates ajast, kui see oleks lõppenud ülesütlemise kehtivuse korral.","§ 107 of the Employment Contracts Act. Termination of employment contract in court or labour dispute committee
+(2) In the case provided in subsection 1 of this section, the court or labour dispute committee terminates, at the request of the employer or the employee, the employment contract as of the time when it would have expired in the case of validity of the cancellation.","Статья 107 Закона о трудовом договоре. Расторжение трудового договора в суде или в комиссии по трудовым спорам
+(2) В случае, указанном в части 1 настоящей статьи, суд или комиссия по трудовым спорам расторгает трудовой договор по ходатайству работодателя или работника с того момента, когда он был бы расторгнут в случае действительности отказа.",,,,,,,,,,,,,,2014-07-01 00:00:00,
+B509,B5,3,0,Maksukohustuse üleminek teise riiki (TLS),Transfer of tax liability to another country (Employment Contracts Act),Переход налогового обязательства в другое государство (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50901,B509,4,1,Maksukohustuse üleminek teise riiki Eestist TLS alusel,Transfer of tax liability from Estonia to another country  on the basis of Employment Contracts Act ,Переход налогового обязательства из Эстонии в другое государство в рамках закона (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B50902,B509,4,1,Maksukohustuse üleminek teisest riigist Eestisse TLS alusel,Transfer of tax liability from another country to Estonia  on the basis of Employment Contracts Act ,Переход налогового обязательства из другого государства в Эстонию в рамках закона (TLS),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B510,B5,3,0,Vabatahtlik töö,Volunteering,Волонтерская (добровольная) работа,,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B51001,B510,4,1,Vabatahtliku töö lõppemine,End of volunteering,Окончание волонтерской работы (добровольной работы),,,,,,,,,,,,,,,,,2014-07-01 00:00:00,
+B6,B,2,0,Avaliku sektori seadused,Public sector legislation,Законы государственного сектора,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B601,B6,3,0,Avaliku teenistuse seadus (ATS),Civil Service Act,Закон о публичной службе (ATS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60101,B601,4,1,ATS § 87 lg 1 ametniku soovil,"At request of official, § 87 (1) of Civil Service Act","Инициатива чиновника, ч.1 ст.87 (ATS)","ATS § 87. Teenistusest vabastamine ametniku soovil
+(1) Ametnik vabastatakse teenistusest tema enda algatusel kirjaliku taotluse alusel, mille ta on esitanud ametisse nimetamise õigust omavale isikule.","§ 87 of the Civil Service Act. Release from service at request of official
+(1) An official shall be released from office on his or her own initiative on the basis of a written application which he or she has submitted to the appointing authority.","Статья 87 Закона о публичной службе. Освобождение от службы по желанию чиновника
+(1) Чиновник освобождается от службы по своей инициативе на основании письменного ходатайства, поданного им лицу, имеющему право назначения на должность.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60102,B601,4,1,ATS § 88 lg 1 teenistustähtaja möödumine,"Expiry of term of service, § 88 (1) of Civil Service Act","Истечение срока службы, ч.1 ст.88 (ATS)","ATS § 88. Teenistusest vabastamine teenistustähtaja möödumise tõttu
+(1) Teenistustähtaja möödumise tõttu vabastatakse teenistusest ametnik, kes on ametikohale nimetatud määratud ajaks.
+
+","§ 88 of the Civil Service Act. Release from service due to expiry of term of service
+(1) An official appointed to office for a specified term shall be released from service due to the expiry of his or her term of service.","Статья 88 Закона о публичной службе. Освобождение от службы по истечении срока службы
+(1) В связи с истечением срока службы от службы освобождается чиновник, который был назначен на должность на определённый срок.
+
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60103,B601,4,1,ATS § 89 lg 1 valimine teisele ametikohale,"Appointment to another post, § 89 (1) of Civil Service Act","Назначение на другую должность, ч.1 ст.89 (ATS)","ATS § 89. Teenistusest vabastamine käesoleva seaduse § 2 lõikes 3 nimetatud ametikohale nimetamise ja valimise korral
+(1) Kui ametnik asub Riigikogu liikme kohale või astub Vabariigi Presidendi või Vabariigi Valitsuse liikme ametisse, siis tema teenistussuhte viimane päev on ametivande andmise päevale eelnev päev","§ 89 of the Civil Service Act. Release from service upon appointment or election to post specified in subsection 3 of § 2
+(1) If an official assumes the post of a member of the Riigikogu or enters into the post of the President of the Republic or member of the Government of the Republic, the last day of his or her service relationship is the date prior to the date of taking the oath of office.","Статья 89 Закона о публичной службе. Освобождение от службы при назначении и избрании на должность, указанную в части 3 статьи 2 настоящего Закона
+(1) Если чиновник занимает место члена Рийгикогу или вступает в должность Президента Республики или члена Правительства Республики, то последним днем его служебных отношений является день, предшествующий дню принесения должностной присяги.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60104,B601,4,1, ATS § 90 lg 1 p 1 ametiasutuse likvideerimine,"Authority is liquidated, § 90 (1) 1) of Civil Service Act","Ликвидация учреждения, п.1 ч.1 ст.90 (TLS)","ATS § 90. Teenistusest vabastamine koondamise tõttu
+(1) Ametiasutus võib ametniku teenistusest vabastada koondamise tõttu, kui:
+1) ametiasutus likvideeritakse;","§ 90 of the Civil Service Act. Release from service due to redundancy
+(1) The authority may release an official from service due to redundancy if:
+1) the authority is liquidated;","Статья 90 Закона о публичной службе. Освобождение от службы в связи с сокращением
+(1) Учреждение может освободить чиновника от службы в связи с сокращением, если:
+1) учреждение ликвидируется;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60105,B601,4,1,ATS § 90 lg 1 p 2 ametikoha koondamine,"Post is abolished, § 90 (1) 2) of Civil Service Act","Упразднение должности, п.2 ч.1 ст.90 (TLS)","ATS § 90. Teenistusest vabastamine koondamise tõttu
+(1) Ametiasutus võib ametniku teenistusest vabastada koondamise tõttu, kui:
+2) põhjendatud juhul kaotatakse ametniku ametikoht ametiasutuse koosseisus;
+ ","§ 90 of the Civil Service Act. Release from service due to redundancy
+(1) The authority may release an official from service due to redundancy if:
+2) on justified grounds the post of the official is abolished on the staff of the authority;","Статья 90 Закона о публичной службе. Освобождение от службы в связи с сокращением
+(1) Учреждение может освободить чиновника от службы в связи с сокращением, если:
+2) в обоснованном случае в штате учреждения упраздняется должность чиновника;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60106,B601,4,1,ATS § 90 lg 1 p 3 koondamine (ametijuhend) ,"Redundancy (job description), § 90 (1) 3) of Civil Service Act","Сокращение (должностная инструкция), п.3 ч.1 ст.90 (TLS)","ATS § 90. Teenistusest vabastamine koondamise tõttu
+(1) Ametiasutus võib ametniku teenistusest vabastada koondamise tõttu, kui:
+3) põhjendatud juhul muudetakse ametijuhendit ulatuses, milles see eeldab ametniku nõusolekut, ja ametnik ei ole seda andnud;","§ 90 of the Civil Service Act. Release from service due to redundancy
+(1) The authority may release an official from service due to redundancy if:
+3) on justified grounds the job description is amended to the extent that presumes the consent of the officials and the official has failed to grant it;","Статья 90 Закона о публичной службе. Освобождение от службы в связи с сокращением
+(1) Учреждение может освободить чиновника от службы в связи с сокращением, если:
+3) в обоснованном случае меняется должностная инструкция в том объеме, который предполагает согласие чиновника, и чиновник не дал согласия;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60107,B601,4,1,ATS § 90 lg 1 p 4 koondamine (ennistamine),"Redundancy (reinstatement), § 90 (1) 4) of Civil Service Act","Сокращение (восстановления), п.4 ч.1 ст.90 (TLS)","ATS § 90.  Teenistusest vabastamine koondamise tõttu
+(1) Ametiasutus võib ametniku teenistusest vabastada koondamise tõttu, kui:
+4) ametnik on nimetatud ametikohale, millele nimetatakse õigusvastaselt teenistusest vabastamise tõttu teenistusse ennistatud ametnik.","§ 90 of the Civil Service Act. Release from service due to redundancy
+(1) The authority may release an official from service due to redundancy if:
+4) the official has been appointed to a post to which an unlawfully released official is reinstated in the service.","Статья 90 Закона о публичной службе. Освобождение от службы в связи с сокращением
+(1) Учреждение может освободить чиновника от службы в связи с сокращением, если:
+4) чиновник назначен на должность, на которую назначается чиновник, восстановленный на службе вследствие его противоправного освобождения от службы.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60108,B601,4,1,ATS § 91 lg 1 vabastamine katseajal ,Probationary period (Employment Contracts Act),"Освобождение во время испытательного срока, ч.1 ст.91 (ATS)","ATS § 91. Teenistusest vabastamine katseaja ebarahuldavate tulemuste tõttu
+(1) Katseaja ebarahuldavate tulemuste tõttu võib ametniku teenistusest vabastada ainult juhul, kui tema töökogemus, teadmised ja oskused ei vasta piisavalt teenistusülesannete täitmiseks kehtestatud nõuetele.","§ 91 of the Civil Service Act. Release from service due to unsatisfactory results of probationary period
+(1) An official may be released from service due to unsatisfactory results of the probationary period only in the case that his or her work experience, knowledge and skills do not sufficiently meet the requirements established for the performance of duties.","Статья 91 Закона о публичной службе. Освобождение от службы вследствие неудовлетворительных результатов испытательного срока
+(1) Чиновник может быть освобожден от службы вследствие неудовлетворительных результатов испытательного срока только в случае, когда его опыт работы, знания и умения не соответствуют в достаточной степени требованиям, установленным для выполнения служебных обязанностей.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60109,B601,4,1,ATS § 92 lg 1 ettenägematud asjaolud,"Unforeseeable circumstances, § 92 (1) of Civil Service Act","Освобождение по непредвиденным обстоятельствам, ч.1 ст.92 (ATS)","ATS § 92. Teenistusest vabastamine ettenägematute asjaolude ilmnemise tõttu
+(1) Ametniku võib teenistusest vabastada asjaolu tõttu, millest nähtub ametniku teadmiste ja oskuste vähesus teenistusülesannete täitmiseks kehtestatud nõuetele vastavas ulatuses ning mis ei võimalda tal teenistussuhet jätkata ja mida ei saanud ette näha ametniku teenistusse võtmisel ega katseaja kestel.","§ 92 of the Civil Service Act. Release from service due to unforeseeable circumstances
+(1) An official may be released from service due to a circumstance which reveals the deficiency of the knowledge and skills of an official in the extent corresponding to the requirements established for the performance of the functions, which does not allow him or her to continue the service relationship and which could not be foreseen upon employment in service of the official or during the probationary period.","Статья 92 Закона о публичной службе. Освобождение от службы вследствие выявления непредвиденных обстоятельств
+(1) Чиновник может быть освобожден от службы в связи с выявлением обстоятельства, из которого явствует недостаточность знаний и умений чиновника в объеме, соответствующем требованиям, установленным для выполнения служебных обязанностей, которая не позволяет чиновнику продолжать служебные отношения и которую невозможно было предусмотреть при приеме чиновника на службу или в течение испытательного срока.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60110,B601,4,1,ATS § 93 lg 1 töövõime vähenemine ,"Decrease in capacity for work, § 93 (1) of Civil Service Act","Уменьшение трудоспособности, ч.1 ст.93 (ATS)","ATS § 93.  Teenistusest vabastamine töövõime vähenemise tõttu
+(1) Ametniku võib teenistusest vabastada töövõime vähenemise tõttu, kui ametnik ei saa oma teenistusülesandeid täita üle nelja kuu järjest või üle viie kuu aasta jooksul.","§ 93 of the Civil Service Act. Release from service due to decrease in capacity for work
+(1) An official may be released from work due to decrease in the capacity for work if the official is not capable of performing the functions for over four consecutive months or over five months within a year.","Статья 93 Закона о публичной службе. Освобождение от службы вследствие уменьшения трудоспособности
+(1) Чиновник может быть освобожден от службы вследствие уменьшения трудоспособности, если чиновник не может выполнять свои служебные обязанности более четырех месяцев подряд или более пяти месяцев в течение года.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60111,B601,4,1,ATS § 94 lg 1 distsiplinaarsüütegu,"Disciplinary offence, § 94 (1) of Civil Service Act","Дисциплинарное виновное деяние, ч.1 ст.94 (ATS)","ATS § 94.  Teenistusest vabastamine distsiplinaarsüüteo eest
+(1) Ametniku võib teenistusest vabastada käesoleva seaduse § 70 punktis 3 sätestatud distsiplinaarkaristusena käesoleva seaduse § 75 lõikes 4 sätestatud tingimusel.","§ 94 of the Civil Service Act. Release from service for disciplinary offence
+(1) An official may be released from service as a disciplinary penalty on the basis provided for in clause 3 of § 70 of this Act under the condition provided for in subsection 4 of § 75 of this Act.","Статья 94 Закона о публичной службе. Освобождение от службы за дисциплинарное виновное деяние
+(1) Чиновник может быть освобожден от службы в качестве меры дисциплинарного взыскания, установленной пунктом 3 статьи 70 настоящего Закона, на условиях, установленных частью 4 статьи 75 настоящего Закона.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60112,B601,4,1,ATS § 95 lg 1 välistavad asjaolud,"Circumstances which preclude recruitment, § 95 (1) of Civil Service Act","Исключающие обстоятельства, ч.1 ст.95 (ATS)","ATS § 95. Teenistusest vabastamine asjaolude tõttu, mis välistaksid ametniku teenistusse võtmise
+(1) Ametnik vabastatakse teenistusest, kui ilmnevad või tekivad asjaolud, mis välistaksid tema teenistusse võtmise tulenevalt käesoleva seaduse § 14 lõikest 1 või 2 või §-st 15.","§ 95 of the Civil Service Act. Release from service due to circumstances which would preclude recruitment of official
+(1) An official shall be released from service if circumstances appear or arise which would preclude the recruitment of the official pursuant to subsection 1 or 2 of § 14 or § 15 of this Act.","Статья 95 Закона о публичной службе. Освобождение от службы вследствие наличия обстоятельств, которые исключили бы прием чиновника на службу
+(1) Чиновник освобождается от службы, если выявляются или возникают обстоятельства, которые исключили бы его прием на службу, исходя из части 1 или 2 статьи 14 или статьи 15 настоящего Закона. ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60113,B601,4,1,ATS § 96 lg 1 koostöö mittelaabumine ,"Failure of co-operation, § 96 (1) of Civil Service Act","Отсутствие согласованности действий, ч.1 ст.96 (ATS)","ATS § 96.  Ministeeriumi kantsleri vabastamine koostöö mittelaabumise tõttu
+(1) Ministeeriumi kantsler vabastatakse teenistusest, kui ministri hinnangul ministri ja kantsleri koostöö ei laabu.","§ 96 of the Civil Service Act. Release of secretary general of ministry due to failure of co-operation
+(1) A secretary general of a ministry shall be released from service if, according to the assessment of a minister, the co-operation between the minister and the secretary general fails.","Статья 96 Закона о публичной службе. Освобождение канцлера министерства вследствие отсутствия согласованности действий
+(1) Канцлер министерства освобождается от службы, если, по оценке министра, отсутствует согласованность действий министра и канцлера.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60115,B601,4,1,ATS § 99  ametniku surm,"Death of an official, § 99 of Civil Service Act","Смерть чиновника, ст.99 (ATS)","ATS § 99. Teenistussuhte lõppemine surma korral
+Ametniku surma korral on teenistussuhte viimane päev surma päev.","§ 99 of the Civil Service Act. Termination of service relationship upon death
+Upon the death of an official the last day of the service relationship is deemed to be the date of death.","Статья 99 Закона о публичной службе. Прекращение служебных отношений в случае смерти
+В случае смерти чиновника последним днём служебных отношений является день смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60116,B601,4,1,ATS § 46 abikaasatasu lõppemine,"Termination of allowance for spouse, § 46 of Civil Service Act",Статья 46 Закона о публичной службе,ATS § 46 abikaasatasu lõppemine,§ 46 of the Civil Service Act. Termination of allowance for spouse,Статья 46 Закона о публичной службе. Прекращение выплаты супружеского вознаграждения,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60117,B601,4,1,ATS § 89 lg 2 valimine teisele ametikohale,"Election to another post, § 89 (2) of Civil Service Act","Избрание на другую должность, ч.2 ст.89 (ATS)","ATS § 89.  Teenistusest vabastamine käesoleva seaduse § 2 lõikes 3 nimetatud ametikohale nimetamise ja valimise korral
+(2) Kui ametnik asub Euroopa Parlamendi liikme kohale, siis tema teenistussuhte viimane päev on vastavalt Euroopa Parlamendi valimise seaduse § 72 lõikes 4 sätestatule Vabariigi Valimiskomisjoni Euroopa Parlamendi töös osalemise soovist teavitamise päev.","§ 89 of the Civil Service Act. Release from service upon appointment or election to post specified in subsection 3 of § 2
+(2) If an official assumes the post of a member of the European Parliament, the last day of his or her service relationship is, pursuant to the provisions of subsection 4 of § 72 of the European Parliament Election Act, the date of the notification of the National Electoral Committee of the desire to participate in the work of the European Parliament.","Статья 89 Закона о публичной службе. Освобождение от службы при назначении и избрании на должность, указанную в части 3 статьи 2 настоящего Закона
+(2) Если чиновник занимает место члена Европейского парламента, то последним днем его служебных отношений в соответствии с положениями части 4 статьи 72 Закона о выборах в Европейский парламент является день извещения Республиканской избирательной комиссии о желании участвовать в работе Европейского парламента.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60118,B601,4,1,ATS § 89 lg 3 valimine teisele ametikohale,"Election to another post, § 89 (3) of Civil Service Act","Избрание на другую должность, ч.3 ст.89 (ATS)","ATS § 89. Teenistusest vabastamine käesoleva seaduse § 2 lõikes 3 nimetatud ametikohale nimetamise ja valimise korral
+(3) Kui ametnik nimetatakse käesoleva seaduse § 2 lõike 3 punktides 5–8 nimetatud ametikohale, siis tema teenistussuhte viimane päev on sellele ametikohale nimetamise päevale eelnev päev.","§ 89 of the Civil Service Act. Release from service upon appointment or election to post specified in subsection 3 of § 2
+(3) If an official is appointed to the post specified in clauses 5–8 of subsection 3 of § 2 of this Act, the last day of his or her service relationship is the date prior to the day of appointment to this post.","Статья 89 Закона о публичной службе. Освобождение от службы при назначении и избрании на должность, указанную в части 3 статьи 2 настоящего Закона
+(3) Если чиновник назначается на должность, указанную в пунктах 5 – 8 части 3 статьи 2 настоящего Закона, то последним днем его служебных отношений является день, предшествующий дню назначения на эту должность.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60119,B601,4,1,ATS § 89 lg 4 valimine teisele ametikohale,"Election to another post, § 89 (4) of Civil Service Act","Избрание на другую должность, ч.4 ст.89 (ATS)","ATS § 89. Teenistusest vabastamine käesoleva seaduse § 2 lõikes 3 nimetatud ametikohale nimetamise ja valimise korral
+(4) Kui ametnik valitakse vallavanemaks või linnapeaks, siis tema teenistussuhte viimane päev on vastavalt kohaliku omavalitsuse korralduse seaduse § 50 lõikes 2 sätestatule ametiasutust enda valimisest teavitamise päev.","§ 89 of the Civil Service Act. Release from service upon appointment or election to post specified in subsection 3 of § 2
+(4) If an official is elected to the office of a rural municipality mayor or a city mayor, the last day of his or her service relationship is, pursuant to the provisions of subsection 2 of § 50 of the Local Government Organisation Act, the day of notifying the authority about the election of him or her.","Статья 89 Закона о публичной службе. Освобождение от службы при назначении и избрании на должность, указанную в части 3 статьи 2 настоящего Закона
+(4) Если чиновник избирается волостным старшиной или мэром города, то последним днем его служебных отношений в соответствии с положениями части 2 статьи 50 Закона о местном самоуправлении является день извещения учреждения о его избрании.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60120,B601,4,1,ATS § 98 lg 1 p 5 tähtajatu üleviimine,"Transfer for unspecified term, § 98 (1) 5) of Civil Service Act","Бессрочный перевод, п.5 ч.1 ст. 98 (ATS)","ATS § 98. Ametniku tähtajatu üleviimine
+(1) Ametnik viiakse tähtajatult üle teisele ametikohale, kui:
+5) ametnik nõustub asuma ametikohale teises riigi ametiasutuses või teises sama kohaliku omavalitsuse üksuse ametiasutuses.","§ 98 of the Civil Service Act. Transfer of official for unspecified term
+(1) An official shall be transferred to another post for an unspecified term if:
+5) the official consents to assume a post in another state authority or another authority of the same local government.","Статья 98 Закона о публичной службе. Бессрочный перевод чиновника
+(1) Чиновник переводится на другую должность бессрочно, если:
+5) чиновник согласен вступить в должность в другом государственном учреждении или в другом учреждении той же единицы местного самоуправления.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60121,B601,4,1,ATS § 33 lg 10 tähtajaline üleviimine,"Transfer for specified term, § 33 (10) of Civil Service Act","Перевод на определённый срок, ч.11 ст.33 (ATS)","ATS § 33. Ametniku tähtajaline üleviimine
+(10) Tähtajalise üleviimise võib kõigi osapoolte nõusolekul enne tähtaja lõppu lõpetada.","§ 33 of the Civil Service Act. Temporary transfer of official
+(10) The transfer for a specified term may be terminated with the consent of all parties before the expiry of term.","Статья 33 Закона о публичной службе.  Перевод чиновника на определенный срок
+(10) Перевод на определенный срок может быть прекращен до окончания его срока с согласия всех сторон.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60122,B601,4,1,ATS § 105 lg 1 õigusvastaselt teenistusest vabastamine,Unlawfully released from service § 105 (1) of Civil Service Act,"Противоправное освобождение от службы, ч.1 ст.105 (ATS)","ATS § 105.  Nõudeõigus õigusvastaselt teenistusest vabastamise korral
+(1) Õigusvastaselt teenistusest vabastatud ametnikul on õigus nõuda vabastamise kohta antud haldusakti õigusvastaseks tunnistamist, teenistusest vabastamise aluse muutmist ning hüvitist ametniku kolme kuu keskmise palga ulatuses. Kohus võib hüvitise suurust muuta, arvestades teenistussuhte lõpetamise asjaolusid ja mõlema poole huve.","§ 105 of the Civil Service Act. Right of claim upon unlawful release from service
+(1) An official who is unlawfully released from service has the right to demand that the administrative act on his or her release from service be declared unlawful and to demand amendment of the basis for the release from service and compensation in the amount of the three months' average salary of the official. The court may amend the amount of compensation taking account of the circumstances of the termination of the service relationship and considering mutual interests.","Статья 105 Закона о публичной службе. Право требования при противоправном освобождении от службы
+(1) Чиновник, противоправно освобожденный от службы, вправе требовать признания административного акта, изданного об освобождении от службы, противоправным, изменения основания освобождения от службы и возмещения в размере средней заработной платы чиновника за три месяца. Суд может изменить размер возмещения с учетом обстоятельств прекращения служебных отношений и интересов обеих сторон.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60123,B601,4,1,ATS § 105 lg 2 õigusvastaselt teenistusest vabastamine,Unlawfully released from service § 105 (2) of Civil Service Act,"Противоправное освобождение от службы, ч.2 ст.105 (ATS)","ATS § 105. Nõudeõigus õigusvastaselt teenistusest vabastamise korral
+2) Ametnikul, kes on rase, kellel on õigus emapuhkusele, isapuhkusele või lapsendajapuhkusele, kes kasvatab alla seitsmeaastast last või kes on valitud ametnike esindajaks, on õigusvastaselt teenistusest vabastamise korral õigus nõuda vabastamise kohta antud haldusakti õigusvastaseks tunnistamist, teenistusest vabastamise aluse muutmist ja hüvitist oma 12 kuu keskmise palga ulatuses. Kohus võib hüvitise suurust muuta, arvestades teenistussuhte lõpetamise asjaolusid ja mõlema poole huve.","§ 105 of the Civil Service Act. Right of claim upon unlawful release from service
+(2) An official who is pregnant, who has the right to pregnancy and maternity leave, is raising a child under seven years of age or who has been elected a representative of officials, is entitled to demand that the administrative act on his or her release from service be declared unlawful upon unlawful release from service, demand amendment of the basis for the release from service and compensation in the amount of the 12 months' average salary of the official. The court may amend the amount of compensation, taking account of the circumstances for the termination of the service relationship and considering mutual interests.","Статья 105 Закона о публичной службе. Право требования при противоправном освобождении от службы
+2) Чиновник, который находится в состоянии беременности, имеет право на отпуск по беременности и родам, воспитывает ребенка в возрасте до семи лет или избран представителем чиновников, в случае противоправного освобождения от службы имеет право требовать признания административного акта, изданного об освобождении от службы, противоправным, изменения основания освобождения от службы и возмещения в размере средней заработной платы чиновника за 12 месяцев. Суд может изменить размер возмещения с учетом обстоятельств прекращения служебных отношений и интересов обеих сторон.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B602,B6,3,0,Kaitseväeteenistuse seadus (KVTS),Military Service Act,Закон о службе в силах обороны (KVTS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60201,B602,4,1,KVTS § 139 lg 1 p 2 lõppemine surmaga,"Upon death, § 139 (1) 2) of Military Service Act","Прекращение в связи со смертью, п.2 ч.1 ст.139 (KVTS)","KVTS  § 139. Tegevteenistussuhte lõppemine
+(1) Tegevteenistussuhe lõpeb tegevväelase 
+2) surma korral","§ 139 of the Military Service Act. Termination of active service relationship
+(1) The active service relationship shall terminate for an active serviceman:
+2) upon death.","Статья 139 Закона о службе в силах обороны. Прекращение служебных отношений
+(1) Отношения действительной службы заканчиваются для военнослужащего 
+2) в случае смерти",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60202,B602,4,1,KVTS § 140 lg 1 p 1 omal soovil,"At own request, § 140 (1) 1) of Military Service Act","По собственному желанию, п.1 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+1) omal soovil","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+1) at his or her own request;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+1) по собственному желанию",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60203,B602,4,1,KVTS § 140 lg 1 p 2 tähtaja lõppemisel,"Expiry of term, § 140 (1) 2) of Military Service Act","По окончанию срока, п.2 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+2) tegevteenistuse tähtaja lõppemisel","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+2) upon the expiry of the term of active service;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+2) по окончанию срочной службы",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60204,B602,4,1,KVTS § 140 lg 1 p 4 mittevastavus,"Noncompliance, § 140 (1) 4) of Military Service Act","По несоответствию, п.4 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+4) tegevteenistusse võtmise nõuetele mittevastavuse korral;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+4) in the event of the noncompliance with the requirements for acceptance for active service;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+4) в случае несоответствия требованиям для принятия на действительную службу;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60205,B602,4,1,KVTS § 140 lg 1 p 5 mittevastavus,"Noncompliance, § 140 (1) 5) of Military Service Act","По несоответствию, п.5 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+5) rahuaja ametikoha nõuetele mittevastavuse korral;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+5) in the event of the noncompliance with the requirements for a peacetime post;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+5) при несоблюдении требований положения мирного времени;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60206,B602,4,1,KVTS § 140 lg 1 p 6 süüdimõistev otsus,"Conviction, § 140 (1) 6) of Military Service Act","Обвинительный приговор, п.6 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+6) süüdimõistva kohtuotsuse jõustumisel;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+6) upon the entry into force of the conviction;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+6) при вступлении в законную силу обвинительного приговора;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60207,B602,4,1,KVTS § 140 lg 1 p 7 distsiplinaarsüütegu,"Disciplinary offence, § 140 (1) 7) of Military Service Act","Дисциплинарное правонарушение, п.7 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+7) distsiplinaarsüüteo korral;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+7) in the event of a disciplinary offence;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+7) при совершении дисциплинарного проступка;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60208,B602,4,1,KVTS § 140 lg 1 p 8 koondamine,"Lay-off, § 140 (1) 8) of Military Service Act","Сокращение, п.8 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+8) koondamise korral;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+8) in the event of lay-off;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+8) при сокращении штата;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60209,B602,4,1,KVTS § 140 lg 1 p 9 Kaitseväe ettepanekul,"Proposal of the Defence Forces, § 140 (1) 9) of Military Service Act","По предложению Сил обороны, п.9 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+9) Kaitseväe ettepanekul;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+9) on the proposal of the Defence Forces;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+9) по предложению Сил обороны;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60210,B602,4,1,KVTS § 140 lg 1 p 10 eksmatrikuleerimisel ,"Exmatriculation, § 140 (1) 10) of Military Service Act","Эксматрикуляция, п.10 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused 
+(1) Tegevväelane vabastatakse tegevteenistusest:
+p 10 eksmatrikuleerimisel enne õppekava täitmist juhul, kui isikut ei nimetata teisele rahuaja ametikohale;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+10) upon the exmatriculation before the completion of the study programme in case the person is not appointed to another peacetime post;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+10) при отчислении до завершения обучения, если лицо не назначено на другую должность мирного времени;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60211,B602,4,1,KVTS § 140 lg 1 p 11 teine ametikoht,"Another post, § 140 (1) 11) of Military Service Act","Другая должность, п.11 ч.1 ст.140 (KVTS)","KVTS § 140. Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+11) kaitseväeteenistusvälisele ametikohale nimetamisel;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+11) upon the appointment to a post outside military service;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+11) при назначении на должность вне воинской службы;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60212,B602,4,1,KVTS § 140 lg 1 p 12 teine ametikoht,"Another post, § 140 (1) 12) of Military Service Act","Другая должность, п.12 ч.1 ст.140 (KVTS)","KVTS § 140.  Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest:
+12) Riigikogu, Euroopa Parlamendi või kohaliku omavalitsuse volikogu liikmeks asumisel;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+12) upon becoming a member of the Riigikogu, the European Parliament of local government council;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+12) при вступлении в состав Рийгикогу, Европейского парламента или совета местного самоуправления;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60213,B602,4,1,KVTS § 140 lg 1 p 13 ettenägematu asjaolu,"Unexpected circumstances, § 140 (1) 13) of Military Service Act","Непредвиденное обстоятельство, п.13 ч.1 ст.140 (KVTS)","KVTS § 140.  Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest: 
+13) ettenägematute asjaolude ilmnemisel.","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+13) when unexpected circumstances become evident.","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+13) при возникновении непредвиденных обстоятельств.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60214,B602,4,1,KVTS § 140 lg 1 p 3 piirvanuse täitmine,"Reaching the age limit, § 140 (1) 3) of Military Service Act","Достижение возрастного предела, п.3 ч.1 ст.140 (KVTS)","KVTS§ 140.  Tegevteenistusest vabastamise alused
+(1) Tegevväelane vabastatakse tegevteenistusest: 
+3) piirvanuse täitumisel;","§ 140 of the Military Service Act. Bases for release from active service
+(1) An active serviceman shall be released from active service:
+3) upon reaching the age limit;","Статья 140 Закона о службе в силах обороны. Основания для освобождения от действительной службы
+(1) Военнослужащий освобождается от действительной службы:
+3) по достижении предельного возраста;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B603,B6,3,0,Politsei ja piirivalve seadus (PPVS),Police and Border Guard Act,Закон о полиции и пограничной охране (PPVS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60304,B603,4,1,PPVS § 67⁶ politseiametniku teiselt ametikohalt vabastamine ja töölepingu ülesütlemine enne tähtaja möödumist,"Release of police officer from another position and cancellation of employment contract prior to expiry of term, § 67⁶ of Police and Border Guard Act","Освобождение чиновника полиции от другой должности или отказ от трудового договора до истечения срока, ст.§ 67⁶ (PPVS)","PPVS § 67⁶. Politseiametniku teiselt ametikohalt vabastamine ja töölepingu ülesütlemine enne tähtaja möödumist
+Vastuvõttev asutus võib politseiametniku enne tähtaja lõppu ametikohalt vabastada või töölepingu üles öelda, teatades sellest politseiametnikule ja politseiametniku lähetanud asutusele üldjuhul vähemalt kolm kuud ette.","§ 67⁶ of the Police and Border Guard Act. Release of police officer from another position and cancellation of employment contract prior to expiry of term
+A host authority may release a police officer from position or cancel their employment contract before the prescribed term by notifying the police officer and the authority which posted the police officer at least three months in advance, in general.","Статья 67⁶ Закона о полиции и пограничной охране.  Освобождение чиновника полиции от другой должности или отказ от трудового договора до истечения срока
+Принимающее учреждение может до окончания срока освободить чиновника полиции от должности или отказаться от трудового договора, уведомив об этом чиновника полиции и направляющее учреждение чиновника полиции, как правило, не менее, чем за три месяца.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B604,B6,3,0,Kohtute seadus (KS),Courts Act,Закон о судах (KS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60402,B604,4,1,KS § 99 lg 1 p 1 omal soovil,"At own request, § 99 (1) 1) of Courts Act","По собственному желанию, п.1 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+1) kohtuniku enda soovil;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+1) at the request of the judge;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+1) по собственному желанию;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60403,B604,4,1,KS § 99 lg 1 p 2 vanuse tõttu,"Due to age, § 99 (1) 2) of Courts Act","По возрасту, п.2 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+2) vanuse tõttu;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+2) due to age;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+2) по возрасту;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60404,B604,4,1,KS § 99 lg 1 p 3 sobimatuse tõttu,"Due to unsuitability, § 99 (1) 3) of Courts Act","Несоответствие занимаемой должности, п.3 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+3) ametisse sobimatuse tõttu – kolme aasta jooksul pärast ametissenimetamist;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+3) due to unsuitability for office – within three years after appointment to office;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+3) вследствие обнаружившегося несоответствия занимаемой должности – в течение трех лет со дня назначения на должность;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60405,B604,4,1,KS § 99 lg 1 p 4 tervise tõttu,"Due to health reasons, § 99 (1) 4) of Courts Act","По состоянию здоровья, п.4 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+4) tervise tõttu, mis takistab kohtunikuna töötada;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+4) due to health reasons which hinder work as a judge;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+4) по состоянию здоровья, которое препятствует работе в должности судьи;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60406,B604,4,1,KS § 99 lg 1 p 5 kohtunike vähendamine,"Reduction of the number of judges, § 99 (1) 5) of Courts Act","Сокращение численности судей, п.5 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist: 
+5) kohtu likvideerimise või kohtumaja sulgemise või kohtunike arvu vähendamise korral;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+5) upon liquidation of a court or closure of a courthouse or reduction of the number of judges;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+5) в случае ликвидации суда, закрытия судебного дома, или сокращения численности судей;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60407,B604,4,1,KS § 99 lg 1 p 6 teine ametikoht,"Another post, § 99 (1) 6) of Courts Act","Другая должность, п.6 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+1) Kohtunik vabastatakse ametist:
+6) kui on lõppenud väljaspool kohut töötamise tähtaeg ja kohtunik ei ole esitanud käesoleva seaduse § 584 lõikes 5 nimetatud tagasipöördumise teadet;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+6) where the term of working outside court has expired and the judge has not submitted the notice of return specified in subsection 5 of § 584 of this Act.","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+6) если истёк срок работы вне суда и судья не представил уведомление о возвращении, указанное в части 5 статьи 584 настоящего Закона;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60408,B604,4,1,KS § 99 lg 1 p 7 teine ametikoht,"Another post, § 99 (1) 7) of Courts Act","Другая должность, п.7 ч.1 ст.99 (KS)","KS § 99.   Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+7) kui kohtunik nimetatakse või valitakse teenistus- või ametikohale, mis ei ole kooskõlas kohtuniku ametikitsendustega;","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+7) where a judge is appointed or elected to a position or office which is not in compliance with the restrictions on services of judges;","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+7) в случае назначения или избрания судьи на место службы или на должность, не совместимую с должностными ограничениями в отношении судьи;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60409,B604,4,1,KS § 99 lg 1 p 8 välistav asjaolu,"Circumstances which preclude appointment, § 99 (1) 8) of Courts Act","Исключающее обстоятельство, п.8 ч.1 ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1) Kohtunik vabastatakse ametist:
+8) kui ilmneb asjaolu, mis seaduse kohaselt välistab isiku kohtunikuks nimetamise.","§ 99 of the Courts Act. Release of judges from office
+(1) A judge is released from office:
+8) where facts become evident which pursuant to law preclude the appointment of the person as a judge.","Статья 99 Закона о судах. Освобождение судьи от должности
+(1) Судья освобождается от должности:
+8) в случае обнаружения обстоятельства, которое, согласно закону, исключает возможность назначения лица на должность судьи.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60410,B604,4,1,KS § 99 lg 1² kohtuniku surm,"Death of judge, § 99 (1²) of Courts Act","Смерть судьи, ч.1² ст.99 (KS)","KS § 99. Kohtuniku ametist vabastamine
+(1² ) Kohtuniku teenistussuhe lõpeb tema surma korral.","§ 99 of the Courts Act. Release of judges from office
+(1² ) The service relationship of a judge terminates upon their death.","Статья 99 Закона о судах. Освобождение судьи от должности
+(1² ) Служебные отношения судьи прекращаются в случае его смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60411,B604,4,1,KS § 88 lg 1 p 4 distsiplinaarsüüteo tõttu teenistusest tagandamine ,"Removal from office due to disciplinary punishment, § 88 (1) 4) of Courts Act","Отстранение от должности за дисциплинарный проступок, ч.4 ст.88 (KS) ","KS § 88. Distsiplinaarkaristused
+(1) Distsiplinaarkaristused on:
+4) ametist tagandamine.","§ 88 of the Courts Act. Disciplinary penalties
+(1) The following are disciplinary penalties:
+4) removal from office.","Статья 88 Закона о судах. Дисциплинарные взыскания  
+(1) Дисциплинарными взысканиями являются: 
+4) отстранение от должности.",,,,,,,,,,,,,,2014-01-01 00:00:00,2023-03-09
+B605,B6,3,0,Prokuratuuriseadus (ProkS),Prosecutor's Office Act,Закон о прокуратуре (ProkS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60501,B605,4,1,ProkS § 45 omal soovil,"At own request, § 45  of Prosecutor's Office Act","По собственному желанию, ст.45 (ProkS)","ProkS § 45. Teenistusest vabastamine omal soovil 
+Prokurör võidakse teenistusest vabastada omal soovil.","§ 45 of the Prosecutor's Office Act. Release from service at own request
+A prosecutor may be released from service at his or her own request.","Статья 45 Закона о прокуратуре. Освобождение от службы по собственному желанию  
+Прокурор может быть освобожден от службы по его собственному желанию.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60502,B605,4,1,ProkS § 47 vanuse tõttu,"Due to age, § 47  of Prosecutor's Office Act","По возрасту, ст.47 (ProkS)","ProkS § 47. Teenistusest vabastamine vanuse tõttu
+Prokuröri võib vabastada teenistusest, kui ta on saanud 65-aastaseks.","§ 47 of the Prosecutor's Office Act. Release from service due to age
+A prosecutor may be released from service when he or she attains 65 years of age.","Статья 47 Закона о прокуратуре. Освобождение от службы по возрасту
+Прокурор может быть освобожден от службы по достижении 65 лет.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60503,B605,4,1,ProkS § 48  pankroti korral,"Due to bankruptcy, § 48  of Prosecutor's Office Act","В случае банкротства, ст.48 (ProkS)","ProkS § 48. Teenistusest vabastamine pankroti korral
+Prokurör vabastatakse teenistusest, kui on välja kuulutatud tema pankrot.
+","§ 48 of the Prosecutor's Office Act. Release from service due to bankruptcy
+A prosecutor shall be released from service if he or she is declared bankrupt.","Статья 48 Закона о прокуратуре. Освобождение от службы в случае банкротства
+Прокурора освобождают от службы в случае объявления его банкротом.
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60504,B605,4,1,ProkS § 49 distsiplinaarsüütegu,"Disciplinary offence, § 49 of Prosecutor's Office Act","Дисциплинарный проступок, ст.49 (ProkS)","ProkS § 49. Teenistusest vabastamine distsiplinaarsüüteo eest
+Distsiplinaarsüüteo eest vabastatakse prokurör teenistusest käesoleva seaduse 5. jaos sätestatud korras.
+","§ 49 of the Prosecutor's Office Act. Release from service for disciplinary offence
+A prosecutor shall be released from service for a disciplinary offence pursuant to the procedure provided for in Subchapter 5 of this Act.","Статья 49 Закона о прокуратуре. Освобождение от службы за совершение дисциплинарного проступка
+Прокурора освобождают от службы за совершение дисциплинарного проступка в порядке, установленном разделом 5 настоящего Закона.
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60505,B605,4,1,ProkS § 50 lg 4 ametiaja lõppemine ,"Expiry of term of office, § 50 (4) of Prosecutor's Office Act","Окончание срока службы, ч.4 ст.50 (ProkS)","ProkS§ 50. Riigi peaprokuröri ning juhtivprokuröri ametist vabastamine ametiaja lõppemise tõttu 
+(4) Kui riigi peaprokurör või juhtivprokurör ei ole nõus käesoleva paragrahvi lõikes 1 sätestatud ametikohale nimetamisega või puudub vaba ametikoht, vabastatakse ta teenistusest.","§ 50 of the Prosecutor's Office Act. Release of Prosecutor General or chief prosecutor from service due to expiry of term of office
+(4) If the Prosecutor General or a chief prosecutor does not consent to be appointed to a position provided for in subsection (1) of this section or if there is no vacant position, he or she shall be released from service.","Статья 50 Закона о прокуратуре. Освобождение от должности генерального прокурора государства и ведущих прокуроров в связи с истечением срока полномочий 
+(4) В случае несогласия генерального прокурора государства или ведущего прокурора с назначением на должность, указанную в части 1 настоящей статьи, или отсутствия вакантной должности он освобождается от службы.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B606,B6,3,0,Vangistusseadus (VangS),Imprisonment Act,Закон о тюремном заключении (VangS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60601,B606,4,1,VangS § 152 lg 1 vanuse tõttu,"Due to age, § 152 (1) of Imprisonment Act","По возрасту, ч.1 ст.152 (VangS)","VangS § 152. Teenistusest vabastamine vanuse tõttu 
+(1) Käesoleva seaduse § 112 lõike 1 punktis 1 nimetatud ametiastmel olev vanglaametnik vabastatakse teenistusest vanglaametnikuna üldise pensioniea saabumisel. Käesoleva seaduse § 112 lõike 1 punktides 2 ja 3 nimetatud ametiastmel olev vanglaametnik vabastatakse teenistusest vanglaametnikuna, kui ta on saanud 60 aastaseks. Käesoleva seaduse § 112 lõikes 1 punktides 4 ja 5 nimetatud vanglaametnik vabastatakse teenistusest vanglaametnikuna, kui ta on saanud 58 aastaseks.","§ 152 of the Imprisonment Act. Release from service due to age
+(1) Prison officers who serve in the official rank specified in clause 1 of subsection 1 of § 112 of this Act shall be released from service as prison officers when they attain the general pensionable age. Prison officers who serve in the official ranks specified in clauses 2 and 3 of subsection 1 of § 112 of this Act shall be released from service as a prison officer when they attain 60 years of age. Prison officers specified in clauses 4 and 5 of sebsection 1 of § 112 of this Act shall be released from service as a prison officer when they attain 58 years of age.","Статья 152 Закона о тюремном заключении. Освобождение со службы по возрасту 
+(1) Тюремные чиновники, имеющие классный чин, указанный в пункте 1 части 1 статьи 112 настоящего Закона, освобождаются со службы в качестве тюремного чиновника по достижении ими общего пенсионного возраста. Тюремные чиновники, имеющие классные чины, указанные в пунктах 2 и 3 части 1 статьи 112 настоящего Закона, освобождаются со службы в качестве тюремного чиновника по достижении ими возраста 60 лет. Тюремные чиновники, имеющие классные чины, указанные в пунктах 4 и 5 части 1 статьи 112 настоящего Закона, освобождаются со службы в качестве тюремного чиновника по достижении ими возраста 58 лет.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60603,B606,4,1,VangS § 154 lg 2 ettevalmistusteenistuse mitteläbimine,"Failure to complete preparatory service, § 154 (2) of Imprisonment Act","Не пройдена подготовительная служба, ч.2 ст.154 (VangS)","Vangs § 154. Teenistusest vabastamine ettenägematute asjaolude ilmnemise ja ametiastmele mittevastavuse tõttu 
+(2) Vanglaametnik vabastatakse ametikohale mittevastavuse tõttu teenistusest, kui ta ei ole ettenähtud tähtaja jooksul läbinud ametisse nimetamise tingimuseks olnud ettevalmistusteenistust.","§ 154 of the Imprisonment Act. Release from service upon occurrence of unforeseen circumstances and unsuitability for position or official rank
+(2) A prison officer shall be released from service due to unsuitability for position if he or she fails to complete the preparatory service which was the condition for appointment to office during the prescribed term.","Статья 154 Закона о тюремном заключении. Освобождение от службы в связи с возникновением непредвиденных обстоятельств и вследствие несоответствия классному чину
+(2) Тюремный чиновник освобождается от службы вследствие несоответствия должности, если он не прошел в течение предусмотренного срока подготовительную службу, являвшуюся условием назначения на должность.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60604,B606,4,1,VangS § 154 lg 1 ettenägematute asjaolude ilmnemine,"Occurrence of unforeseen circumstances, § 154 (1) of Imprisonment Act","Непредвиденные обстоятельства, ч.1 ст.154 (VangS)","Vangs § 154. Teenistusest vabastamine ettenägematute asjaolude ilmnemise ja ametiastmele mittevastavuse tõttu  
+(1) Vanglaametnik vabastatakse ettenägematute asjaolude ilmnemise tõttu teenistusest avaliku teenistuse seaduse §-s 92 sätestatud tingimustel ja korras.","§ 154 of the Imprisonment Act. Release from service upon occurrence of unforeseen circumstances and unsuitability for position or official rank
+(1) Prison officers are released from service due to occurrence of unforeseen circumstances under the conditions and pursuant to the procedure provided for in § 92 of the Public Service Act.","Статья 154 Закона о тюремном заключении. Освобождение от службы в связи с возникновением непредвиденных обстоятельств и вследствие несоответствия классному чину  
+(1) Тюремный чиновник освобождается от службы в связи с возникновением непредвиденных обстоятельств на условиях и в порядке, установленных статьей 92 Закона о публичной службе.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60605,B606,4,1,VangS § 153 ametivande andmisest keeldumine,"Refusal to take oath of office, § 153 of Imprisonment Act","Отказ от принесения должностной присяги, ст.153 (VangS)","VangS § 153. Teenistusest vabastamine ametivande andmisest keeldumise tõttu
+Vanglaametnik, kes keeldub ametivande andmisest, vabastatakse teenistusest vande andmisest keeldumise päeval.
+","§ 153 of the Imprisonment Act. Release from service due to refusal to take oath of office
+A prison officer who refuses to take the oath of office shall be released from service on the date of his or her refusal to take the oath.","Статья 153 Закона о тюремном заключении. Освобождение со службы в связи с отказом от принесения должностной присяги
+Тюремный чиновник, отказавшийся от принесения должностной присяги, освобождается со службы в день отказа от принесения присяги.
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60607,B606,4,1,VangS § 128 lg 1 p 1 üleviimine omal soovil,"Transfer on proposal of a prison officer, § 128 (1) 1) of Imprisonment Act","Перевод по собственному желанию, п.1 ч.1 ст.128 (VangS)","VangS § 128. Vanglaametniku üleviimine
+(1) Vanglaametnikku võib ühelt ametikohalt teisele üle viia:
+1)  vanglaametniku ettepanekul ","§ 128 of the Imprisonment Act. Transfer of prison officers
+(1) A prison officer may be transferred to another position in the following cases:
+1) on proposal of a prison officer;","Статья 128 Закона о тюремном заключении. Перевод тюремного чиновника
+(1) Тюремный чиновник может быть переведен с одной должности на другую:
+1) по предложению тюремного чиновника",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60608,B606,4,1,VangS § 128 lg 1 p 2 üleviimine õigust omava isiku algatusel,"Transfer on initiative of a person who has the authority to transfer prison officers, § 128 (1) 2) of Imprisonment Act","Перевод по инициативе лица, обладающего правом перевода, п.2 ч.1 ст.128 (VangS)","VangS § 128. Vanglaametniku üleviimine
+(1) Vanglaametnikku võib ühelt ametikohalt teisele üle viia
+2) vanglaametniku üleviimise õigust omava isiku algatusel","§ 128 of the Imprisonment Act. Transfer of prison officers
+(1) A prison officer may be transferred to another position in the following cases:
+2) on initiative of a person who has the authority to transfer prison officers to other positions.","Статья 128 Закона о тюремном заключении. Перевод тюремного чиновника
+(1) Тюремный чиновник может быть переведен с одной должности на другую:
+2) по инициативе лица, обладающего правом перевода тюремного чиновника.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60609,B606,4,1,VangS § 129 lg 1  tähtajaline üleviimine teise riigiasutusse,"Transfer to another state agency for fixed term, § 129 (1) of Imprisonment Act","Перевод на государственную службу на другую должность, ч.1 ст. 129 (VangS)","VangS § 129. Vanglaametniku üleviimine muule ametikohale riigiasutuses
+(1) Vanglaametniku võib tema nõusolekul üle viia riigiteenistusse muule ametikohale, mis ei kuulu vanglateenistusse.","§ 129 of the Imprisonment Act. Transfer of prison officer to other positions in state agencies
+(1) A prison officer may be transferred with his or her consent to other positions of state service which do not belong to prison service.","Статья 129 Закона о тюремном заключении. Перевод тюремного чиновника на другую должность в государственном учреждении
+(1) Тюремный чиновник может быть переведен с его согласия на государственную службу на другую должность, которая не относится к тюремной службе.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B607,B6,3,0,Õiguskantsleri seadus (ÕKS),Chancellor of Justice Act,Закон о канцлере юстиции (ÕKS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60701,B607,4,1,ÕKS § 8 p 1 tähtaja möödumine,"Expiry of term, § 8 1) of Chancellor of Justice Act","Истечение срока, п.1 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+1) käesoleva seaduse §-s 5 tähendatud seitsmeaastase tähtaja möödumise päevast;","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+1) as of the date of expiry of the seven-year term referred to in § 5 of this Act;","Статья 8 Закона о канцлере юстиции. Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+1) со дня истечения, указанного в статье 5 настоящего Закона, семилетнего срока;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60702,B607,4,1,ÕKS § 8 p 2 tagasiastumine,"Resignation, § 8 2) of Chancellor of Justice Act","Отставка, п.2 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+2) tema ametist tagasiastumise päevast;","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+2) as of the date of their resignation from office;","Статья 8 Закона о канцлере юстиции.  Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+2) со дня ухода его в отставку;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60703,B607,4,1,ÕKS § 8 p 3 kestev töövõimetus ,"Extended inability to perform functions, § 8 3) of Chancellor of Justice Act","Постоянная нетрудоспособность, п.3 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+3) tema kestva võimetuse korral üle kuue kuu järjest täita oma ametiülesandeid – Riigikohtu üldkogu otsuse jõustumise päevast;","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+3) as of the date of entry into force of a judgment of the Supreme Court en banc in the case of their permanent incapability to perform their duties for more than six consecutive months;","Статья 8 Закона о канцлере юстиции. Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+3) в случае его стойкой неспособности исполнять свои служебные обязанности более шести месяцев подряд - со дня вступления в законную силу решения пленума Государственного суда;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60704,B607,4,1,ÕKS § 8 p 4  süüdimõistev kohtuotsus,"Judgment of conviction, § 8 4) of Chancellor of Justice Act","Обвинительный приговор суда, п.4 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+4) tahtlikult toimepandud kuriteo eest süüdi mõistva kohtuotsuse jõustumise päevast;
+ ","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+4) as of the date of entry into force of a judgment of conviction against them for an intentionally committed criminal offence;","Статья 8 Закона о канцлере юстиции. Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+4) со дня вступления в законную силу обвинительного приговора в связи с умышленно совершенным преступлением;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60705,B607,4,1,ÕKS § 8 p 5 süüdimõistev kohtuotsus,"Judgment of conviction, § 8 5) of Chancellor of Justice Act","Обвинительный приговор суда, п.5 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+5) ettevaatamatuse tõttu toimepandud kuriteo eest süüdi mõistva kohtuotsuse, millega on ette nähtud vabaduskaotuslik karistus, jõustumise päevast;
+","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+5) as of the date of entry into force of a judgment of conviction against them which prescribes imprisonment for a criminal offence committed due to negligence;","Статья 8 Закона о канцлере юстиции. Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+5) со дня вступления в законную силу обвинительного приговора, которым предусмотрено наказание в виде лишения свободы, в связи с преступлением, совершенным по неосторожности;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60706,B607,4,1,ÕKS § 8 p 6 õiguskantsleri surm,"Death of Chancellor of Justice, § 8 6) of Chancellor of Justice Act","Смерть канцлера юстиции, п.6 ст.8 (ÕKS)","ÕKS § 8. Õiguskantsleri volituste lõppemine
+Õiguskantsleri volitused loetakse lõppenuks:
+6) tema surma korral.","§ 8 of the Chancellor of Justice Act. Termination of mandate of Chancellor of Justice
+The mandate of the Chancellor of Justice is deemed to be terminated:
+6) upon their death.","Статья 8 Закона о канцлере юстиции. Прекращение полномочий канцлера юстиции 
+Полномочия канцлера юстиции считаются прекращенными:
+6) в случае его смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60707,B607,4,1,ÕKS § 37 lg 3 p 1 tagasiastumisega,"Resignation, § 37 (3) 1) of Chancellor of Justice Act","Отставка, п.1 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+1) tema ametist tagasiastumise päevast;
+  ","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+1) as of the date of their resignation from office;","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+1) со дня ухода его в отставку;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60708,B607,4,1,ÕKS § 37 lg 3 p 2 kestev töövõimetus,"Extended inability to perform functions, § 37 (3) 2) of Chancellor of Justice Act","Постоянная нетрудоспособность, п.2 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+2) kui ta on kestvalt üle kuue kuu järjest võimetu täitma oma ülesandeid, õiguskantsleri ettepanekul uue õiguskantsleri asetäitja-nõuniku ametisse astumise päevast;
+ ","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+2) in the case of their extended inability to perform their duties for more than six consecutive months, as of the date on which a new Deputy Chancellor of Justice-Adviser assumes office on the proposal of the Chancellor of Justice;","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+2) в случае его стойкой неспособности исполнять свои обязанности более шести месяцев подряд со дня вступления в должность по предложению канцлера юстиции нового заместителя канцлера юстиции - советника;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60709,B607,4,1,ÕKS § 37 lg 3 p 3  uus nõunik,"New adviser, § 37 (3) 3) of Chancellor of Justice Act","Новый советник, п.3 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+3) uue õiguskantsleri poolt esitatud uue õiguskantsleri asetäitja-nõuniku ametisse astumise päevast;
+  ","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+3) as of the date on which a new Deputy Chancellor of Justice-Adviser appointed by a new Chancellor of Justice assumes office;","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+3) со дня вступления в должность нового заместителя канцлера юстиции - советника, представленного новым канцлером юстиции;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60710,B607,4,1,ÕKS § 37 lg 3 p 4  süüdimõistev kohtuotsus,"Judgment of conviction, § 37 (3) 4) of Chancellor of Justice Act","Обвинительный приговор суда, п.4 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+4) tahtlikult toimepandud kuriteo eest süüdi mõistva kohtuotsuse jõustumise päevast;
+  ","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+4) as of the date of entry into force of a judgment of conviction against them for an intentionally committed criminal offence;","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+4) со дня вступления в законную силу обвинительного приговора в связи с умышленно совершенным преступлением;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60711,B607,4,1,ÕKS § 37 lg 3 p 5 süüdimõistev kohtuotsus,"Judgment of conviction, § 37 (3) 5) of Chancellor of Justice Act","Обвинительный приговор суда, п.5 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+5) ettevaatamatuse tõttu toimepandud kuriteo eest süüdi mõistva kohtuotsuse, millega on ette nähtud vabaduskaotuslik karistus, jõustumise päevast;
+  ","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+5) as of the date of entry into force of a judgment of conviction against them which prescribes imprisonment for a criminal offence committed due to negligence;","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+5) со дня вступления в законную силу обвинительного приговора, предусматривающего наказание в виде лишения свободы, в связи с преступлением, совершенным по неосторожности;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60712,B607,4,1,ÕKS § 37 lg 3 p 6 asetäitja-nõuniku  surm,"Death of Deputy Chancellor of Justice-Adviser, § 37 (3) 6) of Chancellor of Justice Act","Смерть заместителя-советника, п.6 ч.3 ст.37 (ÕKS)","ÕKS § 37. Õiguskantsleri asetäitja-nõunik
+(3) Õiguskantsleri nõunik vabastatakse õiguskantsleri asetäitja-nõuniku ametist:
+6) tema surma korral.","§ 37 of the Chancellor of Justice Act. Deputy Chancellor of Justice-Adviser
+(3) An adviser to the Chancellor of Justice is released from the office of the Deputy Chancellor of Justice-Adviser:
+6) upon their death.","Статья 37 Закона о канцлере юстиции. Заместители канцлера юстиции - советники
+(3) Советник канцлера юстиции освобождается от должности заместителя канцлера юстиции - советника:
+6) в случае его смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B608,B6,3,0,Riigikontrolli seadus (RKS),National Audit Office Act,Закон о государственном контроле (RKS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60801,B608,4,1,RKS § 21 p 1 tähtaja möödumine,"Expiry of term, § 21 1) of National Audit Office Act","По истечению срока службы, п.1 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+1) käesoleva seaduse §-s 17 nimetatud viieaastase tähtaja möödumise päevast;
+","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+1) as of the date of expiry of the five-year term specified in § 17 of this Act;","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+1) со дня истечения, указанного в статье 17 настоящего Закона, пятилетнего срока;
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60802,B608,4,1,RKS § 21 p 2 tagasiastumine,"Resignation, § 21 2) of National Audit Office Act","Отставка, п.2 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+2) tema ametist tagasiastumise avalduse rahuldamise päevast;
+  ","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+2) as of the date of acceptance of their letter of resignation;","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+2) со дня удовлетворения его заявления об отставке;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60803,B608,4,1,RKS § 21 p 3 kestev töövõimetus,"Resignation, § 21 3) of National Audit Office Act","Постоянная нетрудоспособность, п.3 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+3) tema kestva võimetuse korral üle kuue kuu järjest täita oma ametiülesandeid – Riigikohtu üldkogu otsuse jõustumise päevast;
+ ","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+3) as of the date of entry into force of a judgment of the Supreme Court en banc in the case of their extended incapacity to perform their duties for more than six consecutive months;","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+3) в случае его стойкой неспособности исполнять свои служебные обязанности более шести месяцев подряд - со дня вступления в законную силу решения пленума Государственного суда;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60804,B608,4,1,RKS § 21 p 4 süüdimõistev kohtuotsus,"Judgment of conviction, § 21 4) of National Audit Office Act","Обвинительный приговор суда, п.4 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+4) tahtlikult toimepandud kuriteo eest süüdimõistva kohtuotsuse jõustumise päevast;
+ ","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+4) as of the date of entry into force of a judgment of conviction for an intentionally committed criminal offence;","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+4) со дня вступления в законную силу обвинительного приговора за умышленно совершенное преступление;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60805,B608,4,1,RKS § 21 p 5 süüdimõistev kohtuotsus,"Judgment of conviction, § 21 5) of National Audit Office Act","Обвинительный приговор суда, п.5 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+5) ettevaatamatuse tõttu toimepandud kuriteo eest süüdimõistva kohtuotsuse jõustumise päevast, kui selle kohtuotsusega on määratud vabaduskaotuslik karistus;
+","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+5) as of the date of entry into force of a judgment of conviction which prescribes imprisonment for a criminal offence committed due to negligence;","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+5) со дня вступления в законную силу обвинительного приговора за преступление, совершенное по неосторожности, которым назначено наказание в виде лишения свободы;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60806,B608,4,1,RKS § 21 p 6 riigikontrolöri surm,"Death of Auditor General, § 21 6) of National Audit Office Act","Смерть государственного контролёра, п.6 ст.21 (RKS)","RKS § 21. Riigikontrolöri volituste lõppemine
+Riigikontrolöri volitused loetakse lõppenuks:
+6) tema surma korral.","§ 21 of the National Audit Office Act. Termination of powers of Auditor General
+The powers of the Auditor General are deemed to be terminated:
+6) upon their death.","Статья 21 Закона о государственном контроле. Прекращение полномочий государственного контролёра
+Полномочия государственного контролёра считаются прекращёнными:
+6) в случае его смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B609,B6,3,0,Vabariigi Presidendi töökorra seadus (VPTKS),President of the Republic Work Procedure Act,Закон о распорядке работы Президента Республики (VPTKS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60901,B609,4,1,VPTKS § 8 volituste lõppemine,"Expiration of the mandate, § 8 of President of the Republic Work Procedure Act","Прекращение полномочий, ст.8 (VPTKS)","VPTKS § 8. Vabariigi Presidendi volituste korraline lõppemine
+(1) Vabariigi Presidendi volitused lõpevad korraliselt, kui ametisse astub järgmine Vabariigi President.
+(2) Vastavalt põhiseaduse §-le 131 ei valita Vabariigi Presidenti ega lõpe tema volitused erakorralise ega sõjaseisukorra ajal, välja arvatud kestva võimetuse korral oma ülesandeid täita.","§ 8 of the Act on Rules Governing the Work of the President of the Republic. Regular expiration of the President’s mandate
+(1) Regular expiration of the mandate of the President occurs when a new President is inaugurated.
+(2) Under § 131 of the Constitution, the President may not be elected, and their mandate does not expire, during the state of emergency or the state of war, except where the President is incapable of performing their duties for an indeterminate period of time.","Статья 8 Закона о распорядке работы Президента Республики. Прекращение полномочий Президента Республики в установленный срок
+(1) Полномочия Президента Республики прекращаются в установленный срок с вступлением в должность следующего Президента Республики.
+(2) В соответствии со статьей 131 Конституции во время чрезвычайного или военного положения не проводятся выборы Президента Республики и не прекращаются его полномочия, за исключением его стойкой неспособности исполнять свои обязанности.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B60902,B609,4,1,VPTKS § 9 ennetähtaegne lõppemine,"Irregular expiration of the mandate, § 9 of President of the Republic Work Procedure Act","Досрочное прекращение полномочий, ст.9 (VPTKS)","VPTKS § 9. Vabariigi Presidendi volituste ennetähtaegne lõppemine
+Vabariigi Presidendi volitused lõpevad enne tähtaega, kui:
+1) ta astub ametist tagasi;
+2) ta sureb;
+3) jõustub teda süüdi mõistev kohtuotsus.","§ 9 of the Act on Rules Governing the Work of the President of the Republic. Premature expiration of the Presidents mandate
+Premature expiration of the President’s mandate occurs when:
+1) the President resigns their office;
+2) the President dies;
+3) a judgment of conviction entered against the President enters into effect;","Статья 9 Закона о распорядке работы Президента Республики. Досрочное прекращение полномочий Президента Республики
+Полномочия Президента Республики прекращаются досрочно:
+1) с уходом его в отставку;
+2) в случае его смерти;
+3) со вступлением в законную силу вынесенного в отношении него обвинительного приговора суда;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B610,B6,3,0,Riigikogu liikme staatuse seadus (RKLS),Status of Members of the Riigikogu Act,Закон о статусе члена Рийгикогу (RKLS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61001,B610,4,1,RKLS § 8 lg 1 valimiste tulemustega ,"As of results of election, § 8 (1) of Status of Members of the Riigikogu Act","Итоги выборов, ч.1 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(1) Riigikogu liikme volitused loetakse lõppenuks Riigikogu järgmiste valimiste tulemuste väljakuulutamise päevast.
+","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(1) The mandate of a member of the Riigikogu is deemed to be expired as of the day the results of the election of the next Riigikogu are declared.","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(1) Полномочия члена Рийгикогу считаются прекращенными со дня объявления итогов следующих выборов в Рийгикогу.
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61002,B610,4,1,RKLS § 8 lg 2 p 1 teine ametikoht,"Assumption of another office, § 8 (2) 1) of Status of Members of the Riigikogu Act","Другая государственная должность, п.1 ч.2 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(2) Riigikogu liikme volitused lõpevad enne tähtaega:
+1) tema asumisega mõnda teise riigiametisse;
+","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(2) The mandate of a member of the Riigikogu expire before the end of its term:
+1) upon the member’s assumption of another government office;","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(2) Полномочия члена Рийгикогу прекращаются досрочно:
+1) в случае поступления его на какую-либо другую государственную должность;
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61003,B610,4,1,RKLS § 8 lg 2 p 2 süüdimõistev kohtuotsus,"Convicting judgment, § 8 (2) 2) of Status of Members of the Riigikogu Act","Обвинительный приговор суда, п.2 ч.2 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(2) Riigikogu liikme volitused lõpevad enne tähtaega:
+2) teda süüdi mõistva kohtuotsuse jõustumisega;","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(2) The mandate of a member of the Riigikogu expire before the end of its term:
+2) when a judgment convicting them enters into force;","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(2) Полномочия члена Рийгикогу прекращаются досрочно:
+2) в связи со вступлением в законную силу обвинительного в отношении него приговора суда;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61004,B610,4,1,RKLS § 8 lg 2 p 3  tagasiastumine,"Resignation, § 8 (2) 3) of Status of Members of the Riigikogu Act","Отставка, п.3 ч.2 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(2) Riigikogu liikme volitused lõpevad enne tähtaega:
+3) tema tagasiastumisega käesoleva seadusega ettenähtud korras;","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(2) The mandate of a member of the Riigikogu expire before the end of its term:
+3) upon their resignation in accordance with the rules prescribed by this Act;","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(2) Полномочия члена Рийгикогу прекращаются досрочно:
+3) в случае его отставки в порядке, предусмотренном настоящим Законом;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61005,B610,4,1,RKLS § 8 lg 2 p 4 Riigikohtu otsus,"Supreme Court decision, § 8 (2) 4) of Status of Members of the Riigikogu Act","Решение государственного суда, п.4 ч.2 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(2) Riigikogu liikme volitused lõpevad enne tähtaega:
+4) kui Riigikohus on otsustanud, et ta on kestvalt võimetu oma ülesandeid täitma;","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(2) The mandate of a member of the Riigikogu expire before the end of its term:
+4) where the Supreme Court decides that they are permanently incapable of performing their duties;","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(2) Полномочия члена Рийгикогу прекращаются досрочно:
+4) если Государственный суд вынес решение об его устойчивой неспособности исполнять свои обязанности;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61006,B610,4,1,RKLS § 8 lg 2 p 5  Riigikogu liikme surm,"Death of MP, § 8 (2) 5) of Status of Members of the Riigikogu Act","Смерть члена Рийгикогу, п.5 ч.2 ст.8 (RKLS)","RKLS § 8. Riigikogu liikme volituste lõppemise alused
+(2) Riigikogu liikme volitused lõpevad enne tähtaega:
+5) tema surma korral.","§ 8 of the Status of Members of the Riigikogu Act. Bases for expiration of mandate of member of Riigikogu
+(2) The mandate of a member of the Riigikogu expire before the end of its term:
+5) in the event of their death.","Статья 8 Закона о статусе члена Рийгикогу. Основания для прекращения полномочий члена Рийгикогу
+(2) Полномочия члена Рийгикогу прекращаются досрочно:
+5) в случае его смерти.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61007,B610,4,1,RKLS § 10 Riigikohtu otsus,"Supreme Court judgement, § 10 of Status of Members of the Riigikogu Act","Решение государственного суда, ст.10 (RKLS)","RKLS § 10. Riigikogu liikme volituste lõpetamine Riigikohtu otsusega 
+Riigikohus võib Riigikogu juhatuse taotlusel lõpetada oma otsusega enne tähtaega selle Riigikogu liikme volitused, kes:
+1) on kestvalt võimetu täitma oma ülesandeid,
+2) ei vasta Eesti Vabariigi põhiseaduses või Riigikogu valimise seaduses Riigikogu liikme kandidaadile esitatavatele nõuetele või
+3) keeldub andmast ametivannet.","§ 10 of the Status of Members of the Riigikogu Act. Termination of mandate of member of Riigikogu by judgment of Supreme Court
+The Supreme Court may, at the request of the Board of the Riigikogu, terminate the mandate of a member of the Riigikogu by judgment before the end of their term if the member of the Riigikogu:
+1) is permanently incapable of performing their duties,
+2) does not meet the requirements for candidates for membership in the Riigikogu set out in the Constitution of the Republic of Estonia or in the Riigikogu Election Act; or
+3) refuses to take the oath of office.","Статья 10 Закона о статусе члена Рийгикогу. Прекращение полномочий члена Рийгикогу по решению Государственного суда
+Государственный суд по ходатайству правления Рийгикогу может своим решением досрочно прекратить полномочия члена Рийгикогу, который:
+1) является устойчиво неспособным исполнять свои обязанности,
+2) не соответствует требованиям, предъявляемым Конституцией Эстонской Республики или Законом о выборах в Рийгикогу к кандидату в члены Рийгикогу, или
+3) отказывается от принесения должностной присяги.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B611,B6,3,0,Vabariigi Valitsuse seadus (VVS),Government of the Republic Act,Закон о Правительстве Республики (VVS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61101,B611,4,1,VVS § 12 lg 1 p 1 tagasiastumine,"Resignation, § 12 (1) 1) of Government of the Republic Act","Отставка, п.1 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+1) tema tagasiastumisel;
+  ","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+1) upon his or her resignation;","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+1) в случае его отставки‎;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61102,B611,4,1,VVS § 12 lg 1 p 2  ministri surm,"Death of minister, § 12 (1) 2) of Government of the Republic Act","Случай смерти, п.2 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+2) tema surma korral;
+  ","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+2) upon his or her death;","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+2) в случае его смерти;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61103,B611,4,1,VVS § 12 lg 1 p 3 presidendi otsuse alusel,"Resolution of the President of the Republic, § 12 (1) 3) of Government of the Republic Act","На основании постановления Президента, п.3 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+3) peaministri ettepanekul Vabariigi Presidendi otsuse alusel;
+ ","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+3) on the basis of a resolution of the President of the Republic on the proposal of the Prime Minister;","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+3) на основании постановления Президента Республики по представлению премьер-министра;
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61104,B611,4,1,VVS § 12 lg 1 p 4  umbusalduse avaldamine,"Expression of no confidence, § 12 (1) 4) of Government of the Republic Act","В случае вынесения вотума недоверия, п.4 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+4) talle Riigikogu poolt umbusalduse avaldamise korral;
+  ","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+4) upon the expression of no confidence in him or her by the Riigikogu;","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+4) в случае вынесения Рийгикогу ему вотума недоверия‎;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61105,B611,4,1,VVS § 12 lg 1 p 5 süüdimõistev kohtuotsus,"Judgment of conviction, § 12 (1) 5) of Government of the Republic Act","Обвинительный приговора суда, п.5 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+5) tema suhtes süüdimõistva kohtuotsuse jõustumisel;","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+5) upon the entry into force of a judgment of conviction against him or her;","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+5) с вступлением в силу вынесенного в отношении его обвинительного приговора суда‎;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61106,B611,4,1,VVS § 12 lg 1 p 6 valitsuse tagasiastumine,"Resignation of the Government, § 12 (1) 6) of Government of the Republic Act","Отставка правительства, п.6 ч.1 ст.12 (VVS)","VVS § 12. Ministri volituste lõppemine
+(1) Ministri volitused lõpevad:
+6) Vabariigi Valitsuse tagasiastumisel.","§ 12 of the Government of the Republic Act. Termination of authority of minister 
+(1) The authority of a minister shall terminate:
+6) upon the resignation of the Government of the Republic.","Статья 12 Закона о Правительстве Республики. Прекращение полномочий министра
+(1) Полномочия министра прекращаются‎:
+6) в случае отставки Правительства Республики‎.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B612,B6,3,0,Julgeolekuasutuste seadus (JAS),Security Authorities Act,Закон об органах безопасности (JAS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61201,B612,4,1,JAS § 15¹ teine ametikoht,"Another position, § 15¹ of Security Authorities Act","Другая должность, ст.15¹ (JAS)",JAS § 15¹ . Julgeolekuasutuse ametniku teenistusest vabastamine ametniku ametikohale nimetamisel või tööle võtmisel teises asutuses või organisatsioonis,§ 15¹ of the Security Authorities Act. Release of official of security authority from service when official is appointed to position in or employed by another authority or organisation,Статья 15¹ Закона об органах безопасности. Увольнение должностного лица органа безопасности со службы при его назначении на должность или приеме на работу в другое учреждение или организацию,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B613,B6,3,0,Kohaliku omavalitsuse korralduse seadus (KOKS),Local Government Organisation Act,Закон о местном самоуправлении (KOKS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61301,B613,4,1,KOKS § 22 lg 1 p 17 KOV liikme vabastamine ,"Release from office, § 22 (1) 17) of Local Government Organisation Act","Освобождение члена управы, п.17 ч.1 ст.22 (KOKS)","KOKS § 22. Volikogu pädevus
+(1) Volikogu ainupädevusse kuulub järgmiste küsimuste otsustamine:
+17) valitsuse liikmete kinnitamine ja nende vabastamine valitsuse liikmete kohustustest ning palgaliste valitsusliikmete ametisse nimetamine ja ametist vabastamine;","§ 22 of the Local Government Organisation Act. Competence of municipal council
+(1) Resolution of the following issues is within the exclusive competence of a municipal council:
+17) the confirmation of the appointment to and release from office of the members of the rural municipality or city government, and the appointment to and release from remunerative positions of members of the municipal administration;","Статья 22 Закона о местном самоуправлении. Компетенция собрания
+(1) В исключительную компетенцию собрания входит решение следующих вопросов:
+17) утверждение членов управы и их освобождение от обязанностей членов управы, а также назначение на должность и освобождение от должности оплачиваемых членов управы;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61302,B613,4,1,KOKS § 29 tähtaja lõppemine,"Expiry of term, § 29 of Local Government Organisation Act","Окончание срока, ст.29 (KOKS)","KOKS § 29. Valitsuse volituste tähtaeg
+(1) Valla- või linnavalitsus saab oma volitused volikogu poolt valitsuse ametisse kinnitamise päevast.
+(2) Valitsus esitab lahkumispalve volikogu uue koosseisu esimesel istungil.
+(3) Pärast lahkumispalve esitamist täidab valla- või linnavalitsus oma ülesandeid ja tema volitused kehtivad kuni uue valitsuse ametisse kinnitamiseni.","§ 29 of the Local Government Organisation Act. Term of office of government
+(1) A rural municipality or city government obtains authority as of the date its appointment to office is confirmed by the municipal council.
+(2) A government shall submit its resignation at the first session of a new membership of the municipal council.
+(3) After submitting its resignation, a rural municipality or city government shall continue to perform its functions and its authority remains in force until the appointment to office of a new government is confirmed.","Статья 29 Закона о местном самоуправлении. Срок полномочий управы
+(1) Волостная или городская управа получает свои полномочия со дня утверждения собранием в должности ее состава.
+(2) Управа подает прошение об отставке не первом заседании нового состава собрания.
+(3) После подачи прошения об отставке волостная или городская управа исполняет свои обязанности и ее полномочия действительны до утверждения в должности нового состава управы.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61303,B613,4,1,KOKS § 46 lg 9 umbusalduse avaldamine,"Expression of no confidence, § 46 (9) of Local Government Organisation Act","Выражение недоверия, ч.9 ст.46 (KOKS)","KOKS § 46. Umbusaldusmenetlus volikogus
+(9) Umbusalduse avaldamine on vallavanema, linnapea või valitsuse liikme ametist vabastamise alus.","§ 46 of the Local Government Organisation Act. Procedure for expression of no confidence in municipal council
+(9) Expression of no confidence shall be the grounds for the release from office of a rural municipality or city mayor or a member of the municipal administration.","Статья 46 Закона о местном самоуправлении. Процедура выражения недоверия
+(9) Выражение недоверия является основанием для освобождения от должности волостного старшины, мэра города или члена управы.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61304,B613,4,1,KOKS § 57¹  ametist vabastamine,"Release from office, § 57¹ of Local Government Organisation Act","Освобождение от должности, ст. 57¹ (KOKS)",KOKS § 57¹ . Osavalla ja linnaosa vanema ametisse nimetamine ja ametist vabastamine,§ 57¹ of the Local Government Organisation Act. Appointment to office and release from office of rural municipality district elders and city district elders,Статья 57¹ Закона о местном самоуправлении. Назначение на должность и освобождение от должности старейшины части волости или городского района,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61306,B613,4,1,Volikogu liikme volituste lõppemine,Termination of authority of municipal council member,Истечение срока полномочий члена собрания,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61307,B613,4,1,KOKS § 18 lg 1 volituste ennetähtaegne lõppemine,"Premature termination of authority, § 18 (1) of Local Government Organisation Act","Досрочное прекращение полномочий, ч.1 ст.18 (KOKS)","KOKS § 18. Volikogu liikme volituste ennetähtaegne lõppemine
+(1) Volikogu liikme volitused lõpevad enne tähtaega seoses:
+1) volikogu tegutsemisvõimetuks osutumisega;
+1¹) korraliste valimiste vahelisel perioodil ühinemise teel moodustunud kohaliku omavalitsuse üksuse volikogu liikmete volituste algamisega;
+2) tagasiastumisega;
+3) isiku püsiva elukoha muutusega, kui püsiv elukoht ei asu Eesti rahvastikuregistri andmetel selles vallas või linnas;
+4) Eesti kodakondsuse kaotamisega;
+5) valimisega Vabariigi Presidendiks, nimetamisega riigisekretäriks, riigikontrolöriks, õiguskantsleriks, kohtunikuks või prokuröriks;
+6) nimetamisega sama valla või linna kohaliku omavalitsuse ametnikuks;
+8) tahtliku kuriteo eest süüdimõistva kohtuotsuse jõustumisega või seoses jõustunud kohtuotsusega, millega tühistati valla või linna valimiskomisjoni otsus tema registreerimise kohta volikogu liikmeks tema kohaliku omavalitsuse volikogu valimise seadusega sätestatud nõuetele mittevastamise tõttu, kui Riigikohtule esitatud kassatsioonkaebust ei võetud menetlusse või Riigikohus on kaebuse läbi vaadanud ja rahuldamata jätnud;
+9) teovõimetuks tunnistamisega valimisõiguse osas;
+10) surmaga.","§ 18 of the Local Government Organisation Act. Premature termination of authority of municipal council member
+(1) The authority of a municipal council member terminates prematurely:
+1) if the municipal council is unable to act;
+1¹) due to commencement of the authority of the members of the municipal council formed by merger in the period between regular elections;
+2) due to the resignation of the municipal council member;
+3) due to the change in the permanent residence of the person if the permanent residence is not located in the rural municipality or city according to the data in the Estonian population register;
+4) upon loss of Estonian citizenship;
+5) due to the election of the municipal council member to the office of the President of the Republic, the appointment of the municipal council member as the State Secretary, the Auditor General, the Chancellor of Justice, a judge or prosecutor;
+6) due to appointment as an official of the same rural municipality or city local government;
+8) due to entry into force of a conviction by a court for an intentional criminal offence or in connection with a court judgment which has entered into force and which annuls a resolution of the rural municipality or city election committee concerning the registration of the municipal council member due to his or her failure to comply with the requirements provided for in the municipal council Election Act if commencement of proceedings regarding an appeal in cassation submitted to the Supreme Court was refused or the Supreme Court has reviewed the appeal and dismissed it;
+9) due to divestment of active legal capacity with regard to the right to vote;
+10) due to the death of the municipal council member.","Статья 18 Закона о местном самоуправлении. Досрочное прекращение полномочий члена собрания
+(1) Полномочия члена собрания прекращаются досрочно в связи:
+1) с неработоспособностью собрания;
+1¹) с началом полномочий членов собрания единицы местного самоуправления, образованной путем объединения в период между очередными выборами;
+2) со сложением им полномочий;
+3) с переменой постоянного места жительства, если постоянное место жительства по данным регистра народонаселения Эстонии не находится в данной волости или городе;
+4) с утратой эстонского гражданства;
+5) с избранием Президентом Республики или членом Европейского Парламента, назначением на должность, государственного секретаря, государственного контролера, канцлера юстиции, судьи или прокурора;
+6) с назначением на должность чиновника местного самоуправления той же волости;
+8) со вступлением в законную силу обвинительного приговора за умышленное преступление или со вступлением в законную силу решения суда, отменяющего решение волостной или городской избирательной комиссии о регистрации лица в качестве члена собрания в связи с его несоответствием требованиям, установленным Законом о выборах в собрания местных самоуправлений, если поданная в Государственный суд кассационная жалоба не была принята к производству либо если жалоба была рассмотрена Государственным судом и оставлена им без удовлетворения;
+9) с признанием недееспособным в части избирательного права;
+10) со смертью.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61308,B613,4,1,KOKS § 46(1) tagasiastumine,"Resignation, § 46(1) of Local Government Organisation Ac","Отставка, ст.46(1) (KOKS)","KOKS § 46¹. Tagasiastumine
+(1) Volikogu esimehe, volikogu aseesimehe, volikogu komisjoni esimehe, volikogu komisjoni aseesimehe, revisjonikomisjoni liikme, vallavanema või linnapea või valitsuse liikme tagasiastumise korral esitab ta avalduse valla- või linnasekretärile. Avalduse esitanu loetakse tagasi astunuks avalduses märgitud kuupäevast, mis ei või olla varasem kui järgmine tööpäev avalduse esitamisest. Valla- või linnasekretär teavitab kohe volikogu esimeest või tema asendajat.
+(2) Avalduse esitanu peab esimesel võimalusel üle andma asjaajamisega ja ametiülesannete täitmisega seoses talle usaldatud vara.","§ 46¹.  Resignation. (1) If the chairman of a municipal council, the deputy chairman of a municipal council, the chairman of a municipal council committee, the deputy chairman of a municipal council committee, a member of the revision committee, a rural municipality or city mayor or a member of the municipal administration resigns, he or she shall submit an application to the rural municipality or city secretary. The person who submitted the application is deemed to have resigned as of the date indicated in the application which shall not be earlier than the following the working day of the submission of the application. The rural municipality or city secretary shall immediately inform the chairman of the municipal council or his or her deputy. (2) The person who submitted the application shall, at the earliest opportunity, deliver the property entrusted to him or her in connection with professional activities and the performance of his or her official duties.","Статья 46¹ Закона о местном самоуправлении. Уход в отставку
+(1) В случае ухода в отставку председателя собрания, заместителя председателя собрания, председателя комиссии собрания, заместителя председателя комиссии собрания, члена ревизионной комиссии, волостного старшины или мэра города либо члена управы, он подает заявление волостному или городскому секретарю. Лицо, подавшее заявление, считается вышедшим в отставку с указанной в заявлении даты, которая не может приходиться на более ранний день, чем дата следующего рабочего дня после подачи заявления. Волостной или городской секретарь незамедлительно уведомляет председателя собрания или замещающее его лицо.
+(2) Лицо, подавшее заявление, должно при первой возможности передать имущество, доверенное ему в связи с делопроизводством и выполнением служебных обязанностей.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61309,B613,4,1,KOKS § 20(1) lg 2 volituste taastumine,"Restoration of authority, § 20(1) (2) of Local Government Organisation Act","Возобновление полномочий, ч.2 ст.20(1) (KOKS)","§ 20¹. Volikogu liikme volituste taastumine
+(2) Volikogu liikme volituste taastumisel lõpevad selle asendusliikme volitused, kes on viimasena määratud asendama lisamandaadi alusel või samas erakonnas või valimisliidus kandideerinud volikogu liiget sellest valimisringkonnast või ülelinnalisest nimekirjast.","§ 20¹ of the Local Government Organisation Act. Restoration of authority of municipal council member
+(2) Upon restoration of the authority of a municipal council member, the authority of the alternate municipal council member who was last designated to replace a municipal council member on the basis of an additional mandate or from among the candidates of the same political party or election coalition in the electoral district or city list, shall terminate.","Статья 20¹ Закона о местном самоуправлении. Возобновление полномочий члена собрания
+(2) С возобновлением полномочий члена собрания прекращаются полномочия резервного члена, который был последним назначен замещать члена собрания на основании дополнительного мандата либо замещать члена собрания, баллотировавшегося по данному избирательному округу от той же партии или избирательного союза либо по общегородскому списку.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B614,B6,3,0,Välisteenistuse seadus (VäTS),Foreign Service Act,Закон о дипломатической службе (VäTS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61401,B614,4,1,VäTS § 67 abikaasatasu lõppemine,"Termination of allowance for spouse, § 67 of Foreign Service Act","Прекращение выплаты вознаграждения супругу, ст.67 (VäTS)",VÄTS § 67. Abikaasatasu lõppemine,§ 67 of the Foreign Service Act. Allowance for spouse,Статья 67 Закона о дипломатической службе. Прекращение выплаты супружеского вознаграждения,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B615,B6,3,0,Notariaadiseadus (NotS),Notaries Act,Закон о нотариате (NotS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61501,B615,4,1,NotS § 17 lg 1 p 1 notari algatusel,"At notary’s initiative, § 17 (1) 1) of Notaries Act","По инициативе нотариуса, п.1 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:
+1) notari algatusel;","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+1) at the notary’s initiative;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+1) по инициативе нотариуса;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61502,B615,4,1,NotS § 17 lg 1 p 2 terviseseisundi tõttu,"Due to state of health, § 17 (1) 2) of Notaries Act","По состоянию здоровья, п.2 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:
+2) notari terviseseisundi tõttu, mis ei võimalda tal notarina töötada;","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+2) due to the state of health of the notary which does not allow him or her to practise as a notary;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+2) по состоянию здоровья нотариуса, которое не позволяет ему работать в качестве нотариуса;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61503,B615,4,1,NotS § 17 lg 1 p 3 piirvanuse tõttu,"Due to age limit, § 17 (1) 3) of Notaries Act","По достижении предельного возраста, п.3 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:
+3) käesoleva seaduse § 8 lõikes 4 näidatud vanusepiiri saabumisel;","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+3) upon attaining the age limit specified in subsection 4 of § 8 of this Act;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+3) по достижении предельного возраста, указанного в части 4 статьи 8 настоящего Закона;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61504,B615,4,1,NotS § 17 lg 1 p 4 ametisse mitteasumine,"Not assuming office, § 17 (1) 4) of Notaries Act","По невступлению в должность, п.4 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:
+4) kui notar ei asu ametisse käesoleva seaduse § 10 lõikes 1 nimetatud aja jooksul;","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+4) if the notary does not assume office within the term specified in subsection 1 of § 10 of this Act;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+4) если нотариус не вступил в должность в течение срока, указанного в части 1 статьи 10 настоящего Закона;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61505,B615,4,1,NotS § 17 lg 1 p 5 peatumine,"Suspension , § 17 (1) 5) of Notaries Act","Приостановление, п.5 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:;
+5) kui notar ei asu ametikohustusi täitma pärast käesoleva seaduse § 18 lõike 6 alusel ametisoleku peatamise tähtaja lõppemist;","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+5) if the notary does not commence performance of his or her official duties after expiry of the term of the suspension of period of office based on subsection 6 of § 18 of this Act;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+5) если нотариус не приступил к исполнению служебных обязанностей по истечении срока приостановления исполнения служебных обязанностей на основании части 6 статьи 18 настоящего Закона;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61506,B615,4,1,NotS § 17 lg 1 p 6 mittekandideerimine,"Failure to run as a candidate, § 17 (1) 6) of Notaries Act","Неучастие в конкурсе на замещение должности, п.6 ч.1 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(1) Notari vabastab ametist valdkonna eest vastutav minister järgmistel alustel:;
+6) kui notar ei kandideeri pärast ametisoleku peatamise tähtaja lõppemist käesoleva seaduse § 18 lõike 7 kohaselt notari ametikoha täitmise konkursil.","§ 17 of the Notaries Act. Release and removal from office
+(1) A notary shall be released from office by the minister in charge of the policy sector on the following bases:
+6) if the notary fails to run as a candidate in a competition for the filling of an office of notary after expiry of the term of the suspension of period of office pursuant to subsection 7 of § 18 of this Act.","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(1) Нотариус освобождается от службы ответственным за сферу министром по следующим основаниям:
+6) если нотариус по истечении срока приостановления исполнения служебных обязанностей не участвует в конкурсе на замещение должности нотариуса согласно части 7 статьи 18 настоящего Закона.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61507,B615,4,1,NotS § 17 lg 2 p 1 süüdimõistev kohtuotsus,"Conviction of a court, § 17 (2) 1) of Notaries Act","Обвинительный приговор суда, п.1 ч.2 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(2) Valdkonna eest vastutav minister tagandab notari ametist järgmistel alustel:
+1) kui notari suhtes on jõustunud süüdimõistev kohtuotsus tahtlikult toimepandud kuriteo eest, samuti notari suhtes tehtud muu süüdimõistva kohtuotsuse jõustumisel, millega mõistetud kriminaalkaristus teeb võimatuks notarina tegutsemise;","§ 17 of the Notaries Act. Release and removal from office
+(2) The minister in charge of the policy sector shall remove a notary from office on the following bases:
+1) if a conviction of a court for an intentionally committed criminal offence has entered into force in respect of the notary, and also if any other conviction of a court has entered into force in respect of the notary by which a criminal punishment is imposed on the notary which makes it impossible for the notary to act as a notary;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(2) Нотариус отстраняется от службы ответственным за сферу министром по следующим основаниям:
+1) по вступлении в законную силу вынесенного в отношении нотариуса обвинительного приговора за умышленно совершенное преступление, а также иного обвинительного приговора, по которому назначено уголовное наказание, не позволяющее ему работать в качестве нотариуса;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61508,B615,4,1,NotS § 17 lg 2 p 2 ametialane rikkumine,"Violation related to office, § 17 (2) 2) of Notaries Act","Тяжкий служебный проступок, п.2 ч.2 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(2) Valdkonna eest vastutav minister tagandab notari ametist järgmistel alustel:
+2) raske ametialase üleastumise korral;
+","§ 17 of the Notaries Act. Release and removal from office
+(2) The minister in charge of the policy sector shall remove a notary from office on the following bases:
+2) in the case of serious violation related to office;","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(2) Нотариус отстраняется от службы ответственным за сферу министром по следующим основаниям:
+2) в случае совершения тяжкого служебного проступка;
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61509,B615,4,1,NotS § 17 lg 2 p 4 muud asjaolud,"Other circumstances, § 17 (2) 4) of Notaries Act","Иные обстоятельства, п.4 ч.2 ст.17 (NotS)","NotS § 17. Ametist vabastamine ja tagandamine
+(2) Valdkonna eest vastutav minister tagandab notari ametist järgmistel alustel:
+4) muude asjaolude ilmnemisel, mis teevad võimatuks notarina töötamise.","§ 17 of the Notaries Act. Release and removal from office
+(2) The minister in charge of the policy sector shall remove a notary from office on the following bases:
+4) if other circumstances become evident which make it impossible for a person to practise as a notary.","Статья 17 Закона о нотариате. Освобождение и отстранение от службы
+(2) Нотариус отстраняется от службы ответственным за сферу министром по следующим основаниям:
+4) при наличии иных обстоятельств, не позволяющих работать в качестве нотариуса.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61510,B615,4,1,NotS § 28 lg 2 p 1 kandidaadi algatusel,"Notary candidate’s initiative, § 28 (2) 1) of Notaries Act","По инициативе кандидата в нотариусы, п.1 ч.2 ст.28 (NotS)","NOTS § 28. Kandidaaditeenistuse lõppemine
+(2) Kandidaaditeenistus lõpetatakse järgmistel alustel:
+1) notarikandidaadi algatusel;
+11) notarikandidaadi ja Notarite Koja kokkuleppel; [RT I 2009, 27, 164 - jõust. 08.06.2009]
+12) kui notarikandidaat jätab mõjuva põhjuseta käesoleva seaduse § 121 lõikes 4 nimetatud vestlusele kahel korral ilmumata või ei soorita vestlust teisel katsel; [RT I, 22.12.2020, 34 - jõust. 01.01.2021]
+2) seoses notarikandidaadi tunnistamisega sobimatuks notarina töötamiseks;
+3) kui notarikandidaat ei osale notari ametikoha täitmise eksamil pärast ametikoha täitmise konkursil osalemise soovi avaldamist; [RT I, 22.12.2020, 34 - jõust. 01.01.2021]
+31) [kehtetu - RT I, 22.12.2020, 34 - jõust. 01.01.2021]
+4) kui notarikandidaadile on määratud distsiplinaarkaristuseks kandidaaditeenistuse lõpetamine.
+
+(21) Kandidaaditeenistuse võib käesoleva paragrahvi lõikes 2 nimetatud alustel lõpetada ka ajal, kui kandidaaditeenistus on peatunud. [RT I 2009, 27, 164 - jõust. 08.06.2009]
+
+(3) Kandidaaditeenistus lõpeb notariks nimetamisega.","§ 28 of the Notaries Act. Termination of candidate service
+(2) Candidate service is terminated on the following bases:
+1) at the notary candidate’s initiative;
+1¹) by agreement between the notary candidate and the Chamber of Notaries;
+12) if the notary candidate fails twice, without good reason, to appear for the interview specified in subsection 4 of § 121 of this Act or fails to pass the interview in two attempts;
+2) if the notary candidate is determined to be unsuitable to practice as notary;
+3) if the notary candidate fails to participate in the examination for filling of office of a notary after expressing his or her wish to participate in the competition for filling of office;
+3¹) [Repealed – RT I, 22.12.2020, 34 – entry into force 01.01.2021]
+4) if the termination of candidate service is imposed on a notary candidate as disciplinary punishment.
+
+(2¹) Candidate service may be terminated on the bases specified in subsection 2 of this section also at the time when candidate service is suspended. [RT I 2009, 27, 164 – entry into force 08.06.2009]
+
+(3) Candidate service ends with appointment of a notary candidate as a notary.","Статья 28 Закона о нотариате. Прекращение службы кандидата
+(2) Стажировка прекращается на следующих основаниях:
+1) по инициативе кандидата в нотариусы;
+11) по соглашению кандидата в нотариусы и Нотариальной палаты; [RT I 2009, 27, 164 - в действии с 08.06.2009]
+12) если кандидат в нотариусы дважды не явится на собеседование, указанное в части 4 статьи 121 настоящего Закона, или не пройдет собеседование со второй попытки без уважительной причины; [RT I, 22.12.2020, 34 - в действии с 01.01.2021]
+2) в связи с признанием кандидата в нотариусы непригодным для работы в качестве нотариуса;
+3) если кандидат в нотариусы не участвует в экзамене на замещение должности нотариуса после изъявления желания участвовать в конкурсе на замещение должности; [RT I, 22.12.2020, 34 - в действии с 01.01.2021]
+31) [Статья недействительна - RT I, 22.12.2020, 34 - в действии с 01.01.2021]
+4) если кандидат в нотариусы подвергнут дисциплинарному взысканию в виде прекращения стажировки.
+
+(21) На основаниях, указанных в части 2 настоящей статьи, стажировка может быть прекращена также в течение срока приостановления стажировки. [RT I 2009, 27, 164 - в действии с 08.06.2009]
+
+(3) Стажировка завершается назначением на должность нотариуса.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61511,B615,4,1,NotS § 28 lg 2 p 1¹ kokkuleppel,"By agreement, § 28 (2) 1¹) of Notaries Act",По соглашению кандидата в нотариусы п.1¹ ч.2 ст.28 (NotS),"NOTS § 28. Kandidaaditeenistuse lõppemine
+(2) Kandidaaditeenistus lõpetatakse järgmistel alustel:
+11) notarikandidaadi ja Notarite Koja kokkuleppel;
+  ","§ 28 of the Notaries Act. Termination of candidate service
+(2) Candidate service is terminated on the following bases:
+1¹) by agreement between the notary candidate and the Chamber of Notaries;","Статья 28 Закона о нотариате. Прекращение стажировки
+(2) Стажировка прекращается на следующих основаниях:
+11) по соглашению кандидата в нотариусы и Нотариальной палаты;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61512,B615,4,1,NotS § 28 lg 2 p 2 mittesobivus,"Unsuitability, § 28 (2) 2) of Notaries Act","Признание кандидата в нотариусы непригодным, п.2 ч.2 ст.28 (NotS)","NOTS § 28. Kandidaaditeenistuse lõppemine
+(2) Kandidaaditeenistus lõpetatakse järgmistel alustel:
+2) seoses notarikandidaadi tunnistamisega sobimatuks notarina töötamiseks;
+  ","§ 28 of the Notaries Act. Termination of candidate service
+(2) Candidate service is terminated on the following bases:
+2) if the notary candidate is determined to be unsuitable to practice as notary;","Статья 28 Закона о нотариате. Прекращение стажировки
+(2) Стажировка прекращается на следующих основаниях:
+2) в связи с признанием кандидата в нотариусы непригодным для работы в качестве нотариуса;
+  ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61513,B615,4,1,NotS § 28 lg 2 p 3  ametisse mitteasumine,"No entry into office, § 28 (2) 3) of Notaries Act","Невступление в должность, п.3 ч.2 ст.28 (NotS)","NOTS § 28.   Kandidaaditeenistuse lõppemine
+(2) Kandidaaditeenistus lõpetatakse järgmistel alustel:;
+3) kui notarikandidaat ei osale notari ametikoha täitmise eksamil pärast ametikoha täitmise konkursil osalemise soovi avaldamist;","§ 28 of the Notaries Act. Termination of candidate service
+(2) Candidate service is terminated on the following bases:
+3) if the notary candidate fails to participate in the examination for filling of office of a notary after expressing his or her wish to participate in the competition for filling of office;","Статья 28 Закона о нотариате. Прекращение стажировки
+(2) Стажировка прекращается на следующих основаниях:
+3) если кандидат в нотариусы не участвует в экзамене на замещение должности нотариуса после изъявления желания участвовать в конкурсе на замещение должности;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61515,B615,4,1,NotS § 28 lg 2 p 4 distsiplinaarkaristus,"Disciplinary punishment, § 28 (2) 4) of Notaries ","Дисциплинарное взыскание, п.4 ч.2 ст.28 (NotS)","NOTS § 28. Kandidaaditeenistuse lõppemine
+(2) Kandidaaditeenistus lõpetatakse järgmistel alustel:
+4) kui notarikandidaadile on määratud distsiplinaarkaristuseks kandidaaditeenistuse lõpetamine.
+","§ 28 of the Notaries Act. Termination of candidate service
+(2) Candidate service is terminated on the following bases:
+4) if the termination of candidate service is imposed on a notary candidate as disciplinary punishment.","Статья 28 Закона о нотариате. Прекращение стажировки
+(2) Стажировка прекращается на следующих основаниях:
+4) если кандидат в нотариусы подвергнут дисциплинарному взысканию в виде прекращения стажировки.
+",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B616,B6,3,0,Võlaõigusseadus (VÕS),Law of Obligations Act,Обязательственно-правовой закон (VÕS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61601,B616,4,1,Võlaõigusliku lepingu lõppemine,Expiry of Law of Obligations Act,Прекращение действия договора ,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61602,B616,4,1,Maksukohustuse üleminek teise riiki Eestist VÕS alusel,Transfer of tax liability from Estonia to another country on the basis of a Law of Obligations ,Переход налогового обязательства из Эстонии в другое государство в рамках закона (VÕS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61603,B616,4,1,Maksukohustuse üleminek teisest riigist Eestisse VÕS alusel,Transfer of tax liability from another country to Estonia on the basis of a Law of Obligations Ac,Переход налогового обязательства из другого государства в Эстонию в рамках закона (VÕS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B617,B6,3,0,Meretöö seadus (MTööS),Seafarers Employment Act,Закон о труде в морском судоходстве (MTööS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61701,B617,4,1,MTööS § 11 lg 2 tähtaja möödumine,"Passed deadline, § 11 (2) of Seafarers Employment Act ","По истечении действия трудового договора, ч.2 ст.11 (MTööS)","MTööS § 11. Tähtajalise meretöölepingu alusel töötava laevapere liikme töötingimustest teavitamise erisus
+(2) Üheks merereisiks sõlmitud tähtajalise meretöölepingu kirjalikus dokumendis tuleb märkida ka sihtsadam ja sadamasse saabumise aeg, mille möödumisel laevapere liikme meretööleping lõpeb.","§ 11 of the Seafarers Employment Act. Specification of notifying crew members working on the basis of seafarer’s fixed term employment contract of working conditions
+(2) A written document of a seafarer’s fixed term employment contract entered into for one voyage shall also set out the port of destination and the time of arrival at the port after the passing of which the seafarer’s employment contract shall terminate.","Статья 11 Закона о труде в морском судоходстве. Специфика уведомления об условиях труда члена судового экипажа, работающего по срочному трудовому договору моряка
+(2) В письменной версии срочного трудового договора моряка, заключаемого на один рейс, следует указывать также порт назначения и время прибытия в порт, по истечении которого действие трудового договора моряка для члена судового экипажа прекращается.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61702,B617,4,1,MTööS § 65 töötajast tuleneval põhjusel,"Reason arising from employee, § 65 of Seafarers Employment Act  ","По причине, обусловленной членом судового экипажа, ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+ ",§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member,"Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+ ",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61703,B617,4,1,MTööS § 65 p 1 tööle mitteilmumine,"Failure to arrive to work, § 65 1) of Seafarers Employment Act  ","Неявка на судно к его отходу из порта, п.1 ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+1) ei ole oma süü tõttu saabunud sadamast väljumise ajaks laevale või ei ole tahtlikult või raske hooletuse tõttu saabunud laevale tööaja alguseks;","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+1) has failed through his or her own fault to arrive on board the ship for the time of departure from port or has intentionally or through gross negligence failed to arrive on board the ship by the beginning of his or her working time;","Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+1) по собственной вине не прибыл на судно к его отходу из порта либо в результате умысла или грубой небрежности не прибыл на судно к началу рабочего времени;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61704,B617,4,1,MTööS § 65 p 2 omavoliliselt töölt lahkumine,"Leaving without authorisation,  § 65 2) of Seafarers Employment Act  ","Самовольное покидание судна в свое рабочее время, п.2 ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+2) on omavoliliselt oma tööajal laevalt lahkunud;","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+2) has left the ship without authorisation during his or her working time;","Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+2) самовольно покинул судно в свое рабочее время;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61705,B617,4,1,MTööS § 65 p 3 joobeseisund,"State of intoxication, § 65 3) of Seafarers Employment Act","Состояние алкогольного опьянения, п.3 ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+3) on viibinud laeval joobeseisundis;","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+3) has been in a state of intoxication on board the ship;","Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+3) находился на судне в состоянии опьянения;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61706,B617,4,1,MTööS § 65 p 4 ainete õigusvastane laevale toomine,"Bringing substances on board a ship unlawfully, § 65 4) of Seafarers Employment Act  ","Нелегальное доставление на борт алкоголя, наркотических, психотропных или опасных веществ, п.4 ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+4) on õigusvastaselt toonud laevale alkoholi või narkootilisi, psühhotroopseid või ohtlikke aineid;","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+4) has unlawfully brought alcohol, narcotic drugs or psychotropic or dangerous substances on board the ship;","Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+4) нелегально доставил на борт алкоголь, наркотические, психотропные или опасные вещества;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61707,B617,4,1,MTööS § 65 p 5 salakaubavedu,"Engagement in illicit trafficking, § 65 5) of Seafarers Employment Act  ","Контрабанда, п.5 ст.65 (MTööS)","MTööS § 65. Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+5) tegeleb salakaubaveoga;","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+5) is engaged in illicit trafficking;","Статья 65 Закона о труде в морском судоходстве.  Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+5) занимается контрабандой;",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61708,B617,4,1,MTööS § 65 p 6 laeva või isiku ohtu seadmine,"Putting a ship or person at risk, § 65 6) of Seafarers Employment Act","Действия, подвергшие реальной опасности судно, пребывающего на нем человека или груза, п.6 ст.65 (MTööS)","MTööS § 65.  Meretöölepingu erakorraline ülesütlemine laevapere liikmest tuleneval mõjuval põhjusel
+Lisaks töölepingu seaduse § 88 lõikes 1 sätestatule võib reeder meretöölepingu erakorraliselt üles öelda laevapere liikmest tuleneval mõjuval põhjusel, eelkõige kui laevapere liige:
+6) on oma tegevusega seadnud reaalsesse ohtu laeva, laeval viibiva isiku või laeva lasti.","§ 65 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract for good reason arising from crew member
+In addition to that provided for in subsection 1 of § 88 of the Employment Contracts Act, operators may extraordinarily cancel a seafarer’s employment contract for a good reason arising from the crew member, above all, if the crew member:
+6) has put the ship, the persons on board the ship or the ship’s cargo in real danger by his or her activity.","Статья 65 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка по веской причине, обусловленной членом судового экипажа
+Помимо положений части 1 § 88 Закона о трудовом договоре, судовладелец может расторгнуть трудовой договор моряка в экстренном порядке по веской причине, обусловленной членом судового экипажа, прежде всего, если тот:
+6) своими действиями подверг реальной опасности судно, пребывающего на нем человека или груз.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61709,B617,4,1,MTöös § 66 lg 1 koondamine (laeva kõlbmatuks muutmine),"Lay-off (ship becomes unseaworthy), § 66 (1) of Seafarers Employment Act ","Сокращение (судно непригодно для мореходства), ч.1 ст.66 (MTööS)","MTööS § 66.  Meretöölepingu lõppemine laeva merekõlbmatuks muutumise ja laevahuku korral
+(1) Kui laev muutub merekõlbmatuks või toimub laevahukk, on reederil õigus öelda meretööleping laevapere liikmega üles koondamise tõttu, kui reederil ei ole võimalik pakkuda laevapere liikmele tööd muul laeval.","§ 66 of the Seafarers Employment Act. Expiry of seafarer’s employment contract if ship becomes unseaworthy or in case of shipwreck
+(1) If a ship becomes unseaworthy or there is a shipwreck, the operator has the right to cancel a seafarer’s employment contract for the reason of lay-off if the operator is unable to offer the crew member work on board another ship.","Статья 66 Закона о труде в морском судоходстве. Прекращение трудового договора моряка в случае утраты судном мореходности или кораблекрушения
+(1) Если судно станет непригодным для мореходства или произойдет кораблекрушение, судовладелец вправе прекратить трудовой договор моряка с членом судового экипажа по сокращению, если не может предложить ему работу на другом судне.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61710,B617,4,1,MTööS § 68 lg 1 tähtaja möödumine,"Expiry of employment contract, § 68 (1) of Seafarers Employment Act","Срок окончания действия трудового договора, ч.1 ст.68 (MTööS)","MTööS § 68. Meretöölepingu lõppemise aeg
+(1) Meretööleping lõpeb päeval, kui laevapere liige jõuab käesoleva seaduse §-s 56 nimetatud sihtkohta.","§ 68 of the Seafarers Employment Act. Date of expiry of seafarer’s employment contract
+(1) A seafarer’s employment contract expires on the day the crew member reaches a destination specified in § 56 of this Act.
+","Статья 68 Закона о труде в морском судоходстве. Срок окончания действия трудового договора моряка
+(1) Сроком окончания действия трудового договора моряка является день, в который член судового экипажа прибывает в место, указанное в § 56 настоящего закона.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61711,B617,4,1,MTööS § 68 lg 2 keeldumine kojusõidust,"Refuses repatriation, § 68 (2) of Seafarers Employment Act ","Член судового экипажа отказался от возвращения домой, ч.2 ст.68 (MTööS)","MTööS § 68. Meretöölepingu lõppemise aeg
+(2) Kui laevapere liige keeldub kojusõidust, loetakse meretöölepingu lõppemise päevaks laevapere liikme tööloleku viimane päev.","§ 68 of the Seafarers Employment Act. Date of expiry of seafarer’s employment contract
+(2) If a crew member refuses repatriation, the date of the expiry of the seafarer’s employment contract shall be deemed to be the crew member’s last day of employment.","Статья 68 Закона о труде в морском судоходстве. Срок окончания действия трудового договора моряка
+(2) Если член судового экипажа отказался от репатриации, днем окончания действия трудового договора моряка считается его последний рабочий день.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61712,B617,4,1,MTööS § 69 lg 1 laevapere liikme algatusel,"At the initiative of a crew member, § 69 (1) of Seafarers Employment Act ","По инициативе члена судового экипажа, ч.1 ст.69 (MTööS)","MTööS § 69. Meretöölepingu erakorraline ülesütlemine laevapere liikme poolt
+(1) Lisaks töölepingu seaduse §-s 91 sätestatule võib laevapere liige meretöölepingu erakorraliselt üles öelda eelkõige käesoleva seaduse § 18 lõikes 1 nimetatud asjaoludel.","§ 69 of the Seafarers Employment Act. Extraordinary cancellation of seafarer’s employment contract by crew member
+(1) In addition to that provided for in § 91 of the Employment Contracts Act, a crew member may extraordinarily cancel the seafarer’s employment contract, above all, under the circumstances specified in subsection 1 of § 18 of this Act.","Статья 69 Закона о труде в морском судоходстве. Экстренное прекращение трудового договора моряка членом судового экипажа
+(1) В дополнение к положениям § 91 Закона о трудовом договоре, член судового экипажа может расторгнуть трудовой договор моряка в экстренном порядке прежде всего при обстоятельствах, указанных в части 1 § 18 настоящего закона.",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B618,B6,3,0,Päästeteenistuse seadus (PäästeTS),Rescue Service Act,Закон о спасательной службе (PäästeTS),,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61801,B618,4,1,PäästeTS § 10⁴ terviseseisundi tõttu ,"Release due to state of health, § 10⁴ of Rescue Service Act","По состоянию здоровья, ст. 10⁴, (PäästeTS)","PäästeTS § 10⁴. Päästeteenistuja vabastamine terviseseisundi tõttu
+Päästeteenistuja võib teenistusest vabastada, kui tema terviseseisund ei vasta käesoleva seaduse § 7 lõike 4 alusel sätestatule.","§ 10⁴ of the Rescue Service Act. Release of rescue servants due to their state of health
+A rescue servant may be released from service if their state of health does not meet that provided for on the basis of subsection 4 of § 7 of this Act.","Статья 10⁴ Закона о спасательной службе. Освобождение спасателя по состоянию здоровья
+Спасатель может быть освобожден от службы, если состояние его здоровья не соответствует положениям части 4 статьи 7 настоящего Закона",,,,,,,,,,,,,,2014-01-01 00:00:00,
+B61802,B618,4,1,PäästeTS § 9 lg 3 teenistuskohale mittevastavus hindamistulemuste põhjal,"§ 9 of the Rescue Service Act. Evaluation of rescue servants  
+(3) A rescue servant who, based on the results of their evaluation",Статья 9 Закона о спасательной службе. Оценка спасателя (3) По результатам оценки спасатель,"PäästeTS § 9. Päästeteenistuja hindamine
+(3) Hindamistulemuste põhjal teenistuskohale mittevastava päästeteenistuja võib üle viia madalamale teenistuskohale või teenistusest vabastada.","§ 9 of the Rescue Service Act. Evaluation of rescue servants
+(3) A rescue servant who, based on the results of their evaluation, is not suitable for their post may be demoted or released from service.","Статья 9 Закона о спасательной службе. Оценка спасателя
+(3) По результатам оценки спасатель, не соответствующий занимаемой должности, может быть переведен на нижестоящую должность или освобожден от службы.",,,,,,,,,,,,,,2015-03-29 00:00:00,
+B9,B,2,0,Muud põhjused,Other reasons,Иная причина,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B999,B9,3,0,Muud põhjused,Other reasons,Иная причина,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B99995,B999,4,1,Muud põhjused,Other reasons,Иная причина,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B99996,B999,4,1,Välisriigi töölepingu lõpetamine,Termination of a foreign employment contract,Расторжение иностранного трудового договора,,,,,,,,,,,,,,,,,2014-01-01 00:00:00,
+B99998,B999,4,1,Sünnikuupäevaga kande lõpetamine,Termination of entry with date of birth,Окончание записи с датой рождения,Sünnikuupäevaga saab töötamise registreerida viieks päevaks. Töötamise kande lõpetamisel tuleb märkida lõpetamise kuupäev ja lõpetamise alus. Lõpetamise alusena saab märkida sünnikuupäevaga kande lõpetamise.,"Employment can be registered with the date of birth for five days. Upon termination of the employment entry, the date of termination and the basis for termination must be indicated. The termination of an entry with the date of birth can be indicated as the basis for termination.",Работу с датой рождения можно зарегистрировать на пять дней. При прекращении записи о работе необходимо указать дату и основание для прекращения работы. В качестве основания для прекращения можно указать окончание записи с датой рождения.,,,,,,,,,,,,,,2014-01-01 00:00:00,

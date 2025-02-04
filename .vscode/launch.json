@@ -41,17 +41,33 @@
             // XBRL-GL
             // iso21926specialization.py
             // "args": ["ISO21926/FSM/XBRL-GL_FSM.csv", "ISO21926/BSM/XBRL-GL_BSM.csv"]//,"-t","-d"]
+            // "args": ["../XBRL-GL/FSM/XBRL-GL_2017_FSM.csv", "../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv"]//, "-s ../ISO21926/FSM/JP_FSM.csv", "-l ../ISO21926/BSM/JP_BSM.csv"]//, "-t", "-d"]
+            // "args": ["../XBRL-GL/FSM/XBRL-GL_2017_FSM.csv", "../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv", "-s ../XBRL-GL/FSM/timesheet_FSM.csv", "-l ../XBRL-GL/BSM/timesheet_BSM.csv"]//, "-t", "-d"]
+            // "args": ["../XBRL-GL/FSM/XBRL-GL_2017_FSM.csv", "../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv", "-s ../XBRL-GL/FSM/sa_FSM.csv", "-l ../XBRL-GL/BSM/sa_BSM.csv"]//, "-t", "-d"]
+
             // iso21926SgraphWalk.py
             // "args": ["ISO21926/BSM/XBRL-GL_BSM.csv", " ISO21926/LHM/XBRL-GL_LHM.csv"]//,"-t","-d"]
+            // "args": ["../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv", "../XBRL-GL/LHM/XBRL-GL_2017_LHM.csv"]//, "-t","-d"]//, "-l ../ISO21926/BSM/JP_BSM.csv", "-m ../ISO21926/LHM/JP_LHM.csv"]
+            // "args": ["../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv", "../XBRL-GL/LHM/XBRL-GL_2017_LHM.csv", "-l ../XBRL-GL/BSM/timesheet_BSM.csv", "-m ../XBRL-GL/LHM/timesheet_LHM.csv"]
+            // "args": ["../XBRL-GL/BSM/XBRL-GL_2017_BSM.csv", "../XBRL-GL/LHM/XBRL-GL_2017_LHM.csv", "-l ../XBRL-GL/BSM/sa_BSM.csv", "-m ../XBRL-GL/LHM/sa_LHM.csv"]
+
+            // iso21926xBRL-taxonomy.py
+            // "args": ["../OIM-CSV/XBRL-GL/LHM/XBRL-GL_LHM.csv", "-o ../OIM-CSV/XBRL-GL/core.xsd", "-e utf-8-sig", "-l ja", "-n http://www.xbrl.org/int/gl/2025-03-31" ]//, "-d", "-v"] // iso21926xBRL-taxonomy.py
+            // "args": ["../XBRL-GL/LHM/XBRL-GL_2017_LHM.csv", "-b ../OIM-CSV/XBRL-GL/",  "-r CO12", "-l ja", "-c USD", "-o xbrl-gl", "-e utf-8-sig", "-n http://www.xbrl.org/int/gl/2025-03-31" ]//, "-d", "-v"] // iso21926xBRL-taxonomy.py
+            "args": ["../XBRL-GL/LHM/sa2_LHM.csv", "-b ../OIM-CSV/XBRL-GL/SA/", "-r CO23","-l ja", "-c USD", "-o sa", "-e utf-8-sig", "-n http://www.xbrl.org/int/gl/2025-03-31", "-x" ]//, "-d", "-v"] // iso21926xBRL-taxonomy.py
 
             // ADS
             // iso21926specialization.py
             // "args": ["ISO21926/FSM/ADS_FSM.csv", "ISO21926/BSM/ADS_BSM.csv", "-t", "-d"]
+            // "args": ["../ISO21926/FSM/ISO21926_FSM_.csv", "../ISO21926/BSM/ISO21926_BSM_.csv"]//, "-t", "-d"]
+            // "args": ["../ISO21926/FSM/ISO21926_FSMa.csv", "../ISO21926/BSM/ISO21926_BSMa.csv"]//, "-t", "-d"]
             // iso21926SgraphWalk.py
-            // "args": ["ISO21926/BSM/ADS_BSM.csv", " ISO21926/LHM/ADS_LHM.csv", "-t", "-d"]
+            // "args": ["../ISO21926/BSM/ISO21926_BSM.csv", "../ISO21926/LHM/ISO21926_LHM.csv", "-t", "-d"]
+            // "args": ["../ISO21926/BSM/ISO21926_BSM_.csv", "../ISO21926/LHM/ISO21926_LHM_.csv"]//, "-t", "-d"]
+            // "args": ["../ISO21926/BSM/ISO21926_BSMa.csv", "../ISO21926/LHM/ISO21926_LHMa.csv"]//, "-t", "-d"]
 
             // LedgerExplorer/structured_ledger_explorer.py, LedgerExplorer/e-Tax_account_code.py
-            "args": ["LedgerExplorer/parameters.json"]
+            // "args": ["LedgerExplorer/parameters.json"]
 
         }
     ]

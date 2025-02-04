@@ -1,0 +1,22 @@
+{
+    "dimension_prefixes": [
+        "d"
+    ],
+    "dimension": {
+        "dCompany": ["dDepartment"],
+        "dDepartment": ["dEmployee"],
+        "dEmployee": ["dSkill", "dColor"],
+        "dSkill": [],
+        "dColor": []
+    },
+    "dimension_names": {
+        "dCompany": "CompanyName",
+        "dDepartment": "DepartmentName",
+        "dEmployee": "EmployeeName",
+        "dSkill": "SkillValue",
+        "dColor": "ColorValue"
+    },
+    "file_path": "Python/data/company.csv",
+    "json_path": "Python/data/company.json",
+    "file2_path": "Python/data/company2.csv"
+}

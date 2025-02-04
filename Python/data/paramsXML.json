@@ -1,0 +1,21 @@
+{
+    "dimension": {
+        "Companies": ["Company"],
+        "Company": ["name","Department"],
+        "Department": ["name","Employee"],
+        "Employee": ["name","role","Skill","Color"]
+    },
+    "dimension_names": {
+        "Companies":"Companies",
+        "Company":"Company",
+        "Department":"Department",
+        "Employee":"Employee",
+        "name":"name",
+        "role":"role",
+        "Skill":"Skill",
+        "Color":"Color"
+    },
+    "xml_path": "Python/data/company.xml",
+    "json_path": "Python/data/company2.json",
+    "file2_path": "Python/data/company2.xml"
+}

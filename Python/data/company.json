@@ -1,0 +1,114 @@
+{
+    "dCompany": [
+        {
+            "CompanyName": "Acme Inc",
+            "dDepartment": [
+                {
+                    "DepartmentName": "Sales",
+                    "dEmployee": [
+                        {
+                            "EmployeeName": "Alice",
+                            "Role": "Manager",
+                            "dSkill": [
+                                {
+                                    "SkillValue": "Accounting"
+                                }
+                            ],
+                            "dColor": [
+                                {
+                                    "ColorValue": "Green"
+                                }
+                            ]
+                        },
+                        {
+                            "EmployeeName": "Bob",
+                            "Role": "Sales Person",
+                            "dSkill": [
+                                {
+                                    "SkillValue": "Promotion"
+                                },
+                                {
+                                    "SkillValue": "Communication"
+                                }
+                            ],
+                            "dColor": [
+                                {
+                                    "ColorValue": "Yellow"
+                                },
+                                {
+                                    "ColorValue": "Blue"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "DepartmentName": "Engineering",
+                    "dEmployee": [
+                        {
+                            "EmployeeName": "Charlie",
+                            "Role": "Manager",
+                            "dSkill": [
+                                {
+                                    "SkillValue": "Management"
+                                }
+                            ]
+                        },
+                        {
+                            "EmployeeName": "Dave",
+                            "Role": "Researcher",
+                            "dSkill": [
+                                {
+                                    "SkillValue": "Math"
+                                },
+                                {
+                                    "SkillValue": "Labo"
+                                }
+                            ],
+                            "dColor": [
+                                {
+                                    "ColorValue": "Red"
+                                },
+                                {
+                                    "ColorValue": "White"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "CompanyName": "Billy Ltd.",
+            "dDepartment": [
+                {
+                    "DepartmentName": "Purchase",
+                    "dEmployee": [
+                        {
+                            "EmployeeName": "Ellie",
+                            "Role": "Manager"
+                        },
+                        {
+                            "EmployeeName": "Frans",
+                            "Role": "Staff",
+                            "dSkill": [
+                                {
+                                    "SkillValue": "Budget"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "DepartmentName": "Shop",
+                    "dEmployee": [
+                        {
+                            "EmployeeName": "Gill",
+                            "Role": "Seller"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

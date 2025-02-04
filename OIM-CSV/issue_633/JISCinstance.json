@@ -21,14 +21,14 @@
       "dimensions": {
 		"period": "2023-11-01T00:00:00",
 		"entity": "scheme:Example Co.",
-        "cor:d_JISC03": "$d_JISC03",
-        "cor:d_JISC04b": "$d_JISC04b",
-        "cor:d_BS05bC": "$d_BS05bC"
+        "cor:d_JISC03": "$JISC03",
+        "cor:d_JISC04b": "$JISC04b",
+        "cor:d_BS05bC": "$BS05bC"
       },
       "columns": {
-        "d_JISC03": {},
-        "d_JISC04b": {},
-        "d_BS05bC": {},
+        "JISC03": {},
+        "JISC04b": {},
+        "BS05bC": {},
         "JISC03_GL02_01": {
           "dimensions": {
               "concept": "cor:JISC03_GL02_01"

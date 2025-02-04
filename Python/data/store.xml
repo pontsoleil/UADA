@@ -1,0 +1,34 @@
+<ns:store xmlns:ns="http://example.com/store"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://example.com/store store.xsd">
+    <ns:book>
+        <ns:category>reference</ns:category>
+        <ns:author>Nigel Rees</ns:author>
+        <ns:title>Sayings of the Century</ns:title>
+        <ns:price>8.95</ns:price>
+    </ns:book>
+    <ns:book>
+        <ns:category>fiction</ns:category>
+        <ns:author>Evelyn Waugh</ns:author>
+        <ns:title>Sword of Honour</ns:title>
+        <ns:price>12.99</ns:price>
+    </ns:book>
+    <ns:book>
+        <ns:category>fiction</ns:category>
+        <ns:author>Herman Melville</ns:author>
+        <ns:title>Moby Dick</ns:title>
+        <ns:isbn>0-553-21311-3</ns:isbn>
+        <ns:price>8.99</ns:price>
+    </ns:book>
+    <ns:book>
+        <ns:category>fiction</ns:category>
+        <ns:author>J. R. R. Tolkien</ns:author>
+        <ns:title>The Lord of the Rings</ns:title>
+        <ns:isbn>0-395-19395-8</ns:isbn>
+        <ns:price>22.99</ns:price>
+    </ns:book>
+    <ns:bicycle>
+        <ns:price>399</ns:price>
+        <ns:color>red</ns:color>
+    </ns:bicycle>
+</ns:store>

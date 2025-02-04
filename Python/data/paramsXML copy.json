@@ -1,0 +1,11 @@
+{
+    "dimension": {
+
+    },
+    "dimension_names": {
+
+    },
+    "xml_path": "Python/data/SalInvoiceGen.xml",
+    "json_path": "Python/data/SalInvoiceGen.json",
+    "file2_path": "Python/data/SalInvoiceGen.xml"
+}

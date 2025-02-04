@@ -1,0 +1,31 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ns="http://example.com/store"
+           targetNamespace="http://example.com/store"
+           elementFormDefault="qualified">
+
+    <xs:element name="store">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="book" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="category" type="xs:string"/>
+                            <xs:element name="author" type="xs:string"/>
+                            <xs:element name="title" type="xs:string"/>
+                            <xs:element name="isbn" type="xs:string" minOccurs="0"/>
+                            <xs:element name="price" type="xs:decimal"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="bicycle">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="price" type="xs:decimal"/>
+                            <xs:element name="color" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,21 @@
+{
+    "dimension": {
+        "D_Store": ["D_Book", "D_Bicycle"],
+        "D_Book": ["D_Category", "D_Author", "D_Title", "D_ISBN", "D_Price"],
+        "D_Bicycle": ["D_Price", "D_Color"]
+    },
+    "dimension_names": {
+        "D_Store": "Store",
+        "D_Book": "Book",
+        "D_Bicycle": "Bicycle",
+        "D_Category": "Category",
+        "D_Author": "Author",
+        "D_Title": "Title",
+        "D_ISBN": "ISBN",
+        "D_Price": "Price",
+        "D_Color": "Color"
+    },
+    "xml_path": "Python/data/company.xml",
+    "json_path": "Python/data/company2.json",
+    "file2_path": "Python/data/company2.xml"
+}

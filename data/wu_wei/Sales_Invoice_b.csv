@@ -1,0 +1,152 @@
+type,shape,label,description,uri,thumbnail,source_seq,target_seq,group,visible,text_color,text_size,color,style,size,width,height,radius,x,y,seq
+Topic,RECTANGLE,Sales Invoice,,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,240,32,,-400,-480,1
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-300,-440,2
+Topic,RECTANGLE,Date(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-300,-400,3
+Topic,RECTANGLE,Due Date(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-300,-360,4
+Topic,RECTANGLE,(Transaction) Amount(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-300,-320,5
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,-280,6
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,-240,7
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,-200,8
+Topic,RECTANGLE,Customer(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-300,-160,9
+Topic,RECTANGLE,Account ID(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,-120,10
+Topic,RECTANGLE,Tax(0..*),,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,240,32,,-300,-80,11
+Topic,RECTANGLE,(Transaction) Amount(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,-40,12
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,-4,13
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,40,14
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-4,80,15
+Topic,RECTANGLE,Tax Type(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,120,16
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,160,17
+Topic,RECTANGLE,Sales Invoice Line(1..*),,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,240,32,,-300,200,18
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,240,19
+Topic,RECTANGLE,(Tax Exclude) Amount(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,280,20
+Topic,RECTANGLE,Value(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,320,21
+Topic,RECTANGLE,Currency(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,360,22
+Topic,RECTANGLE,Code(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-4,400,23
+Topic,RECTANGLE,Inventory Product(0..1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-200,440,24
+Topic,RECTANGLE,ID(1),,,,,,,TRUE,Black,M,White,Text Start,,240,32,,-100,480,25
+Topic,RECTANGLE,/Sales Invoice,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-480,26
+Topic,RECTANGLE,/Sales Invoice/ID,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-440,27
+Topic,RECTANGLE,/Sales Invoice/Date,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-400,28
+Topic,RECTANGLE,/Sales Invoice/Due Date,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-360,29
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount/Value,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-280,30
+Topic,RECTANGLE,/Sales Invoice/ (Transaction) Amount/Currency/Code,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-200,31
+Topic,RECTANGLE,/Sales Invoice/Customer/Account ID,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-120,32
+Topic,RECTANGLE,/Sales Invoice/Tax,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-80,33
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount/Value,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,-4,34
+Topic,RECTANGLE,/Sales Invoice/Tax/(Transaction) Amount/Currency/Code,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,80,35
+Topic,RECTANGLE,/Sales Invoice/TaxTax Type/Code,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,160,36
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,200,37
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/ID,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,240,38
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount/Value,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,320,39
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/(Tax Exclude) Amount/Currency/Code,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,400,40
+Topic,RECTANGLE,/Sales Invoice/Sales Invoice Line/Inventory Product/ID,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,400,480,41
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-480,42
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/InvoiId,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-440,43
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/InvoiDt,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-400,44
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/InvoiDueDt,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-360,45
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/InvoiTrAmt,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-280,46
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/InvoiTrCurCd,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-200,47
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/CustAcntId,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-120,48
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/Tax,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-80,49
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/Tax/TaxTrAmt,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,-4,50
+Topic,RECTANGLE,/AdcSalInvoicesGenerated/SalInvoiGen/Tax/TaxTypCd,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,160,51
+Topic,RECTANGLE,/AdcSalInvoicesGeneratedDetails/SalInvoiGenDtls,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,200,52
+Topic,RECTANGLE,/AdcSalInvoicesGeneratedDetails/SalInvoiGenDtls/InvoiLnId,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,240,53
+Topic,RECTANGLE,/AdcSalInvoicesGeneratedDetails/SalInvoiGenDtls/TaxExclAmt,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,320,54
+Topic,RECTANGLE,/AdcSalInvoicesGeneratedDetails/SalInvoiGenDtls/PrdctId,,,,,,,TRUE,Black,M,White,Text Start,,480,32,,934.7825927734375,480,55
+Topic,RECTANGLE,SalInvoiGen,,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,120,32,,1602.8985595703125,-480,56
+Topic,RECTANGLE,InvoiId,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-440,57
+Topic,RECTANGLE,InvoiDt,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-400,58
+Topic,RECTANGLE,InvoiDueDt,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-360,59
+Topic,RECTANGLE,InvoiTrAmt,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-280,60
+Topic,RECTANGLE,InvoiTrCurCd,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-200,61
+Topic,RECTANGLE,CustAcntId,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,-120,62
+Topic,RECTANGLE,Tax,,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,120,32,,1402.8985595703125,-80,63
+Topic,RECTANGLE,TaxTrAmt,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1289.8985595703125,-20,64
+Topic,RECTANGLE,TaxTypCd,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1291.8985595703125,160,65
+Topic,RECTANGLE,SalInvoiGenDtls,,,,,,,TRUE,Black,M,WhiteSmoke,Text Start,,120,32,,1602.8985595703125,200,66
+Topic,RECTANGLE,InvoiLnId,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,240,67
+Topic,RECTANGLE,TaxExclAmt,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1402.8985595703125,320,68
+Topic,RECTANGLE,PrdctId,,,,,,,TRUE,Black,M,White,Text Start,,120,32,,1415.8985595703125,470,69
+Link,HORIZONTAL,,,,,1,18,,TRUE,Black,M,Black,SOLID,2,,,,-480,-140,1
+Link,HORIZONTAL,,,,,1,11,,TRUE,Black,M,Black,SOLID,2,,,,-480,-280,2
+Link,HORIZONTAL,,,,,1,9,,TRUE,Black,M,Black,SOLID,2,,,,-480,-320,3
+Link,HORIZONTAL,,,,,1,5,,TRUE,Black,M,Black,SOLID,2,,,,-480,-400,4
+Link,HORIZONTAL,,,,,1,4,,TRUE,Black,M,Black,SOLID,2,,,,-480,-420,5
+Link,HORIZONTAL,,,,,1,3,,TRUE,Black,M,Black,SOLID,2,,,,-480,-440,6
+Link,HORIZONTAL,,,,,1,2,,TRUE,Black,M,Black,SOLID,2,,,,-480,-460,7
+Link,HORIZONTAL,,,,,11,16,,TRUE,Black,M,Black,SOLID,2,,,,-380,20,8
+Link,HORIZONTAL,,,,,11,12,,TRUE,Black,M,Black,SOLID,2,,,,-380,-60,9
+Link,HORIZONTAL,,,,,5,7,,TRUE,Black,M,Black,SOLID,2,,,,-380,-280,10
+Link,HORIZONTAL,,,,,5,6,,TRUE,Black,M,Black,SOLID,2,,,,-380,-300,11
+Link,HORIZONTAL,,,,,18,24,,TRUE,Black,M,Black,SOLID,2,,,,-380,320,12
+Link,HORIZONTAL,,,,,18,20,,TRUE,Black,M,Black,SOLID,2,,,,-380,240,13
+Link,HORIZONTAL,,,,,18,19,,TRUE,Black,M,Black,SOLID,2,,,,-380,220,14
+Link,HORIZONTAL,,,,,20,21,,TRUE,Black,M,Black,SOLID,2,,,,-280,300,15
+Link,HORIZONTAL,,,,,20,22,,TRUE,Black,M,Black,SOLID,2,,,,-280,320,16
+Link,HORIZONTAL,,,,,12,14,,TRUE,Black,M,Black,SOLID,2,,,,-280,0,17
+Link,HORIZONTAL,,,,,12,13,,TRUE,Black,M,Black,SOLID,2,,,,-280,-22,18
+Link,NORMAL,,,,,26,1,,TRUE,Black,M,Black,SOLID,2,,,,-60,-481,19
+Link,NORMAL,,,,,27,2,,TRUE,Black,M,Black,SOLID,2,,,,-10,-441,20
+Link,NORMAL,,,,,28,3,,TRUE,Black,M,Black,SOLID,2,,,,-10,-401,21
+Link,NORMAL,,,,,29,4,,TRUE,Black,M,Black,SOLID,2,,,,-10,-361,22
+Link,NORMAL,,,,,30,6,,TRUE,Black,M,Black,SOLID,2,,,,40,-281,23
+Link,NORMAL,,,,,31,8,,TRUE,Black,M,Black,SOLID,2,,,,90,-201,24
+Link,NORMAL,,,,,32,10,,TRUE,Black,M,Black,SOLID,2,,,,40,-121,25
+Link,NORMAL,,,,,33,11,,TRUE,Black,M,Black,SOLID,2,,,,-10,-81,26
+Link,NORMAL,,,,,34,13,,TRUE,Black,M,Black,SOLID,2,,,,90,-4,27
+Link,NORMAL,,,,,35,15,,TRUE,Black,M,Black,SOLID,2,,,,138,79,28
+Link,NORMAL,,,,,36,17,,TRUE,Black,M,Black,SOLID,2,,,,90,158,29
+Link,NORMAL,,,,,37,18,,TRUE,Black,M,Black,SOLID,2,,,,-10,198,30
+Link,NORMAL,,,,,38,19,,TRUE,Black,M,Black,SOLID,2,,,,40,238,31
+Link,NORMAL,,,,,39,21,,TRUE,Black,M,Black,SOLID,2,,,,90,318,32
+Link,NORMAL,,,,,40,23,,TRUE,Black,M,Black,SOLID,2,,,,138,399,33
+Link,NORMAL,,,,,41,25,,TRUE,Black,M,Black,SOLID,2,,,,90,478,34
+Link,HORIZONTAL,,,,,7,8,,TRUE,Black,M,Black,SOLID,2,,,,-261.5652174,-220,35
+Link,HORIZONTAL,,,,,9,10,,TRUE,Black,M,Black,SOLID,2,,,,-348.5217391,-140,36
+Link,HORIZONTAL,,,,,14,15,,TRUE,Black,M,Black,SOLID,2,,,,-168.8115942,60,37
+Link,HORIZONTAL,,,,,16,17,,TRUE,Black,M,Black,SOLID,2,,,,-255.7681159,140,38
+Link,HORIZONTAL,,,,,22,23,,TRUE,Black,M,Black,SOLID,2,,,,-154.3188406,380,39
+Link,HORIZONTAL,,,,,24,25,,TRUE,Black,M,Black,SOLID,2,,,,-264.4637681,460,40
+Link,NORMAL,,,,,42,26,,TRUE,Black,M,Black,SOLID,2,,,,667,-483,41
+Link,NORMAL,,,,,43,27,,TRUE,Black,M,Black,SOLID,2,,,,667,-444,42
+Link,NORMAL,,,,,44,28,,TRUE,Black,M,Black,SOLID,2,,,,667,-404,43
+Link,NORMAL,,,,,45,29,,TRUE,Black,M,Black,SOLID,2,,,,667,-364,44
+Link,NORMAL,,,,,46,30,,TRUE,Black,M,Black,SOLID,2,,,,667,-284,45
+Link,NORMAL,,,,,47,31,,TRUE,Black,M,Black,SOLID,2,,,,667,-204,46
+Link,HORIZONTAL,,,,,47,35,,TRUE,Black,M,Black,SOLID,2,,,,676.8405717490376,-64.22463989,47
+Link,HORIZONTAL,,,,,47,40,,TRUE,Black,M,Black,SOLID,2,,,,676.8405717490376,95.77536010742188,48
+Link,NORMAL,,,,,48,32,,TRUE,Black,M,Black,SOLID,2,,,,667,-124,49
+Link,NORMAL,,,,,49,33,,TRUE,Black,M,Black,SOLID,2,,,,667,-84,50
+Link,NORMAL,,,,,50,34,,TRUE,Black,M,Black,SOLID,2,,,,667,-6,51
+Link,NORMAL,,,,,51,36,,TRUE,Black,M,Black,SOLID,2,,,,667,155,52
+Link,NORMAL,,,,,52,37,,TRUE,Black,M,Black,SOLID,2,,,,667,195,53
+Link,NORMAL,,,,,53,38,,TRUE,Black,M,Black,SOLID,2,,,,667,235,54
+Link,NORMAL,,,,,54,39,,TRUE,Black,M,Black,SOLID,2,,,,667,315,55
+Link,NORMAL,,,,,55,41,,TRUE,Black,M,Black,SOLID,2,,,,667,475,56
+Link,NORMAL,,,,,42,56,,TRUE,Black,M,Black,SOLID,2,,,,1359,-485,57
+Link,HORIZONTAL,,,,,56,57,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-467.246376,58
+Link,NORMAL,,,,,43,57,,TRUE,Black,M,Black,SOLID,2,,,,1259,-446,59
+Link,HORIZONTAL,,,,,56,58,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-447.246376,60
+Link,NORMAL,,,,,44,58,,TRUE,Black,M,Black,SOLID,2,,,,1259,-406,61
+Link,HORIZONTAL,,,,,56,59,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-427.246376,62
+Link,NORMAL,,,,,45,59,,TRUE,Black,M,Black,SOLID,2,,,,1259,-366,63
+Link,HORIZONTAL,,,,,56,60,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-387.246376,64
+Link,NORMAL,,,,,46,60,,TRUE,Black,M,Black,SOLID,2,,,,1259,-286,65
+Link,HORIZONTAL,,,,,56,61,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-347.246376,66
+Link,NORMAL,,,,,47,61,,TRUE,Black,M,Black,SOLID,2,,,,1259,-206,67
+Link,HORIZONTAL,,,,,56,62,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-307.246376,68
+Link,NORMAL,,,,,48,62,,TRUE,Black,M,Black,SOLID,2,,,,1259,-126,69
+Link,HORIZONTAL,,,,,56,63,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,-287.246376,70
+Link,NORMAL,,,,,49,63,,TRUE,Black,M,Black,SOLID,2,,,,1259,-86,71
+Link,HORIZONTAL,,,,,63,64,,TRUE,Black,M,Black,SOLID,2,,,,1396.8985595703125,-51.24637604,72
+Link,NORMAL,,,,,50,64,,TRUE,Black,M,Black,SOLID,2,,,,1202,-14,73
+Link,HORIZONTAL,,,,,63,65,,TRUE,Black,M,Black,SOLID,2,,,,1396.8985595703125,33.253623962402344,74
+Link,NORMAL,,,,,51,65,,TRUE,Black,M,Black,SOLID,2,,,,1203,154,75
+Link,NORMAL,,,,,52,66,,TRUE,Black,M,Black,SOLID,2,,,,1359,193,76
+Link,HORIZONTAL,,,,,66,67,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,212.75362396240234,77
+Link,NORMAL,,,,,53,67,,TRUE,Black,M,Black,SOLID,2,,,,1259,233,78
+Link,HORIZONTAL,,,,,66,68,,TRUE,Black,M,Black,SOLID,2,,,,1502.8985595703125,252.75362396240234,79
+Link,NORMAL,,,,,54,68,,TRUE,Black,M,Black,SOLID,2,,,,1259,313,80
+Link,HORIZONTAL,,,,,66,69,,TRUE,Black,M,Black,SOLID,2,,,,1503.8985595703125,328.75362396240234,81
+Link,NORMAL,,,,,55,69,,TRUE,Black,M,Black,SOLID,2,,,,1265,468,82

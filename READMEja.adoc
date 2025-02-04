@@ -1,0 +1,141 @@
+= 階層化データパーサー
+
+== 概要
+
+`TidyDataParser` クラスは、階層化データを処理し、次の操作を提供します：
+
+1. **CSV形式 → 階層構造のJSON形式に変換**
+2. **JSON形式 → 整形済み (tidy) CSV形式に変換**
+
+== ディレクトリ構成
+
+[source,plaintext]
+----
+ProjectRoot/
+│
+├── Python/
+│   ├── data/
+│   │   ├── company.csv       # 入力CSVファイル
+│   │   ├── params.json       # パラメータファイル
+│   │   ├── company.json      # 出力JSONファイル
+│   │   └── company2.csv      # 出力CSVファイル
+│   │
+│   ├── tidy_data_parser.py   # メインパーサーモジュール
+│   └── main.py               # 実行用スクリプト
+│
+└── READMEen.adoc             # 英語の説明書
+└── READMEja.adoc             # 日本語の説明書
+----
+
+== 前提条件
+
+Python 3.x と pandas ライブラリが必要です。
+
+[source,bash]
+----
+pip install pandas
+----
+
+== 入力ファイル
+
+. **CSVファイル**
+
+階層化データを格納するCSVファイルを作成します。  
+例: `Python/data/company.csv`
+
+[source,csv]
+----
+D_Company,D_Department,D_Employee,D_Skill,D_Color,Company,Department,Employee,Role,Skill,Color
+1,,2,,,Acme Inc,,,,,
+1,1,,,,,Sales,,,,
+1,1,1,,,,,Alice,Manager,,
+1,1,1,1,,,,,,Accounting,
+----
+
+. **パラメータファイル (params.json)**
+
+データ構造とファイルパスをJSON形式で定義します。
+
+[source,json]
+----
+{
+    "dimension_prefixes": ["D_"],
+    "dimension": {
+        "D_Company": ["D_Department"],
+        "D_Department": ["D_Employee"],
+        "D_Employee": ["D_Skill", "D_Color"],
+        "D_Skill": [],
+        "D_Color": []
+    },
+    "dimension_names": {
+        "D_Company": "Company",
+        "D_Department": "Department",
+        "D_Employee": "Employee",
+        "D_Skill": "Skill",
+        "D_Color": "Color"
+    },
+    "file_path": "Python/data/company.csv",
+    "json_path": "Python/data/company.json",
+    "file2_path": "Python/data/company2.csv"
+}
+----
+
+== 実行方法
+
+次のコマンドでスクリプトを実行します：
+
+[source,bash]
+----
+cd Python
+python main.py
+----
+
+== 出力結果
+
+. **JSONファイル (階層データ)**  
+   例: `Python/data/company.json`
+
+. **CSVファイル (整形データ)**  
+   例: `Python/data/company2.csv`
+
+== エラーハンドリング
+
+* ファイルが存在しない場合:
+[source,plaintext]
+----
+FileNotFoundError: Parameters file not found: params.json
+----
+
+* JSON構文エラー:
+[source,plaintext]
+----
+ValueError: Error parsing JSON file: params.json
+----
+
+* 出力ファイルがロックされている場合:
+[source,plaintext]
+----
+PermissionError: Output file is in use or not writable.
+----
+
+== モジュールとしての利用
+
+[source,python]
+----
+from tidy_data_parser import TidyDataParser
+
+params_path = "Python/data/params.json"
+parser = TidyDataParser(params_path)
+hierarchy = parser.process_hierarchy()
+print(hierarchy)
+----
+
+== ライセンス
+
+このプロジェクトは MITライセンス のもとで提供されています。
+
+== 著者
+
+* 名前: SAMBUICHI, Nobuyuki
+* Email: nobuyuki@sambuichi.jp
+* GitHub: https://www.sambuichi.jp

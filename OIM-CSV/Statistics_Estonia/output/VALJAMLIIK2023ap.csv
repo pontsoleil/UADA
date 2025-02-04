@@ -1,0 +1,106 @@
+Klassifikaatori elementide täielik loetelu,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18,Unnamed: 19,Unnamed: 20,Unnamed: 21,Unnamed: 22,Unnamed: 23,Unnamed: 24,Unnamed: 25,Unnamed: 26
+Klassifikaatori API:,https://estat.stat.ee/codelists/codelist/VALJAMLIIK2023ap,,,,,,,,,,,,,,,,,,,,,,,,,
+codeListCode,VALJAMLIIK2023ap,,,,,,,,,,,,,,,,,,,,,,,,,
+codeListName,Maksustatavate väljamaksete liigid ,,,,,,,,,,,,,,,,,,,,,,,,,
+"Sektsioonide maatriks (tabeli lõpus) näitab, millistesse sektsioonidesse saab olla element sisendiks. Kui Andmekoosseisu lehel on märgitud veel täiendavaid sektsioonide seoseid, kuid neid ei ole eraldi siin lehel välja toodud, siis see tähendab, et klassifikaatori elemendid võivad olla sektsiooni sisendiks täies mahus.",,,,,,,,,,,,,,,,,,,,,,,,,,
+Klassifikaatori elemendi kood,Hierarhias kõrgemal oleva selle elemendi grupi kood,Hierarhilise klassifikaatori elemendi taseme kood,Klassifikaatori elemendi valitavus: 0 = ei ole valitav; 1 = valitav,Elemendi nimetus eesti keeles,Elemendi nimetus inglise keeles,Elemendi nimetus vene keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst eesti keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst inglise keeles,Elemendi kohta esitatud kirjeldav või selgitav tekst vene keeles,"Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - eesti keeles","Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all esitada (nt sünonüümsed ja lähedased nimetused või näited) - vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), eesti keeles","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täiendav täpsustav selgitus, mida elemendi all esitada (nn piiripealsed või eriliigilised juhtumid, mida elemendi all esitada), vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla), inglise keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)","Täpsustav selgitus, mida elemendi all mitte esitada (nt lähedase sõnastusega nimetus, mis liigitub aga teise elemendi alla), vene keeles (NB! Sünonüümide osas pole keelelist üks-ühest vastavust)",Klassifikaatori elemendil kasutatava mõõtühiku kood,Klassifikaatori elemendil kasutatava mõõtühiku tähis eesti keeles,"Sama, mis eelmine, inglise keeles","Sama, mis eelmine, vene keeles",Elemendi kehtivuse algusaeg (YYYY-MM-DD),Elemendi kehtivuse lõpuaeg (YYYY-MM-DD),"EE0201001
+*Tingimuslik. Element on vajalik esitada juhul, kui aruandekuul elemendi osas andmed esinesid.","EE0201002
+*Tingimuslik. Element on vajalik esitada juhul, kui aruandekuul elemendi osas andmed esinesid."
+code,parentCode,level,selectable,name_ET,name_EN,name_RU,explanation_ET,explanation_EN,explanation_RU,included_ET,included_EN,included_RU,included_extra_ET,included_extra_EN,included_extra_RU,excluded_ET,excluded_EN,excluded_RU,unitCode,unit_ET,unit_EN,unit_RU,validFromDate,validUntilDate,,
+R_1,,1,0,Residendid,,,,,,,,,,,,,,,,,,,2023-01-01 00:00:00,,,
+10,R_1,2,1,Palgatulu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+13,R_1,2,1,Kõrgete ametiisikute palgatulu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2016-01-01 00:00:00,,Jah*,
+14,R_1,2,1,Toetus residendist töötajale lapse sünni puhul tulumaksuvaba piirmäära ulatuses,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+15,R_1,2,1,Seaduse või muu õigusakti alusel töö tegemise eest makstud tasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+16,R_1,2,1,"Muu väljamakse residendist töötajale ja ametnikule, mida maksustatakse ainult TM",,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+17,R_1,2,1,VÕS lepingu alusel makstud töö- või teenustasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+18,R_1,2,1,Füüsilise isiku poolt VÕS lepingu alusel makstud töö- või teenustasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+21,R_1,2,1,Juriidilise isiku juhtimis- või kontrollorgani liikme tasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+24,R_1,2,1,Tööandja makstud haigushüvitis residendist töötajale,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+25,R_1,2,1,Töötaja või ametniku eest tasutud III samba või PEPP-i lepingu sissemakse residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+28,R_1,2,1,Kõrgete ametiisikute eest tasutud III samba või PEPP-i lepingu sissemakse residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+29,R_1,2,1,Juriidilise isiku juhtimis- või kontrollorgani liikme eest tasutud III samba või PEPP-i lepingu sissemakse residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+32,R_1,2,1,Tööõnnetus- või kutsehaigushüvitis residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+33,R_1,2,1,Töötajale töölepingu ülesütlemisel või ametnikule teenistusest vabastamisel makstud hüvitis residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+36,R_1,2,1,Kõrgete riigiametnike esinduskulud residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2016-01-01 00:00:00,,Jah*,
+40,R_1,2,1,Tervisekassa makstud ajutise töövõimetuse hüvitis residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+41,R_1,2,1,Töötukassa poolt makstav töötuskindlustushüvitis residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+42,R_1,2,1,Töötukassa kindlustushüvitis koondamisel residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+43,R_1,2,1,Töötukassa kindlustushüvitis tööandja maksejõuetusel residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+44,R_1,2,1,Seaduse alusel Eesti pension residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+47,R_1,2,1,Investeerimisriskiga elukindlustuslepingu või PEPP-i lepingu alusel makstud summa residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+48,R_1,2,1,Kohustusliku kogumispensioni väljamakse residendile pensionieas (10%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+49,R_1,2,1,Täiendava kogumispensioni või PEPP-i lepingu väljamakse residendile pensionieas (10%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+50,R_1,2,1,Renditulu ning litsentsitasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2016-01-01 00:00:00,,,Jah*
+51,R_1,2,1,"Residendist loovisikule ja spordiseaduse §-s 7 nimetatud isikule makstud lähetuskulude hüvitis ja päevaraha ning kolmanda isiku poolt makstud päevaraha, mis ületab piirmäära  ",,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+52,R_1,2,1,Välisteenistuse seaduse või avaliku teenistuse seaduse alusel makstav abikaasatasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+53,R_1,2,1,Perehüvitiste seaduse alusel makstav vanemahüvitis residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+54,R_1,2,1,Intressid residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2018-01-01 00:00:00,,,Jah*
+55,R_1,2,1,"Muu tulu, k.a. stipendium, toetus, kultuuri., spordi- ja teaduspreemia, hasartmänguvõit residendile",,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+56,R_1,2,1,Põllumajandusmaa renditulu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+57,R_1,2,1,Eluruumi üüritulu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2016-01-01 00:00:00,,,Jah*
+58,R_1,2,1,Kohustusliku kogumispensioni väljamakse residendile enne pensioniiga (20%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+59,R_1,2,1,Täiendava kogumispensioni või PEPP-i lepingu väljamakse residendile enne pensioniiga (20%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+70,R_1,2,1,Laevapere liikme töötasu residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+71,R_1,2,1,Tööandja makstud haigushüvitis vms tasu residendist laevapere liikmele,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+72,R_1,2,1,Residendist laevapere liikmele makstud töölepingu lõpetamise hüvitis,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+73,R_1,2,1,Laevapere liikme eest tasutud III samba või PEPP-i lepingu sissemakse residendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+74,R_1,2,1,Toetus residendist laevapere liikmele lapse sünni puhul tulumaksuvaba piirmäära ulatuses,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+MR_1,,1,0,Mitteresidendid,,,,,,,,,,,,,,,,,,,2023-01-01 00:00:00,,,
+120,MR_1,2,1,Palgatulu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+123,MR_1,2,1,VÕS lepingu alusel makstud töö- või teenustasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+126,MR_1,2,1,Ametniku avalikus teenistuses töötamisest saadud tasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+129,MR_1,2,1,Tööandja makstud haigushüvitis mitteresidendist töötajale,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+130,MR_1,2,1,Tööandja haigushüvitis mitteresidendist ametnikule,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+131,MR_1,2,1,Tööõnnetus- või kutsehaigushüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+132,MR_1,2,1,Töötaja eest tasutud III samba või PEPP-i lepingu sissemakse mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+135,MR_1,2,1,Ametniku eest tasutud III samba või PEPP-i lepingu sissemakse mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+138,MR_1,2,1,Töölepingu ülesütlemisel töötajale makstav hüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+141,MR_1,2,1,Teenistusest vabastamisel ametnikule makstav hüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+144,MR_1,2,1,Teadlase töötasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+147,MR_1,2,1,Töötasu rahvusvahelises õhu- või mereveos mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+150,MR_1,2,1,Sportlase ja meelelahutaja esinemise tasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+152,MR_1,2,1,Sportlase ja meelelahutaja Eestis toimunud tegevuse eest makstav tasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+156,MR_1,2,1,Juriidilise isiku juhtimis- või kontrollorgani liikme tasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+158,MR_1,2,1,Juriidilise isiku juhtimis- või kontrollorgani liikme eest tasutud III samba või PEPP-i lepingu sissemakse mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+160,MR_1,2,1,Kohustusliku kogumispensioni väljamakse mitteresidendile pensionieas (10%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+162,MR_1,2,1,Seaduse alusel Eesti pension mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+164,MR_1,2,1,Tööandja pension ja muu sarnane väljamakse mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+166,MR_1,2,1,Avaliku teenistuse pension mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+171,MR_1,2,1,Eesti kindlustusseltsi kindlustushüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,Jah*,
+172,MR_1,2,1,Investeerimisriskiga elukindlustuslepingu või PEPP-i lepingu alusel makstav summa mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+173,MR_1,2,1,Töötukassa poolt makstav töötuskindlustushüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+174,MR_1,2,1,Töötukassa kindlustushüvitis koondamisel mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+175,MR_1,2,1,Töötukassa kindlustushüvitis tööandja maksejõuetusel mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+176,MR_1,2,1,Tervisekassa makstud ajutise töövõimetuse hüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+177,MR_1,2,1,Välisteenistuse seaduse või avaliku teenistuse seaduse alusel makstav abikaasatasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,Jah*,
+178,MR_1,2,1,Stipendium välisriigist mitteresidendist üliõpilasele,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+179,MR_1,2,1,Perehüvitiste seaduse alusel makstav vanemahüvitis mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+180,MR_1,2,1,Tasu mitteresidendist juriidilisele isikule Eestis osutatud teenuse eest,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+181,MR_1,2,1,Tasu teenusest maksualast koostööd mittetegevas jurisdiktsioonis mitteresidendist jur. isikule,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+182,MR_1,2,1,Juriidilise isiku tasu rahvusvahelisest õhu- ja merevedudest mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+183,MR_1,2,1,Sportlase ja meelelahutaja Eestis toimunud tegevuse eest mitteresidendist juriidilisele isikule makstav tasu,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+184,MR_1,2,1,Tasu mitteresidendist sportlase või meelelahutaja teose Eestis esitamise eest ,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+185,MR_1,2,1,Üüri- või renditasu mitteresidendile Eestis asuva eluruumi kasutamisest või piiratud asjaõigusega koormamisest,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+186,MR_1,2,1,"Üüri- või renditasu mitteresidendile, kui vara (va kinnisvara) on Eesti registris",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+187,MR_1,2,1,"Mitteresidendile makstud tasu tööstusliku, kaubandusliku või teadusalase seadme kasutada andmise eest",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+188,MR_1,2,1,"Mitteresidendile makstud tasu kaubandusliku, teadusalase või tööstusliku seadme kasutamise õiguse võõrandamisest ",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+189,MR_1,2,1,"Mitteresidendile makstud litsentsitasu  kirjandus-, kunsti-, muusika- või teadusteoste autoriõiguse kasutada andmise eest",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+190,MR_1,2,1,"Mitteresidendile makstud litsentsitasu  kirjandus-, kunsti-, muusika- või teadusteoste autoriõiguse võõrandamise eest",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+191,MR_1,2,1,"Mitteresidendile makstud litsentsitasu patendi, kaubamärgi, tööstusdisainilahenduse või kasuliku mudeli, plaanide, salajaste valemite või protsesside  kasutada andmise eest",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+192,MR_1,2,1,"Mitteresidendile makstud litsentsitasu patendi, kaubamärgi, tööstusdisainilahenduse või kasuliku mudeli, plaanide, salajaste valemite või protsesside kasutamise õiguse võõrandamise eest",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+193,MR_1,2,1,Mitteresidendile makstud litsentsitasu oskusteabe  kasutada andmise eest,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+194,MR_1,2,1,Mitteresidendile makstud litsentsitasu oskusteabe kasutamise õiguse võõrandamisest eest,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+196,MR_1,2,1,Intressid mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+197,MR_1,2,1,"Muu tulu, k.a. abiraha, stipendium, toetus, kultuuri., spordi- ja teaduspreemia, hasartmänguvõit mitteresidendile",,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+198,MR_1,2,1,Mitteresidendist lepingulisele investeerimisfondile tasutud intress,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+199,MR_1,2,1,Mitteresidendist lepingulise investeerimisfondi rendi- ja üüritasu,,,,,,,,,,,,,,,EUR,euro,euro,евро,2015-01-01 00:00:00,,,Jah*
+201,MR_1,2,1,Mitteresidendist lepingulise investeerimisfondi üüritasu eluruumilt ,,,,,,,,,,,,,,,EUR,euro,euro,евро,2016-01-01 00:00:00,,,Jah*
+202,MR_1,2,1,Kohustusliku kogumispensioni väljamakse mitteresidendile  enne pensioniiga (20%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+203,MR_1,2,1,Täiendava kogumispensioni või PEPP-i lepingu väljamakse mitteresidendile enne pensioniiga (20%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+205,MR_1,2,1,Üüri- või renditasu mitteresidendile Eestis asuva kinnisasja kasutamisest või piiratud asjaõigusega koormamisest,,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+207,MR_1,2,1,Täiendava kogumispensioni  või PEPP-i lepingu väljamakse mitteresidendile pensionieas (10%),,,,,,,,,,,,,,,EUR,euro,euro,евро,2021-01-01 00:00:00,,,Jah*
+270,MR_1,2,1,Laevapere liikme töötasu mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+271,MR_1,2,1,Tööandja makstud haigushüvitis vms tasu mitteresidendist laevapere liikmele,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+272,MR_1,2,1,Mitteresidendist laevapere liikmele makstud töölepingu lõpetamise hüvitis,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,
+273,MR_1,2,1,Laevapere liikme eest tasutud III samba või PEPP-i lepingu sissemakse mitteresidendile,,,,,,,,,,,,,,,EUR,euro,euro,евро,2020-07-01 00:00:00,,Jah*,

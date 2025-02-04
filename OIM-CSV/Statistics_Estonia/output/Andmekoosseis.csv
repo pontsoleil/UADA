@@ -1,0 +1,144 @@
+"Universaalsed üldised andmeväljad, mis esinevad vastavalt vajadusele läbivalt erinevates taksonoomiagruppides:",Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,"Välja esinemine andmesektsioonides. Osade väljade esinemine on kohustuslik ja osade väljade esinemine sõltub kas andmete esinemisest või teiste andmeväljadega seotud tingimustest. Andmeväljade juurde lisatud kohustuslikku info kehtib juhul, kui perioodi osas või sündmuspõhised andmed esinesid.",Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15,Unnamed: 16,Unnamed: 17,Unnamed: 18
+Välja nimetus,Aegpideva klassifikaatori kood,Viide aegpideva klassifikaatori asukohale,XBRL GL element/elemendi grupp,Selgitus,"EE0101001
+Palga- ja tööjõukuluandmed Statistikaametile (SA)","EE0102001
+Täiendavad palga- ja tööjõukulu andmed Statistikaametile (SA)","EE0201001
+Tööjõumaksude andmed Maksu- ja Tolliametile","EE0201002 
+Hüvitisite, toetuste jm väljamaksete andmed Maksu- ja Tolliametile","EE0202001
+TÖR andmed Maksu- ja Tolliametile","EE0203001 
+Ostu ja müügi tehingute ja toimingute andmed Maksu- ja Tolliametile","EE0103001
+Majutatute ja ööbimiste andmed Statistikaametile","EE0103002
+Majutusasutuse ruumide ja kohtade andmed Statistikaametile","EE0103003
+Majutusasutuse täiendavad andmed Statistikaametile","EE0501001
+Majutatute andmed PPA-le","EE0301010 Perioodi saldod (MIKRO)
+andmed Äriregistrile","EE0301020 Perioodi saldod (VA. MIKRO)
+andmed Äriregistrile","EE0302010
+Perioodi käibed andmed Äriregistrile","EE0104001
+Ostu- ja müügitehingute ning toimingute andmed Statistikaametile (sektsioonide arv on analüüsimisel*)"
+Summa (gl-cor:amount):,,,,,,,,,,,,,,,,,,
+Rahasumma,,,gl-cor:amount,"Rahasumma. Esitada kahe komakoha täpsusega.
+",Jah,Jah,Jah,Jah,,Jah,,,Jah,,Jah,Jah,Jah,Jah
+"Tehingu osapoole andmed (gl-cor:identifierReference). Siin määratakse tehingu osapooled, tööandja, töötaja (edaspidiseks ka ostja, müüja, lepingu partner jne):",,,,,,,,,,,,,,,,,,
+Tehingu osapoole kood,,,gl-cor:identifierCode ,"Isikukoodi ette on kohustuslik märkida kahekohaline riigi tähtkood (nt EE, LT, LV). 
+Isikukoodi puudumisel märkida mitteresidendi kood (ilma riigi tähtkoodita). Juhul kui isik, kellel ei ole Eesti isikukoodi, töötab Eestis kuni viis päeva, siis talle isikukoodi tarvis ei ole ja väljamaksete deklareerimiseks taotleb tööandja Maksu- ja Tolliametilt töötajale mitteresidendi koodi. Mitteresidendi koodi taotlemiseks tuleb esitada Maksu- ja Tolliametile taotlus mitteresidendist väljamakse saaja Maksu- ja Tolliametis registreerimiseks.
+Palgataksonoomia puhul: töötaja isikukood või MTA mitteresidendi kood, juriidilise isiku puhul äriregistrikood või selle puudumisel MTA mitteresidendi kood.
+Osapoole koodi puudumisel tuleb esitada (TÖR andmete puhul ning SA-le): eesnimi, perekonnanimi ja sünniaeg (sh SA-le lisaks ka sugu). SUGU2022ap klassifikaator tuleb esitada alati ka mitteresidendikoodi puhul.
+KMD puhul siseriiklike tehingute korral tehingupartneri äriregistrikood, isikukood, MTA mitteresidendi kood (KMD) ja ühendusesiseste tehingute korral tehingupartneri KMKR number (VD/VDP).",Jah,,Jah,Jah,Jah,"Jah* - tingimustlik, teatud käibemaksu liikide puhul vajalik esitada kui siseriiklike tehingute korral on tehingupartner juriidiline isik, füüsilisest isikust ettevõtja, riigi-, valla- ja linnaasutus või MTA-s mitteresidendina registreeritud juriidiline isik või kui ühendusesiseste tehingute korral on tehingupartner käibemaksukohustuslane. ",,,,,,,,
+Tehingu osapoole koodi täpsustus,IDENTIFIERDESCRIPTION_enum,https://estat.stat.ee/codelists/codelist/IDENTIFIERDESCRIPTION_enum,gl-cor:identifierDescription,"Tehingu osapoole koodi (gl-cor:identifierCode) välja kirjeldus, mis viitab, mis koodiga on tegu (nt äriregistrikoodi puhul on väärtuseks ""ARIREGISTRIKOOD""). Vt täpsemalt IDENTIFIERDESCRIPTION_enum lehel.","Jah* - valikuline.
+Võimalikud väärtused:
+ISIKUKOOD
+MRR_KOOD",,Jah* - valikuline,Jah* - valikuline,Jah* - valikuline,"Jah* - tingimustlik, teatud käibemaksu liikide puhul vajalik esitada kui siseriiklike tehingute korral on tehingupartner juriidiline isik, füüsilisest isikust ettevõtja, riigi-, valla- ja linnaasutus või MTA-s mitteresidendina registreeritud juriidiline isik või kui ühendusesiseste tehingute korral on tehingupartner käibemaksukohustuslane. ",,,,,,,,
+Tehingu osapoole kategooria,IDENTIFIERCATEGORY_enum,https://estat.stat.ee/codelists/codelist/IDENTIFIERCATEGORY_enum,gl-cor:identifierCategory,"Antud väli täpsustab tehingu osapoolt. 
+KMD puhul eristamaks käibemaksu tehingupartneri gruppe: füüsilised ja juriidilised isikud, sh Eestis koodita mitteresidendid ja teises liikmesriigis käibemaksukohustuslasena registreeritud/registreerimata isikud ning käibemaksugrupi liikmed. Vt täpsemalt IDENTIFIERCATEGORY_enum lehelt.",,,,,,"Jah* - tingimustlik, teatud käibemaksu liikide puhul on müügitehingute puhul vajalik esitada (võimalikud väärtused 1,2). Käibemaksugrupi liikme tehingute deklareerimiseks on vajalik käibemaksugrupi liikme tuvastamiseks kaasa panna ka tunnus 3 (kasutatav ainult käibemaksugrupi korral).",,,,,,,,
+Tehingu osapoole eesnimi,,,gl-cor:identifierContactFirstName,"Palgataksonoomia puhul: Eesti isikukoodi puudumisel kuni viiepäevase töötamise korral töötaja eesnimi.
+
+","Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,"Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,,Jah,,,,
+Tehingu osapoole perekonnanimi,,,gl-cor:identifierContactLastName,"Palgataksonoomia puhul: Eesti isikukoodi puudumisel kuni viiepäevase töötamise korral töötaja perekonnanimi.
+","Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,"Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,,Jah,,,,
+Tehingu osapoole sünniaeg,,,gl-cor:identifierAuthorityVerificationDate,Palgataksonoomia puhul: Eesti isikukoodi puudumisel kuni viiepäevase töötamise korral sünniaeg. Sünniaja välja struktuur: YYYY-MM-DD,"Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,"Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" puudub.",,,,,Jah,,,,
+Tehingu osapoole sugu,SUGU2022ap,https://estat.stat.ee/codelists/codelist/SUGU2022ap,gl-cor:accountSub,Palgataksonoomia puhul: Eesti isikukoodi puudumisel kuni viiepäevase töötamise korral töötaja sugu.,"Jah* - vajalik esitada juhul, kui ""tehingu osapoole kood"" on mitteresidendi kood või kui osapoole kood puudub (esitatakse sünniaeg).",,,,,,,,,,,,,
+Koguselised mõõdetavad näitajad/klassifikaatorid (gl-bus:measurable),,,,,,,,,,,,,,,,,,
+Mõõdetava näitaja tunnus,MEASURABLEDESCRIPTION_enum,https://estat.stat.ee/codelists/codelist/MEASURABLEDESCRIPTION_enum,gl-bus:measurableDescription,"Antud välja kasutatakse juhul, kui on vaja esitada erinevat laadi koguseliseid näitajaid, mille osas ei ole klassifikaatorit (eelkõige seetõttu, et tegu on üksikute eri tüüpi väljadega, mille osas ei ole mõistlik eraldiseisvat klassifikaatorit luua). Sellistel juhtudel moodustatakse näitajatest loend.
+Loendi elementide täpsemad kirjeldused on toodud välja lehel MEASURABLEDESCRIPTION_enum","Jah
+
+Võimalikud loendi koodid:
+TOOAJAMAAR
+MOODETAV_AEG","Jah
+
+Võimalik loendi kood:
+VABAD_AMETIKOHAD",,,"Jah
+
+Võimalik loendi kood:
+TOOAJAMAAR","Jah* - tingimustlik, vajalik esitada teatud käibemaksu liikide puhul, kui tehingupartner on juriidiline isik, füüsilisest isikust ettevõtja ning riigi-, valla- ja linnaasutus. 
+Võimalik loendi kood:
+ARVE_KOGUSUMMA","Jah
+Võimalikud väärtused:
+MAJUTATUTE_ARV
+OOBIMISTE_ARV",,"Jah
+Võimalikud väärtused:
+LAHTIOLEKUPAEVADE_ARV
+TUBAOOPAEVADE_ARV","Jah
+Võimalik väärtus:
+LASTE_ARV",,,,
+Mõõdetav kogus,,,gl-bus:measurableQuantity,Antud väljal esitatakse koguselist arvu.,Jah,Jah,,,"Jah* - tingimuslik, sõltub töötamise liigist","Jah* - tingimustlik, teatud käibemaksu liikide puhul vajalik esitada kui tehingupartner on juriidiline isik, füüsilisest isikust ettevõtja ning riigi-, valla- ja linnaasutus. Märgitakse arve kogusumma. ",Jah,Jah,Jah,Jah,,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Majutusmaht,MAJUTUSMAHT2024ap,https://estat.stat.ee/codelists/codelist/MAJUTUSMAHT2024ap,gl-bus:measurable,Antud klassifikaatori kaudu kajastatakse ruumide/kohtade arvu.,,,,,,,,Jah,,,,,,
+Kuupäevaga seotud sündmus,SYNDMUS2017ap,https://estat.stat.ee/codelists/codelist/SYNDMUS2017ap,gl-bus:measurable,(Algus-)kuupäeva/lõpukuupäevaga seotud sündmust täpsustav klassifikaator. Esitatakse alati koos (algus)kuupäeva ja/või lõpukuupäeva väljaga (vt sheet SYNDMUS2017ap).,Jah,,"Jah* - tingimuslik, seotud väljamakse tagastusega","Jah* - tingimuslik, seotud väljamakse tagastusega","Jah* - esitatakse juhul, kui esitatakse töötamise alguse kuupäev ja/või töötamise peatamise alguse kuupäev.","Jah*, juhul kui saadetakse kreeditarve info. Võimalik väärtus: Algse_arve_kp",,,,,,,,
+(Algus-)kuupäev,,,gl-bus:measurableStartDateTime,"SYNDMUS2017ap sündmuse periood või alguskuupäev. Kuupäeva struktuur: YYYY-MM-DD
+Esitajakse alati koos SYNDMUS2017ap klassifikaatoriga.",Jah - vajalik esitada töösuhte alguskuupäev,,"Jah* - tingimuslik, seotud väljamakse tagastusega (SYNDMUS2017), näidatakse tagasimakse kuupäev.","Jah* - tingimuslik, seotud väljamakse tagastusega (SYNDMUS2017), näidatakse tagasimakse või tagastuse aluseks oleva väljamakse kuupäev.","Jah* - esitatakse juhul, kui esitatakse töötamise alguse kuupäev ja/või töötamise peatamise alguse kuupäev.","Jah*, juhul kui saadetakse kreeditarve info. Märgitakse esialgse arve kuupäev. ",,,,,,,,
+Lõpukuupäev,,,gl-bus:measurableEndDateTime,"SYNDMUS2017ap sündmuse perioodi lõpukuupäev. Kuupäeva struktuur: YYYY-MM-DD
+Esitajakse alati koos SYNDMUS2017ap klassifikaatoriga.","Jah* - tingimuslik. Vajalik esitada juhul, kui tööleping on tähtajaline või kui töötamise lõpu ajaks ei ole aruandekuu viimane päev.",,,,"Jah* - esitatakse juhul, kui esitatakse töötamise lõppemise kuupäev.
+Peatamise lõppemise kuupäev.",,,,,,,,,
+"Universaalsed klassifikaatorid + seotud andmeväljad, mis esinevad vastavalt vajadusele läbivalt erinevates taksonoomiagruppides:",,,,,,,,,,,,,,,,,,
+Kirjendi detaili majandusliku sisu (gl-cor:account):,,,,,,,,,,,,,,,,,,
+Kirje majandusliku sisu kood,MAJANDUSLIKSISU2024ap,https://estat.stat.ee/codelists/codelist/MAJANDUSLIKSISU2024ap,gl-cor:accountMainID ,"Kirje majandusliku sisu kood tulenevalt MAJANDUSLIKSISU2024ap klassifikaatorist. Antud klassifikaator on sarnane et-gaap liigitusele, kuid on sellest üldisem ning universaalsem, mis tagab ka selle, et igakordsete et-gaap uuenduste puhul ei pruugi olla vajadust muuta üldisemal tasemel oleva klassifikaatori elemente.",Jah,,,,,,,,,,Jah,Jah,Jah,Jah
+Kirje majandusliku sisu täiendav info,,,gl-cor:accountMainDescription,"Valikuline väli, mida võib kasutada enda konto sidumiseks majandusliku sisu (accountMainID) väljaga.",,,,,,,,,,,Jah* - valikuline,Jah* - valikuline,Jah* - valikuline,Jah* - valikuline
+Raamatupidamiskirjendid (gl-cor: accountingEntries) - XBRL GL juurelement:,,,,,,,,,,,,,,,,,,
+Klassifikaatorid (kajastatakse accountSub all) + seotud andmeväljad:,,,,,,,,,,,,,,,,,,
+Riigid ja territooriumid,RTK2T2013ap,https://estat.stat.ee/codelists/codelist/RTK2T2013ap,gl-cor:accountSub,"Riikide ja territooriumide klassifikaator (vt sheet RTK2T2013ap). Sõltuvalt andmesektsioonist on kohustuslik esitada antud klassifikaatorit liitklassifikaatorina koos RIIGIROLL2022ap-ga, mis määrab ära, mis rollis esitatud riik või territoorium on. Liitklassifikaatori esitamise näide on välja toodud seotud XML näidistes.
+Osades sektsioonides on riigi tähenduseks alati kindel riigi roll (nt EE0101001 puhul töökoha asukoha riik), mistõttu ei ole kohustus riigi rolli esitada, aga arendamise lihtsustamiseks/ühtlustamiseks võib seda ka nendes sektsioonides valikuliselt esitada. ","Jah* - tingimuslik. Vajalik esitada siis, kui töökoha asukoha aadress on välisriik.",,Jah* - tingimuslik. Vajalik esitada teatud VM liikide puhul (RR_A1 või RR_laevapere riik).,,"Jah* - tingimuslik. Vajalik esitada siis, kui töökoha asukoha aadress on välisriik","Jah* - tingimustlik. Vajalik esitada siis, kui on ühendusesisene tehing teise liikmesriigi käibemaksukohustuslasega.
+Vajalik esitada kauba võõrandamisel/teenuse ostutamisel teise liikmesriigi käibemaksukohustuslasele ostja asukohamaa riik.",Jah,,,Jah,,Jah,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Riigi roll,RIIGIROLL2022ap,https://estat.stat.ee/codelists/codelist/RIIGIROLL2022ap,gl-cor:accountSub,"Tehniline klassifikaator (vt sheet RIIGIROLL2022ap), mis määrab, mis rollis on RTK2T2013ap riik või territoorium.
+RIIGIROLL2022ap klassifikaatorit kasutatakse alati koos RTK2T2013ap klassifikaatoriga.","Jah* - valikuline (riik tähistab alati töökoha asukoha riiki, seega ei ole kohustuslik esitada)
+Võimalik väärtus: RR_tookoha_asukoht",,"Jah* - tingimuslik. Vajalik esitada teatud VM liikide puhul.
+Võimalikud väärtused:
+RR_A1
+RR_laevapere riik",,"Jah* - tingimuslik. Vajalik esitada siis, kui töökoha asukoha aadress on välisriik. Võimalik väärtus: RR_tookoha_asukoht","Jah* - tingimustlik. Vajalik esitada sii, kui on ühendusesisene tehing teise liikmesriigi käibemaksukohustuslasega.
+Võimalik väärtus: RR_ostja","Jah* - valikuline
+(riik tähistab alati majutatu elukohariiki, seega ei ole kohustuslik esitada).
+Võimalik väärtus:
+RR_elukohariik",,,"Jah
+Võimalikud väärtused:
+RR_elukohariik
+RR_kodakondsuse_riik
+RR_dok_riik
+",,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Transpordiliik,TL2015ap,https://estat.stat.ee/codelists/codelist/TL2015ap,gl-cor:accountSub,"Transpordiliikide klassifikaatoris on esitatud väliskaubanduses kasutatavad transpordi liigid ja seda uuendatakse rahvusvahelise metoodika muutumisel (vt sheet TL2015ap).
+Tegu on liitklassifikaatoriga - transpordiliigi kasutamise korral tuleb alati esitada ka transpordivahendi number (eristatud komadega).",,,"Jah* - tingimuslik. Vajalik esitada teatud VM liikide puhul (laevapere liikme erikorra ja tonnaaži väljamaksete puhul laeva IMO kood)
+Võimalikud väärtused:
+1 - Meretransport",,"Jah* - tingimuslik. Vajalik esitada juhul, kui töötamise liik on ""Tööleping laevapere liikme soodustusega""
+Võimalikud väärtused:
+1 - Meretransport",,,,,,,,,
+Transpordivahendi number,,,gl-cor:accountSub,"Kasutatakse alati koos transpordiliigi klassifikaatoriga (TL2015ap). Nt kui transpordiliigiks on laev (meretransport), siis sellega koos tuleb esitada laeva IMO number (saadetavas XML kirjes ühe kirje kaudu eristatult komadega, täpsemalt näha XML näidistes).",,,Jah* - tingimuslik. Vajalik esitada teatud VM liikide puhul  (laevapere liikme erikorra ja tonnaaži väljamaksete puhul laeva IMO kood),,"Jah* - tingimuslik. Vajalik esitada juhul, kui töötamise liik on ""Tööleping laevapere liikme soodustusega""",,,,,,,,,
+Muu info,MUUPTJINFO2017ap,https://estat.stat.ee/codelists/codelist/MUUPTJINFO2017ap,gl-cor:accountSub,"Erinevat liiki sisu käsitlev muu info klassifikaator (vt sheet MUUPTJINFO2017ap).
+Nt SA puhul on vajalik esitada sektsioonis EE0102001 antud klassifikaatori kaudu agregeeritud tasemel palgateemaga seonduvaid finantsnäitajaid, kui nende osas andmeid esineb (küsimustiku ""Palk ja Tööjõud"" jaoks).",,Jah,,,,,,,,,,,,
+Kirje kommentaar,,,gl-cor:detailComment,Palgataksonoomias kajastatakse antud välja all lepingut määratlev tunnus.,,,,,"Jah* - tingimuslik. Vajalik esitada juhul, kui töötajal on ühe tööandja juures mitu töölepingut.",,,,,,,,,
+Asukoht Eestis,EE_ADS,http://geoportaal.maaamet.ee/est/Teenused/In-ADS-p504.html,gl-cor:accountSub,"Maa-ameti poolt hallatav Eesti aadressiandmete süsteemi (ADS) klassifikaator, kus igal aadressi objektil on unikaalne võti.","Jah* - tingimuslik. Tuleb täita juhul, kui töökoha asukoha aadress asub Eestis.",,,,"Jah* - tingimuslik. Tuleb täita juhul, kui töökoha asukoha aadress asub Eestis.",,,,,,,,,"Jah* - tingimuslik. Vajalik esitada teatud kirjetes. Vajalik esitada maakonna täpsusega, sh eristatult Tallinn."
+Dokumendi number,,,gl-cor:documentNumber,"KMD puhul väljastatud müügiarve või saadud ostuarve number.
+Majutuses PPA-le reisidokumendi number.",,,,,,"Jah* - tingimustlik. Vajalik esitada teatud käibemaksu liikide puhul, kui tehingupartner on juriidiline isik, füüsilisest isikust ettevõtja, riigi-, valla- ja linnaasutus või MTA-s mitteresidendina registreeritud juriidiline isik.  ",,,,Jah. Vajalik esitada reisidokumendi number.,,,,
+Dokumendi täpsustav number,,,gl-cor:documentApplyToNumber,Ettemaksude deklareerimise korral tuleb siia märkida ettemaksuarve number. ,,,,,,Jah* - tingimuslik. Vajalik esitada ettemaksuarve number juhul kui tegu on ettemaksu deklareerimisega.,,,,,,,,
+Dokumendi kirjeldus,DOCUMENTTYPEDESCRIPTION_enum,https://estat.stat.ee/codelists/codelist/DOCUMENTTYPEDESCRIPTION_enum,gl-cor:documentTypeDescription,,,,,,,,,,,"Jah
+
+Võimalikud väärtused:
+PASS
+ID_KAART
+MUU_REISIDOKUMENT",,,,
+Dokumendi kuupäev,,,gl-cor:documentDate,KMD puhul väljastatud müügiarve või saadud ostuarve kuupäev (sh ettemaksu korral ettemaksuarve kuupäev).,,,,,,"Jah* - tingimustlik. Vajalik esitada teatud käibemaksu liikide puhul, kui tehingupartner on juriidiline isik, füüsilisest isikust ettevõtja, riigi-, valla- ja linnaasutus või MTA-s mitteresidendina registreeritud juriidiline isik.  ",,,,,,,,
+Kaubad ja teenused,KAUBAD_TEENUSED2024ap,https://estat.stat.ee/codelists/codelist/KAUBAD_TEENUSED2024ap,gl-cor:accountSub,Ostetud/müüdud kaubad ja teenused.,,,,,,,,,Jah,,,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Tööstustooted ja -teenused,TOOSTUSTT2024ap,https://estat.stat.ee/codelists/codelist/TOOSTUSTT2024ap,gl-cor:accountSub,Eesti territooriumil oma materjalist või alltöövõtu korras toodetud (sh ka lattu toodetud) tooted ja tööstusteenused.,,,,,,,,,,,,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Osapoole liik,OSAPOOLELIIK2024ap,https://estat.stat.ee/codelists/codelist/OSAPOOLELIIK2024ap,gl-cor:accountSub,"Tehingupartneri liik, eristamaks füüsilisi ja juriidilisi isikuid.",,,,,,,,,,,,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Ehitise tüüp,EHITISETYYP2024ap,https://estat.stat.ee/codelists/codelist/EHITISETYYP2024ap,gl-cor:accountSub,,,,,,,,,,,,,,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Palk ja tööjõud spetsiifilised klassifikaatorid + andmeväljad:,,,,,,,,,,,,,,,,,,
+Ametinimetus,AK2008ap,https://estat.stat.ee/codelists/codelist/AK2008ap,gl-cor:accountSub,"Ametite klassifikaatorile vastav ametinimetus, mis näitab töötaja ametiala, ametikohta või ametinimetust. Ametite klassifikaator (AK) põhineb rahvusvahelisel klassifikaatoril: International Standard Classification of Occupations, 2008 (ISCO-08).
+Ametite klassifikaator on viietasemeline ja kaheksakohalise koodiga. Ametinimetus esitatakse klassifikaatori viiendal tasemel ning rühmitub esmalt ametirühmadesse (4. tase) jt ülemistele tasemetele. Ametinimetuse aluseks on ametikoha üldised tööülesanded või vastav kvalifikatsioon nende tegemiseks.
+
+",Jah,,,,Jah,,,,,,,,,
+Töötamise liik,TOOTLIIK2017ap,https://estat.stat.ee/codelists/codelist/TOOTLIIK2017ap,gl-cor:accountSub,Töötamise registrise kantava töötamise liik (vt sheet TOOTLIIK2017ap).,Jah,,,,Jah,,,,,,,,,
+Tööjõukulu liik,TKL2017ap,https://estat.stat.ee/codelists/codelist/TKL2017ap,gl-cor:accountSub,"Tööjõukulu liikide klassifikaator (vt sheet TKL2017ap). Antud klassifikaatori osade elementidega tuleb esitada ka mõõdetav aeg (tunnid/kalendripäevad), mis on toodud välja klassifikaatori lehel vastavates veergudes.","Jah. Iga töötaja puhul on alati kohustuslik esitada element A11001.
+Aruandlusperioodil põhitöötasu puudumisel märkida summaks/töötundideks ""0"". 
+*Ülejäänud elemendid esitatakse juhul, kui nende osas andmed esinevad (nt puhkusetasu).",,,,,,,,,,,,,
+Deklareeritud summa liik,SUMMALIIK2023ap,https://estat.stat.ee/codelists/codelist/SUMMALIIK2023ap,gl-cor:accountSub,Isikule tehtud väljamaksetelt arvestatud ja/või kinnipeetud maksuliikide ning nendega kaasneva täiendava info klassifikaator (vt sheet SUMMALIIK2023ap).,,,Jah,Jah,,,,,,,,,,
+Maksustatava väljamakse liik,VALJAMLIIK2023ap,https://estat.stat.ee/codelists/codelist/VALJAMLIIK2023ap,gl-cor:accountSub,Isikule tehtavate maksustavate väljamakse liikide klassifikaator (vt sheet VALJAMLIIK2023ap).,,,Jah,Jah,,,,,,,,,,
+Kande tüüp,KANDETYYP2023ap,https://estat.stat.ee/codelists/codelist/KANDETYYP2023ap,gl-cor:accountSub,"Kande tüüp (vt sheet KANDETYYP2023ap).
+Alati esitatakse koos Töötamise kande ID-ga (lineNumber kaudu).",,,,,Jah,,,,,,,,,
+Töötamise peatumine ja lõpetamine,TOOTPEATLOPALUS2023ap,https://estat.stat.ee/codelists/codelist/TOOTPEATLOPALUS2023ap,gl-cor:accountSub,Töötamise registrisse kantavate töötamise peatumise ja lõpetamise aluste klassifikaator (vt sheet TOOTPEATLOPALUS2023ap).,,,,,"Jah* - tingimuslik. Vajalik esitada, kui esitatakse töötamise peatumise või lõpetamise andmeid.",,,,,,,,,
+Kande kuupäev,,,gl-cor:postingDate,"Kuupäev, millal väljamakse kohustus koos maksete ja maksudega raamatupidamises kajastati (nt TSD palgaandmed).",,,Jah,Jah,,,,,,,,,,
+Majandustehingute spetsiifilised klassifikaatorid + andmeväljad:,,,,,,,,,,,,,,,,,,
+Tehingute ja toimingute käibemaksu liigid,KMDTYYP2024ap,https://estat.stat.ee/codelists/codelist/KMDTYYP2024ap,gl-cor:accountSub,Klassifikaator aitab määratleda ostu ja müügi tehingute ja toimingute taksonoomia puhul käibemaksu liigid.,,,,,,Jah,,,,,,,,
+Maksumäär,,, gl-cor:taxPercentageRate,KMD puhul tehingu või toimingu käibemaksumäär. ,,,,,,Jah *- tingimustlik. Vajalik esitada teatud käibemaksu liikide puhul.,,,,,,,,
+Eesti majanduse tegevusalade klassifikaator,EMTAK2025ap,https://estat.stat.ee/codelists/codelist/EMTAK2025ap,gl-cor:accountSub,"Eesti Majanduse Tegevusalade Klassifikaator (EMTAK) on Euroopa Ühenduse majandustegevusalade klassifikaatori (NACE) Eesti kohandustega versioon.Tegevusalade klassifikaator on oma ülesehituselt hierarhiline, jagunedes viieks tasemeks. Neli esimest taset vastavad NACE-le ning viies tase on rahvuslik, mille loomisel on arvestatud Eesti majanduse eripära ning vastavat seadusandlust.",,,,,,,,,,,Jah,Jah,,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Andmete esitlusviis,ANDMETEESITLUSVIIS2024ap,https://estat.stat.ee/codelists/codelist/ANDMETEESITLUSVIIS2024ap,gl-cor:accountSub,Klassifikaator aitab määrata andmete esitlusviisi alternatiivide korral. Lisaks annab andmete kasutajatele lisainfot kasutatud arvestusmeetodi kohta.,,,,,,,,,,,,Jah,Jah,
+Tehingute seotud osapool,SEOTUDOSAPOOL2024ap,https://estat.stat.ee/codelists/codelist/SEOTUDOSAPOOL2024ap,gl-cor:accountSub,Klassifikaator aitab eristada seotud osapooltega tehinguid.,,,,,,,,,,,"Jah* - tingimuslik. Vajalik esitada vaid siis, kui tehing seotud osapoolega toimub.","Jah* - tingimuslik. Vajalik esitada vaid siis, kui tehing seotud osapoolega toimub.","Jah* - tingimuslik. Vajalik esitada vaid siis, kui tehing seotud osapoolega toimub.",
+Tehingu varagrupp,VARAGRUPP2024ap,https://estat.stat.ee/codelists/codelist/VARAGRUPP2024ap,gl-cor:accountSub,"Varagrupi tunnus aitab määratleda, mis varaga tehing on seotud.",,,,,,,,,,,,Jah,Jah,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Tehingute ja toimingute muutuse liik,MUUTUSELIIK2024ap,https://estat.stat.ee/codelists/codelist/MUUTUSELIIK2024ap,gl-cor:accountSub,Klassifikaator võimaldab täpsustada tehingu liiki agregeeritud deebet või kreeditkäibe sees. Kasutatakse vaid pikaajaliste varade ja kohustiste (sh omakapital) kirjete kasutamisel.,,,,,,,,,,,,,Jah,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Deebet/Kreedit,,,gl-cor:debitCreditCode,"Tunnus, et määrata, kas rahaline kogus on seotud (D)deebetiga või (C)kreeditiga.",,,,,,,,,,,Jah,Jah,Jah,Jah* - tingimuslik. Vajalik esitada teatud kirjetes.
+Majutuse spetsiifilised klassifikaatorid + andmeväljad:,,,,,,,,,,,,,,,,,,
+Reisi eesmärk,REISIEESMARK2024ap,https://estat.stat.ee/codelists/codelist/REISIEESMARK2024ap,gl-cor:accountSub,,,,,,,,,Jah,,Jah,,,,

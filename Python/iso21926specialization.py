@@ -7,11 +7,11 @@ Generates ADC Business Semantic Model (BSM) CSV file from Foundational Semantic 
 Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
-Creation Date: 2024-05-12
+Creation Date: 2025-01-17
 
 MIT License
 
-(c) 2023, 2024 SAMBUICHI Nobuyuki (Sambuichi Professional Engineers Office)
+(c) 2023-2025 SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-"""
 
-"""
 ABOUT THIS SCRIPT
 These Python scripts are specifically designed for handling the ADS graph walk in two distinct steps, namely `awi21926specialization.py` and `awi21926graphwalk.py`.
 
@@ -88,8 +86,8 @@ TRACE = True
 SEP = os.sep
 
 # Define CSV headers
-header  = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'module', 'table', 'domain_name']
-header2 = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'multiplicity', 'representation_term', 'domain_name', 'associated_class', 'definition', 'module', 'table', 'id']
+header  = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'module', 'table', 'domain_name', 'action', 'label_local', 'definition_local', 'xpath']
+header2 = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'multiplicity', 'representation_term', 'domain_name', 'associated_class', 'definition', 'module', 'table', 'id', 'label_local', 'definition_local', 'xpath']
 
 # Initialize dictionaries and lists
 domain_dict = None
@@ -114,7 +112,14 @@ module_dict = {
     'Sales': 'SL',
     'Inventory': 'IV',
     'PPE': 'PE',
-    'Property Plant Equipment': 'PE'
+    'Property Plant Equipment': 'PE',
+    'gl-cor': 'CO',
+    'gl-bus': 'BU',
+    'gl-ehm': 'EH',
+    'gl-muc': 'MC',
+    'gl-srcd': 'SR',
+    'gl-taf': 'TA',
+    'gl-usk': 'UK',
 }
 
 module_dict['JP'] = 'JP'
@@ -159,10 +164,14 @@ def is_file_in_use(file_path):
 
 # Utility function to form a property term
 def getproperty_term(record):
+    property_type = record['property_type']
     if len(record['associated_class']) > 0:
-        return f"{record['property_term']}.{record['associated_class']}"
+        if record['property_term']:
+            return property_type, f"({record['property_term']}) {record['associated_class']}"
+        else:
+            return property_type, record['associated_class']
     else:
-        return record['property_term']
+        return property_type, record['property_term']
 
 
 # Utility function to transform a CSV row into a record
@@ -171,9 +180,10 @@ def populate_record(row, seq):
     global current_class
     global class_num
     record = {}
-    _type = row['property_type']
+    property_type = row['property_type']
     class_term = row['class_term'].replace('  ', ' ').strip()
     module = row['module']
+    module_id = None
     if module in module_dict:
         module_id = module_dict[module]
     if current_class != class_term:
@@ -182,10 +192,10 @@ def populate_record(row, seq):
         if not class_term in module_num[module_id]:
             module_num[module_id].append(class_term)
         class_num = 1 + module_num[module_id].index(class_term)
-    if 'Specialization' == _type:
+    if 'Specialization' == property_type:
         id = f"{module_id}{str(class_num).zfill(2)}_00"
     else:
-        if _type.lower().endswith('class'):
+        if property_type.lower().endswith('class'):
             seq = 0
             id = f"{module_id}{str(class_num).zfill(2)}"
         else:
@@ -200,8 +210,8 @@ def populate_record(row, seq):
     else:
         table = 0
     record['table'] = int(table)
-    record['property_type'] = _type
-    if 'class' in _type.lower():
+    record['property_type'] = property_type
+    if 'class' in property_type.lower():
         record['level'] = 1
     else:
         record['level'] = 2
@@ -215,11 +225,14 @@ def populate_record(row, seq):
     record['definition'] = definition
     record['multiplicity'] = row['multiplicity']
     record['domain_name'] = row['domain_name']
+    record['label_local'] = row['label_local']
+    record['definition_local'] = row['definition_local']
+    record['xpath'] = row['xpath']
     current_module = module
     current_class = class_term
     if DEBUG:
         if associated_class:
-            print(f"{seq} module:{module} class_term:'{class_term}' id:{id} {_type} associated_class:'{associated_class}'")
+            print(f"{seq} module:{module} class_term:'{class_term}' id:{id} {property_type} associated_class:'{associated_class}'")
         elif property_term:
             print(f"{seq} module:{module} class_term:'{class_term}' id:{id} property_term:'{property_term}'")
         else:
@@ -239,14 +252,14 @@ def parse_class(class_term, SP_ID=''):
         return
     object_class = object_class_dict[class_term]
     classID = object_class['id']
-    _type = object_class['property_type']
+    property_type = object_class['property_type']
     if SP_ID:
         LIFO_list[-1] += f".{class_term}"
         classID = f"{SP_ID[:4]}{classID}"
-        if DEBUG or TRACE: print(f"  '{class_term}' type:'{_type}' SP_ID:{SP_ID}\t{LIFO_list}")
+        if DEBUG or TRACE: print(f"  '{class_term}' type:'{property_type}' SP_ID:{SP_ID}\t{LIFO_list}")
     else:
         LIFO_list.append(class_term)
-        if DEBUG or TRACE: print(f"  '{class_term}' type:'{_type}'\t{LIFO_list}")
+        if DEBUG or TRACE: print(f"  '{class_term}' type:'{property_type}'\t{LIFO_list}")
     level = len(LIFO_list)
     properties = object_class['properties']
     object_class_ = {k: v for k, v in object_class.items() if k != 'properties'} # drop 'properties' from dict
@@ -314,7 +327,8 @@ def parse_class(class_term, SP_ID=''):
         for index, element in enumerate(BSM_list):
             if (
                 element["property_type"] == _property["property_type"]
-                and element["class_term"].startswith(_property["class_term"])
+                and element["class_term"]==_property["class_term"]
+                # and element["class_term"].startswith(_property["class_term"])
                 and (
                     (
                         "Attribute" == _property["property_type"]
@@ -343,13 +357,20 @@ def parse_class(class_term, SP_ID=''):
                 BSM_list.append(_property)
 
         if DEBUG:
-            print(f"  {_property['class_term']} | {_property['property_type']}: {_property['property_term']}.{_property['associated_class']}")
+            if _property['property_term']:
+                if _property['associated_class']:
+                    print(f"  {_property['class_term']} | {_property['property_type']}: {_property['property_term']}.{_property['associated_class']}")
+                else:
+                    print(f"  {_property['class_term']} | {_property['property_type']}: {_property['property_term']}")
+            else:
+                print(f"  {_property['class_term']} | {_property['property_type']}: {_property['associated_class']}")
+
     if DEBUG: print(f"-- Done {LIFO_list[-1]}")
     if SP_ID:
-        if DEBUG: print(f"Specialised Class: {class_term} type is '{_type}'\t{LIFO_list}")
+        if DEBUG: print(f"Specialised Class: {class_term} type is '{property_type}'\t{LIFO_list}")
     else:
         LIFO_list.pop(-1)
-        if DEBUG: print(f"POP LIFO_list: '{class_term} type is '{_type}'\t{LIFO_list}")
+        if DEBUG: print(f"POP LIFO_list: '{class_term} type is '{property_type}'\t{LIFO_list}")
 
 
 # Function to check the validity of CSV rows
@@ -370,7 +391,7 @@ def check_csv_row(row):
     property_type = row['property_type']
     multiplicity = row['multiplicity']
     if 'Class' not in property_type:
-        if not multiplicity or multiplicity not in ['1', '1..1', '1..*', '0..1', '0..*', '0']:
+        if not multiplicity or multiplicity not in ['1', '1..1', '1..*', '0..1', '0..*', '0..0', '0']:
             return status, f"Multiplicity '{multiplicity}' is WRONG."
     # Check for mandatory fields
     for field in ['module', 'property_type', 'class_term']:
@@ -382,7 +403,7 @@ def check_csv_row(row):
             if row.get(field):
                 return status, f"Field '{field}' must be empty for type {property_type}."
     elif 'Attribute' in property_type:
-        if '0' != multiplicity:
+        if multiplicity not in ['0..0', '0']:
             for field in ['property_term', 'representation_term']:
                 if not row.get(field):
                     return status, f"Field '{field}' cannot be empty for type {property_type}."
@@ -396,6 +417,31 @@ def check_csv_row(row):
         del row[None]
     status = True
     return status, "Row is valid."
+
+
+# Function to sort rows between 'Class' entries
+def sort_records(data):
+    property_type_order = ['Class', 'Attribute', 'Reference Association', 'Aggregation', 'Composition']
+    # Pre-sorting by 'module' and 'table'
+    data_sorted_pre = sorted(data, key=lambda x: (x['module'])) #, int(x['table'])))
+    # Extract base class terms and add sorting order for 'property_type' again
+    for row in data_sorted_pre:
+        class_term = row.get("class_term", "")
+        row["base_class_term"] = (
+            class_term.split(".")[0] if "." in class_term else class_term
+        )
+        row["property_type_order"] = (
+            property_type_order.index(row["property_type"])
+            if row["property_type"] in property_type_order
+            else float("inf")
+        )
+    # Perform the second sorting by 'base_class_term', 'property_type_order', and 'sequence'
+    data_sorted_final = sorted(data_sorted_pre, key=lambda x: (x['base_class_term'], x['property_type_order'], int(x['sequence'])))
+    # Remove helper fields used for sorting
+    for row in data_sorted_final:
+        row.pop('base_class_term', None)
+        row.pop('property_type_order', None)
+    return data_sorted_final
 
 
 # Main function to execute the script
@@ -463,16 +509,20 @@ def main():
     encoding = args.encoding.strip()
     TRACE = args.trace
     DEBUG = args.debug
-
+   
     object_class_dict = {}
-    with open(FSM_file, encoding = encoding, newline='') as f:
-        reader = csv.DictReader(f, fieldnames = header)
+    with open(FSM_file, encoding=encoding, newline='') as f:
+        reader = csv.DictReader(f, fieldnames=header)
         h = next(reader)
         current_module = ''
         current_class = ''
         seq = 0
+        # First pass: Register Abstract Classes and Classes
         for row_number, row in enumerate(reader, start=1):
+            if not row['sequence'] and not row['level']:
+                continue
             if '' == row['module']:
+                print(f"** ERROR Row {row_number}: {row}")
                 continue
             record = {}
             for key in header:
@@ -480,34 +530,71 @@ def main():
                     record[key] = row[key]
                 else:
                     record[key] = ''
-
-            status, result = check_csv_row(row)
+            _, result = check_csv_row(row)
             if result != "Row is valid.":
                 print(f"** ERROR Row {row_number}: {result} {row}")
                 break
-
             seq, record = populate_record(record, seq)
-
-            _type = record['property_type'].strip()
+            property_type = record['property_type'].strip()
             class_term = record['class_term'].strip()
-            property_term = getproperty_term(record)
-            if _type in ['Abstract Class', 'Class']:
-                # if DEBUG: print(class_term)
-                if not class_term in object_class_dict:
+            if property_type in ['Abstract Class', 'Class']:
+                if class_term not in object_class_dict:
                     object_class_dict[class_term] = record
                     object_class_dict[class_term]['properties'] = {}
-            else:
-                if not class_term in object_class_dict:
+                    
+        # Reset reader to process properties
+        f.seek(0)
+        next(reader)  # Skip header row
+        # Second pass: Register Properties
+        for row_number, row in enumerate(reader, start=1):
+            if not row['sequence'] and not row['level']:
+                continue
+            if '' == row['module']:
+                print(f"** ERROR Row {row_number}: {row}")
+                continue
+            record = {}
+            for key in header:
+                if key in row:
+                    record[key] = row[key]
+                else:
+                    record[key] = ''
+            _, result = check_csv_row(row)
+            if result != "Row is valid.":
+                print(f"** ERROR Row {row_number}: {result} {row}")
+                break
+            seq, record = populate_record(record, seq)
+            property_type = record['property_type'].strip()
+            class_term = record['class_term'].strip()
+            property_type, property_term = getproperty_term(record)
+            if property_type in ['Abstract Class', 'Class']:
+                current_class = class_term
+                current_class_id = record['id'].strip()
+            elif 'Specialization'==property_type:
+                superclass_term = record['associated_class']
+                if superclass_term not in object_class_dict:
+                    print(f"ERROR: {superclass_term} is not defined.")
+                    continue
+                super_class = object_class_dict[superclass_term]
+                record['id'] = f"{current_class_id}_{record['id'][1 + record['id'].rindex('_'):]}"
+                _class_term = f"{class_term}.{superclass_term}"
+                record['class_term'] = _class_term
+                _properties = copy.deepcopy(super_class['properties'])
+                for _property_term, _property in _properties.items():
+                    _propertyID = _property['id']
+                    _property['id'] = f"{current_class_id}_{_propertyID}"
+                    _property['module'] = current_module
+                    _property['class_term'] = _class_term
+                    object_class_dict[class_term]['properties'][_property_term] = _property
+            elif property_type not in ['Abstract Class', 'Class']:
+                if class_term not in object_class_dict:
                     print(f"** ERROR NOT REGISTERED {class_term} in object_class_dict\n{record}")
-                property_term = getproperty_term(record)
-                multiplicity = record['multiplicity']
-                if multiplicity in ['0..0', '0']:
-                    if property_term in object_class_dict[class_term]['properties'].keys():
-                        del object_class_dict[class_term]['properties'][property_term]
+                else:
+                    multiplicity = record['multiplicity']
+                    if multiplicity in ['0..0', '0']:
+                        if property_term in object_class_dict[class_term]['properties']:
+                            del object_class_dict[class_term]['properties'][property_term]
                     else:
                         object_class_dict[class_term]['properties'][property_term] = record
-                else:
-                    object_class_dict[class_term]['properties'][property_term] = record
 
     BSM_list = []
     selected_classes = object_class_dict.keys()
@@ -529,11 +616,16 @@ def main():
         if not is_abstract_class:
             out_records.append(record)
 
+
+    # Apply the sorting function
+    sorted_out_records = sort_records(out_records)
+    # sorted_out_records = out_records
+
     BSM_file = file_path(BSM_file)
     with open(BSM_file, 'w', encoding = encoding, newline='') as f:
         writer = csv.DictWriter(f, fieldnames = header2)
         writer.writeheader()
-        writer.writerows(out_records)
+        writer.writerows(sorted_out_records)
 
     print(f'-- END {BSM_file}')
 
@@ -557,7 +649,7 @@ def main():
                     else:
                         record[key] = ''
 
-                status, result = check_csv_row(row)
+                _, result = check_csv_row(row)
                 if result != "Row is valid.":
                     print(f"** ERROR Row {row_number}: {result} {row}")
                     break
@@ -566,9 +658,9 @@ def main():
 
                 module = record['module'].strip()
                 id = record['id'].strip()
-                _type = record['property_type'].strip()
+                property_type = record['property_type'].strip()
                 class_term = record['class_term'].strip()
-                if _type in ['Abstract Class', 'Class']:
+                if property_type in ['Abstract Class', 'Class']:
                     if not class_term in object_class_dict:
                         selected_class.append(class_term)
                         object_class_dict[class_term] = record
@@ -576,35 +668,34 @@ def main():
                         current_module = module
                         current_class = class_term
                         current_class_id = record['id'].strip()
+                elif 'Specialization' == property_type:
+                    superclass_term = record['associated_class']
+                    if superclass_term not in object_class_dict:
+                        print(f"ERROR: {superclass_term} is not defined.")
+                        continue
+                    super_class = object_class_dict[superclass_term]
+                    record['id'] = f"{current_class_id}_{record['id'][1 + record['id'].rindex('_'):]}"
+                    _class_term = class_term
+                    record['class_term'] = _class_term
+                    _properties = copy.deepcopy(super_class['properties'])
+                    for _property_term, _property in _properties.items():
+                        _propertyID = _property['id']
+                        _property['id'] = f"{current_class_id}_{_propertyID}"
+                        _property['module'] = current_module
+                        _property['class_term'] = _class_term
+                        object_class_dict[class_term]['properties'][_property_term] = _property
                 else:
-                    if 'Specialization' == _type:
-                        superclass_term = record['associated_class']
-                        if superclass_term not in object_class_dict:
-                            print(f"ERROR: {superclass_term} is not defined.")
-                            continue
-                        super_class = object_class_dict[superclass_term]
-                        record['id'] = f"{current_class_id}_{record['id'][1 + record['id'].rindex('_'):]}"
-                        _class_term = f"{class_term}.{superclass_term}"
-                        record['class_term'] = _class_term
-                        _properties = copy.deepcopy(super_class['properties'])
-                        for _property_term, _property in _properties.items():
-                            _propertyID = _property['id']
-                            _property['id'] = f"{current_class_id}_{_propertyID}"
-                            _property['module'] = current_module
-                            _property['class_term'] = _class_term
-                            object_class_dict[class_term]['properties'][_property_term] = _property
-                    else:
-                        _class_term = f"{class_term}"
-                        record['class_term'] = _class_term
-                        property_term = getproperty_term(record)
-                        multiplicity = record['multiplicity']
-                        if multiplicity in ['0..0', '0']:
-                            if property_term in object_class_dict[class_term]['properties'].keys():
-                                del object_class_dict[class_term]['properties'][property_term]
-                            else:
-                                object_class_dict[class_term]['properties'][property_term] = record
+                    _class_term = class_term
+                    record['class_term'] = _class_term
+                    property_type, property_term = getproperty_term(record)
+                    multiplicity = record['multiplicity']
+                    if multiplicity in ['0..0', '0']:
+                        if property_term in object_class_dict[class_term]['properties'].keys():
+                            del object_class_dict[class_term]['properties'][property_term]
                         else:
                             object_class_dict[class_term]['properties'][property_term] = record
+                    else:
+                        object_class_dict[class_term]['properties'][property_term] = record
 
         BSM_list = []
         selected_classes = object_class_dict.keys()
@@ -625,6 +716,9 @@ def main():
                     is_abstract_class = False
             if not is_abstract_class:
                 out_records.append(record)
+
+        # Apply the sorting function
+        sorted_out_records = sort_records(out_records)
 
         BSM_file_extension = file_path(BSM_file_extension)
         with open(BSM_file_extension, 'w', encoding = encoding, newline='') as f:

@@ -1,0 +1,9 @@
+﻿"Antud lehel on kuvatud uuendused, mis on tehtud taksonoomiafailis 12.2024 võrreldes eelnevalt (10.2024) avaldatud versiooniga.",Unnamed: 1
+Changes:,nan
+Sections related to economic transactions and related classifications and data fields were added,"Section SA and RIK added to the taxonomy sections related to economic transactions.
+
+Initially, the RIK direction will be covered by the part of the micro -enterprises and the reception capacity has been created for this.In the future, it is also planned to resolve the data obligation of larger micro -associations.
+
+In the direction of the SA, the related data section is covered by the main questionnaires of economic transactions (EKOMAR (10pcs), economic activities (1451) and financial performance (1060)), but this section also involves questionnaires (approx. 10pcs), which are further analyzed, includingIn the queue for them, the workflow is created.In the SA, the initial data composition was added, which continues to be analyzed.In terms of these sections/questionnaires, the reception + automated workflow is planned to be created by early 2026 and at a later stage of additional questionnaires."
+RTK2T2013AP classification change,"From the country and territories the contents of the classification were very linear, but from now on, the hierarchy was created in this classification to distinguish more clearly ISO codes and additional codes needed only for foreign trade statistics).)."
+Sex2022ap Rule of Using MRR Code,"In the salary section EE0101001, the rule of sex2022AP was specified that it must also be submitted if the MRR code is submitted as a party code."
