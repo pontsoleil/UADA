@@ -1,0 +1,31 @@
+Account Receivable Open Account
+Account Receivable Cash Received
+Account Receivable Cash Application
+Account Receivable Adjustment
+Account Receivable Adjustment Line
+
+Sales Contract
+Sales Contract Line
+Sales Order
+Sales Order Line
+Sales Invoice
+Sales Invoice Line
+Sales Shipment Made
+Sales Shipment Made Line
+
+Account Payable Open Account
+Account Payable Payment Made
+Account Payable Cash Application
+Account Payable Adjustment
+Account Payable Adjustment Line
+
+Purchase Requisition
+Purchase Requisition Line
+Purchase Contract
+Purchase Contract Line
+Purchase Order
+Purchase Order Line
+Purchase Invoice
+Purchase Invoice Line
+Purchase Materials Received
+Purchase Materials Received Line

@@ -1,91 +1,91 @@
-﻿column,name,multiplicity,Representation,semSort,id,path,semPath,value,line,fixedValue,term,example
-dColumn2,伝票,,,3979,JP07a,/JP07a,/JP07a,JP04a_GL02_01='*',,,/JP Journal Entry,
-dColumn27,明細行,1..*,,4012,JP08a,/JP07a/JP08a,/JP07a/JP08a,,[*],,/JP Journal Entry/JP Journal Entry Line,
-dColumn6,借方部門,0..*,,4158,BS04c5,/JP07a/JP08a/BS04c5,/JP07a/JP08a/BS04c5,"[BS04c5_03=""department""]",,,/JP Journal Entry/JP Journal Entry Line/(Debit) Business Segment,
-dColumn10,借方補助科目,0..*,,4049,JP05a,/JP07a/JP08a/JP05a,/JP07a/JP08a/JP05a,"[JP05a_03=""sub-account""]",,,/JP Journal Entry/JP Journal Entry Line/(Debit) JP Ledger Account/Subsidiary Ledger Account,
-dColumn17,貸方部門,0..*,,4163,BS04c6,/JP07a/JP08a/BS04c6,/JP07a/JP08a/BS04c6,"[BS04c6_03=""department""]",,,/JP Journal Entry/JP Journal Entry Line/(Credit) Business Segment,
-dColumn21,貸方補助科目,0..*,,4108,JP05b,/JP07a/JP08a/JP05b,/JP07a/JP08a/JP05b,"[JP05b_03=""sub-account""]",,,/JP Journal Entry/JP Journal Entry Line/(Credit) JP Ledger Account/Subsidiary Ledger Account,
-Column1,伝票日付,0..1,Date,3982,JP07a_GL02_03,/JP07a/JP07a_GL02_03,/JP07a/JP07a_GL02_03,,,,/JP Journal Entry/Effective Date,20210405
-Column2,伝票番号,1..1,Identifier,3980,JP07a_GL02_01,/JP07a/JP07a_GL02_01,/JP07a/JP07a_GL02_01,,,,/JP Journal Entry/ID,254
-Column3,仕訳区分,1..1,Identifier,4011,BS15c_01,/JP07a/BS15c_01,/JP07a/BS15c_01,,,,/JP Journal Entry/Journal Entry Type/Code,21
-Column4,管理仕訳区分,,,,,,,,,,,0
-Column5,借方税計算モード,,,,,,,,,,,1900/01/01 0:00
-Column6,借方部門コード,1..1,Identifier,4159,BS04c5_01,/JP07a/JP08a/BS04c5/BS04c5_01,"/JP07a/JP08a/BS04c5[BS04c5_03=""department""]/BS04c5_01",,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Business Segment/Code,000
-Column7,借方部門名,0..1,Name,4160,BS04c5_02,/JP07a/JP08a/BS04c5/BS04c5_02,"/JP07a/JP08a/BS04c5[BS04c5_03=""department""]/BS04c5_02",,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Business Segment/Name,共通部門
-Column8,借方科目コード,1..1,Identifier,4041,JP06b_BS16_01,/JP07a/JP08a/JP06b_BS16_01,/JP07a/JP08a/JP06b_BS16_01,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) JP Ledger Account/Account Number,131
-Column9,借方科目名,0..1,Name,4042,JP06b_BS16_02,/JP07a/JP08a/JP06b_BS16_02,/JP07a/JP08a/JP06b_BS16_02,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) JP Ledger Account/Account Name,普通預金
-Column10,借方補助科目コード,0..1,Char,4050,JP05a_01,/JP07a/JP08a/JP05a/JP05a_01,"/JP07a/JP08a/JP05a[JP05a_03=""sub-account""]/JP05a_01",,,,/JP Journal Entry/JP Journal Entry Line/(Debit) JP Ledger Account/Subsidiary Ledger Account/Subsidiary Item Number,50
-Column11,借方補助科目名,0..1,Name,4051,JP05a_02,/JP07a/JP08a/JP05a/JP05a_02,"/JP07a/JP08a/JP05a[JP05a_03=""sub-account""]/JP05a_02",,,,/JP Journal Entry/JP Journal Entry Line/(Debit) JP Ledger Account/Subsidiary Ledger Account/Subsidiary Item Name,福岡　北九州
-Column12,借方税区分コード,1..1,Identifier,4083,JP02c_BS28_01,/JP07a/JP08a/JP02c_BS28_01,/JP07a/JP08a/JP02c_BS28_01,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Consumption Tax Subtotal/JP Tax Type/Code,00
-Column13,借方税区分名,0..1,Name,4084,JP02c_BS28_02,/JP07a/JP08a/JP02c_BS28_02,/JP07a/JP08a/JP02c_BS28_02,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Consumption Tax Subtotal/JP Tax Type/Tax Name,対象外
-Column14,借方金額,0..1,Decimal,4060,GE05gP_01,/JP07a/JP08a/GE05gP_01,/JP07a/JP08a/GE05gP_01,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Amounts/(Local) Amount/Value,2959035
-Column15,借方消費税額,0..1,Decimal,4073,GE05gS_01,/JP07a/JP08a/GE05gS_01,/JP07a/JP08a/GE05gS_01,,,,/JP Journal Entry/JP Journal Entry Line/(Debit) Consumption Tax Subtotal/(Local) Amount/Value,0
-Column16,貸方税計算モード,,,,,,,,,,,1
-Column17,貸方部門コード,1..1,Identifier,4164,BS04c6_01,/JP07a/JP08a/BS04c6/BS04c6_01,"/JP07a/JP08a/BS04c6[BS04c6_03=""department""]/BS04c6_01",,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Business Segment/Code,000
-Column18,貸方部門名,0..1,Name,4165,BS04c6_02,/JP07a/JP08a/BS04c6/BS04c6_02,"/JP07a/JP08a/BS04c6[BS04c6_03=""department""]/BS04c6_02",,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Business Segment/Name,共通部門
-Column19,貸方科目コード,1..1,Identifier,4100,JP06d_BS16_01,/JP07a/JP08a/JP06d_BS16_01,/JP07a/JP08a/JP06d_BS16_01,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) JP Ledger Account/Account Number,152
-Column20,貸方科目名,0..1,Name,4101,JP06d_BS16_02,/JP07a/JP08a/JP06d_BS16_02,/JP07a/JP08a/JP06d_BS16_02,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) JP Ledger Account/Account Name,売掛金
-Column21,貸方補助科目コード,0..1,Char,4109,JP05b_01,/JP07a/JP08a/JP05b/JP05b_01,"/JP07a/JP08a/JP05b[JP05b_03=""sub-account""]/JP05b_01",,,,/JP Journal Entry/JP Journal Entry Line/(Credit) JP Ledger Account/Subsidiary Ledger Account/Subsidiary Item Number,22
-Column22,貸方補助科目名,0..1,Name,4110,JP05b_02,/JP07a/JP08a/JP05b/JP05b_02,"/JP07a/JP08a/JP05b[JP05b_03=""sub-account""]/JP05b_02",,,,/JP Journal Entry/JP Journal Entry Line/(Credit) JP Ledger Account/Subsidiary Ledger Account/Subsidiary Item Name,㈱渡辺産業
-Column23,貸方税区分コード,1..1,Identifier,4142,JP02d_BS28_01,/JP07a/JP08a/JP02d_BS28_01,/JP07a/JP08a/JP02d_BS28_01,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Consumption Tax Subtotal/JP Tax Type/Code,00
-Column24,貸方税区分名,0..1,Name,4143,JP02d_BS28_02,/JP07a/JP08a/JP02d_BS28_02,/JP07a/JP08a/JP02d_BS28_02,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Consumption Tax Subtotal/JP Tax Type/Tax Name,対象外
-Column25,貸方金額,0..1,Decimal,4119,GE05hX_01,/JP07a/JP08a/GE05hX_01,/JP07a/JP08a/GE05hX_01,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Amounts/(Local) Amount/Value,2959035
-Column26,貸方消費税額,0..1,Decimal,4132,GE05h0_01,/JP07a/JP08a/GE05h0_01,/JP07a/JP08a/GE05h0_01,,,,/JP Journal Entry/JP Journal Entry Line/(Credit) Consumption Tax Subtotal/(Local) Amount/Value,0
-Column27,摘要文,0..1,Text,4015,JP08a_GL03_03,/JP07a/JP08a/JP08a_GL03_03,/JP07a/JP08a/JP08a_GL03_03,,,,/JP Journal Entry/JP Journal Entry Line/Description,4月5日伝票No190株式会社　渡辺産業
-Column28,数字１,,,,,,,,,,,
-Column29,数字２,,,,,,,,,,,
-Column30,入力プログラム区分,1..1,Identifier,4009,GL05c_01,/JP07a/GL05c_01,/JP07a/GL05c_01,,,,/JP Journal Entry/General Ledger Source/Code,1
-Column31,配賦元税計算,,,,,,,,,,,
-Column32,配賦元集計方法,,,,,,,,,,,
-Column33,配賦元集計開始日付,,,,,,,,,,,
-Column34,配賦元集計終了日付,,,,,,,,,,,
-Column35,配賦元管理仕訳区分,,,,,,,,,,,
-Column36,配賦元部門コード,,,,,,,,,,,
-Column37,配賦元部門名,,,,,,,,,,,
-Column38,配賦元科目コード,,,,,,,,,,,
-Column39,配賦元科目名,,,,,,,,,,,
-Column40,配賦元補助コード,,,,,,,,,,,
-Column41,配賦元補助名,,,,,,,,,,,
-Column42,配賦元金額,,,,,,,,,,,
-Column43,数字３,,,,,,,,,,,
-Column44,数字４,,,,,,,,,,,
-Column45,数字５,,,,,,,,,,,
-Column46,金額１,,,,,,,,,,,
-Column47,金額２,,,,,,,,,,,
-Column48,金額３,,,,,,,,,,,
-Column49,金額４,,,,,,,,,,,
-Column50,金額５,,,,,,,,,,,
-Column51,文字列１,,,,,,,,,,,
-Column52,文字列２,,,,,,,,,,,
-Column53,文字列３,,,,,,,,,,,
-Column54,文字列４,,,,,,,,,,,
-Column55,文字列５,,,,,,,,,,,
-Column56,入力日付時間,0..1,Date,3991,GE03dl_01,/JP07a/GE03dl_01,/JP07a/GE03dl_01,,,,/JP Journal Entry/Activities/(Created) Activity/Date,44228.57986
-Column57,借方取引先コード,,,,,,0,,,,,
-Column58,借方取引先名,,,,,,0,,,,,
-Column59,借方セグメント１コード,,,,,,0,,,,,
-Column60,借方セグメント１名,,,,,,0,,,,,
-Column61,借方セグメント２コード,,,,,,0,,,,,
-Column62,借方セグメント２名,,,,,,0,,,,,
-Column63,借方セグメント３コード,,,,,,0,,,,,
-Column64,借方セグメント３名,,,,,,0,,,,,
-Column65,貸方取引先コード,,,,,,0,,,,,
-Column66,貸方取引先名,,,,,,0,,,,,
-Column67,貸方セグメント１コード,,,,,,0,,,,,
-Column68,貸方セグメント１名,,,,,,0,,,,,
-Column69,貸方セグメント２コード,,,,,,0,,,,,
-Column70,貸方セグメント２名,,,,,,0,,,,,
-Column71,貸方セグメント３コード,,,,,,0,,,,,
-Column72,貸方セグメント３名,,,,,,0,,,,,
-Column73,配賦選択,,,,,,0,,,,,
-Column74,配賦元取引先コード,,,,,,0,,,,,
-Column75,配賦元取引先名,,,,,,0,,,,,
-Column76,配賦元セグメント１コード,,,,,,0,,,,,
-Column77,配賦元セグメント１名,,,,,,0,,,,,
-Column78,配賦元セグメント２コード,,,,,,0,,,,,
-Column79,配賦元セグメント２名,,,,,,0,,,,,
-Column80,配賦元セグメント３コード,,,,,,0,,,,,
-Column81,配賦元セグメント３名,,,,,,0,,,,,
-Column79,配賦元セグメント２名,,,,,,,,,,,
-Column80,配賦元セグメント３コード,,,,,,,,,,,
-Column81,配賦元セグメント３名,,,,,,,,,,,
+﻿column,name,multiplicity,Representation,semSort,id,path,semPath,value,line,fixedValue,term,,example
+dColumn2,伝票,,,5910,JP07a,/JP07a,/JP07a,JP04a_GL02_01='*',,,$.JP Journal Entry,JpJrnEntry,
+dColumn27,明細行,1..*,,5943,JP08a,/JP07a/JP08a,/JP07a/JP08a,,[*],,$.JP Journal Entry.JP Journal Entry Line,JpJrnEntry.JpJrnEntryLin,
+dColumn6,借方部門,0..*,,6075,BS04fb,/JP07a/JP08a/BS04fb,/JP07a/JP08a/BS04fb,"[BS04c5_03=""department""]",,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Business Segment,JpJrnEntry.JpJrnEntryLin.DebtBusSg,
+dColumn10,借方補助科目,0..*,,5983,JP05a,/JP07a/JP08a/JP05a,/JP07a/JP08a/JP05a,"[JP05a_03=""sub-account""]",,,$.JP Journal Entry.JP Journal Entry Line.(Debit) JP Ledger Account.Subsidiary Ledger Account,JpJrnEntry.JpJrnEntryLin.DebtJpLedgrAcnt.SubsdrLedgrAcnt,
+dColumn17,貸方部門,0..*,,6080,BS04fc,/JP07a/JP08a/BS04fc,/JP07a/JP08a/BS04fc,"[BS04c6_03=""department""]",,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Business Segment,JpJrnEntry.JpJrnEntryLin.CrdtBusSg,
+dColumn21,貸方補助科目,0..*,,6033,JP05b,/JP07a/JP08a/JP05b,/JP07a/JP08a/JP05b,"[JP05b_03=""sub-account""]",,,$.JP Journal Entry.JP Journal Entry Line.(Credit) JP Ledger Account.Subsidiary Ledger Account,JpJrnEntry.JpJrnEntryLin.CrdtJpLedgrAcnt.SubsdrLedgrAcnt,
+Column1,伝票日付,0..1,Date,5913,JP07a_GL03_03,/JP07a/JP07a_GL03_03,/JP07a/JP07a_GL03_03,,,,$.JP Journal Entry.Effective Date,JpJrnEntry.EffctvDt,20210405
+Column2,伝票番号,1..1,Identifier,5911,JP07a_GL03_01,/JP07a/JP07a_GL03_01,/JP07a/JP07a_GL03_01,,,,$.JP Journal Entry.ID,JpJrnEntry.Id,254
+Column3,仕訳区分,1..1,Identifier,5921,GE23c_01,/JP07a/GE23c_01,/JP07a/GE23c_01,,,,$.JP Journal Entry.Journal Entry Type.Code,JpJrnEntry.JrnEntryTyp.Cd,21
+Column4,管理仕訳区分,,,,,,,,,,,,0
+Column5,借方税計算モード,,,,,,,,,,,,1900/01/01 0:00
+Column6,借方部門コード,1..1,Identifier,6076,BS04fb_01,/JP07a/JP08a/BS04fb/BS04fb_01,"/JP07a/JP08a/BS04fb[BS04fb_03=""department""]/BS04fb_01",,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Business Segment.Code,JpJrnEntry.JpJrnEntryLin.DebtBusSg.Cd,000
+Column7,借方部門名,0..1,Name,6077,BS04fb_02,/JP07a/JP08a/BS04fb/BS04fb_02,"/JP07a/JP08a/BS04fb[BS04fb_03=""department""]/BS04fb_02",,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Business Segment.Name,JpJrnEntry.JpJrnEntryLin.DebtBusSg.Nm,共通部門
+Column8,借方科目コード,1..1,Identifier,5976,JP06e_GE24_01,/JP07a/JP08a/JP06e_GE24_01,/JP07a/JP08a/JP06e_GE24_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) JP Ledger Account.Account Number,JpJrnEntry.JpJrnEntryLin.DebtJpLedgrAcnt.AcntNr,131
+Column9,借方科目名,0..1,Name,5977,JP06e_GE24_02,/JP07a/JP08a/JP06e_GE24_02,/JP07a/JP08a/JP06e_GE24_02,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) JP Ledger Account.Account Name,JpJrnEntry.JpJrnEntryLin.DebtJpLedgrAcnt.AcntNam,普通預金
+Column10,借方補助科目コード,0..1,Char,5984,JP05a_01,/JP07a/JP08a/JP05a/JP05a_01,"/JP07a/JP08a/JP05a[JP05a_03=""sub-account""]/JP05a_01",,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) JP Ledger Account.Subsidiary Ledger Account.Subsidiary Item Number,JpJrnEntry.JpJrnEntryLin.DebtJpLedgrAcnt.SubsdrLedgrAcnt.SubsdrItmNr,50
+Column11,借方補助科目名,0..1,Name,5985,JP05a_02,/JP07a/JP08a/JP05a/JP05a_02,"/JP07a/JP08a/JP05a[JP05a_03=""sub-account""]/JP05a_02",,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) JP Ledger Account.Subsidiary Ledger Account.Subsidiary Item Name,JpJrnEntry.JpJrnEntryLin.DebtJpLedgrAcnt.SubsdrLedgrAcnt.SubsdrItmNam,福岡　北九州
+Column12,借方税区分コード,1..1,Identifier,6017,JP02j_BS09_01,/JP07a/JP08a/JP02j_BS09_01,/JP07a/JP08a/JP02j_BS09_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Consumption Tax Line.JP Tax Type.Code,JpJrnEntry.JpJrnEntryLin.DebtConsmpTxLin.JpTxTyp.Cd,00
+Column13,借方税区分名,0..1,Name,6018,JP02j_BS09_02,/JP07a/JP08a/JP02j_BS09_02,/JP07a/JP08a/JP02j_BS09_02,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Consumption Tax Line.JP Tax Type.Tax Name,JpJrnEntry.JpJrnEntryLin.DebtConsmpTxLin.JpTxTyp.TxNam,対象外
+Column14,借方金額,0..1,Decimal,5994,GE05ku_01,/JP07a/JP08a/GE05ku_01,/JP07a/JP08a/GE05ku_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Amounts.(Local) Amount.Value,JpJrnEntry.JpJrnEntryLin.DebtAmnts.LoclAmt.Vl,2959035
+Column15,借方消費税額,0..1,Decimal,6007,GE05kw_01,/JP07a/JP08a/GE05kw_01,/JP07a/JP08a/GE05kw_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Debit) Consumption Tax Line.(Local) Amount.Value,JpJrnEntry.JpJrnEntryLin.DebtConsmpTxLin.LoclAmt.Vl,0
+Column16,貸方税計算モード,,,,,,,,,,,,1
+Column17,貸方部門コード,1..1,Identifier,6081,BS04fc_01,/JP07a/JP08a/BS04fc/BS04fc_01,"/JP07a/JP08a/BS04fc[BS04fc_03=""department""]/BS04fc_01",,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Business Segment.Code,JpJrnEntry.JpJrnEntryLin.CrdtBusSg.Cd,000
+Column18,貸方部門名,0..1,Name,6082,BS04fc_02,/JP07a/JP08a/BS04fc/BS04fc_02,"/JP07a/JP08a/BS04fc[BS04fc_03=""department""]/BS04fc_02",,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Business Segment.Name,JpJrnEntry.JpJrnEntryLin.CrdtBusSg.Nm,共通部門
+Column19,貸方科目コード,1..1,Identifier,6026,JP06f_GE24_01,/JP07a/JP08a/JP06f_GE24_01,/JP07a/JP08a/JP06f_GE24_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) JP Ledger Account.Account Number,JpJrnEntry.JpJrnEntryLin.CrdtJpLedgrAcnt.AcntNr,152
+Column20,貸方科目名,0..1,Name,6027,JP06f_GE24_02,/JP07a/JP08a/JP06f_GE24_02,/JP07a/JP08a/JP06f_GE24_02,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) JP Ledger Account.Account Name,JpJrnEntry.JpJrnEntryLin.CrdtJpLedgrAcnt.AcntNam,売掛金
+Column21,貸方補助科目コード,0..1,Char,6034,JP05b_01,/JP07a/JP08a/JP05b/JP05b_01,"/JP07a/JP08a/JP05b[JP05b_03=""sub-account""]/JP05b_01",,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) JP Ledger Account.Subsidiary Ledger Account.Subsidiary Item Number,JpJrnEntry.JpJrnEntryLin.CrdtJpLedgrAcnt.SubsdrLedgrAcnt.SubsdrItmNr,22
+Column22,貸方補助科目名,0..1,Name,6035,JP05b_02,/JP07a/JP08a/JP05b/JP05b_02,"/JP07a/JP08a/JP05b[JP05b_03=""sub-account""]/JP05b_02",,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) JP Ledger Account.Subsidiary Ledger Account.Subsidiary Item Name,JpJrnEntry.JpJrnEntryLin.CrdtJpLedgrAcnt.SubsdrLedgrAcnt.SubsdrItmNam,㈱渡辺産業
+Column23,貸方税区分コード,1..1,Identifier,6067,JP02k_BS09_01,/JP07a/JP08a/JP02k_BS09_01,/JP07a/JP08a/JP02k_BS09_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Consumption Tax Line.JP Tax Type.Code,JpJrnEntry.JpJrnEntryLin.CrdtConsmpTxLin.JpTxTyp.Cd,00
+Column24,貸方税区分名,0..1,Name,6068,JP02k_BS09_02,/JP07a/JP08a/JP02k_BS09_02,/JP07a/JP08a/JP02k_BS09_02,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Consumption Tax Line.JP Tax Type.Tax Name,JpJrnEntry.JpJrnEntryLin.CrdtConsmpTxLin.JpTxTyp.TxNam,対象外
+Column25,貸方金額,0..1,Decimal,6044,GE05kz_01,/JP07a/JP08a/GE05kz_01,/JP07a/JP08a/GE05kz_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Amounts.(Local) Amount.Value,JpJrnEntry.JpJrnEntryLin.CrdtAmnts.LoclAmt.Vl,2959035
+Column26,貸方消費税額,0..1,Decimal,6057,GE05kB_01,/JP07a/JP08a/GE05kB_01,/JP07a/JP08a/GE05kB_01,,,,$.JP Journal Entry.JP Journal Entry Line.(Credit) Consumption Tax Line.(Local) Amount.Value,JpJrnEntry.JpJrnEntryLin.CrdtConsmpTxLin.LoclAmt.Vl,0
+Column27,摘要文,0..1,Text,5946,JP08a_GL04_03,/JP07a/JP08a/JP08a_GL04_03,/JP07a/JP08a/JP08a_GL04_03,,,,$.JP Journal Entry.JP Journal Entry Line.Description,JpJrnEntry.JpJrnEntryLin.Dscr,4月5日伝票No190株式会社　渡辺産業
+Column28,数字１,,,,,,,,,,,,
+Column29,数字２,,,,,,,,,,,,
+Column30,入力プログラム区分,1..1,Identifier,5919,GL05c_01,/JP07a/GL05c_01,/JP07a/GL05c_01,,,,$.JP Journal Entry.General Ledger Source.Code,JpJrnEntry.GenrLedgrSorc.Cd,1
+Column31,配賦元税計算,,,,,,,,,,,,
+Column32,配賦元集計方法,,,,,,,,,,,,
+Column33,配賦元集計開始日付,,,,,,,,,,,,
+Column34,配賦元集計終了日付,,,,,,,,,,,,
+Column35,配賦元管理仕訳区分,,,,,,,,,,,,
+Column36,配賦元部門コード,,,,,,,,,,,,
+Column37,配賦元部門名,,,,,,,,,,,,
+Column38,配賦元科目コード,,,,,,,,,,,,
+Column39,配賦元科目名,,,,,,,,,,,,
+Column40,配賦元補助コード,,,,,,,,,,,,
+Column41,配賦元補助名,,,,,,,,,,,,
+Column42,配賦元金額,,,,,,,,,,,,
+Column43,数字３,,,,,,,,,,,,
+Column44,数字４,,,,,,,,,,,,
+Column45,数字５,,,,,,,,,,,,
+Column46,金額１,,,,,,,,,,,,
+Column47,金額２,,,,,,,,,,,,
+Column48,金額３,,,,,,,,,,,,
+Column49,金額４,,,,,,,,,,,,
+Column50,金額５,,,,,,,,,,,,
+Column51,文字列１,,,,,,,,,,,,
+Column52,文字列２,,,,,,,,,,,,
+Column53,文字列３,,,,,,,,,,,,
+Column54,文字列４,,,,,,,,,,,,
+Column55,文字列５,,,,,,,,,,,,
+Column56,入力日付時間,0..1,Date,5929,GE09eR_01,/JP07a/GE09eR_01,/JP07a/GE09eR_01,,,,$.JP Journal Entry.Activities.(Created) Activity.Date,JpJrnEntry.Acts.CrtdAct.Dt,44228.57986
+Column57,借方取引先コード,,,,,,,,,,,,
+Column58,借方取引先名,,,,,,,,,,,,
+Column59,借方セグメント１コード,,,,,,,,,,,,
+Column60,借方セグメント１名,,,,,,,,,,,,
+Column61,借方セグメント２コード,,,,,,,,,,,,
+Column62,借方セグメント２名,,,,,,,,,,,,
+Column63,借方セグメント３コード,,,,,,,,,,,,
+Column64,借方セグメント３名,,,,,,,,,,,,
+Column65,貸方取引先コード,,,,,,,,,,,,
+Column66,貸方取引先名,,,,,,,,,,,,
+Column67,貸方セグメント１コード,,,,,,,,,,,,
+Column68,貸方セグメント１名,,,,,,,,,,,,
+Column69,貸方セグメント２コード,,,,,,,,,,,,
+Column70,貸方セグメント２名,,,,,,,,,,,,
+Column71,貸方セグメント３コード,,,,,,,,,,,,
+Column72,貸方セグメント３名,,,,,,,,,,,,
+Column73,配賦選択,,,,,,,,,,,,
+Column74,配賦元取引先コード,,,,,,,,,,,,
+Column75,配賦元取引先名,,,,,,,,,,,,
+Column76,配賦元セグメント１コード,,,,,,,,,,,,
+Column77,配賦元セグメント１名,,,,,,,,,,,,
+Column78,配賦元セグメント２コード,,,,,,,,,,,,
+Column79,配賦元セグメント２名,,,,,,,,,,,,
+Column80,配賦元セグメント３コード,,,,,,,,,,,,
+Column81,配賦元セグメント３名,,,,,,,,,,,,
+Column79,配賦元セグメント２名,,,,,,,,,,,,
+Column80,配賦元セグメント３コード,,,,,,,,,,,,
+Column81,配賦元セグメント３名,,,,,,,,,,,,

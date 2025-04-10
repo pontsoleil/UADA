@@ -1,0 +1,403 @@
+
+
+<!-- CORE taxonomy schema  -->
+<schema
+   ...
+   targetNamespace="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25">
+   <annotation>
+      <appinfo>
+         <xbrll:linkbaseRef xlink:type="simple" 
+         xlink:href="gl-cor-2015-03-25-presentation.xml" 
+         xlink:title="Presentation Links, all" 
+         xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" 
+         xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      </appinfo>
+   </annotation>
+   <import namespace="http://www.xbrl.org/int/gl/gen/2015-03-25" schemaLocation="../gen/gl-gen-2015-03-25.xsd"/>
+   ...
+   <element name="entryDetail" id="gl-cor_entryDetail" type="gl-cor:entryDetailComplexType"
+      substitutionGroup="xbrli:tuple" nillable="true"/>
+   <element name="lineNumber" id="gl-cor_lineNumber" type="gl-cor:lineNumberItemType"
+      substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+   <element name="account" id="gl-cor_account" type="gl-cor:accountComplexType"
+      substitutionGroup="xbrli:tuple" nillable="true"/>
+   ...
+   <element name="entryDetail" id="gl-cor_entryDetail" type="gl-cor:entryDetailComplexType"
+      substitutionGroup="xbrli:tuple" nillable="true"/>
+   <element name="lineNumber" id="gl-cor_lineNumber" type="gl-cor:lineNumberItemType"
+      substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+   <element name="account" id="gl-cor_account" type="gl-cor:accountComplexType"
+      substitutionGroup="xbrli:tuple" nillable="true"/>
+   ...
+</schema>
+
+<!-- COR content schema -->
+<schema
+   ...
+   targetNamespace="http://www.xbrl.org/int/gl/cor/2015-03-25">
+   ...
+	<include schemaLocation="../../cor/gl-cor-2015-03-25.xsd"/>
+   ...
+
+
+   <complexType name="entryHeaderComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+                  ...
+               <element ref="gl-cor:entryType" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:entryNumber" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:entryComment" minOccurs="0" maxOccurs="1"/>
+                  ...
+               <element ref="gl-ext:totalAmounts" minOccurs="0" maxOccurs="unbounded"/>
+               <element ref="gl-cor:entryDetail" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>
+
+
+   <complexType name="entryDetailComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+               <element ref="gl-cor:lineNumber" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:account" minOccurs="0" maxOccurs="unbounded"/>
+               ...
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>
+   ...
+   <complexType name="lineNumberItemType">
+      <simpleContent>
+         <restriction base="xbrli:stringItemType">
+         </restriction>
+      </simpleContent>
+   </complexType>
+   ...
+   <complexType name="accountComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+               <element ref="gl-cor:accountMainID" minOccurs="0" maxOccurs="1"/>
+               ...
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>
+   ...
+</schema>
+
+<!-- COR presentation linkbase -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <loc xlink:type="locator" xlink:href="gl-cor-2015-03-25.xsd#gl-cor_accountingEntries"
+         xlink:label="gl-cor_accountingEntries"
+         xlink:title="presentation: accountingEntries to documentInfo"/>
+      <loc xlink:type="locator" xlink:href="gl-cor-2015-03-25.xsd#gl-cor_documentInfo"
+         xlink:label="gl-cor_documentInfo"
+         xlink:title="presentation: accountingEntries to documentInfo"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="gl-cor_accountingEntries" xlink:to="gl-cor_documentInfo"
+            xlink:title="presentation: accountingEntries to documentInfo" use="optional" order="10.0"/>
+      ...
+   </presentationLink>
+</linkbase>
+
+<!-- COR label linkbase -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+   xmlns="http://www.xbrl.org/2003/linkbase"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+   <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+
+      <loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_accountingEntries" xlink:label="accountingEntries"/>
+      <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Root for XBRL GL. No entry made here.</label>
+      <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_accountingEntries_en" xml:lang="en">Accounting Entries</label>
+      <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="accountingEntries_lbl"/>
+
+
+      <loc xlink:type="locator" xlink:href="../gl-cor-2015-03-25.xsd#gl-cor_account" xlink:label="account"/>
+      <label xlink:type="resource" xlink:label="account_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation"
+         xml:lang="en">Tuple: parent container for account numbers and identifiers. ...
+      </label>
+      <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+         xlink:from="account" xlink:to="account_lbl"/>
+      <label xlink:type="resource" xlink:label="account_lbl" xlink:role="http://www.xbrl.org/2003/role/label"
+         xlink:title="gl-cor_account_en" xml:lang="en">Account Identifier</label>
+      ...
+   </labelLink>
+</linkbase>
+
+<!-- Palette schema -->
+<schema
+   ...
+   targetNamespace="http://www.xbrl.org/int/gl/plt/2015-03-25"
+   xmlns:xbrli="http://www.xbrl.org/2003/instance"
+   xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25">
+   <annotation>
+      <appinfo>
+         <link:linkbaseRef xlink:type="simple" 
+            xlink:href="../../cor/lang/gl-cor-2015-03-25-label.xml" 
+            xlink:title="Label Links, all" 
+            xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" 
+            xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+         <link:linkbaseRef xlink:type="simple" 
+            xlink:href="../../cor/lang/gl-cor-2015-03-25-label-ja.xml" 
+            xlink:title="Label Links, ja" 
+            xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" 
+            xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      </appinfo>
+   </annotation>
+   <import namespace="http://www.xbrl.org/int/gl/cor/2015-03-25" 
+      schemaLocation="gl-cor-content-2015-03-25.xsd"/>
+</schema>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2015-03-25"
+   elementFormDefault="qualified" attributeFormDefault="unqualified"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xbrli="http://www.xbrl.org/2003/instance"
+   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+   xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25">
+   <annotation>
+      <appinfo>
+         <xbrll:linkbaseRef xlink:type="simple"
+            xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"
+            xlink:href="gl-ext-2015-03-25-presentation.xml"
+            xlink:title="Presentation Links, all"
+            xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+      </appinfo>
+   </annotation>
+   <import namespace="http://www.xbrl.org/2003/instance"
+      schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+   <import namespace="http://www.xbrl.org/int/gl/gen/2015-03-25"
+      schemaLocation="../gen/gl-gen-2015-03-25.xsd"/>
+   <element name="entriesType" id="gl-ext_entriesType" type="gl-ext:entriesTypeItemType"
+      substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+   <element name="totalAmounts" id="gl-ext_totalAmounts" type="gl-ext:totalAmountsComplexType"
+      substitutionGroup="xbrli:tuple" nillable="true"/>
+   <element name="totalAmountType" id="gl-ext_totalAmountType" type="gl-ext:totalAmountTypeItemType"
+      substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+   <element name="totalAmount" id="gl-ext_totalAmount" type="gl-ext:totalAmountItemType"
+      substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+   <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_documentInfo"
+         xlink:label="documentInfo" xlink:title="documentInfo"/>
+      <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_entriesType"
+         xlink:label="entriesType" xlink:title="entriesType"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="documentInfo" xlink:to="entriesType"
+         xlink:title="presentation: documentInfo to entriesType" order="10.0"/>
+      <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entriesType"
+         xlink:label="cor_entriesType" xlink:title="entriesType"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="documentInfo" xlink:to="cor_entriesType" use="prohibited" priority="1"
+         xlink:title="prohibit presentation: documentInfo to entriesType" order="10.0"/>
+      <loc xlink:type="locator" xlink:href="../cor/gl-cor-2015-03-25.xsd#gl-cor_entryHeader"
+         xlink:label="entryHeader" xlink:title="entryHeader"/>
+      <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_totalAmounts"
+         xlink:label="totalAmounts" xlink:title="totalAmounts"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="entryHeader" xlink:to="totalAmounts"
+         xlink:title="presentation: entryHeader to totalAmounts"
+         order="395.0"/>
+      <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_totalAmount"
+         xlink:label="totalAmount" xlink:title="totalAmount"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="totalAmounts" xlink:to="totalAmount"
+         xlink:title="presentation: entryHeader to totalAmount"
+         order="10.0"/>
+      <loc xlink:type="locator" xlink:href="gl-ext-2015-03-25.xsd#gl-ext_totalAmountType"
+         xlink:label="totalAmountType" xlink:title="totalAmountType"/>
+      <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child"
+         xlink:from="totalAmounts" xlink:to="totalAmountType"
+         xlink:title="presentation: entryHeader to totalAmountType"
+         order="20.0"/>
+   </presentationLink>
+</linkbase>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<linkbase
+   xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+   xmlns="http://www.xbrl.org/2003/linkbase"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xlink="http://www.w3.org/1999/xlink">
+   <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+      <loc xlink:type="locator" xlink:href="../gl-ext-2015-03-25.xsd#gl-ext_entriesType" xlink:label="entriesType"/>
+      <label xlink:type="resource" xlink:label="entriesType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation"
+         xml:lang="en">Entry type extension</label>
+      <label xlink:type="resource" xlink:label="entriesType_lbl" xlink:role="http://www.xbrl.org/2003/role/label"
+         xlink:title="gl-ext_entriesType_en" xml:lang="en">Entry Type</label>
+      <loc xlink:type="locator" xlink:href="../gl-ext-2015-03-25.xsd#gl-ext_totalAmounts" xlink:label="totalAmounts"/>
+      <label xlink:type="resource" xlink:label="totalAmounts_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation"
+         xml:lang="en">A tuple that groups the total amount with its corresponding type .</label>
+      <label xlink:type="resource" xlink:label="totalAmounts_lbl" xlink:role="http://www.xbrl.org/2003/role/label"
+         xlink:title="gl-ext_totalAmounts_en" xml:lang="en">Total Amounts</label>
+      <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+         xlink:from="totalAmounts" xlink:to="totalAmounts_lbl"/>
+      <loc xlink:type="locator" xlink:href="../gl-ext-2015-03-25.xsd#gl-ext_totalAmount" xlink:label="totalAmount"/>
+      <label xlink:type="resource" xlink:label="totalAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation"
+         xml:lang="en">Represents the total amount values at the entryHeader level. This provides an aggregated view of financial values associated with an entry.</label>
+      <label xlink:type="resource" xlink:label="totalAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label"
+         xlink:title="gl-ext_totalAmount_en" xml:lang="en">Total Amount</label>
+      <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+         xlink:from="totalAmount" xlink:to="totalAmount_lbl"/>
+      <loc xlink:type="locator" xlink:href="../gl-ext-2015-03-25.xsd#gl-ext_totalAmountType" xlink:label="totalAmountType"/>
+      <label xlink:type="resource" xlink:label="totalAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation"
+         xml:lang="en">Specifies the type of total amount at the entryHeader level. It differentiates various total values allowing precise classification and interpretation.</label>
+      <label xlink:type="resource" xlink:label="totalAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label"
+         xlink:title="gl-ext_totalAmountType_en" xml:lang="en">Total Type</label>
+      <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label"
+         xlink:from="totalAmountType" xlink:to="totalAmountType_lbl"/>
+   </labelLink>
+</linkbase>
+
+EXT Content Schema
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2015-03-25"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:xbrli="http://www.xbrl.org/2003/instance"
+   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+   elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <import namespace="http://www.xbrl.org/2003/instance"
+      schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+   <include schemaLocation="../../ext/gl-ext-2015-03-25.xsd"/>
+   <complexType name="entriesTypeItemType">
+      <simpleContent>
+         <restriction base="xbrli:tokenItemType">
+            <enumeration value="ex-1"/>
+            <enumeration value="ex-2"/>
+            <enumeration value="other"/>
+         </restriction>
+      </simpleContent>
+   </complexType>
+   <complexType name="totalAmountsComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+               <element ref="gl-ext:totalAmount" minOccurs="1" maxOccurs="1"/>
+               <element ref="gl-ext:totalAmountType" minOccurs="0" maxOccurs="1"/>
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>
+   <complexType name="totalAmountItemType">
+      <simpleContent>
+         <restriction base="xbrli:monetaryItemType">
+         </restriction>
+      </simpleContent>
+   </complexType>
+   <complexType name="totalAmountTypeItemType">
+      <simpleContent>
+         <restriction base="xbrli:tokenItemType">
+            <enumeration value="line"/>
+            <enumeration value="tax"/>
+            <enumeration value="taxable"/>
+            <enumeration value="other"/>
+         </restriction>
+      </simpleContent>
+   </complexType>
+</schema>
+
+COR Content schema
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2001/XMLSchema"
+   xmlns:xbrli="http://www.xbrl.org/2003/instance"
+   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+      elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <import namespace="http://www.xbrl.org/2003/instance"
+      schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+   <import namespace="http://www.xbrl.org/int/gl/ext/2015-03-25"
+      schemaLocation="gl-ext-content-2015-03-25.xsd"/>
+   <include schemaLocation="../../cor/gl-cor-2015-03-25.xsd"/>
+      ...
+   
+   <complexType name="documentInfoComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+               <element ref="gl-ext:entriesType" maxOccurs="1"/>
+               <element ref="gl-cor:uniqueID" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:revisesUniqueID" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:revisesUniqueIDAction" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:language" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:creationDate" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:entriesComment" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:periodCoveredStart" minOccurs="0" maxOccurs="1"/>
+               <element ref="gl-cor:periodCoveredEnd" minOccurs="0" maxOccurs="1"/>
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>	
+
+   <complexType name="entryHeaderComplexType">
+      <complexContent>
+         <restriction base="anyType">
+            <sequence>
+                  ...
+               <element ref="gl-ext:totalAmounts" minOccurs="0" maxOccurs="unbounded"/>
+               <element ref="gl-cor:entryDetail" minOccurs="0" maxOccurs="unbounded"/>
+            </sequence>
+            <attribute name="id" type="ID"/>
+         </restriction>
+      </complexContent>
+   </complexType>
+      ...
+</schema>
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<xs:schema targetNamespace="http://www.xbrl.org/int/gl/plt/2015-03-25"
+   attributeFormDefault="unqualified" elementFormDefault="qualified" 
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:xs="http://www.w3.org/2001/XMLSchema"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:xl="http://www.xbrl.org/2003/XLink"
+   xmlns:xbrli="http://www.xbrl.org/2003/instance"
+   xmlns:link="http://www.xbrl.org/2003/linkbase"
+   xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2015-03-25"
+   xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2015-03-25"
+   xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2015-03-25"
+   xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2015-03-25">
+   <xs:annotation>
+      <xs:appinfo>
+         <link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef"
+            xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" 
+            xlink:href="../../cor/lang/gl-cor-2015-03-25-label.xml" xlink:title="Label Links, all"/>
+         <link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" 
+            xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" 
+            xlink:href="../../ext/lang/gl-ext-2015-03-25-label.xml" xlink:title="Label Links, all"/>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import namespace="http://www.xbrl.org/int/gl/cor/2015-03-25" schemaLocation="gl-cor-content-2015-03-25.xsd"/>
+</xs:schema>

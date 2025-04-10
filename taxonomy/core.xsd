@@ -1,28 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) 2022 XBRL Japan  inc. -->
-<schema 
-	targetNamespace="http://www.iso.org/iso21926" 
-	elementFormDefault="qualified" 
-	attributeFormDefault="unqualified" 
-	xmlns="http://www.w3.org/2001/XMLSchema" 
-	xmlns:cor="http://www.iso.org/iso21926" 
-	xmlns:xlink="http://www.w3.org/1999/xlink" 
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:xl="http://www.xbrl.org/2003/XLink" 
-	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
-	xmlns:link="http://www.xbrl.org/2003/linkbase" 
-	xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" 
-	xmlns:num="http://www.xbrl.org/dtr/type/numeric" 
-	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
-	xmlns:label="http://xbrl.org/2008/label" 
-	xmlns:reference="http://xbrl.org/2008/reference">
+<schema targetNamespace="http://www.iso.org/iso21926" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:cor="http://www.iso.org/iso21926" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xl="http://www.xbrl.org/2003/XLink" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" xmlns:num="http://www.xbrl.org/dtr/type/numeric" xmlns:xbrldt="http://xbrl.org/2005/xbrldt" xmlns:label="http://xbrl.org/2008/label" xmlns:reference="http://xbrl.org/2008/reference">
 	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
 	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
 	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
 	<import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
 	<import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
 	<import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
-	<import namespace="http://xbrl.org/2008/reference" schemaLocation="http://www.xbrl.org/2008/generic-reference.xsd"/> 
+	<import namespace="http://xbrl.org/2008/reference" schemaLocation="http://www.xbrl.org/2008/generic-reference.xsd"/>
 	<annotation>
 		<appinfo>
 			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-lbl-ja.xml"/>
@@ -161,7 +146,7 @@
 			<link:arcroleType id="concept-description" cyclesAllowed="undirected" arcroleURI="http://www.iso.org/iso21926/arcrole/concept-description">
 				<link:definition>concept to description</link:definition>
 				<link:usedOn>link:labelArc</link:usedOn>
-			</link:arcroleType >
+			</link:arcroleType>
 		</appinfo>
 	</annotation>
 	<!-- typed dimension referenced element -->

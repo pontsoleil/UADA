@@ -1,0 +1,200 @@
+{
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2021/xbrl-csv",
+        "namespaces": {
+            "cor": "http://www.iso.org/iso21926",
+            "ns0": "http://www.example.com",
+            "link": "http://www.xbrl.org/2003/linkbase",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xbrli": "http://www.xbrl.org/2003/instance",
+            "xbrldi": "http://xbrl.org/2006/xbrldi",
+            "xlink": "http://www.w3.org/1999/xlink"
+        },
+        "taxonomy": [
+            "../../taxonomy/core.xsd"
+        ]
+    },
+    "tableTemplates": {
+        "iso21926_template": {
+            "columns": {
+                "JP07a": {},
+                "JP08a": {},
+                "BS04fb": {},
+                "JP05a": {},
+                "BS04fc": {},
+                "JP05b": {},
+                "BS04fb_01": {
+                    "dimensions": {
+                        "concept": "cor:BS04fb_01"
+                    }
+                },
+                "BS04fb_02": {
+                    "dimensions": {
+                        "concept": "cor:BS04fb_02"
+                    }
+                },
+                "BS04fb_03": {
+                    "dimensions": {
+                        "concept": "cor:BS04fb_03"
+                    }
+                },
+                "BS04fc_01": {
+                    "dimensions": {
+                        "concept": "cor:BS04fc_01"
+                    }
+                },
+                "BS04fc_02": {
+                    "dimensions": {
+                        "concept": "cor:BS04fc_02"
+                    }
+                },
+                "BS04fc_03": {
+                    "dimensions": {
+                        "concept": "cor:BS04fc_03"
+                    }
+                },
+                "GE05kB_01": {
+                    "dimensions": {
+                        "concept": "cor:GE05kB_01",
+                        "unit": "iso4217:JPY"
+                    }
+                },
+                "GE05ku_01": {
+                    "dimensions": {
+                        "concept": "cor:GE05ku_01",
+                        "unit": "iso4217:JPY"
+                    }
+                },
+                "GE05kw_01": {
+                    "dimensions": {
+                        "concept": "cor:GE05kw_01",
+                        "unit": "iso4217:JPY"
+                    }
+                },
+                "GE05kz_01": {
+                    "dimensions": {
+                        "concept": "cor:GE05kz_01",
+                        "unit": "iso4217:JPY"
+                    }
+                },
+                "GE09eR_01": {
+                    "dimensions": {
+                        "concept": "cor:GE09eR_01"
+                    }
+                },
+                "GE23c_01": {
+                    "dimensions": {
+                        "concept": "cor:GE23c_01"
+                    }
+                },
+                "GL05c_01": {
+                    "dimensions": {
+                        "concept": "cor:GL05c_01"
+                    }
+                },
+                "JP02j_BS09_01": {
+                    "dimensions": {
+                        "concept": "cor:JP02j_BS09_01"
+                    }
+                },
+                "JP02j_BS09_02": {
+                    "dimensions": {
+                        "concept": "cor:JP02j_BS09_02"
+                    }
+                },
+                "JP02k_BS09_01": {
+                    "dimensions": {
+                        "concept": "cor:JP02k_BS09_01"
+                    }
+                },
+                "JP02k_BS09_02": {
+                    "dimensions": {
+                        "concept": "cor:JP02k_BS09_02"
+                    }
+                },
+                "JP05a_01": {
+                    "dimensions": {
+                        "concept": "cor:JP05a_01"
+                    }
+                },
+                "JP05a_02": {
+                    "dimensions": {
+                        "concept": "cor:JP05a_02"
+                    }
+                },
+                "JP05a_03": {
+                    "dimensions": {
+                        "concept": "cor:JP05a_03"
+                    }
+                },
+                "JP05b_01": {
+                    "dimensions": {
+                        "concept": "cor:JP05b_01"
+                    }
+                },
+                "JP05b_02": {
+                    "dimensions": {
+                        "concept": "cor:JP05b_02"
+                    }
+                },
+                "JP05b_03": {
+                    "dimensions": {
+                        "concept": "cor:JP05b_03"
+                    }
+                },
+                "JP06e_GE24_01": {
+                    "dimensions": {
+                        "concept": "cor:JP06e_GE24_01"
+                    }
+                },
+                "JP06e_GE24_02": {
+                    "dimensions": {
+                        "concept": "cor:JP06e_GE24_02"
+                    }
+                },
+                "JP06f_GE24_01": {
+                    "dimensions": {
+                        "concept": "cor:JP06f_GE24_01"
+                    }
+                },
+                "JP06f_GE24_02": {
+                    "dimensions": {
+                        "concept": "cor:JP06f_GE24_02"
+                    }
+                },
+                "JP07a_GL03_01": {
+                    "dimensions": {
+                        "concept": "cor:JP07a_GL03_01"
+                    }
+                },
+                "JP07a_GL03_03": {
+                    "dimensions": {
+                        "concept": "cor:JP07a_GL03_03"
+                    }
+                },
+                "JP08a_GL04_03": {
+                    "dimensions": {
+                        "concept": "cor:JP08a_GL04_03"
+                    }
+                }
+            },
+            "dimensions": {
+                "cor:d_JP07a": "$JP07a",
+                "cor:d_JP08a": "$JP08a",
+                "cor:d_BS04fb": "$BS04fb",
+                "cor:d_JP05a": "$JP05a",
+                "cor:d_BS04fc": "$BS04fc",
+                "cor:d_JP05b": "$JP05b",
+                "period": "2024-03-01T00:00:00",
+                "entity": "ns0:Example co."
+            }
+        }
+    },
+    "tables": {
+        "iso21926_table": {
+            "template": "iso21926_template",
+            "url": "tidyGLeTax.csv"
+        }
+    }
+}

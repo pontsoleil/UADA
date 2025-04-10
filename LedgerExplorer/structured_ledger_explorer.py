@@ -14,8 +14,8 @@ from threading import Thread
 import time
 
 
-DEBUG = False
-TRACE = False
+DEBUG = True
+TRACE = True
 
 def debug_print(message):
     if DEBUG:
@@ -26,6 +26,27 @@ def trace_print(message):
     if TRACE:
         print(message)
 
+
+def save_dataframe_to_csv(df, filename="output.csv", folder="debug_output"):
+    """
+    指定したDataFrameをCSVファイルに保存する関数
+    Parameters:
+    df (pd.DataFrame): 出力するDataFrame
+    filename (str): 保存するCSVのファイル名（デフォルト: "output.csv"）
+    folder (str): CSVを保存するフォルダ名（デフォルト: "debug_output"）
+    Returns:
+    str: 保存したファイルのパス
+    """
+    # フォルダが存在しなければ作成
+    if not os.path.exists(folder):
+        os.makedirs(folder)
+    # フルパスを作成
+    filename = f'{datetime.now().strftime("%m-%d_%H%M%S%f")[:-3]}_{filename[:-4]}.csv'
+    file_path = os.path.join(folder, filename)
+    # DataFrameをCSVに保存
+    df.to_csv(file_path, index=False, encoding="utf-8-sig")  # UTF-8 (BOM付き) でエクスポート
+    print(f"DataFrame saved to {file_path}")
+    return file_path
 
 class LogTracker:
     def __init__(self):
@@ -77,7 +98,7 @@ class LogTracker:
         if gui is None or not gui.log_text:
             self.buffer.append(text)
             self.line = '1.0'
-        else:            
+        else:
             for i in range(len(self.buffer)):
                 _text = self.buffer[i]
                 line = f"{1+i}.0"
@@ -184,19 +205,19 @@ class TidyData:
     def replace_name(self, row):
         if "en"== self.lang:
             if not re.search(self.english_pattern, row['Ledger_Account_Name']):
-                    # `bs_template_df` から置き換え値を取得
-                    # Get replacement values from 'bs_template_df'
-                    replacement = self.bs_template_df.loc[
+                # `bs_template_df` から置き換え値を取得
+                # Get replacement values from 'bs_template_df'
+                replacement = self.bs_template_df.loc[
                         self.bs_template_df['Ledger_Account_Number'] == row['Ledger_Account_Number'], 'Account_Name'
                     ]
-                    if replacement.empty:
-                        # `pl_template_df` から置き換え値を取得
-                        # Get replacement values from 'pl_template_df'
-                        replacement = self.pl_template_df.loc[
+                if replacement.empty:
+                    # `pl_template_df` から置き換え値を取得
+                    # Get replacement values from 'pl_template_df'
+                    replacement = self.pl_template_df.loc[
                             self.pl_template_df['Ledger_Account_Number'] == row['Ledger_Account_Number'], 'Account_Name'
                         ]
-                    if not replacement.empty:
-                        row['Ledger_Account_Name'] = replacement.values[0]
+                if not replacement.empty:
+                    row['Ledger_Account_Name'] = replacement.values[0]
             if 'Counterpart_Account_Name' in row and not re.search(self.english_pattern, row['Counterpart_Account_Name']):
                 # `bs_template_df` から置き換え値を取得
                 # Get replacement values from 'bs_template_df'
@@ -563,7 +584,9 @@ class TidyData:
                 current_month = transaction_month
                 for acc_number in balance_dict:
                     # 各勘定科目について、月初残高を追加
-                    account_name = self.etax_code_mapping_dict[acc_number]["eTax_Account_Name"]
+                    account_info = self.etax_code_mapping_dict.get(acc_number, {"eTax_Account_Name": "❌ NOT FOUND"})
+                    account_name = account_info["eTax_Account_Name"]
+                    # account_name = self.etax_code_mapping_dict[acc_number]["eTax_Account_Name"]
                     if "en"== self.lang:
                         # `bs_template_df` から置き換え値を取得
                         replacement = self.bs_template_df.loc[
@@ -629,9 +652,9 @@ class TidyData:
         final_entry = pd.DataFrame(balances)
         for column in final_entry:
             if pd.api.types.is_numeric_dtype(final_entry[column]):
-                final_entry[column].fillna(0, inplace=True)
+                final_entry[column] = final_entry[column].fillna(0)
             else:
-                final_entry[column].fillna("", inplace=True)
+                final_entry[column] = final_entry[column].fillna("")
         # 最終結果を表示
         self.debug_print("\n6. 総勘定元帳最終結果:")
         self.debug_print(final_entry.head())
@@ -727,8 +750,11 @@ class TidyData:
         # temp_summaryを表示する
         self.debug_print("\ntemp_summary:")
         self.debug_print(temp_summary.head())
+        # temp_summary_dict = temp_summary.to_dict(orient="records")
         # 月ごとのユニークな値を取得
         unique_months = sorted(temp_summary["Month"].unique())
+        # if DEBUG:
+        #     save_dataframe_to_csv(temp_summary, "temp_summary.csv", "data/_PCA/dataframe")
         # 科目ごとにグループ化
         grouped = temp_summary.groupby("Ledger_Account_Number")
         # 各科目のBeginning_BalanceとEnding_Balanceを保存する辞書
@@ -747,13 +773,16 @@ class TidyData:
                     row = group.loc[month]
                     beginning_balance = previous_ending_balance  # 前月のEnding_BalanceをBeginning_Balanceに設定
                     # 勘定科目の種類に応じた残高計算
+                    debit_amount = pd.to_numeric(row.get("Debit_Amount", 0), errors="coerce").astype(np.int64).item()
+                    credit_amount = pd.to_numeric(row.get("Credit_Amount", 0), errors="coerce").astype(np.int64).item()
+                    # 勘定科目の方向に応じて残高を計算
+                    account_number = row["Ledger_Account_Number"]
                     account_category = self.etax_code_mapping_dict.get(account_number, {}).get('Category', "Unknown")
                     account_direction = self.account_direction_dict.get(account_category)
-                    # 勘定科目の方向に応じて残高を計算
                     if account_direction == "借方増":
-                        ending_balance = beginning_balance + row["Debit_Amount"] - row["Credit_Amount"]
+                        ending_balance = beginning_balance + debit_amount - credit_amount
                     elif account_direction == "貸方増":
-                        ending_balance = beginning_balance + row["Credit_Amount"] - row["Debit_Amount"]
+                        ending_balance = beginning_balance + credit_amount - debit_amount
                     else:
                         # 未分類の場合は残高を変更しない
                         self.debug_print(f"未分類の勘定科目: {account_number}")
@@ -768,26 +797,31 @@ class TidyData:
                 ending_balances[account_number][month_index] = ending_balance
                 # 現在のEnding_Balanceを次の月のBeginning_Balanceに使用するため更新
                 previous_ending_balance = ending_balance
-        # DataFrameに新しい列を追加
+
         temp_summary["Beginning_Balance"] = temp_summary.apply(
             lambda row: beginning_balances[row["Ledger_Account_Number"]][unique_months.index(row["Month"])],
             axis=1,
         )
+
         temp_summary["Ending_Balance"] = temp_summary.apply(
             lambda row: ending_balances[row["Ledger_Account_Number"]][unique_months.index(row["Month"])],
             axis=1,
         )
+
         # eTax_Categoryを計算して列を追加
         temp_summary["eTax_Category"] = temp_summary.apply(
             lambda row: self.etax_code_mapping_dict.get(row["Ledger_Account_Number"], {}).get("eTax_Category", None),
             axis=1,
         )
+
+        if DEBUG:
+            save_dataframe_to_csv(temp_summary, "temp_summary.csv", "data/_PCA/dataframe")
         # 集計結果を保存
         for column in temp_summary:
             if pd.api.types.is_numeric_dtype(temp_summary[column]):
-                temp_summary[column].fillna(0, inplace=True)
+                temp_summary[column] = temp_summary[column].fillna(0)
             else:
-                temp_summary[column].fillna("", inplace=True)
+                temp_summary[column] = temp_summary[column].fillna("")
         self.summary_df = temp_summary.copy()
         # temp_summaryを表示する
         self.debug_print("\nself.summary_df:")
@@ -899,9 +933,9 @@ class TidyData:
         combined_summary["Beginning_Balance"] = combined_summary["Beginning_Balance"].fillna(0).astype("int64")
         combined_summary["Total_Debit"] = combined_summary["Total_Debit"].fillna(0).astype("int64")
         combined_summary["Total_Credit"] = combined_summary["Total_Credit"].fillna(0).astype("int64")
-        #
-        # BS
-        #
+        """
+        BS
+        """
         # Iterate through self.bs_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
         for _, row in self.bs_template_df.iterrows():
@@ -980,6 +1014,7 @@ class TidyData:
         # インデックスを基準に高速な検索を可能にする
         merge_keys = ["Ledger_Account_Number"]
         # bs_data_df を辞書に変換 (merge_keysをキーとして)
+        self.bs_data_df = self.bs_data_df.groupby("Ledger_Account_Number").sum().reset_index()
         bs_data_dict = self.bs_data_df.set_index(merge_keys).to_dict(orient="index")
         # 結果を格納するための DataFrame を初期化
         bs_result_df = self.bs_template_df.copy()
@@ -996,6 +1031,7 @@ class TidyData:
                 elif column in bs_data_row:
                     # bs_data_df の値で上書き
                     bs_result_df.at[index, column] = bs_data_row[column]
+
         bs_parent_child_hierarchy = build_bs_parent_child_hierarcy(bs_result_df, level_range=(1, 10), exclude_empty_children=True)
         # BSの結果を表示
         self.bs_dict = {}
@@ -1018,7 +1054,7 @@ class TidyData:
                     if min_level > level:
                         min_level = level
                     if "T"==_type or beginning_balance > 0 or total_debit > 0 or total_credit > 0 or ending_balance > 0:
-                        self.debug_print(f"pl_parent_child_hierarchy level: {level}, Ledger_Account_Number: {child} Type:{_type} Parent: {parent}, Beginning_Balance: {beginning_balance} Total_Debit: {total_debit} Total_Credit: {total_credit} Ending_Balance: {ending_balance}")
+                        self.debug_print(f"bs_parent_child_hierarchy level: {level}, Ledger_Account_Number: {child} Type:{_type} Parent: {parent}, Beginning_Balance: {beginning_balance} Total_Debit: {total_debit} Total_Credit: {total_credit} Ending_Balance: {ending_balance}")
                         self.bs_dict[child] = {
                             "Level": level,
                             "Type": _type,
@@ -1096,9 +1132,9 @@ class TidyData:
         )
         # Replace the original dictionary with the sorted one
         self.bs_dict = sorted_bs_dict
-        #
-        # PL
-        #
+        """
+        PL
+        """
         # Iterate through self.pl_template_df to populate the dictionary
         i = 0  # Initialize the sequence counter
         for _, row in self.pl_template_df.iterrows():
@@ -1123,6 +1159,9 @@ class TidyData:
             ),
             axis=1
         )
+        if DEBUG:
+            save_dataframe_to_csv(self.pl_template_df,'pl_template_df.csv','data/_PCA/dataframe')
+            save_dataframe_to_csv(income_statement_df,'income_statement_df.csv','data/_PCA/dataframe')
         # Merge the sheet Ledger_Account_Number with the income_statement_df to get balances
         self.pl_data_df = pd.merge(
             self.pl_template_df,
@@ -1141,15 +1180,9 @@ class TidyData:
             self.pl_data_df[column] = pd.to_numeric(self.pl_data_df[column], errors="coerce").fillna(0).astype("int64")
         # Set Beginning_Balance, Total_Debit, Total_Credit, and Ending_Balance to 0 for rows where Type is "T"
         self.pl_data_df.loc[self.pl_data_df["Type"] == "T", ["Beginning_Balance", "Total_Debit", "Total_Credit", "Ending_Balance"]] = 0
-        # 電子取引
-        codes_to_check = [self.params["account"]["電子取引売上高"], self.params["account"]["電子取引以外売上高"]]
-        # DataFrameに含まれているか確認
-        missing_codes = [code for code in codes_to_check if code not in self.pl_data_df["Ledger_Account_Number"].values]
-        # 結果を表示
-        if missing_codes:
-            self.debug_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
-        else:
-            self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+        if DEBUG:
+            save_dataframe_to_csv(self.pl_data_df,'pl_data_df.csv','data/_PCA/dataframe')
+
         # BSの親子関係を構築する関数
         def build_pl_parent_child_hierarcy(pl_result_df, level_range=(1, 10), exclude_empty_children=True):
             # 初期化: 各レベルの最新の要素を保持（レベル範囲を指定）
@@ -1180,6 +1213,7 @@ class TidyData:
             else:
                 filtered_list = children_list
             return filtered_list
+
         # PLの親子関係を構築 統合処理: pl_template_dfを基準にpl_data_dfで上書き
         # インデックスを基準に高速な検索を可能にする
         merge_keys = ["Ledger_Account_Number"]
@@ -1189,9 +1223,9 @@ class TidyData:
         pl_result_df = self.pl_template_df.copy()
         # for ループで self.pl_template_df を処理
         for index, row in self.pl_template_df.iterrows():
-            key = row["Ledger_Account_Number"]
+            account_number = row["Ledger_Account_Number"]
             # データ辞書の行を取得
-            pl_data_row = pl_data_dict.get(key, {})
+            pl_data_row = pl_data_dict.get(account_number, {})
             # 必要な列を更新
             for column in ["Total_Debit", "Total_Credit", "Ending_Balance"]:
                 if column in row and not pd.isna(row[column]):
@@ -1200,7 +1234,11 @@ class TidyData:
                 elif column in pl_data_row:
                     # pl_data_df の値で上書き
                     pl_result_df.at[index, column] = pl_data_row[column]
-        pl_parent_child_hierarchy = build_pl_parent_child_hierarcy(pl_result_df, level_range=(1, 10), exclude_empty_children=True)
+
+        pl_parent_child_hierarchy = build_pl_parent_child_hierarcy(self.pl_data_df, level_range=(1, 10), exclude_empty_children=True)
+        if DEBUG:
+            save_dataframe_to_csv(pl_result_df,'pl_result_df.csv','data/_PCA/dataframe')
+
         # PLの結果を表示
         self.pl_dict = {}
         min_level = 10
@@ -1234,7 +1272,8 @@ class TidyData:
                         }
                 else:
                     self.debug_print(f"P/L Ledger_Account_Number {child} not found.")
-        # # max_level から min_level の範囲でループ
+
+        # max_level から min_level の範囲でループ
         for level in range(max_level, min_level, -1):
             # target_level に該当する要素を抽出
             filtered_dict = {key: value for key, value in self.pl_dict.items() if value["Level"] == level}
@@ -1247,32 +1286,47 @@ class TidyData:
                 parent = self.pl_dict[row['Parent']]
                 beginning_balance = 0 if pd.isna(row["Beginning_Balance"]) else row["Beginning_Balance"]
                 total_debit = 0 if pd.isna(row["Total_Debit"]) else row["Total_Debit"]
-                total_credit = 0 if pd.isna(row["Total_Credit"]) else row["Total_Credit"]
-                ending_balance = 0 if pd.isna(row["Ending_Balance"]) else row["Ending_Balance"]
                 if total_debit > 0:
-                    parent["Total_Debit"] += np.int64(total_debit)
+                    parent["Total_Debit"] += np.int64(total_debit).item()
+                total_credit = 0 if pd.isna(row["Total_Credit"]) else row["Total_Credit"]
                 if total_credit > 0:
-                    parent["Total_Credit"] += np.int64(total_credit)
+                    parent["Total_Credit"] += np.int64(total_credit).item()
+                ending_balance = 0 if pd.isna(row["Ending_Balance"]) else row["Ending_Balance"]
+                if ending_balance > 0:
+                    parent["Ending_Balance"] += np.int64(ending_balance).item()
+
         # Filter pl_dict to remove entries with Total_Debit and Total_Credit both 0
         self.pl_dict = {
             key: value
             for key, value in self.pl_dict.items()
             if not (value["Total_Debit"] == 0 and value["Total_Credit"] == 0)
         }
+        # Filters out accounts where both Total_Debit and Total_Credit are zero
+        # Recalculates "Ending_Balance" based on account type (10D or 10E) and Type="T"
+        # Preserves all other key-value pairs
+        # Uses dictionary comprehension for efficiency
         self.pl_dict = {
             key: {
                 **value,
                 "Ending_Balance": (
                     value["Total_Credit"] - value["Total_Debit"]
                     if key.startswith("10D") and value.get("Type") == "T"
-                    else value["Total_Debit"] - value["Total_Credit"]
-                    if key.startswith("10E") and value.get("Type") == "T"
-                    else value["Ending_Balance"]
-                )
+                    else (
+                        value["Total_Debit"] - value["Total_Credit"]
+                        if key.startswith("10E") and value.get("Type") == "T"
+                        else value["Ending_Balance"]
+                    )
+                ),
             }
             for key, value in self.pl_dict.items()
-            if not (value["Total_Debit"] == 0 and value["Total_Credit"] == 0)
+            if not (
+                0 == value["Total_Debit"]
+                and 0 == value["Total_Credit"]
+                and 0 == value["Ending_Balance"]
+            )
+            and value.get("Type") in ["T", "1"]
         }
+
         # Add eTax_Category and eTax_Account_Name based on self.etax_code_mapping_dict
         for key, value in self.pl_dict.items():
             # Retrieve eTax_Category and eTax_Account_Name based on the Ledger_Account_Number (key)
@@ -1287,6 +1341,7 @@ class TidyData:
                 value["seq"] = 0
                 value["eTax_Category"] = "Unknown"
                 value["eTax_Account_Name"] = "Unknown"
+
         # Sort the dictionary by `seq`
         sorted_pl_dict = dict(
             sorted(self.pl_dict.items(), key=lambda item: item[1].get("seq", 0))
@@ -1299,6 +1354,7 @@ class TidyData:
         account_list_df = pd.read_csv(self.account_path, dtype={"Account_Code": str, "eTax_Account_Code": str})
         account_list_df.columns = account_list_df.columns.str.strip()  # 列名の空白を除去
         # Account_Code をキーにして eTax_Account_Code と eTax_Account_Name を持つ辞書を作成
+        # debug_print(f"Columns in account_list_df:{account_list_df.columns}")
         self.code_mapping_dict = account_list_df.set_index("Account_Code")[["eTax_Account_Code", "eTax_Account_Name"]].to_dict('index')
         # eTax_Account_Code をキーにして、'Category' と "eTax_Account_Name" を持つ辞書を作成
         # eTax_Account_Code で重複を排除し、最初の出現のみを残す
@@ -1602,55 +1658,55 @@ class TidyData:
         self.debug_print(self.amount_rows[columns_to_show].head())
         # 貸方科目コードが self.params["account"]["売上高"]の場合にのみ、貸方補助科目の条件を適用（貸方補助科目が存在する場合のみ）
         # digital_transaction == 1 の電子取引の顧客コードリストを作成
-        digital_transaction_customer_codes = [
-            code for code, details in self.trading_partner_dict["customer"].items()
-            if details.get("digital_transaction")
-        ]
-        self.amount_rows[self.columns["貸方科目コード"]] = np.where(
-            (
-                self.amount_rows[self.columns["貸方科目コード"]]
-                == self.params["account"]["売上高"]
-            )
-            & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
-            & (
-                self.amount_rows[self.columns["借方補助科目コード"]]
-                .astype(str)
-                .isin(digital_transaction_customer_codes)
-            ),
-            self.params["account"]["電子取引売上高"],
-            np.where(
-                (
-                    self.amount_rows[self.columns["貸方科目コード"]]
-                    == self.params["account"]["売上高"]
-                )
-                & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
-                & (
-                    ~self.amount_rows[self.columns["借方補助科目コード"]]
-                    .astype(str)
-                    .isin(digital_transaction_customer_codes)
-                ),
-                self.params["account"]["電子取引以外売上高"],
-                self.amount_rows[self.columns["貸方科目コード"]],
-            ),
-        )
-        # 貸方科目名を変更
-        self.amount_rows[self.columns["貸方科目名"]] = np.where(
-            (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引売上高"]),
-            "電子取引売上高",
-            np.where(
-                (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引以外売上高"]),
-                "電子取引以外売上高",
-                self.amount_rows[self.columns["貸方科目名"]]  # その他は変更しない
-            )
-        )
-        codes_to_check = [self.params["account"]["電子取引売上高"], self.params["account"]["電子取引以外売上高"]]
-        # DataFrameに含まれているか確認
-        missing_codes = [code for code in codes_to_check if code not in self.amount_rows[self.columns["貸方科目コード"]].values]
-        # 結果を表示
-        if missing_codes:
-            self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
-        else:
-            self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
+        # digital_transaction_customer_codes = [
+        #     code for code, details in self.trading_partner_dict["customer"].items()
+        #     if details.get("digital_transaction")
+        # ]
+        # self.amount_rows[self.columns["貸方科目コード"]] = np.where(
+        #     (
+        #         self.amount_rows[self.columns["貸方科目コード"]]
+        #         == self.params["account"]["売上高"]
+        #     )
+        #     & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
+        #     & (
+        #         self.amount_rows[self.columns["借方補助科目コード"]]
+        #         .astype(str)
+        #         .isin(digital_transaction_customer_codes)
+        #     ),
+        #     self.params["account"]["電子取引売上高"],
+        #     np.where(
+        #         (
+        #             self.amount_rows[self.columns["貸方科目コード"]]
+        #             == self.params["account"]["売上高"]
+        #         )
+        #         & (pd.notna(self.amount_rows[self.columns["借方補助科目コード"]]))
+        #         & (
+        #             ~self.amount_rows[self.columns["借方補助科目コード"]]
+        #             .astype(str)
+        #             .isin(digital_transaction_customer_codes)
+        #         ),
+        #         self.params["account"]["電子取引以外売上高"],
+        #         self.amount_rows[self.columns["貸方科目コード"]],
+        #     ),
+        # )
+        # # 貸方科目名を変更
+        # self.amount_rows[self.columns["貸方科目名"]] = np.where(
+        #     (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引売上高"]),
+        #     "電子取引売上高",
+        #     np.where(
+        #         (self.amount_rows[self.columns["貸方科目コード"]] == self.params["account"]["電子取引以外売上高"]),
+        #         "電子取引以外売上高",
+        #         self.amount_rows[self.columns["貸方科目名"]]  # その他は変更しない
+        #     )
+        # )
+        # codes_to_check = [self.params["account"]["電子取引売上高"], self.params["account"]["電子取引以外売上高"]]
+        # # DataFrameに含まれているか確認
+        # missing_codes = [code for code in codes_to_check if code not in self.amount_rows[self.columns["貸方科目コード"]].values]
+        # # 結果を表示
+        # if missing_codes:
+        #     self.trace_print(f"以下のコードはself.pl_data_dfに存在しません: {missing_codes}")
+        # else:
+        #     self.debug_print(f"self.pl_data_dfには、{codes_to_check} が全て存在します。")
         self.amount_rows = self.amount_rows[
             [
                 self.columns["伝票"],
@@ -1711,9 +1767,9 @@ class TidyData:
         self.bs_pl()
         for column in self.amount_rows:
             if pd.api.types.is_numeric_dtype(self.amount_rows[column]):
-                self.amount_rows[column].fillna(0, inplace=True)
+                self.amount_rows[column] = self.amount_rows[column].fillna(0)
             else:
-                self.amount_rows[column].fillna("", inplace=True)
+                self.amount_rows[column] = self.amount_rows[column].fillna("")
         log_tracker.write_log_text("END CSV to DataFrame")
 
 
@@ -1864,7 +1920,7 @@ class GUI:
                 self.combobox.set("貸借対照表")
             elif self.combobox.get() == "Profit and Loss":
                 self.combobox.set("損益計算書")
-            self.search_label.config(text="摘要文 検索語:")
+            self.search_label.config(text="摘要文検索語:")
             self.search_button.config(text="検索")
             self.reset_search_button.config(text="検索解除")
             self.view_button.config(text="データ参照")
@@ -2048,6 +2104,7 @@ class GUI:
             return
         # 共通関数を呼び出してフィルタリング
         filtered_data = filter_data(self.original_data, search_term, columns_to_search)
+        filtered_data = filtered_data.drop_duplicates().reset_index(drop=True)
         for i in result_tree.get_children():
             result_tree.delete(i)
         for row in filtered_data:
@@ -2160,7 +2217,7 @@ class GUI:
                 self.show_frame(self.frame3, 3)
             elif selected_option == "損益計算書":
                 self.show_frame(self.frame4, 4)
-        
+
     def create_base(self, root):
         # 13インチMacBook Air（M2/M3）は1,470×956ピクセル、14インチMacBook Pro（M3/M3 Pro/M3 Max）は1,512×982ピクセルの解像度
         root.geometry("1450x950")
@@ -2188,7 +2245,7 @@ class GUI:
             # TreeView にデータを挿入
             tag = "normal"
             if "Description" in row and "* "==row["Description"][:2]:
-                tag = "emphasis"               
+                tag = "emphasis"   
             result_tree.insert("", "end", values=formatted_row, tags=(tag,))
             # フォーマット済みのデータを保存
             self.original_data.append(formatted_row)
@@ -3116,7 +3173,7 @@ class GUI:
             self.month_title_text = "対象月:"
             self.load_button_text = "パラメタファイル"
             self.reset_button_text = "選択解除"
-            self.menu = ["仕訳帳", "総勘定元帳画面", "試算表画面", "貸借対照表", "損益計算書"]
+            self.menu = ["仕訳帳", "総勘定元帳", "残高試算表", "貸借対照表", "損益計算書"]
             self.combobox = ttk.Combobox(
                 self.base_frame,
                 values=self.menu
@@ -3355,7 +3412,7 @@ class GUI:
         # Copyright
         copyright_label = tk.Label(
             search_frame,
-            text="Copyright 2024 Sambuichi Professional Engineers Office, CC-BY 4.0",
+            text="Copyright 2024 Sambuichi PEs Office, CC-BY 4.0",
             anchor="center",
             font=("Arial", 10),
             fg="gray",
@@ -3399,7 +3456,5 @@ if __name__ == "__main__":
     # Then process the CSV
     tidy_data = TidyData()
     tidy_data.csv2dataframe(param_file_path)
-    # Create the GUI
-    # gui.create_gui(root)
     # Main Loop
     root.mainloop()

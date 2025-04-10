@@ -1,0 +1,22 @@
+﻿gl-cor:accountingEntries,gl-cor:documentInfo,gl-cor:entriesType,gl-cor:uniqueID,gl-cor:language,gl-cor:creationDate,gl-bus:creator,gl-cor:entriesComment,gl-cor:periodCoveredStart,gl-cor:periodCoveredEnd,gl-bus:sourceApplication,gl-muc:defaultCurrency,gl-cor:entityInformation,gl-bus:organizationIdentifiers,gl-bus:organizationIdentifier,gl-bus:organizationDescription,gl-cor:entryHeader,gl-cor:postedDate,gl-cor:enteredBy,gl-cor:enteredDate,gl-cor:sourceJournalID,gl-bus:sourceJournalDescription,gl-bus:entryOrigin,gl-cor:entryNumber,gl-cor:entryComment,gl-cor:entryDetail,gl-cor:lineNumber,gl-cor:amount,gl-cor:postingDate,gl-bus:amountMemo,gl-cor:identifierReference,gl-cor:identifierCode,gl-cor:identifierDescription,gl-cor:identifierType,gl-cor:documentType,gl-cor:documentNumber,gl-cor:documentReference,gl-cor:documentDate,gl-bus:documentReceivedDate,gl-bus:documentLocation,gl-cor:detailComment,gl-cor:maturityDate,gl-cor:terms,gl-bus:measurable,gl-bus:measurableCode,gl-bus:measurableID,gl-bus:measurableDescription,gl-bus:measurableQuantity,gl-bus:measurableUnitOfMeasure,gl-bus:measurableCostPerUnit
+1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,1,other,001,iso639:en,2005-07-05,XBRL GL Working Group,A best practice listing of invoices instance document,2005-06-01,2005-06-30,XABRA,iso4217:usd,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,1,1,ABC Company,Company Name,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,1,2005-07-01,Otto Wellwood,2005-07-01,pj,Vendor purchases journal,imported entry,50,Invoice: #51029 Vendor: #1130,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,1,,,,,,,,,1,1,500,2005-06-30,false,,,,,voucher,51029,Voucher#: 100900,2005-06-15,2005-06-14,Fred's desk drawer.,Vendor#: 1130 Document#: 51029 Date: 6/15/05,2005-07-15,2% 10 Net 30,,,,,,,
+1,,,,,,,,,,,,,,,,1,,,,,,,,,1,,,,,1,1130,Rettaler Property Ltd,V,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,1,,,,,,,,,1,,,,,,,,,,,,,,,,,,1,IN,Widget1,Red Widger,100,Each,5
+1,,,,,,,,,,,,,,,,1,,,,,,,,,2,2,300,2005-06-30,false,,,,,voucher,51029,Voucher#: 100900,2005-06-15,2005-06-14,Fred's desk drawer.,Vendor#: 1130 Document#: 51029 Date: 6/15/05,2005-07-15,2% 10 Net 30,,,,,,,
+1,,,,,,,,,,,,,,,,1,,,,,,,,,2,,,,,1,1130,Rettaler Property Ltd,V,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,1,,,,,,,,,2,,,,,,,,,,,,,,,,,,1,IN,Gidget3,Sally Field of Dreams Edition,15,Each,20
+1,,,,,,,,,,,,,,,,2,2005-07-01,Otto Wellwood,2005-07-01,pj,Vendor purchases journal,imported entry,51,Invoice: #4321 Vendor: #8765,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,1,1,54000,2005-06-30,false,,,,,voucher,234,Voucher#: 100901,2005-06-15,2005-06-14,Fred's desk drawer.,Vendor#: 1412 Document#: 234 Date: 6/15/05,2005-07-15,2% 10 Net 30,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,1,,,,,1,1412,Fitzsimmons Office Supplies,V,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,1,,,,,,,,,,,,,,,,,,1,IN,4576,Self Adjusting Paper Clips,2000,Each,27
+1,,,,,,,,,,,,,,,,2,,,,,,,,,2,2,1500,2005-06-30,false,,,,,voucher,234,Voucher#: 100901,2005-06-15,2005-06-14,Fred's desk drawer.,Vendor#: 1412 Document#: 234 Date: 6/15/05,2005-07-15,2% 10 Net 30,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,2,,,,,1,1412,Fitzsimmons Office Supplies,V,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,2,,,,,,,,,,,,,,,,,,1,IN,4800,Self Expanding Paper Sheets,100,Each,15
+1,,,,,,,,,,,,,,,,2,,,,,,,,,3,3,500,2005-06-30,false,,,,,voucher,234,Voucher#: 100901,2005-06-15,2005-06-14,Fred's desk drawer.,Vendor#: 1412 Document#: 234 Date: 6/15/05,2005-07-15,2% 10 Net 30,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,3,,,,,1,1412,Fitzsimmons Office Supplies,V,,,,,,,,,,,,,,,,
+1,,,,,,,,,,,,,,,,2,,,,,,,,,3,,,,,,,,,,,,,,,,,,1,IN,120,Waste Basket,50,Each,10

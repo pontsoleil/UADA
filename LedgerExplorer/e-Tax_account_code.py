@@ -7,11 +7,11 @@ from datetime import datetime
 import sys
 # import os
 # import webbrowser
-import tkinter as tk
-from tkinter import ttk, filedialog, messagebox
+# import tkinter as tk
+# from tkinter import ttk, filedialog, messagebox
 
-DEBUG = False
-TRACE = False
+DEBUG = True
+TRACE = True
 
 def debug_print(message):
     if DEBUG:
@@ -327,4 +327,4 @@ if __name__ == "__main__":
     tidy_data = TidyData()
     tidy_data.csv2dataframe(param_file_path)
 
-    print(f"END: out put file {tidy_data.etax_file_path}")
+    print(f"END: out put file {param_file_path}")
