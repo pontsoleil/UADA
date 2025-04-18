@@ -8,7 +8,7 @@ Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Creation Date: 2025-01-17
-Last Modified: 2025-04-07
+Last Modified: 2025-04-16
 
 MIT License
 
@@ -100,6 +100,15 @@ import copy
 import re
 from collections import OrderedDict, Counter
 
+from common.utils import (
+    LC3,
+    file_path,
+    is_file_in_use,
+    split_camel_case,
+    abbreviate_term,
+    normalize_text,
+)
+
 class Graphwalk:
     def __init__ (
             self,
@@ -107,7 +116,7 @@ class Graphwalk:
             lhm_file,
             bsm_file_extension,
             lhm_file_extension,
-            root,
+            root_terms,
             option,
             encoding,
             trace,
@@ -115,40 +124,40 @@ class Graphwalk:
         ):
 
         self.bsm_file = bsm_file.replace('/', os.sep)
-        self.bsm_file = self.file_path(self.bsm_file)
+        self.bsm_file = file_path(self.bsm_file)
         if not self.bsm_file or not os.path.isfile(self.bsm_file):
             print(f'[INFO] No input Semantic file {self.bsm_file}.')
             sys.exit()
 
         self.lhm_file = lhm_file.replace('/', os.sep)
-        self.lhm_file = self.file_path(self.lhm_file)
-        if 'IN_USE' == self.is_file_in_use(self.lhm_file):
+        self.lhm_file = file_path(self.lhm_file)
+        if 'IN_USE' == is_file_in_use(self.lhm_file):
             print(f'[INFO] Semantic file {self.lhm_file} is in use.')
             sys.exit()
 
         self.bsm_file_extension = None
         if bsm_file_extension:
             self.bsm_file_extension = bsm_file_extension.replace('/', os.sep)
-            self.bsm_file_extension = self.file_path(self.bsm_file_extension)
+            self.bsm_file_extension = file_path(self.bsm_file_extension)
             if not self.bsm_file_extension or not os.path.isfile(self.bsm_file_extension):
                 print('[INFO] No input Business semantic model extension file.')
 
         self.lhm_file_extension = None
         if lhm_file_extension:
             self.lhm_file_extension = lhm_file_extension.replace('/', os.sep)
-            self.lhm_file_extension = self.file_path(self.lhm_file_extension)
+            self.lhm_file_extension = file_path(self.lhm_file_extension)
             if self.lhm_file_extension and (not self.bsm_file_extension or not os.path.isfile(self.bsm_file_extension)):
                 print('[INFO] No input Business semantic model extension file.')
                 sys.exit()
             elif self.bsm_file_extension:
                 print('[INFO] Input Business semantic model extension file specified.')
-            if 'IN_USE' == self.is_file_in_use(self.lhm_file_extension):
+            if 'IN_USE' == is_file_in_use(self.lhm_file_extension):
                 sys.exit()
 
         self.encoding = encoding.strip() if encoding else 'utf-8-sig'
 
         # Set debug and trace flags, and file path separator
-        self.root = root.strip() if root else None
+        self.root_terms = root_terms
         self.DNM = True if option else False
         self.TRACE = trace
         self.DEBUG = debug
@@ -160,7 +169,7 @@ class Graphwalk:
         self.is_singular_association = False
         self.exception_class = set()
         self.selected_class = None
-        self.sequence = 1000
+        self.sequence = 1
         self.elementnames = set()
 
         # self.abbreviation_generator = AbbreviationGenerator()
@@ -173,113 +182,6 @@ class Graphwalk:
     def trace_print(self, text):
         if self.TRACE or self.DEBUG:
             print(text)
-
-    # Utility function to create full file paths
-    def file_path(self, pathname):
-        if os.sep == pathname[0:1]:
-            return pathname
-        else:
-            pathname = pathname.replace('/', os.sep)
-            dir = os.path.dirname(__file__)
-            new_path = os.path.join(dir, pathname)
-            return new_path
-
-    # Utility function to check if a file is in use
-    def is_file_in_use(self, file_path):
-        try:
-            # Attempt to open the file in 'r+' mode (read/write mode)
-            with open(file_path, 'r+'):
-                result = 'OK'
-        except PermissionError:
-            # 'PermissionError' indicates the file is in use by another process
-            print(f"[INFO] The file {file_path} is in use.")
-            result = 'IN_USE'
-        except FileNotFoundError:
-            # If the file does not exist, create it
-            print(f"[INFO] The file {file_path} does not exist. Creating new file...")
-            try:
-                # Open the file in 'w+' mode to create it if it doesn't exist
-                with open(file_path, 'w+') as new_file:
-                    pass  # Creating the file
-                result = 'CREATED'
-                print(f"[INFO] File {file_path} has been created.")
-            except Exception as e:
-                print(f"[ERROR] while creating file: {e}")
-                result = 'ERROR_CREATING_FILE'
-        return result
-
-    def LC3(self, term):
-        """
-        Lower camel case converter (e.g., 'Entity Phone Number' → 'entityPhoneNumber')
-        """
-        parts = re.split(r'\s+', term.strip())
-        return parts[0].lower() + ''.join(p.title() for p in parts[1:])
-
-    def abbreviate_term(self, term):
-        """
-        Abbreviates each word in the input term according to the following rules:
-
-        - Remove common stop_words (e.g., to, with, on, of, etc.).
-        - Remove any symbol characters: !"#$%&'()=~|\^-@`[]{}:;+*/?.,<>\_
-        - Capitalize the first letter of each remaining word.
-        - Keep the first vowel of each word, remove all other vowels.
-        - If the abbreviation is 6 characters or more:
-            - Keep only the first vowel and remove the rest.
-            - If the first character is a vowel and the result is still long,
-            remove the 5th character (index 4) to shorten further.
-        - Ensure the abbreviated word is shorter than the original word.
-        - Words of length 3 or less are returned unchanged.
-        """
-        stop_words = {
-            'a', 'an', 'the',
-            'to', 'with', 'on', 'of', 'in', 'for', 'at', 'by', 'from', 'as',
-            'about', 'into', 'over', 'after', 'under', 'above', 'below'
-        }
-        vowels = 'aeiouAEIOU'
-        # Remove symbols
-        term = re.sub(r'[!"#$%&\'()=~|\\^\-@`\[\]{}:;+*/?,.<>\_]', '', term)
-
-        def abbreviate_word(word):
-            if len(word) <= 3:
-                return word  # already short
-            chars = [word[0]]  # keep first character
-            # include non-vowels from rest, skipping first vowel if it's the first char
-            first_vowel_found = word[0] in vowels
-            for c in word[1:]:
-                if c.lower() not in vowels:
-                    chars.append(c)
-                elif not first_vowel_found:
-                    chars.append(c)
-                    first_vowel_found = True
-            abbr = ''.join(chars)
-            # If abbreviation is still too long, remove all vowels
-            if len(abbr) >= 6:
-                # Keep the first vowel
-                first_vowel_index = next(
-                    (i for i, c in enumerate(abbr) if c.lower() in vowels), None
-                )
-                if first_vowel_index is not None:
-                    first_vowel = abbr[first_vowel_index]
-                    abbr_chars = [
-                        abbr[i]
-                        for i in range(len(abbr))
-                        if abbr[i].lower() not in vowels or i == first_vowel_index
-                    ]
-                    abbr = "".join(abbr_chars)
-                    # If the first character is a vowel and the abbreviation is still long,
-                    # trim to the first 5 characters and append the last character to shorten
-                    # while preserving the start and end of the word
-                    if abbr and abbr[0].lower() in vowels and len(abbr) > 5:
-                        abbr = abbr[:5] + abbr[-1]
-            # Final fallback: truncate if still too long
-            return abbr if len(abbr) < len(word) else word # must be shorter
-        
-        # Tokenize and filter stop_words
-        words = re.findall(r'\w+', term)
-        filtered = [w.capitalize() for w in words if w.lower() not in stop_words]
-        # Abbreviate remaining words
-        abbreviated = [abbreviate_word(w) for w in filtered]
-        return ' '.join(abbreviated)
 
     # Utility function to update class term
     def update_class_term(self, row):
@@ -333,86 +235,167 @@ class Graphwalk:
             aggregates[level - 1] = {'id':id_, 'multiplicity': '0..*'}
         else:
             aggregates[level - 1] = {'id':id_, 'multiplicity': multiplicity}
-
         for i in range(level, 11 - level):
             aggregates[i] = None
         path = ''
-        for i in range(level - 1):
-            if 0 == i or '*' == aggregates[i]['multiplicity'][-1]:
+        for i in range(len(aggregates)):
+            aggregate = aggregates[i]
+            if aggregate and '*' == aggregate['multiplicity'][-1]:
                 _id = aggregates[i]['id']
                 path += f"/{_id}"
-        path += f"/{id_}"
+        if not path or id_ not in path:
+            path += f"/{id_}"
         return path
 
     # Function to get semantic path
     def get_semantic_path(self, record):
+        _type = record['property_type']
         class_term = record['class_term']
         class_list = class_term.split('-')
         class_list = [f"({x[:x.index('_')]}) {x[1 + x.index('_'):]}" if "_" in x else x for x in class_list]
+        # dimension_list = [
+        #     next((x['class_term'] for x in self.LHM_model if x['class_term'] == class_term and "*"==x['multiplicity'][-1]), None)
+        #     for class_term in class_list
+        # ]
+        # filtered_list = [x for x in dimension_list if x is not None]
         _class_term = ".".join(class_list)
-        property_term = record['property_term']
-        if property_term:
+        if "Class"==_type or "Reference Association"==_type:
+            if class_list[-1] not in _class_term:
+                semantic_path = f"$.{_class_term}.{class_list[-1]}"
+            else:
+                semantic_path = f"$.{_class_term}"
+        elif "Attribute"==_type:
+            property_term = record['property_term']
             semantic_path = f"$.{_class_term}.{property_term}"
-        else:
-            semantic_path = f"$.{_class_term}"
+        elif _type in ["Composition", "Aggregation"]:
+            associated_class = record["associated_lass"]
+            semantic_path = f"$.{_class_term}.{associated_class}"
         return semantic_path
 
     # Function to get abbreviate path
     def get_abbreviate_path(self, record):
-        class_term = record['class_term']
-        class_list = class_term.split('-')
-        class_list = [
-            f"({x[:x.index('_')]}) {x[1 + x.index('_'):]}" if "_" in x else x for x in class_list
-        ]
+        semantic_path = record['semantic_path']
+        semantic_path_list = semantic_path[2:].split('.')
         # Generate abbreviations for the transformed list
         abbreviated_list = [
-            self.abbreviate_term(term) for term in class_list
-            # self.abbreviation_generator.process_term(term)['Generated Abbreviation'] for term in class_list
+            re.sub(r"[\s]", "", abbreviate_term(term)) for term in semantic_path_list
         ]
         _abbreviated_term = ".".join(abbreviated_list)
-        property_term = record['property_term']
-        abbreviated_property_term = self.abbreviate_term(property_term)
-        # abbreviated_property_term = self.abbreviation_generator.process_term(property_term)['Generated Abbreviation']
-        if property_term:
-            abbreviated_path = f"{_abbreviated_term}.{abbreviated_property_term}"
-        else:
-            abbreviated_path = f"{_abbreviated_term}"
-        return abbreviated_path
+        return _abbreviated_term
 
     # Function to transform hierarchical model to records suitable for CSV output
     def model2record(self):
         hierarchy_records = []
         aggregates = [''] * 10
         current_module = ''
-        current_class = ''
+        used_localnames = set()
+
         i = 0
         for data in self.LHM_model:
             level = int(data['level'])
             record = copy.deepcopy(data)
-            if 1 == level:
-                current_module = record['module']
-            else:
-                record['module'] = current_module
+            current_module = record['module']
+            _type = data['type']
+            identifier = data['identifier']
+            class_term = data["class_term"]
+
+            # Generate semantic path and assign it to the record
             semantic_path = self.get_semantic_path(record)
             record['semantic_path'] = semantic_path
+
+             # Split the semantic path into components
+            semantic_path_splitted = semantic_path[2:].split(".")[1:]
+
+            # Debug: Print short paths that may cause index errors
+            if len(semantic_path_splitted) < 2:
+                # self.debug_print(f"Short semantic path may cause index errors detected: {semantic_path} → {semantic_path_splitted}")
+                semantic_path_splitted = semantic_path[2:].split(".")
+
+            # Determine which part of the semantic path to use for generating the local name
+            if semantic_path != "$.Accounting Entries":
+                if (
+                    _type == "C"
+                    or (len(semantic_path_splitted) >= 2 and "Entry Header" in semantic_path_splitted[-2])
+                    or (len(semantic_path_splitted) >= 2 and "Entry Detail" == semantic_path_splitted[-2])
+                ):
+                    start = -1
+                elif identifier == "REF":
+                    start = -3
+                else:
+                    start = -2 if len(semantic_path_splitted) >= 2 else -1
+
+                _semantic_path_splitted = semantic_path_splitted[start:]
+            else:
+                _semantic_path_splitted = ["Accounting Entries"]
+
+            # Normalize and convert the selected path segments into a local name using LC3
+            local_name = LC3((" ").join([normalize_text(x) for x in _semantic_path_splitted]))
+
+            # Skip if local_name is empty and log debug information
+            if not local_name:
+                local_name = semantic_path[2:]
+                # self.debug_print(f"Empty local_name for semantic path: {semantic_path} local_name: {local_name}")
+                continue
+
+            if local_name not in used_localnames:
+                used_localnames.add(local_name)
+            elif _type == "C":
+                # Avoid duplicate local names for classes
+                if local_name != "accountingEntries":
+                    if local_name not in used_localnames:
+                        used_localnames.add(local_name)
+                    else:
+                        # Try suffixes from class_term to resolve conflict
+                        for n in (1, 2, 3, 4):
+                            _suffix = class_term.split("-")[-n:]
+                            local_name = LC3(" ".join(normalize_text(x) for x in _suffix))
+                            if local_name not in used_localnames:
+                                used_localnames.add(local_name)
+                                break
+                        else:
+                            continue  # All suffix attempts failed; skip this record
+            else:
+                # For non-class elements, extend the semantic path further up to resolve duplicates
+                # Try suffixes from class_term to resolve conflict
+                for n in (1, 2, 3):
+                    _suffix = semantic_path_splitted[start-n:]
+                    local_name = LC3(" ".join(normalize_text(x) for x in _suffix))
+                    if local_name not in used_localnames:
+                        used_localnames.add(local_name)
+                        break
+                else:
+                    continue  # All suffix attempts failed; skip this record
+
+            # Set the final element name
+            record["element"] = f"{current_module}:{local_name}"
+
+            i += 1
+            
+            if "REF"==identifier:
+                index = semantic_path.rfind(".")
+                if index != -1:
+                    semantic_path = semantic_path[:index] + " " + semantic_path[index+1:]
+                    record["semantic_path"] = semantic_path
+                    class_term = class_term.split("-")[-2]
+            elif 'R' == _type or 'C'==_type:
+                class_term = semantic_path.split('.')[-1]
+            elif 'A' == _type:
+                class_term = semantic_path.split('.')[-2]
+            else:
+                self.debug_print(f"Wrong data for {semantic_path}")
+            record['class_term'] = class_term
+            if "REF"==identifier:
+                record['property_term'] = " ".join(_semantic_path_splitted[1:])
             abbreviation_path = self.get_abbreviate_path(record)
             record['abbreviation_path'] = abbreviation_path
             path = self.set_path(data, aggregates)
             record['path'] = path
             id = path.split('/')[-1]
             record['id'] = id
-            i += 1
-            if 'A' == data['type']:
-                class_term = semantic_path[:semantic_path.rindex('.')][2:].split('.')[-1]
-            else:
-                class_term = semantic_path[2:].split('.')[-1]
-            if 'A' != data['type']:
-                current_class = class_term
-            record['class_term'] = class_term
             property_term = record['property_term']
             if 'Active Indicator' == property_term and not self.DNM:
                 continue
-            if current_class.endswith('Business Segment'):
+            if class_term.endswith('Business Segment'):
                 if level > 4: 
                     continue
                 elif level > 3 and record['type'] in ['C', 'R']:
@@ -423,8 +406,81 @@ class Graphwalk:
                 del record['properties']
             record['sequence'] = self.sequence
             self.sequence += 1
+            if not record['element']: # and "R"!=_type:
+                continue
             hierarchy_records.append(record)
-        return hierarchy_records
+        
+        if not hierarchy_records[0]['xpath']:
+            records = []
+            for record in hierarchy_records:
+                semantic_path = record['semantic_path']
+                path_list = semantic_path[2:].split('.')
+                if len(path_list) > 1:
+                    xpath = self.build_xpath_from_semantic_path(semantic_path, hierarchy_records)
+                    if not xpath:
+                        self.debug_print(f"Empty xpath for {semantic_path}")
+                        continue
+                    element = xpath[1+xpath.rindex("/"):]
+                    record["element"] = element
+                else:
+                    xpath = f"/{path_list[0]}"
+                record['xpath'] = xpath
+                records.append(record)
+        else:
+            records = hierarchy_records
+
+        return records
+
+    def build_xpath_from_semantic_path(self, target_path, hierarchy_records):
+        # Abbreviation mapping for known suffixes
+        # Predefined abbreviation mapping (extend as needed)
+        # abbreviations = {
+        #     "Information": "Info",
+        #     "Description": "Desc",
+        #     "Detail": "Dtl",
+        #     "Structure": "Struct",
+        #     "Number": "Num"
+        # }
+        # suffixes = {
+        #     "Identifier": "ID",
+        #     "Identification": "ID"
+        # }
+        # Function to shorten element values by replacing known suffixes
+        # def shorten_element(element_value):
+            # if ":" in element_value:
+            #     prefix, term = element_value.split(":", 1)
+            #     for long, short in abbreviations.items():
+            #         term = term.replace(long, short)
+            #     for suffix in suffixes:
+            #         if term.endswith(suffix):
+            #             term = term.replace(suffix, suffixes[suffix])
+            #             break
+            #     return f"{prefix}:{term}"
+            # return element_value
+        # Extract the top-level path from the semantic_path (e.g., '$.Accounting Entries')
+        leading_path = '.'.join(target_path.split('.')[:2])
+        # Check if the target_path starts with the expected leading path
+        if not target_path.startswith(leading_path):
+            return None
+        # Extract the remaining parts of the path after the leading path
+        path_suffix = target_path.replace(leading_path + '.', '').split('.')
+        current_path = leading_path
+        xpath_parts = []
+        # Find the root element corresponding to the top-level path
+        root_record = next((r for r in hierarchy_records if r['semantic_path'] == current_path), None)
+        if not root_record:
+            return None
+        xpath_parts.append(root_record['element'])
+        # Traverse through each level of the semantic path to collect element names
+        for part in path_suffix:
+            current_path += f'.{part}'
+            record = next((r for r in hierarchy_records if r['semantic_path'] == current_path), None)
+            if not record:
+                return None        
+            # xpath_part = shorten_element(record['element'])
+            xpath_part = record['element']
+            xpath_parts.append(xpath_part)
+        return '/' + '/'.join(xpath_parts)
 
     # Function to update the name field in the hierarchical records
     def update_name(self, hierarchy_records):
@@ -458,22 +514,6 @@ class Graphwalk:
             record['datatype'] = datatype
             records.append(record)
         return records
-
-    # def extend_element_name(self, property):
-    #     if  not property['element']:
-    #         return ''
-    #     element = property['element']
-    #     prefix, suffix = element.split(":")
-    #     if element in self.elementnames:
-    #         class_term = property['class_term']
-    #         if '-' in class_term:
-    #             parent = self.LC3(class_term.split('-')[-2])
-    #             element = f'{prefix}:{parent.lower()}{suffix[0].upper()}{suffix[1:]}'
-    #         else:
-    #             pass
-    #     self.elementnames.add(element)
-    #     return element
-
 
     # Function to parse class terms and handle specializations
     def parse_class(self, class_term, REFERENCE_OF = False):
@@ -541,6 +581,8 @@ class Graphwalk:
             hasPK = any(property.get('identifier', '') == 'PK' for property in properties_list.values())
             if '-' not in object_class['class_term'] and not hasPK:
                 print(f"[ERROR] Referenced class {object_class['class_term']} has no PK(primary Key).")
+            else:
+                pass
         else:
             object_class['type'] = 'C'
         if level > 1 and not object_class['multiplicity'] and current_multiplicity:
@@ -593,6 +635,7 @@ class Graphwalk:
                         definition = property['definition']
                         definition = definition.replace('unique identifier', 'reference identifier')
                         property['definition'] = definition
+                        self.LHM_model.append(property)
                         self.debug_print(f"  {level} {property['class_term']} {property['property_type']} {property['identifier']} [{property['multiplicity']}] {property['property_term']}{property['associated_class']}")
                 else:                    
                     self.LHM_model.append(property)
@@ -777,6 +820,7 @@ class Graphwalk:
         header =  ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'module', 'table', 'domain_name', 'element', 'label_local', 'definition_local', 'xpath', 'id']
         # write CSV file
         header2 = ['sequence', 'level', 'type', 'identifier', 'name', 'datatype', 'multiplicity', 'domain_name', 'definition', 'module', 'table', 'class_term', 'id', 'path', 'semantic_path', 'abbreviation_path', 'label_local', 'definition_local', 'element', 'xpath']
+
         with open(self.bsm_file, encoding = self.encoding, newline='') as f:
             reader = csv.DictReader(f, fieldnames = header)
             next(reader)
@@ -793,24 +837,35 @@ class Graphwalk:
                 associated_class = row['associated_class']
                 self.debug_print(f"{class_term}({record['property_type']}) {record['associated_class'] or record['property_term']}")
                 if class_term:
-                    if property_type in ['Composition']:#, 'Aggregation']:
+                    if property_type in ['Composition', 'Aggregation']:
                         if 'Base' != row['module']:
                             self.exception_class.add(associated_class)
                     if 'General' != self.object_class_dict[class_term]['module']:
                         self.selected_class.add(class_term)
+
         self.LHM_model = []
         self.selected_class = self.object_class_dict.keys()
         sorted_classes = sorted(self.selected_class, key = lambda x: self.object_class_dict[x]['table'] if self.object_class_dict[x]['table'] else 0)
+
         if self.DNM:
             self.exception_class = [cls for cls in self.exception_class if not (cls.endswith(" Line") and cls.replace(" Line", "") in self.selected_class)]
-        if self.root:
-            self.parse_class(self.root)
-        else:
+
+        root_found = False
+        for root_term in self.root_terms:
+            if root_term in self.selected_class:
+                root_found = True
+                self.debug_print(f"- root_term parse_class({root_term})")
+                self.parse_class(root_term)      
+
+        if not root_found:
             for class_term in sorted_classes:
                 if class_term in self.exception_class:
                     continue
+                self.debug_print(f"- parse_class({class_term})")
                 self.parse_class(class_term)
+
         hierarchy_records = self.model2record()
+
         records = self.update_name(hierarchy_records)
         out_records = [{k: v for k, v in d.items() if k in header2} for d in records]
         # Use Counter to count occurrences of each path id
@@ -825,10 +880,11 @@ class Graphwalk:
             writer.writeheader()
             writer.writerows(out_records)
         print(f'** END {self.lhm_file}')
+
         self.selected_class = set()
         self.exception_class = set()
         if self.bsm_file_extension:
-            self.bsm_file_extension = self.file_path(self.bsm_file_extension)
+            self.bsm_file_extension = file_path(self.bsm_file_extension)
             with open(self.bsm_file_extension, encoding = self.encoding, newline='') as f:
                 reader = csv.DictReader(f, fieldnames = header)
                 next(reader)
@@ -848,30 +904,44 @@ class Graphwalk:
                                 self.exception_class.add(row['associated_class'])
                         if 'General' != self.object_class_dict[class_term]['module']:
                             self.selected_class.add(class_term)
+
             self.LHM_model = []
             sorted_classes = sorted(self.selected_class, key = lambda x: self.object_class_dict[x]['table'] if self.object_class_dict[x]['table'] else 0)
             if self.DNM:
                 self.exception_class = [cls for cls in self.exception_class if not (cls.endswith(" Line") and cls.replace(" Line", "") in self.selected_class)]
-            for class_term in sorted_classes:
-                if class_term in self.exception_class:
-                    continue
-                self.debug_print(f"- parse_class({class_term})")
-                self.parse_class(class_term)
+
+            root_found = False
+            for root_term in self.root_terms:
+                if root_term in self.selected_class:
+                    root_found = True
+                    self.debug_print(f"- root_term parse_class({root_term})")
+                    self.parse_class(root_term)      
+
+            if not root_found:
+                for class_term in sorted_classes:
+                    if class_term in self.exception_class:
+                        continue
+                    self.debug_print(f"- parse_class({class_term})")
+                    self.parse_class(class_term)
+
             hierarchy_records = self.model2record()
             records = self.update_name(hierarchy_records)
             out_records = [{k: v for k, v in d.items() if k in header2} for d in records]
             # Use Counter to count occurrences of each path id
             indexed_list = [x['path'].split('/')[-1] for x in out_records]
             count = Counter(indexed_list)
+
             # Find elements that are duplicated (those that appear more than once)
             duplicates = {item: count[item] for item in count if item and count[item] > 1}
             # Print the results
-            self.trace_print("Checking duplicated id and their counts:", duplicates)
+            self.trace_print(f"Checking duplicated id and their counts:{duplicates}")
+
             with open(self.lhm_file_extension, 'w', encoding = self.encoding, newline='') as f:
                 writer = csv.DictWriter(f, fieldnames = header2)
                 writer.writeheader()
                 writer.writerows(out_records)
             print(f'** END {self.lhm_file_extension}')
+
 
 class AbbreviationGenerator:
     def __init__(self):
@@ -1001,69 +1071,7 @@ class AbbreviationGenerator:
             "version": "Vers",
             "year": "Yr",
         }
-        # "identifier": "Id",
 
-    def abbreviate(self, term, max_length=5):
-        """
-        Abbreviate a given term based on improved rules and track the rules applied.
-        :param term: The term to abbreviate.
-        :param max_length: Maximum allowed abbreviation length.
-        :return: Generated abbreviation, rules applied, and reason if applicable.
-        """
-        rules_applied = []
-        term_lower = term.lower()
-        parts = term.split()  # Split the term into parts based on spaces
-        abbreviated_parts = []
-        max_length = max_length - 2 if len(term) <= max_length else max_length #if len(term) <= 8 else 6
-
-        if term_lower in self.common_abbreviations:
-            abbreviation = self.common_abbreviations[term_lower]
-            rules_applied.append("a: Predefined abbreviation for common terms")
-            return abbreviation, ", ".join(rules_applied)
-
-        # Process each part of the term
-        for part in parts:
-            part_rules = []
-
-            if part.lower() in self.common_abbreviations:
-                # Rule a: Check predefined abbreviations for parts
-                abbreviation = self.common_abbreviations[part.lower()]
-                part_rules.append("a: Predefined abbreviation for common terms")
-            else:
-                # Rule b: Preserve critical consonants
-                part = ''.join([ch for ch in part if ch.isalpha()])
-                part_rules.append("b: Preserve critical consonants")
-                
-                # Rule c: Preserve the initial letter
-                abbreviation = part[0]
-                part_rules.append("c: Preserve the initial letter")
-
-                # Rule d: Preserve the second letter if it is not vowel or term length > 6
-                # if part[1] not in 'aeiou' or len(term) > max_length:
-                if part[1] not in 'aeiou' or (part[1] not in 'iou' and len(term) > max_length):
-                    abbreviation += part[1]
-                    part_rules.append(f"d: Preserve the second letter if it is not in 'aeiou' or not in 'iou' for terms longer than {max_length}")
-
-                # Rule e: Remove vowels after the third letter
-                abbreviation += ''.join([ch for ch in part[2:] if ch not in 'aeiou'])
-                part_rules.append("e: Remove vowels after the third letter")
-
-                # Rule f: Truncate abbreviation to logical length
-                abbreviation = abbreviation[:max_length]
-                rules_applied.append(f"f: Truncate to max length {max_length}")
-
-            # Add the rules applied for this part
-            rules_applied.extend(part_rules)
-            abbreviated_parts.append(abbreviation.capitalize())
-
-        # Concatenate the abbreviated parts
-        final_abbreviation = ''.join(abbreviated_parts)
-        # Ensure abbreviation is unique
-        if final_abbreviation in self.common_abbreviations.values():
-            final_abbreviation = self._make_unique_abbreviation(final_abbreviation, term, max_length)
-
-        return final_abbreviation, ", ".join(rules_applied)
-    
     def register_abbreviation(self, term, abbreviation, max_length = 5):
         """
         Register a new abbreviation to self.common_abbreviations.
@@ -1177,20 +1185,37 @@ def main():
     parser.add_argument('LHM_file', metavar='LHM_file', type = str, help='LHM file path')
     parser.add_argument('-l', '--BSM_file_extension', required = False, help='Business semantic model extension file path')
     parser.add_argument('-m', '--LHM_file_extension', required = False, help='LHM extension file path')
-    parser.add_argument('-r', '--root', required = False, help='Root for LHM')
+    # parser.add_argument('-r', '--root', required = False, help='Root for LHM')
     parser.add_argument('-o', '--option', required = False, action='store_true')
     parser.add_argument('-e', '--encoding', required = False, default='utf-8-sig', help='File encoding, default is utf-8-sig')
     parser.add_argument('-t', '--trace', required = False, action='store_true')
     parser.add_argument('-d', '--debug', required = False, action='store_true')
 
+    # Allow multiple values with action='append' or nargs='+'
+    parser.add_argument(
+        "-r", "--root", 
+        action="append", 
+        help="Root class term(s) for LHM to process. Can be specified multiple times."
+    )
+
     args = parser.parse_args()
+
+    # Flatten the list if necessary
+    root_terms = []
+    if args.root:
+        for val in args.root:
+            if isinstance(val, str) and "+" in val:
+                root_terms.extend(val.split("+"))
+            else:
+                root_terms.append(val)
+    root_terms = [x.strip() for x in root_terms]
 
     processor = Graphwalk(
         bsm_file = args.BSM_file.strip(),
         lhm_file = args.LHM_file.strip(),
         bsm_file_extension = args.BSM_file_extension.strip() if args.BSM_file_extension else None,
         lhm_file_extension = args.LHM_file_extension.strip() if args.LHM_file_extension else None,
-        root = args.root if args.root else False,
+        root_terms = root_terms,
         option = args.option if args.option else False,
         encoding = args.encoding.strip() if args.encoding else None,
         trace = args.trace,
