@@ -88,7 +88,7 @@
             // "args": [
             //     "--base_dir", "../XBRL-GL-PWD-2016-12-01",
             //     "--palette", "case-c-b-m-u-e-t-s",
-            //     "--output", "../XBRL-GL-2025/XBRL_GL_case-c-b-m-u-e-t-s_Structure.csv",
+            //     "--output", "../XBRL-GL-2025/XBRL_GL_case-c-b-m-u-e-t-s_Structure2025-04.csv",
             //     "--lang", "ja",        // or "en"
             //     "--trace",
             //     "--debug",
@@ -162,29 +162,41 @@
             // ]
 
             // xml2tidy.py
+            // "args": [
+            //     "-i ../OIM-CSV/XBRL-GL-2025/ids/Customer_Invoices.xml",
+            //     // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Employee_Timesheets.xml",
+            //     // "-i ../OIM-CSV/XBRL-GL-2025/ids/Job-budget-v-actual.xml",
+            //     // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/JournalEntry_Annotated_Book-Tax.xml",
+            //     // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Vendor_Invoices_Normalized.xml",
+            //     // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Vendor_Invoices.xml",
+            //     "-n 2025-12-01",
+            //     "-s ../OIM-CSV/XBRL-GL-2025/LHM/xBRL-GL_LHM.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/1-GL-Generic-simple-context.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/2-GL-Generic-tuple.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/3-GL-Generic-tuple-Dimension.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/BP_FixedAssetList.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/BP_TrialBalance.csv",
+            //     "-o ../OIM-CSV/XBRL-GL-2025/OIM/Customer_Invoices2.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Employee_Timesheets.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Job-budget-v-actual.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/JournalEntry_Annotated_Book-Tax.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Vendor_Invoices_Normalized.csv",
+            //     // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Vendor_Invoices.csv",
+            //     "-e utf-8-sig",
+            //     "-d",
+            //     "-v"
+            // ]
+
+            // xml2sturvtured_csv.py
             "args": [
-                "-i ../OIM-CSV/XBRL-GL-2025/ids/Customer_Invoices.xml",
-                // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Employee_Timesheets.xml",
-                // "-i ../OIM-CSV/XBRL-GL-2025/ids/Job-budget-v-actual.xml",
-                // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/JournalEntry_Annotated_Book-Tax.xml",
-                // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Vendor_Invoices_Normalized.xml",
-                // "-i ../OIM-CSV/XBRL-GL-2025/gl/ids/Vendor_Invoices.xml",
-                "-n 2025-12-01",
-                "-s ../OIM-CSV/XBRL-GL-2025/LHM/xBRL-GL_LHM.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/1-GL-Generic-simple-context.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/2-GL-Generic-tuple.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/3-GL-Generic-tuple-Dimension.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/BP_FixedAssetList.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/BP_TrialBalance.csv",
-                "-o ../OIM-CSV/XBRL-GL-2025/OIM/Customer_Invoices2.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Employee_Timesheets.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Job-budget-v-actual.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/JournalEntry_Annotated_Book-Tax.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Vendor_Invoices_Normalized.csv",
-                // "-o ../OIM-CSV/XBRL-GL-2025/OIM/Vendor_Invoices.csv",
-                "-e utf-8-sig",
-                "-d",
-                "-v"
+                "${workspaceFolder}/OIM-CSV/XBRL-GL-2025/ids/Vendor_Invoices.xml",
+                "-o", "${workspaceFolder}/OIM-CSV/XBRL-GL-2025/OIM/Vendor_Invoices_converted.csv",
+                "-m", "${workspaceFolder}/OIM-CSV/XBRL-GL-2025/gl/plt/pl-plt-oim-2025-12-01.xsd",
+                "-b", "${workspaceFolder}/XBRL-GL-2025/LHM/XBRL-GL_2025_LHM.csv",
+                "-c", "usd",
+                "-e", "utf-8-sig",
+                "-t",
+                "-d"
             ]
 
         }

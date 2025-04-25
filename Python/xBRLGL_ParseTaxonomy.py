@@ -339,6 +339,7 @@ class xBRLGL_ParseTaxonomy:
             "element": el_name,
             "xpath": new_path,
         }
+        self.debug_print(f"    {option if option else ''} {new_path}")
         self.records.append(record)
         if not el_type:
             return
@@ -367,7 +368,7 @@ class xBRLGL_ParseTaxonomy:
     def process_sequence(self, sequence, _type, module, xpath, base):
         self.debug_print(f" - Processing xs:sequence in xpath: {xpath}")
         for el in sequence.findall("xs:element", namespaces=self.namespaces):
-            self.process_element(el, xpath)
+            self.process_element(el, xpath, 'sequence')
         for choice in sequence.findall("xs:choice", namespaces=self.namespaces):
             for el in choice.findall("xs:element", namespaces=self.namespaces):
                 self.process_element(el, xpath, 'sequence-choice')
