@@ -136,7 +136,8 @@
         "dateType": {
           "title": "Date. Type",
           "description": "A particular point in the progression of time together with the relevant supplementary information.",
-          "$ref": "#/$defs/udt/$defs/dateTimeType"
+          "type": "string",
+          "format": "date"
         },
         "graphicType": {
           "title": "Graphic. Type",
