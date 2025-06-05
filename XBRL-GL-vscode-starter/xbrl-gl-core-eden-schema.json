@@ -1,0 +1,111 @@
+{
+    "$schema": "http://json-schema.org/draft/2020-12/schema",
+    "title": "XBRL GL Core Module Schema (Garden of Eden)",
+    "description": "Fully modular schema where all definitions and properties are declared globally and referenced.",
+    "type": "object",
+    "properties": {
+        "accountingEntries": {
+            "$ref": "#/$defs/AccountingEntries"
+        }
+    },
+    "required": [
+        "accountingEntries"
+    ],
+    "$defs": {
+        "AccountingEntries": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/AccountingEntry"
+            }
+        },
+        "AccountingEntry": {
+            "type": "object",
+            "properties": {
+                "entryHeader": {
+                    "$ref": "#/$defs/EntryHeaders"
+                }
+            },
+            "required": [
+                "entryHeader"
+            ]
+        },
+        "EntryHeaders": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/EntryHeader"
+            }
+        },
+        "EntryHeader": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/ID"
+                },
+                "date": {
+                    "$ref": "#/$defs/Date"
+                },
+                "description": {
+                    "$ref": "#/$defs/Description"
+                },
+                "entryDetail": {
+                    "$ref": "#/$defs/EntryDetails"
+                }
+            },
+            "required": [
+                "id",
+                "date"
+            ]
+        },
+        "EntryDetails": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/EntryDetail"
+            }
+        },
+        "EntryDetail": {
+            "type": "object",
+            "properties": {
+                "lineNumber": {
+                    "$ref": "#/$defs/LineNumber"
+                },
+                "accountCode": {
+                    "$ref": "#/$defs/AccountCode"
+                },
+                "debitAmount": {
+                    "$ref": "#/$defs/DebitAmount"
+                },
+                "creditAmount": {
+                    "$ref": "#/$defs/CreditAmount"
+                },
+                "description": {
+                    "$ref": "#/$defs/Description"
+                }
+            },
+            "required": [
+                "lineNumber",
+                "accountCode"
+            ]
+        },
+        "ID": {
+            "ref": "UNECE-BasicComponents.json/udt/$defs/udf/$defs/idType"
+        },
+        "Date": {
+            "ref": "UNECE-BasicComponents.json/udt/$defs/udf/$defs/dateType"
+        },
+        "Description": {
+            "type": "string"
+        },
+        "LineNumber": {
+            "type": "integer"
+        },
+        "AccountCode": {
+            "type": "string"
+        },
+        "DebitAmount": {
+            "type": "number"
+        },
+        "CreditAmount": {
+            "type": "number"
+        }
+    }
+}

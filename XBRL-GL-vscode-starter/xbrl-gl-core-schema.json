@@ -1,0 +1,72 @@
+{
+    "$schema": "http://json-schema.org/draft/2020-12/schema",
+    "title": "XBRL GL Core Module Schema",
+    "description": "A basic JSON Schema example for XBRL GL core module, including accountingEntries, entryHeader, and entryDetail.",
+    "type": "object",
+    "properties": {
+        "accountingEntries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "entryHeader": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "date": {
+                                    "type": "string",
+                                    "format": "date"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "entryDetail": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object",
+                                        "properties": {
+                                            "lineNumber": {
+                                                "type": "integer"
+                                            },
+                                            "accountCode": {
+                                                "type": "string"
+                                            },
+                                            "debitAmount": {
+                                                "type": "number"
+                                            },
+                                            "creditAmount": {
+                                                "type": "number"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "lineNumber",
+                                            "accountCode"
+                                        ]
+                                    }
+                                }
+                            },
+                            "required": [
+                                "id",
+                                "date"
+                            ]
+                        }
+                    }
+                },
+                "required": [
+                    "entryHeader",
+                    "entryDetail"
+                ]
+            }
+        }
+    },
+    "required": [
+        "accountingEntries"
+    ]
+}

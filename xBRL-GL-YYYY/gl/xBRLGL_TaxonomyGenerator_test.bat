@@ -1,0 +1,11 @@
+.\xBRLGL_TaxonomyGenerator.bat case-c
+.\xBRLGL_TaxonomyGenerator.bat case-c-b
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u-e
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u-e-t
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u-e-t-s
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u-t
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-m-u-t-s
+.\xBRLGL_TaxonomyGenerator.bat case-c-b-t
+.\xBRLGL_TaxonomyGenerator.bat case-c-t

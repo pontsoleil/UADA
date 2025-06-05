@@ -58,6 +58,17 @@ import csv
 import argparse
 from collections import defaultdict
 
+TRACE = False
+DEBUG = False
+
+def debug_print(message):
+    if DEBUG:
+        print(f"[DEBUG] {message}")
+
+def trace_print(message):
+    if TRACE:
+        print(f"[TRACE] {message}")
+
 class xBRLGL_ParseTaxonomy:
     def __init__(
             self,
@@ -70,6 +81,7 @@ class xBRLGL_ParseTaxonomy:
         ):
         if base_dir:
             self.base_dir = self.file_path(base_dir.strip())
+            self.version = base_dir[-10:]
         else:
             print(f"Taxonomy base directory {self.base_dir} is missing.")
             sys.exit()
@@ -80,42 +92,33 @@ class xBRLGL_ParseTaxonomy:
         self.output_dir = os.path.dirname(self.output_file)
         if self.output_dir and not os.path.exists(self.output_dir):
             os.makedirs(self.output_dir, exist_ok=True)
-            self.trace_print(f"Created output directory: {self.output_dir}")
+            trace_print(f"Created output directory: {self.output_dir}")
         self.lang = lang.strip() if lang else "ja"
         self.palette = palette
-        self.TRACE = trace or False
-        self.DEBUG = debug or False
 
-        self.xsd_path = os.path.join(base_dir, f"gl/plt/{self.palette}/gl-cor-content-2016-12-01.xsd")
+        self.xsd_path = os.path.join(base_dir, f"gl/plt/{self.palette}/gl-cor-content-{self.version}.xsd")
         self.namespaces = {
             'xs': "http://www.w3.org/2001/XMLSchema",
             'xsi': 'http://www.w3.org/2001/XMLSchema-instance',
             'xbrli': "http://www.xbrl.org/2003/instance",
             'xlink': 'http://www.w3.org/1999/xlink',
             'link': "http://www.xbrl.org/2003/linkbase",
-            'gl-cor': 'http://www.xbrl.org/int/gl/cor/2016-12-01',
-            'gl-muc': 'http://www.xbrl.org/int/gl/muc/2016-12-01',
-            'gl-bus': 'http://www.xbrl.org/int/gl/bus/2016-12-01',
-            'gl-usk': 'http://www.xbrl.org/int/gl/usk/2016-12-01',
-            'gl-ehm': 'http://www.xbrl.org/int/gl/ehm/2016-12-01',
-            'gl-taf': 'http://www.xbrl.org/int/gl/taf/2016-12-01',
-            'gl-plt': 'http://www.xbrl.org/int/gl/plt/2016-12-01'
+            'gl-cor': f'http://www.xbrl.org/int/gl/cor/{self.version}',
+            'gl-muc': f'http://www.xbrl.org/int/gl/muc/{self.version}',
+            'gl-bus': f'http://www.xbrl.org/int/gl/bus/{self.version}',
+            'gl-usk': f'http://www.xbrl.org/int/gl/usk/{self.version}',
+            'gl-ehm': f'http://www.xbrl.org/int/gl/ehm/{self.version}',
+            'gl-taf': f'http://www.xbrl.org/int/gl/taf/{self.version}',
+            'gl-ext': f'http://www.xbrl.org/int/gl/ext/{self.version}',
+            'gl-plt': f'http://www.xbrl.org/int/gl/plt/{self.version}'
         }
 
-        self.modules = ['gen', 'cor', 'bus', 'muc', 'usk', 'ehm', 'taf', 'srcd']
+        self.modules = ['gen', 'cor', 'bus', 'muc', 'usk', 'ehm', 'taf', 'srcd', 'ext']
         # Load base schemas and build type maps
         self.element_type_map = {}
         self.type_base_map = {}
         self.type_base_lookup = {}
         self.complex_type_lookup = {}
-
-    def debug_print(self, text):
-        if self.DEBUG:
-            print(text)
-
-    def trace_print(self, text):
-        if self.TRACE:
-            print(text)
 
     def file_path(self, pathname):
         _pathname = pathname.replace("/", os.sep)
@@ -135,7 +138,7 @@ class xBRLGL_ParseTaxonomy:
     def load_labels(self, mod, lang):
         label_map = defaultdict(dict)
         suffix = "label.xml" if lang == "en" else f"label-{lang}.xml"
-        path = os.path.join(self.base_dir, f"gl/{mod}/lang/gl-{mod}-2016-12-01-{suffix}")
+        path = os.path.join(self.base_dir, f"gl/{mod}/lang/gl-{mod}-{self.version}-{suffix}")
         if not os.path.exists(path):
             return label_map
         tree = ET.parse(path)
@@ -201,7 +204,7 @@ class xBRLGL_ParseTaxonomy:
             return True
         return False
 
-    def resolve_base_type(self, type_str):
+    def resolve_base_datatype(self, type_str):
         type_name = type_str.split(":")[-1]
         return self.type_base_lookup.get(type_name, "")
 
@@ -290,7 +293,7 @@ class xBRLGL_ParseTaxonomy:
         new_path = f"{path_str}/{el_name}"
         min_occurs = el.get("minOccurs", "1")
         max_occurs = el.get("maxOccurs", "1")
-        base_type = self.resolve_base_type(el_type) if not is_tuple and el_type else ""
+        base_datatype = self.resolve_base_datatype(el_type) if not is_tuple and el_type else ""
         level = new_path.count("/") - 1
         raw_key = el_name.replace(":", "_")
         label_info = self.label_texts.get(raw_key, {})
@@ -321,17 +324,17 @@ class xBRLGL_ParseTaxonomy:
             "type": _type,
             "identifier": "",
             "name": name,
-            "datatype": base_type,
+            "datatype": el_type,
             "multiplicity": multiplicity,
-            "domain_name": "",
+            "base_datatype": base_datatype,
             "definition": label_info.get("documentation", ""),
             "module": el_name[: el_name.index(":")],
-            "table": "",
+            # "table": "",
             "class_term": (
                 self.parents[level] if "C" == _type else self.parents[level - 1]
             ),
-            "id": "",
-            "path": "",
+            # "id": "",
+            # "path": "",
             "semantic_path": semantic_path,
             "abbreviation_path": abbreviated_path,
             "label_local": label_info.get("label_ja", ""),
@@ -339,7 +342,7 @@ class xBRLGL_ParseTaxonomy:
             "element": el_name,
             "xpath": new_path,
         }
-        self.debug_print(f"    {option if option else ''} {new_path}")
+        debug_print(f"    {option if option else ''} {new_path}")
         self.records.append(record)
         if not el_type:
             return
@@ -347,10 +350,10 @@ class xBRLGL_ParseTaxonomy:
         if is_tuple:
             mod = el_type.split(":")[0][3:]
             for _path in [
-                os.path.join(self.base_dir, f"gl/{mod}/gl-{mod}-2016-12-01.xsd"),
+                os.path.join(self.base_dir, f"gl/{mod}/gl-{mod}-{self.version}.xsd"),
                 os.path.join(
                     self.base_dir,
-                    f"gl/plt/{self.palette}/gl-{mod}-content-2016-12-01.xsd",
+                    f"gl/plt/{self.palette}/gl-{mod}-content-{self.version}.xsd",
                 ),
             ]:
                 if os.path.exists(_path):
@@ -366,7 +369,7 @@ class xBRLGL_ParseTaxonomy:
                         return
 
     def process_sequence(self, sequence, _type, module, xpath, base):
-        self.debug_print(f" - Processing xs:sequence in xpath: {xpath}")
+        debug_print(f" - Processing xs:sequence in xpath: {xpath}")
         for el in sequence.findall("xs:element", namespaces=self.namespaces):
             self.process_element(el, xpath, 'sequence')
         for choice in sequence.findall("xs:choice", namespaces=self.namespaces):
@@ -374,7 +377,7 @@ class xBRLGL_ParseTaxonomy:
                 self.process_element(el, xpath, 'sequence-choice')
 
     def process_choice(self, choice, _type, module, xpath, base):
-        self.debug_print(f" - Processing xs:choice in xpath: {xpath}")
+        debug_print(f" - Processing xs:choice in xpath: {xpath}")
         for el in choice.findall("xs:element", namespaces=self.namespaces):
             self.process_element(el, xpath, 'choice')           
         for sq in choice.findall("xs:sequence", namespaces=self.namespaces):
@@ -382,7 +385,7 @@ class xBRLGL_ParseTaxonomy:
                 self.process_element(el, xpath, 'choice-sequence') 
 
     def walk_complex_type(self, name, element, _type, module, xpath):
-        self.trace_print(f"Walking: '{name}' at xpath: {xpath}")
+        trace_print(f"Walking: '{name}' at xpath: {xpath}")
         sequence = element.find("xs:sequence", self.namespaces)
         if sequence is not None:
             self.process_sequence(sequence, _type, module, xpath, name)
@@ -406,20 +409,22 @@ class xBRLGL_ParseTaxonomy:
                     return
 
     def parse(self):
+        modules = []
         for mod in self.modules:
-            path = os.path.join(self.base_dir, f"gl/{mod}/gl-{mod}-2016-12-01.xsd")
+            modules.append(mod)
+            path = os.path.join(self.base_dir, f"gl/{mod}/gl-{mod}-{self.version}.xsd")
             if os.path.exists(path):
                 tree = ET.parse(path)
                 root = tree.getroot()
                 for el in root.xpath("//xs:element", namespaces=self.namespaces):
                     name, type_ = el.get("name"), el.get("type")
                     if name and type_:
-                        # self.debug_print(f"gl-{mod}:{name}")
+                        # debug_print(f"gl-{mod}:{name}")
                         self.element_type_map[f"gl-{mod}:{name}"] = type_
                 for tdef in root.xpath("//xs:simpleType | //xs:complexType", namespaces=self.namespaces):
                     name = tdef.get("name")
                     if name:
-                        # self.debug_print(name)
+                        # debug_print(name)
                         self.complex_type_lookup[name] = tdef
                         restriction = tdef.find(".//xs:restriction", self.namespaces)
                         if restriction is not None:
@@ -434,10 +439,11 @@ class xBRLGL_ParseTaxonomy:
                                 self.type_base_map[name] = base
                                 self.type_base_lookup[name] = base
 
+        self.modules = modules
         # Load content schemas
         self.content_roots = {}
         for mod in self.modules:
-            path = os.path.join(self.base_dir, f"gl/plt/{self.palette}/gl-{mod}-content-2016-12-01.xsd")
+            path = os.path.join(self.base_dir, f"gl/plt/{self.palette}/gl-{mod}-content-{self.version}.xsd")
             if os.path.exists(path):
                 self.content_roots[mod] = ET.parse(path).getroot()
                 tree = ET.parse(path)
@@ -445,12 +451,12 @@ class xBRLGL_ParseTaxonomy:
                 for el in root.xpath("//xs:element", namespaces=self.namespaces):
                     name, type_ = el.get("name"), el.get("type")
                     if name and type_:
-                        # self.debug_print(f"gl-{mod}:{name}")
+                        # debug_print(f"gl-{mod}:{name}")
                         self.element_type_map[f"gl-{mod}:{name}"] = type_
                 for tdef in root.xpath("//xs:simpleType | //xs:complexType", namespaces=self.namespaces):
                     name = tdef.get("name")
                     if name:
-                        # self.debug_print(name)
+                        # debug_print(name)
                         self.complex_type_lookup[name] = tdef
                         restriction = tdef.find(".//xs:restriction", self.namespaces)
                         if restriction is not None:
@@ -493,13 +499,13 @@ class xBRLGL_ParseTaxonomy:
                 "name": label,
                 "datatype": "",
                 "multiplicity": "1..*",
-                "domain_name": "",
+                "base_datatype": "",
                 "definition": self.label_texts[href].get("documentation", ""),
                 "module": "gl-cor",
-                "table": "",
+                # "table": "",
                 "class_term": "xBRL",
-                "id": "",
-                "path": "",
+                # "id": "",
+                # "path": "",
                 "semantic_path": "$.Accounting Entries",
                 "abbreviation_path": "AccntgEntrs",
                 "label_local": self.label_texts[href].get("label_ja", ""),
@@ -526,16 +532,21 @@ class xBRLGL_ParseTaxonomy:
 
 
 def main():
+    global DEBUG, TRACE
+
     parser = argparse.ArgumentParser(description="Parse XBRL-GL schemas and extract labeled hierarchy.")
     # Argument parser for base directory
     parser.add_argument("-b", "--base_dir", type=str, required=True, default=".", help="Base directory path to XBRL GLtaxonomy, e.g. XBRL-GL-PWD-2016-12-01")
     parser.add_argument("-p", "--palette", type=str, default="case-c-b-m-u-e-t-s", help="Palette subdirectory under gl/plt/ (e.g. case-c-b or case-c-b-m-u-e-t-s)")
     parser.add_argument("-o", "--output", type=str, default="XBRL_GL_case-c-b-m-u-e-t_Structure.csv", help="Output CSV filename")
     parser.add_argument("-l", "--lang", type=str, default="ja", help="Language code for local labels (e.g. 'ja', 'en')")
-    parser.add_argument("-v", "--trace", action="store_true", help="Enable trace output")
+    parser.add_argument("-t", "--trace", action="store_true", help="Enable trace output")
     parser.add_argument("-d", "--debug", action="store_true", help="Enable debug output")
 
     args = parser.parse_args()
+
+    DEBUG = args.debug
+    TRACE = args.trace
 
     generator = xBRLGL_ParseTaxonomy(
         base_dir=args.base_dir,
@@ -547,6 +558,7 @@ def main():
     )
 
     generator.parse()
+
 
 if __name__ == "__main__":
     main()

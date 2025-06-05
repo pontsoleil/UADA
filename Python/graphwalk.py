@@ -230,21 +230,26 @@ class Graphwalk:
                 self.is_singular_association = True
             else:
                 self.is_singular_association = False
+
         id_ = self.index_manager.generate_indexed_code(id)
+
         if 1 == level:
             aggregates[level - 1] = {'id':id_, 'multiplicity': '0..*'}
         else:
             aggregates[level - 1] = {'id':id_, 'multiplicity': multiplicity}
-        for i in range(level, 11 - level):
+        for i in range(level, 11):
             aggregates[i] = None
+
         path = ''
         for i in range(len(aggregates)):
             aggregate = aggregates[i]
             if aggregate and '*' == aggregate['multiplicity'][-1]:
                 _id = aggregates[i]['id']
                 path += f"/{_id}"
+
         if not path or id_ not in path:
             path += f"/{id_}"
+
         return path
 
     # Function to get semantic path

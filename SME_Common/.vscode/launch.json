@@ -1,0 +1,52 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true,
+            "redirectOutput": false,
+
+            // // sme_schema.py
+            // "args": [
+            //     "SME_common_BSM.csv",
+            //     "-r", "SME_ Core Self Invoice",
+            //     "-t", "-d"
+            // ]
+
+            // // sme_graphwalk.py
+            // "args": [
+            //     "SME_common_BSM.csv", "SME_common_LHMa.csv",
+            //     "-r", "SME_ Core Self Invoice",
+            //     "-o", "S",
+            //     "-t", "-d"
+            // ]
+
+            // // sme_taxonomy_generator.py
+            // "args": [
+            //     "SME_common_LHMb.csv",
+            //     "-b", "taxonomy",
+            //     // "-n", "urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1",
+            //     "-s", "JP00",
+            //     // "-l", "ja",
+            //     // "-c", "jpy",
+            //     "-e", "utf-8-sig",
+            //     "-d",
+            //     "-t"
+            // ]
+
+            // sme_schema.py
+            "args": [
+                "SME_common_LHM06-02.csv",
+                "-r", "SME_ Core Self Invoice",
+                "-t", "-d"
+            ]
+        }
+    ]
+}

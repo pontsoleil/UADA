@@ -1,0 +1,10 @@
+﻿dInvoice,dTaxBreakdown,dInvoiceLine,Invoice.ID,issueDate,typeCode,dueDate,Buyer.name,Seller.name,Seller.taxID,sumOfLineNetAmount,totalAmountWithoutTax,totalTaxAmount,totalAmountWithTax,TaxBreakdown.taxCategoryCode,TaxBreakdown.taxCategoryRate,TaxBreakdown.taxCategoryTaxAmount,InvoiceLine.ID,InvoiceLine.netAmount,InvoiceLine.quantity,InvoiceLine.uom,Item.ID,Item.name,Item.price,Item.baseQuantity,Item.uom,Item.taxCategoryCode,Item.taxCategoryRate
+1,,,INV001,2024-06-30,380,2024-07-15,山田商事株式会社,佐藤製作所,T098765432109,16200,16200,246,18666,,,,,,,,,,,,,,
+1,1,,,,,,,,,,,,,S,0.10,150,,,,,,,,,,,
+1,2,,,,,,,,,,,,,AA,0.08,96,,,,,,,,,,,
+1,,1,,,,,,,,,,,,,,,L001,15000,1.000,EA,1001,オフィスチェア,15000,1.000,EA,S,0.10
+1,,2,,,,,,,,,,,,,,,L002,1200,1.000,BOX,2001,ミネラルウォーター,1200,1.000,BOX,AA,0.08
+2,,,INV002,2024-07-01,380,2024-07-15,Greenwood High School,Liberty Office Supply,T765432109876,620,620,62,682,,,,,,,,,,,,,,
+2,1,,,,,,,,,,,,,S,0.10,62,,,,,,,,,,,
+2,,1,,,,,,,,,,,,,,,L003,500,1.000,EA,A001,Notebook,500,1.000,EA,S,0.10
+2,,2,,,,,,,,,,,,,,,L004,120,1.000,EA,A002,Ballpoint Pen,120,1.000,EA,S,0.10

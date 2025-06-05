@@ -1,0 +1,352 @@
+﻿seq,layer,UNID,kind,level,DEN
+1,ヘッダ部,,MA,1,SME_ Core Self Invoice
+2,ヘッダ部,UN01005479,ASMA,1,CI_ Exchanged Document_ Context. Details
+3,ヘッダ部,UN01005480,BBIE,2,CI_ Exchanged Document_ Context. Specified_ Transaction. Identifier
+4,ヘッダ部,UN01012746,BBIE,2,CI_ Exchanged Document_ Context. Processing_ Transaction. Date Time
+5,ヘッダ部,UN01005481,ASBIE,2,CI_ Exchanged Document_ Context. Business Process_ Specified. CI_ Document Context_ Parameter
+6,ヘッダ部,UN01005471,ABIE,3,CI_ Document Context_ Parameter. Details
+7,ヘッダ部,UN01005472,BBIE,4,CI_ Document Context_ Parameter. Identification. Identifier
+8,ヘッダ部,UN01005473,BBIE,4,CI_ Document Context_ Parameter. Value. Text
+9,ヘッダ部,UN01005474,ASBIE,4,CI_ Document Context_ Parameter. Specified. CI_ Document_ Version
+10,ヘッダ部,UN01005475,ABIE,5,CI_ Document_ Version. Details
+11,ヘッダ部,UN01005476,BBIE,6,CI_ Document_ Version. Identification. Identifier
+12,ヘッダ部,UN01005478,BBIE,6,CI_ Document_ Version. Issue. Date Time
+13,ヘッダ部,UN01005483,ASBIE,2,CI_ Exchanged Document_ Context. Scenario_ Specified. CI_ Document Context_ Parameter
+14,ヘッダ部,UN01005471,ABIE,3,CI_ Document Context_ Parameter. Details
+15,ヘッダ部,UN01005472,BBIE,4,CI_ Document Context_ Parameter. Identification. Identifier
+16,ヘッダ部,UN01005473,BBIE,4,CI_ Document Context_ Parameter. Value. Text
+17,ヘッダ部,UN01005484,ASBIE,2,CI_ Exchanged Document_ Context. Application_ Specified. CI_ Document Context_ Parameter
+18,ヘッダ部,UN01005471,ABIE,3,CI_ Document Context_ Parameter. Details
+19,ヘッダ部,UN01005472,BBIE,4,CI_ Document Context_ Parameter. Identification. Identifier
+20,ヘッダ部,UN01005473,BBIE,4,CI_ Document Context_ Parameter. Value. Text
+21,ヘッダ部,UN01005486,ASBIE,2,CI_ Exchanged Document_ Context. Subset_ Specified. CI_ Document Context_ Parameter
+22,ヘッダ部,UN01005471,ABIE,3,CI_ Document Context_ Parameter. Details
+23,ヘッダ部,UN01005472,BBIE,4,CI_ Document Context_ Parameter. Identification. Identifier
+24,ヘッダ部,UN01005473,BBIE,4,CI_ Document Context_ Parameter. Value. Text
+25,ヘッダ部,UN01005474,ASBIE,4,CI_ Document Context_ Parameter. Specified. CI_ Document_ Version
+26,ヘッダ部,UN01005475,ABIE,5,CI_ Document_ Version. Details
+27,ヘッダ部,UN01005476,BBIE,6,CI_ Document_ Version. Identification. Identifier
+28,ヘッダ部,UN01005478,BBIE,6,CI_ Document_ Version. Issue. Date Time
+29,ヘッダ部,UN01005861,ASMA,1,CIIH_ Exchanged_ Document. Details
+30,ヘッダ部,UN01005862,BBIE,2,CIIH_ Exchanged_ Document. Identification. Identifier
+31,ヘッダ部,UN01005863,BBIE,2,CIIH_ Exchanged_ Document. Name. Text
+32,ヘッダ部,UN01005864,BBIE,2,CIIH_ Exchanged_ Document. Type. Code
+33,ヘッダ部,UN01005865,BBIE,2,CIIH_ Exchanged_ Document. Issue. Date Time
+34,ヘッダ部,UN01005869,BBIE,2,CIIH_ Exchanged_ Document. Purpose. Code
+35,ヘッダ部,UN01005874,BBIE,2,CIIH_ Exchanged_ Document. Previous Revision_ Identification. Identifier
+36,ヘッダ部,UN01014636,BBIE,2,CIIH_ Exchanged_ Document. Subtype. Code
+37,ヘッダ部,UN01005876,ASBIE,2,CIIH_ Exchanged_ Document. Included. CI_ Note
+38,ヘッダ部,UN01005557,ABIE,3,CI_ Note. Details
+39,ヘッダ部,UN01005560,BBIE,4,CI_ Note. Content. Text
+40,ヘッダ部,UN01012702,ASBIE,2,CIIH_ Exchanged_ Document. Reference. CI_ Referenced_ Document
+41,ヘッダ部,UN01005579,ABIE,3,CI_ Referenced_ Document. Details
+42,ヘッダ部,UN01005580,BBIE,4,CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier
+43,ヘッダ部,UN01005581,BBIE,4,CI_ Referenced_ Document. URI_ Identification. Identifier
+44,ヘッダ部,UN01005582,BBIE,4,CI_ Referenced_ Document. Issue. Date Time
+45,ヘッダ部,UN01009672,BBIE,4,CI_ Referenced_ Document. Type. Code
+46,ヘッダ部,UN01014899,BBIE,4,CI_ Referenced_ Document. Subtype. Code
+47,ヘッダ部,UN01005936,ASMA,1,CIIH_ Supply Chain_ Trade Transaction. Details
+48,ヘッダ部,UN01005937,ASBIE,2,CIIH_ Supply Chain_ Trade Transaction. Applicable. CIIH_ Supply Chain_ Trade Agreement
+49,ヘッダ部,UN01005878,ABIE,3,CIIH_ Supply Chain_ Trade Agreement. Details
+50,ヘッダ部,UN01005879,ASBIE,4,CIIH_ Supply Chain_ Trade Agreement. Seller. CI_ Trade_ Party
+51,ヘッダ部,UN01005756,ABIE,5,CI_ Trade_ Party. Details
+52,ヘッダ部,UN01005757,BBIE,6,CI_ Trade_ Party. Identification. Identifier
+53,ヘッダ部,UN01005759,BBIE,6,CI_ Trade_ Party. Name. Text
+54,ヘッダ部,UN01013039,BBIE,6,CI_ Trade_ Party. Registered_ Identification. Identifier
+55,ヘッダ部,UN01005761,ASBIE,6,CI_ Trade_ Party. Defined. CI_ Trade_ Contact
+56,ヘッダ部,UN01005718,ABIE,7,CI_ Trade_ Contact. Details
+57,ヘッダ部,UN01005720,BBIE,8,CI_ Trade_ Contact. Person Name. Text
+58,ヘッダ部,UN01005721,BBIE,8,CI_ Trade_ Contact. Department Name. Text
+59,ヘッダ部,UN01005726,ASBIE,8,CI_ Trade_ Contact. Telephone. CI_ Universal_ Communication
+60,ヘッダ部,UN01005857,ABIE,9,CI_ Universal_ Communication. Details
+61,ヘッダ部,UN01005860,BBIE,10,CI_ Universal_ Communication. Complete Number. Text
+62,ヘッダ部,UN01005729,ASBIE,8,CI_ Trade_ Contact. Fax. CI_ Universal_ Communication
+63,ヘッダ部,UN01005857,ABIE,9,CI_ Universal_ Communication. Details
+64,ヘッダ部,UN01005860,BBIE,10,CI_ Universal_ Communication. Complete Number. Text
+65,ヘッダ部,UN01005762,ASBIE,6,CI_ Trade_ Party. Postal. CI_ Trade_ Address
+66,ヘッダ部,UN01005687,ABIE,7,CI_ Trade_ Address. Details
+67,ヘッダ部,UN01005689,BBIE,8,CI_ Trade_ Address. Postcode. Code
+68,ヘッダ部,UN01005692,BBIE,8,CI_ Trade_ Address. Line One. Text
+69,ヘッダ部,UN01005880,ASBIE,4,CIIH_ Supply Chain_ Trade Agreement. Buyer. CI_ Trade_ Party
+70,ヘッダ部,UN01005756,ABIE,5,CI_ Trade_ Party. Details
+71,ヘッダ部,UN01005757,BBIE,6,CI_ Trade_ Party. Identification. Identifier
+72,ヘッダ部,UN01005759,BBIE,6,CI_ Trade_ Party. Name. Text
+73,ヘッダ部,UN01013039,BBIE,6,CI_ Trade_ Party. Registered_ Identification. Identifier
+74,ヘッダ部,UN01005761,ASBIE,6,CI_ Trade_ Party. Defined. CI_ Trade_ Contact
+75,ヘッダ部,UN01005718,ABIE,7,CI_ Trade_ Contact. Details
+76,ヘッダ部,UN01005720,BBIE,8,CI_ Trade_ Contact. Person Name. Text
+77,ヘッダ部,UN01005721,BBIE,8,CI_ Trade_ Contact. Department Name. Text
+78,ヘッダ部,UN01005726,ASBIE,8,CI_ Trade_ Contact. Telephone. CI_ Universal_ Communication
+79,ヘッダ部,UN01005857,ABIE,9,CI_ Universal_ Communication. Details
+80,ヘッダ部,UN01005860,BBIE,10,CI_ Universal_ Communication. Complete Number. Text
+81,ヘッダ部,UN01005762,ASBIE,6,CI_ Trade_ Party. Postal. CI_ Trade_ Address
+82,ヘッダ部,UN01005687,ABIE,7,CI_ Trade_ Address. Details
+83,ヘッダ部,UN01005689,BBIE,8,CI_ Trade_ Address. Postcode. Code
+84,ヘッダ部,UN01005692,BBIE,8,CI_ Trade_ Address. Line One. Text
+85,ヘッダ部,UN01011516,ASBIE,4,CIIH_ Supply Chain_ Trade Agreement. Specified. Procuring_ Project
+86,ヘッダ部,UN01000371,ABIE,5,Procuring_ Project. Details
+87,ヘッダ部,UN01000372,BBIE,6,Procuring_ Project. Identification. Identifier
+88,ヘッダ部,UN01000374,BBIE,6,Procuring_ Project. Name. Text
+89,ヘッダ部,UN01005939,ASBIE,2,CIIH_ Supply Chain_ Trade Transaction. Applicable. CIIH_ Supply Chain_ Trade Settlement
+90,ヘッダ部,UN01005909,ABIE,3,CIIH_ Supply Chain_ Trade Settlement. Details
+91,ヘッダ部,UN01005923,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Specified. CI_ Trade Settlement_ Payment Means
+92,ヘッダ部,UN01005670,ABIE,5,CI_ Trade Settlement_ Payment Means. Details
+93,ヘッダ部,UN01005672,BBIE,6,CI_ Trade Settlement_ Payment Means. Type. Code
+94,ヘッダ部,UN01005677,ASBIE,6,CI_ Trade Settlement_ Payment Means. Payee_ Party. CI_ Creditor_ Financial Account
+95,ヘッダ部,UN01005398,ABIE,7,CI_ Creditor_ Financial Account. Details
+96,ヘッダ部,UN01005400,BBIE,8,CI_ Creditor_ Financial Account. Account Name. Text
+97,ヘッダ部,UN01005401,BBIE,8,CI_ Creditor_ Financial Account. Proprietary_ Identification. Identifier
+98,ヘッダ部,UN01012127,BBIE,8,CI_ Creditor_ Financial Account. Type. Code
+99,ヘッダ部,UN01005679,ASBIE,6,CI_ Trade Settlement_ Payment Means. Payee_ Specified. CI_ Creditor_ Financial Institution
+100,ヘッダ部,UN01005402,ABIE,7,CI_ Creditor_ Financial Institution. Details
+101,ヘッダ部,UN01005426,BBIE,8,CI_ Creditor_ Financial Institution. Name. Text
+102,ヘッダ部,UN01005428,ASBIE,8,CI_ Creditor_ Financial Institution. Sub-Division. Branch_ Financial Institution
+103,ヘッダ部,UN01003138,ABIE,9,Branch_ Financial Institution. Details
+104,ヘッダ部,UN01003140,BBIE,10,Branch_ Financial Institution. Name. Text
+105,ヘッダ部,UN01006057,ASBIE,6,CI_ Trade Settlement_ Payment Means. Applicable. Trade Settlement_ Financial Card
+106,ヘッダ部,UN01004493,ABIE,7,Trade Settlement_ Financial Card. Details
+107,ヘッダ部,UN01004495,BBIE,8,Trade Settlement_ Financial Card. Identification. Identifier
+108,ヘッダ部,UN01004496,BBIE,8,Trade Settlement_ Financial Card. Type. Code
+109,ヘッダ部,UN01004497,BBIE,8,Trade Settlement_ Financial Card. Cardholder Name. Text
+110,ヘッダ部,UN01009966,BBIE,8,Trade Settlement_ Financial Card. Issuing Company Name. Text
+111,ヘッダ部,UN01005924,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Applicable. CI_ Trade_ Tax
+112,ヘッダ部,UN01005832,ABIE,5,CI_ Trade_ Tax. Details
+113,ヘッダ部,UN01005833,BBIE,6,CI_ Trade_ Tax. Calculated. Amount
+114,ヘッダ部,UN01005841,BBIE,6,CI_ Trade_ Tax. Category. Code
+115,ヘッダ部,UN01005850,BBIE,6,CI_ Trade_ Tax. Category Name. Text
+116,ヘッダ部,UN01007174,BBIE,6,CI_ Trade_ Tax. Rate_ Applicable. Percent
+117,ヘッダ部,UN01013096,BBIE,6,CI_ Trade_ Tax. Calculation Method. Code
+118,ヘッダ部,UN01014650,BBIE,6,CI_ Trade_ Tax. Local Tax System. Identifier
+119,ヘッダ部,UN01005925,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Billing. CI_ Specified_ Period
+120,ヘッダ部,UN01005608,ABIE,5,CI_ Specified_ Period. Details
+121,ヘッダ部,UN01005612,BBIE,6,CI_ Specified_ Period. Start. Date Time
+122,ヘッダ部,UN01005613,BBIE,6,CI_ Specified_ Period. End. Date Time
+123,ヘッダ部,UN01005929,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Specified. CI_ Trade_ Payment Terms
+124,ヘッダ部,UN01005779,ABIE,5,CI_ Trade_ Payment Terms. Details
+125,ヘッダ部,UN01005783,BBIE,6,CI_ Trade_ Payment Terms. Description. Text
+126,ヘッダ部,UN01005784,BBIE,6,CI_ Trade_ Payment Terms. Due Date. Date Time
+127,ヘッダ部,UN01005930,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Specified. CIIH_ Trade Settlement_ Monetary Summation
+128,ヘッダ部,UN01005941,ABIE,5,CIIH_ Trade Settlement_ Monetary Summation. Details
+129,ヘッダ部,UN01005946,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Tax Total. Amount
+130,ヘッダ部,UN01005948,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Grand Total. Amount
+131,ヘッダ部,UN01005952,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Total Allowance Charge. Amount
+132,ヘッダ部,UN01008445,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Due Payable. Amount
+133,ヘッダ部,UN01008451,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Net_ Line Total. Amount
+134,ヘッダ部,UN01013091,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Including Taxes_ Line Total. Amount
+135,ヘッダ部,UN01005931,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Specified. CI_ Financial_ Adjustment
+136,ヘッダ部,UN01005487,ABIE,5,CI_ Financial_ Adjustment. Details
+137,ヘッダ部,UN01005488,BBIE,6,CI_ Financial_ Adjustment. Reason. Code
+138,ヘッダ部,UN01005489,BBIE,6,CI_ Financial_ Adjustment. Reason. Text
+139,ヘッダ部,UN01005490,BBIE,6,CI_ Financial_ Adjustment. Actual. Amount
+140,ヘッダ部,UN01014649,BBIE,6,CI_ Financial_ Adjustment. Direction. Code
+141,ヘッダ部,UN01014897,ASBIE,6,CI_ Financial_ Adjustment. Related. CI_ Trade_ Tax
+142,ヘッダ部,UN01005832,ABIE,7,CI_ Trade_ Tax. Details
+143,ヘッダ部,UN01005833,BBIE,8,CI_ Trade_ Tax. Calculated. Amount
+144,ヘッダ部,UN01005836,BBIE,8,CI_ Trade_ Tax. Calculated. Rate
+145,ヘッダ部,UN01005839,BBIE,8,CI_ Trade_ Tax. Basis. Amount
+146,ヘッダ部,UN01005841,BBIE,8,CI_ Trade_ Tax. Category. Code
+147,ヘッダ部,UN01005931,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Specified. CI_ Financial_ Adjustment
+148,ヘッダ部,UN01005487,ABIE,5,CI_ Financial_ Adjustment. Details
+149,ヘッダ部,UN01005488,BBIE,6,CI_ Financial_ Adjustment. Reason. Code
+150,ヘッダ部,UN01005489,BBIE,6,CI_ Financial_ Adjustment. Reason. Text
+151,ヘッダ部,UN01005490,BBIE,6,CI_ Financial_ Adjustment. Actual. Amount
+152,ヘッダ部,UN01014649,BBIE,6,CI_ Financial_ Adjustment. Direction. Code
+153,ヘッダ部,UN01015492,ASBIE,4,CIIH_ Supply Chain_ Trade Settlement. Outstanding_ Specified. CIIH_ Trade Settlement_ Monetary Summation
+154,ヘッダ部,UN01005941,ABIE,5,CIIH_ Trade Settlement_ Monetary Summation. Details
+155,ヘッダ部,UN01005948,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Grand Total. Amount
+156,ヘッダ部,UN01005950,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Total Prepaid. Amount
+157,ヘッダ部,UN01008445,BBIE,6,CIIH_ Trade Settlement_ Monetary Summation. Due Payable. Amount
+158,ヘッダ部,UN01005940,ASBIE,2,CIIH_ Supply Chain_ Trade Transaction. Included. CIIL_ Supply Chain_ Trade Line Item
+159,ヘッダ部,UN01005988,ABIE,3,CIIL_ Supply Chain_ Trade Line Item. Details
+160,ヘッダ部,UN01005989,ASBIE,4,CIIL_ Supply Chain_ Trade Line Item. Associated. CIIL_ Document Line_ Document
+161,ヘッダ部,UN01005953,ABIE,5,CIIL_ Document Line_ Document. Details
+162,ヘッダ部,UN01005954,BBIE,6,CIIL_ Document Line_ Document. Line. Identifier
+163,ヘッダ部,UN01014645,BBIE,6,CIIL_ Document Line_ Document. Category. Code
+164,ヘッダ部,UN01005957,ASBIE,6,CIIL_ Document Line_ Document. Included. CI_ Note
+165,ヘッダ部,UN01005557,ABIE,7,CI_ Note. Details
+166,ヘッダ部,UN01005560,BBIE,8,CI_ Note. Content. Text
+167,ヘッダ部,UN01014895,ASBIE,6,CIIL_ Document Line_ Document. Reference. CI_ Referenced_ Document
+168,ヘッダ部,UN01005579,ABIE,7,CI_ Referenced_ Document. Details
+169,ヘッダ部,UN01005580,BBIE,8,CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier
+170,ヘッダ部,UN01005582,BBIE,8,CI_ Referenced_ Document. Issue. Date Time
+171,ヘッダ部,UN01005588,BBIE,8,CI_ Referenced_ Document. Revision_ Identification. Identifier
+172,ヘッダ部,UN01009672,BBIE,8,CI_ Referenced_ Document. Type. Code
+173,ヘッダ部,UN01014899,BBIE,8,CI_ Referenced_ Document. Subtype. Code
+174,ヘッダ部,UN01005992,ASBIE,4,CIIL_ Supply Chain_ Trade Line Item. Specified. CIIL_ Supply Chain_ Trade Settlement
+175,ヘッダ部,UN01005994,ABIE,5,CIIL_ Supply Chain_ Trade Settlement. Details
+176,ヘッダ部,UN01014647,BBIE,6,CIIL_ Supply Chain_ Trade Settlement. Direction. Code
+177,ヘッダ部,UN01005998,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Specified. CI_ Trade_ Allowance Charge
+178,ヘッダ部,UN01005706,ABIE,7,CI_ Trade_ Allowance Charge. Details
+179,ヘッダ部,UN01005707,BBIE,8,CI_ Trade_ Allowance Charge. Charge. Indicator
+180,ヘッダ部,UN01005713,BBIE,8,CI_ Trade_ Allowance Charge. Actual. Amount
+181,ヘッダ部,UN01005714,BBIE,8,CI_ Trade_ Allowance Charge. Reason. Code
+182,ヘッダ部,UN01005715,BBIE,8,CI_ Trade_ Allowance Charge. Reason. Text
+183,ヘッダ部,UN01005716,ASBIE,8,CI_ Trade_ Allowance Charge. Category. CI_ Trade_ Tax
+184,ヘッダ部,UN01005832,ABIE,9,CI_ Trade_ Tax. Details
+185,ヘッダ部,UN01005841,BBIE,10,CI_ Trade_ Tax. Category. Code
+186,ヘッダ部,UN01007174,BBIE,10,CI_ Trade_ Tax. Rate_ Applicable. Percent
+187,ヘッダ部,UN01005998,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Specified. CI_ Trade_ Allowance Charge
+188,ヘッダ部,UN01005706,ABIE,7,CI_ Trade_ Allowance Charge. Details
+189,ヘッダ部,UN01005707,BBIE,8,CI_ Trade_ Allowance Charge. Charge. Indicator
+190,ヘッダ部,UN01005713,BBIE,8,CI_ Trade_ Allowance Charge. Actual. Amount
+191,ヘッダ部,UN01005714,BBIE,8,CI_ Trade_ Allowance Charge. Reason. Code
+192,ヘッダ部,UN01005715,BBIE,8,CI_ Trade_ Allowance Charge. Reason. Text
+193,ヘッダ部,UN01005716,ASBIE,8,CI_ Trade_ Allowance Charge. Category. CI_ Trade_ Tax
+194,ヘッダ部,UN01005832,ABIE,9,CI_ Trade_ Tax. Details
+195,ヘッダ部,UN01005841,BBIE,10,CI_ Trade_ Tax. Category. Code
+196,ヘッダ部,UN01007174,BBIE,10,CI_ Trade_ Tax. Rate_ Applicable. Percent
+197,ヘッダ部,UN01005996,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Applicable. CI_ Trade_ Tax
+198,ヘッダ部,UN01005832,ABIE,7,CI_ Trade_ Tax. Details
+199,ヘッダ部,UN01005833,BBIE,8,CI_ Trade_ Tax. Calculated. Amount
+200,ヘッダ部,UN01005839,BBIE,8,CI_ Trade_ Tax. Basis. Amount
+201,ヘッダ部,UN01005841,BBIE,8,CI_ Trade_ Tax. Category. Code
+202,ヘッダ部,UN01007174,BBIE,8,CI_ Trade_ Tax. Rate_ Applicable. Percent
+203,ヘッダ部,UN01013040,BBIE,8,CI_ Trade_ Tax. Grand Total. Amount
+204,ヘッダ部,UN01013096,BBIE,8,CI_ Trade_ Tax. Calculation Method. Code
+205,ヘッダ部,UN01006002,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Specified. CIIL_ Trade Settlement_ Monetary Summation
+206,ヘッダ部,UN01006006,ABIE,7,CIIL_ Trade Settlement_ Monetary Summation. Details
+207,ヘッダ部,UN01006008,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Charge Total. Amount
+208,ヘッダ部,UN01006009,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Allowance Total. Amount
+209,ヘッダ部,UN01006011,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Tax Total. Amount
+210,ヘッダ部,UN01008456,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Net_ Line Total. Amount
+211,ヘッダ部,UN01008457,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Net Including Taxes_ Line Total. Amount
+212,ヘッダ部,UN01011519,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Grand Total. Amount
+213,ヘッダ部,JPSxxxxxxxx,BBIE,8,CIIL_ Trade Settlement_ Monetary Summation. Tax Free Total. Amount
+214,ヘッダ部,UN01006005,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Additional_ Referenced. CI_ Referenced_ Document
+215,ヘッダ部,UN01005579,ABIE,7,CI_ Referenced_ Document. Details
+216,ヘッダ部,UN01005580,BBIE,8,CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier
+217,ヘッダ部,UN01005581,BBIE,8,CI_ Referenced_ Document. URI_ Identification. Identifier
+218,ヘッダ部,UN01005582,BBIE,8,CI_ Referenced_ Document. Issue. Date Time
+219,ヘッダ部,UN01005588,BBIE,8,CI_ Referenced_ Document. Revision_ Identification. Identifier
+220,ヘッダ部,UN01006415,BBIE,8,CI_ Referenced_ Document. Information. Text
+221,ヘッダ部,UN01009672,BBIE,8,CI_ Referenced_ Document. Type. Code
+222,ヘッダ部,UN01014899,BBIE,8,CI_ Referenced_ Document. Subtype. Code
+223,ヘッダ部,UN01006079,ASBIE,6,CIIL_ Supply Chain_ Trade Settlement. Receivable_ Specified. CI_ Trade_ Accounting Account
+224,ヘッダ部,UN01005680,ABIE,7,CI_ Trade_ Accounting Account. Details
+225,ヘッダ部,UN01005681,BBIE,8,CI_ Trade_ Accounting Account. Identification. Identifier
+226,ヘッダ部,UN01005683,BBIE,8,CI_ Trade_ Accounting Account. Type. Code
+227,ヘッダ部,UN01005685,BBIE,8,CI_ Trade_ Accounting Account. Name. Text
+228,明細部,UN01009669,ASBIE,4,CIIL_ Supply Chain_ Trade Line Item. Subordinate. CIILB_ Subordinate_ Trade Line Item
+229,明細部,UN01009647,ABIE,5,CIILB_ Subordinate_ Trade Line Item. Details
+230,明細部,UN01009648,BBIE,6,CIILB_ Subordinate_ Trade Line Item. Identification. Identifier
+231,明細部,UN01014637,BBIE,6,CIILB_ Subordinate_ Trade Line Item. Category. Code
+232,明細部,UN01015533,ASBIE,6,CIILB_ Subordinate_ Trade Line Item. Included. CI_ Note
+233,明細部,UN01005557,ABIE,7,CI_ Note. Details
+234,明細部,UN01005560,BBIE,8,CI_ Note. Content. Text
+235,明細部,UN01009649,ASBIE,6,CIILB_ Subordinate_ Trade Line Item. Specified. CIILB_ Supply Chain_ Trade Agreement
+236,明細部,UN01009653,ABIE,7,CIILB_ Supply Chain_ Trade Agreement. Details
+237,明細部,UN01009656,ASBIE,8,CIILB_ Supply Chain_ Trade Agreement. Additional_ Referenced. CI_ Referenced_ Document
+238,明細部,UN01005579,ABIE,9,CI_ Referenced_ Document. Details
+239,明細部,UN01005580,BBIE,10,CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier
+240,明細部,UN01005581,BBIE,10,CI_ Referenced_ Document. URI_ Identification. Identifier
+241,明細部,UN01005582,BBIE,10,CI_ Referenced_ Document. Issue. Date Time
+242,明細部,UN01005585,BBIE,10,CI_ Referenced_ Document. Line. Identifier
+243,明細部,UN01005588,BBIE,10,CI_ Referenced_ Document. Revision_ Identification. Identifier
+244,明細部,UN01005589,BBIE,10,CI_ Referenced_ Document. Name. Text
+245,明細部,UN01006415,BBIE,10,CI_ Referenced_ Document. Information. Text
+246,明細部,UN01009672,BBIE,10,CI_ Referenced_ Document. Type. Code
+247,明細部,UN01009672,BBIE,10,CI_ Referenced_ Document. Type. Code
+248,明細部,UN01014899,BBIE,10,CI_ Referenced_ Document. Subtype. Code
+249,明細部,UN01009658,ASBIE,8,CIILB_ Supply Chain_ Trade Agreement. Net Price_ Product. CI_ Trade_ Price
+250,明細部,UN01005790,ABIE,9,CI_ Trade_ Price. Details
+251,明細部,UN01005792,BBIE,10,CI_ Trade_ Price. Charge. Amount
+252,明細部,UN01009650,ASBIE,6,CIILB_ Subordinate_ Trade Line Item. Specified. CIILB_ Supply Chain_ Trade Delivery
+253,明細部,UN01009659,ABIE,7,CIILB_ Supply Chain_ Trade Delivery. Details
+254,明細部,UN01014639,BBIE,8,CIILB_ Supply Chain_ Trade Delivery. Billed. Quantity
+255,明細部,UN01009651,ASBIE,6,CIILB_ Subordinate_ Trade Line Item. Specified. CIILB_ Supply Chain_ Trade Settlement
+256,明細部,UN01009664,ABIE,7,CIILB_ Supply Chain_ Trade Settlement. Details
+257,明細部,UN01014641,BBIE,8,CIILB_ Supply Chain_ Trade Settlement. Direction. Code
+258,明細部,UN01009665,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Applicable. CI_ Trade_ Tax
+259,明細部,UN01005832,ABIE,9,CI_ Trade_ Tax. Details
+260,明細部,UN01005839,BBIE,10,CI_ Trade_ Tax. Basis. Amount
+261,明細部,UN01005841,BBIE,10,CI_ Trade_ Tax. Category. Code
+262,明細部,UN01005850,BBIE,10,CI_ Trade_ Tax. Category Name. Text
+263,明細部,UN01007174,BBIE,10,CI_ Trade_ Tax. Rate_ Applicable. Percent
+264,明細部,UN01013040,BBIE,10,CI_ Trade_ Tax. Grand Total. Amount
+265,明細部,UN01014643,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Specified. CI_ Financial_ Adjustment
+266,明細部,UN01005487,ABIE,9,CI_ Financial_ Adjustment. Details
+267,明細部,UN01005488,BBIE,10,CI_ Financial_ Adjustment. Reason. Code
+268,明細部,UN01005489,BBIE,10,CI_ Financial_ Adjustment. Reason. Text
+269,明細部,UN01005490,BBIE,10,CI_ Financial_ Adjustment. Actual. Amount
+270,明細部,UN01014897,ASBIE,10,CI_ Financial_ Adjustment. Related. CI_ Trade_ Tax
+271,明細部,UN01005832,ABIE,11,CI_ Trade_ Tax. Details
+272,明細部,UN01005836,BBIE,12,CI_ Trade_ Tax. Calculated. Rate
+273,明細部,UN01005841,BBIE,12,CI_ Trade_ Tax. Category. Code
+274,明細部,UN01014643,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Specified. CI_ Financial_ Adjustment
+275,明細部,UN01005487,ABIE,9,CI_ Financial_ Adjustment. Details
+276,明細部,UN01005488,BBIE,10,CI_ Financial_ Adjustment. Reason. Code
+277,明細部,UN01005489,BBIE,10,CI_ Financial_ Adjustment. Reason. Text
+278,明細部,UN01005490,BBIE,10,CI_ Financial_ Adjustment. Actual. Amount
+279,明細部,UN01014897,ASBIE,10,CI_ Financial_ Adjustment. Related. CI_ Trade_ Tax
+280,明細部,UN01005832,ABIE,11,CI_ Trade_ Tax. Details
+281,明細部,UN01005834,BBIE,12,CI_ Trade_ Tax. Type. Code
+282,明細部,UN01005836,BBIE,12,CI_ Trade_ Tax. Calculated. Rate
+283,明細部,UN01014643,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Specified. CI_ Financial_ Adjustment
+284,明細部,UN01005487,ABIE,9,CI_ Financial_ Adjustment. Details
+285,明細部,UN01005488,BBIE,10,CI_ Financial_ Adjustment. Reason. Code
+286,明細部,UN01005489,BBIE,10,CI_ Financial_ Adjustment. Reason. Text
+287,明細部,UN01005490,BBIE,10,CI_ Financial_ Adjustment. Actual. Amount
+288,明細部,UN01014644,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Specified. CI_ Trade_ Allowance Charge
+289,明細部,UN01005706,ABIE,9,CI_ Trade_ Allowance Charge. Details
+290,明細部,UN01005707,BBIE,10,CI_ Trade_ Allowance Charge. Charge. Indicator
+291,明細部,UN01005713,BBIE,10,CI_ Trade_ Allowance Charge. Actual. Amount
+292,明細部,UN01005714,BBIE,10,CI_ Trade_ Allowance Charge. Reason. Code
+293,明細部,UN01005715,BBIE,10,CI_ Trade_ Allowance Charge. Reason. Text
+294,明細部,UN01005716,ASBIE,10,CI_ Trade_ Allowance Charge. Category. CI_ Trade_ Tax
+295,明細部,UN01005832,ABIE,11,CI_ Trade_ Tax. Details
+296,明細部,UN01005841,BBIE,12,CI_ Trade_ Tax. Category. Code
+297,明細部,UN01007174,BBIE,12,CI_ Trade_ Tax. Rate_ Applicable. Percent
+298,明細部,UN01014644,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Specified. CI_ Trade_ Allowance Charge
+299,明細部,UN01005706,ABIE,9,CI_ Trade_ Allowance Charge. Details
+300,明細部,UN01005707,BBIE,10,CI_ Trade_ Allowance Charge. Charge. Indicator
+301,明細部,UN01005713,BBIE,10,CI_ Trade_ Allowance Charge. Actual. Amount
+302,明細部,UN01005714,BBIE,10,CI_ Trade_ Allowance Charge. Reason. Code
+303,明細部,UN01005715,BBIE,10,CI_ Trade_ Allowance Charge. Reason. Text
+304,明細部,UN01005716,ASBIE,10,CI_ Trade_ Allowance Charge. Category. CI_ Trade_ Tax
+305,明細部,UN01005832,ABIE,11,CI_ Trade_ Tax. Details
+306,明細部,UN01005841,BBIE,12,CI_ Trade_ Tax. Category. Code
+307,明細部,UN01007174,BBIE,12,CI_ Trade_ Tax. Rate_ Applicable. Percent
+308,明細部,UN01014894,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Billing. CI_ Specified_ Period
+309,明細部,UN01005608,ABIE,9,CI_ Specified_ Period. Details
+310,明細部,UN01005612,BBIE,10,CI_ Specified_ Period. Start. Date Time
+311,明細部,UN01005613,BBIE,10,CI_ Specified_ Period. End. Date Time
+312,明細部,JPSxxxxxxxx,ASBIE,8,CIILB_ Supply Chain_ Trade Settlement. Receivable_ Specified. CI_ Trade_ Accounting Account
+313,ヘッダ部,UN01005680,ABIE,9,CI_ Trade_ Accounting Account. Details
+314,明細部,UN01005681,BBIE,10,CI_ Trade_ Accounting Account. Identification. Identifier
+315,明細部,UN01005683,BBIE,10,CI_ Trade_ Accounting Account. Type. Code
+316,明細部,UN01005685,BBIE,10,CI_ Trade_ Accounting Account. Name. Text
+317,明細部,UN01010016,ASBIE,6,CIILB_ Subordinate_ Trade Line Item. Applicable. CI_ Trade_ Product
+318,明細部,UN01005809,ABIE,7,CI_ Trade_ Product. Details
+319,明細部,UN01005810,BBIE,8,CI_ Trade_ Product. Identification. Identifier
+320,明細部,UN01005815,BBIE,8,CI_ Trade_ Product. Name. Text
+321,明細部,UN01005817,BBIE,8,CI_ Trade_ Product. Description. Text
+322,,,END,,
+,,,,,
+【凡例】,,,,,
+"中小企業共通EDI
+マッピング",,◎,適格請求書に記載が必要な「法的必須」情報項目,,
+,,（◎）,同じクラス内のいずれかの情報項目の記載が「法的必須」,,
+,,○,中小企業共通EDI対応業務アプリの「共通必須」情報情報項目,,
+,,（○）,同じクラス内のいずれかの情報項目の記載が「必須」,,
+,,●,「選択必須」情報項目。この情報項目を利用する場合は「必須」。利用しない場合はデフォルトで運用と見做す,,
+,,△,ユーザー非公開。共通EDIプロバイダがデータセット,,
+,,＊,すべての業種に共通して利用する「共通任意」情報項目,,
+,,◇,「中小業界必須」情報項目,,
+,,＋,「中小業界任意」情報項目,,
+,,□,税込会計対応のために追加した情報項目,,
+,,■,源泉所得税のために追加した情報項目,,
+,,▼,修正適格請求書等（修正差額調整）のために追加した情報項目,,
+,,▶,違算（請求と入金の不突合）のために追加した情報項目,,
+,,▽,取引と会計のデータ連携のために追加した情報項目,,
+,,※,税理士が会計システムへ取引データ入力時に利用する情報項目,,
+,,（※）,将来取引データプラットフォームの確定時に利用する情報項目,,
+,,,利用しない情報項目,,
+"JP-PINT_v1.0
+マッピング
+（参考）",,☆,JP-PINT対応業務アプリの「必須」実装情報項目,,
+,,★,JP-PINT対応業務アプリの「任意」実装情報項目。（★）は同じクラス内のいずれかの情報項目を利用する,,
+,,空欄,JP-PINTには該当する情報項目はない,,
+,,,共通EDIプロバイダはBIE表記載の全情報項目の共通EDIプロバイダ間交換が必須,,
+,,,,,
+【凡例２】,,,,,
+,,制定/改定欄の黄色セル：標準ver.4.3で新設、又は改定された情報項目。v4.3と記載。,,,

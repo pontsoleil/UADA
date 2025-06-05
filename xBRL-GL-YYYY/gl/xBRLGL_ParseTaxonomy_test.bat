@@ -1,0 +1,11 @@
+.\xBRLGL_ParseTaxonomy.bat case-c
+.\xBRLGL_ParseTaxonomy.bat case-c-b
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u-e
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u-e-t
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u-e-t-s
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u-t
+.\xBRLGL_ParseTaxonomy.bat case-c-b-m-u-t-s
+.\xBRLGL_ParseTaxonomy.bat case-c-b-t
+.\xBRLGL_ParseTaxonomy.bat case-c-t

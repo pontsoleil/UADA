@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) 2022 XBRL Japan  inc. -->
+<schema 
+	targetNamespace="http://www.iso.org/iso21926" 
+	elementFormDefault="qualified" 
+	attributeFormDefault="unqualified" 
+	xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:cor="http://www.iso.org/iso21926" 
+	xmlns:xlink="http://www.w3.org/1999/xlink" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:xl="http://www.xbrl.org/2003/XLink" 
+	xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+	xmlns:link="http://www.xbrl.org/2003/linkbase" 
+	xmlns:nonnum="http://www.xbrl.org/dtr/type/non-numeric" 
+	xmlns:num="http://www.xbrl.org/dtr/type/numeric" 
+	xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
+	xmlns:label="http://xbrl.org/2008/label" 
+	xmlns:reference="http://xbrl.org/2008/reference">
+	<import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+	<import namespace="http://www.xbrl.org/dtr/type/numeric" schemaLocation="http://www.xbrl.org/dtr/type/numeric-2009-12-16.xsd"/>
+	<import namespace="http://www.xbrl.org/dtr/type/non-numeric" schemaLocation="http://www.xbrl.org/dtr/type/nonNumeric-2009-12-16.xsd"/>
+	<import namespace="http://xbrl.org/2008/label" schemaLocation="http://www.xbrl.org/2008/generic-label.xsd"/>
+	<import namespace="http://xbrl.org/2008/reference" schemaLocation="http://www.xbrl.org/2008/generic-reference.xsd"/> 
+	<annotation>
+		<appinfo>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-lbl-ja.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-lbl-en.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-pre.xml"/>
+			<link:linkbaseRef xlink:type="simple" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="core-def.xml"/>
+			<!-- 
+				role type
+			-->
+			<link:roleType id="iso21926-role" roleURI="http://www.iso.org/iso21926/role">
+				<link:definition>link iso21926</link:definition>
+				<link:usedOn>link:definitionLink</link:usedOn>
+				<link:usedOn>link:presentationLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sMECoreSelfInvoice" roleURI="http://www.iso.org/iso21926/role/link_sMECoreSelfInvoice">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_context" roleURI="http://www.iso.org/iso21926/role/link_context">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_businessProcessParameter" roleURI="http://www.iso.org/iso21926/role/link_businessProcessParameter">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_businessProcessParameterVersion" roleURI="http://www.iso.org/iso21926/role/link_businessProcessParameterVersion">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_scenarioParameter" roleURI="http://www.iso.org/iso21926/role/link_scenarioParameter">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_scenarioParameterVersion" roleURI="http://www.iso.org/iso21926/role/link_scenarioParameterVersion">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_applicationParameter" roleURI="http://www.iso.org/iso21926/role/link_applicationParameter">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_applicationParameterVersion" roleURI="http://www.iso.org/iso21926/role/link_applicationParameterVersion">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_subsetParameter" roleURI="http://www.iso.org/iso21926/role/link_subsetParameter">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_subsetParameterVersion" roleURI="http://www.iso.org/iso21926/role/link_subsetParameterVersion">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_document" roleURI="http://www.iso.org/iso21926/role/link_document">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_note" roleURI="http://www.iso.org/iso21926/role/link_note">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_referenceDocument" roleURI="http://www.iso.org/iso21926/role/link_referenceDocument">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_supplyChainTradeTransaction" roleURI="http://www.iso.org/iso21926/role/link_supplyChainTradeTransaction">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_supplyChainTradeAgreement" roleURI="http://www.iso.org/iso21926/role/link_supplyChainTradeAgreement">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sellerTradeParty" roleURI="http://www.iso.org/iso21926/role/link_sellerTradeParty">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sellerContact" roleURI="http://www.iso.org/iso21926/role/link_sellerContact">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sellerTelephoneUniversalCommunication" roleURI="http://www.iso.org/iso21926/role/link_sellerTelephoneUniversalCommunication">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sellerFaxUniversalCommunication" roleURI="http://www.iso.org/iso21926/role/link_sellerFaxUniversalCommunication">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_sellerPostalAddress" roleURI="http://www.iso.org/iso21926/role/link_sellerPostalAddress">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_buyer" roleURI="http://www.iso.org/iso21926/role/link_buyer">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_buyerContact" roleURI="http://www.iso.org/iso21926/role/link_buyerContact">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_buyerTelephoneUniversalCommunication" roleURI="http://www.iso.org/iso21926/role/link_buyerTelephoneUniversalCommunication">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_buyerFaxUniversalCommunication" roleURI="http://www.iso.org/iso21926/role/link_buyerFaxUniversalCommunication">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_buyerPostalAddress" roleURI="http://www.iso.org/iso21926/role/link_buyerPostalAddress">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_procuringProject" roleURI="http://www.iso.org/iso21926/role/link_procuringProject">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradeSettlement" roleURI="http://www.iso.org/iso21926/role/link_tradeSettlement">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_paymentMeans" roleURI="http://www.iso.org/iso21926/role/link_paymentMeans">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_payeePartyCreditorFinancialAccount" roleURI="http://www.iso.org/iso21926/role/link_payeePartyCreditorFinancialAccount">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_payeeCreditorFinancialInstitution" roleURI="http://www.iso.org/iso21926/role/link_payeeCreditorFinancialInstitution">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_subDivisionBranchFinancialInstitution" roleURI="http://www.iso.org/iso21926/role/link_subDivisionBranchFinancialInstitution">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradeSettlementFinancialCard" roleURI="http://www.iso.org/iso21926/role/link_tradeSettlementFinancialCard">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradeTax" roleURI="http://www.iso.org/iso21926/role/link_tradeTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentPeriod" roleURI="http://www.iso.org/iso21926/role/link_documentPeriod">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradePaymentTerms" roleURI="http://www.iso.org/iso21926/role/link_tradePaymentTerms">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradeSettlementMonetarySummation" roleURI="http://www.iso.org/iso21926/role/link_tradeSettlementMonetarySummation">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_financialAdjustment" roleURI="http://www.iso.org/iso21926/role/link_financialAdjustment">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_financialAdjustmentTax" roleURI="http://www.iso.org/iso21926/role/link_financialAdjustmentTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_outstandingMonetarySummation" roleURI="http://www.iso.org/iso21926/role/link_outstandingMonetarySummation">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_tradeLineItem" roleURI="http://www.iso.org/iso21926/role/link_tradeLineItem">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentLineDocument" roleURI="http://www.iso.org/iso21926/role/link_documentLineDocument">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentNote" roleURI="http://www.iso.org/iso21926/role/link_documentNote">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentReferenceDocument" roleURI="http://www.iso.org/iso21926/role/link_documentReferenceDocument">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentTradeSettlement" roleURI="http://www.iso.org/iso21926/role/link_documentTradeSettlement">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentAllowanceCharge" roleURI="http://www.iso.org/iso21926/role/link_documentAllowanceCharge">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentAllowanceChargeTax" roleURI="http://www.iso.org/iso21926/role/link_documentAllowanceChargeTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentTax" roleURI="http://www.iso.org/iso21926/role/link_documentTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentMonetarySummation" roleURI="http://www.iso.org/iso21926/role/link_documentMonetarySummation">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_referencedDocument" roleURI="http://www.iso.org/iso21926/role/link_referencedDocument">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_referencedDocumentAccountingAccount" roleURI="http://www.iso.org/iso21926/role/link_referencedDocumentAccountingAccount">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineItem" roleURI="http://www.iso.org/iso21926/role/link_lineItem">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineNote" roleURI="http://www.iso.org/iso21926/role/link_lineNote">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineSupplyChainTradeAgreement" roleURI="http://www.iso.org/iso21926/role/link_lineSupplyChainTradeAgreement">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_additionalLineDocument" roleURI="http://www.iso.org/iso21926/role/link_additionalLineDocument">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineProductPrice" roleURI="http://www.iso.org/iso21926/role/link_lineProductPrice">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineSupplyChainDelivery" roleURI="http://www.iso.org/iso21926/role/link_lineSupplyChainDelivery">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineSupplyChainSettlement" roleURI="http://www.iso.org/iso21926/role/link_lineSupplyChainSettlement">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineTax" roleURI="http://www.iso.org/iso21926/role/link_lineTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineFinancialAdjustment" roleURI="http://www.iso.org/iso21926/role/link_lineFinancialAdjustment">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineFinancialAdsjustmentTax" roleURI="http://www.iso.org/iso21926/role/link_lineFinancialAdsjustmentTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineAllowanceCharge" roleURI="http://www.iso.org/iso21926/role/link_lineAllowanceCharge">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineAllowanceChargeTax" roleURI="http://www.iso.org/iso21926/role/link_lineAllowanceChargeTax">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_billingPeriod" roleURI="http://www.iso.org/iso21926/role/link_billingPeriod">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_documentAccountingAccount" roleURI="http://www.iso.org/iso21926/role/link_documentAccountingAccount">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<link:roleType id="link_lineProduct" roleURI="http://www.iso.org/iso21926/role/link_lineProduct">
+				<link:usedOn>link:definitionLink</link:usedOn>
+			</link:roleType>
+			<!--
+				description: roleType arcroleType
+			-->
+			<link:roleType id="description" roleURI="http://www.iso.org/iso21926/role/description">
+				<link:definition>description</link:definition>
+				<link:usedOn>link:label</link:usedOn>
+			</link:roleType>
+			<link:arcroleType id="concept-description" cyclesAllowed="undirected" arcroleURI="http://www.iso.org/iso21926/arcrole/concept-description">
+				<link:definition>concept to description</link:definition>
+				<link:usedOn>link:labelArc</link:usedOn>
+			</link:arcroleType >
+		</appinfo>
+	</annotation>
+	<!-- typed dimension referenced element -->
+	<element name="_v" id="_v">
+		<simpleType>
+			<restriction base="string"/>
+		</simpleType>
+	</element>
+	<!-- Hypercube -->
+	<element name="h_sMECoreSelfInvoice" id="h_sMECoreSelfInvoice" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_context" id="h_context" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_businessProcessParameter" id="h_businessProcessParameter" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_businessProcessParameterVersion" id="h_businessProcessParameterVersion" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_scenarioParameter" id="h_scenarioParameter" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_scenarioParameterVersion" id="h_scenarioParameterVersion" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_applicationParameter" id="h_applicationParameter" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_applicationParameterVersion" id="h_applicationParameterVersion" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_subsetParameter" id="h_subsetParameter" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_subsetParameterVersion" id="h_subsetParameterVersion" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_document" id="h_document" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_note" id="h_note" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_referenceDocument" id="h_referenceDocument" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_supplyChainTradeTransaction" id="h_supplyChainTradeTransaction" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_supplyChainTradeAgreement" id="h_supplyChainTradeAgreement" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_sellerTradeParty" id="h_sellerTradeParty" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_sellerContact" id="h_sellerContact" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_sellerTelephoneUniversalCommunication" id="h_sellerTelephoneUniversalCommunication" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_sellerFaxUniversalCommunication" id="h_sellerFaxUniversalCommunication" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_sellerPostalAddress" id="h_sellerPostalAddress" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_buyer" id="h_buyer" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_buyerContact" id="h_buyerContact" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_buyerTelephoneUniversalCommunication" id="h_buyerTelephoneUniversalCommunication" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_buyerFaxUniversalCommunication" id="h_buyerFaxUniversalCommunication" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_buyerPostalAddress" id="h_buyerPostalAddress" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_procuringProject" id="h_procuringProject" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradeSettlement" id="h_tradeSettlement" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_paymentMeans" id="h_paymentMeans" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_payeePartyCreditorFinancialAccount" id="h_payeePartyCreditorFinancialAccount" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_payeeCreditorFinancialInstitution" id="h_payeeCreditorFinancialInstitution" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_subDivisionBranchFinancialInstitution" id="h_subDivisionBranchFinancialInstitution" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradeSettlementFinancialCard" id="h_tradeSettlementFinancialCard" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradeTax" id="h_tradeTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentPeriod" id="h_documentPeriod" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradePaymentTerms" id="h_tradePaymentTerms" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradeSettlementMonetarySummation" id="h_tradeSettlementMonetarySummation" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_financialAdjustment" id="h_financialAdjustment" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_financialAdjustmentTax" id="h_financialAdjustmentTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_outstandingMonetarySummation" id="h_outstandingMonetarySummation" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_tradeLineItem" id="h_tradeLineItem" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentLineDocument" id="h_documentLineDocument" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentNote" id="h_documentNote" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentReferenceDocument" id="h_documentReferenceDocument" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentTradeSettlement" id="h_documentTradeSettlement" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentAllowanceCharge" id="h_documentAllowanceCharge" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentAllowanceChargeTax" id="h_documentAllowanceChargeTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentTax" id="h_documentTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentMonetarySummation" id="h_documentMonetarySummation" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_referencedDocument" id="h_referencedDocument" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_referencedDocumentAccountingAccount" id="h_referencedDocumentAccountingAccount" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineItem" id="h_lineItem" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineNote" id="h_lineNote" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineSupplyChainTradeAgreement" id="h_lineSupplyChainTradeAgreement" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_additionalLineDocument" id="h_additionalLineDocument" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineProductPrice" id="h_lineProductPrice" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineSupplyChainDelivery" id="h_lineSupplyChainDelivery" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineSupplyChainSettlement" id="h_lineSupplyChainSettlement" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineTax" id="h_lineTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineFinancialAdjustment" id="h_lineFinancialAdjustment" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineFinancialAdsjustmentTax" id="h_lineFinancialAdsjustmentTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineAllowanceCharge" id="h_lineAllowanceCharge" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineAllowanceChargeTax" id="h_lineAllowanceChargeTax" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_billingPeriod" id="h_billingPeriod" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_documentAccountingAccount" id="h_documentAccountingAccount" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<element name="h_lineProduct" id="h_lineProduct" substitutionGroup="xbrldt:hypercubeItem" type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+	<!-- Dimension -->
+	<element name="d_sMECoreSelfInvoice" id="d_sMECoreSelfInvoice" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_context" id="d_context" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_businessProcessParameter" id="d_businessProcessParameter" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_businessProcessParameterVersion" id="d_businessProcessParameterVersion" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_scenarioParameter" id="d_scenarioParameter" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_scenarioParameterVersion" id="d_scenarioParameterVersion" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_applicationParameter" id="d_applicationParameter" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_applicationParameterVersion" id="d_applicationParameterVersion" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_subsetParameter" id="d_subsetParameter" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_subsetParameterVersion" id="d_subsetParameterVersion" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_document" id="d_document" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_note" id="d_note" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_referenceDocument" id="d_referenceDocument" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_supplyChainTradeTransaction" id="d_supplyChainTradeTransaction" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_supplyChainTradeAgreement" id="d_supplyChainTradeAgreement" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_sellerTradeParty" id="d_sellerTradeParty" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_sellerContact" id="d_sellerContact" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_sellerTelephoneUniversalCommunication" id="d_sellerTelephoneUniversalCommunication" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_sellerFaxUniversalCommunication" id="d_sellerFaxUniversalCommunication" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_sellerPostalAddress" id="d_sellerPostalAddress" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_buyer" id="d_buyer" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_buyerContact" id="d_buyerContact" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_buyerTelephoneUniversalCommunication" id="d_buyerTelephoneUniversalCommunication" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_buyerFaxUniversalCommunication" id="d_buyerFaxUniversalCommunication" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_buyerPostalAddress" id="d_buyerPostalAddress" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_procuringProject" id="d_procuringProject" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradeSettlement" id="d_tradeSettlement" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_paymentMeans" id="d_paymentMeans" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_payeePartyCreditorFinancialAccount" id="d_payeePartyCreditorFinancialAccount" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_payeeCreditorFinancialInstitution" id="d_payeeCreditorFinancialInstitution" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_subDivisionBranchFinancialInstitution" id="d_subDivisionBranchFinancialInstitution" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradeSettlementFinancialCard" id="d_tradeSettlementFinancialCard" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradeTax" id="d_tradeTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentPeriod" id="d_documentPeriod" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradePaymentTerms" id="d_tradePaymentTerms" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradeSettlementMonetarySummation" id="d_tradeSettlementMonetarySummation" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_financialAdjustment" id="d_financialAdjustment" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_financialAdjustmentTax" id="d_financialAdjustmentTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_outstandingMonetarySummation" id="d_outstandingMonetarySummation" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_tradeLineItem" id="d_tradeLineItem" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentLineDocument" id="d_documentLineDocument" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentNote" id="d_documentNote" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentReferenceDocument" id="d_documentReferenceDocument" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentTradeSettlement" id="d_documentTradeSettlement" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentAllowanceCharge" id="d_documentAllowanceCharge" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentAllowanceChargeTax" id="d_documentAllowanceChargeTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentTax" id="d_documentTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentMonetarySummation" id="d_documentMonetarySummation" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_referencedDocument" id="d_referencedDocument" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_referencedDocumentAccountingAccount" id="d_referencedDocumentAccountingAccount" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineItem" id="d_lineItem" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineNote" id="d_lineNote" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineSupplyChainTradeAgreement" id="d_lineSupplyChainTradeAgreement" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_additionalLineDocument" id="d_additionalLineDocument" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineProductPrice" id="d_lineProductPrice" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineSupplyChainDelivery" id="d_lineSupplyChainDelivery" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineSupplyChainSettlement" id="d_lineSupplyChainSettlement" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineTax" id="d_lineTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineFinancialAdjustment" id="d_lineFinancialAdjustment" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineFinancialAdsjustmentTax" id="d_lineFinancialAdsjustmentTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineAllowanceCharge" id="d_lineAllowanceCharge" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineAllowanceChargeTax" id="d_lineAllowanceChargeTax" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_billingPeriod" id="d_billingPeriod" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_documentAccountingAccount" id="d_documentAccountingAccount" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<element name="d_lineProduct" id="d_lineProduct" substitutionGroup="xbrldt:dimensionItem" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant" xbrldt:typedDomainRef="#_v"/>
+	<!-- item type -->
+	<complexType name="stringItemType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="amountType">
+		<simpleContent>
+			<restriction base="xbrli:monetaryItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="codeType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="datetimeType">
+		<simpleContent>
+			<restriction base="xbrli:dateTimeItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="identifierType">
+		<simpleContent>
+			<restriction base="xbrli:tokenItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="indicatorType">
+		<simpleContent>
+			<restriction base="xbrli:booleanItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="percentType">
+		<simpleContent>
+			<restriction base="xbrli:pureItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="quantityType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="rateType">
+		<simpleContent>
+			<restriction base="xbrli:decimalItemType"/>
+		</simpleContent>
+	</complexType>
+	<complexType name="textType">
+		<simpleContent>
+			<restriction base="xbrli:stringItemType"/>
+		</simpleContent>
+	</complexType>
+	<!-- element -->
+	<element name="sMECoreSelfInvoice" id="sMECoreSelfInvoice" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="context" id="context" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="specifiedTransaction" id="specifiedTransaction" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="processingTransaction" id="processingTransaction" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameter" id="businessProcessParameter" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameterID" id="businessProcessParameterID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameterValueText" id="businessProcessParameterValueText" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameterVersion" id="businessProcessParameterVersion" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameterVersion.ID" id="businessProcessParameterVersion.ID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="businessProcessParameterVersionIssueDateTime" id="businessProcessParameterVersionIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameter" id="scenarioParameter" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameterID" id="scenarioParameterID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameterValueText" id="scenarioParameterValueText" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameterVersion" id="scenarioParameterVersion" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameterVersion.ID" id="scenarioParameterVersion.ID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="scenarioParameterVersionIssueDateTime" id="scenarioParameterVersionIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameter" id="applicationParameter" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameterID" id="applicationParameterID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameterValueText" id="applicationParameterValueText" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameterVersion" id="applicationParameterVersion" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameterVersion.ID" id="applicationParameterVersion.ID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="applicationParameterVersionIssueDateTime" id="applicationParameterVersionIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameter" id="subsetParameter" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameterID" id="subsetParameterID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameterValueText" id="subsetParameterValueText" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameterVersion" id="subsetParameterVersion" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameterVersion.ID" id="subsetParameterVersion.ID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subsetParameterVersionIssueDateTime" id="subsetParameterVersionIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="document" id="document" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentID" id="documentID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentName" id="documentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTypeCode" id="documentTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentIssueDateTime" id="documentIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentPurposeCode" id="documentPurposeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentPreviousRevisionID" id="documentPreviousRevisionID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentSubtypeCode" id="documentSubtypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="note" id="note" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="noteContent" id="noteContent" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocument" id="referenceDocument" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentIssuerAssignedID" id="referenceDocumentIssuerAssignedID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentURIID" id="referenceDocumentURIID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentIssueDateTime" id="referenceDocumentIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentTypeCode" id="referenceDocumentTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentSubtypeCode" id="referenceDocumentSubtypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentRevisionID" id="referenceDocumentRevisionID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentInformation" id="referenceDocumentInformation" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referenceDocumentName" id="referenceDocumentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="supplyChainTradeTransaction" id="supplyChainTradeTransaction" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="supplyChainTradeAgreement" id="supplyChainTradeAgreement" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTradeParty" id="sellerTradeParty" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTradePartyID" id="sellerTradePartyID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTradePartyName" id="sellerTradePartyName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTradePartyRegisteredID" id="sellerTradePartyRegisteredID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerContact" id="sellerContact" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerContactPersonName" id="sellerContactPersonName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerContactDepartmentName" id="sellerContactDepartmentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTelephoneUniversalCommunication" id="sellerTelephoneUniversalCommunication" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerTelephoneNumber" id="sellerTelephoneNumber" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerFaxUniversalCommunication" id="sellerFaxUniversalCommunication" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerFaxNumber" id="sellerFaxNumber" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerPostalAddress" id="sellerPostalAddress" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerPostalPostcodeCode" id="sellerPostalPostcodeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="sellerPostalAddressLineOne" id="sellerPostalAddressLineOne" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyer" id="buyer" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerID" id="buyerID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerName" id="buyerName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerRegisteredID" id="buyerRegisteredID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerContact" id="buyerContact" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerContactPersonName" id="buyerContactPersonName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerContactDepartmentName" id="buyerContactDepartmentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerTelephoneUniversalCommunication" id="buyerTelephoneUniversalCommunication" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerTelephoneNumber" id="buyerTelephoneNumber" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerFaxUniversalCommunication" id="buyerFaxUniversalCommunication" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerFaxNumber" id="buyerFaxNumber" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerPostalAddress" id="buyerPostalAddress" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerPostalPostcodeCode" id="buyerPostalPostcodeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="buyerPostalAddressLineOne" id="buyerPostalAddressLineOne" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="procuringProject" id="procuringProject" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="procuringProjectID" id="procuringProjectID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="procuringProjectName" id="procuringProjectName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlement" id="tradeSettlement" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="paymentMeans" id="paymentMeans" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementPaymentMeansTypeCode" id="tradeSettlementPaymentMeansTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeePartyCreditorFinancialAccount" id="payeePartyCreditorFinancialAccount" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeePartyCreditorFinancialAccountAccountName" id="payeePartyCreditorFinancialAccountAccountName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeePartyCreditorFinancialAccountProprietaryID" id="payeePartyCreditorFinancialAccountProprietaryID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeePartyCreditorFinancialAccountTypeCode" id="payeePartyCreditorFinancialAccountTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeeCreditorFinancialInstitution" id="payeeCreditorFinancialInstitution" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="payeeCreditorFinancialInstitutionName" id="payeeCreditorFinancialInstitutionName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subDivisionBranchFinancialInstitution" id="subDivisionBranchFinancialInstitution" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="subDivisionBranchFinancialInstitutionName" id="subDivisionBranchFinancialInstitutionName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementFinancialCard" id="tradeSettlementFinancialCard" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementFinancialCardID" id="tradeSettlementFinancialCardID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementFinancialCardTypeCode" id="tradeSettlementFinancialCardTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementFinancialCardCardholderName" id="tradeSettlementFinancialCardCardholderName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementFinancialCardIssuingCompanyName" id="tradeSettlementFinancialCardIssuingCompanyName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTax" id="tradeTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxCalculatedAmount" id="tradeTaxCalculatedAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxCategoryCode" id="tradeTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxCategoryName" id="tradeTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxRatePercent" id="tradeTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxCalculationMethodCode" id="tradeTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxLocalTaxSystemID" id="tradeTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxCalculatedRate" id="tradeTaxCalculatedRate" type="cor:rateType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxBasisAmount" id="tradeTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxGrandTotalAmount" id="tradeTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeTaxTypeCode" id="tradeTaxTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentPeriod" id="documentPeriod" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentPeriodStartDateTime" id="documentPeriodStartDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentPeriodEndDateTime" id="documentPeriodEndDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradePaymentTerms" id="tradePaymentTerms" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradePaymentTermsDescription" id="tradePaymentTermsDescription" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradePaymentTermsDueDateDateTime" id="tradePaymentTermsDueDateDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummation" id="tradeSettlementMonetarySummation" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationTaxTotalAmount" id="tradeSettlementMonetarySummationTaxTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationGrandTotalAmount" id="tradeSettlementMonetarySummationGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationTotalAllowanceChargeAmount" id="tradeSettlementMonetarySummationTotalAllowanceChargeAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationDuePayableAmount" id="tradeSettlementMonetarySummationDuePayableAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationNetLineTotalAmount" id="tradeSettlementMonetarySummationNetLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationIncludingTaxesLineTotalAmount" id="tradeSettlementMonetarySummationIncludingTaxesLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeSettlementMonetarySummationTotalPrepaidAmount" id="tradeSettlementMonetarySummationTotalPrepaidAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustment" id="financialAdjustment" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentReasonCode" id="financialAdjustmentReasonCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentReason" id="financialAdjustmentReason" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentActualAmount" id="financialAdjustmentActualAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentDirectionCode" id="financialAdjustmentDirectionCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTax" id="financialAdjustmentTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxCalculatedAmount" id="financialAdjustmentTaxCalculatedAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxCategoryCode" id="financialAdjustmentTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxCategoryName" id="financialAdjustmentTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxRatePercent" id="financialAdjustmentTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxCalculationMethodCode" id="financialAdjustmentTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxLocalTaxSystemID" id="financialAdjustmentTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxCalculatedRate" id="financialAdjustmentTaxCalculatedRate" type="cor:rateType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxBasisAmount" id="financialAdjustmentTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxGrandTotalAmount" id="financialAdjustmentTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="financialAdjustmentTaxTypeCode" id="financialAdjustmentTaxTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummation" id="outstandingMonetarySummation" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationTaxTotalAmount" id="outstandingMonetarySummationTaxTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationGrandTotalAmount" id="outstandingMonetarySummationGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationTotalAllowanceChargeAmount" id="outstandingMonetarySummationTotalAllowanceChargeAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationDuePayableAmount" id="outstandingMonetarySummationDuePayableAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationNetLineTotalAmount" id="outstandingMonetarySummationNetLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationIncludingTaxesLineTotalAmount" id="outstandingMonetarySummationIncludingTaxesLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="outstandingMonetarySummationTotalPrepaidAmount" id="outstandingMonetarySummationTotalPrepaidAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="tradeLineItem" id="tradeLineItem" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentLineDocument" id="documentLineDocument" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="associatedCIILDocumentLineDocumentLineID" id="associatedCIILDocumentLineDocumentLineID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="associatedCIILDocumentLineDocumentCategoryCode" id="associatedCIILDocumentLineDocumentCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentNote" id="documentNote" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentNoteContent" id="documentNoteContent" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocument" id="documentReferenceDocument" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentIssuerAssignedID" id="documentReferenceDocumentIssuerAssignedID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentURIID" id="documentReferenceDocumentURIID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentIssueDateTime" id="documentReferenceDocumentIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentTypeCode" id="documentReferenceDocumentTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentSubtypeCode" id="documentReferenceDocumentSubtypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentRevisionID" id="documentReferenceDocumentRevisionID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentInformation" id="documentReferenceDocumentInformation" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentReferenceDocumentName" id="documentReferenceDocumentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTradeSettlement" id="documentTradeSettlement" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="cIILSupplyChainTradeSettlementDirectionCode" id="cIILSupplyChainTradeSettlementDirectionCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceCharge" id="documentAllowanceCharge" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeAllowanceChargeIndicator" id="documentAllowanceChargeAllowanceChargeIndicator" type="cor:indicatorType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeActualAmount" id="documentAllowanceChargeActualAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeReasonCode" id="documentAllowanceChargeReasonCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeReason" id="documentAllowanceChargeReason" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTax" id="documentAllowanceChargeTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxCalculatedAmount" id="documentAllowanceChargeTaxCalculatedAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxCategoryCode" id="documentAllowanceChargeTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxCategoryName" id="documentAllowanceChargeTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxRatePercent" id="documentAllowanceChargeTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxCalculationMethodCode" id="documentAllowanceChargeTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxLocalAllowanceChargeTaxSystemID" id="documentAllowanceChargeTaxLocalAllowanceChargeTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxCalculatedRate" id="documentAllowanceChargeTaxCalculatedRate" type="cor:rateType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxBasisAmount" id="documentAllowanceChargeTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxGrandTotalAmount" id="documentAllowanceChargeTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceChargeTaxTypeCode" id="documentAllowanceChargeTaxTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTax" id="documentTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxCalculatedAmount" id="documentTaxCalculatedAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxCategoryCode" id="documentTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxCategoryName" id="documentTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxRatePercent" id="documentTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxCalculationMethodCode" id="documentTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxLocalTaxSystemID" id="documentTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxCalculatedRate" id="documentTaxCalculatedRate" type="cor:rateType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxBasisAmount" id="documentTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxGrandTotalAmount" id="documentTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxTypeCode" id="documentTaxTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentMonetarySummation" id="documentMonetarySummation" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentChargeTotalAmount" id="documentChargeTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAllowanceTotalAmount" id="documentAllowanceTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxTotalAmount" id="documentTaxTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentNetLineTotalAmount" id="documentNetLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentNetIncludingTaxesLineTotalAmount" id="documentNetIncludingTaxesLineTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentGrandTotalAmount" id="documentGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentTaxFreeTotalAmount" id="documentTaxFreeTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocument" id="referencedDocument" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentIssuerAssignedID" id="referencedDocumentIssuerAssignedID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentURIID" id="referencedDocumentURIID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentIssueDateTime" id="referencedDocumentIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentTypeCode" id="referencedDocumentTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentSubtypeCode" id="referencedDocumentSubtypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentRevisionID" id="referencedDocumentRevisionID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentInformation" id="referencedDocumentInformation" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentName" id="referencedDocumentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentAccountingAccount" id="referencedDocumentAccountingAccount" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentAccountingAccountID" id="referencedDocumentAccountingAccountID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentAccountingAccountTypeCode" id="referencedDocumentAccountingAccountTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="referencedDocumentAccountingAccountName" id="referencedDocumentAccountingAccountName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineItem" id="lineItem" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineItemID" id="lineItemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineItemCategoryCode" id="lineItemCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineNote" id="lineNote" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineNoteContent" id="lineNoteContent" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineSupplyChainTradeAgreement" id="lineSupplyChainTradeAgreement" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocument" id="additionalLineDocument" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentIssuerAssignedID" id="additionalLineDocumentIssuerAssignedID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentLineID" id="additionalLineDocumentLineID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentURIID" id="additionalLineDocumentURIID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentIssueDateTime" id="additionalLineDocumentIssueDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentTypeCode" id="additionalLineDocumentTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentSubtypeCode" id="additionalLineDocumentSubtypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentRevisionID" id="additionalLineDocumentRevisionID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentInformation" id="additionalLineDocumentInformation" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="additionalLineDocumentName" id="additionalLineDocumentName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProductPrice" id="lineProductPrice" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProductPriceChargeAmount" id="lineProductPriceChargeAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineSupplyChainDelivery" id="lineSupplyChainDelivery" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineSupplyChainDeliveryBilledQuantity" id="lineSupplyChainDeliveryBilledQuantity" type="cor:quantityType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineSupplyChainSettlement" id="lineSupplyChainSettlement" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineSupplyChainSettlementDirectionCode" id="lineSupplyChainSettlementDirectionCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTax" id="lineTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxCategoryCode" id="lineTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxCategoryName" id="lineTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxRatePercent" id="lineTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxCalculationMethodCode" id="lineTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxLocalTaxSystemID" id="lineTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxBasisAmount" id="lineTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineTaxGrandTotalAmount" id="lineTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdjustment" id="lineFinancialAdjustment" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdjustmentReasonCode" id="lineFinancialAdjustmentReasonCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdjustmentReason" id="lineFinancialAdjustmentReason" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdjustmentActualAmount" id="lineFinancialAdjustmentActualAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdjustmentDirectionCode" id="lineFinancialAdjustmentDirectionCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTax" id="lineFinancialAdsjustmentTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxCategoryCode" id="lineFinancialAdsjustmentTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxCategoryName" id="lineFinancialAdsjustmentTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxRatePercent" id="lineFinancialAdsjustmentTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxCalculationMethodCode" id="lineFinancialAdsjustmentTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxLocalTaxSystemID" id="lineFinancialAdsjustmentTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxBasisAmount" id="lineFinancialAdsjustmentTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineFinancialAdsjustmentTaxGrandTotalAmount" id="lineFinancialAdsjustmentTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceCharge" id="lineAllowanceCharge" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeAllowanceChargeIndicator" id="lineAllowanceChargeAllowanceChargeIndicator" type="cor:indicatorType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeActualAmount" id="lineAllowanceChargeActualAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeReasonCode" id="lineAllowanceChargeReasonCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeReason" id="lineAllowanceChargeReason" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTax" id="lineAllowanceChargeTax" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxCategoryCode" id="lineAllowanceChargeTaxCategoryCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxCategoryName" id="lineAllowanceChargeTaxCategoryName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxRatePercent" id="lineAllowanceChargeTaxRatePercent" type="cor:percentType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxCalculationMethodCode" id="lineAllowanceChargeTaxCalculationMethodCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxLocalTaxSystemID" id="lineAllowanceChargeTaxLocalTaxSystemID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxBasisAmount" id="lineAllowanceChargeTaxBasisAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineAllowanceChargeTaxGrandTotalAmount" id="lineAllowanceChargeTaxGrandTotalAmount" type="cor:amountType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="billingPeriod" id="billingPeriod" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="billingPeriodStartDateTime" id="billingPeriodStartDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="billingPeriodEndDateTime" id="billingPeriodEndDateTime" type="cor:datetimeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAccountingAccount" id="documentAccountingAccount" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAccountingAccountID" id="documentAccountingAccountID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAccountingAccountTypeCode" id="documentAccountingAccountTypeCode" type="cor:codeType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="documentAccountingAccountName" id="documentAccountingAccountName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProduct" id="lineProduct" abstract="true" type="xbrli:stringItemType" nillable="true" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProductID" id="lineProductID" type="cor:identifierType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProductName" id="lineProductName" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+	<element name="lineProductDescription" id="lineProductDescription" type="cor:textType" nillable="false" substitutionGroup="xbrli:item" xbrli:periodType="instant"/>
+</schema>

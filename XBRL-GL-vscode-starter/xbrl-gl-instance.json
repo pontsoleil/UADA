@@ -1,0 +1,10 @@
+{
+    "$schema": "./xbrl-gl-core-schema.json",
+    "accountingEntries": [
+        {"entryHeader":{
+            "id": "Book1",
+            "date": "2025-06-02",
+             "entryDetail": []
+        }
+    ]
+}

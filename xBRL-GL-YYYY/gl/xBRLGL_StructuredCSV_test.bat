@@ -1,0 +1,11 @@
+.\xBRLGL_StructuredCSV.bat 1-GL-Generic-simple-context
+.\xBRLGL_StructuredCSV.bat 2-GL-Generic-tuple
+.\xBRLGL_StructuredCSV.bat 3-GL-Generic-tuple-Dimension
+.\xBRLGL_StructuredCSV.bat BP_FixedAssetList
+.\xBRLGL_StructuredCSV.bat BP_TrialBalance
+.\xBRLGL_StructuredCSV.bat Customer_Invoices
+.\xBRLGL_StructuredCSV.bat Employee_Timesheets
+.\xBRLGL_StructuredCSV.bat Job-budget-v-actual
+.\xBRLGL_StructuredCSV.bat JournalEntry_Annotated_Book-Tax
+.\xBRLGL_StructuredCSV.bat Vendor_Invoices_Normalized
+.\xBRLGL_StructuredCSV.bat Vendor_Invoices

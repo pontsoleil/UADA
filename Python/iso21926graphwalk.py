@@ -213,7 +213,7 @@ def set_path(data, aggregates):
     else:
         aggregates[level - 1] = {'id':id_, 'multiplicity': multiplicity}
 
-    for i in range(level, 11 - level):
+    for i in range(level, 11):
         aggregates[i] = None
 
     path = ''

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # coding: utf-8
 """
-XBRLGL_TaxonomyGenerator.py
+xBRLGL_TaxonomyGenerator.py
 
 This script generate XBRL GL Taxonomy.
 
@@ -9,7 +9,7 @@ designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Creation Date: 2025-04-03
-Last Modified: 2025-04-16
+Last Modified: 2025-05-01
 
 MIT License
 
@@ -40,6 +40,23 @@ import csv
 import json
 import re
 
+TRACE = False
+DEBUG = False
+
+def debug_print(message):
+    if DEBUG:
+        print(f"[DEBUG] {message}")
+
+def trace_print(message):
+    if TRACE:
+        print(f"[TRACE] {message}")
+
+def file_path(pathname):
+    _pathname = pathname.replace("/", os.sep)
+    if os.sep == _pathname[0]:
+        return _pathname
+    dir = os.path.dirname(__file__)
+    return os.path.join(dir, _pathname)
 
 class xBRLGL_TaxonomyGenerator:
     def __init__(
@@ -50,11 +67,16 @@ class xBRLGL_TaxonomyGenerator:
             lang,
             currency,
             namespace,
-            encoding,
-            trace,
-            debug
+            encoding
         ):
-        self.encoding = encoding
+
+        self.root = root.strip() if root else None
+        self.lang = lang.strip() if lang else "ja"
+        self.currency = currency.strip().upper() if currency else "JPY"
+        self.namespace = namespace.strip() if namespace else 'http://www.xbrl.org/xbrl-gl"'
+        self.version = self.namespace[-10:]
+        self.encoding = encoding.strip() if encoding else "utf-8-sig"
+
         self.records = []
         self.presentation_dict = {}
         self.dimension_dict = {}
@@ -65,13 +87,8 @@ class xBRLGL_TaxonomyGenerator:
         self.locs_defined = None
         self.arcs_defined = None
 
-        self.TRACE = trace
-        self.DEBUG = debug
-
-        self.encoding = encoding.strip() if encoding else "utf-8-sig"
-
         if in_file:
-            self.core_file = self.file_path(in_file.strip())
+            self.core_file = file_path(in_file.strip())
         else:
             print(f"Input ADC definition CSV file {self.core_file} is missing.")
             sys.exit()
@@ -81,39 +98,15 @@ class xBRLGL_TaxonomyGenerator:
 
         if not base_dir:
             base_dir = ""
-        self.base_dir = self.file_path(base_dir.strip())
+        self.base_dir = file_path(base_dir.strip())
         if not os.path.isdir(self.base_dir):
             os.makedirs(self.base_dir, exist_ok=True)
-            self.trace_print(f"Created output base directory: {self.base_dir}")
+            trace_print(f"Created output base directory: {self.base_dir}")
+
         self.xbrl_base = self.base_dir.strip(os.sep)
         if not os.path.isdir(self.xbrl_base):
             os.makedirs(self.xbrl_base, exist_ok=True)
-            self.trace_print(f"Created output base directory: {self.xbrl_base}")
-
-        self.root = root.lstrip() if root else None
-
-        self.lang = lang.lstrip() if lang else "ja"
-
-        self.currency = currency.lstrip() if currency else "JPY"
-
-        self.namespace = namespace.lstrip() if namespace else 'http://www.xbrl.org/xbrl-gl"'
-
-        encoding = encoding.lstrip() if encoding else "utf-8-sig"
-
-    def debug_print(self, text):
-        if self.DEBUG:
-            print(text)
-
-    def trace_print(self, text):
-        if self.TRACE:
-            print(text)
-
-    def file_path(self, pathname):
-        _pathname = pathname.replace("/", os.sep)
-        if os.sep == _pathname[0]:
-            return _pathname
-        dir = os.path.dirname(__file__)
-        return os.path.join(dir, _pathname)
+            trace_print(f"Created output base directory: {self.xbrl_base}")
 
     # lower camel case concatenate
     def LC3(self, term):
@@ -195,6 +188,8 @@ class xBRLGL_TaxonomyGenerator:
             if not _child_element_id:
                 continue
             child = self.getRecord(_child_element_id, abbreviation_path)
+            if not child:
+                continue
             child_element_id = child['element_id']
             if not child_element_id:
                 continue
@@ -205,7 +200,7 @@ class xBRLGL_TaxonomyGenerator:
                 target_name = child_element_id[1+child_element_id.index('-'):]
                 target_id = f"p_{target_name}"
                 target_link = f"link_{target_name}"
-                self.debug_print(
+                debug_print(
                     f'domain-member: {primary_id} to {target_id} {child["name"]} order={self.count} in {target_link} targetRole="http://www.xbrl.org/xbrl-gl/role/{target_link}'
                 )
                 self.lines.append(f"    <!-- {primary_id} to targetRole {target_link} -->\n")
@@ -214,7 +209,7 @@ class xBRLGL_TaxonomyGenerator:
                 if not target_id in self.locs_defined[primary_id]:
                     self.locs_defined[primary_id].add(target_id)
                     self.lines.append(
-                        f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-2025-12-01.xsd#{target_id}" xlink:label="{target_id}" xlink:title="{target_id} {child_name}"/>\n'
+                        f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-{self.version}.xsd#{target_id}" xlink:label="{target_id}" xlink:title="{target_id} {child_name}"/>\n'
                     )
                 self.count += 1
                 arc_id = f"{primary_id} TO {target_link}"
@@ -226,7 +221,7 @@ class xBRLGL_TaxonomyGenerator:
                         f'    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xbrldt:targetRole="http://www.xbrl.org/xbrl-gl/role/{target_link}" xlink:from="{primary_id}" xlink:to="{target_id}" xlink:title="domain-member: {primary_id} to {target_id} in {target_link}" order="{self.count}"/>\n'
                     )
             else:
-                self.debug_print(f'domain-member: {primary_id} to {child_element_id} {child["name"]} order={self.count}')
+                debug_print(f'domain-member: {primary_id} to {child_element_id} {child["name"]} order={self.count}')
                 if primary_id not in self.locs_defined:
                     self.locs_defined[primary_id] = set()
                 if not child_element_id in self.locs_defined[primary_id]:
@@ -257,7 +252,7 @@ class xBRLGL_TaxonomyGenerator:
                 dimension_id = f"d_{schema_id[3:]}"
                 dimension_id_list.append(dimension_id)
         else:
-            paths = path.strip("/").split("/") #[1:]
+            paths = path.strip("/").split("/")[1:]
             for id in paths:
                 schema_id = self.getElementID(id)
                 dimension_id = f"d_{schema_id[3:]}"
@@ -272,23 +267,23 @@ class xBRLGL_TaxonomyGenerator:
             f'  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/xbrl-gl/role/{link_id}">\n',
             # all (has-hypercube)
             f"    <!-- {primary_id} all (has-hypercube) {hypercube_id} {link_id} -->\n",
-            f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-2025-12-01.xsd#{primary_id}" xlink:label="{primary_id}" xlink:title="{primary_id}"/>\n',
-            f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-2025-12-01.xsd#{hypercube_id}" xlink:label="{hypercube_id}" xlink:title="{hypercube_id}"/>\n',
+            f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-{self.version}.xsd#{primary_id}" xlink:label="{primary_id}" xlink:title="{primary_id}"/>\n',
+            f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-{self.version}.xsd#{hypercube_id}" xlink:label="{hypercube_id}" xlink:title="{hypercube_id}"/>\n',
             f'    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="{primary_id}" xlink:to="{hypercube_id}" xlink:title="all (has-hypercube): {primary_id} to {hypercube_id}" order="1" xbrldt:closed="true" xbrldt:contextElement="segment"/>\n',
         ]
-        self.debug_print(f"all(has-hypercube) {primary_id} to {hypercube_id} ")
+        debug_print(f"all(has-hypercube) {primary_id} to {hypercube_id} ")
         # hypercube-dimension
         self.lines.append("    <!-- hypercube-dimension -->\n")
         self.count = 0
         for dimension_id in dimension_id_list:
             self.lines.append(
-                f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-2025-12-01.xsd#{dimension_id}" xlink:label="{dimension_id}" xlink:title="{dimension_id}"/>\n'
+                f'    <link:loc xlink:type="locator" xlink:href="gl-plt-oim-{self.version}.xsd#{dimension_id}" xlink:label="{dimension_id}" xlink:title="{dimension_id}"/>\n'
             )
             self.count += 1
             self.lines.append(
                 f'    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="{hypercube_id}" xlink:to="{dimension_id}" xlink:title="hypercube-dimension: {hypercube_id} to {dimension_id}" order="{self.count}"/>\n'
             )
-            self.debug_print(f"hypercube-dimension {hypercube_id} to {dimension_id} ")
+            debug_print(f"hypercube-dimension {hypercube_id} to {dimension_id} ")
         # domain-member
         self.lines.append("    <!-- domain-member -->\n")
         element_id = root['element_id']
@@ -304,7 +299,7 @@ class xBRLGL_TaxonomyGenerator:
         record = self.getRecord(_element_id)
         element_id = record["element_id"]
         module = element_id[3:element_id.index("_")]
-        taxonomy_schema = f"../{module}/gl-{module}-2025-12-01.xsd"
+        taxonomy_schema = f"../{module}/gl-{module}-{self.version}.xsd"
         link_id = f"link_{element_id[3:]}"
         href = f"{taxonomy_schema}/{link_id}"
         return taxonomy_schema, link_id, href
@@ -323,16 +318,18 @@ class xBRLGL_TaxonomyGenerator:
             self.lines.append(f"    <!-- {name} -->\n")
             if _module==module:
                 self.lines.append(
-                    f'    <loc xlink:type="locator" xlink:href="gl-{module}-2025-12-01.xsd#{element_id}" xlink:label="{element_id}" xlink:title="loc: {element_id}"/>\n'
+                    f'    <loc xlink:type="locator" xlink:href="gl-{module}-{self.version}.xsd#{element_id}" xlink:label="{element_id}" xlink:title="loc: {element_id}"/>\n'
                 )
             else:
                 self.lines.append(
-                    f'    <loc xlink:type="locator" xlink:href="../{module}/gl-{module}-2025-12-01.xsd#{element_id}" xlink:label="{element_id}" xlink:title="loc: {element_id}"/>\n'
+                    f'    <loc xlink:type="locator" xlink:href="../{module}/gl-{module}-{self.version}.xsd#{element_id}" xlink:label="{element_id}" xlink:title="loc: {element_id}"/>\n'
                 )
         for child_element_id in children:
             if not child_element_id:
                 continue
             child = next((x for x in self.records if child_element_id == x["element_id"]), None)
+            if not child:
+                continue
             child_module = child_element_id[3:child_element_id.index("_")]
             child_name = child["name"]
             order += 10
@@ -341,12 +338,12 @@ class xBRLGL_TaxonomyGenerator:
                 self.arcs_defined[arc_id] = f"presentation: {element_id} to {child_element_id}"
                 if _module==child_module:
                     self.lines += [
-                        f'    <loc xlink:type="locator" xlink:href="gl-{child_module}-2025-12-01.xsd#{child_element_id}" xlink:label="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id} {child_name}"/>\n',
+                        f'    <loc xlink:type="locator" xlink:href="gl-{child_module}-{self.version}.xsd#{child_element_id}" xlink:label="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id} {child_name}"/>\n',
                         f'    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="{element_id}" xlink:to="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id}" use="optional" order="{order}"/>\n',
                     ]
                 else:
                     self.lines += [
-                        f'    <loc xlink:type="locator" xlink:href="../{child_module}/gl-{child_module}-2025-12-01.xsd#{child_element_id}" xlink:label="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id} {child_name}"/>\n',
+                        f'    <loc xlink:type="locator" xlink:href="../{child_module}/gl-{child_module}-{self.version}.xsd#{child_element_id}" xlink:label="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id} {child_name}"/>\n',
                         f'    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="{element_id}" xlink:to="{child_element_id}" xlink:title="presentation: {element_id} to {child_element_id}" use="optional" order="{order}"/>\n',
                     ]
             if child_element_id in self.presentation_dict:
@@ -380,21 +377,17 @@ class xBRLGL_TaxonomyGenerator:
             "name",
             "datatype",
             "multiplicity",
-            "domainName",
+            "baseDatatype",
             "definition",
             "module",
-            "table",
             "classTerm",
-            "id",
-            "path",
             "semPath",
             "abbrevPath",
             "labelLocal",
             "definitionLocal",
             "element",
-            "xpath",
+            "xpath"
         ]
-
         with open(self.core_file, encoding=self.encoding, newline="") as f:
             reader = csv.reader(f)
             next(reader)
@@ -427,6 +420,7 @@ class xBRLGL_TaxonomyGenerator:
                 multiplicity = record["multiplicity"]
                 name = record["name"]
                 datatype = record["datatype"]
+                base_datatype = record["baseDatatype"]
                 element = record["element"]
                 element_id = element.replace(":", "_")
                 xpath = record["xpath"]
@@ -441,6 +435,7 @@ class xBRLGL_TaxonomyGenerator:
                     "identifier": identifier,
                     "name": name,
                     "datatype": datatype,
+                    "base_datatype": base_datatype,
                     "element": element,
                     "element_id": element_id,
                     "objectClass": objectClass,
@@ -555,8 +550,9 @@ class xBRLGL_TaxonomyGenerator:
                     "definition": parent_record["definition"],
                     "label_local": parent_record["labelLocal"],
                     "definition_local": parent_record["definitionLocal"],
-                    "multiplicity": "",
-                    "datatype": "",
+                    "multiplicity": parent_record["multiplicity"],
+                    "datatype": parent_record["datatype"],
+                    "base_datatype": parent_record["base_datatype"],
                     "children": children,
                 }
                 element_dict[parent_module].append(element_data)
@@ -574,6 +570,7 @@ class xBRLGL_TaxonomyGenerator:
                     element_dict[module] = []
                 multiplicity = record["multiplicity"]
                 datatype = record["datatype"]
+                base_datatype = record["base_datatype"]
                 name = record["name"]
                 definition = record["definition"]
                 label_local = record["labelLocal"]
@@ -589,6 +586,7 @@ class xBRLGL_TaxonomyGenerator:
                         "definition_local": definition_local,
                         "multiplicity": multiplicity,
                         "datatype": datatype,
+                        "base_datatype": base_datatype,
                         "children": _children,
                     }
                     if element_data not in element_dict[module]:
@@ -603,15 +601,17 @@ class xBRLGL_TaxonomyGenerator:
                         "definition_local": definition_local,
                         "multiplicity": multiplicity,
                         "datatype": datatype,
+                        "base_datatype": base_datatype,
                     }
                     if element_data not in element_dict[module]:
                         element_dict[module].append(element_data)
 
         for module, data in element_dict.items():
             modules = set()
+            # modules.add("gen")
             for record in data:
-                datatype = record["element"]
-                _module = datatype[3:datatype.index(":")]
+                element = record["element"]
+                _module = element[3:element.index(":")]
                 modules.add(_module)
 
             """
@@ -620,16 +620,17 @@ class xBRLGL_TaxonomyGenerator:
             html = [
                 '<?xml version="1.0" encoding="UTF-8"?>\n',
                 "<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->\n",
-                f'<schema targetNamespace="http://www.xbrl.org/int/gl/{module}/2025-12-01" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
+                f'<schema targetNamespace="http://www.xbrl.org/int/gl/{module}/{self.version}" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
                 '  xmlns="http://www.w3.org/2001/XMLSchema"\n',
                 '  xmlns:link="http://www.xbrl.org/2003/linkbase"\n'
                 '  xmlns:xlink="http://www.w3.org/1999/xlink"\n',
                 '  xmlns:xbrli="http://www.xbrl.org/2003/instance"\n',
                 '  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"\n',
+                f'  xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/{self.version}"\n'
             ]
             for _module in modules:
                 html.append(
-                    f'  xmlns:gl-{_module}="http://www.xbrl.org/int/gl/{_module}/2025-12-01"\n'
+                    f'  xmlns:gl-{_module}="http://www.xbrl.org/int/gl/{_module}/{self.version}"\n'
                 )
             html.append(
                 ">\n"
@@ -639,18 +640,19 @@ class xBRLGL_TaxonomyGenerator:
                 '  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>\n',
                 '  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>\n',
                 '  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>\n',
+                f'  <import namespace="http://www.xbrl.org/int/gl/gen/{self.version}" schemaLocation="../gen/gl-gen-{self.version}.xsd"/>\n'
             ]
 
             for _module in modules:
                 if _module != module:
                     html.append(
-                        f'  <import namespace="http://www.xbrl.org/int/gl/{_module}/2025-12-01" schemaLocation="../gen/gl-gen-2025-12-01.xsd"/>\n'
+                        f'  <import namespace="http://www.xbrl.org/int/gl/{_module}/{self.version}" schemaLocation="../{_module}/gl-{_module}-{self.version}.xsd"/>\n'
                     )
 
             html += [
                 "  <annotation>\n",
                 "    <appinfo>\n",
-                f'      <link:linkbaseRef xlink:type="simple" xlink:href="gl-{_module}-2025-12-01-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
+                f'      <link:linkbaseRef xlink:type="simple" xlink:href="gl-{_module}-{self.version}-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
             ]
 
             html += [
@@ -658,47 +660,40 @@ class xBRLGL_TaxonomyGenerator:
                 "  </annotation>\n"
             ]
 
-            html.append("  <!-- item element -->\n")
+            html.append("  <!-- item/tuple element -->\n")
             for line in data:
                 element = line["element"]
                 name = element[1 + element.index(":"):]
                 element_id = element.replace(":", "_")
                 multiplicity = line["multiplicity"]
                 datatype = line["datatype"]
+                base_datatype = line["base_datatype"]
                 if element in elementsDefined:
                     continue
                 elementsDefined.add(element)
-                if datatype:
+                if base_datatype:
                     html.append(
                         f'  <element name="{name}" id="{element_id}" type="{datatype}" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
                     )
-                    # html+= [
-                    #     f' \n<complexType name="{name}ItemType">\n',
-                    #     f'    <simpleContent>\n',
-                    #     f'      <restriction base="{datatype}"/>\n',
-                    #     f'    </simpleContent>\n',
-                    #     f'  </complexType>\n',
-                    #     f'  <element name="{name}" id="{element_id}" type="{name}ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>\n'
-                    # ]
                 else:
                     html.append(
-                        f'  <element name="{name}" id="{element_id}" type="{element}ComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>\n'
+                        f'  <element name="{name}" id="{element_id}" type="{datatype}" substitutionGroup="xbrli:tuple" nillable="false"/>\n'
                     )
             html.append("</schema>")
 
             """
             Write module taxonomy schema file
             """
-            xsd_file = self.file_path(
-                f"{xbrl_base}/{module}/gl-{module}-2025-12-01.xsd"
+            xsd_file = file_path(
+                f"{xbrl_base}/{module}/gl-{module}-{self.version}.xsd"
             )
             directory = os.path.dirname(xsd_file)
             if not os.path.isdir(directory):
                 os.makedirs(directory, exist_ok=True)
-                self.trace_print(f"Created moduke taxonomy schema directory: {directory}")            
+                trace_print(f"Created moduke taxonomy schema directory: {directory}")            
             with open(xsd_file, "w", encoding=self.encoding, newline="") as f:
                 f.writelines(html)
-            self.trace_print(f"-- {xsd_file}")
+            trace_print(f"-- {xsd_file}")
 
         """
         Module content schema file
@@ -719,7 +714,7 @@ class xBRLGL_TaxonomyGenerator:
             html = [
                 '<?xml version="1.0" encoding="UTF-8"?>\n',
                 "<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->\n",
-                f'<schema targetNamespace="http://www.xbrl.org/int/gl/{module}/2025-12-01" elementFormDefault="qualified" attributeFormDefault="unqualified"\n',
+                f'<schema targetNamespace="http://www.xbrl.org/int/gl/{module}/{self.version}" elementFormDefault="qualified" attributeFormDefault="unqualified"\n',
                 '  xmlns="http://www.w3.org/2001/XMLSchema"\n',
                 '  xmlns:xlink="http://www.w3.org/1999/xlink"\n',
                 '  xmlns:xbrli="http://www.xbrl.org/2003/instance"\n',
@@ -728,10 +723,10 @@ class xBRLGL_TaxonomyGenerator:
             for _module in modules:
                 if _module != module:
                     html.append(
-                        f'  xmlns:gl-{_module}="http://www.xbrl.org/int/gl/{_module}/2025-12-01"\n'
+                        f'  xmlns:gl-{_module}="http://www.xbrl.org/int/gl/{_module}/{self.version}"\n'
                     )
             html.append(
-                f'  xmlns:gl-{module}="http://www.xbrl.org/int/gl/{module}/2025-12-01">\n'
+                f'  xmlns:gl-{module}="http://www.xbrl.org/int/gl/{module}/{self.version}">\n'
             )
             html.append(
                 '  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>\n'
@@ -739,209 +734,138 @@ class xBRLGL_TaxonomyGenerator:
             for _module in modules:
                 if _module != module:
                     html.append(
-                        f'  <import namespace="http://www.xbrl.org/int/gl/{_module}/2025-12-01" schemaLocation="gl-{_module}-content-2025-12-01.xsd"/>\n'
+                        f'  <import namespace="http://www.xbrl.org/int/gl/{_module}/{self.version}" schemaLocation="gl-{_module}-content-{self.version}.xsd"/>\n'
                     )
             html.append(
-                f'  <include schemaLocation="../{module}/gl-{module}-2025-12-01.xsd"/>\n'
+                f'  <include schemaLocation="../{module}/gl-{module}-{self.version}.xsd"/>\n'
             )
+
+            html.append("  <!-- item data type -->\n")
+            datatype_defined = set()
+            for record in data:
+                element = record["element"]
+                if not record["base_datatype"]:
+                    continue
+                datatype = record['datatype']
+                m = datatype[:datatype.index(":")][3:]
+                if m != module:
+                    continue
+                _datatype = datatype[1+datatype.index(":"):]
+                if _datatype in datatype_defined:
+                    continue
+                datatype_defined.add(_datatype)
+                base_datatype = record['base_datatype']
+                element_name = element[1 + element.index(":"):]
+                module = element[3:element.index(":")]
+                html += [
+                    f'  <complexType name="{_datatype}">\n',
+                    '    <simpleContent>\n',
+                    f'      <restriction base="{base_datatype}">\n',
+                    '      </restriction>\n',
+                    '    </simpleContent>\n',
+                    '  </complexType>\n'
+                ]
+
             html.append("  <!-- tuple data type -->\n")
             for record in data:
                 element = record["element"]
-                if record["datatype"]:
+                if record["base_datatype"]:
                     continue
+                datatype = record['datatype']
+                m = datatype[:datatype.index(":")][3:]
+                if m != module:
+                    continue
+                _datatype = datatype[1+datatype.index(":"):]
+                if _datatype in datatype_defined:
+                    continue
+                datatype_defined.add(_datatype)
+                base_datatype = record['base_datatype']
                 element_name = element[1 + element.index(":"):]
                 module = element[3:element.index(":")]
                 if "children" in record:
                     children = record["children"]
-                    if 'choice' in record['name'].lower():
-                        html += [
-                            f'  <complexType name="{element_name}ComplexType">\n',
-                            "    <choice>\n",
-                        ]
-                        sequence = []
-                        for child_element_id in children:
-                            child_name = child_element_id[1 + child_element_id.index("_"):]
-                            child_module = child_element_id[3:child_element_id.index("_")]
-                            child_record = next(
-                                (x for x in self.records if child_element_id == x["element_id"]), None
-                            )
-                            if not child_record:
-                                continue
-                            _name = child_record['name']
-                            if 'sequence' in _name:
-                                sequence.append(child_record)
-                                continue
-                            child_multiplicity = child_record["multiplicity"]
-                            min_occurs = child_multiplicity[0]
-                            max_occurs = child_multiplicity[-1]
-                            if "*" == max_occurs:
-                                max_occurs = "unbounded"
-                            if '1'==min_occurs:
-                                if '1'==max_occurs:
-                                    html.append(f'      <element ref="gl-{child_module}:{child_name}"/>\n')
-                                else:
-                                    html.append(f'      <element ref="gl-{child_module}:{child_name}" maxOccurs="{max_occurs}"/>\n')
+                    html += [
+                        f'  <complexType name="{_datatype}">\n',
+                        "    <complexContent>\n",
+                        '      <restriction base="anyType">\n',
+                        "        <sequence>\n",
+                    ]
+                    for child_element_id in children:
+                        if not child_element_id:
+                            continue
+                        child_name = child_element_id[1 + child_element_id.index("_"):]
+                        child_module = child_element_id[3:child_element_id.index("_")]
+                        child_record = next(
+                            (x for x in self.records if child_element_id == x["element_id"]), None
+                        )
+                        if not child_record:
+                            continue
+                        _name = child_record['name']
+                        child_multiplicity = child_record["multiplicity"]
+                        min_occurs = child_multiplicity[0]
+                        max_occurs = child_multiplicity[-1]
+                        if "*" == max_occurs:
+                            max_occurs = "unbounded"
+                        if '1'==min_occurs:
+                            if '1'==max_occurs:
+                                html.append(f'          <element ref="gl-{child_module}:{child_name}"/>\n')
                             else:
-                                if '1'==max_occurs:
-                                    html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}"/>\n')
-                                else:
-                                    html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
-                        if len(sequence) > 0:
-                            html.append(f'      <sequence>\n')
-                            for _record in sequence:
-                                _multiplicity = _record["multiplicity"]
-                                min_occurs = _multiplicity[0]
-                                max_occurs = _multiplicity[-1]
-                                _name = _record['xpath'].split('/')[-1]
-                                if "*" == max_occurs:
-                                    max_occurs = "unbounded"
-                                if '1'==min_occurs:
-                                    if '1'==max_occurs:
-                                        html.append(f'        <element ref="{_name}"/>\n')
-                                    else:
-                                        html.append(f'        <element ref="{_name}" maxOccurs="{max_occurs}"/>\n')
-                                else:
-                                    if '1'==max_occurs:
-                                        html.append(f'        <element ref="{_name}" minOccurs="{min_occurs}"/>\n')
-                                    else:
-                                        html.append(f'        <element ref="{_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
-                            html.append(f'      </sequence>\n')
-                        html += [
-                            "    </choice>\n",
-                            '    <attribute name="id" type="ID"/>\n',
-                            f'  </complexType>\n',
-                        ]                        
-                    else:
-                        html += [
-                            f'  <group name="{element_name}Group">\n',
-                            "    <sequence>\n"
-                        ]
-                        choice = []
-                        for child_element_id in children:
-                            if not child_element_id:
-                                continue
-                            child_name = child_element_id[1 + child_element_id.index("_"):]
-                            child_module = child_element_id[3:child_element_id.index("_")]
-                            child_record = next(
-                                (x for x in self.records if child_element_id == x["element_id"]), None
-                            )
-                            _name = child_record['name']
-                            if 'choice' in _name and 'choice' not in child_record['objectClass']:
-                                choice.append(child_record)
-                                continue
-                            child_multiplicity = child_record["multiplicity"]
-                            min_occurs = child_multiplicity[0]
-                            max_occurs = child_multiplicity[-1]
-                            if "*" == max_occurs:
-                                max_occurs = "unbounded"
-                            child_datatype = child_record["datatype"]
-                            if child_datatype:
-                                if '1'==min_occurs:
-                                    if '1'==max_occurs:
-                                        html.append(f'      <element ref="gl-{child_module}:{child_name}"/>\n')
-                                    else:
-                                        html.append(f'      <element ref="gl-{child_module}:{child_name}" maxOccurs="{max_occurs}"/>\n')
-                                else:
-                                    if '1'==max_occurs:
-                                        html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}"/>\n')
-                                    else:
-                                        html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
-                            else: # null datatype is a tuple
-                                if "(choice)" in child_record['name']: # choice
-                                    if '1'==min_occurs:
-                                        if '1'==max_occurs:
-                                            html.append(f'      <element ref="gl-{child_module}:{child_name}"/>\n')
-                                        else:
-                                            html.append(f'      <element ref="gl-{child_module}:{child_name}" maxOccurs="{max_occurs}"/>\n')
-                                    else:
-                                        if '1'==max_occurs:
-                                            html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}"/>\n')
-                                        else:
-                                            html.append(f'      <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
-                                else:
-                                    html += [
-                                        "      <choice>\n",
-                                        f'        <group ref="gl-{child_module}:{child_name}Group" minOccurs="0"/>\n',
-                                        f'        <element ref="gl-{child_module}:{child_name}" maxOccurs="unbounded"/>\n',
-                                        "      </choice>\n",
-                                    ]
-                        if len(choice) > 0:
-                            html.append(f'      <choice>\n')
-                            for _record in choice:
-                                _multiplicity = _record["multiplicity"]
-                                min_occurs = _multiplicity[0]
-                                max_occurs = _multiplicity[-1]
-                                _name = _record['xpath'].split('/')[-1]
-                                if "*" == max_occurs:
-                                    max_occurs = "unbounded"
-                                if '1'==min_occurs:
-                                    if '1'==max_occurs:
-                                        html.append(f'        <element ref="{_name}"/>\n')
-                                    else:
-                                        html.append(f'        <element ref="{_name}" maxOccurs="{max_occurs}"/>\n')
-                                else:
-                                    if '1'==max_occurs:
-                                        html.append(f'        <element ref="{_name}" minOccurs="{min_occurs}"/>\n')
-                                    else:
-                                        html.append(f'        <element ref="{_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
-                            html.append(f'      </choice>\n')
-                        html += [
-                            "    </sequence>\n",
-                            "  </group>\n",
-                            f'  <complexType name="{element_name}ComplexType">\n',
-                            "    <complexContent>\n",
-                            '      <restriction base="anyType">\n',
-                            "        <sequence>\n",
-                            f'          <group ref="gl-{module}:{element_name}Group"/>\n',
-                            "        </sequence>\n",
-                            '        <attribute name="id" type="ID"/>\n',
-                            "      </restriction>\n",
-                            "    </complexContent>\n",
-                            "  </complexType>\n",
-                        ]
+                                html.append(f'          <element ref="gl-{child_module}:{child_name}" maxOccurs="{max_occurs}"/>\n')
+                        else:
+                            if '1'==max_occurs:
+                                html.append(f'          <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}"/>\n')
+                            else:
+                                html.append(f'          <element ref="gl-{child_module}:{child_name}" minOccurs="{min_occurs}" maxOccurs="{max_occurs}"/>\n')
+                    html += [
+                        "        </sequence>\n",
+                        '        <attribute name="id" type="ID"/>\n',
+                        "      </restriction>\n",
+                        "    </complexContent>\n",
+                        "  </complexType>\n",
+                    ]
                     
             html.append("</schema>")
             
             """
             Write module content schema file
             """
-            directory = self.file_path(
+            directory = file_path(
                 f"{xbrl_base}/plt"
             )
             if not os.path.isdir(directory):
                 os.makedirs(directory, exist_ok=True)
-                self.trace_print(f"Created moduke schema directory: {directory}")
-            xsd_file = self.file_path(
-                f"{xbrl_base}/plt/gl-{module}-content-2025-12-01.xsd"
+                trace_print(f"Created moduke schema directory: {directory}")
+            xsd_file = file_path(
+                f"{xbrl_base}/plt/gl-{module}-content-{self.version}.xsd"
             )
             with open(xsd_file, "w", encoding=self.encoding, newline="") as f:
                 f.writelines(html)
-            self.trace_print(f"-- {xsd_file}")
+            trace_print(f"-- {xsd_file}")
 
         html = [
             '<?xml version="1.0" encoding="UTF-8"?>\n',
             "<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->\n",
-            '<schema targetNamespace="http://www.xbrl.org/int/gl/plt/2025-12-01" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
+            f'<schema targetNamespace="http://www.xbrl.org/int/gl/plt/{self.version}" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
             '  xmlns="http://www.w3.org/2001/XMLSchema"\n',
             '  xmlns:xbrli="http://www.xbrl.org/2003/instance"\n',
             '  xmlns:link="http://www.xbrl.org/2003/linkbase"\n',
             '  xmlns:xlink="http://www.w3.org/1999/xlink"\n',
             '  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"\n',
-            '  xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2025-12-01">\n'
+            f'  xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/{self.version}">\n'
         ]
 
         modules = element_dict.keys()
         for module in modules:
             if _module != module:
                 html.append(
-                    f'  <import namespace="http://www.xbrl.org/int/gl/{module}/2025-12-01" schemaLocation="../{module}/gl-{module}-2025-12-01.xsd"/>\n'
+                    f'  <import namespace="http://www.xbrl.org/int/gl/{module}/{self.version}" schemaLocation="../{module}/gl-{module}-{self.version}.xsd"/>\n'
                 )
 
         html += [
             '  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>\n',
             '  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>\n',
             '  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>\n',
-            '  <import namespace="http://www.xbrl.org/int/gl/cor/2025-12-01" schemaLocation="gl-cor-content-2025-12-01.xsd"/>\n'
+            f'  <import namespace="http://www.xbrl.org/int/gl/cor/{self.version}" schemaLocation="gl-cor-content-{self.version}.xsd"/>\n'
         ]
 
         html += [
@@ -950,8 +874,8 @@ class xBRLGL_TaxonomyGenerator:
         ]
         for module in modules:
             html += [
-                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-2025-12-01-label.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
-                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-2025-12-01-label-ja.xml" xlink:title="Label Links, ja" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
+                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-{self.version}-label.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
+                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-{self.version}-label-ja.xml" xlink:title="Label Links, ja" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
             ]
 
         html += [
@@ -966,12 +890,12 @@ class xBRLGL_TaxonomyGenerator:
         """
         Write palette schema file
         """
-        xsd_file = self.file_path(
-            f"{xbrl_base}/plt/gl-plt-all-2025-12-01.xsd"
+        xsd_file = file_path(
+            f"{xbrl_base}/plt/gl-plt-all-{self.version}.xsd"
         )
         with open(xsd_file, "w", encoding=self.encoding, newline="") as f:
             f.writelines(html)
-        self.trace_print(f"Write palette schema file {xsd_file}")
+        trace_print(f"Palette schema file {xsd_file}")
 
         """
         OIM schema
@@ -980,26 +904,26 @@ class xBRLGL_TaxonomyGenerator:
         html = [
             '<?xml version="1.0" encoding="UTF-8"?>\n',
             "<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->\n",
-            '<schema targetNamespace="http://www.xbrl.org/int/gl/plt/2025-12-01" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
+            f'<schema targetNamespace="http://www.xbrl.org/int/gl/plt/{self.version}" attributeFormDefault="unqualified" elementFormDefault="qualified"\n',
             '  xmlns="http://www.w3.org/2001/XMLSchema"\n',
             '  xmlns:xbrli="http://www.xbrl.org/2003/instance"\n',
             '  xmlns:link="http://www.xbrl.org/2003/linkbase"\n',
             '  xmlns:xlink="http://www.w3.org/1999/xlink"\n',
             '  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"\n',
-            '  xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2025-12-01">\n'
+            f'  xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/{self.version}">\n'
         ]
 
         for module in modules:
             if _module != module:
                 html.append(
-                    f'  <import namespace="http://www.xbrl.org/int/gl/{module}/2025-12-01" schemaLocation="../{module}/gl-{module}-2025-12-01.xsd"/>\n'
+                    f'  <import namespace="http://www.xbrl.org/int/gl/{module}/{self.version}" schemaLocation="../{module}/gl-{module}-{self.version}.xsd"/>\n'
                 )
 
         html += [
             '  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>\n',
             '  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>\n',
             '  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>\n',
-            '  <import namespace="http://www.xbrl.org/int/gl/cor/2025-12-01" schemaLocation="gl-cor-content-2025-12-01.xsd"/>\n'
+            f'  <import namespace="http://www.xbrl.org/int/gl/cor/{self.version}" schemaLocation="gl-cor-content-{self.version}.xsd"/>\n'
         ]
 
         html += [
@@ -1009,12 +933,12 @@ class xBRLGL_TaxonomyGenerator:
 
         for module in modules:
             html += [
-                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-2025-12-01-label.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
-                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-2025-12-01-label-ja.xml" xlink:title="Label Links, ja" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
+                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-{self.version}-label.xml" xlink:title="Label Links, all" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
+                f'      <link:linkbaseRef xlink:type="simple" xlink:href="../{module}/lang/gl-{module}-{self.version}-label-ja.xml" xlink:title="Label Links, ja" xlink:role="http://www.xbrl.org/2003/role/labelLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n'
             ]
 
         html.append(
-            f'      <link:linkbaseRef xlink:type="simple" xlink:href="gl-plt-def-2025-12-01.xml" xlink:title="Definition" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
+            f'      <link:linkbaseRef xlink:type="simple" xlink:href="gl-plt-def-{self.version}.xml" xlink:title="Definition" xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>\n',
         )
 
         html += [
@@ -1078,12 +1002,12 @@ class xBRLGL_TaxonomyGenerator:
         """
         Write xBRL-CSV schema file
         """
-        xsd_file = self.file_path(
-            f"{xbrl_base}/plt/gl-plt-oim-2025-12-01.xsd"
+        xsd_file = file_path(
+            f"{xbrl_base}/plt/gl-plt-oim-{self.version}.xsd"
         )
         with open(xsd_file, "w", encoding=self.encoding, newline="") as f:
             f.writelines(html)
-        self.trace_print(f"Write xBRL-CSV schema file {xsd_file}")
+        trace_print(f"xBRL-CSV schema file {xsd_file}")
 
         ###################################
         # labelLink en
@@ -1106,7 +1030,7 @@ class xBRLGL_TaxonomyGenerator:
                 element_name = element[1 + element.index(":"):]
                 self.lines += [
                     f"        <!-- {element} {name} -->\n",
-                    f'        <loc xlink:type="locator" xlink:href="../gl-{module}-2025-12-01.xsd#gl-{module}_{element_name}" xlink:label="{element_name}"/>\n',
+                    f'        <loc xlink:type="locator" xlink:href="../gl-{module}-{self.version}.xsd#gl-{module}_{element_name}" xlink:label="{element_name}"/>\n',
                     f'        <label xlink:type="resource" xlink:label="{element_name}_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-{module}_{element_name}_en" xml:lang="en">{name}</label>\n',
                     f'        <label xlink:type="resource" xlink:label="{element_name}_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="{self.lang}">{desc}</label>\n',
                     f'        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{element_name}" xlink:to="{element_name}_lbl"/>\n',
@@ -1117,18 +1041,18 @@ class xBRLGL_TaxonomyGenerator:
             """
             Write label linkbase file
             """
-            directory = self.file_path(
+            directory = file_path(
                 f"{xbrl_base}/{module}/lang"
             )
             if not os.path.isdir(directory):
                 os.makedirs(directory, exist_ok=True)
-                self.trace_print(f"Created label linkbase directory: {directory}")
-            label_file = self.file_path(
-                f"{xbrl_base}/{module}/lang/gl-{module}-2025-12-01-label.xml"
+                trace_print(f"Created label linkbase directory: {directory}")
+            label_file = file_path(
+                f"{xbrl_base}/{module}/lang/gl-{module}-{self.version}-label.xml"
             )
             with open(label_file, "w", encoding=self.encoding, newline="") as f:
                 f.writelines(self.lines)
-            self.trace_print(f"-- {label_file}")
+            trace_print(f"-- {label_file}")
 
         ###################################
         # labelLink lang
@@ -1153,7 +1077,7 @@ class xBRLGL_TaxonomyGenerator:
                 element_name = element[1 + element.index(":"):]
                 self.lines += [
                     f"        <!-- {element} {label_local} -->\n",
-                    f'        <loc xlink:type="locator" xlink:href="../gl-{module}-2025-12-01.xsd#gl-{module}_{element_name}" xlink:label="{element_name}"/>\n',
+                    f'        <loc xlink:type="locator" xlink:href="../gl-{module}-{self.version}.xsd#gl-{module}_{element_name}" xlink:label="{element_name}"/>\n',
                     f'        <label xlink:type="resource" xlink:label="{element_name}_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-{module}_{element_name}_{self.lang}" xml:lang="en">{label_local}</label>\n',
                     f'        <label xlink:type="resource" xlink:label="{element_name}_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="{self.lang}">{definition_local}</label>\n',
                     f'        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="{element_name}" xlink:to="{element_name}_lbl"/>\n',
@@ -1164,12 +1088,12 @@ class xBRLGL_TaxonomyGenerator:
             """
             Write label linkbase file
             """
-            label_file = self.file_path(
-                f"{xbrl_base}/{module}/lang/gl-{module}-2025-12-01-label-{self.lang}.xml"
+            label_file = file_path(
+                f"{xbrl_base}/{module}/lang/gl-{module}-{self.version}-label-{self.lang}.xml"
             )
             with open(label_file, "w", encoding=self.encoding, newline="") as f:
                 f.writelines(self.lines)
-            self.trace_print(f"-- {label_file}")
+            trace_print(f"-- {label_file}")
 
         ###################################
         #   presentationLink
@@ -1185,7 +1109,7 @@ class xBRLGL_TaxonomyGenerator:
                 '  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">\n',
                 '  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">\n',
             ]
-            class_records = [x for x in data if not x["datatype"]]
+            class_records = [x for x in data if not x["base_datatype"]]
             for record in class_records:
                 element = record["element"]
                 element_id = element.replace(":", "_")
@@ -1200,12 +1124,12 @@ class xBRLGL_TaxonomyGenerator:
             """
             Write presentation linkbase file
             """
-            presentation_file = self.file_path(
-                f"{xbrl_base}/{module}/gl-{module}-2025-12-01-presentation.xml"
+            presentation_file = file_path(
+                f"{xbrl_base}/{module}/gl-{module}-{self.version}-presentation.xml"
             )
             with open(presentation_file, "w", encoding=self.encoding, newline="") as f:
                 f.writelines(self.lines)
-            self.trace_print(f"-- {presentation_file}")
+            trace_print(f"-- {presentation_file}")
 
         ###################################
         # definitionLink
@@ -1227,7 +1151,7 @@ class xBRLGL_TaxonomyGenerator:
         for record in self.roleMap.values():
             taxonomy_schema, link_id, href = self.roleRecord(record['element_id'])
             self.lines.append(
-                f'  <link:roleRef roleURI="http://www.xbrl.org/xbrl-gl/role/{link_id}" xlink:type="simple" xlink:href="gl-plt-oim-2025-12-01.xsd#{link_id}"/>\n'
+                f'  <link:roleRef roleURI="http://www.xbrl.org/xbrl-gl/role/{link_id}" xlink:type="simple" xlink:href="gl-plt-oim-{self.version}.xsd#{link_id}"/>\n'
             )
 
         self.lines += [
@@ -1245,14 +1169,14 @@ class xBRLGL_TaxonomyGenerator:
 
         self.lines.append("</link:linkbase>\n")
 
-        cor_definition_file = self.file_path(
-            f"{xbrl_base}/plt/gl-plt-def-2025-12-01.xml"
+        cor_definition_file = file_path(
+            f"{xbrl_base}/plt/gl-plt-def-{self.version}.xml"
         )
         with open(cor_definition_file, "w", encoding=self.encoding, newline="") as f:
             f.writelines(self.lines)
-        self.trace_print(f"-- {cor_definition_file}")
+        trace_print(f"-- {cor_definition_file}")
 
-    def json_meta_file(self, taxonomy, xbrl_base=None): # "plt/gl-plt-oim-2025-12-01.xsd"
+    def json_meta_file(self, taxonomy, xbrl_base=None):
         if not xbrl_base:
             xbrl_base = self.xbrl_base
         json_meta = {
@@ -1266,18 +1190,19 @@ class xBRLGL_TaxonomyGenerator:
                     "xbrli": "http://www.xbrl.org/2003/instance",
                     "xbrldi": "http://xbrl.org/2006/xbrldi",
                     "xlink": "http://www.w3.org/1999/xlink",
-                    "gl-gen": "http://www.xbrl.org/int/gl/gen/2025-12-01",
-                    "gl-cor": "http://www.xbrl.org/int/gl/cor/2025-12-01",
-                    "gl-bus": "http://www.xbrl.org/int/gl/bus/2025-12-01",
-                    "gl-muc": "http://www.xbrl.org/int/gl/muc/2025-12-01",
-                    "gl-usk": "http://www.xbrl.org/int/gl/usk/2025-12-01",
-                    "gl-taf": "http://www.xbrl.org/int/gl/taf/2025-12-01",
-                    "gl-ehm": "http://www.xbrl.org/int/gl/ehm/2025-12-01",
-                    "gl-srcd": "http://www.xbrl.org/int/gl/srcd/2025-12-01",
-                    "gl-plt": "http://www.xbrl.org/int/gl/plt/2025-12-01"
+                    "gl-gen": f"http://www.xbrl.org/int/gl/gen/{self.version}",
+                    "gl-cor": f"http://www.xbrl.org/int/gl/cor/{self.version}",
+                    "gl-bus": f"http://www.xbrl.org/int/gl/bus/{self.version}",
+                    "gl-muc": f"http://www.xbrl.org/int/gl/muc/{self.version}",
+                    "gl-usk": f"http://www.xbrl.org/int/gl/usk/{self.version}",
+                    "gl-taf": f"http://www.xbrl.org/int/gl/taf/{self.version}",
+                    "gl-ehm": f"http://www.xbrl.org/int/gl/ehm/{self.version}",
+                    "gl-srcd": f"http://www.xbrl.org/int/gl/srcd/{self.version}",
+                    "gl-ext": f"http://www.xbrl.org/int/gl/ext/{self.version}",
+                    "gl-plt": f"http://www.xbrl.org/int/gl/plt/{self.version}"
                 },
                 "taxonomy": [
-                    taxonomy # "plt/gl-plt-oim-2025-12-01.xsd"
+                    taxonomy
                 ]
             },
             "tableTemplates": {
@@ -1293,8 +1218,7 @@ class xBRLGL_TaxonomyGenerator:
         }
 
         if self.root:
-            dimension_columns = []
-            property_columns = []
+            header_columns = set()
             root_id = next((x for x in self.dimension_dict.keys() if self.root in x), None)
             root_element_id = next((x for x in self.records if root_id == x["id"]), None)[
                 "element_id"
@@ -1321,7 +1245,7 @@ class xBRLGL_TaxonomyGenerator:
             for dimension in dimensions[1:]:
                 # dimension_column = dimension[1 + dimension.index("_"):]
                 dimension_name = dimension[1 + dimension.index("-"):].replace(":","_")
-                dimension_columns.append(dimension_name)
+                header_columns.add(dimension_name)
                 json_meta["tableTemplates"]["xbrl-gl_template"]["dimensions"][
                     f"gl-plt:d_{dimension_name}"
                 ] = f"${dimension_name}"
@@ -1332,7 +1256,7 @@ class xBRLGL_TaxonomyGenerator:
             for property in properties:
                 property_column = property[1 + property.index("_"):]
                 property_name = property[1 + property.index("-"):]
-                property_columns.append(property_name)
+                header_columns.add(property_name)
                 property_module = property[: property.index("_")]
                 if property.endswith("Amount"):
                     json_meta["tableTemplates"]["xbrl-gl_template"]["columns"][
@@ -1352,35 +1276,35 @@ class xBRLGL_TaxonomyGenerator:
             csv_file = f"{out}_skeleton.csv"
             json_meta["tables"]["xbrl-gl_table"]["url"] = csv_file
 
-            json_meta_file = self.file_path(
+            json_meta_file = file_path(
                 f"{xbrl_base}/{out}.json"
             )
             try:
                 with open(json_meta_file, "w", encoding=self.encoding) as file:
                     json.dump(json_meta, file, ensure_ascii=False, indent=4)
-                print(f"JSON file '{json_meta_file}' has been created successfully.")
+                trace_print(f"JSON file '{json_meta_file}'")
             except Exception as e:
                 print(f"An error occurred while creating the JSON file: {e}")
-            self.trace_print(f"-- JSON meta file {json_meta_file}")
 
-            out_file = self.file_path(
+            out_file = file_path(
                 f"{xbrl_base}/{csv_file}"
             )
-            header_list = [root_name] + dimension_columns + property_columns
+            header_list = [root_name] + list(header_columns)
             try:
                 with open(out_file, "w", encoding=self.encoding, newline="") as file:
                     writer = csv.writer(file)
                     # Write the header and columnname rows
                     writer.writerow(header_list)
-                print(f"CSV template file '{out_file}' has been created successfully.")
+                trace_print(f"CSV template file '{out_file}'")
             except Exception as e:
                 print(f"An error occurred while creating the JSON file: {e}")
-            self.trace_print(f"-- CSV file with header {csv_file}")
 
         print("** END **")
 
 
 def main():
+    global DEBUG, TRACE
+
     parser = argparse.ArgumentParser()
     parser.add_argument("inFile", help="Input HMD structure CSV file")
     parser.add_argument("-b", "--base_dir", help="Base output directory", default=".")
@@ -1389,9 +1313,13 @@ def main():
     parser.add_argument("-c", "--currency", default="JPY")
     parser.add_argument("-n", "--namespace", default="http://www.xbrl.org/xbrl-gl")
     parser.add_argument("-e", "--encoding", default="utf-8-sig")
-    parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("-t", "--trace", action="store_true")
     parser.add_argument("-d", "--debug", action="store_true")
+
     args = parser.parse_args()
+
+    DEBUG = args.debug
+    TRACE = args.trace
 
     generator = xBRLGL_TaxonomyGenerator(
         in_file=args.inFile,
@@ -1400,15 +1328,14 @@ def main():
         lang=args.lang,
         currency=args.currency,
         namespace=args.namespace,
-        encoding=args.encoding,
-        trace=args.verbose,
-        debug=args.debug
+        encoding=args.encoding
     )
 
     generator.load_csv_data()
     generator.process_records()
     generator.generate_taxonomy_files(generator.xbrl_base)
-    generator.json_meta_file("plt/gl-plt-oim-2025-12-01.xsd", generator.xbrl_base)
+    version = args.namespace[-10:]
+    generator.json_meta_file(f"plt/gl-plt-oim-{version}.xsd", generator.xbrl_base)
 
 if __name__ == "__main__":
     main()

@@ -44,6 +44,17 @@ import json
 import re
 # import pandas as pd
 
+TRACE = False
+DEBUG = False
+
+def debug_print(message):
+    if DEBUG:
+        print(f"[DEBUG] {message}")
+
+def trace_print(message):
+    if TRACE:
+        print(f"[TRACE] {message}")
+
 from csv2tidy import DataProcessor
 
 class xBRLGL_StructuredCSV:
@@ -114,7 +125,7 @@ class xBRLGL_StructuredCSV:
         element_tag = get_prefixed_tag(element)
         result[element_tag] = ''
         if ':' not in element_tag:
-            self.debug_print(element_tag)
+            debug_print(element_tag)
         self.dimensions.add(element_tag)
         for child in children:
             if not isinstance(child.tag, str):
@@ -189,7 +200,7 @@ class xBRLGL_StructuredCSV:
             p for p in palettes
             if set(p.removeprefix("case-").split("-")) == modules
         ]
-        self.debug_print(matching)
+        debug_print(matching)
         if 1==len(matching):
             taxonomy = f"../gl-{matching[0]}/plt/gl-plt-oim-2025-12-01.xsd"
             json_meta["documentInfo"]["taxonomy"] = [taxonomy]
@@ -244,7 +255,7 @@ class xBRLGL_StructuredCSV:
             changed = False
             while i < len(records):
                 row = records[i]
-                self.debug_print(f"{i} row:{row}")
+                debug_print(f"{i} row:{row}")
                 dims = []
                 for dim in dimensions:
                     targets = [k for k in row.keys() if k in self.parent and self.parent[k] in dimensions]
@@ -275,7 +286,7 @@ class xBRLGL_StructuredCSV:
                                     for k, v in row.items():
                                         if parent and k not in dimensions and k not in parent:
                                             parent[k] = v
-                    self.debug_print(f"{i} parent: {parent}")
+                    debug_print(f"{i} parent: {parent}")
                     # Delete row
                     del records[i]
                     changed = True
@@ -372,7 +383,7 @@ class xBRLGL_StructuredCSV:
             element = row.get("element", "").strip()
             typ = row.get("type", "").strip()
             level = row.get("level", "").strip()
-            self.debug_print(f"  → Element: {element}, Type: {typ}, Level: {level}")
+            debug_print(f"  → Element: {element}, Type: {typ}, Level: {level}")
             if level.isdigit():
                 level = int(level)
             if 'C'==typ:
@@ -401,7 +412,7 @@ class xBRLGL_StructuredCSV:
             element = list(row.keys())[0]
             if element in levels:
                 set_dimension(element, dimension)
-            self.debug_print(f"{idx} {dimension}")
+            debug_print(f"{idx} {dimension}")
             for item in dimension:
                 if item and isinstance(item, dict):
                     for key, value in item.items():
@@ -442,6 +453,8 @@ class xBRLGL_StructuredCSV:
 
 
 def main():
+    global DEBUG, TRACE
+
     parser = argparse.ArgumentParser(description="Convert XBRL-GL XML instance to tidy hierarchical CSV.")
     parser.add_argument("-i", "--input", required=True, help="Input XBRL-GL XML file path")
     parser.add_argument("-n", "--version", required=True, help="Input XBRL-GL taxonomy version date")
@@ -452,6 +465,9 @@ def main():
     parser.add_argument("-d", "--debug", action="store_true")
 
     args = parser.parse_args()
+
+    DEBUG = args.debug
+    TRACE = args.trace
 
     converter = xBRLGL_StructuredCSV(
             input_file = args.input,

@@ -1,0 +1,3 @@
+ID,issueDate,typeCode,dueDate,buyerID,sellerID,sumOfLineNetAmount,totalAmountWithoutTax,totalTaxAmount,totalAmountWithTax
+INV001,2024-06-30,380,2024-07-15,B001,S001,16200,16200,246,18666
+INV002,2024-07-01,380,2024-07-15,B002,S002,620,620,62,682
