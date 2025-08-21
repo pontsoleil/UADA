@@ -41,6 +41,10 @@ data/SME_Common/schema
 data/UNCEFACT_vs_UBL
 data/UNECE
 
+SME_Common/CII_D24A
+
+UBL-2.4
+
 AccountingWithOIM-CSV/lambda_function
 AccountingWithOIM-CSV/venv
 AccountingWithOIM-CSV/my_lambda_project
