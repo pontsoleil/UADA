@@ -38,6 +38,9 @@ data/SME_Common/15JUL23XMLSchemas-D23A
 data/SME_Common/codelist
 data/SME_Common/schema
 
+data/UNCEFACT_vs_UBL
+data/UNECE
+
 AccountingWithOIM-CSV/lambda_function
 AccountingWithOIM-CSV/venv
 AccountingWithOIM-CSV/my_lambda_project
