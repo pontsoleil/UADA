@@ -1,0 +1,113 @@
+<SMECoreSelfInvoice xmlns="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33" xsi:schemaLocation="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1 ../SMECoreSelfInvoice_06-21.xsd">
+  <ExchangedDocument>
+    <ID>INV007</ID>
+    <IssueDateTime>
+      <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+    </IssueDateTime>
+  </ExchangedDocument>
+  <TradeTransaction>
+    <TradeAgreement>
+      <SellerTradeParty>
+        <ID>T0123456789012</ID>
+        <Name>株式会社テスト売り手</Name>
+      </SellerTradeParty>
+      <BuyerTradeParty>
+        <ID>T1234567890123</ID>
+        <Name>合同会社テスト買い手</Name>
+      </BuyerTradeParty>
+    </TradeAgreement>
+    <TradeSettlement>
+      <InvoiceCurrencyCode>JPY</InvoiceCurrencyCode>
+    </TradeSettlement>
+    <TradeLineItem>
+      <AssociatedDocumentLineDocument>
+        <LineID>1</LineID>
+      </AssociatedDocumentLineDocument>
+      <TradeSettlement>
+        <TradeTax>
+          <CalculatedAmount>1000</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.10</CalculatedRate>
+          <BasisAmount currencyID="JPY">10000</BasisAmount>
+          <CategoryCode>S</CategoryCode>
+        </TradeTax>
+        <TradeTax>
+          <CalculatedAmount>400</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.08</CalculatedRate>
+          <BasisAmount currencyID="JPY">5000</BasisAmount>
+          <CategoryCode>AA</CategoryCode>
+        </TradeTax>
+        <TradeSettlementMonetarySummation>
+          <TaxTotalAmount currencyID="JPY">1400</TaxTotalAmount>
+          <NetLineTotalAmount currencyID="JPY">15000</NetLineTotalAmount>
+          <GrandTotalAmount currencyID="JPY">16400</GrandTotalAmount>
+        </TradeSettlementMonetarySummation>
+      </TradeSettlement>
+      <SubordinateSubordinateTradeLineItem>
+        <ID>1-1</ID>
+        <RequestedResponseTypeCode>NA</RequestedResponseTypeCode>
+        <TradeAgreement>
+          <NetPriceProductTradePrice>
+            <ChargeAmount>10000</ChargeAmount>
+          </NetPriceProductTradePrice>
+        </TradeAgreement>
+        <TradeDelivery>
+          <BilledQuantity unitCode="EA">1</BilledQuantity>
+        </TradeDelivery>
+        <TradeSettlement>
+          <TradeTax>
+            <TypeCode>VAT</TypeCode>
+            <CategoryCode>S</CategoryCode>
+            <RatePercent>10.0</RatePercent>
+          </TradeTax>
+          <BillingPeriod>
+            <StartDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </StartDateTime>
+            <EndDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </EndDateTime>
+          </BillingPeriod>
+        </TradeSettlement>
+        <TradeProduct>
+          <Name>商品A</Name>
+          <Description>10%通常税率対象商品</Description>
+        </TradeProduct>
+      </SubordinateSubordinateTradeLineItem>
+      <SubordinateSubordinateTradeLineItem>
+        <ID>1-2</ID>
+        <RequestedResponseTypeCode>NA</RequestedResponseTypeCode>
+        <TradeAgreement>
+          <NetPriceProductTradePrice>
+            <ChargeAmount currencyID="JPY">5000</ChargeAmount>
+          </NetPriceProductTradePrice>
+        </TradeAgreement>
+        <TradeDelivery>
+          <BilledQuantity unitCode="EA">1</BilledQuantity>
+        </TradeDelivery>
+        <TradeSettlement>
+          <TradeTax>
+            <TypeCode>VAT</TypeCode>
+            <CategoryCode>AA</CategoryCode>
+            <RatePercent>8.0</RatePercent>
+          </TradeTax>
+          <BillingPeriod>
+            <StartDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </StartDateTime>
+            <EndDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </EndDateTime>
+          </BillingPeriod>
+        </TradeSettlement>
+        <TradeProduct>
+          <Name>軽減商品B</Name>
+          <Description>8%軽減税率対象商品</Description>
+        </TradeProduct>
+      </SubordinateSubordinateTradeLineItem>
+    </TradeLineItem>
+  </TradeTransaction>
+</SMECoreSelfInvoice>

@@ -6,7 +6,7 @@ Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Creation Date: 2025-05-18
-Last Modified: 2025-05-19
+Last Modified: 2025-08-16
 
 MIT License
 
@@ -29,33 +29,6 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-【凡例】
-"中小企業共通EDIマッピング"
-    ◎  適格請求書に記載が必要な「法的必須」情報項目
-    （◎）同じクラス内のいずれかの情報項目の記載が「法的必須」
-    ○中小企業共通EDI対応業務アプリの「共通必須」情報情報項目
-    （○）同じクラス内のいずれかの情報項目の記載が「必須」
-    ●「選択必須」情報項目。この情報項目を利用する場合は「必須」。利用しない場合はデフォルトで運用と見做す
-    △ユーザー非公開。共通EDIプロバイダがデータセット
-    ＊すべての業種に共通して利用する「共通任意」情報項目
-    ◇「中小業界必須」情報項目
-    ＋「中小業界任意」情報項目
-    □税込会計対応のために追加した情報項目
-    ■源泉所得税のために追加した情報項目
-    ▼修正適格請求書等（修正差額調整）のために追加した情報項目
-    ▶違算（請求と入金の不突合）のために追加した情報項目
-    ▽取引と会計のデータ連携のために追加した情報項目
-    ※税理士が会計システムへ取引データ入力時に利用する情報項目
-    （※）将来取引データプラットフォームの確定時に利用する情報項目
-    利用しない情報項目
-JP-PINT_v1.0マッピング（参考）
-☆JP-PINT対応業務アプリの「必須」実装情報項目
-★JP-PINT対応業務アプリの「任意」実装情報項目。（★）は同じクラス内のいずれかの情報項目を利用する
-空欄JP-PINTには該当する情報項目はない
-共通EDIプロバイダはBIE表記載の全情報項目の共通EDIプロバイダ間交換が必須
-
-【凡例２】制定/改定欄の黄色セル：標準ver.4.3で新設、又は改定された情報項目。v4.3と記載。
 """
 import os
 import re
@@ -66,6 +39,7 @@ DEBUG = True
 TRACE = True
 
 character_list = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
 unid_map = {}
 
 def debug_print(message):
@@ -128,21 +102,12 @@ def file_path(pathname):
 
 def main():
     global TRACE, DEBUG
-    """
-    Read from the CSV file
 
-    sequence group UNID acronym
-    name1 name2 name3 name4 name5 name6 name7 name8 name9 name10 name11 name12 name13 name14
-    label_local definition_local
-    multiplicity example version code_list issueing_agency input value
-    selfbilling_statement self_billing selfbilling_exception journal_entry
-    ver1 AG JPPINT_ID business_term cardinality
-    """
+    bsm_records = []
     lhm_records = []
     mbie_dict = {}
     bsm_dict = {}
     base_dir = "SME_Common"
-    mbie_file = os.path.join(base_dir,"CCL 24A_21SEP24_MBIE.csv")
 
     def get_den(row):
         den = None
@@ -192,9 +157,12 @@ def main():
         return l, den
 
     def normalize_text(text):
-        remove_words = "(CIILB_|CIIL_|CIIH_|CI_|Applicable|Defined|Specified|Supply Chain|Additional|Including|Included|Processing|Details)"
+        # remove_words = "(CIILB_|CIIL_|CIIH_|CI_|Applicable|Defined|Specified|Supply Chain|Additional|Including|Included|Processing|Details)"
         remove_chars = " ._"
-        _text = re.sub(remove_words, "", text).translate(
+        # _text = re.sub(remove_words, "", text).translate(
+        #     str.maketrans("", "", remove_chars)
+        # )
+        _text = text.translate(
             str.maketrans("", "", remove_chars)
         )
         if _text.endswith("IdentificationIdentifier"):
@@ -240,15 +208,17 @@ def main():
         return ' '.join(combined)
 
     def get_name(data, path_list, level):
-        sequence = data["sequence"]
+        # sequence = data["sequence"]
         acronym = data["acronym"]
         den = data["DEN"]
+
         _1st_prefix = split_camel_case(path_list[0])
         _2nd_prefix = split_camel_case(path_list[1])
         _3rd_prefix = split_camel_case(path_list[2])
         _4th_prefix = split_camel_case(path_list[3])
         _5th_prefix = split_camel_case(path_list[4])
         _6th_prefix = split_camel_case(path_list[5])
+
         _1st_text = normalize_text(
             add_missing_prefix_words(_1st_prefix, den) if 1 == level else _1st_prefix
         )
@@ -292,28 +262,7 @@ def main():
             if level > 5
             else ""
         )
-        den_text = normalize_text(den)
-        if acronym in ["ASMA"]:#, "ABIE"]:
-            debug_text = (f"level:{level}"
-                + f" {'*' if 0==level else ''}1:'{_1st_text}'"
-                + f" {'*' if 1==level else ''}2:'{_2nd_text}'"
-                + f" {'*' if 2==level else ''}3:'{_3rd_text}'"
-                + f" {'*' if 3==level else ''}4:'{_4th_text}'"
-                + f" {'*' if 4==level  else ''}5:'{_5th_text}'"
-                + f" {'*' if level>4  else ''}6:'{_6th_text}'"
-                + f" {acronym} {den_text}"
-            )
-        else:
-            debug_text = (f"level:{level}"
-                + f" {'*' if 1==level else ''}1:'{_1st_text}'"
-                + f" {'*' if 2==level else ''}2:'{_2nd_text}'"
-                + f" {'*' if 3==level else ''}3:'{_3rd_text}'"
-                + f" {'*' if 4==level else ''}4:'{_4th_text}'"
-                + f" {'*' if 5==level else ''}5:'{_5th_text}'"
-                + f" {'*' if level>5 else ''}6:'{_6th_text}'"
-                + f" {acronym} {den_text}"
-            )
-        debug_print(debug_text)
+
         if 1==level:
             name = _1st_text
         else:
@@ -337,6 +286,7 @@ def main():
                     name = _5th_text
                 else:
                     name = _6th_text
+
         if name.startswith("Agreement"):
             _name = name[9:]
         elif name.startswith("TransactionTradeLineItemTrade"):
@@ -377,23 +327,92 @@ def main():
             _name = name
         return _name
 
+    # mbie_file = os.path.join(base_dir,"CCL 24A_21SEP24_MBIE.csv")
+    mbie_file = os.path.join(base_dir,"MBIEs24A.csv")
+    remove_chars = r"[()\[\] ]"  # regex class of characters to remove
+    # ["Nr", "UNID", "Acronym", "DEN", "Definition", "Publication comments", "Object Class Term Qualifier(s)", "Object Class Term", "Property Term Qualifier(s)", "Property Term", "Datatype Qualifier(s)", "Representation Term", "Qualified Data Type UID", "Associated Object Class Term Qualifier(s)", "Associated Object Class", "Business Term(s)", "Usage Rule(s)", "Sequence Number", "Occurrence Min", "Occurrence Max", "Context Categories", "Example(s)", "Version", "Ref Library Version", "Submitter Name", "Ref Component UN ID", "Unique submitter ID", "CR Status Date", "CR Status", "Library Maintenance Comment", "TDED", "Submitted Definition", "Submitter Comment", "Submitted DEN", "Publication Refs -- Source", "Short Name"]
     with open(mbie_file, mode="r", newline="", encoding="utf-8-sig") as file:
         reader = csv.DictReader(file)  # Uses first row as keys
         for row in reader:
-            unid = row["unid"]
-            mbie_dict[unid] = {
-                "acronym": row["acronym"],
-                "DEN": row["DEN"],
-                "Definition": row["Definition"],
-                "Occurrence_Min": row["Occurrence_Min"],
-                "Occurrence_Max": row["Occurrence_Max"],
-                "TDED": row["TDED"],
-                "Short_Name": row["Short_Name"],
-            }
+            acronym = row["Acronym"]
+            if "END"==acronym:
+                break
 
-    in_file = os.path.join(base_dir,"sme_common06-02.csv")
-    lhm_file = os.path.join(base_dir,"SME_common06-02_LHM.csv")
-    bsm_file = os.path.join(base_dir,"SME_common06-02_BSM.csv")
+            nr = row["Nr"]
+            nr = int(nr) if nr.isdigit() else 0
+            sequence = row["Sequence Number"]
+            sequence = int(sequence) if sequence.isdigit() else 0
+
+            den = row["DEN"]
+            class_term_qualifier = row["Object Class Term Qualifier(s)"].strip()
+            class_term = row["Object Class Term"].strip()
+            if class_term_qualifier:
+                class_term = f'{class_term_qualifier}_ {class_term}'
+            property_term_qualifier = row["Property Term Qualifier(s)"].strip()
+            property_term = row["Property Term"].strip()
+            if property_term_qualifier:
+                property_term = f'{property_term_qualifier}_ {property_term}'
+            datatype_qualifier = row["Datatype Qualifier(s)"].strip()
+            representation_term = row["Representation Term"].strip()
+            if datatype_qualifier:
+                representation_term = f'{datatype_qualifier}_ {representation_term}'
+            associated_class_qualifier = row['Associated Object Class Term Qualifier(s)'].strip()
+            associated_class_term = row['Associated Object Class'].strip()
+            if associated_class_qualifier:
+                associated_class_term = f"{associated_class_qualifier}_ {associated_class_term}"
+
+            multiplicity = ""
+            occurence_min = row["Occurrence Min"]
+            occurence_max = row["Occurrence Max"]            
+            if "unbounded"==occurence_max:
+                occurence_max = "n"
+            if occurence_min and occurence_max:
+                multiplicity = f"{occurence_min}..{occurence_max}"
+
+            if "BBIE"==acronym:
+                property_type = "Attribute"
+                element = element_from_property(f'{property_term} {row["Representation Term"].strip()}')
+            elif "ASBIE"==acronym:
+                property_type = "Composition"
+                element = element_from_property(f'{property_term} {row["Associated Object Class"].strip()}')
+            else:
+                property_type = "Class"
+                element = element_from_class(class_term)
+
+            code_list = ""
+            if len(row["TDED"]) > 0:
+                tded = re.sub(remove_chars, "", row["TDED"])
+                code_list = f'UNCL{tded}'
+
+            data = {
+                "mbie_nr": nr,
+                "acronym": acronym,
+                "property_type": property_type,
+                "class_term": class_term,
+                "property_term": property_term,
+                "representation_term": representation_term,
+                "code_list": code_list,
+                "associated_class": associated_class_term,
+                "element": element,
+                "DEN": den,
+                "sequence": sequence,
+                "multiplicity": multiplicity,
+                "definition": row["Definition"],
+                "short_name": row["Short Name"],
+                "UNID": row["UNID"]
+            }
+            mbie_dict[den] = data
+
+    DATE = "08-10"
+    in_file = os.path.join(base_dir,f"sme_common{DATE}.csv")
+
+    DATE = "08-18"
+    fsm_file = os.path.join(base_dir,f"SME_common{DATE}_FSM.csv")
+    bsm_file = os.path.join(base_dir,f"SME_common{DATE}_BSM.csv")
+    lhm_file = os.path.join(base_dir,f"SME_common{DATE}_LHM.csv")
+
+    # 08-05 nr,category,UNID,acronym,name1,name2,name3,name4,name5,name6,name7,name8,name9,name10,name11,name12,name13,name14,label_local,definition_local,multiplicity,fixed_value,version,code_list,issueing_agency,input_method,input_value,selfbilling,selfbilling_details,withholding_tax,selfbilling_statement,journal_entry,v1,AH,JP-PINT_ID,business_term,JP-PINT_card,,
+    # 08-10 nr,category,UNID,acronym,name1,name2,name3,name4,name5,name6,name7,name8,name9,name10,name11,name12,name13,name14,label_local,definition_local,multiplicity,fixed_value,version,code_list,issueing_agency,input_method,input_value,example,Consolidated_Invoice,Revised_ Consolidated_Invoice,JP-PINT_Mapping,AF,JP-PINT_ID,business_term,JP-PINT_card
     with open(in_file, mode="r", newline="", encoding="utf-8-sig") as file:
         reader = csv.DictReader(file)  # Uses first row as keys
         PATH_LENGTH = 15
@@ -401,12 +420,15 @@ def main():
 
         for row in reader:
             acronym = row["acronym"]
-            if "END"==acronym:
+            if not acronym or "SC"==acronym:
+                continue
+            elif "END"==acronym:
                 break
 
             lhm_data = {
                 "version": "",
-                "sequence": "",
+                "sme_nr": "",
+                "mbie_nr": "",
                 "level": "",
                 "type": "",
                 "identifier": "",
@@ -428,32 +450,53 @@ def main():
                 "xpath": ""
             }
 
-            bsm_data = {}
-
             for key in lhm_data.keys():
                 if key in row:
                     lhm_data[key] = row[key].strip()
+            nr = row["nr"]
+            lhm_data["sme_nr"] = int(nr) if nr.isdigit() else 0
 
-            l, den = get_den(row)
+            lvl, den = get_den(row)
 
-            lhm_data["DEN"] = den
-
-            if "." in den:
-                den = den.split(".")
-                class_term = den[0].strip()
-            else:
-                class_term = den
-            lhm_data["class_term"] = class_term
-
-            level = math.floor((2 + l)/2)
+            level = math.floor((2 + lvl)/2)
             lhm_data["level"] = level
 
-            unid = row["UNID"]
-            if unid and unid in mbie_dict:
-                mbie = mbie_dict[unid]
-                if mbie:
-                    lhm_data["definition"] = mbie["Definition"]
-                    lhm_data["short_name"] = mbie["Short_Name"]
+            lhm_data["DEN"] = den
+            lhm_data["multiplicity_SME"] = row["multiplicity"].strip()
+            lhm_data["multiplicity"] = ""
+
+            property_term = ""
+            representation_term = ""
+            associated_class = ""
+
+            if "." in den:
+                parts = den.split(".")
+                class_term = parts[0].strip()
+                if len(parts) > 1:
+                    if "BBIE"==acronym:
+                        property_term = parts[1].strip()
+                        representation_term = parts[2].strip()
+                    elif "ASBIE"==acronym:
+                        property_term = parts[1].strip()
+                        associated_class = parts[2].strip()
+            else:
+                class_term = den
+
+            lhm_data["class_term"] = class_term
+            lhm_data["property_term"] = property_term
+            lhm_data["representation_term"] = representation_term
+            lhm_data["associated_class"] = associated_class
+            lhm_data["mbie_nr"] = 0
+            lhm_data["sequence"] = 0
+
+            if den and den in mbie_dict:
+                mbie_data = mbie_dict[den]
+                if mbie_data:
+                    lhm_data["mbie_nr"] = mbie_data["mbie_nr"]
+                    lhm_data["sequence"] = mbie_data["sequence"]
+                    lhm_data["multiplicity"] = mbie_data["multiplicity"]
+                    lhm_data["definition"] = mbie_data["definition"]
+                    lhm_data["short_name"] = mbie_data["short_name"]
 
             if "MA"==acronym:
                 lhm_data["type"] = "C"
@@ -463,9 +506,6 @@ def main():
                 xpath = f'/{element}'
                 lhm_data["xpath"] = xpath
                 path_list[0] = element
-                bsm_data = lhm_data.copy()
-                bsm_data["property_type"] = "Class"
-                bsm_data["level"] = 1
             elif "ASMA"==acronym:
                 lhm_data["type"] = "C"
                 lhm_data["level"] = 1
@@ -474,18 +514,13 @@ def main():
                 path_list[1] = element
                 xpath = f'/{path_list[0]}/{path_list[1]}'
                 lhm_data["xpath"] = xpath
-                bsm_data = lhm_data.copy()
-                bsm_data["property_type"] = "Composition"
-                bsm_data["level"] = 2
             elif "BBIE"==acronym:
                 lhm_data["type"] = "A"
-                lhm_data["property_term"] = den[1].strip()
-                lhm_data["representation_term"] = den[2].strip()
-                if "Identifier"==lhm_data["representation_term"] and "1..1"==lhm_data["multiplicity"]:
+                lhm_data["property_term"] = property_term
+                lhm_data["representation_term"] = representation_term
+                if "Identifier"==lhm_data["representation_term"] and "1..1"==lhm_data["multiplicity_SME"]:
                     lhm_data["identifier"] = "PK"
-                element = element_from_property(
-                    f'{lhm_data["property_term"]}. {lhm_data["representation_term"]}'
-                )
+                element = element_from_property(f'{property_term}. {representation_term}')
                 if element.endswith("IdentificationIdentifier"):
                     element = element.replace("IdentificationIdentifier", "ID")
                 elif element.endswith("Identifier"):
@@ -498,144 +533,308 @@ def main():
                 for i in range(1,1+level):
                     xpath += f'/{path_list[i]}'
                 lhm_data["xpath"] = xpath
-                bsm_data = lhm_data.copy()
-                bsm_data["property_type"] = "Attribute"
-                bsm_data["level"] = 2
             elif "ASBIE"==acronym:
                 lhm_data["type"] = "C"
-                lhm_data["property_term"] = den[1].strip()
-                lhm_data["associated_class"] = den[2].strip()
-                element = element_from_property(
-                    f'{lhm_data["property_term"]}. {lhm_data["associated_class"]}'
-                )
+                lhm_data["property_term"] = property_term
+                lhm_data["associated_class"] = associated_class
+                element = element_from_property(f'{property_term}. {associated_class}')
                 lhm_data["element"] = element
                 path_list[level] = element
                 xpath = f"/{path_list[0]}"
                 for i in range(1,1+level):
                     xpath += f'/{path_list[i]}'
                 lhm_data["xpath"] = xpath
-                bsm_data = lhm_data.copy()
-                bsm_data["property_type"] = "Composition"
-                bsm_data["level"] = 2
             elif "ABIE"==acronym:
                 element = element_from_class(class_term)
                 lhm_data["element"] = element
-                bsm_data = lhm_data.copy()
-                bsm_data["property_type"] = "Class"
-                bsm_data["level"] = 1
 
             name = get_name(lhm_data, path_list, level)
-            lhm_data["name"] = name
+            remove_words = "(CIILB|CIIL|CIIH|CII|CI|Included|Specified|Trade|SupplyChain|Applicable|Agreement|Settlement|Party|Defined|Additional|Including|Processing)"
+            remove_chars = " ._"
+            text = name.translate(
+                str.maketrans("", "", remove_chars)
+            )
+            _text = re.sub(remove_words, "", text).translate(
+                str.maketrans("", "", remove_chars)
+            )
+            _text = _text.replace("UniversalCommunication","")
+            _text = _text.replace("LineItem","Document")
+            _text = _text.replace("SubordinateLine","Line")
+            _text = _text.replace("ReferenceReferenced","Reference")
+            lhm_data["name"] = _text
 
             if "ABIE"!=acronym:
                 lhm_records.append(lhm_data)
 
+            bsm_data = lhm_data.copy()
             if "MA"==acronym and 1==level:
                 root = class_term
-                bsm_dict[root] = {}
                 bsm_data["property_type"] = "Class"
-                bsm_dict[root]["_data"] = bsm_data
+                bsm_data["level"] = 1
+                bsm_data["multiplicity_SME"] = ""
+                bsm_dict[root] = bsm_data
+                if "properties" not in bsm_dict[root]:
+                    bsm_dict[root]["properties"] = {}
             elif "ASMA"==acronym and 1==level:
-                _bsm_data = bsm_data.copy()
+                bsm_data["property_type"] = "Composition"
+                bsm_data["level"] = 2
                 bsm_data["associated_class"] = class_term
-                association = bsm_data["class_term"]
-                bsm_dict[root][association] = bsm_data
-                # Overwrite bsm_data
-                _bsm_data["level"] = 1
+                bsm_data["class_term"] = root
+                bsm_dict[root]["properties"][class_term] = bsm_data
+                _bsm_data = lhm_data.copy()
                 _bsm_data["property_type"] = "Class"
-                _bsm_data["multiplicity"] = "-"
-                if class_term not in bsm_dict:
-                    bsm_dict[class_term] = {}
-                bsm_dict[class_term]["_data"] = _bsm_data
+                _bsm_data["level"] = 1
+                _bsm_data["multiplicity_SME"] = ""
+                bsm_dict[class_term] = _bsm_data
+                if "properties" not in bsm_dict[class_term]:
+                    bsm_dict[class_term]["properties"] = {}
             elif "ABIE"==acronym:
+                bsm_data["property_type"] = "Class"
+                bsm_data["level"] = 1
+                bsm_data["multiplicity_SME"] = ""
                 if class_term not in bsm_dict:
-                    bsm_dict[class_term] = {}
-                bsm_dict[class_term]["_data"] = bsm_data
-            elif "BBIE"==acronym and "property_term" in bsm_data:
-                bsm_data["property_term"] = den[1].strip()
-                bsm_data["representation_term"] = den[2].strip()
-                attribute = f'{bsm_data["property_term"]}. {bsm_data["representation_term"]}'
-                bsm_dict[class_term][attribute] = bsm_data
+                    bsm_dict[class_term] = bsm_data
+                if "properties" not in bsm_dict[class_term]:
+                    bsm_dict[class_term]["properties"] = {}
+                for k,v in bsm_dict[class_term]["properties"].items():
+                    if k in bsm_data:
+                        if k not in bsm_dict[class_term]["properties"]:
+                            bsm_dict[class_term]["properties"][k] = bsm_data[k]
+                        elif v != bsm_data[k]:
+                            debug_print(f'** {class_term}["{k}"] hass different value old:{bsm_dict[class_term][k]} new:{bsm_data[k]}')
+            elif "BBIE"==acronym:
+                bsm_data["property_type"] = "Attribute"
+                bsm_data["level"] = 2
+                bsm_data["property_term"] = property_term
+                bsm_data["representation_term"] = representation_term
+                attribute = f'{property_term}. {representation_term}'
+                bsm_data["element"] = normalize_text(attribute)
+                if attribute not in bsm_dict[class_term]["properties"]:
+                    bsm_dict[class_term]["properties"][attribute] = bsm_data
+                else:
+                    for k,v in bsm_dict[class_term]["properties"][attribute].items():
+                        if k!="sme_nr" and k in bsm_data and v!=bsm_data[k]:
+                            debug_print(f'** {class_term}["properties"]["{attribute}"]["{k}]:{v} differs from {bsm_data[k]}')
             elif "ASBIE"==acronym:
-                bsm_data["property_term"] = den[1].strip()
-                bsm_data["associated_class"] = den[2].strip()
-                if "associated_class" in bsm_data:
-                    association = f'{bsm_data["property_term"]}. {bsm_data["associated_class"]}'
-                    if association not in bsm_dict[class_term]:
-                        bsm_data["element"] = normalize_text(association) #.translate(str.maketrans('', '', remove_chars))
-                        bsm_dict[class_term][association] = bsm_data
-            # debug_print(
-            #     f'{bsm_data["sequence"]} level:{bsm_data["level"]} {bsm_data["property_type"]} class_term:"{class_term}" property_term:"{bsm_data["property_term"]}" representation_term:"{bsm_data["representation_term"]}" multiplicity:{bsm_data["multiplicity"]} associated_class:"{bsm_data["associated_class"]}" "{bsm_data["label_local"]}" "{bsm_data["DEN"]}" {bsm_data["UNID"]}'
-            # )
+                bsm_data["property_type"] = "Composition"
+                bsm_data["level"] = 2
+                bsm_data["property_term"] = property_term
+                bsm_data["associated_class"] = associated_class
+                association = f'{property_term}. {associated_class}'
+                bsm_data["element"] = normalize_text(association)
+                bsm_dict[class_term]["properties"][association] = bsm_data
+
+            debug_print(f'{bsm_data["sme_nr"]} level:{bsm_data["level"]} {bsm_data["property_type"]} "{bsm_data["DEN"]}" [{bsm_data["multiplicity"]}] [{bsm_data["multiplicity_SME"]}]\t"{bsm_data["label_local"]}"')
+
+    fsm_records = []
+    for bsm_den, data in bsm_dict.items():
+        bsm_properties = data["properties"]
+        fsm_records.append(bsm_dict[bsm_den])
+        debug_print(f'fsm_records append {bsm_den}')
+
+        used_dens = []
+        for bsm_data in bsm_properties.values():
+            acronym = bsm_data["acronym"]
+            unid = bsm_data["UNID"]
+            den_property = bsm_data["DEN"]
+            used_dens.append(den_property)
+            multiplicity = bsm_data["multiplicity"]
+            multiplicity_mbie = ""
+            if den_property in mbie_dict:
+                mbie_data = mbie_dict[den_property]
+                multiplicity_mbie = mbie_data["multiplicity"]
+                if multiplicity_mbie!=multiplicity:
+                    print(f"[INFO] {unid} {den_property} has modified multiplicity {multiplicity} CCL defined {multiplicity_mbie}.")    
+            else: # MBIEs24A 定義表に未定義
+                multiplicity = "Not defined in D24A"
+                bsm_data["multiplicity"] = multiplicity
+            fsm_records.append(bsm_data)
+            debug_print(f'fsm_records append {den_property} SME:{multiplicity} MBIE:{multiplicity_mbie}')
+        
+        mbie_properties = [
+            (den, data)
+            for den, data in mbie_dict.items()
+            if den.startswith(bsm_den) and data["acronym"] in ["BBIE", "ASBIE"]
+        ]
+        for mbie_den, mbie_data in mbie_properties:
+            if mbie_den not in used_dens:
+                acronym = mbie_data["acronym"]
+                multiplicity_mbie = mbie_data["multiplicity"]
+                if acronym not in ["MA","ASMA","ABIE"] and mbie_den not in bsm_properties:
+                    mbie_data["multiplicity"] = multiplicity_mbie
+                    if multiplicity_mbie and "1"==multiplicity_mbie[0]: # 必須要素は削除不可
+                        mbie_data["multiplicity_SME"] = f"Cannot remove {multiplicity_mbie}"
+                    else:
+                        mbie_data["multiplicity_SME"] = "0..0"
+                    fsm_records.append(mbie_data)
+                    debug_print(f'fsm_records append {mbie_den} SME:{ mbie_data["multiplicity_SME"]} MBIE:{multiplicity_mbie}')
 
     bsm_records = []
-    for class_term, c_data in bsm_dict.items():
-        if "_data" in c_data:
-            _data = c_data["_data"]
-            _bsm_data = {
-                "version": _data["version"],
-                "sequence": _data["sequence"],
-                "level": _data["level"],
-                "property_type": _data["property_type"],
-                "identifier": _data["identifier"],
-                "class_term": class_term,
-                "property_term": _data["property_term"],
-                "representation_term": _data["representation_term"],
-                "associated_class": _data["associated_class"],
-                "multiplicity": _data["multiplicity"],
-                "definition": "",
-                "acronym": _data["acronym"],
-                "code_list": _data["code_list"],
-                "element": _data["element"],
-                "label_local": _data["label_local"],
-                "definition_local": _data["definition_local"],
-                "DEN": _data["DEN"],
-                "UNID": _data["UNID"]
-            }
-        else:
-            print(f"[ERROR] {class_term} has no _data.")
-        bsm_records.append(_bsm_data)
+    for bsm_den,data in bsm_dict.items():
+        bsm_properties = data["properties"]
+        bsm_records.append(data)
+        debug_print(f'bsm_records append {bsm_den}')
 
-        for name, data in c_data.items():
-            if "_data"==name:
-                continue
-            bsm_data = {
-                "version": data["version"],
-                "sequence": data["sequence"],
-                "level": data["level"],
-                "property_type": data["property_type"],
-                "identifier": data["identifier"],
-                "class_term": class_term,
-                "property_term": data["property_term"],
-                "representation_term": data["representation_term"],
-                "associated_class": data["associated_class"],
-                "multiplicity": data["multiplicity"],
-                "definition": "",
-                "acronym": data["acronym"],
-                "code_list": data["code_list"],
-                "element": data["element"],
-                "label_local": data["label_local"],
-                "definition_local": data["definition_local"],
-                "DEN": data["DEN"],
-                "UNID": data["UNID"]
-            }
+        sorted_items = sorted(
+            ((name, property_data) for name, property_data in bsm_properties.items()),
+            key=lambda x: x[1]["mbie_nr"],
+        )
+
+        used_dens = []
+        for _, bsm_data in sorted_items:
+            acronym = bsm_data["acronym"]
+            unid = bsm_data["UNID"]
+            den_property = bsm_data["DEN"]
+            used_dens.append(den_property)
+            multiplicity = bsm_data["multiplicity"]
+            multiplicity_mbie = ""
+            if den_property in mbie_dict:
+                mbie_data = mbie_dict[den_property]
+                multiplicity_mbie = mbie_data["multiplicity"]
+                if multiplicity_mbie!=multiplicity:
+                    print(f"[INFO] {unid} {den_property} has modified multiplicity {multiplicity} CCL defined {multiplicity_mbie}.")    
+            else: # MBIEs24A 定義表に未定義
+                multiplicity = "Not defined in D24A"
+                bsm_data["multiplicity"] = multiplicity
             bsm_records.append(bsm_data)
+            debug_print(f'bsm_records append {den_property} SME:{multiplicity} MBIE:{multiplicity_mbie}')
+
+        mbie_properties = [
+            (den, data)
+            for den, data in mbie_dict.items()
+            if den.startswith(bsm_den) and data["acronym"] in ["BBIE", "ASBIE"]
+        ]
+        for mbie_den, mbie_data in mbie_properties:
+            if mbie_den not in used_dens:
+                acronym = mbie_data["acronym"]
+                multiplicity_mbie = mbie_data["multiplicity"]
+                if acronym not in ["MA","ASMA","ABIE"] and mbie_den not in bsm_properties:
+                    mbie_data["multiplicity"] = multiplicity_mbie
+                    if multiplicity_mbie and "1"==multiplicity_mbie[0]: # 必須要素は削除不可
+                        mbie_data["multiplicity_SME"] = f"Cannot remove {multiplicity_mbie}"
+                    else:
+                        mbie_data["multiplicity_SME"] = "0..0"
+                    bsm_records.append(mbie_data)
+                    debug_print(f'bsm_records append {mbie_den} SME:{ mbie_data["multiplicity_SME"]} MBIE:{multiplicity_mbie}')
 
     # Write to a CSV file
-    # lhm_field_names = list(lhm_records[0].keys())
-    lhm_field_names = ["version", "sequence", "level", "type", "identifier", "UNID", "acronym", "label_local", "multiplicity", "class_term", "property_term", "representation_term", "associated_class", "definition_local", "code_list", "attribute", "DEN", "definition", "short_name", "name", "element", "xpath"]
-    with open(lhm_file, mode="w", newline="", encoding="utf-8-sig") as lhmfile:
-        writer = csv.DictWriter(lhmfile, fieldnames=lhm_field_names)
+    fsm_field_names = [
+        "version",
+        "sme_nr",
+        "mbie_nr",
+        "level",
+        "property_type",
+        "class_term",
+        "sequence",
+        "identifier",
+        "property_term",
+        "multiplicity",
+        "multiplicity_SME",
+        "representation_term",
+        "code_list",
+        "attribute",
+        "associated_class",
+        "label_local",
+        "definition_local",
+        "UNID",
+        "acronym",
+        "DEN",
+        "definition",
+        "short_name",
+        "name",
+        "element",
+        "xpath",
+    ]
+    fsm_records_ = [
+        {k: v for k, v in record.items() if k in fsm_field_names}
+        for record in fsm_records
+    ]
+    _fsm_records = sorted(
+        fsm_records_,
+        key=lambda r: (r.get("class_term", ""), int(r.get("mbie_nr", 0) or 0))
+    )
+    with open(fsm_file, mode="w", newline="", encoding="utf-8-sig") as fsmfile:
+        writer = csv.DictWriter(fsmfile, fieldnames=fsm_field_names)
         writer.writeheader()
-        writer.writerows(lhm_records)
-    trace_print(f'Wrote {lhm_file}')
+        writer.writerows(_fsm_records)
 
-    bsm_field_names = list(bsm_records[0].keys())
+    trace_print(f'Wrote {fsm_file}')
+
+    bsm_field_names = [
+        "version",
+        "sme_nr",
+        "mbie_nr",
+        "level",
+        "property_type",
+        "class_term",
+        "sequence",
+        "identifier",
+        "property_term",
+        "multiplicity",
+        "multiplicity_SME",        
+        "representation_term",
+        "code_list",
+        "attribute",        
+        "associated_class",
+        "label_local",
+        "definition_local",
+        "UNID",
+        "acronym",
+        "DEN",
+        "definition",
+        "short_name",
+        "name",
+        "element",
+        "xpath",
+    ]
+    bsm_records = [
+        {k: v for k, v in record.items() if k in bsm_field_names}
+        for record in bsm_records
+    ]
     with open(bsm_file, mode="w", newline="", encoding="utf-8-sig") as bsmfile:
         writer = csv.DictWriter(bsmfile, fieldnames=bsm_field_names)
         writer.writeheader()
         writer.writerows(bsm_records)
+
     trace_print(f'Wrote {bsm_file}')
+
+    lhm_field_names = [
+        "version",
+        "sme_nr",
+        "mbie_nr",
+        "level",
+        "type",
+        "label_local",
+        "multiplicity",
+        "multiplicity_SME",
+        "class_term",
+        "sequence",
+        "identifier",
+        "property_term",
+        "representation_term",
+        "code_list",
+        "attribute",
+        "associated_class",
+        "definition_local",
+        "UNID",
+        "acronym",
+        "DEN",
+        "definition",
+        "short_name",
+        "name",
+        "element",
+        "xpath",
+    ]
+    lhm_records = [
+        {k: v for k, v in record.items() if k in lhm_field_names}
+        for record in lhm_records
+    ]
+    with open(lhm_file, mode="w", newline="", encoding="utf-8-sig") as lhmfile:
+        writer = csv.DictWriter(lhmfile, fieldnames=lhm_field_names)
+        writer.writeheader()
+        writer.writerows(lhm_records)
+
+    trace_print(f'Wrote {lhm_file}')
 
     trace_print("END")
 

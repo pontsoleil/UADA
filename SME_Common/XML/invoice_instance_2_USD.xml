@@ -1,0 +1,160 @@
+<SMECoreSelfInvoice xmlns="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33"
+  xsi:schemaLocation="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1 ../SMECoreSelfInvoice_06-23.xsd">
+  <ExchangedDocument>
+    <ID>INV007</ID>
+    <IssueDateTime>
+      <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+    </IssueDateTime>
+  </ExchangedDocument>
+  <TradeTransaction>
+    <TradeAgreement>
+      <SellerTradeParty>
+        <ID>T0123456789012</ID>
+        <Name>Seller QWE Store</Name>
+      </SellerTradeParty>
+      <BuyerTradeParty>
+        <ID>T1234567890123</ID>
+        <Name>Buyer TEST</Name>
+      </BuyerTradeParty>
+    </TradeAgreement>
+    <TradeSettlement>
+      <TaxCurrencyCode>JPY</TaxCurrencyCode>
+      <InvoiceCurrencyCode>USD</InvoiceCurrencyCode>
+    </TradeSettlement>
+    <TradeLineItem>
+      <AssociatedDocumentLineDocument>
+        <LineID>NA</LineID>
+      </AssociatedDocumentLineDocument>
+      <TradeSettlement>
+        <TradeTax>
+          <CalculatedAmount currencyID="JPY">1500</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.10</CalculatedRate>
+          <BasisAmount currencyID="JPY">15000</BasisAmount>
+          <CategoryCode>S</CategoryCode>
+        </TradeTax>
+        <TradeTax>
+          <CalculatedAmount currencyID="JPY">600</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.08</CalculatedRate>
+          <BasisAmount currencyID="JPY">7500</BasisAmount>
+          <CategoryCode>AA</CategoryCode>
+        </TradeTax>
+        <TradeSettlementMonetarySummation>
+          <TaxTotalAmount currencyID="JPY">2100</TaxTotalAmount>
+        </TradeSettlementMonetarySummation>
+      </TradeSettlement>
+      <SubordinateSubordinateTradeLineItem>
+        <ID>NA</ID>
+        <RequestedResponseTypeCode>NA</RequestedResponseTypeCode>
+        <TradeAgreement>
+          <NetPriceProductTradePrice>
+            <ChargeAmount>0</ChargeAmount>
+          </NetPriceProductTradePrice>
+        </TradeAgreement>
+        <TradeDelivery>
+          <BilledQuantity>0</BilledQuantity>
+        </TradeDelivery>
+        <TradeSettlement>
+          <TradeTax>
+            <CategoryCode>NA</CategoryCode>
+          </TradeTax>
+          <BillingPeriod></BillingPeriod>
+        </TradeSettlement>
+        <TradeProduct>
+          <Name>NA</Name>
+        </TradeProduct>
+      </SubordinateSubordinateTradeLineItem>
+    </TradeLineItem>
+    <TradeLineItem>
+      <AssociatedDocumentLineDocument>
+        <LineID>1</LineID>
+      </AssociatedDocumentLineDocument>
+      <TradeSettlement>
+        <TradeTax>
+          <CalculatedAmount currencyID="USD">10</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.10</CalculatedRate>
+          <BasisAmount currencyID="USD">100</BasisAmount>
+          <CategoryCode>S</CategoryCode>
+        </TradeTax>
+        <TradeTax>
+          <CalculatedAmount currencyID="USD">4</CalculatedAmount>
+          <TypeCode>VAT</TypeCode>
+          <CalculatedRate>0.08</CalculatedRate>
+          <BasisAmount currencyID="USD">50</BasisAmount>
+          <CategoryCode>AA</CategoryCode>
+        </TradeTax>
+        <TradeSettlementMonetarySummation>
+          <TaxTotalAmount currencyID="USD">14</TaxTotalAmount>
+          <NetLineTotalAmount currencyID="USD">150</NetLineTotalAmount>
+          <GrandTotalAmount currencyID="USD">164</GrandTotalAmount>
+        </TradeSettlementMonetarySummation>
+      </TradeSettlement>
+      <SubordinateSubordinateTradeLineItem>
+        <ID>1-1</ID>
+        <RequestedResponseTypeCode>NA</RequestedResponseTypeCode>
+        <TradeAgreement>
+          <NetPriceProductTradePrice>
+            <ChargeAmount>10000</ChargeAmount>
+          </NetPriceProductTradePrice>
+        </TradeAgreement>
+        <TradeDelivery>
+          <BilledQuantity unitCode="EA">1</BilledQuantity>
+        </TradeDelivery>
+        <TradeSettlement>
+          <TradeTax>
+            <TypeCode>VAT</TypeCode>
+            <CategoryCode>S</CategoryCode>
+            <RatePercent>10.0</RatePercent>
+          </TradeTax>
+          <BillingPeriod>
+            <StartDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </StartDateTime>
+            <EndDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </EndDateTime>
+          </BillingPeriod>
+        </TradeSettlement>
+        <TradeProduct>
+          <Name>Product Z</Name>
+          <Description>10% JCT</Description>
+        </TradeProduct>
+      </SubordinateSubordinateTradeLineItem>
+      <SubordinateSubordinateTradeLineItem>
+        <ID>1-2</ID>
+        <RequestedResponseTypeCode>NA</RequestedResponseTypeCode>
+        <TradeAgreement>
+          <NetPriceProductTradePrice>
+            <ChargeAmount currencyID="USD">5000</ChargeAmount>
+          </NetPriceProductTradePrice>
+        </TradeAgreement>
+        <TradeDelivery>
+          <BilledQuantity unitCode="EA">1</BilledQuantity>
+        </TradeDelivery>
+        <TradeSettlement>
+          <TradeTax>
+            <TypeCode>VAT</TypeCode>
+            <CategoryCode>AA</CategoryCode>
+            <RatePercent>8.0</RatePercent>
+          </TradeTax>
+          <BillingPeriod>
+            <StartDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </StartDateTime>
+            <EndDateTime>
+              <udt:DateTimeString>2025-05-14</udt:DateTimeString>
+            </EndDateTime>
+          </BillingPeriod>
+        </TradeSettlement>
+        <TradeProduct>
+          <Name>Product X</Name>
+          <Description>8% Reduced rate JCT</Description>
+        </TradeProduct>
+      </SubordinateSubordinateTradeLineItem>
+    </TradeLineItem>
+  </TradeTransaction>
+</SMECoreSelfInvoice>

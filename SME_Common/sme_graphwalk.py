@@ -144,11 +144,13 @@ class Graphwalk:
         self.root_terms = root_terms
         self.DNM = False
         self.SME_COMMON = False
+
         if option:
             if "D"==option.strip().upper():
                 self.DNM = True
             elif "S"==option.strip().upper():
                 self.SME_COMMON = True
+
         self.TRACE = trace
         self.DEBUG = debug
 
@@ -217,23 +219,23 @@ class Graphwalk:
         row["class_term"] = class_term
         property_term = row['property_term']
         if property_term:
-            property_term = self.normalize_text(property_term)
+            # property_term = self.normalize_text(property_term)
             row["property_term"] = property_term
         associated_class = row['associated_class']
         if associated_class:
-            associated_class = self.normalize_text(associated_class)
+            # associated_class = self.normalize_text(associated_class)
             row["associated_class"] = associated_class
         if _type in ['Class','Specialized Class']:
             if not class_term in self.object_class_dict:
                 self.object_class_dict[class_term] = row
-                self.object_class_dict[class_term]['properties'] = {}
-            if 'level' in row and int(row['level']) > 1:
-                associated_class = self.object_class_dict[class_term]
+            #     self.object_class_dict[class_term]['properties'] = {}
+            # if 'level' in row and int(row['level']) > 1:
+            #     associated_class = self.object_class_dict[class_term]
         else:
-            if not class_term in self.object_class_dict:
-                self.object_class_dict[class_term] = row
-                self.object_class_dict[class_term]['properties'] = {}
-            self.object_class_dict[class_term]['properties'][unid] = row
+            if "properties" not in self.object_class_dict[class_term]: #not class_term in self.object_class_dict:
+                # self.object_class_dict[class_term] = row
+                self.object_class_dict[class_term]['properties'] = []
+            self.object_class_dict[class_term]['properties'].append(row)
         return class_term, property_term, associated_class
 
     def extract_uppercase_and_digits(self, string):
@@ -251,7 +253,7 @@ class Graphwalk:
         id = data['id']
         level = data['level']
         type_ = data['type']
-        multiplicity = True if data['multiplicity'][-1] in ["*","n"] else False
+        multiplicity = True if data['multiplicity'] and data['multiplicity'][-1] in ["*","n"] else False
         id_ = self.index_manager.generate_indexed_code(id)
 
         self.levels[level - 1] = {'id':id_, 'multiplicity': multiplicity, "type": type_}
@@ -473,7 +475,7 @@ class Graphwalk:
         parent_class = [''] * self.LEVEL_NUM
         for record in hierarchy_records:
             property_type = record['property_type']
-            level = int(record['level'])
+            # level = int(record['level'])
             class_term = record['class_term']
             representation_term = record['representation_term']
             property_term = record['property_term']
@@ -481,9 +483,9 @@ class Graphwalk:
             data_type = ''
             if 'Class' == property_type:
                 name = class_term.split("-")[-1]
-                parent_class[level] = name
-                for i in range(level, self.LEVEL_NUM):
-                    parent_class[i] = ''
+                # parent_class[level] = name
+                # for i in range(level, self.LEVEL_NUM):
+                #     parent_class[i] = ''
             elif 'Attribute' == property_type:
                 # name = property_term
                 # datatype = representation_term
@@ -522,8 +524,11 @@ class Graphwalk:
         the LIFO list.
         """
         _class_term = class_term
-        if "_" in _class_term: # romove originating class name for this associated class
-            _class_term = _class_term[1+_class_term.index("_"):]
+        if "|" in _class_term: # romove originating class name for this associated class
+            _class_term = class_term[1 + class_term.index("|"):]
+            class_qualifier = class_term[:class_term.index("|")]
+        else:
+            class_qualifier = ""
         if _class_term not in self.object_class_dict:
             print(f"[ERROR] '{_class_term}' not in object_class_dict")
             return
@@ -576,15 +581,15 @@ class Graphwalk:
             definition = definition.replace('A class', f"The reference association to the {class_term.replace('_', ' ')} class, which is a class")
             object_class['definition'] = definition
             object_class['type'] = 'R'
-            properties_list = {}
+            properties_list = []
             for key in self.object_class_dict:
                 if key.startswith(_class_term):
                     properties = self.object_class_dict[_class_term].get('properties', [])
-                    for key, prop in properties.items():
-                        properties_list[key] = prop
-            for key, prop in properties_list.items():
+                    for prop in properties:
+                        properties_list.append(prop)
+            for prop in properties_list:
                 object_class['properties'][key] = prop
-            hasPK = any(property.get('identifier', '') == 'PK' for property in properties_list.values())
+            hasPK = any(property.get('identifier', '') == 'PK' for property in properties_list)
             if "-" not in object_class['class_term'] and not hasPK:
                 print(f"[ERROR] Referenced class {object_class['class_term']} has no PK(primary Key).")
             else:
@@ -593,14 +598,32 @@ class Graphwalk:
             object_class['type'] = 'C'
         if level > 1 and self.current_multiplicity:
             object_class['multiplicity'] = self.current_multiplicity
+        
+        den = object_class["DEN"]
+        parts = [x.strip() for x in den.split(".")]
+        _class_term = parts[0]
+        object_class["class_term"] = object_class["label_local"] = _class_term
+        if class_qualifier:
+            _class_term = object_class["class_term"] = object_class["label_local"] = f'{class_qualifier}_ {_class_term}'
+
         self.LHM_model.append(object_class)
+
         self.debug_print(f"  {level} Class:'{object_class['class_term']}'")
         properties = copy.deepcopy(object_class['properties'])
+        sorted_properties = sorted(
+            properties,
+            key=lambda p: (
+                0 if p["property_term"] == "Identification" and p["representation_term"] == "Identifier"
+                else 1 if p["property_type"] == "Attribute"
+                else 2
+            )
+        )
         level += 1
-        for id, property_ in properties.items():
+        for property_ in sorted_properties:
             property = property_.copy()
-            if not id:
-                pass
+            if _class_term!=property["class_term"]:
+                property["class_term"] = _class_term
+            property["class_term"] = _class_term
             if property['property_type'] in ['Attribute(PK)','Attribute']:
                 """
                 a) Step 1: Copy a class from the BSM to the LHM.
@@ -616,10 +639,7 @@ class Graphwalk:
                     continue
                 property['level'] = level
                 property['type'] = 'A'
-                propertyclass_term = property['class_term']
                 LIFO_term = "-".join(self.LIFO_list)
-                if propertyclass_term != LIFO_term:
-                    property['class_term'] = LIFO_term
                 if REFERENCE_OF:
                     LIFO_term += f"-{class_term}"
                     """
@@ -635,14 +655,38 @@ class Graphwalk:
                     """
                     if 'PK'==property['identifier']:
                         property['identifier'] = 'REF'
-                        property['class_term'] = LIFO_term
                         definition = property['definition']
                         definition = definition.replace('unique identifier', 'reference identifier')
                         property['definition'] = definition
+                        if class_qualifier:
+                            if class_qualifier not in _class_term:
+                                class_term_ = property["class_term"] =f'{class_qualifier}_ {_class_term}'
+                            else:
+                                class_term_ = _class_term
+                            den = property["DEN"]
+                            property["DEN"] = f'{class_term_}. {den[2+den.index("."):]}'                           
+                        if den.endswith("Identification. Identifier"):
+                            property["label"] = f'{den[2+den.index("."):-26]}ID'
+
                         self.LHM_model.append(property)
-                        self.debug_print(f"  {level} {property['property_type']} {property['identifier']} [{property['multiplicity']}] {property['property_term']}{property['associated_class']}")
-                else:
+
+                        self.debug_print(f"  {level} {property['property_type']} {property['identifier']} [{property['multiplicity']}] {property['property_term']}{property['associated_class']}") 
+                elif property['property_type'] in ['Attribute(PK)','Attribute']:
+                    den = property["DEN"]
+                    parts = [x.strip() for x in den.split(".")]
+                    property["label"] = parts[1]
+                    if class_qualifier:
+                        if class_qualifier not in _class_term:
+                            class_term_ = property["class_term"] =f'{class_qualifier}_ {_class_term}'
+                        else:
+                            class_term_ = _class_term
+                        den = property["DEN"]                        
+                        property["DEN"] = f'{class_term_}. {den[2+den.index("."):]}'
+                        if den.endswith("Identification. Identifier"):
+                            property["label"] = f'{den[2+den.index("."):-26]}ID'
+
                     self.LHM_model.append(property)
+
                     self.debug_print(f"  {level} {property['property_type']} [{property['multiplicity']}] {property['property_term']}{property['associated_class']}")
 
         if REFERENCE_OF:
@@ -673,7 +717,7 @@ class Graphwalk:
             self.current_definition = None
             if associated_class:
                 if property_term:
-                    selectedclass_term = f"{property_term}_{associated_class}"
+                    selectedclass_term = f"{property_term}|{associated_class}"
                 else:
                     selectedclass_term = associated_class
                 if self.SME_COMMON:
@@ -686,6 +730,7 @@ class Graphwalk:
                 current_multiplicity = _class['multiplicity']
                 self.current_multiplicity = current_multiplicity if current_multiplicity and '-'!=current_multiplicity else None
                 self.debug_print(f"  {level} {property_type}[{self.current_multiplicity}] {selectedclass_term}")
+
                 self.parse_class(selectedclass_term, 'Reference Association'==property_type and _class['class_term'] or None)
 
         if not self.SME_COMMON:
@@ -695,7 +740,7 @@ class Graphwalk:
             """
             mandate_classes = [
                 cls
-                for cls in properties.values()
+                for cls in properties
                 if cls["property_type"]
                 in ["Reference Association", "Aggregation", "Composition"]
                 and cls["multiplicity"] in ["1", "1..1"]
@@ -706,7 +751,7 @@ class Graphwalk:
             """
             singular_classes = [
                 cls
-                for cls in properties.values()
+                for cls in properties
                 if cls["property_type"]
                 in ["Reference Association", "Aggregation", "Composition"]
                 and "0..1" == cls["multiplicity"]
@@ -717,10 +762,10 @@ class Graphwalk:
             """
             other_classes = [
                 cls
-                for cls in properties.values()
+                for cls in properties
                 if cls["property_type"]
                 in ["Reference Association", "Aggregation", "Composition"]
-                and cls["multiplicity"] in ["0..*", "1..*"]
+                and cls["multiplicity"] in ["0..*", "1..*", "0..n", "1..n"]
             ]
             """
             B. Mandatory, Singular.
@@ -755,7 +800,7 @@ class Graphwalk:
         else:
             classes = [
                 cls
-                for cls in properties.values()
+                for cls in properties
                 if cls["property_type"]
                 in ["Reference Association", "Aggregation", "Composition"]
             ]
@@ -841,6 +886,8 @@ class Graphwalk:
                 record["class_term"] = class_term
                 record["property_term"] = property_term
                 record["associated_class"] = associated_class
+                if not record["label_local"]:
+                    record["label_local"] = record["DEN"] 
                 self.debug_print(f"{unid}\t{record['property_type']}\t'{class_term}'\t'{record['associated_class'] or record['property_term']}'")
 
         self.LHM_model = []
@@ -975,7 +1022,7 @@ def main():
                 root_terms.extend(val.split("+"))
             else:
                 root_terms.append(val)
-    root_terms = [normalize_text(x) for x in root_terms]
+    root_terms = [x for x in root_terms]
 
     processor = Graphwalk(
         bsm_file = args.BSM_file.strip(),

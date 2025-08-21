@@ -7,7 +7,7 @@
             "url": "./xbrl-gl.schema.json"
         }
     ],
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$schema": "https://json-schema.org/draft-07/schema",
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": true

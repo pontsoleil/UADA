@@ -43,10 +43,11 @@
 
             // sme_schema.py
             "args": [
-                "SME_common_LHM06-02.csv",
-                "-r", "SME_ Core Self Invoice",
+                "SME_common06-21_LHM.csv",
+                "-r", "SMECoreSelfInvoice",
                 "-t", "-d"
             ]
+
         }
     ]
 }

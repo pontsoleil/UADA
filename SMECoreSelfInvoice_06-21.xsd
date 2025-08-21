@@ -1,0 +1,622 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== -->
+<!-- ===== SMECoreSelfInvoice Schema Module                           ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  
+Schema version: 
+Schema date:    
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" 
+xmlns:rsm="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1" 
+xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33" 
+targetNamespace="urn:un:unece:uncefact:3055:413:data:standard:SMECoreSelfInvoice:4p1" 
+elementFormDefault="qualified" 
+attributeFormDefault="unqualified" 
+version="20230720135040">
+<!-- ======================================================================= -->
+<!-- ===== Imports                                                     ===== -->
+<!-- ======================================================================= -->
+<!-- ===== Import of Unqualified Data Type Schema Module               ===== -->
+<!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33" schemaLocation="UnqualifiedDataType_33p0.xsd"/>
+<!-- ======================================================================= -->
+<!-- ===== Element Declarations                                        ===== -->
+<!-- ======================================================================= -->
+<!-- ===== Root Element Declarations                                   ===== -->
+<!-- ======================================================================= -->
+  <xsd:element name="SMECoreSelfInvoice" >
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ExchangedDocumentContext" minOccurs="0" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="TransactionID" type="udt:IDType" minOccurs="0" />
+              <xsd:element name="TransactionDateTime" type="udt:DateTimeType" minOccurs="0" />
+              <xsd:element name="BusinessProcessDocumentContextParameter" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                    <xsd:element name="Value" type="udt:TextType" minOccurs="0" />
+                    <xsd:element name="DocumentVersion" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="ScenarioDocumentContextParameter" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                    <xsd:element name="Value" type="udt:TextType" minOccurs="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="ApplicationDocumentContextParameter" minOccurs="0" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                    <xsd:element name="Value" type="udt:TextType" minOccurs="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="SubsetDocumentContextParameter" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                    <xsd:element name="Value" type="udt:TextType" minOccurs="0" />
+                    <xsd:element name="DocumentVersion" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="ExchangedDocument" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="ID" type="udt:IDType" />
+              <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+              <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+              <xsd:element name="IssueDateTime" type="udt:DateTimeType" />
+              <xsd:element name="LanguageID" type="udt:IDType" minOccurs="0" />
+              <xsd:element name="PurposeCode" type="udt:CodeType" minOccurs="0" />
+              <xsd:element name="PreviousRevisionID" type="udt:IDType" minOccurs="0" />
+              <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+              <xsd:element name="SubtypeCode" type="udt:CodeType" minOccurs="0" />
+              <xsd:element name="Note" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="Subject" type="udt:TextType" minOccurs="0" />
+                    <xsd:element name="Content" type="udt:TextType" minOccurs="0" />
+                    <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="ReferenceReferencedDocument" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="IssuerAssignedID" type="udt:IDType" />
+                    <xsd:element name="URIID" type="udt:IDType" minOccurs="0" />
+                    <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                    <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                    <xsd:element name="SubtypeCode" type="udt:CodeType" minOccurs="0" />
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="TradeTransaction" >
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="TradeAgreement" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="SellerTradeParty" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                          <xsd:element name="RegisteredID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="TradeContact" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="PersonName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="DepartmentName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="TelephoneUniversalCommunication" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CompleteNumber" type="udt:TextType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="FaxUniversalCommunication" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CompleteNumber" type="udt:TextType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PostalTradeAddress" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="PostcodeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="LineOne" type="udt:TextType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="BuyerTradeParty" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                          <xsd:element name="RegisteredID" type="udt:IDType" minOccurs="0" />
+                          <xsd:element name="TradeContact" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="PersonName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="DepartmentName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="TelephoneUniversalCommunication" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="CompleteNumber" type="udt:TextType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PostalTradeAddress" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="PostcodeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="LineOne" type="udt:TextType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="ProcuringProject" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" />
+                          <xsd:element name="Name" type="udt:TextType" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="TradeSettlement" >
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="TaxCurrencyCode" type="udt:CodeType" minOccurs="0" />
+                    <xsd:element name="InvoiceCurrencyCode" type="udt:CodeType" />
+                    <xsd:element name="PaymentCurrencyCode" type="udt:CodeType" minOccurs="0" />
+                    <xsd:element name="TradeSettlementPaymentMeans" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="PayeePartyCreditorFinancialAccount" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="AccountName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="ProprietaryID" type="udt:IDType" minOccurs="0" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="PayeeCreditorFinancialInstitution" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="Sub-DivisionBranchFinancialInstitution" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeSettlementFinancialCard" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ID" type="udt:IDType" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="CardholderName" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="IssuingCompanyName" type="udt:TextType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="TradeTax" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="CalculatedAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="TypeCode" type="udt:CodeType" />
+                          <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="CategoryName" type="udt:TextType" minOccurs="0" />
+                          <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                          <xsd:element name="CalculationMethodCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="LocalTaxSystemID" type="udt:IDType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="BillingPeriod" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="StartDateTime" type="udt:DateTimeType" minOccurs="0" />
+                          <xsd:element name="EndDateTime" type="udt:DateTimeType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="TradePaymentTerms" minOccurs="0" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="Description" type="udt:TextType" minOccurs="0" />
+                          <xsd:element name="DueDateDateTime" type="udt:DateTimeType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="TradeSettlementMonetarySummation" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ChargeTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="AllowanceTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="TaxTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="DuePayableAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="NetLineTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="TaxesLineTotalAmount" type="udt:AmountType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="FinancialAdjustment" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                          <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="DirectionCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="RelatedTradeTax" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CalculatedAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="CalculatedRate" type="udt:RateType" minOccurs="0" />
+                                <xsd:element name="BasisAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="OutstandingTradeSettlementMonetarySummation" minOccurs="0" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="TotalPrepaidAmount" type="udt:AmountType" minOccurs="0" />
+                          <xsd:element name="DuePayableAmount" type="udt:AmountType" minOccurs="0" />
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name="TradeLineItem" minOccurs="0" maxOccurs="unbounded">
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name="AssociatedDocumentLineDocument" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="LineID" type="udt:IDType" />
+                          <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="Note" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Subject" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="Content" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="ReferenceReferencedDocument" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="IssuerAssignedID" type="udt:IDType" />
+                                <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                                <xsd:element name="RevisionID" type="udt:IDType" minOccurs="0" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="SubtypeCode" type="udt:CodeType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="TradeSettlement" >
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="DirectionCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="TradeAllowance" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ChargeIndicator" type="udt:IndicatorType" />
+                                <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="CategoryTradeTax" minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="TypeCode" type="udt:CodeType" />
+                                      <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                      <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeCharge" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ChargeIndicator" type="udt:IndicatorType" />
+                                <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="CategoryTradeTax" minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="TypeCode" type="udt:CodeType" />
+                                      <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                      <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeTax" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="CalculatedAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="CalculatedRate" type="udt:RateType" minOccurs="0" />
+                                <xsd:element name="BasisAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                <xsd:element name="CurrencyCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="CalculationMethodCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="LocalTaxSystemID" type="udt:IDType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeSettlementMonetarySummation" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ChargeTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="AllowanceTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="TaxTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="GrossLineTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="NetLineTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="NetTaxesLineTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="ReferencedReferencedDocument" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="IssuerAssignedID" type="udt:IDType" />
+                                <xsd:element name="URIID" type="udt:IDType" minOccurs="0" />
+                                <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                                <xsd:element name="RevisionID" type="udt:IDType" minOccurs="0" />
+                                <xsd:element name="Information" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="SubtypeCode" type="udt:CodeType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="ReceivableTradeAccountingAccount" minOccurs="0" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ID" type="udt:IDType" />
+                                <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="SubordinateSubordinateTradeLineItem" maxOccurs="unbounded">
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:element name="ID" type="udt:IDType" />
+                          <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                          <xsd:element name="RequestedResponseTypeCode" type="udt:CodeType" />
+                          <xsd:element name="Note" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="Subject" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="Content" type="udt:TextType" minOccurs="0" />
+                                <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeAgreement" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ReferencedReferencedDocument" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="IssuerAssignedID" type="udt:IDType" />
+                                      <xsd:element name="URIID" type="udt:IDType" minOccurs="0" />
+                                      <xsd:element name="IssueDateTime" type="udt:DateTimeType" minOccurs="0" />
+                                      <xsd:element name="LineID" type="udt:IDType" />
+                                      <xsd:element name="RevisionID" type="udt:IDType" minOccurs="0" />
+                                      <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                                      <xsd:element name="Information" type="udt:TextType" minOccurs="0" maxOccurs="unbounded"/>
+                                      <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="SubtypeCode" type="udt:CodeType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="NetPriceProductTradePrice" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="ChargeAmount" type="udt:AmountType" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeDelivery" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="BilledQuantity" type="udt:QuantityType" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeSettlement" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="DirectionCode" type="udt:CodeType" minOccurs="0" />
+                                <xsd:element name="TradeTax" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="BasisAmount" type="udt:AmountType" minOccurs="0" />
+                                      <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                      <xsd:element name="CategoryName" type="udt:TextType" minOccurs="0" />
+                                      <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                      <xsd:element name="GrandTotalAmount" type="udt:AmountType" minOccurs="0" />
+                                      <xsd:element name="LocalTaxSystemID" type="udt:IDType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="FinancialAdjustment" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                                      <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                                      <xsd:element name="RelatedTradeTax" minOccurs="0" >
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                            <xsd:element name="CategoryCode" type="udt:CodeType" minOccurs="0" />
+                                            <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                          </xsd:sequence>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="TradeAllowance" minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="ChargeIndicator" type="udt:IndicatorType" />
+                                      <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                                      <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                                      <xsd:element name="CategoryTradeTax" minOccurs="0" maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                            <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                          </xsd:sequence>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="TradeCharge" minOccurs="0" maxOccurs="unbounded">
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="ChargeIndicator" type="udt:IndicatorType" />
+                                      <xsd:element name="ActualAmount" type="udt:AmountType" minOccurs="0" />
+                                      <xsd:element name="ReasonCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="Reason" type="udt:TextType" minOccurs="0" />
+                                      <xsd:element name="CategoryTradeTax" minOccurs="0" maxOccurs="unbounded">
+                                        <xsd:complexType>
+                                          <xsd:sequence>
+                                            <xsd:element name="CategoryCode" type="udt:CodeType" />
+                                            <xsd:element name="RatePercent" type="udt:PercentType" minOccurs="0" />
+                                          </xsd:sequence>
+                                        </xsd:complexType>
+                                      </xsd:element>
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="BillingPeriod" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="StartDateTime" type="udt:DateTimeType" minOccurs="0" />
+                                      <xsd:element name="EndDateTime" type="udt:DateTimeType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                                <xsd:element name="ReceivableTradeAccountingAccount" minOccurs="0" >
+                                  <xsd:complexType>
+                                    <xsd:sequence>
+                                      <xsd:element name="ID" type="udt:IDType" />
+                                      <xsd:element name="TypeCode" type="udt:CodeType" minOccurs="0" />
+                                      <xsd:element name="Name" type="udt:TextType" minOccurs="0" />
+                                    </xsd:sequence>
+                                  </xsd:complexType>
+                                </xsd:element>
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="TradeProduct" >
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:element name="ID" type="udt:IDType" minOccurs="0" />
+                                <xsd:element name="Name" type="udt:TextType" />
+                                <xsd:element name="Description" type="udt:TextType" minOccurs="0" />
+                              </xsd:sequence>
+                            </xsd:complexType>
+                          </xsd:element>
+                        </xsd:sequence>
+                      </xsd:complexType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

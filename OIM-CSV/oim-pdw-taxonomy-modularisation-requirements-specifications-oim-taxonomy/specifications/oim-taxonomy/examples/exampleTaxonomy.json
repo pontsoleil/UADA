@@ -1,0 +1,1035 @@
+{
+    "$schema": "../oim-taxonomy-schema.json",
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2025/taxonomy",
+        "namespaces": {
+            "exp":  "http://example.com/taxonomy",
+            "lei": "http://standards.iso.org/iso/17442",
+            "xbrl": "https://xbrl.org/2025",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "utr": "https://xbrl.org/2025/utr",
+            "xbrli":"https://xbrl.org/2025/instance",
+            "xs": "http://www.w3.org/2001/XMLSchema",
+            "ref":"https://xbrl.org/2025/ref"  
+            },
+        "documentNamespace":"exp",
+        "urlMapping": {
+            "exp": "exampleTaxonomy.json"
+        }
+    },
+    "taxonomy": {
+        "resolved" : false,
+        "name": "exp:SampleTaxonomy",
+        "frameworkName": "us-gaap",
+        "version": "2024",
+        "importedTaxonomies": [
+            {
+                "taxonomyName" :"xbrli:TypesTaxonomyModule"
+            },
+            {
+                "taxonomyName" :"utr:UnitsTaxonomyModule"
+            }
+        ],
+        "propertyTypes": [
+            {
+                "name": "exp:ipsum",
+                "dataType": "xs:string",
+                "definitional": true,
+                "allowedObjects": [
+                    "xbrl:conceptObject"
+                ],
+                "allowedAsLinkProperty": true
+            },
+            {
+                "name": "exp:Subsection",
+                "dataType": "xs:string",
+                "definitional": false,
+                "allowedObjects": [
+                    "xbrl:referenceObject"
+                ]
+            }
+        ],
+        "abstracts": [
+            {
+                "name": "exp:StatementOfIncome"
+            }
+        ],
+        "concepts": [
+            {
+                "name": "exp:Revenue",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "nillable": true,
+                "properties": [
+                    {"property": "xbrl:balance","value" : "credit"}
+                ]
+            },
+            {
+                "name": "exp:CostOfGoodsSold",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "properties": [
+                    {"property": "xbrl:balance","value" : "debit"}
+                ],
+                "nillable": true
+            },
+            {
+                "name": "exp:GrossProfit",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "properties": [
+                    {"property": "xbrl:balance","value" : "credit"}
+                ],
+                "nillable": true
+            },
+            {
+                "name": "exp:NetIncome",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "properties": [
+                    {"property": "xbrl:balance","value" : "credit"}
+                ],
+                "nillable": true
+            },
+            {
+                "name": "exp:OperatingExpenses",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "properties": [
+                    {"property": "xbrl:balance","value" : "debit"}
+                ],
+                "nillable": true
+            },
+            {
+                "name": "exp:Country",
+                "dataType": "xs:QName",
+                "periodType": "duration",
+                "enumerationDomain": "exp:DomainOfCountries",
+                "nillable": true
+            },
+            {
+                "name": "exp:EventDescription",
+                "dataType": "xs:string",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:EventDate",
+                "dataType": "xs:dateTime",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:FunctionalCurrency",
+                "dataType": "xs:QName",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:FunctionalAmount",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:ReportingCurrency",
+                "dataType": "xs:QName",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:ReportingAmount",
+                "dataType": "xbrli:monetary",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:ProductIdentifier",
+                "dataType": "xs:string",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:ProductDescription",
+                "dataType": "xs:string",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:ReportDate",
+                "dataType": "xs:dateTime",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:PriorPeriod",
+                "dataType": "xs:dateTime",
+                "periodType": "duration",
+                "nillable": true
+            },
+            {
+                "name": "exp:PeakGridElectricityDemand",
+                "dataType": "xbrli:power",
+                "periodType": "instant",
+                "nillable": true
+            }
+        ],
+        "members": [
+            {
+                "name": "exp:Country_USA"
+            },
+            {
+                "name": "exp:Country_Canada"
+            },
+            {
+                "name": "exp:Country_UK"
+            },
+            {
+                "name": "exp:Country_Mexico"
+            }
+        ],
+        "dimensions": [
+            {
+                "name": "exp:ProductIdentifierDimension",
+                "domainDataType": "xs:token",
+                "cubeTypes": [
+                    "xbrl:referenceCube"
+                ]
+            },
+            {
+                "name": "exp:CountryDimension",
+                "domainRoot": "exp:DomainOfCountriesRoot"
+            },
+            {
+                "name": "exp:SaleEventDimension",
+                "domainDataType": "xs:token",
+                "cubeTypes": [
+                    "xbrl:eventCube"
+                ]
+            },
+            {
+                "name": "exp:TimeSeriesDimension",
+                "domainDataType": "xs:token"
+            }
+
+        ],
+        "entities": [
+            {
+                "name": "lei:00EHHQ2ZHDCFXJCPCL46"
+            }
+        ],
+        "units": [
+            {
+                "name": "exp:flagez",
+                "dataType": "xbrli:flow",
+                "dataTypeNumerator": "xbrli:volume",
+                "dataTypeDenominator": "xs:duration"
+            }
+        ],
+        "groups": [
+            {
+                "name": "exp:CountryGroup",
+                "groupURI": "http://example.com/groups/country"
+            },
+            {
+                "name": "exp:IncomeStatementGroup",
+                "groupURI": "http://example.com/groups/income-statement"
+            },
+            {
+                "name": "exp:SaleEventGroup",
+                "groupURI": "http://example.com/groups/sale-event"
+            },
+            {
+                "name": "exp:ProductListingGroup",
+                "groupURI": "http://example.com/groups/product-listing"
+            },
+            {
+                "name": "exp:PeakTimeSeriesGroup",
+                "groupURI": "http://example.com/groups/peak-timeseries"
+            },
+            {
+                "name": "exp:NotesGroup",
+                "groupURI": "http://example.com/groups/notes"
+            }
+        ],
+        "groupContents": [
+            {
+                "groupName": "exp:CountryGroup",
+                "relatedNames": [
+                    "exp:GeographicCube"
+                ]
+            },
+            {
+                "groupName": "exp:IncomeStatementGroup",
+                "relatedNames": [
+                    "exp:IncomeStatementCube",
+                    "exp:Network2",
+                    "exp:Network3"
+                ]
+            },
+            {
+                "groupName": "exp:SaleEventGroup",
+                "relatedNames": [
+                    "exp:SaleEventCube"
+                ]
+            },
+            {
+                "groupName": "exp:ProductListingGroup",
+                "relatedNames": [
+                    "exp:ProductIdentifierCube"
+                ]
+            },
+            {
+                "groupName": "exp:PeakTimeSeriesGroup",
+                "relatedNames": [
+                    "exp:IntervalTimeSeriesCube"
+                ]
+            },
+            {
+                "groupName": "exp:NotesGroup",
+                "relatedNames": [
+                    "exp:network1",
+                    "exp:network4"
+                ]
+            }
+        ],
+        "relationshipTypes": [
+            {
+                "name": "exp:concept-abstract",
+                "uri": "http://example.com/groups/concept-abstract",
+                "cycles": "none",
+                "allowedLinkProperties": [
+                    "exp:ipsum"
+                ],
+                "requiredLinkProperties": [
+                    "exp:ipsum"
+                ],
+                "sourceObjects": [
+                    "xbrl:conceptObject"
+                ],
+                "targetObjects": [
+                    "xbrl:conceptObject"
+                ]
+            }
+        ],
+        "cubes": [
+            {
+                "name": "exp:GeographicCube",
+                "cubeType": "xbrl:reportCube",
+                "cubeDimensions": [
+                    {
+                        "dimensionName": "exp:CountryDimension",
+                        "domainName": "exp:DomainOfCountries",
+                        "allowDomainFacts": true
+                    },
+                    {
+                        "dimensionName": "xbrl:concept",
+                        "domainName": "exp:PrimaryCountryDomain"
+                    },
+                    {
+                        "dimensionName": "xbrl:unit",
+                        "allowDomainFacts": true
+                    },
+                    {
+                        "dimensionName": "xbrl:entity"
+                    },
+                    {
+                        "dimensionName": "xbrl:period",
+                        "allowDomainFacts": true
+                    }
+                ]
+            },
+            {
+                "name": "exp:IncomeStatementCube",
+                "cubeType": "exp:myIncomeStatementCube",
+                "cubeDimensions": [
+                    {
+                        "dimensionName": "xbrl:concept",
+                        "domainName": "exp:PrimaryIncomeStatementDomain"
+                    },
+                    {
+                        "dimensionName": "xbrl:period",
+                        "periodConstraints": [
+                            {
+                                "periodType": "duration",
+                                "timeSpan": "P1Y",
+                                "endDate": {
+                                    "conceptName": "exp:ReportDate"
+                                }
+                            },
+                            {
+                                "periodType": "duration",
+                                "timeSpan": "P1Y",
+                                "endDate": {
+                                    "conceptName": "exp:ReportDate",
+                                    "timeShift": "-P1Y"
+                                }
+                            },
+                            {
+                                "periodType": "duration",
+                                "periodFormat": "2026Q2"
+                            },
+                            {
+                                "periodType": "instant",
+                                "endDate": {
+                                    "context": "exp:ReportDate@end"
+                                }
+                            },
+                            {
+                                "periodType": "instant",
+                                "endDate": {
+                                    "value": "2025-12-31"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "dimensionName": "xbrl:unit",
+                        "domainName": "exp:IncomeStatementUnitDomain",
+                        "allowDomainFacts": true
+                    },
+                    {
+                        "dimensionName": "xbrl:entity"
+                    }
+                ],
+                "cubeNetworks": [
+                    "exp:Network3",
+                    "exp:Network2"
+                ]
+            },
+            {
+                "name": "exp:SaleEventCube",
+                "cubeType": "xbrl:eventCube",
+                "cubeDimensions": [
+                    {
+                        "dimensionName": "exp:SaleEventDimension",
+                        "allowDomainFacts": false
+                    },
+                    {
+                        "dimensionName": "xbrl:concept",
+                        "domainName": "exp:PrimaryEventDomain"
+                    }
+                ],
+                "cubeNetworks": [
+                    "exp:ConceptToDimensionNetwork",
+                    "exp:ConceptUnitNetwork",
+                    "exp:ConceptAbstractNetwork"
+                ],
+                "cubeComplete": true
+            },
+            {
+                "name": "exp:ProductIdentifierCube",
+                "cubeType": "xbrl:referenceCube",
+                "cubeDimensions": [
+                    {
+                        "dimensionName": "exp:ProductIdentifierDimension",
+                        "allowDomainFacts": false
+                    },
+                    {
+                        "dimensionName": "xbrl:concept",
+                        "domainName": "exp:PrimaryProductDetailsDomain"
+                    }
+                ]
+            },
+            {
+                "name": "exp:IntervalTimeSeriesCube",
+                "cubeType": "xbrl:timeSeriesCube",
+                "cubeDimensions": [
+                    {
+                        "dimensionName": "xbrl:concept",
+                        "domainName": "exp:PrimaryTimeSeriesDomain"
+                    },
+                    {
+                        "dimensionName": "exp:TimeSeriesDimension",
+                        "allowDomainFacts": false
+                    }
+                ]
+            },
+            {
+                "name": "exp:MyDefaultCube",
+                "cubeType": "xbrl:defaultCube"
+            }
+        ],
+        "networks": [
+            {
+                "name": "exp:network1",
+                "relationshipTypeName": "xbrl:parent-child",
+                "roots": [],
+                "relationships": []
+            },
+            {
+                "name": "exp:Network2",
+                "relationshipTypeName": "xbrl:parent-child",
+                "roots": [
+                    "exp:StatementOfIncome"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:StatementOfIncome",
+                        "target": "exp:Revenue",
+                        "order": 1
+                    },
+                    {
+                        "source": "exp:StatementOfIncome",
+                        "target": "exp:CostOfGoodsSold",
+                        "order": 2
+                    },
+                    {
+                        "source": "exp:StatementOfIncome",
+                        "target": "exp:GrossProfit",
+                        "order": 2
+                    },
+                    {
+                        "source": "exp:StatementOfIncome",
+                        "target": "exp:OperatingExpenses",
+                        "order": 2
+                    },
+                    {
+                        "source": "exp:StatementOfIncome",
+                        "target": "exp:NetIncome",
+                        "order": 2
+                    }
+                ]
+            },
+            {
+                "name": "exp:Network3",
+                "relationshipTypeName": "xbrl:summation-item",
+                "roots": [
+                    "exp:NetIncome"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:NetIncome",
+                        "target": "exp:OperatingExpenses",
+                        "weight": -1
+                    },
+                    {
+                        "source": "exp:NetIncome",
+                        "target": "exp:GrossProfit",
+                        "weight": 1
+                    },
+                    {
+                        "source": "exp:GrossProfit",
+                        "target": "exp:Revenue",
+                        "weight": 1
+                    },
+                    {
+                        "source": "exp:GrossProfit",
+                        "target": "exp:CostOfGoodsSold",
+                        "weight": -1
+                    }
+                ]
+            },
+            {
+                "name": "exp:network4",
+                "relationshipTypeName": "xbrl:general-special",
+                "roots": [
+                    "exp:Revenue"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:Revenue",
+                        "target": "exp:NetIncome"
+                    }
+                ]
+            },
+            {
+                "name": "exp:traitsNetwork",
+                "relationshipTypeName": "xbrl:property-concept",
+                "relationships": [
+                    {
+                        "source": "exp:RevenueMember",
+                        "target": "exp:Revenue",
+                        "properties": [
+                            {"property": "xbrl:propertyObject","value" : "exp:AccountingType"}
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "exp:ConceptToDimensionNetwork",
+                "relationshipTypeName": "xbrl:concept-refDimension",
+                "roots": [
+                    "exp:EventDate",
+                    "exp:ProductIdentifier",
+                    "exp:Country"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:EventDate",
+                        "target": "xbrl:period"
+                    },
+                    {
+                        "source": "exp:ProductIdentifier",
+                        "target": "exp:ProductIdentifierDimension"
+                    },
+                    {
+                        "source": "exp:Country",
+                        "target": "exp:CountryDimension"
+                    }
+                ]
+            },
+            {
+                "name": "exp:ConceptUnitNetwork",
+                "relationshipTypeName": "xbrl:unitFact-factConcept",
+                "roots": [
+                    "exp:FunctionalCurrency",
+                    "exp:ReportingCurrency"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:FunctionalCurrency",
+                        "target": "exp:FunctionalAmount"
+                    },
+                    {
+                        "source": "exp:ReportingCurrency",
+                        "target": "exp:ReportingAmount"
+                    }
+                ]
+            },
+            {
+                "name": "exp:ConceptAbstractNetwork",
+                "relationshipTypeName": "exp:concept-abstract",
+                "roots": [
+                    "exp:FunctionalAmount"
+                ],
+                "relationships": [
+                    {
+                        "source": "exp:FunctionalAmount",
+                        "target": "exp:StatementOfIncome",
+                        "properties": [
+                            {
+                                "property": "exp:ipsum",
+                                "value": "lorem"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "domains": [
+            {
+                "name": "exp:DomainOfCountries",
+                "root":"exp:DomainOfCountriesRoot",
+                "relationships": [
+                    {
+                        "source": "exp:DomainOfCountriesRoot",
+                        "target": "exp:Country_USA",
+                        "order": 1,
+                        "usable": true
+                    },
+                    {
+                        "source": "exp:DomainOfCountriesRoot",
+                        "target": "exp:Country_Canada",
+                        "order": 2
+                    },
+                    {
+                        "source": "exp:DomainOfCountriesRoot",
+                        "target": "exp:Country_UK",
+                        "order": 3
+                    }
+                ]
+            },
+            {
+                "name": "exp:DomainOfCanada",
+                "root":"exp:DomainOfCountriesRoot",
+                "relationships": [
+                    {
+                        "source": "exp:DomainOfCountriesRoot",
+                        "target": "exp:Country_Canada",
+                        "order": 1
+                    }
+                ]
+            },
+            {
+                "name": "exp:PrimaryCountryDomainNetwork",
+                "root": "xbrl:conceptDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:Country"
+                    }
+                ]
+            },
+            {
+                "name": "exp:PrimaryTimeSeriesDomainNetwork",
+                "root": "xbrl:conceptDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:PeakGridElectricityDemand"
+                    }
+                ]
+            },
+            {
+                "name": "exp:PrimaryEventDomainNetwork",
+                "root": "xbrl:conceptDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:EventDescription",
+                        "order": 1
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:EventDate",
+                        "order": 2
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:FunctionalCurrency",
+                        "order": 3
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:FunctionalAmount",
+                        "order": 4
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:ReportingCurrency",
+                        "order": 5
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:ReportingAmount",
+                        "order": 6
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:Country",
+                        "order": 7
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:ProductIdentifier",
+                        "order": 8
+                    }
+                ]
+            },
+            {
+                "name": "exp:PrimaryProductDetailsDomainNetwork",
+                "root": "xbrl:conceptDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:ProductDescription"
+                    }
+                ]
+            },
+            {
+                "name": "exp:PrimaryIncomeStatementDomainNetwork",
+                "root": "xbrl:conceptDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:StatementOfIncome"
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:Revenue"
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:CostOfGoodsSold"
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:GrossProfit"
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:OperatingExpenses"
+                    },
+                    {
+                        "source": "xbrl:conceptDomain",
+                        "target": "exp:NetIncome"
+                    }
+                ]
+            },
+            {
+                "name": "exp:IncomeStatementUnitDomain",
+                "root": "xbrl:unitDomain",
+                "relationships": [
+                    {
+                        "source": "xbrl:unitDomain",
+                        "target": "iso4217:USD"
+                    }
+                ]
+            }
+        ],
+        "domainRoots" : [
+            {
+                "name": "exp:DomainOfCountriesRoot"
+            }        
+
+        ],
+        "labels": [
+            {
+                "relatedName": "exp:StatementOfIncome",
+                "language": "en",
+                "value": "Statement of Income",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:StatementOfIncome",
+                "language": "en",
+                "value": "The Statement of Income includes the total revenue and total expenses for a reporting period.",
+                "labelType": "xbrl:documentation"
+            },
+            {
+                "relatedName": "exp:Revenue",
+                "language": "en",
+                "value": "Total Revenue",
+                "labelType": "xbrl:totalLabel"
+            },
+            {
+                "relatedName": "exp:CostOfGoodsSold",
+                "language": "en",
+                "value": "Cost of Goods Sold",
+                "labelType": "xbrl:totalLabel"
+            },
+            {
+                "relatedName": "exp:GeographicCube",
+                "language": "en",
+                "value": "Geographic Information Cube",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:CountryDimension",
+                "language": "en",
+                "value": "Country Dimension",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:DomainOfCountries",
+                "language": "en",
+                "value": "Country Domain",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:Country_USA",
+                "language": "en",
+                "value": "United States",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:Country_Canada",
+                "language": "en",
+                "value": "Canada",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:Country_UK",
+                "language": "en",
+                "value": "United Kingdom",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:Country_Mexico",
+                "language": "en",
+                "value": "Mexico",
+                "labelType": "xbrl:label"
+            },
+            {
+                "relatedName": "exp:Country",
+                "language": "en",
+                "value": "Country",
+                "labelType": "xbrl:label"
+            }
+        ],
+        "references": [
+            {
+                "name": "exp:myReference",
+                "relatedNames": [
+                    "exp:Country_USA",
+                    "exp:Country_Canada",
+                    "exp:Country_UK"
+                ],
+                "referenceType": "exp:myReferenceType",
+                "language": "en",
+                "properties": [
+                    {"property": "ref:Publisher","value" : "Example Publisher"},
+                    {"property": "ref:Name","value" : "Example Reference Name"},
+                    {"property": "ref:Section","value" : "Example Section"},
+                    {"property": "ref:Paragraph","value" : "Example Paragraph"},
+                    {"property": "exp:Subsection","value" : "a1"}
+                ]
+            }
+        ],
+        "dataTypes": [
+            {
+                "name": "exp:monetaryPositive",
+                "baseType": "xbrli:monetary",
+                "minInclusive": 0
+            }
+        ],
+        "cubeTypes": [
+            {
+                "name": "exp:myProductCube",
+                "periodDimension": true,
+                "entityDimension": true,
+                "unitDimension": true,
+                "taxonomyDefinedDimension": true,
+                "allowedCubeDimensions": [
+                    {
+                        "dimensionName": "exp:ProductIdentifierDimension",
+                        "required": true
+                    }
+                ]
+            },
+            {
+                "name": "exp:myIncomeStatementCube",
+                "baseCubeType": "xbrl:ReportCube"
+            }
+
+        ],
+        "labelTypes": [
+            {
+                "name": "exp:myLabel",
+                "uri": "http://example.com/taxonomy/mylabel",
+                "allowedObjects": [
+                    "xbrl:conceptObject", "xbrl:abstractObject"
+                ]
+            }
+        ],
+        "referenceTypes": [
+            {
+                "name": "exp:myReferenceType",
+                "uri": "http://example.com/taxonomy/myReferenceType",
+                "allowedObjects": [
+                    "xbrl:conceptObject"
+                ],
+                "requiredProperties": [
+                    "xbrli:Publisher",
+                    "xbrli:Name",
+                    "xbrli:Section",
+                    "xbrli:Paragraph"
+                ]
+            }
+        ],
+        "tableTemplates": [
+            {
+                "name": "exp:SalesEventTable",
+                "columns": {
+                    "Event_id": {},
+                    "description": {
+                        "dimensions": {
+                            "concept": "exp:EventDescription"
+                        }
+                    },
+                    "Event_Date": {
+                        "dimensions": {
+                            "concept": "exp:EventDate"
+                        }
+                    },
+                    "Functional_Currency": {
+                        "dimensions": {
+                            "concept": "exp:FunctionalCurrency"
+                        }
+                    },
+                    "Functional_Amount": {
+                        "dimensions": {
+                            "concept": "exp:FunctionalAmount"
+                        }
+                    },
+                    "Reporting_Currency": {
+                        "dimensions": {
+                            "concept": "exp:ReportingCurrency"
+                        }
+                    },
+                    "Reporting_Amount": {
+                        "dimensions": {
+                            "concept": "exp:ReportingAmount"
+                        }
+                    },
+                    "Country": {
+                        "dimensions": {
+                            "concept": "exp:Country"
+                        }
+                    },
+                    "Product_Identifier": {
+                        "dimensions": {
+                            "concept": "exp:ProductIdentifier"
+                        }
+                    }
+                },
+                "rowIdColumn": "Event_id",
+                "dimensions": {
+                    "exp:SaleEventDimension": "$Event_id"
+                }
+                
+            },
+            {
+                "name": "exp:IncomeStatementTable",
+                "columns": {
+                    "PeriodCol": {},
+                    "UnitCol": {},
+                    "EntityCol": {},
+                    "Revenue": {
+                        "dimensions": {
+                            "concept": "exp:Revenue"
+                        }
+                    },
+                    "CostOfGoodsSold": {
+                        "dimensions": {
+                            "concept": "exp:CostOfGoodsSold"
+                        }
+                    },
+                    "GrossProfit": {
+                        "dimensions": {
+                            "concept": "exp:GrossProfit"
+                        }
+                    },
+                    "OperatingExpenses": {
+                        "dimensions": {
+                            "concept": "exp:OperatingExpenses"
+                        }
+                    },
+                    "NetIncome": {
+                        "dimensions": {
+                            "concept": "exp:NetIncome"
+                        }
+                    }
+                },
+                "dimensions": {
+                    "period": "$PeriodCol",
+                    "entity": "$EntityCol",
+                    "unit": "$UnitCol"
+                }
+            }
+        ],
+        "dataTables": [
+            {
+                "name": "exp:IncomeStatementCubeTable",
+                "cubeName": "exp:IncomeStatementCube",
+                "xAxis": {
+                        "dimensionNames": [
+                            { 
+                            "dimensionName": "xbrl:period"
+                            },
+                            { 
+                            "dimensionName": "xbrl:unit"
+                            }
+                        ],
+                        "axisLabels": [ "Current Year (USD)","Prior Year (USD", "Quarter Two", "Current - Year End", "2025 Year End"]
+                },
+                "yAxis": {
+                        "dimensionNames": [
+                        {
+                            "dimensionName":"xbrl:concept"
+                        }
+                        ],
+                        "presentationNetwork":"exp:Network2"
+                },
+                "zAxis": {
+                        "dimensionNames": [
+                        {
+                            "dimensionName":"xbrl:entity"
+                        }
+                    ]
+            }
+            }
+        ]
+    }
+}

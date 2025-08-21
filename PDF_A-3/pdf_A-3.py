@@ -4,7 +4,8 @@ import pikepdf
 
 # # 変換元 PDF と 変換後 PDF
 input_pdf = "PDF_A-3/output.pdf"
-output_pdfa = "PDF_A-3/output_pdfa3.pdf"
+output_pdfa = "PDF_A-3/output_pdfa3_2025-08-21.pdf"
+xml_file = "PDF_A-3/Japan_PINT_Invoice_UBL_Example.xml"  # 埋め込むXML
 csv_file = "PDF_A-3/timesheet.csv"  # 埋め込むCSV
 json_file = "PDF_A-3/timesheet.json"  # 埋め込むJSON
 final_output_pdf = "PDF_A-3/final_output.pdf"
@@ -36,6 +37,7 @@ except subprocess.CalledProcessError as e:
 
 # pikepdf で埋め込み（XMP メタデータとして添付）
 pdf = pikepdf.open(output_pdfa)
+pdf.attachments[xml_file] = open(xml_file, "rb").read()
 pdf.attachments[csv_file] = open(csv_file, "rb").read()
 pdf.attachments[json_file] = open(json_file, "rb").read()
 pdf.save(final_output_pdf)

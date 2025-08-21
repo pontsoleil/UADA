@@ -1,0 +1,112 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "http://xbrl.org/XBRL-GL-YYYY-MM-DD/schemas/gl-cor.json",
+    "title": "XBRL GL Core Module Schema (Garden of Eden)",
+    "description": "Fully modular schema where all definitions and properties are declared globally and referenced.",
+    "type": "object",
+    "properties": {
+        "accountingEntries": {
+            "$ref": "#/$defs/AccountingEntries"
+        }
+    },
+    "required": [
+        "accountingEntries"
+    ],
+    "$defs": {
+        "AccountingEntries": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/AccountingEntry"
+            }
+        },
+        "AccountingEntry": {
+            "type": "object",
+            "properties": {
+                "entryHeader": {
+                    "$ref": "#/$defs/EntryHeaders"
+                }
+            },
+            "required": [
+                "entryHeader"
+            ]
+        },
+        "EntryHeaders": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/EntryHeader"
+            }
+        },
+        "EntryHeader": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "#/$defs/ID"
+                },
+                "date": {
+                    "$ref": "#/$defs/Date"
+                },
+                "description": {
+                    "$ref": "#/$defs/Description"
+                },
+                "entryDetail": {
+                    "$ref": "#/$defs/EntryDetails"
+                }
+            },
+            "required": [
+                "id",
+                "date"
+            ]
+        },
+        "EntryDetails": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/EntryDetail"
+            }
+        },
+        "EntryDetail": {
+            "type": "object",
+            "properties": {
+                "lineNumber": {
+                    "$ref": "#/$defs/LineNumber"
+                },
+                "accountCode": {
+                    "$ref": "#/$defs/AccountCode"
+                },
+                "debitAmount": {
+                    "$ref": "#/$defs/DebitAmount"
+                },
+                "creditAmount": {
+                    "$ref": "#/$defs/CreditAmount"
+                },
+                "description": {
+                    "$ref": "#/$defs/Description"
+                }
+            },
+            "required": [
+                "lineNumber",
+                "accountCode"
+            ]
+        },
+        "ID": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/idType"
+        },
+        "Date": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/dateType"
+        },
+        "Description": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/textType"
+        },
+        "LineNumber": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/numericType"
+        },
+        "AccountCode": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/codeType"
+        },
+        "DebitAmount": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/amountType"
+        },
+        "CreditAmount": {
+            "$ref": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents#/$defs/udt/$defs/amountType"
+        }
+    }
+}

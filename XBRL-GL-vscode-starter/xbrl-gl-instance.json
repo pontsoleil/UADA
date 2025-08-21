@@ -1,5 +1,5 @@
 {
-    "$schema": "./xbrl-gl-core-schema.json",
+    "$schema": "./xbrl-gl-cor-schema.json",
     "accountingEntries": [
         {
             "entryHeader": [

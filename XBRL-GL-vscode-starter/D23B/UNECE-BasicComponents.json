@@ -130,14 +130,30 @@
         "dateTimeType": {
           "title": "Date Time. Type",
           "description": "A particular point in the progression of time together with the relevant supplementary information.",
-          "type": "string",
-          "format": "date-time"
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "content"
+          ]
         },
         "dateType": {
           "title": "Date. Type",
           "description": "A particular point in the progression of time together with the relevant supplementary information.",
-          "type": "string",
-          "format": "date"
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          "required": [
+            "content"
+          ]
         },
         "graphicType": {
           "title": "Graphic. Type",
@@ -181,7 +197,15 @@
         "indicatorType": {
           "title": "Indicator. Type",
           "description": "A list of two mutually exclusive Boolean values that express the only possible states of a Property.",
-          "type": "boolean"
+          "type": "object",
+          "properties": {
+            "content": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "content"
+          ]
         },
         "measureType": {
           "title": "Measure. Type",

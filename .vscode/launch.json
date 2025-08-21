@@ -222,14 +222,49 @@
             //     "-d"
             // ]
 
-            // structured_csv.py
-            "args": [
-                "--base_dir", "StructuredCSV/",
-                "--invoice_id", "INV002",
-                "--single_csv_path", "StructuredCSV/INV002.csv",
-                "--all_csv_path", "StructuredCSV/invoice_all.csv"
-            ]
+            // // structured_csv.py
+            // "args": [
+            //     "--base_dir", "StructuredCSV/",
+            //     "--invoice_id", "INV002",
+            //     "--single_csv_path", "StructuredCSV/INV002.csv",
+            //     "--all_csv_path", "StructuredCSV/invoice_all.csv"
+            // ]
 
+
+            // // sme_flatten_BSM.py
+            // "args": [
+            //     "SME_common06-25_BSM.csv",
+            //     "-t", "-d"
+            // ]
+
+            // // analizeFSM.py analizeLHM.py
+            // "args": [
+            //     "UBL-2.4/xsd/maindoc/",
+            //     "Invoice+DebitNote+CreditNote+DespatchAdvice+InventoryReport+Order+OrderResponse+Statement",
+            //     "UBL-2.4/xsd/common/UBL-CommonAggregateComponents-2.4.xsd",
+            //     "UBL-2.4/LHM.csv"
+            // ]
+
+            // // sme_structured.py
+            // "args": [
+            //     "SME_common07-05_LHM.csv",
+            //     "-t", "-d"
+            // ]
+            
+            // // sme_schema_LHM.py
+            // "args": [
+            //     "SME_common07-05.csv",
+            //     "-r", "SMECoreSelfInvoice",
+            //     "-a",
+            //     "-t", "-d"
+            // ]
+
+            // // sme_graphwalk.py
+            // "args": [
+            //     "RSM_BSM.csv", "RSM_LHM.csv",
+            //     "-r", "Cross Industry_ Invoice",
+            //     "-t", "-d"
+            // ]
         }
     ]
 }

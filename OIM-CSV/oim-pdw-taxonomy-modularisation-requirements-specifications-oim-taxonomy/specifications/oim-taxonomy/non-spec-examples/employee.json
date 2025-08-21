@@ -1,0 +1,662 @@
+{
+    "$schema": "../oim-taxonomy-schema.json",
+    "taxonomy": {
+        "name": "org:employeeTaxonomy",
+        "frameworkName": "Employees",
+        "version": "2025",
+        "concepts": [
+                    {
+                        "name": "org:ReportDate",
+                        "dataType": "xbrli:date",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:FirstName",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:LastName",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:MiddleNames",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:EmployeeId",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:Role",
+                        "dataType": "xbrli:qname",
+                        "enumerationDomain": "org:DomainOfRoles",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:Department",
+                        "dataType": "xbrli:qname",
+                        "enumerationDomain": "org:DomainOfDepartments",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:RoleStartDate",
+                        "dataType": "xbrli:date",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:RoleStartNote",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:RoleEndDate",
+                        "dataType": "xbrli:date",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:RoleEndNote",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:EndReason",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:AnnualSalary",
+                        "dataType": "xbrli:decimal",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:Currency",
+                        "dataType": "org:currency",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:SalaryStartDate",
+                        "dataType": "xbrli:date",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:SalaryStartNote",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:SalaryEndDate",
+                        "dataType": "xbrli:date",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:SalaryEndNote",
+                        "dataType": "xs:string",
+                        "periodType": "duration",
+                        "nillable": true
+                    },
+                    {
+                        "name": "org:MinHeadCount",
+                        "dataType": "xbrli:nonNegativeInteger",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:MaxHeadCount",
+                        "dataType": "xbrli:nonNegativeInteger",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:MeanHeadCount",
+                        "dataType": "xbrli:decimal",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:StaffDays",
+                        "dataType": "xbrli:nonNegativeInteger",
+                        "periodType": "duration",
+                        "nillable": false
+                    },
+                    {
+                        "name": "org:SalaryCost",
+                        "dataType": "xbrli:nonNegativeInteger",
+                        "periodType": "duration",
+                        "nillable": false
+                    }
+                    
+                ],
+        "dimensions": [
+                {
+                    "name": "org:EmployeeDimension",
+                    "domainDataType": "xs:string",
+                    "cubeTypes": ["xbrl:reference"]
+                },
+                {
+                    "name": "org:EmployeeSalaryDimension",
+                    "domainDataType": "xs:string",
+                    "cubeTypes": ["xbrl:reference"]
+                },
+                {
+                    "name": "org:EmployeeRoleDimension",
+                    "domainDataType": "xs:string",
+                    "cubeTypes": ["xbrl:reference"]
+                },
+                {
+                    "name": "org:DepartmentDimension",
+                    "domainRoot" : "org:RoleDomain",
+                    "cubeTypes": ["xbrl:report"]
+                }
+                        ],
+        "domains" : [
+                {
+                    "name": "org:DomainOfDepartments",
+                    "root": "org:DepartmentDomain",
+                    "relationships": [
+                        {
+                            "source": "org:DepartmentDomain",
+                            "target": "org:DepartmentDev",
+                            "order": 1,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:DepartmentDomain",
+                            "target": "org:DepartmentQA",
+                            "order": 2,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:DepartmentDomain",
+                            "target": "org:DepartmentProductManagement",
+                            "order": 3,
+                            "usable": true
+                        }
+                    ]
+                },
+                {
+                    "name": "org:DomainOfRoles",
+                    "root": "org:RoleDomain",
+                    "relationships": [
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleDeveloperL1",
+                            "order": 1,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleDeveloperL2",
+                            "order": 2,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleDeveloperL3",
+                            "order": 3,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleQAEngineerL1",
+                            "order": 4,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleQAEngineerL2",
+                            "order": 5,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleProductManagerL1",
+                            "order": 6,
+                            "usable": true
+                        },
+                        {
+                            "source": "org:RoleDomain",
+                            "target": "org:RoleProductManagerL2",
+                            "order": 7,
+                            "usable": true
+                        }
+                    ]
+                },
+                    {
+                        "name": "org:DomainOfEmployeeConcepts",
+                        "root": "xbrl:conceptDomain",
+                        "relationships": [
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:FirstName",
+                                "order": 1,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:LastName",
+                                "order": 2,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:MiddleNames",
+                                "order": 3,
+                                "usable": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "org:DomainOfEmployeeSalaryConcepts",
+                        "root": "xbrl:conceptDomain",
+                        "relationships": [
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:EmployeeId",
+                                "order": 1,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:AnnualSalary",
+                                "order": 1,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:Currency",
+                                "order": 2,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:SalaryStartDate",
+                                "order": 3,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:SalaryStartNote",
+                                "order": 4,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:SalaryEndDate",
+                                "order": 5,
+                                "usable": true
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:SalaryEndNote",
+                                "order": 6,
+                                "usable": true
+                            }
+                        ]
+                    },
+                    {
+                        "name": "org:DomainOfEmployeeRoleConcepts",
+                        "root": "xbrl:conceptDomain",
+                        "relationships": [
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:EmployeeId",
+                                "order": 1
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:Role",
+                                "order": 2
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:Department",
+                                "order": 3
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:RoleStartDate",
+                                "order": 4
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:RoleStartNote",
+                                "order": 5
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:RoleEndDate",
+                                "order": 6
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:RoleEndNote",
+                                "order": 7
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:EndReason",
+                                "order": 8
+                            }
+                        ]
+                    },
+                    {
+                        "name": "org:MonthlyDepartmentOverviewConceptsDomain",
+                        "root": "xbrl:conceptDomain",
+                        "relationships": [
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:MinHeadCount",
+                                "order": 1
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:MaxHeadCount",
+                                "order": 2
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:MeanHeadCount",
+                                "order": 3
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:StaffDays",
+                                "order": 4
+                            },
+                            {
+                                "source": "xbrl:conceptDomain",
+                                "target": "org:SalaryCost",
+                                "order": 5
+                                
+                            }
+                        ]
+                    }
+                    ],
+        "domainRoots": [
+                    {
+                        "name": "org:DepartmentDomain"
+                    },
+                    {
+                        "name": "org:RoleDomain"
+                    }
+                ],
+        "cubes" : [
+                    {
+                        "name": "org:EmployeeCube",
+                        "cubeType": "xbrl:reference",
+                        "cubeDimensions": [
+                            {
+                                "dimensionName": "org:EmployeeDimension"
+                            },
+                            {
+                                "dimensionName": "xbrl:concept",
+                                "domainName": "org:DomainOfEmployeeConcepts"
+                            }
+                        ],
+                        "cubeNetworks":["org:EmployeeIdToDimensionNetwork"]
+                    },
+                    {
+                        "name": "org:EmployeeSalaryCube",
+                        "cubeType": "xbrl:reference",
+                        "cubeDimensions": [
+                            {
+                                "dimensionName": "org:EmployeeSalaryDimension"
+                            },
+                            {
+                                "dimensionName": "xbrl:concept",
+                                "domainName": "org:DomainOfEmployeeSalaryConcepts"
+                            }
+                        ],
+                        "relationships":["org:EmployeeIdToDimensionNetwork"]
+                    },
+                    {
+                        "name": "org:EmployeeRoleCube",
+                        "cubeType": "xbrl:reference",
+                        "cubeDimensions": [
+                            {
+                                "dimensionName": "org:EmployeeRoleDimension"
+                            },
+                            {
+                                "dimensionName": "xbrl:concept",
+                                "domainName": "org:DomainOfEmployeeRoleConcepts"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "org:MonthlyDepartmentOverviewCube",
+                        "cubeType": "xbrl:report",
+                        "cubeComplete" : true,
+                        "cubeDimensions": [
+                            {
+                                "dimensionName": "xbrl:concept",
+                                "domainName": "MonthlyDepartmentOverviewConceptsDomain"
+                            },
+                            {
+                                "dimensionName": "xbrl:period",
+                                "periodConstraints":[
+                                        {
+                                            "periodType" : "duration",
+                                            "timeSpan" : "P1M",
+                                            "onOrBefore" :
+                                                {
+                                                    "conceptName" :"ReportDate"
+                                                },
+                                            "onOrAfter" :
+                                                {
+                                                    "conceptName" :"reportDate",
+                                                    "timeShift" : "-P5Y"
+                                                }
+                                        }
+                                        ]
+                            },
+                            {
+                                "dimensionName": "org:DepartmentDimension",
+                                "domainName": "org:DomainOfDepartments",
+                                "allowDomainFacts": true
+
+                            }
+                        ]
+                    }
+
+        ],
+        "networks": [
+            {
+                "name": "org:EmployeeIdToDimensionNetwork",
+                "relationshipType": "xbrl:concept-refDimension",
+                "relationships": [
+                    {
+                        "source": "org:EmployeeId",
+                        "target": "org:EmployeeDimension"
+                    }
+                ]
+            },
+            {
+                "name": "org:cMonthlyDepartmentOverviewAggNetwork",
+                "relationshipTypeName": "xbrl:concept-aggDimension",
+                "relationships": [
+                {
+                    "source": "org:MinHeadCount",
+                    "target": "xbrl:period",
+                    "aggregation" : "min"
+                },
+                {
+                    "source": "org:MaxHeadCount",
+                    "target": "xbrl:period",
+                    "aggregation" : "max"
+                },
+                {
+                    "source": "org:MeanHeadCount",
+                    "target": "xbrl:period",
+                    "aggregation" : "avg"
+                }
+                ,
+                {
+                    "source": "org:StaffDays",
+                    "target": "xbrl:period",
+                    "aggregation" : "sum"
+                },
+                {
+                    "source": "org:SalaryCost",
+                    "target": "xbrl:period",
+                    "aggregation" : "sum"
+                }
+                ]
+            }
+                
+        ],
+
+        "members": [
+                    {
+                        "name": "org:DepartmentDev"
+                    },
+                    {
+                        "name": "org:DepartmentQA"
+                    },
+                    {
+                        "name": "org:DepartmentProductManagement"
+                    },
+                    {
+                        "name": "org:RoleDeveloperL1"
+                    },
+                    {
+                        "name": "org:RoleDeveloperL2"
+                    },
+                    {
+                        "name": "org:RoleDeveloperL3"
+                    },
+                    {
+                        "name": "org:RoleQAEngineerL1"
+                    },
+                    {
+                        "name": "org:RoleQAEngineerL2"
+                    },
+                    {
+                        "name": "org:RoleProductManagerL1"
+                    },
+                    {
+                        "name": "org:RoleProductManagerL2"
+                    }
+                ],
+        "labels": [
+                    {
+                        "relatedName": "org:DepartmentDev",
+                        "language": "en",
+                        "value": "Development Department",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:DepartmentQA",
+                        "language": "en",
+                        "value": "Quality Assurance Department",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:DepartmentProductManagement",
+                        "language": "en",
+                        "value": "Product Management Department",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleDeveloperL1",
+                        "language": "en",
+                        "value": "Developer Level 1",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleDeveloperL2",
+                        "language": "en",
+                        "value": "Developer Level 2",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleDeveloperL3",
+                        "language": "en",
+                        "value": "Developer Level 3",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleQAEngineerL1",
+                        "language": "en",
+                        "value": "QA Engineer Level 1",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleQAEngineerL2",
+                        "language": "en",
+                        "value": "QA Engineer Level 2",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleProductManagerL1",
+                        "language": "en",
+                        "value": "Product Manager Level 1",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:RoleProductManagerL2",
+                        "language": "en",
+                        "value": "Product Manager Level 2",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:MinHeadCount",
+                        "language": "en",
+                        "value": "Minimum Head Count",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:MaxHeadCount",
+                        "language": "en",
+                        "value": "Maximum Head Count",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:MeanHeadCount",
+                        "language": "en",
+                        "value": "Mean Head Count",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:StaffDays",
+                        "language": "en",
+                        "value": "Total Staff Days",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:SalaryCost",
+                        "language": "en",
+                        "value": "Total Salary Cost",
+                        "labelType": "xbrl:label"
+                    },
+                    {
+                        "relatedName": "org:ReportDate",
+                        "language": "en",
+                        "value": "Report Date",
+                        "labelType": "xbrl:label"
+                    }
+        ]
+
+    }
+
+}
