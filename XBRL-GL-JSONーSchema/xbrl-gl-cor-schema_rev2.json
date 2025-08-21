@@ -1,0 +1,126 @@
+{
+  "$schema": "http://json-schema.org/draft/2020-12/schema#",
+  "$id": "http://xbrl.org/XBRL-GL-YYYY-MM-DD/schemas/gl-cor.json",
+  "title": "XBRL GL Core Module Schema (Garden of Eden)",
+  "description": "Fully modular schema where all definitions and properties are declared globally and referenced.",
+  "type": "object",
+  "properties": {
+    "xbrl": {
+      "type": "object",
+      "properties": {
+        "accountingEntries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/AccountingEntryType"
+          }
+        }
+      },
+      "required": ["accountingEntries"]
+    }
+  },
+  "required": ["xbrl"],
+  "$defs": {
+    "AccountingEntriesType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/AccountingEntryType"
+      }
+    },
+    "AccountingEntryType": {
+      "type": "object",
+      "properties": {
+        "documentInfo": {
+          "$ref": "#/$defs/DocumentInfoType"
+        },
+        "entityInformation": {
+          "$ref": "#/$defs/EntityInformationType"
+        },
+        "entryHeader": {
+          "$ref": "#/$defs/EntryHeadersType"
+        }
+      },
+      "required": [
+        "documentInfo",
+        "entryHeader"
+      ]
+    },
+    "EntryHeadersType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EntryHeaderType"
+      }
+    },
+    "EntryHeaderType": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/IDType"
+        },
+        "date": {
+          "$ref": "#/$defs/DateType"
+        },
+        "description": {
+          "$ref": "#/$defs/DescriptionType"
+        },
+        "entryDetail": {
+          "$ref": "#/$defs/EntryDetailsType"
+        }
+      },
+      "required": [
+        "id",
+        "date"
+      ]
+    },
+    "EntryDetailsType": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/EntryDetailType"
+      }
+    },
+    "EntryDetailType": {
+      "type": "object",
+      "properties": {
+        "lineNumber": {
+          "$ref": "#/$defs/LineNumberType"
+        },
+        "accountCode": {
+          "$ref": "#/$defs/AccountCodeType"
+        },
+        "debitAmount": {
+          "$ref": "#/$defs/DebitAmountType"
+        },
+        "creditAmount": {
+          "$ref": "#/$defs/CreditAmountType"
+        },
+        "description": {
+          "$ref": "#/$defs/DescriptionType"
+        }
+      },
+      "required": [
+        "lineNumber",
+        "accountCode"
+      ]
+    },
+    "IDType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/idType"
+    },
+    "DateType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/dateType"
+    },
+    "DescriptionType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/textType"
+    },
+    "LineNumberType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/numericType"
+    },
+    "AccountCodeType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/codeType"
+    },
+    "DebitAmountType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/amountType"
+    },
+    "CreditAmountType": {
+      "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/amountType"
+    }
+  }
+}

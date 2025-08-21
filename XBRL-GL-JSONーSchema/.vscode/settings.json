@@ -1,0 +1,15 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "*/xbrl-gl-instance.json"
+            ],
+            "url": "./xbrl-gl.schema.json"
+        }
+    ],
+    "$schema": "https://json-schema.org/draft-07/schema",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll": true
+    }
+}

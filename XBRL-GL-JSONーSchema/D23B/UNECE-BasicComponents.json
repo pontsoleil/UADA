@@ -1,0 +1,505 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/uncefact/spec-JSONschema/main/JSONschema2020-12/library/BuyShipPay/D23B/BasicComponents",
+  "title": "BasicComponents",
+  "description": "Copyright (C) UN/CEFACT (2024). All Rights Reserved.\n\nThis document and translations of it may be copied and furnished to others, and derivative works that comment on or otherwise explain it or assist in its implementation may be prepared, copied, published and distributed, in whole or in part, without restriction of any kind, provided that the above copyright notice and this paragraph are included on all such copies and derivative works. However, this document itself may not be modified in any way, such as by removing the copyright notice or references to UN/CEFACT, except as needed for the purpose of developing UN/CEFACT specifications, in which case the procedures for copyrights defined in the UN/CEFACT Intellectual Property Rights document must be followed, or as required to translate it into languages other than English.\n\nThe limited permissions granted above are perpetual and will not be revoked by UN/CEFACT or its successors or assigns.\n\nThis document and the information contained herein is provided on an \"AS IS\" basis and UN/CEFACT DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTY THAT THE USE OF THE INFORMATION HEREIN WILL NOT INFRINGE ANY RIGHTS OR ANY IMPLIED WARRANTIES OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.",
+  "$defs": {
+    "pdt": {
+      "$defs": {
+        "binaryType": {
+          "title": "Binary",
+          "description": "A set of (in)finite-length sequences of binary digits",
+          "type": "string",
+          "contentEncoding": "base64"
+        },
+        "booleanType": {
+          "title": "Boolean",
+          "description": "A binary variable, having two possible values called “true” and “false”.",
+          "type": "boolean"
+        },
+        "decimalType": {
+          "title": "Decimal",
+          "description": "A subset of the real numbers, which can be represented by decimal numerals",
+          "type": "string",
+          "pattern": "^([+-]?(0?|[1-9][0-9]*)(\\.?\\d+))$"
+        },
+        "integerType": {
+          "title": "Integer",
+          "description": "An integer is a whole number (not a fraction) that can be positive, negative, or zero.",
+          "type": "integer"
+        },
+        "stringType": {
+          "title": "String",
+          "description": "A finite sequence of characters.",
+          "type": "string"
+        },
+        "dateType": {
+          "title": "Date",
+          "description": "Time point representing a calendar day on a time scale consisting of an origin and a succession of calendar [ISO 8601:2004]",
+          "type":"string"
+        }
+      }
+    },
+    "udt": {
+      "$defs": {
+        "amountType": {
+          "title": "Amount. Type",
+          "description": "A number of monetary units specified in a currency where the unit of the currency is explicit or implied.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/decimalType"
+            },
+            "currencyId": {
+              "$ref": "codelists/ISO_ISO3AlphaCurrencyCode.json#/$defs/codeList/$defs/ISO3AlphaCurrencyCodeType"
+            },
+            "currencyCodeListVersionId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT000001",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Amount. Type",
+            "version": "2.01",
+            "definition": "A number of monetary units specified in a currency where the unit of the currency is explicit or implied.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "binaryObjectType": {
+          "title": "Binary Object. Type",
+          "description": "A set of finite-length sequences of binary octets.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/binaryType"
+            },
+            "format": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "mimeCode": {
+              "$ref": "codelists/IANA_MIMEMediaType.json#/$defs/codeList/$defs/MIMEMediaTypeType"
+            },
+            "encodingCode": {
+              "$ref": "codelists/UNECE_CharacterSetEncodingCode.json#/$defs/codeList/$defs/CharacterSetEncodingCodeType"
+            },
+            "characterSetCode": {
+              "$ref": "codelists/IANA_CharacterSetCode.json#/$defs/codeList/$defs/CharacterSetCodeType"
+            },
+            "uri": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "filename": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT000002",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Binary Object. Type",
+            "version": "2.01",
+            "definition": "A set of finite-length sequences of binary octets.",
+            "primitive_type": "Binary"
+          }
+        },
+        "codeType": {
+          "title": "Code. Type",
+          "description": "A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "listId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "listAgencyId": {
+              "$ref": "codelists/UNECE_AgencyIdentificationCode.json#/$defs/codeList/$defs/AgencyIdentificationCodeType"
+            },
+            "listAgencyName": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "listVersionId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "name": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "listName": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "languageId": {
+              "$ref": "codelists/ISO_ISOAlpha2LanguageCode.json#/$defs/codeList/$defs/ISOAlpha2LanguageCodeType"
+            },
+            "listUri": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "listSchemeUri": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT000007",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Code. Type",
+            "version": "2.01",
+            "definition": "A character string (letters, figures or symbols) that for brevity and/or language independence may be used to represent or replace a definitive value or text of an Attribute together with relevant supplementary information.",
+            "primitive_type": "String"
+          }
+        },
+        "dateTimeType": {
+          "title": "Date Time. Type",
+          "description": "A particular point in the progression of time together with the relevant supplementary information.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/dateType",
+              "format": "date-time"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT000008",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Date Time. Type",
+            "version": "2.01",
+            "definition": "A particular point in the progression of time together with the relevant supplementary information.",
+            "primitive_type": "String"
+          }
+        },
+        "dateType": {
+          "title": "Date. Type",
+          "description": "A particular point in the progression of time together with the relevant supplementary information.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/stringType",
+              "format": "date"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT000009",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Date. Type",
+            "version": "2.01",
+            "definition": "A particular point in the progression of time together with the relevant supplementary information.",
+            "primitive_type": "String"
+          }
+        },
+        "graphicType": {
+          "title": "Graphic. Type",
+          "description": "A set of finite-length sequences of binary octets.",
+          "$ref": "#/$defs/udt/$defs/binaryObjectType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT000003",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Graphic. Type",
+            "version": "2.01",
+            "definition": "A set of finite-length sequences of binary octets.",
+            "primitive_type": "Binary"
+          }
+        },
+        "idType": {
+          "title": "Identifier. Type",
+          "description": "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeName": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeAgencyId": {
+              "$ref": "codelists/UNECE_AgencyIdentificationCode.json#/$defs/codeList/$defs/AgencyIdentificationCodeType"
+            },
+            "schemeAgencyName": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeVersionId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeDataUri": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "schemeUri": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "dictionary_entry_name": "Identifier. Type",
+            "definition": "A character string to identify and distinguish uniquely, one instance of an object in an identification scheme from all other objects in the same scheme together with relevant supplementary information.",
+            "acronym": "UDT",
+            "version": "2.01",
+            "unique_id": "UDT_idType"
+          }
+        },
+        "indicatorType": {
+          "title": "Indicator. Type",
+          "description": "A list of two mutually exclusive Boolean values that express the only possible states of a Property.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/booleanType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000012",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Indicator. Type",
+            "version": "2.01",
+            "definition": "A list of two mutually exclusive Boolean values that express the only possible states of a Property.",
+            "primitive_type": "String"
+          }
+        },
+        "measureType": {
+          "title": "Measure. Type",
+          "description": "A numeric valuedetermined by measuring an object along with the specified unit of measure.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/decimalType"
+            },
+            "unitCode": {
+              "$ref": "codelists/UNECE_MeasurementUnitCommonCode.json#/$defs/codeList/$defs/MeasurementUnitCommonCodeType"
+            },
+            "unitCodeListVersionId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000013",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Measure. Type",
+            "version": "2.01",
+            "definition": "A numeric valuedetermined by measuring an object along with the specified unit of measure.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "nameType": {
+          "title": "Name. Type",
+          "description": "A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+          "$ref": "#/$defs/udt/$defs/textType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000020",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Name. Type",
+            "version": "2.01",
+            "definition": "A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+            "primitive_type": "String"
+          }
+        },
+        "numericType": {
+          "title": "Numeric. Type",
+          "desactiption": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/decimalType"
+            },
+            "format": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000014",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Numeric. Type",
+            "version": "2.01",
+            "definition": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "percentType": {
+          "title": "Percent. Type",
+          "description": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+          "$ref": "#/$defs/udt/$defs/numericType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000016",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Percent. Type",
+            "version": "2.01",
+            "definition": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "pictureType": {
+          "title": "Picture. Type",
+          "descriptionion": "A set of finite-length sequences of binary octets.",
+          "$ref": "#/$defs/udt/$defs/binaryObjectType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT000004",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Picture. Type",
+            "version": "2.01",
+            "definition": "A set of finite-length sequences of binary octets.",
+            "primitive_type": "Binary"
+          }
+        },
+        "quantityType": {
+          "title": "Quantity. Type",
+          "description": "A counted number of non-monetary units possibly including fractions.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/decimalType"
+            },
+            "unitCode": {
+              "$ref": "codelists/UNECE_MeasurementUnitCommonCode.json#/$defs/codeList/$defs/MeasurementUnitCommonCodeType"
+            },
+            "unitCodeListId": {
+              "$ref": "codelists/UNECE_MeasurementUnitCommonCode.json#/$defs/codeList/$defs/MeasurementUnitCommonCodeType"
+            },
+            "unitCodeListAgencyId": {
+              "$ref": "codelists/UNECE_AgencyIdentificationCode.json#/$defs/codeList/$defs/AgencyIdentificationCodeType"
+            },
+            "unitCodeListAgencyName": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000018",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Quantity. Type",
+            "version": "2.01",
+            "definition": "A counted number of non-monetary units possibly including fractions.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "rateType": {
+          "title": "Rate. Type",
+          "description": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+          "$ref": "#/$defs/udt/$defs/numericType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000017",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Rate. Type",
+            "version": "2.01",
+            "definition": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "soundType": {
+          "title": "Sound. Type",
+          "description": "A set of finite-length sequences of binary octets.",
+          "$ref": "#/$defs/udt/$defs/binaryObjectType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT000005",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Sound. Type",
+            "version": "2.01",
+            "definition": "A set of finite-length sequences of binary octets.",
+            "primitive_type": "Binary"
+          }
+        },
+        "textType": {
+          "title": "Text. Type",
+          "description": "A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+          "type": "object",
+          "properties": {
+            "_": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            },
+            "languageId": {
+              "$ref": "codelists/ISO_ISOAlpha2LanguageCode.json#/$defs/codeList/$defs/ISOAlpha2LanguageCodeType"
+            },
+            "languageLocaleId": {
+              "$ref": "#/$defs/pdt/$defs/stringType"
+            }
+          },
+          "required": [
+            "_"
+          ],
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000019",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Text. Type",
+            "version": "2.01",
+            "definition": "A character string (i.e. a finite set of characters) generally in the form of words of a language.",
+            "primitive_type": "String"
+          }
+        },
+        "timeType": {
+          "title": "Time. Type",
+          "desctiption": "A particular point in the progression of time together with the relevant supplementary information.",  
+          "$ref": "#/$defs/udt/$defs/dateTimeType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000010",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Time. Type",
+            "version": "2.01",
+            "definition": "A particular point in the progression of time together with the relevant supplementary information.",
+            "primitive_type": "String"
+          }
+        },
+        "valueType": {
+          "title": "Value. Type",
+          "description": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+          "$ref": "#/$defs/udt/$defs/numericType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT0000015",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Value. Type",
+            "version": "2.01",
+            "definition": "Numeric information that is assigned or is determined by calculation, counting, or sequencing. It does not require a unit of quantity or unit of measure.",
+            "primitive_type": "Decimal"
+          }
+        },
+        "videoType": {
+          "title": "Video. Type",
+          "description": "A set of finite-length sequences of binary octets.",            
+          "$ref": "#/$defs/udt/$defs/binaryObjectType",
+          "x-ccts_metadata": {
+            "unique_id": "UDT000006",
+            "acronym": "UDT",
+            "dictionary_entry_name": "Video. Type",
+            "version": "2.01",
+            "definition": "A set of finite-length sequences of binary octets.",
+            "primitive_type": "Binary"
+          }
+        }
+      }
+    },
+    "extensibleType": {
+      "patternProperties": {
+        "^x-": true
+      }
+    },
+    "resourceType": {
+      "type": "string",
+      "format": "uri"
+    }
+  }
+}

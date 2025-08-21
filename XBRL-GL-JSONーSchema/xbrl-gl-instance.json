@@ -1,0 +1,29 @@
+{
+    "$schema": "http://xbrl.org/XBRL-GL-YYYY-MM-DD/schemas/gl-cor.json",
+    "accountingEntries": [
+        {
+            "entryHeader": [
+                {
+                    "headerID": { "_": "Book1" },
+                    "headerDate": { "_": "2025-05-12" },
+                    "headerDescription": { "_": "test book" },
+                    "entryDetail": [
+                        {
+                            "lineNumber": { "_": "1" },
+                            "detailDescription": { "_": "Test entry" },
+                            "debitAmount": {
+                                "_": "1000",
+                                "currencyId": "JPY"
+                            },
+                            "creditAmount": {
+                                "_": "1000",
+                                "currencyId": "JPY"
+                            },
+                            "accountCode": { "_": "JSD0010" }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
