@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- gl-usk:idForReversingStandardOrMasterEntry 反対/通常/マスタ仕訳識別子 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_idForReversingStandardOrMasterEntry" xlink:label="idForReversingStandardOrMasterEntry"/>
+        <label xlink:type="resource" xlink:label="idForReversingStandardOrMasterEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_idForReversingStandardOrMasterEntry_ja" xml:lang="en">反対/通常/マスタ仕訳識別子</label>
+        <label xlink:type="resource" xlink:label="idForReversingStandardOrMasterEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通常、反対、マスタ、取消または他の仕訳のための、それらの仕訳を関連付けるID。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="idForReversingStandardOrMasterEntry" xlink:to="idForReversingStandardOrMasterEntry_lbl"/>
+        <!-- gl-usk:recurringStandardDescription 反復通常仕訳説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_recurringStandardDescription" xlink:label="recurringStandardDescription"/>
+        <label xlink:type="resource" xlink:label="recurringStandardDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_recurringStandardDescription_ja" xml:lang="en">反復通常仕訳説明</label>
+        <label xlink:type="resource" xlink:label="recurringStandardDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通常仕訳または反復仕訳のIDの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="recurringStandardDescription" xlink:to="recurringStandardDescription_lbl"/>
+        <!-- gl-usk:frequencyInterval 頻度間隔 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_frequencyInterval" xlink:label="frequencyInterval"/>
+        <label xlink:type="resource" xlink:label="frequencyInterval_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_frequencyInterval_ja" xml:lang="en">頻度間隔</label>
+        <label xlink:type="resource" xlink:label="frequencyInterval_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、intervalを示す。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyInterval" xlink:to="frequencyInterval_lbl"/>
+        <!-- gl-usk:frequencyUnit 頻度単位 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_frequencyUnit" xlink:label="frequencyUnit"/>
+        <label xlink:type="resource" xlink:label="frequencyUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_frequencyUnit_ja" xml:lang="en">頻度単位</label>
+        <label xlink:type="resource" xlink:label="frequencyUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、unitを示す。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyUnit" xlink:to="frequencyUnit_lbl"/>
+        <!-- gl-usk:repetitionsRemaining 反復残回数 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_repetitionsRemaining" xlink:label="repetitionsRemaining"/>
+        <label xlink:type="resource" xlink:label="repetitionsRemaining_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_repetitionsRemaining_ja" xml:lang="en">反復残回数</label>
+        <label xlink:type="resource" xlink:label="repetitionsRemaining_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">反復仕訳の繰り返し予定数。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="repetitionsRemaining" xlink:to="repetitionsRemaining_lbl"/>
+        <!-- gl-usk:nextDateRepeat 次回反復日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_nextDateRepeat" xlink:label="nextDateRepeat"/>
+        <label xlink:type="resource" xlink:label="nextDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_nextDateRepeat_ja" xml:lang="en">次回反復日付</label>
+        <label xlink:type="resource" xlink:label="nextDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">次回の反復あるいは通常の転記日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="nextDateRepeat" xlink:to="nextDateRepeat_lbl"/>
+        <!-- gl-usk:lastDateRepeat 前回反復日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_lastDateRepeat" xlink:label="lastDateRepeat"/>
+        <label xlink:type="resource" xlink:label="lastDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_lastDateRepeat_ja" xml:lang="en">前回反復日付</label>
+        <label xlink:type="resource" xlink:label="lastDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">前回の反復あるいは通常の転記日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lastDateRepeat" xlink:to="lastDateRepeat_lbl"/>
+        <!-- gl-usk:endDateOfRepeatingEntry 反復仕訳終了日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_endDateOfRepeatingEntry" xlink:label="endDateOfRepeatingEntry"/>
+        <label xlink:type="resource" xlink:label="endDateOfRepeatingEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_endDateOfRepeatingEntry_ja" xml:lang="en">反復仕訳終了日付</label>
+        <label xlink:type="resource" xlink:label="endDateOfRepeatingEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">通常仕訳または反復仕訳のための、反復入力の終了日付/時刻。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="endDateOfRepeatingEntry" xlink:to="endDateOfRepeatingEntry_lbl"/>
+        <!-- gl-usk:reverse 反対仕訳要否 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_reverse" xlink:label="reverse"/>
+        <label xlink:type="resource" xlink:label="reverse_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_reverse_ja" xml:lang="en">反対仕訳要否</label>
+        <label xlink:type="resource" xlink:label="reverse_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳が取り消されるべきか。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reverse" xlink:to="reverse_lbl"/>
+        <!-- gl-usk:reversingDate 反対仕訳日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_reversingDate" xlink:label="reversingDate"/>
+        <label xlink:type="resource" xlink:label="reversingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_reversingDate_ja" xml:lang="en">反対仕訳日付</label>
+        <label xlink:type="resource" xlink:label="reversingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳が取り消されるべき日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingDate" xlink:to="reversingDate_lbl"/>
+        <!-- gl-usk:detailJobIdentifier ジョブ識別子 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobIdentifier" xlink:label="detailJobIdentifier"/>
+        <label xlink:type="resource" xlink:label="detailJobIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobIdentifier_ja" xml:lang="en">ジョブ識別子</label>
+        <label xlink:type="resource" xlink:label="detailJobIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関連するジョブ番号かジョブコード。 科目に組み込めるかもしれないが、多くのシステムでは独立したジョブコードシステムを持っている。おもに、ジョブの識別が別システムであり、科目体系に含まれないときに使用される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobIdentifier" xlink:to="detailJobIdentifier_lbl"/>
+        <!-- gl-usk:detailJobDescription ジョブ説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobDescription" xlink:label="detailJobDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobDescription_ja" xml:lang="en">ジョブ説明</label>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobDescription" xlink:to="detailJobDescription_lbl"/>
+        <!-- gl-usk:detailJobPhase ジョブフェーズ -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobPhase" xlink:label="detailJobPhase"/>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobPhase_ja" xml:lang="en">ジョブフェーズ</label>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブコード、フェーズ、活動。 簡単なジョブ番号より詳細な定義が可能。基本的には、ジョブからフェーズを導くのみだが、コストコードにまでいたるように拡張可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhase" xlink:to="detailJobPhase_lbl"/>
+        <!-- gl-usk:detailJobPhaseDescription ジョブフェーズ説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobPhaseDescription" xlink:label="detailJobPhaseDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobPhaseDescription_ja" xml:lang="en">ジョブフェーズ説明</label>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブコード、フェーズ、活動の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhaseDescription" xlink:to="detailJobPhaseDescription_lbl"/>
+  </labelLink>
+</linkbase>

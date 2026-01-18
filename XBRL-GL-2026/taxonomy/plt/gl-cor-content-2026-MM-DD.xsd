@@ -1,0 +1,845 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2026-MM-DD"
+  xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2026-MM-DD"
+  xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+  xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2026-MM-DD"
+  xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2026-MM-DD"
+  xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+  xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/srcd/2026-MM-DD" schemaLocation="gl-srcd-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/usk/2026-MM-DD" schemaLocation="gl-usk-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" schemaLocation="gl-bus-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/ehm/2026-MM-DD" schemaLocation="gl-ehm-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/taf/2026-MM-DD" schemaLocation="gl-taf-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/muc/2026-MM-DD" schemaLocation="gl-muc-content-2026-MM-DD.xsd"/>
+  <include schemaLocation="../cor/gl-cor-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="documentTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="auditNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="revisesAuditNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="actionToTakeWithPreviousDataItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="languageItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="creationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="documentCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodCoveredStartItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodCoveredEndItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyBusinessDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryDatePostedItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryCreatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryTypeIdentifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="sourceJournalItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryIdentifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryQualifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryQualifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="typeOfDifferenceBetweenBookAndTaxItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entryNumberCounterItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailLineNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailLineNumberCounterItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPostingDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailApplyToNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPostingStatusDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAcknowledgementDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailConfirmationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="debitcreditIdentifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="invoiceTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="shipFromItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="dateShippedReceivedItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="maturityDateOrDateDueItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="paymentTermsItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMainAccountNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMainAccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountClassificationItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountClassificationDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailParentAccountNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPurposeOfAccountItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPurposeOfAccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="subaccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="subaccountIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="typeOfSubaccountItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierOrganizationTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityVerificationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlAllocationItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryReportingElementItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlMatchingElementItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxAuthorityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTableCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAmountOfTaxesItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailBasisForTaxationItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxPercentageRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxCommentExemptionReasonItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="accountingEntriesComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:documentInformation"/>
+          <element ref="gl-cor:entityParty" minOccurs="0"/>
+          <element ref="gl-cor:entryHeader" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="documentInformationComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:documentType"/>
+          <element ref="gl-cor:auditNumber" minOccurs="0"/>
+          <element ref="gl-cor:revisesAuditNumber" minOccurs="0"/>
+          <element ref="gl-cor:actionToTakeWithPreviousData" minOccurs="0"/>
+          <element ref="gl-cor:language" minOccurs="0"/>
+          <element ref="gl-cor:creationDate" minOccurs="0"/>
+          <element ref="gl-bus:creator" minOccurs="0"/>
+          <element ref="gl-cor:documentComment" minOccurs="0"/>
+          <element ref="gl-cor:periodCoveredStart" minOccurs="0"/>
+          <element ref="gl-cor:periodCoveredEnd" minOccurs="0"/>
+          <element ref="gl-bus:periodCount" minOccurs="0"/>
+          <element ref="gl-bus:periodUnit" minOccurs="0"/>
+          <element ref="gl-bus:periodUnitDescription" minOccurs="0"/>
+          <element ref="gl-bus:sourceApplication" minOccurs="0"/>
+          <element ref="gl-bus:targetApplication" minOccurs="0"/>
+          <element ref="gl-muc:defaultCurrency" minOccurs="0"/>
+          <element ref="gl-srcd:summaryReportingTaxonomies" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:entityPartyName" minOccurs="0"/>
+          <element ref="gl-cor:entityPartyId" minOccurs="0"/>
+          <element ref="gl-cor:entityPartyBusinessDescription" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyDefaultAccountingMethodPurpose" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyDefaultAccountingMethodPurposeDescription" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyBusinessDescription" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyFiscalYearStart" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyFiscalYearEnd" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:entityPartyFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:entityPartyEmail" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:organizationIdentifiers" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:entityPartyAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:entityPartyWebSite" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:entityPartyContact" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:accountingMethodStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:accountant" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:reportingCalendar" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entryHeaderComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:entryDatePosted" minOccurs="0"/>
+          <element ref="gl-cor:entryCreator" minOccurs="0"/>
+          <element ref="gl-bus:entryLastModifier" minOccurs="0"/>
+          <element ref="gl-cor:entryDate" minOccurs="0"/>
+          <element ref="gl-bus:entryResponsiblePerson" minOccurs="0"/>
+          <element ref="gl-cor:entryTypeIdentifier" minOccurs="0"/>
+          <element ref="gl-bus:entryPostingCode" minOccurs="0"/>
+          <element ref="gl-bus:entryNumberOfEntries" minOccurs="0"/>
+          <element ref="gl-cor:sourceJournal" minOccurs="0"/>
+          <element ref="gl-bus:journalDescription" minOccurs="0"/>
+          <element ref="gl-bus:entryOrigin" minOccurs="0"/>
+          <element ref="gl-cor:entryIdentifier" minOccurs="0"/>
+          <element ref="gl-cor:entryDescription" minOccurs="0"/>
+          <element ref="gl-cor:entryQualifier" minOccurs="0"/>
+          <element ref="gl-cor:entryQualifierDescription" minOccurs="0"/>
+          <element ref="gl-bus:batchIdForEntryGroup" minOccurs="0"/>
+          <element ref="gl-bus:batchDescription" minOccurs="0"/>
+          <element ref="gl-bus:totalDebits" minOccurs="0"/>
+          <element ref="gl-bus:totalCredits" minOccurs="0"/>
+          <element ref="gl-cor:typeOfDifferenceBetweenBookAndTax" minOccurs="0"/>
+          <element ref="gl-bus:eliminationCode" minOccurs="0"/>
+          <element ref="gl-bus:budgetScenarioPeriodStart" minOccurs="0"/>
+          <element ref="gl-bus:budgetScenarioPeriodEnd" minOccurs="0"/>
+          <element ref="gl-bus:scenarioDescription" minOccurs="0"/>
+          <element ref="gl-bus:scenarioCode" minOccurs="0"/>
+          <element ref="gl-bus:budgetAllocationCode" minOccurs="0"/>
+          <element ref="gl-usk:idForReversingStandardOrMasterEntry" minOccurs="0"/>
+          <element ref="gl-usk:recurringStandardDescription" minOccurs="0"/>
+          <element ref="gl-usk:frequencyInterval" minOccurs="0"/>
+          <element ref="gl-usk:frequencyUnit" minOccurs="0"/>
+          <element ref="gl-usk:repetitionsRemaining" minOccurs="0"/>
+          <element ref="gl-usk:nextDateRepeat" minOccurs="0"/>
+          <element ref="gl-usk:lastDateRepeat" minOccurs="0"/>
+          <element ref="gl-usk:endDateOfRepeatingEntry" minOccurs="0"/>
+          <element ref="gl-usk:reverse" minOccurs="0"/>
+          <element ref="gl-usk:reversingDate" minOccurs="0"/>
+          <element ref="gl-cor:entryNumberCounter" minOccurs="0"/>
+          <element ref="gl-cor:entryDetail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyAddressComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:entityPartyName" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyDescription" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyPurpose" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyLocationIdentifier" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyBuildingNumber" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyStreet" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyAddressDetail" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyCity" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyStateOrProvince" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyCountry" minOccurs="0"/>
+          <element ref="gl-bus:entityPartyZipOrPostalCode" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entryDetailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:detailLineNumber" minOccurs="0"/>
+          <element ref="gl-cor:detailLineNumberCounter" minOccurs="0"/>
+          <element ref="gl-cor:detailPostingDate" minOccurs="0"/>
+          <element ref="gl-bus:detailMemoLine" minOccurs="0"/>
+          <element ref="gl-cor:detailDocumentType" minOccurs="0"/>
+          <element ref="gl-cor:detailDocumentTypeDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailDocumentNumber" minOccurs="0"/>
+          <element ref="gl-cor:detailApplyToNumber" minOccurs="0"/>
+          <element ref="gl-cor:detailDocumentReference" minOccurs="0"/>
+          <element ref="gl-cor:detailDocumentDate" minOccurs="0"/>
+          <element ref="gl-bus:detailReceivedDate" minOccurs="0"/>
+          <element ref="gl-bus:detailDocumentLocation" minOccurs="0"/>
+          <element ref="gl-cor:detailPostingStatus" minOccurs="0"/>
+          <element ref="gl-cor:detailPostingStatusDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailAcknowledgementDate" minOccurs="0"/>
+          <element ref="gl-cor:detailConfirmationDate" minOccurs="0"/>
+          <element ref="gl-ehm:detailMeasurableClassIdentifier" minOccurs="0"/>
+          <element ref="gl-ehm:detailMeasurableClassDescription" minOccurs="0"/>
+          <element ref="gl-ehm:detailGeospatialCoordinate" minOccurs="0"/>
+          <element ref="gl-cor:monetaryAmount" minOccurs="0"/>
+          <element ref="gl-muc:currency" minOccurs="0"/>
+          <element ref="gl-cor:signIndicationForAmount" minOccurs="0"/>
+          <element ref="gl-cor:debitcreditIdentifier" minOccurs="0"/>
+          <element ref="gl-bus:allocationCode" minOccurs="0"/>
+          <element ref="gl-cor:invoiceType" minOccurs="0"/>
+          <element ref="gl-bus:chargeableOrReimbursable" minOccurs="0"/>
+          <element ref="gl-bus:paymentMethod" minOccurs="0"/>
+          <element ref="gl-cor:shipFrom" minOccurs="0"/>
+          <element ref="gl-cor:dateShippedReceived" minOccurs="0"/>
+          <element ref="gl-cor:maturityDateOrDateDue" minOccurs="0"/>
+          <element ref="gl-cor:paymentTerms" minOccurs="0"/>
+          <element ref="gl-ehm:costingMethodCode" minOccurs="0"/>
+          <element ref="gl-ehm:costingMethodDescription" minOccurs="0"/>
+          <element ref="gl-taf:tickingField" minOccurs="0"/>
+          <element ref="gl-taf:documentRemainingBalance" minOccurs="0"/>
+          <element ref="gl-taf:ucr" minOccurs="0"/>
+          <element ref="gl-cor:detailAccountIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-muc:detailMulticurrencyStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:detailIdentifierReference" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:detailXbrl" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:detailMeasurable" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:detailJob" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:detailDepreciationMortgage" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-ehm:detailSerialOrLot" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:detailTax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-taf:detailOriginatingDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-srcd:detailRichTextComment" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailAccountIdentifierComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:detailMainAccountNumber" minOccurs="0"/>
+          <element ref="gl-cor:detailMainAccountDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailAccountClassification" minOccurs="0"/>
+          <element ref="gl-cor:detailAccountClassificationDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailParentAccountNumber" minOccurs="0"/>
+          <element ref="gl-cor:detailPurposeOfAccount" minOccurs="0"/>
+          <element ref="gl-cor:detailPurposeOfAccountDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailAccountType" minOccurs="0"/>
+          <element ref="gl-cor:detailAccountTypeDescription" minOccurs="0"/>
+          <element ref="gl-bus:detailAccountingMethod" minOccurs="0"/>
+          <element ref="gl-bus:detailAccountingMethodDescription" minOccurs="0"/>
+          <element ref="gl-bus:detailAccountingMethodPurpose" minOccurs="0"/>
+          <element ref="gl-bus:detailAccountingMethodPurposeDescription" minOccurs="0"/>
+          <element ref="gl-cor:subaccount" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailIdentifierReferenceComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:detailIdentifierCode" minOccurs="0"/>
+          <element ref="gl-bus:detailIdentifierPurpose" minOccurs="0"/>
+          <element ref="gl-cor:detailIdentifierOrganizationType" minOccurs="0"/>
+          <element ref="gl-cor:detailIdentifierOrganizationTypeDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailIdentifierDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailIdentifierType" minOccurs="0"/>
+          <element ref="gl-cor:detailIdentifierCategory" minOccurs="0"/>
+          <element ref="gl-cor:externalAuthority" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierEmail" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-bus:identifierAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierContact" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailXbrlComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:detailXbrlAllocation" minOccurs="0"/>
+          <element ref="gl-cor:detailXbrlSummaryReportingElement" minOccurs="0"/>
+          <element ref="gl-cor:detailXbrlMatchingElement" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlSummaryTuplePath" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlDetailedContentFilter" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlReportingDateSelector" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlSummaryOperator" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlSummaryUnitNumerator"/>
+          <element ref="gl-srcd:detailXbrlSummaryUnitDenominator" minOccurs="0"/>
+          <element ref="gl-srcd:detailXbrlSummaryReportingTaxonomyIdReference" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailTaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:detailTaxAuthority" minOccurs="0"/>
+          <element ref="gl-cor:detailTaxTableCode" minOccurs="0"/>
+          <element ref="gl-cor:detailTaxDescription" minOccurs="0"/>
+          <element ref="gl-cor:detailAmountOfTaxes" minOccurs="0"/>
+          <element ref="gl-cor:detailBasisForTaxation" minOccurs="0"/>
+          <element ref="gl-cor:detailTaxPercentageRate" minOccurs="0"/>
+          <element ref="gl-cor:detailTaxCategory" minOccurs="0"/>
+          <element ref="gl-cor:detailTaxCommentExemptionReason" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxAmountInForeignCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxForeignCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxExchangeRateDate" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxExchangeRateType" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxExchangeRateComment" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxAmountInTriangulationCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxTriangulationCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxTriangulationCurrencyExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxTriangulationCurrencyExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxTriangulationCurrencyExchangeRateType" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRateType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="subaccountComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:subaccountDescription" minOccurs="0"/>
+          <element ref="gl-cor:subaccountId" minOccurs="0"/>
+          <element ref="gl-cor:typeOfSubaccount" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="externalAuthorityComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-cor:externalAuthorityCode" minOccurs="0"/>
+          <element ref="gl-cor:externalAuthorityName" minOccurs="0"/>
+          <element ref="gl-cor:externalAuthorityVerificationDate" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierPhoneNumber" minOccurs="0"/>
+          <element ref="gl-bus:identifierPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierFaxNumber" minOccurs="0"/>
+          <element ref="gl-bus:identifierFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierEmailAddress" minOccurs="0"/>
+          <element ref="gl-bus:identifierEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierContactPrefix" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactLastName" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactFirstName" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactSuffix" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactAttentionLine" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactPositionRole" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactContactType" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactLocationIdCrossReference" minOccurs="0"/>
+          <element ref="gl-cor:identifierContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierContactFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="gl-cor:identifierContactEmail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierContactPhoneNumber" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierContactFaxNumber" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-bus:identifierContactEmailAddress" minOccurs="0"/>
+          <element ref="gl-bus:identifierContactEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

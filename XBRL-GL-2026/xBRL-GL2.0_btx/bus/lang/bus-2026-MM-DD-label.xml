@@ -1,0 +1,898 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- bus:creator Creator -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_creator" xlink:label="creator"/>
+        <label xlink:type="resource" xlink:label="creator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_creator_en" xml:lang="en">Creator</label>
+        <label xlink:type="resource" xlink:label="creator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Identifies the creator of the XBRL instance.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creator" xlink:to="creator_lbl"/>
+        <!-- bus:periodCount Period Count -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodCount" xlink:label="periodCount"/>
+        <label xlink:type="resource" xlink:label="periodCount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodCount_en" xml:lang="en">Period Count</label>
+        <label xlink:type="resource" xlink:label="periodCount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Number of periods or buckets, used by postingCode. Used to interpret posting date. It may be preferable to limit entries by period covered to be by individual reporting period.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCount" xlink:to="periodCount_lbl"/>
+        <!-- bus:periodUnit Period Unit -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodUnit" xlink:label="periodUnit"/>
+        <label xlink:type="resource" xlink:label="periodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodUnit_en" xml:lang="en">Period Unit</label>
+        <label xlink:type="resource" xlink:label="periodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Type of periods covered by periodCount. Enumerated as: daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, thirdly, semiannual, annual, ad-hoc, current-period-only, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodUnit" xlink:to="periodUnit_lbl"/>
+        <!-- bus:periodUnitDescription Period Unit Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodUnitDescription" xlink:label="periodUnitDescription"/>
+        <label xlink:type="resource" xlink:label="periodUnitDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodUnitDescription_en" xml:lang="en">Period Unit Description</label>
+        <label xlink:type="resource" xlink:label="periodUnitDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the period unit</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodUnitDescription" xlink:to="periodUnitDescription_lbl"/>
+        <!-- bus:sourceApplication Source Application -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_sourceApplication" xlink:label="sourceApplication"/>
+        <label xlink:type="resource" xlink:label="sourceApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_sourceApplication_en" xml:lang="en">Source Application</label>
+        <label xlink:type="resource" xlink:label="sourceApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Product or service that produced this file. Used by many systems (e.g., VAT). Version number can be included or extended.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceApplication" xlink:to="sourceApplication_lbl"/>
+        <!-- bus:targetApplication Target Application -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_targetApplication" xlink:label="targetApplication"/>
+        <label xlink:type="resource" xlink:label="targetApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_targetApplication_en" xml:lang="en">Target Application</label>
+        <label xlink:type="resource" xlink:label="targetApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Particular use for which file was generated.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="targetApplication" xlink:to="targetApplication_lbl"/>
+        <!-- bus:entityPartyDefaultAccountingMethodPurpose Entity Party Default Accounting Method Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDefaultAccountingMethodPurpose" xlink:label="entityPartyDefaultAccountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDefaultAccountingMethodPurpose_en" xml:lang="en">Entity Party Default Accounting Method Purpose</label>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">If not stated explicitly at the line level, the default reporting purpose - from book, tax, management, statutory, other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDefaultAccountingMethodPurpose" xlink:to="entityPartyDefaultAccountingMethodPurpose_lbl"/>
+        <!-- bus:entityPartyDefaultAccountingMethodPurposeDescription Entity Party Default Accounting Method Purpose Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDefaultAccountingMethodPurposeDescription" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDefaultAccountingMethodPurposeDescription_en" xml:lang="en">Entity Party Default Accounting Method Purpose Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the default accounting method purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDefaultAccountingMethodPurposeDescription" xlink:to="entityPartyDefaultAccountingMethodPurposeDescription_lbl"/>
+        <!-- bus:entityPartyBusinessDescription Entity Party Business Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyBusinessDescription" xlink:label="entityPartyBusinessDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyBusinessDescription_en" xml:lang="en">Entity Party Business Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of the nature of the business of the entity.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyBusinessDescription" xlink:to="entityPartyBusinessDescription_lbl"/>
+        <!-- bus:entityPartyFiscalYearStart Entity Party Fiscal Year Start -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFiscalYearStart" xlink:label="entityPartyFiscalYearStart"/>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearStart_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFiscalYearStart_en" xml:lang="en">Entity Party Fiscal Year Start</label>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearStart_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Start of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFiscalYearStart" xlink:to="entityPartyFiscalYearStart_lbl"/>
+        <!-- bus:entityPartyFiscalYearEnd Entity Party Fiscal Year End -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFiscalYearEnd" xlink:label="entityPartyFiscalYearEnd"/>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFiscalYearEnd_en" xml:lang="en">Entity Party Fiscal Year End</label>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">End of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFiscalYearEnd" xlink:to="entityPartyFiscalYearEnd_lbl"/>
+        <!-- bus:entityPartyPhone Party_ Entity_ Party_ Phone -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhone" xlink:label="entityPartyPhone"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhone_en" xml:lang="en">Party_ Entity_ Party_ Phone</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Primary phone number of the entity.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhone" xlink:to="entityPartyPhone_lbl"/>
+        <!-- bus:entityPartyFax Party_ Entity_ Party_ Fax -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFax" xlink:label="entityPartyFax"/>
+        <label xlink:type="resource" xlink:label="entityPartyFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFax_en" xml:lang="en">Party_ Entity_ Party_ Fax</label>
+        <label xlink:type="resource" xlink:label="entityPartyFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class for holding company fax information.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFax" xlink:to="entityPartyFax_lbl"/>
+        <!-- bus:entityPartyEmail Party_ Entity_ Party_ Email -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmail" xlink:label="entityPartyEmail"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmail_en" xml:lang="en">Party_ Entity_ Party_ Email</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class for holding company email information.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmail" xlink:to="entityPartyEmail_lbl"/>
+        <!-- bus:organizationIdentifier Party_ Entity_ Party_ Organization Identifier -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifier" xlink:label="organizationIdentifier"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifier_en" xml:lang="en">Party_ Entity_ Party_ Organization Identifier</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class which contains various identifiers for the party.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="organizationIdentifier_lbl"/>
+        <!-- bus:entityPartyWebSite Party_ Entity_ Party_ Web Site -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSite" xlink:label="entityPartyWebSite"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSite_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSite_en" xml:lang="en">Party_ Entity_ Party_ Web Site</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSite_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Primary web site of the entity.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSite" xlink:to="entityPartyWebSite_lbl"/>
+        <!-- bus:entityPartyContact Party_ Entity_ Party_ Contact -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContact" xlink:label="entityPartyContact"/>
+        <label xlink:type="resource" xlink:label="entityPartyContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContact_en" xml:lang="en">Party_ Entity_ Party_ Contact</label>
+        <label xlink:type="resource" xlink:label="entityPartyContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Information about contacts.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContact" xlink:to="entityPartyContact_lbl"/>
+        <!-- bus:accountingMethodStructure Entity Party_ Accounting Method Structure -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodStructure" xlink:label="accountingMethodStructure"/>
+        <label xlink:type="resource" xlink:label="accountingMethodStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodStructure_en" xml:lang="en">Entity Party_ Accounting Method Structure</label>
+        <label xlink:type="resource" xlink:label="accountingMethodStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class for identifying the methods of accounting used by the entity for different reporting purposes</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodStructure" xlink:to="accountingMethodStructure_lbl"/>
+        <!-- bus:accountant Entity Party_ Accountant -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountant" xlink:label="accountant"/>
+        <label xlink:type="resource" xlink:label="accountant_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountant_en" xml:lang="en">Entity Party_ Accountant</label>
+        <label xlink:type="resource" xlink:label="accountant_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Information about the relevant external accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountant" xlink:to="accountant_lbl"/>
+        <!-- bus:reportingCalendar Entity Party_ Reporting Calendar -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendar" xlink:label="reportingCalendar"/>
+        <label xlink:type="resource" xlink:label="reportingCalendar_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendar_en" xml:lang="en">Entity Party_ Reporting Calendar</label>
+        <label xlink:type="resource" xlink:label="reportingCalendar_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A tool to collect the periods used to summarise results from transactions.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendar" xlink:to="reportingCalendar_lbl"/>
+        <!-- bus:entityPartyPhoneNumber Party_ Entity_ Party_ Phone Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhoneNumber" xlink:label="entityPartyPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhoneNumber_en" xml:lang="en">Party_ Entity_ Party_ Phone Number</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone number referred to in Phone Number Description'\.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhoneNumber" xlink:to="entityPartyPhoneNumber_lbl"/>
+        <!-- bus:entityPartyPhoneNumberDescription Party_ Entity_ Party_ Phone Number Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhoneNumberDescription" xlink:label="entityPartyPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhoneNumberDescription_en" xml:lang="en">Party_ Entity_ Party_ Phone Number Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhoneNumberDescription" xlink:to="entityPartyPhoneNumberDescription_lbl"/>
+        <!-- bus:entityPartyFaxNumber Party_ Entity_ Party_ Fax Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFaxNumber" xlink:label="entityPartyFaxNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFaxNumber_en" xml:lang="en">Party_ Entity_ Party_ Fax Number</label>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFaxNumber" xlink:to="entityPartyFaxNumber_lbl"/>
+        <!-- bus:entityPartyFaxNumberUsage Party_ Entity_ Party_ Fax Number Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFaxNumberUsage" xlink:label="entityPartyFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFaxNumberUsage_en" xml:lang="en">Party_ Entity_ Party_ Fax Number Usage</label>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax number usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFaxNumberUsage" xlink:to="entityPartyFaxNumberUsage_lbl"/>
+        <!-- bus:entityPartyEmailAddress Party_ Entity_ Party_ Email Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmailAddress" xlink:label="entityPartyEmailAddress"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmailAddress_en" xml:lang="en">Party_ Entity_ Party_ Email Address</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email Address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmailAddress" xlink:to="entityPartyEmailAddress_lbl"/>
+        <!-- bus:entityPartyEmailAddressUsage Party_ Entity_ Party_ Email Address Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmailAddressUsage" xlink:label="entityPartyEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmailAddressUsage_en" xml:lang="en">Party_ Entity_ Party_ Email Address Usage</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email address usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmailAddressUsage" xlink:to="entityPartyEmailAddressUsage_lbl"/>
+        <!-- bus:organizationIdentifierCode Party_ Entity_ Party_ Organization Identifier Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifierCode" xlink:label="organizationIdentifierCode"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifierCode_en" xml:lang="en">Party_ Entity_ Party_ Organization Identifier Code</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Code representing the company or organization whose data this file represents: used for situations where one user (e.g., a CPA) needs to keep track of multiple organizations' files (e.g., multiple clients). Can be EIN#, client #, internal/external identifier, SIC code. Codes which identifies the entity. Includes the code identifier of the authority issuing the code, a colon, and the code itself. For example, CIK:01234567 for the CIK number issued by SEC EDGAR.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifierCode" xlink:to="organizationIdentifierCode_lbl"/>
+        <!-- bus:organizationIdentifierDescription Party_ Entity_ Party_ Organization Identifier Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifierDescription" xlink:label="organizationIdentifierDescription"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifierDescription_en" xml:lang="en">Party_ Entity_ Party_ Organization Identifier Description</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Text describing the organization identified by the organization identifier. Includes any relevant information about the code itself (e.g. issuing authority).</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifierDescription" xlink:to="organizationIdentifierDescription_lbl"/>
+        <!-- bus:entityPartyName Party_ Entity_ Party_ Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyName" xlink:label="entityPartyName"/>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyName_en" xml:lang="en">Party_ Entity_ Party_ Name</label>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyName" xlink:to="entityPartyName_lbl"/>
+        <!-- bus:entityPartyDescription Party_ Entity_ Party_ Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDescription" xlink:label="entityPartyDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDescription_en" xml:lang="en">Party_ Entity_ Party_ Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Description</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDescription" xlink:to="entityPartyDescription_lbl"/>
+        <!-- bus:entityPartyPurpose Party_ Entity_ Party_ Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPurpose" xlink:label="entityPartyPurpose"/>
+        <label xlink:type="resource" xlink:label="entityPartyPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPurpose_en" xml:lang="en">Party_ Entity_ Party_ Purpose</label>
+        <label xlink:type="resource" xlink:label="entityPartyPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPurpose" xlink:to="entityPartyPurpose_lbl"/>
+        <!-- bus:entityPartyLocationId Party_ Entity_ Party_ Location ID -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyLocationId" xlink:label="entityPartyLocationId"/>
+        <label xlink:type="resource" xlink:label="entityPartyLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyLocationId_en" xml:lang="en">Party_ Entity_ Party_ Location ID</label>
+        <label xlink:type="resource" xlink:label="entityPartyLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A code used to identify the location and to associate it with contacts and transactions</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyLocationId" xlink:to="entityPartyLocationId_lbl"/>
+        <!-- bus:entityPartyBuildingNumber Party_ Entity_ Party_ Building Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyBuildingNumber" xlink:label="entityPartyBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyBuildingNumber_en" xml:lang="en">Party_ Entity_ Party_ Building Number</label>
+        <label xlink:type="resource" xlink:label="entityPartyBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Building Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyBuildingNumber" xlink:to="entityPartyBuildingNumber_lbl"/>
+        <!-- bus:entityPartyStreet Party_ Entity_ Party_ Street -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyStreet" xlink:label="entityPartyStreet"/>
+        <label xlink:type="resource" xlink:label="entityPartyStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyStreet_en" xml:lang="en">Party_ Entity_ Party_ Street</label>
+        <label xlink:type="resource" xlink:label="entityPartyStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Street address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyStreet" xlink:to="entityPartyStreet_lbl"/>
+        <!-- bus:entityPartyAddressDetail Party_ Entity_ Party_ Address Detail -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyAddressDetail" xlink:label="entityPartyAddressDetail"/>
+        <label xlink:type="resource" xlink:label="entityPartyAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyAddressDetail_en" xml:lang="en">Party_ Entity_ Party_ Address Detail</label>
+        <label xlink:type="resource" xlink:label="entityPartyAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Detail</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyAddressDetail" xlink:to="entityPartyAddressDetail_lbl"/>
+        <!-- bus:entityPartyCity Party_ Entity_ Party_ City -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyCity" xlink:label="entityPartyCity"/>
+        <label xlink:type="resource" xlink:label="entityPartyCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyCity_en" xml:lang="en">Party_ Entity_ Party_ City</label>
+        <label xlink:type="resource" xlink:label="entityPartyCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">City</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyCity" xlink:to="entityPartyCity_lbl"/>
+        <!-- bus:entityPartyStateOrProvince Party_ Entity_ Party_ State or Province -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyStateOrProvince" xlink:label="entityPartyStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="entityPartyStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyStateOrProvince_en" xml:lang="en">Party_ Entity_ Party_ State or Province</label>
+        <label xlink:type="resource" xlink:label="entityPartyStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">State, province or region</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyStateOrProvince" xlink:to="entityPartyStateOrProvince_lbl"/>
+        <!-- bus:entityPartyCountry Party_ Entity_ Party_ Country -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyCountry" xlink:label="entityPartyCountry"/>
+        <label xlink:type="resource" xlink:label="entityPartyCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyCountry_en" xml:lang="en">Party_ Entity_ Party_ Country</label>
+        <label xlink:type="resource" xlink:label="entityPartyCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Country</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyCountry" xlink:to="entityPartyCountry_lbl"/>
+        <!-- bus:entityPartyZipOrPostalCode Party_ Entity_ Party_ Zip or Postal Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyZipOrPostalCode" xlink:label="entityPartyZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="entityPartyZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyZipOrPostalCode_en" xml:lang="en">Party_ Entity_ Party_ Zip or Postal Code</label>
+        <label xlink:type="resource" xlink:label="entityPartyZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Zip or other postal code</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyZipOrPostalCode" xlink:to="entityPartyZipOrPostalCode_lbl"/>
+        <!-- bus:entityPartyWebSiteUrl Party_ Entity_ Party_ Web Site URL -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSiteUrl" xlink:label="entityPartyWebSiteUrl"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteUrl_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSiteUrl_en" xml:lang="en">Party_ Entity_ Party_ Web Site URL</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteUrl_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Valid URL of the web site. Should be full URL.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSiteUrl" xlink:to="entityPartyWebSiteUrl_lbl"/>
+        <!-- bus:entityPartyWebSiteDescription Party_ Entity_ Party_ Web Site Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSiteDescription" xlink:label="entityPartyWebSiteDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSiteDescription_en" xml:lang="en">Party_ Entity_ Party_ Web Site Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of the web site.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSiteDescription" xlink:to="entityPartyWebSiteDescription_lbl"/>
+        <!-- bus:entityPartyContactPrefix Party_ Entity_ Party_ Contact Prefix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPrefix" xlink:label="entityPartyContactPrefix"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPrefix_en" xml:lang="en">Party_ Entity_ Party_ Contact Prefix</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Prefix (e.g. Dr., Mr., Mrs.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPrefix" xlink:to="entityPartyContactPrefix_lbl"/>
+        <!-- bus:entityPartyContactLastName Party_ Entity_ Party_ Contact Last Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactLastName" xlink:label="entityPartyContactLastName"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactLastName_en" xml:lang="en">Party_ Entity_ Party_ Contact Last Name</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Last or family name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactLastName" xlink:to="entityPartyContactLastName_lbl"/>
+        <!-- bus:entityPartyContactFirstName Party_ Entity_ Party_ Contact First Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFirstName" xlink:label="entityPartyContactFirstName"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFirstName_en" xml:lang="en">Party_ Entity_ Party_ Contact First Name</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">First or given name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFirstName" xlink:to="entityPartyContactFirstName_lbl"/>
+        <!-- bus:entityPartyContactSuffix Party_ Entity_ Party_ Contact Suffix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactSuffix" xlink:label="entityPartyContactSuffix"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactSuffix_en" xml:lang="en">Party_ Entity_ Party_ Contact Suffix</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Suffix (e.g. MD, CPA, Jr.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactSuffix" xlink:to="entityPartyContactSuffix_lbl"/>
+        <!-- bus:entityPartyContactAttentionLine Party_ Entity_ Party_ Contact Attention Line -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactAttentionLine" xlink:label="entityPartyContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactAttentionLine_en" xml:lang="en">Party_ Entity_ Party_ Contact Attention Line</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Attention Line</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactAttentionLine" xlink:to="entityPartyContactAttentionLine_lbl"/>
+        <!-- bus:entityPartyContactPositionRole Party_ Entity_ Party_ Contact Position Role -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPositionRole" xlink:label="entityPartyContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPositionRole_en" xml:lang="en">Party_ Entity_ Party_ Contact Position Role</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Position or role</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPositionRole" xlink:to="entityPartyContactPositionRole_lbl"/>
+        <!-- bus:entityPartyContactContactType Party_ Entity_ Party_ Contact Contact Type -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactContactType" xlink:label="entityPartyContactContactType"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactContactType_en" xml:lang="en">Party_ Entity_ Party_ Contact Contact Type</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactContactType" xlink:to="entityPartyContactContactType_lbl"/>
+        <!-- bus:entityPartyContactLocationIdCrossReference Party_ Entity_ Party_ Contact Location ID cross reference -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactLocationIdCrossReference" xlink:label="entityPartyContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactLocationIdCrossReference_en" xml:lang="en">Party_ Entity_ Party_ Contact Location ID cross reference</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactLocationIdCrossReference" xlink:to="entityPartyContactLocationIdCrossReference_lbl"/>
+        <!-- bus:entityPartyContactPhone Entity_ Party_ Contact_ Phone -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhone" xlink:label="entityPartyContactPhone"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhone_en" xml:lang="en">Entity_ Party_ Contact_ Phone</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Contact Phone Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhone" xlink:to="entityPartyContactPhone_lbl"/>
+        <!-- bus:entityPartyContactFax Entity_ Party_ Contact_ Fax -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFax" xlink:label="entityPartyContactFax"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFax_en" xml:lang="en">Entity_ Party_ Contact_ Fax</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Contact Fax Number Class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFax" xlink:to="entityPartyContactFax_lbl"/>
+        <!-- bus:entityPartyContactEmail Entity_ Party_ Contact_ Email -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmail" xlink:label="entityPartyContactEmail"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmail_en" xml:lang="en">Entity_ Party_ Contact_ Email</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Contact E-mail address class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmail" xlink:to="entityPartyContactEmail_lbl"/>
+        <!-- bus:entityPartyContactPhoneNumber Entity_ Party_ Contact_ Phone Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhoneNumber" xlink:label="entityPartyContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhoneNumber_en" xml:lang="en">Entity_ Party_ Contact_ Phone Number</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone number referred to in Phone Number Description'\.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhoneNumber" xlink:to="entityPartyContactPhoneNumber_lbl"/>
+        <!-- bus:entityPartyContactPhoneNumberDescription Entity_ Party_ Contact_ Phone Number Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhoneNumberDescription" xlink:label="entityPartyContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhoneNumberDescription_en" xml:lang="en">Entity_ Party_ Contact_ Phone Number Description</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhoneNumberDescription" xlink:to="entityPartyContactPhoneNumberDescription_lbl"/>
+        <!-- bus:entityPartyContactFaxNumber Entity_ Party_ Contact_ Fax Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFaxNumber" xlink:label="entityPartyContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFaxNumber_en" xml:lang="en">Entity_ Party_ Contact_ Fax Number</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFaxNumber" xlink:to="entityPartyContactFaxNumber_lbl"/>
+        <!-- bus:entityPartyContactFaxNumberUsage Entity_ Party_ Contact_ Fax Number Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFaxNumberUsage" xlink:label="entityPartyContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFaxNumberUsage_en" xml:lang="en">Entity_ Party_ Contact_ Fax Number Usage</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax number usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFaxNumberUsage" xlink:to="entityPartyContactFaxNumberUsage_lbl"/>
+        <!-- bus:entityPartyContactEmailAddress Entity_ Party_ Contact_ Email Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmailAddress" xlink:label="entityPartyContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmailAddress_en" xml:lang="en">Entity_ Party_ Contact_ Email Address</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email Address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmailAddress" xlink:to="entityPartyContactEmailAddress_lbl"/>
+        <!-- bus:entityPartyContactEmailAddressUsage Entity_ Party_ Contact_ Email Address Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmailAddressUsage" xlink:label="entityPartyContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmailAddressUsage_en" xml:lang="en">Entity_ Party_ Contact_ Email Address Usage</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email address usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmailAddressUsage" xlink:to="entityPartyContactEmailAddressUsage_lbl"/>
+        <!-- bus:accountingMethod Entity Party_ Accounting Method -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethod" xlink:label="accountingMethod"/>
+        <label xlink:type="resource" xlink:label="accountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethod_en" xml:lang="en">Entity Party_ Accounting Method</label>
+        <label xlink:type="resource" xlink:label="accountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For this entity, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethod" xlink:to="accountingMethod_lbl"/>
+        <!-- bus:accountingMethodDescription Entity Party_ Accounting Method Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodDescription" xlink:label="accountingMethodDescription"/>
+        <label xlink:type="resource" xlink:label="accountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodDescription_en" xml:lang="en">Entity Party_ Accounting Method Description</label>
+        <label xlink:type="resource" xlink:label="accountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the accounting method</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodDescription" xlink:to="accountingMethodDescription_lbl"/>
+        <!-- bus:accountingMethodPurpose Entity Party_ Accounting Method Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodPurpose" xlink:label="accountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="accountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodPurpose_en" xml:lang="en">Entity Party_ Accounting Method Purpose</label>
+        <label xlink:type="resource" xlink:label="accountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For this entity, the reporting purpose represented - from book, tax, management, statutory, other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodPurpose" xlink:to="accountingMethodPurpose_lbl"/>
+        <!-- bus:accountingMethodPurposeDescription Entity Party_ Accounting Method Purpose Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodPurposeDescription" xlink:label="accountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="accountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodPurposeDescription_en" xml:lang="en">Entity Party_ Accounting Method Purpose Description</label>
+        <label xlink:type="resource" xlink:label="accountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the accounting method purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodPurposeDescription" xlink:to="accountingMethodPurposeDescription_lbl"/>
+        <!-- bus:accountingMethodStartDate Entity Party_ Accounting Method Start Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodStartDate" xlink:label="accountingMethodStartDate"/>
+        <label xlink:type="resource" xlink:label="accountingMethodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodStartDate_en" xml:lang="en">Entity Party_ Accounting Method Start Date</label>
+        <label xlink:type="resource" xlink:label="accountingMethodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accounting Method Start Date</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodStartDate" xlink:to="accountingMethodStartDate_lbl"/>
+        <!-- bus:accountingMethodEndDate Entity Party_ Accounting Method End Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodEndDate" xlink:label="accountingMethodEndDate"/>
+        <label xlink:type="resource" xlink:label="accountingMethodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodEndDate_en" xml:lang="en">Entity Party_ Accounting Method End Date</label>
+        <label xlink:type="resource" xlink:label="accountingMethodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accounting Method End Date</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodEndDate" xlink:to="accountingMethodEndDate_lbl"/>
+        <!-- bus:accountantName Entity Party_ Accountant Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantName" xlink:label="accountantName"/>
+        <label xlink:type="resource" xlink:label="accountantName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantName_en" xml:lang="en">Entity Party_ Accountant Name</label>
+        <label xlink:type="resource" xlink:label="accountantName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Name of the accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantName" xlink:to="accountantName_lbl"/>
+        <!-- bus:accountantTypeOfEngagement Entity Party_ Accountant Type of Engagement -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantTypeOfEngagement" xlink:label="accountantTypeOfEngagement"/>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantTypeOfEngagement_en" xml:lang="en">Entity Party_ Accountant Type of Engagement</label>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Type of engagement being performed by external accountant. Enumerated as: audit, review, compilation, tax, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantTypeOfEngagement" xlink:to="accountantTypeOfEngagement_lbl"/>
+        <!-- bus:accountantTypeOfEngagementDescription Entity Party_ Accountant Type of Engagement Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantTypeOfEngagementDescription" xlink:label="accountantTypeOfEngagementDescription"/>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagementDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantTypeOfEngagementDescription_en" xml:lang="en">Entity Party_ Accountant Type of Engagement Description</label>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagementDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the type of engagement</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantTypeOfEngagementDescription" xlink:to="accountantTypeOfEngagementDescription_lbl"/>
+        <!-- bus:accountantAddress Accountant_ Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantAddress" xlink:label="accountantAddress"/>
+        <label xlink:type="resource" xlink:label="accountantAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantAddress_en" xml:lang="en">Accountant_ Address</label>
+        <label xlink:type="resource" xlink:label="accountantAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class which contains accountant address information.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddress" xlink:to="accountantAddress_lbl"/>
+        <!-- bus:accountantContact Accountant_ Contact -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContact" xlink:label="accountantContact"/>
+        <label xlink:type="resource" xlink:label="accountantContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContact_en" xml:lang="en">Accountant_ Contact</label>
+        <label xlink:type="resource" xlink:label="accountantContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accountant Contact Information Class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContact" xlink:to="accountantContact_lbl"/>
+        <!-- bus:accountantDescription Accountant_ Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantDescription" xlink:label="accountantDescription"/>
+        <label xlink:type="resource" xlink:label="accountantDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantDescription_en" xml:lang="en">Accountant_ Description</label>
+        <label xlink:type="resource" xlink:label="accountantDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Description</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantDescription" xlink:to="accountantDescription_lbl"/>
+        <!-- bus:accountantPurpose Accountant_ Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantPurpose" xlink:label="accountantPurpose"/>
+        <label xlink:type="resource" xlink:label="accountantPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantPurpose_en" xml:lang="en">Accountant_ Purpose</label>
+        <label xlink:type="resource" xlink:label="accountantPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantPurpose" xlink:to="accountantPurpose_lbl"/>
+        <!-- bus:accountantLocationId Accountant_ Location ID -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantLocationId" xlink:label="accountantLocationId"/>
+        <label xlink:type="resource" xlink:label="accountantLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantLocationId_en" xml:lang="en">Accountant_ Location ID</label>
+        <label xlink:type="resource" xlink:label="accountantLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A code used to identify the location and to associate it with contacts and transactions</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantLocationId" xlink:to="accountantLocationId_lbl"/>
+        <!-- bus:accountantBuildingNumber Accountant_ Building Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantBuildingNumber" xlink:label="accountantBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="accountantBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantBuildingNumber_en" xml:lang="en">Accountant_ Building Number</label>
+        <label xlink:type="resource" xlink:label="accountantBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Building Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantBuildingNumber" xlink:to="accountantBuildingNumber_lbl"/>
+        <!-- bus:accountantStreet Accountant_ Street -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantStreet" xlink:label="accountantStreet"/>
+        <label xlink:type="resource" xlink:label="accountantStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantStreet_en" xml:lang="en">Accountant_ Street</label>
+        <label xlink:type="resource" xlink:label="accountantStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Street address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStreet" xlink:to="accountantStreet_lbl"/>
+        <!-- bus:accountantAddressDetail Accountant_ Address Detail -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantAddressDetail" xlink:label="accountantAddressDetail"/>
+        <label xlink:type="resource" xlink:label="accountantAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantAddressDetail_en" xml:lang="en">Accountant_ Address Detail</label>
+        <label xlink:type="resource" xlink:label="accountantAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Detail</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddressDetail" xlink:to="accountantAddressDetail_lbl"/>
+        <!-- bus:accountantCity Accountant_ City -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantCity" xlink:label="accountantCity"/>
+        <label xlink:type="resource" xlink:label="accountantCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantCity_en" xml:lang="en">Accountant_ City</label>
+        <label xlink:type="resource" xlink:label="accountantCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">City</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCity" xlink:to="accountantCity_lbl"/>
+        <!-- bus:accountantStateOrProvince Accountant_ State or Province -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantStateOrProvince" xlink:label="accountantStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="accountantStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantStateOrProvince_en" xml:lang="en">Accountant_ State or Province</label>
+        <label xlink:type="resource" xlink:label="accountantStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">State, province or region</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStateOrProvince" xlink:to="accountantStateOrProvince_lbl"/>
+        <!-- bus:accountantCountry Accountant_ Country -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantCountry" xlink:label="accountantCountry"/>
+        <label xlink:type="resource" xlink:label="accountantCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantCountry_en" xml:lang="en">Accountant_ Country</label>
+        <label xlink:type="resource" xlink:label="accountantCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Country</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCountry" xlink:to="accountantCountry_lbl"/>
+        <!-- bus:accountantZipOrPostalCode Accountant_ Zip or Postal Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantZipOrPostalCode" xlink:label="accountantZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="accountantZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantZipOrPostalCode_en" xml:lang="en">Accountant_ Zip or Postal Code</label>
+        <label xlink:type="resource" xlink:label="accountantZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Zip or other postal code</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantZipOrPostalCode" xlink:to="accountantZipOrPostalCode_lbl"/>
+        <!-- bus:accountantContactPrefix Accountant_ Contact Prefix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPrefix" xlink:label="accountantContactPrefix"/>
+        <label xlink:type="resource" xlink:label="accountantContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPrefix_en" xml:lang="en">Accountant_ Contact Prefix</label>
+        <label xlink:type="resource" xlink:label="accountantContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Prefix (e.g. Dr., Mr., Mrs.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPrefix" xlink:to="accountantContactPrefix_lbl"/>
+        <!-- bus:accountantContactLastName Accountant_ Contact Last Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactLastName" xlink:label="accountantContactLastName"/>
+        <label xlink:type="resource" xlink:label="accountantContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactLastName_en" xml:lang="en">Accountant_ Contact Last Name</label>
+        <label xlink:type="resource" xlink:label="accountantContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Last or family name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactLastName" xlink:to="accountantContactLastName_lbl"/>
+        <!-- bus:accountantContactFirstName Accountant_ Contact First Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFirstName" xlink:label="accountantContactFirstName"/>
+        <label xlink:type="resource" xlink:label="accountantContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFirstName_en" xml:lang="en">Accountant_ Contact First Name</label>
+        <label xlink:type="resource" xlink:label="accountantContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">First or given name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFirstName" xlink:to="accountantContactFirstName_lbl"/>
+        <!-- bus:accountantContactSuffix Accountant_ Contact Suffix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactSuffix" xlink:label="accountantContactSuffix"/>
+        <label xlink:type="resource" xlink:label="accountantContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactSuffix_en" xml:lang="en">Accountant_ Contact Suffix</label>
+        <label xlink:type="resource" xlink:label="accountantContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Suffix (e.g. MD, CPA, Jr.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactSuffix" xlink:to="accountantContactSuffix_lbl"/>
+        <!-- bus:accountantContactAttentionLine Accountant_ Contact Attention Line -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactAttentionLine" xlink:label="accountantContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="accountantContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactAttentionLine_en" xml:lang="en">Accountant_ Contact Attention Line</label>
+        <label xlink:type="resource" xlink:label="accountantContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Attention Line</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactAttentionLine" xlink:to="accountantContactAttentionLine_lbl"/>
+        <!-- bus:accountantContactPositionRole Accountant_ Contact Position Role -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPositionRole" xlink:label="accountantContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="accountantContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPositionRole_en" xml:lang="en">Accountant_ Contact Position Role</label>
+        <label xlink:type="resource" xlink:label="accountantContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Position or role</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPositionRole" xlink:to="accountantContactPositionRole_lbl"/>
+        <!-- bus:accountantContactContactType Accountant_ Contact Contact Type -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactContactType" xlink:label="accountantContactContactType"/>
+        <label xlink:type="resource" xlink:label="accountantContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactContactType_en" xml:lang="en">Accountant_ Contact Contact Type</label>
+        <label xlink:type="resource" xlink:label="accountantContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactContactType" xlink:to="accountantContactContactType_lbl"/>
+        <!-- bus:accountantContactLocationIdCrossReference Accountant_ Contact Location ID cross reference -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactLocationIdCrossReference" xlink:label="accountantContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="accountantContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactLocationIdCrossReference_en" xml:lang="en">Accountant_ Contact Location ID cross reference</label>
+        <label xlink:type="resource" xlink:label="accountantContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactLocationIdCrossReference" xlink:to="accountantContactLocationIdCrossReference_lbl"/>
+        <!-- bus:accountantContactPhone Accountant_ Contact_ Phone -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhone" xlink:label="accountantContactPhone"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhone_en" xml:lang="en">Accountant_ Contact_ Phone</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone Number for Accountant Contact</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhone" xlink:to="accountantContactPhone_lbl"/>
+        <!-- bus:accountantContactFax Accountant_ Contact_ Fax -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFax" xlink:label="accountantContactFax"/>
+        <label xlink:type="resource" xlink:label="accountantContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFax_en" xml:lang="en">Accountant_ Contact_ Fax</label>
+        <label xlink:type="resource" xlink:label="accountantContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accountant Contact Fax Number Class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFax" xlink:to="accountantContactFax_lbl"/>
+        <!-- bus:accountantContactEmail Accountant_ Contact_ Email -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmail" xlink:label="accountantContactEmail"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmail_en" xml:lang="en">Accountant_ Contact_ Email</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accountant contact E-mail address class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmail" xlink:to="accountantContactEmail_lbl"/>
+        <!-- bus:accountantContactPhoneNumber Accountant_ Contact_ Phone Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhoneNumber" xlink:label="accountantContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhoneNumber_en" xml:lang="en">Accountant_ Contact_ Phone Number</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone number referred to in Phone Number Description'\.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumber" xlink:to="accountantContactPhoneNumber_lbl"/>
+        <!-- bus:accountantContactPhoneNumberDescription Accountant_ Contact_ Phone Number Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhoneNumberDescription" xlink:label="accountantContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhoneNumberDescription_en" xml:lang="en">Accountant_ Contact_ Phone Number Description</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumberDescription" xlink:to="accountantContactPhoneNumberDescription_lbl"/>
+        <!-- bus:accountantContactFaxNumber Accountant_ Contact_ Fax Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFaxNumber" xlink:label="accountantContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFaxNumber_en" xml:lang="en">Accountant_ Contact_ Fax Number</label>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumber" xlink:to="accountantContactFaxNumber_lbl"/>
+        <!-- bus:accountantContactFaxNumberUsage Accountant_ Contact_ Fax Number Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFaxNumberUsage" xlink:label="accountantContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFaxNumberUsage_en" xml:lang="en">Accountant_ Contact_ Fax Number Usage</label>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax number usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumberUsage" xlink:to="accountantContactFaxNumberUsage_lbl"/>
+        <!-- bus:accountantContactEmailAddress Accountant_ Contact_ Email Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmailAddress" xlink:label="accountantContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmailAddress_en" xml:lang="en">Accountant_ Contact_ Email Address</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email Address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddress" xlink:to="accountantContactEmailAddress_lbl"/>
+        <!-- bus:accountantContactEmailAddressUsage Accountant_ Contact_ Email Address Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmailAddressUsage" xlink:label="accountantContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmailAddressUsage_en" xml:lang="en">Accountant_ Contact_ Email Address Usage</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email address usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddressUsage" xlink:to="accountantContactEmailAddressUsage_lbl"/>
+        <!-- bus:reportingCalendarCode Entity Party_ Reporting Calendar Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarCode" xlink:label="reportingCalendarCode"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarCode_en" xml:lang="en">Entity Party_ Reporting Calendar Code</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The code used to identify this specific reporting calendar, unique across periods</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarCode" xlink:to="reportingCalendarCode_lbl"/>
+        <!-- bus:reportingCalendarDescription Entity Party_ Reporting Calendar Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarDescription" xlink:label="reportingCalendarDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarDescription_en" xml:lang="en">Entity Party_ Reporting Calendar Description</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A description of the type of period involved.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarDescription" xlink:to="reportingCalendarDescription_lbl"/>
+        <!-- bus:reportingCalendarTitle Entity Party_ Reporting Calendar Title -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarTitle" xlink:label="reportingCalendarTitle"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarTitle_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarTitle_en" xml:lang="en">Entity Party_ Reporting Calendar Title</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarTitle_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A description of the reporting period. The actual beginning and ending dates are found within the 'reportingCalendarPeriod' class</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarTitle" xlink:to="reportingCalendarTitle_lbl"/>
+        <!-- bus:reportingCalendarTypeCode Entity Party_ Reporting Calendar Type Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarTypeCode" xlink:label="reportingCalendarTypeCode"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarTypeCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarTypeCode_en" xml:lang="en">Entity Party_ Reporting Calendar Type Code</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarTypeCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A code for the type of period involved. Enumerated as: monthly, quarterly, semi-annually, 4-5-4, ad-hoc, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarTypeCode" xlink:to="reportingCalendarTypeCode_lbl"/>
+        <!-- bus:reportingCalendarClosedStatus Entity Party_ Reporting Calendar Closed Status -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarClosedStatus" xlink:label="reportingCalendarClosedStatus"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarClosedStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarClosedStatus_en" xml:lang="en">Entity Party_ Reporting Calendar Closed Status</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarClosedStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">An identifier on whether the reporting calendar is still open for activity. enumerated, "open", "closed", "pending"</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarClosedStatus" xlink:to="reportingCalendarClosedStatus_lbl"/>
+        <!-- bus:reportingCalendarPurpose Entity Party_ Reporting Calendar Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPurpose" xlink:label="reportingCalendarPurpose"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPurpose_en" xml:lang="en">Entity Party_ Reporting Calendar Purpose</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A description of the accounting set of books involved. Uses enumeration from accounting method purpose.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPurpose" xlink:to="reportingCalendarPurpose_lbl"/>
+        <!-- bus:reportingCalendarPurposeDescription Entity Party_ Reporting Calendar Purpose Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPurposeDescription" xlink:label="reportingCalendarPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPurposeDescription_en" xml:lang="en">Entity Party_ Reporting Calendar Purpose Description</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the reporting purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPurposeDescription" xlink:to="reportingCalendarPurposeDescription_lbl"/>
+        <!-- bus:reportingCalendarPeriod Reporting Calendar_ Period -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriod" xlink:label="reportingCalendarPeriod"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriod_en" xml:lang="en">Reporting Calendar_ Period</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A tool to collect a specific set of periods used to summarize results from transactions.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriod" xlink:to="reportingCalendarPeriod_lbl"/>
+        <!-- bus:reportingCalendarPeriodId Reporting Calendar_ Period ID -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodId" xlink:label="reportingCalendarPeriodId"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodId_en" xml:lang="en">Reporting Calendar_ Period ID</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">An identifier for this period in this calendar</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodId" xlink:to="reportingCalendarPeriodId_lbl"/>
+        <!-- bus:reportingCalendarPeriodDescription Reporting Calendar_ Period Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodDescription" xlink:label="reportingCalendarPeriodDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodDescription_en" xml:lang="en">Reporting Calendar_ Period Description</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A description of this specific reporting period in this calendar.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodDescription" xlink:to="reportingCalendarPeriodDescription_lbl"/>
+        <!-- bus:reportingCalendarPeriodStartDate Reporting Calendar_ Period Start Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodStartDate" xlink:label="reportingCalendarPeriodStartDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodStartDate_en" xml:lang="en">Reporting Calendar_ Period Start Date</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The beginning date/time of a period</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodStartDate" xlink:to="reportingCalendarPeriodStartDate_lbl"/>
+        <!-- bus:reportingCalendarPeriodEndDate Reporting Calendar_ Period End Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodEndDate" xlink:label="reportingCalendarPeriodEndDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodEndDate_en" xml:lang="en">Reporting Calendar_ Period End Date</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The ending date/time of a period</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodEndDate" xlink:to="reportingCalendarPeriodEndDate_lbl"/>
+        <!-- bus:reportingCalendarPeriodClosedDate Reporting Calendar_ Period Closed Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodClosedDate" xlink:label="reportingCalendarPeriodClosedDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodClosedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodClosedDate_en" xml:lang="en">Reporting Calendar_ Period Closed Date</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodClosedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The date/time a period has been closed for activity. If this is present with a nill value (xsi:nill="true") then the period is not closed.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodClosedDate" xlink:to="reportingCalendarPeriodClosedDate_lbl"/>
+        <!-- bus:headerIdentifierPurpose Header_ Identifier Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierPurpose" xlink:label="headerIdentifierPurpose"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierPurpose_en" xml:lang="en">Header_ Identifier Purpose</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Freeform for codes like purchasing, billing, manufacturing at identifier level.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierPurpose" xlink:to="headerIdentifierPurpose_lbl"/>
+        <!-- bus:identifierAddress Header_ Identifier_ Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierAddress" xlink:label="identifierAddress"/>
+        <label xlink:type="resource" xlink:label="identifierAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierAddress_en" xml:lang="en">Header_ Identifier_ Address</label>
+        <label xlink:type="resource" xlink:label="identifierAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address (block) of customer, vendor, employee for integration purposes, VAT.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddress" xlink:to="identifierAddress_lbl"/>
+        <!-- bus:identifierPhoneNumber Header_ Identifier_ Phone Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPhoneNumber" xlink:label="identifierPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPhoneNumber_en" xml:lang="en">Header_ Identifier_ Phone Number</label>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone number referred to in Phone Number Description'\.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="identifierPhoneNumber_lbl"/>
+        <!-- bus:identifierPhoneNumberDescription Header_ Identifier_ Phone Number Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPhoneNumberDescription" xlink:label="identifierPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPhoneNumberDescription_en" xml:lang="en">Header_ Identifier_ Phone Number Description</label>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="identifierPhoneNumberDescription_lbl"/>
+        <!-- bus:identifierFaxNumber Header_ Identifier_ Fax Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierFaxNumber" xlink:label="identifierFaxNumber"/>
+        <label xlink:type="resource" xlink:label="identifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierFaxNumber_en" xml:lang="en">Header_ Identifier_ Fax Number</label>
+        <label xlink:type="resource" xlink:label="identifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="identifierFaxNumber_lbl"/>
+        <!-- bus:identifierFaxNumberUsage Header_ Identifier_ Fax Number Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierFaxNumberUsage" xlink:label="identifierFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="identifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierFaxNumberUsage_en" xml:lang="en">Header_ Identifier_ Fax Number Usage</label>
+        <label xlink:type="resource" xlink:label="identifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax number usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="identifierFaxNumberUsage_lbl"/>
+        <!-- bus:identifierEmailAddress Header_ Identifier_ Email Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierEmailAddress" xlink:label="identifierEmailAddress"/>
+        <label xlink:type="resource" xlink:label="identifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierEmailAddress_en" xml:lang="en">Header_ Identifier_ Email Address</label>
+        <label xlink:type="resource" xlink:label="identifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email Address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="identifierEmailAddress_lbl"/>
+        <!-- bus:identifierEmailAddressUsage Header_ Identifier_ Email Address Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierEmailAddressUsage" xlink:label="identifierEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="identifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierEmailAddressUsage_en" xml:lang="en">Header_ Identifier_ Email Address Usage</label>
+        <label xlink:type="resource" xlink:label="identifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email address usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="identifierEmailAddressUsage_lbl"/>
+        <!-- bus:identifierDescription Header_ Identifier_ Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierDescription" xlink:label="identifierDescription"/>
+        <label xlink:type="resource" xlink:label="identifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierDescription_en" xml:lang="en">Header_ Identifier_ Description</label>
+        <label xlink:type="resource" xlink:label="identifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Description</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="identifierDescription_lbl"/>
+        <!-- bus:identifierPurpose Header_ Identifier_ Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPurpose" xlink:label="identifierPurpose"/>
+        <label xlink:type="resource" xlink:label="identifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPurpose_en" xml:lang="en">Header_ Identifier_ Purpose</label>
+        <label xlink:type="resource" xlink:label="identifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPurpose" xlink:to="identifierPurpose_lbl"/>
+        <!-- bus:identifierLocationId Header_ Identifier_ Location ID -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierLocationId" xlink:label="identifierLocationId"/>
+        <label xlink:type="resource" xlink:label="identifierLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierLocationId_en" xml:lang="en">Header_ Identifier_ Location ID</label>
+        <label xlink:type="resource" xlink:label="identifierLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A code used to identify the location and to associate it with contacts and transactions</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierLocationId" xlink:to="identifierLocationId_lbl"/>
+        <!-- bus:identifierBuildingNumber Header_ Identifier_ Building Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierBuildingNumber" xlink:label="identifierBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="identifierBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierBuildingNumber_en" xml:lang="en">Header_ Identifier_ Building Number</label>
+        <label xlink:type="resource" xlink:label="identifierBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Building Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierBuildingNumber" xlink:to="identifierBuildingNumber_lbl"/>
+        <!-- bus:identifierStreet Header_ Identifier_ Street -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierStreet" xlink:label="identifierStreet"/>
+        <label xlink:type="resource" xlink:label="identifierStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierStreet_en" xml:lang="en">Header_ Identifier_ Street</label>
+        <label xlink:type="resource" xlink:label="identifierStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Street address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStreet" xlink:to="identifierStreet_lbl"/>
+        <!-- bus:identifierAddressDetail Header_ Identifier_ Address Detail -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierAddressDetail" xlink:label="identifierAddressDetail"/>
+        <label xlink:type="resource" xlink:label="identifierAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierAddressDetail_en" xml:lang="en">Header_ Identifier_ Address Detail</label>
+        <label xlink:type="resource" xlink:label="identifierAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Address Detail</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddressDetail" xlink:to="identifierAddressDetail_lbl"/>
+        <!-- bus:identifierCity Header_ Identifier_ City -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierCity" xlink:label="identifierCity"/>
+        <label xlink:type="resource" xlink:label="identifierCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierCity_en" xml:lang="en">Header_ Identifier_ City</label>
+        <label xlink:type="resource" xlink:label="identifierCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">City</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCity" xlink:to="identifierCity_lbl"/>
+        <!-- bus:identifierStateOrProvince Header_ Identifier_ State or Province -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierStateOrProvince" xlink:label="identifierStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="identifierStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierStateOrProvince_en" xml:lang="en">Header_ Identifier_ State or Province</label>
+        <label xlink:type="resource" xlink:label="identifierStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">State, province or region</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStateOrProvince" xlink:to="identifierStateOrProvince_lbl"/>
+        <!-- bus:identifierCountry Header_ Identifier_ Country -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierCountry" xlink:label="identifierCountry"/>
+        <label xlink:type="resource" xlink:label="identifierCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierCountry_en" xml:lang="en">Header_ Identifier_ Country</label>
+        <label xlink:type="resource" xlink:label="identifierCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Country</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCountry" xlink:to="identifierCountry_lbl"/>
+        <!-- bus:identifierZipOrPostalCode Header_ Identifier_ Zip or Postal Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierZipOrPostalCode" xlink:label="identifierZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="identifierZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierZipOrPostalCode_en" xml:lang="en">Header_ Identifier_ Zip or Postal Code</label>
+        <label xlink:type="resource" xlink:label="identifierZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Zip or other postal code</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierZipOrPostalCode" xlink:to="identifierZipOrPostalCode_lbl"/>
+        <!-- bus:headerIdentifierContactPrefix Header_ Identifier_ Contact Prefix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactPrefix" xlink:label="headerIdentifierContactPrefix"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactPrefix_en" xml:lang="en">Header_ Identifier_ Contact Prefix</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Prefix (e.g. Dr., Mr., Mrs.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPrefix" xlink:to="headerIdentifierContactPrefix_lbl"/>
+        <!-- bus:headerIdentifierContactLastName Header_ Identifier_ Contact Last Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactLastName" xlink:label="headerIdentifierContactLastName"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactLastName_en" xml:lang="en">Header_ Identifier_ Contact Last Name</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Last or family name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactLastName" xlink:to="headerIdentifierContactLastName_lbl"/>
+        <!-- bus:headerIdentifierContactFirstName Header_ Identifier_ Contact First Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactFirstName" xlink:label="headerIdentifierContactFirstName"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactFirstName_en" xml:lang="en">Header_ Identifier_ Contact First Name</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">First or given name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFirstName" xlink:to="headerIdentifierContactFirstName_lbl"/>
+        <!-- bus:headerIdentifierContactSuffix Header_ Identifier_ Contact Suffix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactSuffix" xlink:label="headerIdentifierContactSuffix"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactSuffix_en" xml:lang="en">Header_ Identifier_ Contact Suffix</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Suffix (e.g. MD, CPA, Jr.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactSuffix" xlink:to="headerIdentifierContactSuffix_lbl"/>
+        <!-- bus:headerIdentifierContactAttentionLine Header_ Identifier_ Contact Attention Line -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactAttentionLine" xlink:label="headerIdentifierContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactAttentionLine_en" xml:lang="en">Header_ Identifier_ Contact Attention Line</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Attention Line</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactAttentionLine" xlink:to="headerIdentifierContactAttentionLine_lbl"/>
+        <!-- bus:headerIdentifierContactPositionRole Header_ Identifier_ Contact Position Role -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactPositionRole" xlink:label="headerIdentifierContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactPositionRole_en" xml:lang="en">Header_ Identifier_ Contact Position Role</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Position or role</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPositionRole" xlink:to="headerIdentifierContactPositionRole_lbl"/>
+        <!-- bus:headerIdentifierContactContactType Header_ Identifier_ Contact Contact Type -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactContactType" xlink:label="headerIdentifierContactContactType"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactContactType_en" xml:lang="en">Header_ Identifier_ Contact Contact Type</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactContactType" xlink:to="headerIdentifierContactContactType_lbl"/>
+        <!-- bus:headerIdentifierContactLocationIdCrossReference Header_ Identifier_ Contact Location ID cross reference -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactLocationIdCrossReference" xlink:label="headerIdentifierContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactLocationIdCrossReference_en" xml:lang="en">Header_ Identifier_ Contact Location ID cross reference</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactLocationIdCrossReference" xlink:to="headerIdentifierContactLocationIdCrossReference_lbl"/>
+        <!-- bus:identifierContactPhoneNumber Header_ Identifier_ Contact_ Phone Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactPhoneNumber" xlink:label="identifierContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactPhoneNumber_en" xml:lang="en">Header_ Identifier_ Contact_ Phone Number</label>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Phone number referred to in Phone Number Description'\.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="identifierContactPhoneNumber_lbl"/>
+        <!-- bus:identifierContactPhoneNumberDescription Header_ Identifier_ Contact_ Phone Number Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactPhoneNumberDescription" xlink:label="identifierContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactPhoneNumberDescription_en" xml:lang="en">Header_ Identifier_ Contact_ Phone Number Description</label>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Entity Phone Number Description such as Main, Investor relations. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="identifierContactPhoneNumberDescription_lbl"/>
+        <!-- bus:identifierContactFaxNumber Header_ Identifier_ Contact_ Fax Number -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactFaxNumber" xlink:label="identifierContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactFaxNumber_en" xml:lang="en">Header_ Identifier_ Contact_ Fax Number</label>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax Number</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="identifierContactFaxNumber_lbl"/>
+        <!-- bus:identifierContactFaxNumberUsage Header_ Identifier_ Contact_ Fax Number Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactFaxNumberUsage" xlink:label="identifierContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactFaxNumberUsage_en" xml:lang="en">Header_ Identifier_ Contact_ Fax Number Usage</label>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Fax number usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="identifierContactFaxNumberUsage_lbl"/>
+        <!-- bus:identifierContactEmailAddress Header_ Identifier_ Contact_ Email Address -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactEmailAddress" xlink:label="identifierContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactEmailAddress_en" xml:lang="en">Header_ Identifier_ Contact_ Email Address</label>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email Address</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="identifierContactEmailAddress_lbl"/>
+        <!-- bus:identifierContactEmailAddressUsage Header_ Identifier_ Contact_ Email Address Usage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactEmailAddressUsage" xlink:label="identifierContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactEmailAddressUsage_en" xml:lang="en">Header_ Identifier_ Contact_ Email Address Usage</label>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Email address usage (e.g. orders, head office, IR)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="identifierContactEmailAddressUsage_lbl"/>
+        <!-- bus:detailMeasurable Detail_ Measurable -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurable" xlink:label="detailMeasurable"/>
+        <label xlink:type="resource" xlink:label="detailMeasurable_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurable_en" xml:lang="en">Detail_ Measurable</label>
+        <label xlink:type="resource" xlink:label="detailMeasurable_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an "account", "reporting bucket" or "code". Can be used to track any movements.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurable" xlink:to="detailMeasurable_lbl"/>
+        <!-- bus:detailJob Detail_ Job -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailJob" xlink:label="detailJob"/>
+        <label xlink:type="resource" xlink:label="detailJob_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailJob_en" xml:lang="en">Detail_ Job</label>
+        <label xlink:type="resource" xlink:label="detailJob_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo class for each entry line, but there may be a need to express more than one.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJob" xlink:to="detailJob_lbl"/>
+        <!-- bus:detailDepreciationMortgage Detail_ Depreciation Mortgage -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgage" xlink:label="detailDepreciationMortgage"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgage_en" xml:lang="en">Detail_ Depreciation Mortgage</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Parent for information related to depreciation, mortgages, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgage" xlink:to="detailDepreciationMortgage_lbl"/>
+        <!-- bus:detailAccountingMethod Detail_ Accounting Method -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethod" xlink:label="detailAccountingMethod"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethod_en" xml:lang="en">Detail_ Accounting Method</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For this entry, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethod" xlink:to="detailAccountingMethod_lbl"/>
+        <!-- bus:detailAccountingMethodDescription Detail_ Accounting Method Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodDescription" xlink:label="detailAccountingMethodDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodDescription_en" xml:lang="en">Detail_ Accounting Method Description</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the entry accounting method</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodDescription" xlink:to="detailAccountingMethodDescription_lbl"/>
+        <!-- bus:detailAccountingMethodPurpose Detail_ Accounting Method Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodPurpose" xlink:label="detailAccountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodPurpose_en" xml:lang="en">Detail_ Accounting Method Purpose</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For this entry, the reporting purpose represented - from book, tax, management, statutory, other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodPurpose" xlink:to="detailAccountingMethodPurpose_lbl"/>
+        <!-- bus:detailAccountingMethodPurposeDescription Detail_ Accounting Method Purpose Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodPurposeDescription" xlink:label="detailAccountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodPurposeDescription_en" xml:lang="en">Detail_ Accounting Method Purpose Description</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the entry accounting method purpose</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodPurposeDescription" xlink:to="detailAccountingMethodPurposeDescription_lbl"/>
+        <!-- bus:detailIdentifierPurpose Detail_ Identifier Purpose -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierPurpose" xlink:label="detailIdentifierPurpose"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierPurpose_en" xml:lang="en">Detail_ Identifier Purpose</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Freeform for codes like purchasing, billing, manufacturing at identifier level.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierPurpose" xlink:to="detailIdentifierPurpose_lbl"/>
+        <!-- bus:detailIdentifierContactPrefix Detail_ Identifier_ Contact Prefix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactPrefix" xlink:label="detailIdentifierContactPrefix"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactPrefix_en" xml:lang="en">Detail_ Identifier_ Contact Prefix</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Prefix (e.g. Dr., Mr., Mrs.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactPrefix" xlink:to="detailIdentifierContactPrefix_lbl"/>
+        <!-- bus:detailIdentifierContactLastName Detail_ Identifier_ Contact Last Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactLastName" xlink:label="detailIdentifierContactLastName"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactLastName_en" xml:lang="en">Detail_ Identifier_ Contact Last Name</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Last or family name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactLastName" xlink:to="detailIdentifierContactLastName_lbl"/>
+        <!-- bus:detailIdentifierContactFirstName Detail_ Identifier_ Contact First Name -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactFirstName" xlink:label="detailIdentifierContactFirstName"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactFirstName_en" xml:lang="en">Detail_ Identifier_ Contact First Name</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">First or given name</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactFirstName" xlink:to="detailIdentifierContactFirstName_lbl"/>
+        <!-- bus:detailIdentifierContactSuffix Detail_ Identifier_ Contact Suffix -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactSuffix" xlink:label="detailIdentifierContactSuffix"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactSuffix_en" xml:lang="en">Detail_ Identifier_ Contact Suffix</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Suffix (e.g. MD, CPA, Jr.)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactSuffix" xlink:to="detailIdentifierContactSuffix_lbl"/>
+        <!-- bus:detailIdentifierContactAttentionLine Detail_ Identifier_ Contact Attention Line -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactAttentionLine" xlink:label="detailIdentifierContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactAttentionLine_en" xml:lang="en">Detail_ Identifier_ Contact Attention Line</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Attention Line</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactAttentionLine" xlink:to="detailIdentifierContactAttentionLine_lbl"/>
+        <!-- bus:detailIdentifierContactPositionRole Detail_ Identifier_ Contact Position Role -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactPositionRole" xlink:label="detailIdentifierContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactPositionRole_en" xml:lang="en">Detail_ Identifier_ Contact Position Role</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Position or role</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactPositionRole" xlink:to="detailIdentifierContactPositionRole_lbl"/>
+        <!-- bus:detailIdentifierContactContactType Detail_ Identifier_ Contact Contact Type -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactContactType" xlink:label="detailIdentifierContactContactType"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactContactType_en" xml:lang="en">Detail_ Identifier_ Contact Contact Type</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactContactType" xlink:to="detailIdentifierContactContactType_lbl"/>
+        <!-- bus:detailIdentifierContactLocationIdCrossReference Detail_ Identifier_ Contact Location ID cross reference -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactLocationIdCrossReference" xlink:label="detailIdentifierContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactLocationIdCrossReference_en" xml:lang="en">Detail_ Identifier_ Contact Location ID cross reference</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactLocationIdCrossReference" xlink:to="detailIdentifierContactLocationIdCrossReference_lbl"/>
+        <!-- bus:detailMeasurableCode Detail_ Measurable Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCode" xlink:label="detailMeasurableCode"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCode_en" xml:lang="en">Detail_ Measurable Code</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Code for measurable item including BP - Business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCode" xlink:to="detailMeasurableCode_lbl"/>
+        <!-- bus:detailMeasurableCodeDescription Detail_ Measurable Code Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCodeDescription" xlink:label="detailMeasurableCodeDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCodeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCodeDescription_en" xml:lang="en">Detail_ Measurable Code Description</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCodeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the measurable code</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCodeDescription" xlink:to="detailMeasurableCodeDescription_lbl"/>
+        <!-- bus:detailMeasurableCategory Detail_ Measurable Category -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCategory" xlink:label="detailMeasurableCategory"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCategory_en" xml:lang="en">Detail_ Measurable Category</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Category of the measurable</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCategory" xlink:to="detailMeasurableCategory_lbl"/>
+        <!-- bus:detailMeasurableIdentification Detail_ Measurable Identification -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableIdentification" xlink:label="detailMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableIdentification_en" xml:lang="en">Detail_ Measurable Identification</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Internal inventory part or SKU number or other code identifier for the measurable.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableIdentification" xlink:to="detailMeasurableIdentification_lbl"/>
+        <!-- bus:detailSchemaForMeasurableIdentification Detail_ Schema for Measurable Identification -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSchemaForMeasurableIdentification" xlink:label="detailSchemaForMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailSchemaForMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSchemaForMeasurableIdentification_en" xml:lang="en">Detail_ Schema for Measurable Identification</label>
+        <label xlink:type="resource" xlink:label="detailSchemaForMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">URI or other identifier for schema with which measurable ID can be validated</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSchemaForMeasurableIdentification" xlink:to="detailSchemaForMeasurableIdentification_lbl"/>
+        <!-- bus:detailSecondaryMeasurableCode Detail_ Secondary Measurable Code -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSecondaryMeasurableCode" xlink:label="detailSecondaryMeasurableCode"/>
+        <label xlink:type="resource" xlink:label="detailSecondaryMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSecondaryMeasurableCode_en" xml:lang="en">Detail_ Secondary Measurable Code</label>
+        <label xlink:type="resource" xlink:label="detailSecondaryMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Second identifier (such as vendor's item number)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSecondaryMeasurableCode" xlink:to="detailSecondaryMeasurableCode_lbl"/>
+        <!-- bus:detailSchemaForSecondaryMeasurableIdentification Detail_ Schema for Secondary Measurable Identification -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSchemaForSecondaryMeasurableIdentification" xlink:label="detailSchemaForSecondaryMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailSchemaForSecondaryMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSchemaForSecondaryMeasurableIdentification_en" xml:lang="en">Detail_ Schema for Secondary Measurable Identification</label>
+        <label xlink:type="resource" xlink:label="detailSchemaForSecondaryMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">URI or other identifier for schema with which measurable ID Other can be validated</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSchemaForSecondaryMeasurableIdentification" xlink:to="detailSchemaForSecondaryMeasurableIdentification_lbl"/>
+        <!-- bus:detailMeasurableDescription Detail_ Measurable Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableDescription" xlink:label="detailMeasurableDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableDescription_en" xml:lang="en">Detail_ Measurable Description</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Text description of measurable (e.g. inventory item or other identifier)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableDescription" xlink:to="detailMeasurableDescription_lbl"/>
+        <!-- bus:detailMeasurableQuantity Detail_ Measurable Quantity -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableQuantity" xlink:label="detailMeasurableQuantity"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableQuantity_en" xml:lang="en">Detail_ Measurable Quantity</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Number of units in this transaction; for non-monetary calculations; can be square footage, number of people, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableQuantity" xlink:to="detailMeasurableQuantity_lbl"/>
+        <!-- bus:detailMeasurableQualifier Detail_ Measurable Qualifier -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableQualifier" xlink:label="detailMeasurableQualifier"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableQualifier_en" xml:lang="en">Detail_ Measurable Qualifier</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Scorecard information</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableQualifier" xlink:to="detailMeasurableQualifier_lbl"/>
+        <!-- bus:detailMeasurableUnitOfMeasure Detail_ Measurable Unit of Measure -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableUnitOfMeasure" xlink:label="detailMeasurableUnitOfMeasure"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableUnitOfMeasure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableUnitOfMeasure_en" xml:lang="en">Detail_ Measurable Unit of Measure</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableUnitOfMeasure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of unit: e.g. each, case, dozen, etc. ISO standard coding recommended.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableUnitOfMeasure" xlink:to="detailMeasurableUnitOfMeasure_lbl"/>
+        <!-- bus:detailMeasurablePerUnitCostPrice Detail_ Measurable Per Unit Cost/Price -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurablePerUnitCostPrice" xlink:label="detailMeasurablePerUnitCostPrice"/>
+        <label xlink:type="resource" xlink:label="detailMeasurablePerUnitCostPrice_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurablePerUnitCostPrice_en" xml:lang="en">Detail_ Measurable Per Unit Cost/Price</label>
+        <label xlink:type="resource" xlink:label="detailMeasurablePerUnitCostPrice_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Per unit price of the measurable. Although one might expect that measurableQuantity * measurableCostPerUnit = amount, this is not mandated except by external rules sets.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurablePerUnitCostPrice" xlink:to="detailMeasurablePerUnitCostPrice_lbl"/>
+        <!-- bus:detailMeasurableStartTime Detail_ Measurable Start Time -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableStartTime" xlink:label="detailMeasurableStartTime"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableStartTime_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableStartTime_en" xml:lang="en">Detail_ Measurable Start Time</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableStartTime_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Start time of the duration being measured</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableStartTime" xlink:to="detailMeasurableStartTime_lbl"/>
+        <!-- bus:detailMeasurableEndTime Detail_ Measurable End Time -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableEndTime" xlink:label="detailMeasurableEndTime"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableEndTime_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableEndTime_en" xml:lang="en">Detail_ Measurable End Time</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableEndTime_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">End time of the duration being measured</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableEndTime" xlink:to="detailMeasurableEndTime_lbl"/>
+        <!-- bus:detailDepreciationMortgageJurisdiction Detail_ Depreciation Mortgage Jurisdiction -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageJurisdiction" xlink:label="detailDepreciationMortgageJurisdiction"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageJurisdiction_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageJurisdiction_en" xml:lang="en">Detail_ Depreciation Mortgage Jurisdiction</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageJurisdiction_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Jurisdiction (e.g. federal, state, local): e.g. US Federal, Province of Québec, other identifier. Enumerated as: F, federal, S, state, L, local, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageJurisdiction" xlink:to="detailDepreciationMortgageJurisdiction_lbl"/>
+        <!-- bus:detailDepreciationMethod Detail_ Depreciation Method -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMethod" xlink:label="detailDepreciationMethod"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMethod_en" xml:lang="en">Detail_ Depreciation Method</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Type of depreciation method: used for information about the loan percentage for loan or the depreciation method. This is used for informational purposes only. Examples of entries are "20%", "5 year DDB" (Double Declining Balance).</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMethod" xlink:to="detailDepreciationMethod_lbl"/>
+        <!-- bus:detailDepreciationMortgageLife Detail_ Depreciation Mortgage Life -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageLife" xlink:label="detailDepreciationMortgageLife"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageLife_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageLife_en" xml:lang="en">Detail_ Depreciation Mortgage Life</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageLife_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Length of life in number of periods.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageLife" xlink:to="detailDepreciationMortgageLife_lbl"/>
+        <!-- bus:detailDepreciationMortgageDescription Detail_ Depreciation Mortgage Description -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageDescription" xlink:label="detailDepreciationMortgageDescription"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageDescription_en" xml:lang="en">Detail_ Depreciation Mortgage Description</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of each item related to depreciation, mortgage, loan, credit facility, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageDescription" xlink:to="detailDepreciationMortgageDescription_lbl"/>
+        <!-- bus:detailDepreciationMortgageStartDate Detail_ Depreciation Mortgage Start Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageStartDate" xlink:label="detailDepreciationMortgageStartDate"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageStartDate_en" xml:lang="en">Detail_ Depreciation Mortgage Start Date</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Start of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageStartDate" xlink:to="detailDepreciationMortgageStartDate_lbl"/>
+        <!-- bus:detailDepreciationMortgageEndDate Detail_ Depreciation Mortgage End Date -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageEndDate" xlink:label="detailDepreciationMortgageEndDate"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageEndDate_en" xml:lang="en">Detail_ Depreciation Mortgage End Date</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">End of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageEndDate" xlink:to="detailDepreciationMortgageEndDate_lbl"/>
+        <!-- bus:detailDepreciationMortgageAmount Detail_ Depreciation Mortgage Amount -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageAmount" xlink:label="detailDepreciationMortgageAmount"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageAmount_en" xml:lang="en">Detail_ Depreciation Mortgage Amount</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Amount of a cost or fee charged for a mortgage, loan, credit facility, etc.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageAmount" xlink:to="detailDepreciationMortgageAmount_lbl"/>
+  </labelLink>
+</linkbase>

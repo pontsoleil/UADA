@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_accountingEntries" xlink:label="accountingEntries"/>
+    <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Accounting Entries.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="accountingEntries_lbl"/>
+    <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_accountingEntries_en" xml:lang="en">Accounting Entries</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentHeader" xlink:label="documentHeader"/>
+    <label xlink:type="resource" xlink:label="documentHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document Header.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentHeader" xlink:to="documentHeader_lbl"/>
+    <label xlink:type="resource" xlink:label="documentHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentHeader_en" xml:lang="en">Document Header</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentLine" xlink:label="documentLine"/>
+    <label xlink:type="resource" xlink:label="documentLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document Line.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentLine" xlink:to="documentLine_lbl"/>
+    <label xlink:type="resource" xlink:label="documentLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentLine_en" xml:lang="en">Document Line</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentAmount" xlink:label="documentAmount"/>
+    <label xlink:type="resource" xlink:label="documentAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document Amount.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentAmount" xlink:to="documentAmount_lbl"/>
+    <label xlink:type="resource" xlink:label="documentAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentAmount_en" xml:lang="en">Document Amount</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerAmount" xlink:label="headerAmount"/>
+    <label xlink:type="resource" xlink:label="headerAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Amount.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAmount" xlink:to="headerAmount_lbl"/>
+    <label xlink:type="resource" xlink:label="headerAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerAmount_en" xml:lang="en">Header Amount</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerAmountType" xlink:label="headerAmountType"/>
+    <label xlink:type="resource" xlink:label="headerAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Amount Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAmountType" xlink:to="headerAmountType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerAmountType_en" xml:lang="en">Header Amount Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_lineAmount" xlink:label="lineAmount"/>
+    <label xlink:type="resource" xlink:label="lineAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Line Amount.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lineAmount" xlink:to="lineAmount_lbl"/>
+    <label xlink:type="resource" xlink:label="lineAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_lineAmount_en" xml:lang="en">Line Amount</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_amount" xlink:label="amount"/>
+    <label xlink:type="resource" xlink:label="amount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Amount.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amount" xlink:to="amount_lbl"/>
+    <label xlink:type="resource" xlink:label="amount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_amount_en" xml:lang="en">Amount</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_amountType" xlink:label="amountType"/>
+    <label xlink:type="resource" xlink:label="amountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Amount Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="amountType" xlink:to="amountType_lbl"/>
+    <label xlink:type="resource" xlink:label="amountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_amountType_en" xml:lang="en">Amount Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentTaxest" xlink:label="documentTaxes"/>
+    <label xlink:type="resource" xlink:label="documentTaxes_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document Taxes.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentTaxes" xlink:to="documentTaxes_lbl"/>
+    <label xlink:type="resource" xlink:label="documentTaxes_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentTaxes_en" xml:lang="en">Document Taxes</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_taxAuthority" xlink:label="headerTaxAuthority"/>
+    <label xlink:type="resource" xlink:label="headerTaxAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Authority.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxAuthority" xlink:to="headerTaxAuthority_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxAuthority_en" xml:lang="en">Header Tax Authority</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTaxTableCode" xlink:label="headerTaxTableCode"/>
+    <label xlink:type="resource" xlink:label="headerTaxTableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Table Code.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxTableCode" xlink:to="headerTaxTableCode_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxTableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxTableCode_en" xml:lang="en">Header Tax Table Code</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTaxAmount" xlink:label="headerTaxAmount"/>
+    <label xlink:type="resource" xlink:label="headerTaxAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Amount.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxAmount" xlink:to="headerTaxAmount_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxAmount_en" xml:lang="en">Header Tax Amount</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTaxBasis" xlink:label="headerTaxBasis"/>
+    <label xlink:type="resource" xlink:label="headerTaxBasis_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Basis.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxBasis" xlink:to="headerTaxBasis_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxBasis_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxBasis_en" xml:lang="en">Header Tax Basis</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTaxPercentageRate" xlink:label="headerTaxPercentageRate"/>
+    <label xlink:type="resource" xlink:label="headerTaxPercentageRate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Percentage Rate.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxPercentageRate" xlink:to="headerTaxPercentageRate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxPercentageRate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxPercentageRate_en" xml:lang="en">Header Tax Percentage Rate</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTaxCode" xlink:label="headerTaxCode"/>
+    <label xlink:type="resource" xlink:label="headerTaxCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Code.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxCode" xlink:to="headerTaxCode_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxCode_en" xml:lang="en">Header Tax Code</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_taxCommentExemption" xlink:label="headerTaxCommentExemption"/>
+    <label xlink:type="resource" xlink:label="headerTaxCommentExemption_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Comment Exemption.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxCommentExemption" xlink:to="headerTaxCommentExemption_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxCommentExemption_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxCommentExemption_en" xml:lang="en">Header Tax Comment Exemption</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_taxDescription" xlink:label="headerTaxDescription"/>
+    <label xlink:type="resource" xlink:label="headerTaxDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Tax Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTaxDescription" xlink:to="headerTaxDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTaxDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTaxDescription_en" xml:lang="en">Header Tax Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierReference" xlink:label="documentIdentifierReference"/>
+    <label xlink:type="resource" xlink:label="documentIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document Identifier Reference.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentIdentifierReference" xlink:to="documentIdentifierReference_lbl"/>
+    <label xlink:type="resource" xlink:label="documentIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentIdentifierReference_en" xml:lang="en">Document Identifier Reference</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierCategory" xlink:label="headerIdentifierCategory"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Category.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierCategory" xlink:to="headerIdentifierCategory_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierCategory_en" xml:lang="en">Header Identifier Category</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierCode" xlink:label="headerIdentifierCode"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Code.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierCode" xlink:to="headerIdentifierCode_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierCode_en" xml:lang="en">Header Identifier Code</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierDescription" xlink:label="headerIdentifierDescription"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierDescription" xlink:to="headerIdentifierDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierDescription_en" xml:lang="en">Header Identifier Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierActive" xlink:label="headerIdentifierActive"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierActive_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Active.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierActive" xlink:to="headerIdentifierActive_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierActive_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierActive_en" xml:lang="en">Header Identifier Active</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierEMail" xlink:label="headerIdentifierEMail"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEMail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier E Mail.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierEMail" xlink:to="headerIdentifierEMail_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEMail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierEMail_en" xml:lang="en">Header Identifier E Mail</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierEMail" xlink:label="headerIdentifierEmailAddress"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Email Address.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierEmailAddress" xlink:to="headerIdentifierEmailAddress_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierEmailAddress_en" xml:lang="en">Header Identifier Email Address</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierEmailAddressUsage" xlink:label="headerIdentifierEmailAddressUsage"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Email Address Usage.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierEmailAddressUsage" xlink:to="headerIdentifierEmailAddressUsage_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierEmailAddressUsage_en" xml:lang="en">Header Identifier Email Address Usage</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierPhoneNumber" xlink:label="headerIdentifierPhoneNumber"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Phone Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierPhoneNumber" xlink:to="headerIdentifierPhoneNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierPhoneNumber_en" xml:lang="en">Header Identifier Phone Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierPhone" xlink:label="headerIdentifierPhone"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Phone.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierPhone" xlink:to="headerIdentifierPhone_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierPhone_en" xml:lang="en">Header Identifier Phone</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierPhoneNumberDescription" xlink:label="headerIdentifierPhoneNumberDescription"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Phone Number Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierPhoneNumberDescription" xlink:to="headerIdentifierPhoneNumberDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierPhoneNumberDescription_en" xml:lang="en">Header Identifier Phone Number Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierFaxNumber" xlink:label="headerIdentifierFaxNumber"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Fax Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierFaxNumber" xlink:to="headerIdentifierFaxNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierFaxNumber_en" xml:lang="en">Header Identifier Fax Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierFax" xlink:label="headerIdentifierFax"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Fax.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierFax" xlink:to="headerIdentifierFax_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierFax_en" xml:lang="en">Header Identifier Fax</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierFaxNumberUsage" xlink:label="headerIdentifierFaxNumberUsage"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Fax Number Usage.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierFaxNumberUsage" xlink:to="headerIdentifierFaxNumberUsage_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierFaxNumberUsage_en" xml:lang="en">Header Identifier Fax Number Usage</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierExternalReference" xlink:label="documentIdentifierExternalReference"/>
+    <label xlink:type="resource" xlink:label="documentIdentifierExternalReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier External Reference.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentIdentifierExternalReference" xlink:to="documentIdentifierExternalReference_lbl"/>
+    <label xlink:type="resource" xlink:label="documentIdentifierExternalReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentIdentifierExternalReference_en" xml:lang="en">Header Identifier External Reference</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierAuthorityCode" xlink:label="headerIdentifierAuthorityCode"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthorityCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Authority Code.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierAuthorityCode" xlink:to="headerIdentifierAuthorityCode_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthorityCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierAuthorityCode_en" xml:lang="en">Header Identifier Authority Code</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierAuthority" xlink:label="headerIdentifierAuthority"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Authority.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierAuthority" xlink:to="headerIdentifierAuthority_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierAuthority_en" xml:lang="en">Header Identifier Authority</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierAuthorityVerificationDate" xlink:label="headerIdentifierAuthorityVerificationDate"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthorityVerificationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Authority Verification Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierAuthorityVerificationDate" xlink:to="headerIdentifierAuthorityVerificationDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierAuthorityVerificationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierAuthorityVerificationDate_en" xml:lang="en">Header Identifier Authority Verification Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierType" xlink:label="headerIdentifierType"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierType" xlink:to="headerIdentifierType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierType_en" xml:lang="en">Header Identifier Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactPrefix" xlink:label="headerIdentifierContactPrefix"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Prefix.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPrefix" xlink:to="headerIdentifierContactPrefix_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactPrefix_en" xml:lang="en">Header Identifier Contact Prefix</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierContactInformation" xlink:label="headerIdentifierContactInformationStructure"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactInformationStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Information Structure.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactInformationStructure" xlink:to="headerIdentifierContactInformationStructure_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactInformationStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactInformationStructure_en" xml:lang="en">Header Identifier Contact Information Structure</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactFirstName" xlink:label="headerIdentifierContactFirstName"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact First Name.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFirstName" xlink:to="headerIdentifierContactFirstName_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactFirstName_en" xml:lang="en">Header Identifier Contact First Name</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactSuffix" xlink:label="headerIdentifierContactSuffix"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Suffix.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactSuffix" xlink:to="headerIdentifierContactSuffix_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactSuffix_en" xml:lang="en">Header Identifier Contact Suffix</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactAttentionLine" xlink:label="headerIdentifierContactAttentionLine"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Attention Line.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactAttentionLine" xlink:to="headerIdentifierContactAttentionLine_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactAttentionLine_en" xml:lang="en">Header Identifier Contact Attention Line</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactPositionRole" xlink:label="headerIdentifierContactPositionRole"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Position Role.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPositionRole" xlink:to="headerIdentifierContactPositionRole_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactPositionRole_en" xml:lang="en">Header Identifier Contact Position Role</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierContactPhone" xlink:label="headerIdentifierContactPhone"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Phone.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPhone" xlink:to="headerIdentifierContactPhone_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactPhone_en" xml:lang="en">Header Identifier Contact Phone</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactPhoneNumber" xlink:label="headerIdentifierContactPhoneNumber"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Phone Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPhoneNumber" xlink:to="headerIdentifierContactPhoneNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactPhoneNumber_en" xml:lang="en">Header Identifier Contact Phone Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactPhoneNumberDescription" xlink:label="headerIdentifierContactPhoneNumberDescription"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Phone Number Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPhoneNumberDescription" xlink:to="headerIdentifierContactPhoneNumberDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactPhoneNumberDescription_en" xml:lang="en">Header Identifier Contact Phone Number Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierContactFax" xlink:label="headerIdentifierContactFax"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Fax.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFax" xlink:to="headerIdentifierContactFax_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactFax_en" xml:lang="en">Header Identifier Contact Fax</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactFaxNumber" xlink:label="headerIdentifierContactFaxNumber"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Fax Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFaxNumber" xlink:to="headerIdentifierContactFaxNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactFaxNumber_en" xml:lang="en">Header Identifier Contact Fax Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactFaxNumberUsage" xlink:label="headerIdentifierContactFaxNumberUsage"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Fax Number Usage.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFaxNumberUsage" xlink:to="headerIdentifierContactFaxNumberUsage_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactFaxNumberUsage_en" xml:lang="en">Header Identifier Contact Fax Number Usage</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentIdentifierContactEMail" xlink:label="headerIdentifierContactEmail"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Email.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactEmail" xlink:to="headerIdentifierContactEmail_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactEmail_en" xml:lang="en">Header Identifier Contact Email</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactEmailAddress" xlink:label="headerIdentifierContactEmailAddress"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Email Address.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactEmailAddress" xlink:to="headerIdentifierContactEmailAddress_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactEmailAddress_en" xml:lang="en">Header Identifier Contact Email Address</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactEmailAddressUsage" xlink:label="headerIdentifierContactEmailAddressUsage"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Email Address Usage.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactEmailAddressUsage" xlink:to="headerIdentifierContactEmailAddressUsage_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactEmailAddressUsage_en" xml:lang="en">Header Identifier Contact Email Address Usage</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactType" xlink:label="headerIdentifierContactType"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactType" xlink:to="headerIdentifierContactType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactType_en" xml:lang="en">Header Identifier Contact Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierContactLastName" xlink:label="headerIdentifierContactLastName"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Contact Last Name.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactLastName" xlink:to="headerIdentifierContactLastName_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierContactLastName_en" xml:lang="en">Header Identifier Contact Last Name</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierOrganizationType" xlink:label="headerIdentifierOrganizationType"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierOrganizationType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Organization Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierOrganizationType" xlink:to="headerIdentifierOrganizationType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierOrganizationType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierOrganizationType_en" xml:lang="en">Header Identifier Organization Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerIdentifierOrganizationTypeDescription" xlink:label="headerIdentifierOrganizationTypeDescription"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierOrganizationTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Identifier Organization Type Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierOrganizationTypeDescription" xlink:to="headerIdentifierOrganizationTypeDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerIdentifierOrganizationTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerIdentifierOrganizationTypeDescription_en" xml:lang="en">Header Identifier Organization Type Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerShipFrom" xlink:label="headerShipFrom"/>
+    <label xlink:type="resource" xlink:label="headerShipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Ship From.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerShipFrom" xlink:to="headerShipFrom_lbl"/>
+    <label xlink:type="resource" xlink:label="headerShipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerShipFrom_en" xml:lang="en">Header Ship From</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerShipReceivedDate" xlink:label="headerShipReceivedDate"/>
+    <label xlink:type="resource" xlink:label="headerShipReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Ship Received Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerShipReceivedDate" xlink:to="headerShipReceivedDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerShipReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerShipReceivedDate_en" xml:lang="en">Header Ship Received Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerShipTo" xlink:label="headerShipTo"/>
+    <label xlink:type="resource" xlink:label="headerShipTo_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Ship To.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerShipTo" xlink:to="headerShipTo_lbl"/>
+    <label xlink:type="resource" xlink:label="headerShipTo_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerShipTo_en" xml:lang="en">Header Ship To</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerShippingDate" xlink:label="headerShippingDate"/>
+    <label xlink:type="resource" xlink:label="headerShippingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Shipping Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerShippingDate" xlink:to="headerShippingDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerShippingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerShippingDate_en" xml:lang="en">Header Shipping Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_documentXbrlInfo" xlink:label="documentXbrlInfo"/>
+    <label xlink:type="resource" xlink:label="documentXbrlInfo_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Document XBRL Info.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentXbrlInfo" xlink:to="documentXbrlInfo_lbl"/>
+    <label xlink:type="resource" xlink:label="documentXbrlInfo_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_documentXbrlInfo_en" xml:lang="en">Document XBRL Info</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerXbrlInclude" xlink:label="headerXbrlInclude"/>
+    <label xlink:type="resource" xlink:label="headerXbrlInclude_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header XBRL Include.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerXbrlInclude" xlink:to="headerXbrlInclude_lbl"/>
+    <label xlink:type="resource" xlink:label="headerXbrlInclude_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerXbrlInclude_en" xml:lang="en">Header XBRL Include</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerSummaryReportingElement" xlink:label="headerSummaryReportingElement"/>
+    <label xlink:type="resource" xlink:label="headerSummaryReportingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Summary Reporting Element.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerSummaryReportingElement" xlink:to="headerSummaryReportingElement_lbl"/>
+    <label xlink:type="resource" xlink:label="headerSummaryReportingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerSummaryReportingElement_en" xml:lang="en">Header Summary Reporting Element</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDetailMatchingElement" xlink:label="headerDetailMatchingElement"/>
+    <label xlink:type="resource" xlink:label="headerDetailMatchingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Detail Matching Element.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDetailMatchingElement" xlink:to="headerDetailMatchingElement_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDetailMatchingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDetailMatchingElement_en" xml:lang="en">Header Detail Matching Element</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerMaturityDate" xlink:label="headerMaturityDate"/>
+    <label xlink:type="resource" xlink:label="headerMaturityDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Maturity Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerMaturityDate" xlink:to="headerMaturityDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerMaturityDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerMaturityDate_en" xml:lang="en">Header Maturity Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerTerms" xlink:label="headerTerms"/>
+    <label xlink:type="resource" xlink:label="headerTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Terms.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTerms" xlink:to="headerTerms_lbl"/>
+    <label xlink:type="resource" xlink:label="headerTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerTerms_en" xml:lang="en">Header Terms</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerInvoiceType" xlink:label="headerInvoiceType"/>
+    <label xlink:type="resource" xlink:label="headerInvoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Invoice Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerInvoiceType" xlink:to="headerInvoiceType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerInvoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerInvoiceType_en" xml:lang="en">Header Invoice Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentType" xlink:label="headerDocumentType"/>
+    <label xlink:type="resource" xlink:label="headerDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Type.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentType" xlink:to="headerDocumentType_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentType_en" xml:lang="en">Header Document Type</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentTypeDescription" xlink:label="headerDocumentTypeDescription"/>
+    <label xlink:type="resource" xlink:label="headerDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Type Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentTypeDescription" xlink:to="headerDocumentTypeDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentTypeDescription_en" xml:lang="en">Header Document Type Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentNumber" xlink:label="headerDocumentNumber"/>
+    <label xlink:type="resource" xlink:label="headerDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentNumber" xlink:to="headerDocumentNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentNumber_en" xml:lang="en">Header Document Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentApplyToNumber" xlink:label="headerDocumentApplyToNumber"/>
+    <label xlink:type="resource" xlink:label="headerDocumentApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Apply To Number.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentApplyToNumber" xlink:to="headerDocumentApplyToNumber_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentApplyToNumber_en" xml:lang="en">Header Document Apply To Number</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentReference" xlink:label="headerDocumentReference"/>
+    <label xlink:type="resource" xlink:label="headerDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Reference.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentReference" xlink:to="headerDocumentReference_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentReference_en" xml:lang="en">Header Document Reference</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentDate" xlink:label="headerDocumentDate"/>
+    <label xlink:type="resource" xlink:label="headerDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentDate" xlink:to="headerDocumentDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentDate_en" xml:lang="en">Header Document Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentReceivedDate" xlink:label="headerDocumentReceivedDate"/>
+    <label xlink:type="resource" xlink:label="headerDocumentReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Received Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentReceivedDate" xlink:to="headerDocumentReceivedDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentReceivedDate_en" xml:lang="en">Header Document Received Date</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDocumentLocation" xlink:label="headerDocumentLocation"/>
+    <label xlink:type="resource" xlink:label="headerDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Document Location.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentLocation" xlink:to="headerDocumentLocation_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDocumentLocation_en" xml:lang="en">Header Document Location</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerPaymentMethod" xlink:label="headerPaymentMethod"/>
+    <label xlink:type="resource" xlink:label="headerPaymentMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Payment Method.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPaymentMethod" xlink:to="headerPaymentMethod_lbl"/>
+    <label xlink:type="resource" xlink:label="headerPaymentMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerPaymentMethod_en" xml:lang="en">Header Payment Method</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerPostingStatus" xlink:label="headerPostingStatus"/>
+    <label xlink:type="resource" xlink:label="headerPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Posting Status.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPostingStatus" xlink:to="headerPostingStatus_lbl"/>
+    <label xlink:type="resource" xlink:label="headerPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerPostingStatus_en" xml:lang="en">Header Posting Status</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerPostingStatusDescription" xlink:label="headerPostingStatusDescription"/>
+    <label xlink:type="resource" xlink:label="headerPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Posting Status Description.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPostingStatusDescription" xlink:to="headerPostingStatusDescription_lbl"/>
+    <label xlink:type="resource" xlink:label="headerPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerPostingStatusDescription_en" xml:lang="en">Header Posting Status Description</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerDateAcknowledged" xlink:label="headerDateAcknowledged"/>
+    <label xlink:type="resource" xlink:label="headerDateAcknowledged_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Date Acknowledged.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDateAcknowledged" xlink:to="headerDateAcknowledged_lbl"/>
+    <label xlink:type="resource" xlink:label="headerDateAcknowledged_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerDateAcknowledged_en" xml:lang="en">Header Date Acknowledged</label>
+    <loc xlink:type="locator" xlink:href="../gl-ext-2026-MM-DD.xsd#gl-ext_headerConfirmedDate" xlink:label="headerConfirmedDate"/>
+    <label xlink:type="resource" xlink:label="headerConfirmedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Header Confirmed Date.</label>
+    <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerConfirmedDate" xlink:to="headerConfirmedDate_lbl"/>
+    <label xlink:type="resource" xlink:label="headerConfirmedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ext_headerConfirmedDate_en" xml:lang="en">Header Confirmed Date</label>
+  </labelLink>
+</linkbase>

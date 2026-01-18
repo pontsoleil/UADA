@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- usk:detailJobId Detail_ Job ID -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobId" xlink:label="detailJobId"/>
+        <label xlink:type="resource" xlink:label="detailJobId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobId_en" xml:lang="en">Detail_ Job ID</label>
+        <label xlink:type="resource" xlink:label="detailJobId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobId" xlink:to="detailJobId_lbl"/>
+        <!-- usk:detailJobDescription Detail_ Job Description -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobDescription" xlink:label="detailJobDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobDescription_en" xml:lang="en">Detail_ Job Description</label>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of job</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobDescription" xlink:to="detailJobDescription_lbl"/>
+        <!-- usk:detailJobPhase Detail_ Job Phase -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobPhase" xlink:label="detailJobPhase"/>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobPhase_en" xml:lang="en">Detail_ Job Phase</label>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhase" xlink:to="detailJobPhase_lbl"/>
+        <!-- usk:detailJobPhaseDescription Detail_ Job Phase Description -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobPhaseDescription" xlink:label="detailJobPhaseDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobPhaseDescription_en" xml:lang="en">Detail_ Job Phase Description</label>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of Job code, phase, activity</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhaseDescription" xlink:to="detailJobPhaseDescription_lbl"/>
+  </labelLink>
+</linkbase>

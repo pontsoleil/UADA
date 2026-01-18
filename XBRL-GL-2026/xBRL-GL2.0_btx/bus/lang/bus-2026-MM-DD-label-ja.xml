@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- bus:creator 作成者 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_creator" xlink:label="creator"/>
+        <label xlink:type="resource" xlink:label="creator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_creator_ja" xml:lang="en">作成者</label>
+        <label xlink:type="resource" xlink:label="creator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ファイルの作成者の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creator" xlink:to="creator_lbl"/>
+        <!-- bus:periodCount 期間数 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodCount" xlink:label="periodCount"/>
+        <label xlink:type="resource" xlink:label="periodCount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodCount_ja" xml:lang="en">期間数</label>
+        <label xlink:type="resource" xlink:label="periodCount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">postingCodeで使用される期間又はバケットの数。 転記日付を説明するために使用される。対象期間の仕訳を個々の報告期間に限定することが望ましいかもしれない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCount" xlink:to="periodCount_lbl"/>
+        <!-- bus:periodUnit 期間単位 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodUnit" xlink:label="periodUnit"/>
+        <label xlink:type="resource" xlink:label="periodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodUnit_ja" xml:lang="en">期間単位</label>
+        <label xlink:type="resource" xlink:label="periodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">periodCountで対象とする期間の種別。
+[設定値のリスト]
+(daily：日次)、(weekly：週次)、(bi-weekly：隔週)、(semi-monthly：半月ごと)、(monthly：月次)、(quarterly：四半期ごと)、(thirdly：年3回)、(semiannual：半年ごと)、(annual：年次)、(ad-hoc：随時)、(current-period-only：当期)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodUnit" xlink:to="periodUnit_lbl"/>
+        <!-- bus:periodUnitDescription 期間単位説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_periodUnitDescription" xlink:label="periodUnitDescription"/>
+        <label xlink:type="resource" xlink:label="periodUnitDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_periodUnitDescription_ja" xml:lang="en">期間単位説明</label>
+        <label xlink:type="resource" xlink:label="periodUnitDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">対象期間単位の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodUnitDescription" xlink:to="periodUnitDescription_lbl"/>
+        <!-- bus:sourceApplication 作成元アプリケーション -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_sourceApplication" xlink:label="sourceApplication"/>
+        <label xlink:type="resource" xlink:label="sourceApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_sourceApplication_ja" xml:lang="en">作成元アプリケーション</label>
+        <label xlink:type="resource" xlink:label="sourceApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このファイルを作り出した製品又はサービス。 多くのシステム(例えば、VATなど)で、使用される。 バージョン番号を含むことも可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceApplication" xlink:to="sourceApplication_lbl"/>
+        <!-- bus:targetApplication 対象アプリケーション -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_targetApplication" xlink:label="targetApplication"/>
+        <label xlink:type="resource" xlink:label="targetApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_targetApplication_ja" xml:lang="en">対象アプリケーション</label>
+        <label xlink:type="resource" xlink:label="targetApplication_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ファイルが作成された用途。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="targetApplication" xlink:to="targetApplication_lbl"/>
+        <!-- bus:entityPartyDefaultAccountingMethodPurpose 既定会計処理方法目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDefaultAccountingMethodPurpose" xlink:label="entityPartyDefaultAccountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDefaultAccountingMethodPurpose_ja" xml:lang="en">既定会計処理方法目的</label>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細レベルで明確に指定しない場合の、既定の報告目的を表す。帳簿、税、管理、スタチュトリ、その他から選択する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDefaultAccountingMethodPurpose" xlink:to="entityPartyDefaultAccountingMethodPurpose_lbl"/>
+        <!-- bus:entityPartyDefaultAccountingMethodPurposeDescription 既定会計処理方法目的説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDefaultAccountingMethodPurposeDescription" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDefaultAccountingMethodPurposeDescription_ja" xml:lang="en">既定会計処理方法目的説明</label>
+        <label xlink:type="resource" xlink:label="entityPartyDefaultAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">既定の会計処理方法目的の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDefaultAccountingMethodPurposeDescription" xlink:to="entityPartyDefaultAccountingMethodPurposeDescription_lbl"/>
+        <!-- bus:entityPartyBusinessDescription 業種説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyBusinessDescription" xlink:label="entityPartyBusinessDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyBusinessDescription_ja" xml:lang="en">業種説明</label>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の事業の種類についての説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyBusinessDescription" xlink:to="entityPartyBusinessDescription_lbl"/>
+        <!-- bus:entityPartyFiscalYearStart 会計年度開始日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFiscalYearStart" xlink:label="entityPartyFiscalYearStart"/>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearStart_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFiscalYearStart_ja" xml:lang="en">会計年度開始日付</label>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearStart_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計年度の開始日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFiscalYearStart" xlink:to="entityPartyFiscalYearStart_lbl"/>
+        <!-- bus:entityPartyFiscalYearEnd 会計年度終了日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFiscalYearEnd" xlink:label="entityPartyFiscalYearEnd"/>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFiscalYearEnd_ja" xml:lang="en">会計年度終了日付</label>
+        <label xlink:type="resource" xlink:label="entityPartyFiscalYearEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計年度の終了日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFiscalYearEnd" xlink:to="entityPartyFiscalYearEnd_lbl"/>
+        <!-- bus:entityPartyPhone 【事業体電話番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhone" xlink:label="entityPartyPhone"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhone_ja" xml:lang="en">【事業体電話番号】</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の主要電話番号情報。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhone" xlink:to="entityPartyPhone_lbl"/>
+        <!-- bus:entityPartyFax 【事業体FAX番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFax" xlink:label="entityPartyFax"/>
+        <label xlink:type="resource" xlink:label="entityPartyFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFax_ja" xml:lang="en">【事業体FAX番号】</label>
+        <label xlink:type="resource" xlink:label="entityPartyFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体のFAX番号情報のタプル。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFax" xlink:to="entityPartyFax_lbl"/>
+        <!-- bus:entityPartyEmail 【事業体Eメールアドレス】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmail" xlink:label="entityPartyEmail"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmail_ja" xml:lang="en">【事業体Eメールアドレス】</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体のEメールアドレス情報のタプル。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmail" xlink:to="entityPartyEmail_lbl"/>
+        <!-- bus:organizationIdentifier 【識別子】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifier" xlink:label="organizationIdentifier"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifier_ja" xml:lang="en">【識別子】</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">組織に関する様々な識別子を含むセクション。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifier" xlink:to="organizationIdentifier_lbl"/>
+        <!-- bus:entityPartyWebSite 【事業体Webサイト】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSite" xlink:label="entityPartyWebSite"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSite_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSite_ja" xml:lang="en">【事業体Webサイト】</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSite_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の代表ウェブサイト。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSite" xlink:to="entityPartyWebSite_lbl"/>
+        <!-- bus:entityPartyContact 【担当者情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContact" xlink:label="entityPartyContact"/>
+        <label xlink:type="resource" xlink:label="entityPartyContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContact_ja" xml:lang="en">【担当者情報】</label>
+        <label xlink:type="resource" xlink:label="entityPartyContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者に関する情報。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContact" xlink:to="entityPartyContact_lbl"/>
+        <!-- bus:accountingMethodStructure 【会計処理方法】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodStructure" xlink:label="accountingMethodStructure"/>
+        <label xlink:type="resource" xlink:label="accountingMethodStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodStructure_ja" xml:lang="en">【会計処理方法】</label>
+        <label xlink:type="resource" xlink:label="accountingMethodStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのセクション。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodStructure" xlink:to="accountingMethodStructure_lbl"/>
+        <!-- bus:accountant 【会計事務所情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountant" xlink:label="accountant"/>
+        <label xlink:type="resource" xlink:label="accountant_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountant_ja" xml:lang="en">【会計事務所情報】</label>
+        <label xlink:type="resource" xlink:label="accountant_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関連する外部会計事務所に関する情報。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountant" xlink:to="accountant_lbl"/>
+        <!-- bus:reportingCalendar 【報告カレンダー】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendar" xlink:label="reportingCalendar"/>
+        <label xlink:type="resource" xlink:label="reportingCalendar_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendar_ja" xml:lang="en">【報告カレンダー】</label>
+        <label xlink:type="resource" xlink:label="reportingCalendar_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">取引の結果をまとめるための期間を集めるもの。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendar" xlink:to="reportingCalendar_lbl"/>
+        <!-- bus:entityPartyPhoneNumber 電話番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhoneNumber" xlink:label="entityPartyPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhoneNumber_ja" xml:lang="en">電話番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号用途で示される電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhoneNumber" xlink:to="entityPartyPhoneNumber_lbl"/>
+        <!-- bus:entityPartyPhoneNumberDescription 電話番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPhoneNumberDescription" xlink:label="entityPartyPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPhoneNumberDescription_ja" xml:lang="en">電話番号用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">代表、IR用などの、電話番号の用途。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPhoneNumberDescription" xlink:to="entityPartyPhoneNumberDescription_lbl"/>
+        <!-- bus:entityPartyFaxNumber FAX番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFaxNumber" xlink:label="entityPartyFaxNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFaxNumber_ja" xml:lang="en">FAX番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFaxNumber" xlink:to="entityPartyFaxNumber_lbl"/>
+        <!-- bus:entityPartyFaxNumberUsage FAX番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyFaxNumberUsage" xlink:label="entityPartyFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyFaxNumberUsage_ja" xml:lang="en">FAX番号用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号の用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyFaxNumberUsage" xlink:to="entityPartyFaxNumberUsage_lbl"/>
+        <!-- bus:entityPartyEmailAddress Eメールアドレス -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmailAddress" xlink:label="entityPartyEmailAddress"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmailAddress_ja" xml:lang="en">Eメールアドレス</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmailAddress" xlink:to="entityPartyEmailAddress_lbl"/>
+        <!-- bus:entityPartyEmailAddressUsage Eメールアドレス用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyEmailAddressUsage" xlink:label="entityPartyEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyEmailAddressUsage_ja" xml:lang="en">Eメールアドレス用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレスの用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyEmailAddressUsage" xlink:to="entityPartyEmailAddressUsage_lbl"/>
+        <!-- bus:organizationIdentifierCode 事業体識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifierCode" xlink:label="organizationIdentifierCode"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifierCode_ja" xml:lang="en">事業体識別子</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このファイルでデータを表現している会社や組織のコード。ひとりのユーザ(例えば、公認会計士)が複数の組織(例えば、複数の顧客)のファイルを把握する必要がある場合に使用される。 EIN番号、顧客番号、内部/外部識別子、SICコードであってよい。事業体の識別子をコード化する。コードを発行する権威ある組織のコード識別子、コロン、およびコードそのものを含む。 例えば、SEC　EDGARが発行したCIK番号　CIK: 01234567。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifierCode" xlink:to="organizationIdentifierCode_lbl"/>
+        <!-- bus:organizationIdentifierDescription 事業体説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_organizationIdentifierDescription" xlink:label="organizationIdentifierDescription"/>
+        <label xlink:type="resource" xlink:label="organizationIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_organizationIdentifierDescription_ja" xml:lang="en">事業体説明</label>
+        <label xlink:type="resource" xlink:label="organizationIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体識別子によって特定された組織の説明文。 コードに関するなんらかの記述情報。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="organizationIdentifierDescription" xlink:to="organizationIdentifierDescription_lbl"/>
+        <!-- bus:entityPartyName 住所名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyName" xlink:label="entityPartyName"/>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyName_ja" xml:lang="en">住所名</label>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の名前。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyName" xlink:to="entityPartyName_lbl"/>
+        <!-- bus:entityPartyDescription 住所説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyDescription" xlink:label="entityPartyDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyDescription_ja" xml:lang="en">住所説明</label>
+        <label xlink:type="resource" xlink:label="entityPartyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyDescription" xlink:to="entityPartyDescription_lbl"/>
+        <!-- bus:entityPartyPurpose 住所目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyPurpose" xlink:label="entityPartyPurpose"/>
+        <label xlink:type="resource" xlink:label="entityPartyPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyPurpose_ja" xml:lang="en">住所目的</label>
+        <label xlink:type="resource" xlink:label="entityPartyPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の目的。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyPurpose" xlink:to="entityPartyPurpose_lbl"/>
+        <!-- bus:entityPartyLocationId 所在地識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyLocationId" xlink:label="entityPartyLocationId"/>
+        <label xlink:type="resource" xlink:label="entityPartyLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyLocationId_ja" xml:lang="en">所在地識別子</label>
+        <label xlink:type="resource" xlink:label="entityPartyLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">所在地を識別したり、窓口や取引と関係付けるコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyLocationId" xlink:to="entityPartyLocationId_lbl"/>
+        <!-- bus:entityPartyBuildingNumber 住所建物番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyBuildingNumber" xlink:label="entityPartyBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyBuildingNumber_ja" xml:lang="en">住所建物番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">建物番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyBuildingNumber" xlink:to="entityPartyBuildingNumber_lbl"/>
+        <!-- bus:entityPartyStreet 住所通り -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyStreet" xlink:label="entityPartyStreet"/>
+        <label xlink:type="resource" xlink:label="entityPartyStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyStreet_ja" xml:lang="en">住所通り</label>
+        <label xlink:type="resource" xlink:label="entityPartyStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の通り。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyStreet" xlink:to="entityPartyStreet_lbl"/>
+        <!-- bus:entityPartyAddressDetail 住所詳細 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyAddressDetail" xlink:label="entityPartyAddressDetail"/>
+        <label xlink:type="resource" xlink:label="entityPartyAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyAddressDetail_ja" xml:lang="en">住所詳細</label>
+        <label xlink:type="resource" xlink:label="entityPartyAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所詳細。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyAddressDetail" xlink:to="entityPartyAddressDetail_lbl"/>
+        <!-- bus:entityPartyCity 住所都市 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyCity" xlink:label="entityPartyCity"/>
+        <label xlink:type="resource" xlink:label="entityPartyCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyCity_ja" xml:lang="en">住所都市</label>
+        <label xlink:type="resource" xlink:label="entityPartyCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の都市。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyCity" xlink:to="entityPartyCity_lbl"/>
+        <!-- bus:entityPartyStateOrProvince 住所州 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyStateOrProvince" xlink:label="entityPartyStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="entityPartyStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyStateOrProvince_ja" xml:lang="en">住所州</label>
+        <label xlink:type="resource" xlink:label="entityPartyStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の州や地方。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyStateOrProvince" xlink:to="entityPartyStateOrProvince_lbl"/>
+        <!-- bus:entityPartyCountry 住所国 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyCountry" xlink:label="entityPartyCountry"/>
+        <label xlink:type="resource" xlink:label="entityPartyCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyCountry_ja" xml:lang="en">住所国</label>
+        <label xlink:type="resource" xlink:label="entityPartyCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の国。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyCountry" xlink:to="entityPartyCountry_lbl"/>
+        <!-- bus:entityPartyZipOrPostalCode 住所郵便番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyZipOrPostalCode" xlink:label="entityPartyZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="entityPartyZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyZipOrPostalCode_ja" xml:lang="en">住所郵便番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の郵便番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyZipOrPostalCode" xlink:to="entityPartyZipOrPostalCode_lbl"/>
+        <!-- bus:entityPartyWebSiteUrl WebサイトURL -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSiteUrl" xlink:label="entityPartyWebSiteUrl"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteUrl_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSiteUrl_ja" xml:lang="en">WebサイトURL</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteUrl_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ウェブサイトの有効なURL。 完全なURLであるべき。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSiteUrl" xlink:to="entityPartyWebSiteUrl_lbl"/>
+        <!-- bus:entityPartyWebSiteDescription Webサイト説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyWebSiteDescription" xlink:label="entityPartyWebSiteDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyWebSiteDescription_ja" xml:lang="en">Webサイト説明</label>
+        <label xlink:type="resource" xlink:label="entityPartyWebSiteDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ウェブサイトの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyWebSiteDescription" xlink:to="entityPartyWebSiteDescription_lbl"/>
+        <!-- bus:entityPartyContactPrefix 敬称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPrefix" xlink:label="entityPartyContactPrefix"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPrefix_ja" xml:lang="en">敬称</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">敬称(Dr.、Mr.、Mrs.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPrefix" xlink:to="entityPartyContactPrefix_lbl"/>
+        <!-- bus:entityPartyContactLastName 姓 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactLastName" xlink:label="entityPartyContactLastName"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactLastName_ja" xml:lang="en">姓</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">姓</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactLastName" xlink:to="entityPartyContactLastName_lbl"/>
+        <!-- bus:entityPartyContactFirstName 名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFirstName" xlink:label="entityPartyContactFirstName"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFirstName_ja" xml:lang="en">名</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">名、クリスチャンネーム</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFirstName" xlink:to="entityPartyContactFirstName_lbl"/>
+        <!-- bus:entityPartyContactSuffix 付加名称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactSuffix" xlink:label="entityPartyContactSuffix"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactSuffix_ja" xml:lang="en">付加名称</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">付加名称(MD、CPA、Jr.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactSuffix" xlink:to="entityPartyContactSuffix_lbl"/>
+        <!-- bus:entityPartyContactAttentionLine アテンションライン -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactAttentionLine" xlink:label="entityPartyContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactAttentionLine_ja" xml:lang="en">アテンションライン</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">アテンションライン</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactAttentionLine" xlink:to="entityPartyContactAttentionLine_lbl"/>
+        <!-- bus:entityPartyContactPositionRole 地位/役職 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPositionRole" xlink:label="entityPartyContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPositionRole_ja" xml:lang="en">地位/役職</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">地位や役職。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPositionRole" xlink:to="entityPartyContactPositionRole_lbl"/>
+        <!-- bus:entityPartyContactContactType 担当者役割 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactContactType" xlink:label="entityPartyContactContactType"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactContactType_ja" xml:lang="en">担当者役割</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計事務所。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactContactType" xlink:to="entityPartyContactContactType_lbl"/>
+        <!-- bus:entityPartyContactLocationIdCrossReference 所在地相互参照情報 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactLocationIdCrossReference" xlink:label="entityPartyContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactLocationIdCrossReference_ja" xml:lang="en">所在地相互参照情報</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactLocationIdCrossReference" xlink:to="entityPartyContactLocationIdCrossReference_lbl"/>
+        <!-- bus:entityPartyContactPhone 【担当者電話番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhone" xlink:label="entityPartyContactPhone"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhone_ja" xml:lang="en">【担当者電話番号】</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者の電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhone" xlink:to="entityPartyContactPhone_lbl"/>
+        <!-- bus:entityPartyContactFax 【担当者FAX番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFax" xlink:label="entityPartyContactFax"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFax_ja" xml:lang="en">【担当者FAX番号】</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者のFAX番号の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFax" xlink:to="entityPartyContactFax_lbl"/>
+        <!-- bus:entityPartyContactEmail 【担当者Eメールアドレス】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmail" xlink:label="entityPartyContactEmail"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmail_ja" xml:lang="en">【担当者Eメールアドレス】</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者のEメールアドレスの構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmail" xlink:to="entityPartyContactEmail_lbl"/>
+        <!-- bus:entityPartyContactPhoneNumber 電話番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhoneNumber" xlink:label="entityPartyContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhoneNumber_ja" xml:lang="en">電話番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号用途で示される電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhoneNumber" xlink:to="entityPartyContactPhoneNumber_lbl"/>
+        <!-- bus:entityPartyContactPhoneNumberDescription 電話番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactPhoneNumberDescription" xlink:label="entityPartyContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactPhoneNumberDescription_ja" xml:lang="en">電話番号用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">代表、IR用などの、電話番号の用途。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactPhoneNumberDescription" xlink:to="entityPartyContactPhoneNumberDescription_lbl"/>
+        <!-- bus:entityPartyContactFaxNumber FAX番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFaxNumber" xlink:label="entityPartyContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFaxNumber_ja" xml:lang="en">FAX番号</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFaxNumber" xlink:to="entityPartyContactFaxNumber_lbl"/>
+        <!-- bus:entityPartyContactFaxNumberUsage FAX番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactFaxNumberUsage" xlink:label="entityPartyContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactFaxNumberUsage_ja" xml:lang="en">FAX番号用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号の用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactFaxNumberUsage" xlink:to="entityPartyContactFaxNumberUsage_lbl"/>
+        <!-- bus:entityPartyContactEmailAddress Eメールアドレス -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmailAddress" xlink:label="entityPartyContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmailAddress_ja" xml:lang="en">Eメールアドレス</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmailAddress" xlink:to="entityPartyContactEmailAddress_lbl"/>
+        <!-- bus:entityPartyContactEmailAddressUsage Eメールアドレス用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_entityPartyContactEmailAddressUsage" xlink:label="entityPartyContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_entityPartyContactEmailAddressUsage_ja" xml:lang="en">Eメールアドレス用途</label>
+        <label xlink:type="resource" xlink:label="entityPartyContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレスの用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyContactEmailAddressUsage" xlink:to="entityPartyContactEmailAddressUsage_lbl"/>
+        <!-- bus:accountingMethod 会計処理方法 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethod" xlink:label="accountingMethod"/>
+        <label xlink:type="resource" xlink:label="accountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethod_ja" xml:lang="en">会計処理方法</label>
+        <label xlink:type="resource" xlink:label="accountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethod" xlink:to="accountingMethod_lbl"/>
+        <!-- bus:accountingMethodDescription 会計処理方法説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodDescription" xlink:label="accountingMethodDescription"/>
+        <label xlink:type="resource" xlink:label="accountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodDescription_ja" xml:lang="en">会計処理方法説明</label>
+        <label xlink:type="resource" xlink:label="accountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計処理方法の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodDescription" xlink:to="accountingMethodDescription_lbl"/>
+        <!-- bus:accountingMethodPurpose 会計処理方法目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodPurpose" xlink:label="accountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="accountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodPurpose_ja" xml:lang="en">会計処理方法目的</label>
+        <label xlink:type="resource" xlink:label="accountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の報告の目的を表す。帳簿、税、管理、スタチュトリ、その他から選択する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodPurpose" xlink:to="accountingMethodPurpose_lbl"/>
+        <!-- bus:accountingMethodPurposeDescription 会計処理方法目的説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodPurposeDescription" xlink:label="accountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="accountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodPurposeDescription_ja" xml:lang="en">会計処理方法目的説明</label>
+        <label xlink:type="resource" xlink:label="accountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計処理方法の目的の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodPurposeDescription" xlink:to="accountingMethodPurposeDescription_lbl"/>
+        <!-- bus:accountingMethodStartDate 会計処理方法開始日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodStartDate" xlink:label="accountingMethodStartDate"/>
+        <label xlink:type="resource" xlink:label="accountingMethodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodStartDate_ja" xml:lang="en">会計処理方法開始日付</label>
+        <label xlink:type="resource" xlink:label="accountingMethodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計処理方法の開始日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodStartDate" xlink:to="accountingMethodStartDate_lbl"/>
+        <!-- bus:accountingMethodEndDate 会計処理方法終了日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountingMethodEndDate" xlink:label="accountingMethodEndDate"/>
+        <label xlink:type="resource" xlink:label="accountingMethodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountingMethodEndDate_ja" xml:lang="en">会計処理方法終了日付</label>
+        <label xlink:type="resource" xlink:label="accountingMethodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計処理方法の終了日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingMethodEndDate" xlink:to="accountingMethodEndDate_lbl"/>
+        <!-- bus:accountantName 会計事務所名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantName" xlink:label="accountantName"/>
+        <label xlink:type="resource" xlink:label="accountantName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantName_ja" xml:lang="en">会計事務所名</label>
+        <label xlink:type="resource" xlink:label="accountantName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の名前。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantName" xlink:to="accountantName_lbl"/>
+        <!-- bus:accountantTypeOfEngagement 契約種別 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantTypeOfEngagement" xlink:label="accountantTypeOfEngagement"/>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantTypeOfEngagement_ja" xml:lang="en">契約種別</label>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外部会計事務所によって実行される契約の種別。
+[設定値のリスト]
+(audit：監査)、(review：検査)、(compilation：帳簿作成)、(tax：税)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantTypeOfEngagement" xlink:to="accountantTypeOfEngagement_lbl"/>
+        <!-- bus:accountantTypeOfEngagementDescription 契約種別説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantTypeOfEngagementDescription" xlink:label="accountantTypeOfEngagementDescription"/>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagementDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantTypeOfEngagementDescription_ja" xml:lang="en">契約種別説明</label>
+        <label xlink:type="resource" xlink:label="accountantTypeOfEngagementDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">契約種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantTypeOfEngagementDescription" xlink:to="accountantTypeOfEngagementDescription_lbl"/>
+        <!-- bus:accountantAddress 【会計事務所住所】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantAddress" xlink:label="accountantAddress"/>
+        <label xlink:type="resource" xlink:label="accountantAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantAddress_ja" xml:lang="en">【会計事務所住所】</label>
+        <label xlink:type="resource" xlink:label="accountantAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の住所情報を含むセクション。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddress" xlink:to="accountantAddress_lbl"/>
+        <!-- bus:accountantContact 【会計事務所担当者情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContact" xlink:label="accountantContact"/>
+        <label xlink:type="resource" xlink:label="accountantContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContact_ja" xml:lang="en">【会計事務所担当者情報】</label>
+        <label xlink:type="resource" xlink:label="accountantContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の担当者情報の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContact" xlink:to="accountantContact_lbl"/>
+        <!-- bus:accountantDescription 住所説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantDescription" xlink:label="accountantDescription"/>
+        <label xlink:type="resource" xlink:label="accountantDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantDescription_ja" xml:lang="en">住所説明</label>
+        <label xlink:type="resource" xlink:label="accountantDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantDescription" xlink:to="accountantDescription_lbl"/>
+        <!-- bus:accountantPurpose 住所目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantPurpose" xlink:label="accountantPurpose"/>
+        <label xlink:type="resource" xlink:label="accountantPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantPurpose_ja" xml:lang="en">住所目的</label>
+        <label xlink:type="resource" xlink:label="accountantPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の目的。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantPurpose" xlink:to="accountantPurpose_lbl"/>
+        <!-- bus:accountantLocationId 所在地識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantLocationId" xlink:label="accountantLocationId"/>
+        <label xlink:type="resource" xlink:label="accountantLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantLocationId_ja" xml:lang="en">所在地識別子</label>
+        <label xlink:type="resource" xlink:label="accountantLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">所在地を識別したり、窓口や取引と関係付けるコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantLocationId" xlink:to="accountantLocationId_lbl"/>
+        <!-- bus:accountantBuildingNumber 住所建物番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantBuildingNumber" xlink:label="accountantBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="accountantBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantBuildingNumber_ja" xml:lang="en">住所建物番号</label>
+        <label xlink:type="resource" xlink:label="accountantBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">建物番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantBuildingNumber" xlink:to="accountantBuildingNumber_lbl"/>
+        <!-- bus:accountantStreet 住所通り -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantStreet" xlink:label="accountantStreet"/>
+        <label xlink:type="resource" xlink:label="accountantStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantStreet_ja" xml:lang="en">住所通り</label>
+        <label xlink:type="resource" xlink:label="accountantStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の通り。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStreet" xlink:to="accountantStreet_lbl"/>
+        <!-- bus:accountantAddressDetail 住所詳細 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantAddressDetail" xlink:label="accountantAddressDetail"/>
+        <label xlink:type="resource" xlink:label="accountantAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantAddressDetail_ja" xml:lang="en">住所詳細</label>
+        <label xlink:type="resource" xlink:label="accountantAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所詳細。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantAddressDetail" xlink:to="accountantAddressDetail_lbl"/>
+        <!-- bus:accountantCity 住所都市 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantCity" xlink:label="accountantCity"/>
+        <label xlink:type="resource" xlink:label="accountantCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantCity_ja" xml:lang="en">住所都市</label>
+        <label xlink:type="resource" xlink:label="accountantCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の都市。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCity" xlink:to="accountantCity_lbl"/>
+        <!-- bus:accountantStateOrProvince 住所州 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantStateOrProvince" xlink:label="accountantStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="accountantStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantStateOrProvince_ja" xml:lang="en">住所州</label>
+        <label xlink:type="resource" xlink:label="accountantStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の州や地方。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantStateOrProvince" xlink:to="accountantStateOrProvince_lbl"/>
+        <!-- bus:accountantCountry 住所国 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantCountry" xlink:label="accountantCountry"/>
+        <label xlink:type="resource" xlink:label="accountantCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantCountry_ja" xml:lang="en">住所国</label>
+        <label xlink:type="resource" xlink:label="accountantCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の国。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantCountry" xlink:to="accountantCountry_lbl"/>
+        <!-- bus:accountantZipOrPostalCode 住所郵便番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantZipOrPostalCode" xlink:label="accountantZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="accountantZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantZipOrPostalCode_ja" xml:lang="en">住所郵便番号</label>
+        <label xlink:type="resource" xlink:label="accountantZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の郵便番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantZipOrPostalCode" xlink:to="accountantZipOrPostalCode_lbl"/>
+        <!-- bus:accountantContactPrefix 敬称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPrefix" xlink:label="accountantContactPrefix"/>
+        <label xlink:type="resource" xlink:label="accountantContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPrefix_ja" xml:lang="en">敬称</label>
+        <label xlink:type="resource" xlink:label="accountantContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">敬称(Dr.、Mr.、Mrs.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPrefix" xlink:to="accountantContactPrefix_lbl"/>
+        <!-- bus:accountantContactLastName 姓 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactLastName" xlink:label="accountantContactLastName"/>
+        <label xlink:type="resource" xlink:label="accountantContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactLastName_ja" xml:lang="en">姓</label>
+        <label xlink:type="resource" xlink:label="accountantContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">姓</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactLastName" xlink:to="accountantContactLastName_lbl"/>
+        <!-- bus:accountantContactFirstName 名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFirstName" xlink:label="accountantContactFirstName"/>
+        <label xlink:type="resource" xlink:label="accountantContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFirstName_ja" xml:lang="en">名</label>
+        <label xlink:type="resource" xlink:label="accountantContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">名、クリスチャンネーム</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFirstName" xlink:to="accountantContactFirstName_lbl"/>
+        <!-- bus:accountantContactSuffix 付加名称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactSuffix" xlink:label="accountantContactSuffix"/>
+        <label xlink:type="resource" xlink:label="accountantContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactSuffix_ja" xml:lang="en">付加名称</label>
+        <label xlink:type="resource" xlink:label="accountantContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">付加名称(MD、CPA、Jr.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactSuffix" xlink:to="accountantContactSuffix_lbl"/>
+        <!-- bus:accountantContactAttentionLine アテンションライン -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactAttentionLine" xlink:label="accountantContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="accountantContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactAttentionLine_ja" xml:lang="en">アテンションライン</label>
+        <label xlink:type="resource" xlink:label="accountantContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">アテンションライン</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactAttentionLine" xlink:to="accountantContactAttentionLine_lbl"/>
+        <!-- bus:accountantContactPositionRole 地位/役職 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPositionRole" xlink:label="accountantContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="accountantContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPositionRole_ja" xml:lang="en">地位/役職</label>
+        <label xlink:type="resource" xlink:label="accountantContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">地位や役職。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPositionRole" xlink:to="accountantContactPositionRole_lbl"/>
+        <!-- bus:accountantContactContactType 担当者役割 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactContactType" xlink:label="accountantContactContactType"/>
+        <label xlink:type="resource" xlink:label="accountantContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactContactType_ja" xml:lang="en">担当者役割</label>
+        <label xlink:type="resource" xlink:label="accountantContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計事務所。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactContactType" xlink:to="accountantContactContactType_lbl"/>
+        <!-- bus:accountantContactLocationIdCrossReference 所在地相互参照情報 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactLocationIdCrossReference" xlink:label="accountantContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="accountantContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactLocationIdCrossReference_ja" xml:lang="en">所在地相互参照情報</label>
+        <label xlink:type="resource" xlink:label="accountantContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactLocationIdCrossReference" xlink:to="accountantContactLocationIdCrossReference_lbl"/>
+        <!-- bus:accountantContactPhone 【会計事務所担当者電話番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhone" xlink:label="accountantContactPhone"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhone_ja" xml:lang="en">【会計事務所担当者電話番号】</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の担当者の電話番号</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhone" xlink:to="accountantContactPhone_lbl"/>
+        <!-- bus:accountantContactFax 【会計事務所担当者FAX番号】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFax" xlink:label="accountantContactFax"/>
+        <label xlink:type="resource" xlink:label="accountantContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFax_ja" xml:lang="en">【会計事務所担当者FAX番号】</label>
+        <label xlink:type="resource" xlink:label="accountantContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の担当者のFAX番号の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFax" xlink:to="accountantContactFax_lbl"/>
+        <!-- bus:accountantContactEmail 【会計事務所担当者Eメールアドレス】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmail" xlink:label="accountantContactEmail"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmail_ja" xml:lang="en">【会計事務所担当者Eメールアドレス】</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">会計事務所の担当者のEメールアドレスの構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmail" xlink:to="accountantContactEmail_lbl"/>
+        <!-- bus:accountantContactPhoneNumber 電話番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhoneNumber" xlink:label="accountantContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhoneNumber_ja" xml:lang="en">電話番号</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号用途で示される電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumber" xlink:to="accountantContactPhoneNumber_lbl"/>
+        <!-- bus:accountantContactPhoneNumberDescription 電話番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactPhoneNumberDescription" xlink:label="accountantContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactPhoneNumberDescription_ja" xml:lang="en">電話番号用途</label>
+        <label xlink:type="resource" xlink:label="accountantContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">代表、IR用などの、電話番号の用途。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactPhoneNumberDescription" xlink:to="accountantContactPhoneNumberDescription_lbl"/>
+        <!-- bus:accountantContactFaxNumber FAX番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFaxNumber" xlink:label="accountantContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFaxNumber_ja" xml:lang="en">FAX番号</label>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumber" xlink:to="accountantContactFaxNumber_lbl"/>
+        <!-- bus:accountantContactFaxNumberUsage FAX番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactFaxNumberUsage" xlink:label="accountantContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactFaxNumberUsage_ja" xml:lang="en">FAX番号用途</label>
+        <label xlink:type="resource" xlink:label="accountantContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号の用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactFaxNumberUsage" xlink:to="accountantContactFaxNumberUsage_lbl"/>
+        <!-- bus:accountantContactEmailAddress Eメールアドレス -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmailAddress" xlink:label="accountantContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmailAddress_ja" xml:lang="en">Eメールアドレス</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddress" xlink:to="accountantContactEmailAddress_lbl"/>
+        <!-- bus:accountantContactEmailAddressUsage Eメールアドレス用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_accountantContactEmailAddressUsage" xlink:label="accountantContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_accountantContactEmailAddressUsage_ja" xml:lang="en">Eメールアドレス用途</label>
+        <label xlink:type="resource" xlink:label="accountantContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレスの用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountantContactEmailAddressUsage" xlink:to="accountantContactEmailAddressUsage_lbl"/>
+        <!-- bus:reportingCalendarCode 報告カレンダーコード -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarCode" xlink:label="reportingCalendarCode"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarCode_ja" xml:lang="en">報告カレンダーコード</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この報告カレンダーを識別するコード。複数期間にわたって一意。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarCode" xlink:to="reportingCalendarCode_lbl"/>
+        <!-- bus:reportingCalendarDescription 期間種別説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarDescription" xlink:label="reportingCalendarDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarDescription_ja" xml:lang="en">期間種別説明</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告期間の種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarDescription" xlink:to="reportingCalendarDescription_lbl"/>
+        <!-- bus:reportingCalendarTitle 報告カレンダータイトル -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarTitle" xlink:label="reportingCalendarTitle"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarTitle_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarTitle_ja" xml:lang="en">報告カレンダータイトル</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarTitle_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告期間の説明。実際の開始日及び終了日はreportingCalendarPeriodに記述する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarTitle" xlink:to="reportingCalendarTitle_lbl"/>
+        <!-- bus:reportingCalendarTypeCode 期間種別コード -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarTypeCode" xlink:label="reportingCalendarTypeCode"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarTypeCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarTypeCode_ja" xml:lang="en">期間種別コード</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarTypeCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告期間の種別コード。月次、四半期ごと、半期ごと、4-5-4、随時、その他
+[設定値のリスト]
+(monthly：月次)、(quarterly：四半期ごと)、(semi-annually：半期ごと)、(4-5-4：4-5-4)、(ad-hoc：随時)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarTypeCode" xlink:to="reportingCalendarTypeCode_lbl"/>
+        <!-- bus:reportingCalendarClosedStatus 締状態 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarClosedStatus" xlink:label="reportingCalendarClosedStatus"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarClosedStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarClosedStatus_ja" xml:lang="en">締状態</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarClosedStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告カレンダーがオープンかどうかを示す識別子。オープン、締切り済み、保留中
+[設定値のリスト]
+(open：オープン)、(closed：締切り済み)、(pending：保留中)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarClosedStatus" xlink:to="reportingCalendarClosedStatus_lbl"/>
+        <!-- bus:reportingCalendarPurpose 報告目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPurpose" xlink:label="reportingCalendarPurpose"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPurpose_ja" xml:lang="en">報告目的</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">帳簿の集合の説明。会計処理方法の目的の列挙値を使用する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPurpose" xlink:to="reportingCalendarPurpose_lbl"/>
+        <!-- bus:reportingCalendarPurposeDescription 報告目的説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPurposeDescription" xlink:label="reportingCalendarPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPurposeDescription_ja" xml:lang="en">報告目的説明</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告目的の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPurposeDescription" xlink:to="reportingCalendarPurposeDescription_lbl"/>
+        <!-- bus:reportingCalendarPeriod 【報告カレンダー期間】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriod" xlink:label="reportingCalendarPeriod"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriod_ja" xml:lang="en">【報告カレンダー期間】</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">取引の結果をまとめるための特定の期間を集めるもの。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriod" xlink:to="reportingCalendarPeriod_lbl"/>
+        <!-- bus:reportingCalendarPeriodId 報告期間識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodId" xlink:label="reportingCalendarPeriodId"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodId_ja" xml:lang="en">報告期間識別子</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このカレンダーにおけるこの期間の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodId" xlink:to="reportingCalendarPeriodId_lbl"/>
+        <!-- bus:reportingCalendarPeriodDescription 期間説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodDescription" xlink:label="reportingCalendarPeriodDescription"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodDescription_ja" xml:lang="en">期間説明</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このカレンダーにおけるこの特定の期間の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodDescription" xlink:to="reportingCalendarPeriodDescription_lbl"/>
+        <!-- bus:reportingCalendarPeriodStartDate 期間開始日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodStartDate" xlink:label="reportingCalendarPeriodStartDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodStartDate_ja" xml:lang="en">期間開始日付</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">期間の開始日付/時刻</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodStartDate" xlink:to="reportingCalendarPeriodStartDate_lbl"/>
+        <!-- bus:reportingCalendarPeriodEndDate 期間終了日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodEndDate" xlink:label="reportingCalendarPeriodEndDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodEndDate_ja" xml:lang="en">期間終了日付</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">期間の終了日付/時刻</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodEndDate" xlink:to="reportingCalendarPeriodEndDate_lbl"/>
+        <!-- bus:reportingCalendarPeriodClosedDate 期間締日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_reportingCalendarPeriodClosedDate" xlink:label="reportingCalendarPeriodClosedDate"/>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodClosedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_reportingCalendarPeriodClosedDate_ja" xml:lang="en">期間締日付</label>
+        <label xlink:type="resource" xlink:label="reportingCalendarPeriodClosedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この期間の活動が締め切られた日付/時刻。この値がニル値(xsi:nill="true")であれば、この期間は、締め切られていない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reportingCalendarPeriodClosedDate" xlink:to="reportingCalendarPeriodClosedDate_lbl"/>
+        <!-- bus:headerIdentifierPurpose CVE目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierPurpose" xlink:label="headerIdentifierPurpose"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierPurpose_ja" xml:lang="en">CVE目的</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierPurpose" xlink:to="headerIdentifierPurpose_lbl"/>
+        <!-- bus:identifierAddress 【CVE住所】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierAddress" xlink:label="identifierAddress"/>
+        <label xlink:type="resource" xlink:label="identifierAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierAddress_ja" xml:lang="en">【CVE住所】</label>
+        <label xlink:type="resource" xlink:label="identifierAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">統合目的やVATのための、顧客、仕入先、従業員の住所(ブロック)。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddress" xlink:to="identifierAddress_lbl"/>
+        <!-- bus:identifierPhoneNumber 電話番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPhoneNumber" xlink:label="identifierPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPhoneNumber_ja" xml:lang="en">電話番号</label>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号用途で示される電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumber" xlink:to="identifierPhoneNumber_lbl"/>
+        <!-- bus:identifierPhoneNumberDescription 電話番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPhoneNumberDescription" xlink:label="identifierPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPhoneNumberDescription_ja" xml:lang="en">電話番号用途</label>
+        <label xlink:type="resource" xlink:label="identifierPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">代表、IR用などの、電話番号の用途。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhoneNumberDescription" xlink:to="identifierPhoneNumberDescription_lbl"/>
+        <!-- bus:identifierFaxNumber FAX番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierFaxNumber" xlink:label="identifierFaxNumber"/>
+        <label xlink:type="resource" xlink:label="identifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierFaxNumber_ja" xml:lang="en">FAX番号</label>
+        <label xlink:type="resource" xlink:label="identifierFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumber" xlink:to="identifierFaxNumber_lbl"/>
+        <!-- bus:identifierFaxNumberUsage FAX番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierFaxNumberUsage" xlink:label="identifierFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="identifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierFaxNumberUsage_ja" xml:lang="en">FAX番号用途</label>
+        <label xlink:type="resource" xlink:label="identifierFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号の用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFaxNumberUsage" xlink:to="identifierFaxNumberUsage_lbl"/>
+        <!-- bus:identifierEmailAddress Eメールアドレス -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierEmailAddress" xlink:label="identifierEmailAddress"/>
+        <label xlink:type="resource" xlink:label="identifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierEmailAddress_ja" xml:lang="en">Eメールアドレス</label>
+        <label xlink:type="resource" xlink:label="identifierEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddress" xlink:to="identifierEmailAddress_lbl"/>
+        <!-- bus:identifierEmailAddressUsage Eメールアドレス用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierEmailAddressUsage" xlink:label="identifierEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="identifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierEmailAddressUsage_ja" xml:lang="en">Eメールアドレス用途</label>
+        <label xlink:type="resource" xlink:label="identifierEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレスの用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmailAddressUsage" xlink:to="identifierEmailAddressUsage_lbl"/>
+        <!-- bus:identifierDescription 住所説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierDescription" xlink:label="identifierDescription"/>
+        <label xlink:type="resource" xlink:label="identifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierDescription_ja" xml:lang="en">住所説明</label>
+        <label xlink:type="resource" xlink:label="identifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierDescription" xlink:to="identifierDescription_lbl"/>
+        <!-- bus:identifierPurpose 住所目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierPurpose" xlink:label="identifierPurpose"/>
+        <label xlink:type="resource" xlink:label="identifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierPurpose_ja" xml:lang="en">住所目的</label>
+        <label xlink:type="resource" xlink:label="identifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の目的。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPurpose" xlink:to="identifierPurpose_lbl"/>
+        <!-- bus:identifierLocationId 所在地識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierLocationId" xlink:label="identifierLocationId"/>
+        <label xlink:type="resource" xlink:label="identifierLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierLocationId_ja" xml:lang="en">所在地識別子</label>
+        <label xlink:type="resource" xlink:label="identifierLocationId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">所在地を識別したり、窓口や取引と関係付けるコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierLocationId" xlink:to="identifierLocationId_lbl"/>
+        <!-- bus:identifierBuildingNumber 住所建物番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierBuildingNumber" xlink:label="identifierBuildingNumber"/>
+        <label xlink:type="resource" xlink:label="identifierBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierBuildingNumber_ja" xml:lang="en">住所建物番号</label>
+        <label xlink:type="resource" xlink:label="identifierBuildingNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">建物番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierBuildingNumber" xlink:to="identifierBuildingNumber_lbl"/>
+        <!-- bus:identifierStreet 住所通り -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierStreet" xlink:label="identifierStreet"/>
+        <label xlink:type="resource" xlink:label="identifierStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierStreet_ja" xml:lang="en">住所通り</label>
+        <label xlink:type="resource" xlink:label="identifierStreet_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の通り。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStreet" xlink:to="identifierStreet_lbl"/>
+        <!-- bus:identifierAddressDetail 住所詳細 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierAddressDetail" xlink:label="identifierAddressDetail"/>
+        <label xlink:type="resource" xlink:label="identifierAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierAddressDetail_ja" xml:lang="en">住所詳細</label>
+        <label xlink:type="resource" xlink:label="identifierAddressDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所詳細。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierAddressDetail" xlink:to="identifierAddressDetail_lbl"/>
+        <!-- bus:identifierCity 住所都市 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierCity" xlink:label="identifierCity"/>
+        <label xlink:type="resource" xlink:label="identifierCity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierCity_ja" xml:lang="en">住所都市</label>
+        <label xlink:type="resource" xlink:label="identifierCity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の都市。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCity" xlink:to="identifierCity_lbl"/>
+        <!-- bus:identifierStateOrProvince 住所州 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierStateOrProvince" xlink:label="identifierStateOrProvince"/>
+        <label xlink:type="resource" xlink:label="identifierStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierStateOrProvince_ja" xml:lang="en">住所州</label>
+        <label xlink:type="resource" xlink:label="identifierStateOrProvince_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の州や地方。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierStateOrProvince" xlink:to="identifierStateOrProvince_lbl"/>
+        <!-- bus:identifierCountry 住所国 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierCountry" xlink:label="identifierCountry"/>
+        <label xlink:type="resource" xlink:label="identifierCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierCountry_ja" xml:lang="en">住所国</label>
+        <label xlink:type="resource" xlink:label="identifierCountry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の国。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierCountry" xlink:to="identifierCountry_lbl"/>
+        <!-- bus:identifierZipOrPostalCode 住所郵便番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierZipOrPostalCode" xlink:label="identifierZipOrPostalCode"/>
+        <label xlink:type="resource" xlink:label="identifierZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierZipOrPostalCode_ja" xml:lang="en">住所郵便番号</label>
+        <label xlink:type="resource" xlink:label="identifierZipOrPostalCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">住所の郵便番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierZipOrPostalCode" xlink:to="identifierZipOrPostalCode_lbl"/>
+        <!-- bus:headerIdentifierContactPrefix 敬称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactPrefix" xlink:label="headerIdentifierContactPrefix"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactPrefix_ja" xml:lang="en">敬称</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">敬称(Dr.、Mr.、Mrs.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPrefix" xlink:to="headerIdentifierContactPrefix_lbl"/>
+        <!-- bus:headerIdentifierContactLastName 姓 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactLastName" xlink:label="headerIdentifierContactLastName"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactLastName_ja" xml:lang="en">姓</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">姓</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactLastName" xlink:to="headerIdentifierContactLastName_lbl"/>
+        <!-- bus:headerIdentifierContactFirstName 名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactFirstName" xlink:label="headerIdentifierContactFirstName"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactFirstName_ja" xml:lang="en">名</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">名、クリスチャンネーム</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactFirstName" xlink:to="headerIdentifierContactFirstName_lbl"/>
+        <!-- bus:headerIdentifierContactSuffix 付加名称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactSuffix" xlink:label="headerIdentifierContactSuffix"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactSuffix_ja" xml:lang="en">付加名称</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">付加名称(MD、CPA、Jr.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactSuffix" xlink:to="headerIdentifierContactSuffix_lbl"/>
+        <!-- bus:headerIdentifierContactAttentionLine アテンションライン -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactAttentionLine" xlink:label="headerIdentifierContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactAttentionLine_ja" xml:lang="en">アテンションライン</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">アテンションライン</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactAttentionLine" xlink:to="headerIdentifierContactAttentionLine_lbl"/>
+        <!-- bus:headerIdentifierContactPositionRole 地位/役職 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactPositionRole" xlink:label="headerIdentifierContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactPositionRole_ja" xml:lang="en">地位/役職</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">地位や役職。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactPositionRole" xlink:to="headerIdentifierContactPositionRole_lbl"/>
+        <!-- bus:headerIdentifierContactContactType 担当者役割 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactContactType" xlink:label="headerIdentifierContactContactType"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactContactType_ja" xml:lang="en">担当者役割</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計事務所。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactContactType" xlink:to="headerIdentifierContactContactType_lbl"/>
+        <!-- bus:headerIdentifierContactLocationIdCrossReference 所在地相互参照情報 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_headerIdentifierContactLocationIdCrossReference" xlink:label="headerIdentifierContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_headerIdentifierContactLocationIdCrossReference_ja" xml:lang="en">所在地相互参照情報</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContactLocationIdCrossReference" xlink:to="headerIdentifierContactLocationIdCrossReference_lbl"/>
+        <!-- bus:identifierContactPhoneNumber 電話番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactPhoneNumber" xlink:label="identifierContactPhoneNumber"/>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactPhoneNumber_ja" xml:lang="en">電話番号</label>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号用途で示される電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumber" xlink:to="identifierContactPhoneNumber_lbl"/>
+        <!-- bus:identifierContactPhoneNumberDescription 電話番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactPhoneNumberDescription" xlink:label="identifierContactPhoneNumberDescription"/>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactPhoneNumberDescription_ja" xml:lang="en">電話番号用途</label>
+        <label xlink:type="resource" xlink:label="identifierContactPhoneNumberDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">代表、IR用などの、電話番号の用途。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhoneNumberDescription" xlink:to="identifierContactPhoneNumberDescription_lbl"/>
+        <!-- bus:identifierContactFaxNumber FAX番号 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactFaxNumber" xlink:label="identifierContactFaxNumber"/>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactFaxNumber_ja" xml:lang="en">FAX番号</label>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumber" xlink:to="identifierContactFaxNumber_lbl"/>
+        <!-- bus:identifierContactFaxNumberUsage FAX番号用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactFaxNumberUsage" xlink:label="identifierContactFaxNumberUsage"/>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactFaxNumberUsage_ja" xml:lang="en">FAX番号用途</label>
+        <label xlink:type="resource" xlink:label="identifierContactFaxNumberUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号の用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFaxNumberUsage" xlink:to="identifierContactFaxNumberUsage_lbl"/>
+        <!-- bus:identifierContactEmailAddress Eメールアドレス -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactEmailAddress" xlink:label="identifierContactEmailAddress"/>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactEmailAddress_ja" xml:lang="en">Eメールアドレス</label>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddress" xlink:to="identifierContactEmailAddress_lbl"/>
+        <!-- bus:identifierContactEmailAddressUsage Eメールアドレス用途 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_identifierContactEmailAddressUsage" xlink:label="identifierContactEmailAddressUsage"/>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_identifierContactEmailAddressUsage_ja" xml:lang="en">Eメールアドレス用途</label>
+        <label xlink:type="resource" xlink:label="identifierContactEmailAddressUsage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレスの用途。(注文、本社、IRなど)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmailAddressUsage" xlink:to="identifierContactEmailAddressUsage_lbl"/>
+        <!-- bus:detailMeasurable 【計測可能物情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurable" xlink:label="detailMeasurable"/>
+        <label xlink:type="resource" xlink:label="detailMeasurable_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurable_ja" xml:lang="en">【計測可能物情報】</label>
+        <label xlink:type="resource" xlink:label="detailMeasurable_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurable" xlink:to="detailMeasurable_lbl"/>
+        <!-- bus:detailJob 【ジョブ情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailJob" xlink:label="detailJob"/>
+        <label xlink:type="resource" xlink:label="detailJob_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailJob_ja" xml:lang="en">【ジョブ情報】</label>
+        <label xlink:type="resource" xlink:label="detailJob_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目識別子で表現されるジョブとは別の、ジョブに関係する情報のタプル。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJob" xlink:to="detailJob_lbl"/>
+        <!-- bus:detailDepreciationMortgage 【減価償却/抵当債務情報】 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgage" xlink:label="detailDepreciationMortgage"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgage_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgage_ja" xml:lang="en">【減価償却/抵当債務情報】</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgage_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却、抵当債務等に関連する情報の親タグ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgage" xlink:to="detailDepreciationMortgage_lbl"/>
+        <!-- bus:detailAccountingMethod 仕訳会計処理方法 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethod" xlink:label="detailAccountingMethod"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethod_ja" xml:lang="en">仕訳会計処理方法</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethod" xlink:to="detailAccountingMethod_lbl"/>
+        <!-- bus:detailAccountingMethodDescription 仕訳会計処理方法説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodDescription" xlink:label="detailAccountingMethodDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodDescription_ja" xml:lang="en">仕訳会計処理方法説明</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の会計処理方法の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodDescription" xlink:to="detailAccountingMethodDescription_lbl"/>
+        <!-- bus:detailAccountingMethodPurpose 仕訳会計処理方法目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodPurpose" xlink:label="detailAccountingMethodPurpose"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodPurpose_ja" xml:lang="en">仕訳会計処理方法目的</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の報告の目的を表す。帳簿、税、管理、スタチュトリ、その他
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodPurpose" xlink:to="detailAccountingMethodPurpose_lbl"/>
+        <!-- bus:detailAccountingMethodPurposeDescription 仕訳会計処理方法目的説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailAccountingMethodPurposeDescription" xlink:label="detailAccountingMethodPurposeDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailAccountingMethodPurposeDescription_ja" xml:lang="en">仕訳会計処理方法目的説明</label>
+        <label xlink:type="resource" xlink:label="detailAccountingMethodPurposeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の会計処理方法の目的の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountingMethodPurposeDescription" xlink:to="detailAccountingMethodPurposeDescription_lbl"/>
+        <!-- bus:detailIdentifierPurpose CVE目的 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierPurpose" xlink:label="detailIdentifierPurpose"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierPurpose_ja" xml:lang="en">CVE目的</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierPurpose_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierPurpose" xlink:to="detailIdentifierPurpose_lbl"/>
+        <!-- bus:detailIdentifierContactPrefix 敬称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactPrefix" xlink:label="detailIdentifierContactPrefix"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactPrefix_ja" xml:lang="en">敬称</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPrefix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">敬称(Dr.、Mr.、Mrs.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactPrefix" xlink:to="detailIdentifierContactPrefix_lbl"/>
+        <!-- bus:detailIdentifierContactLastName 姓 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactLastName" xlink:label="detailIdentifierContactLastName"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactLastName_ja" xml:lang="en">姓</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLastName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">姓</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactLastName" xlink:to="detailIdentifierContactLastName_lbl"/>
+        <!-- bus:detailIdentifierContactFirstName 名 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactFirstName" xlink:label="detailIdentifierContactFirstName"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactFirstName_ja" xml:lang="en">名</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactFirstName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">名、クリスチャンネーム</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactFirstName" xlink:to="detailIdentifierContactFirstName_lbl"/>
+        <!-- bus:detailIdentifierContactSuffix 付加名称 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactSuffix" xlink:label="detailIdentifierContactSuffix"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactSuffix_ja" xml:lang="en">付加名称</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactSuffix_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">付加名称(MD、CPA、Jr.など)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactSuffix" xlink:to="detailIdentifierContactSuffix_lbl"/>
+        <!-- bus:detailIdentifierContactAttentionLine アテンションライン -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactAttentionLine" xlink:label="detailIdentifierContactAttentionLine"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactAttentionLine_ja" xml:lang="en">アテンションライン</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactAttentionLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">アテンションライン</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactAttentionLine" xlink:to="detailIdentifierContactAttentionLine_lbl"/>
+        <!-- bus:detailIdentifierContactPositionRole 地位/役職 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactPositionRole" xlink:label="detailIdentifierContactPositionRole"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactPositionRole_ja" xml:lang="en">地位/役職</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactPositionRole_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">地位や役職。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactPositionRole" xlink:to="detailIdentifierContactPositionRole_lbl"/>
+        <!-- bus:detailIdentifierContactContactType 担当者役割 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactContactType" xlink:label="detailIdentifierContactContactType"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactContactType_ja" xml:lang="en">担当者役割</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactContactType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計事務所。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactContactType" xlink:to="detailIdentifierContactContactType_lbl"/>
+        <!-- bus:detailIdentifierContactLocationIdCrossReference 所在地相互参照情報 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailIdentifierContactLocationIdCrossReference" xlink:label="detailIdentifierContactLocationIdCrossReference"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailIdentifierContactLocationIdCrossReference_ja" xml:lang="en">所在地相互参照情報</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContactLocationIdCrossReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContactLocationIdCrossReference" xlink:to="detailIdentifierContactLocationIdCrossReference_lbl"/>
+        <!-- bus:detailMeasurableCode 計測可能物コード -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCode" xlink:label="detailMeasurableCode"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCode_ja" xml:lang="en">計測可能物コード</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物のコード。ビジネスプロセス、固定資産/資産化項目、在庫、測定基準、無形資産、貯蔵品、従業員/提供元/請負者によるサービス、装置/機械によるサービス、その他
+[設定値のリスト]
+(BP：ビジネスプロセス)、(FA：固定資産/資産化項目)、(IN：在庫)、(KPI：測定基準)、(NT：無形資産)、(SP：貯蔵品)、(SV-P：従業員/提供元/請負者によるサービス)、(SV-M：装置/機械によるサービス)、(OT：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCode" xlink:to="detailMeasurableCode_lbl"/>
+        <!-- bus:detailMeasurableCodeDescription 計測可能物コード説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCodeDescription" xlink:label="detailMeasurableCodeDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCodeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCodeDescription_ja" xml:lang="en">計測可能物コード説明</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCodeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物のコードの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCodeDescription" xlink:to="detailMeasurableCodeDescription_lbl"/>
+        <!-- bus:detailMeasurableCategory 計測可能物カテゴリ -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableCategory" xlink:label="detailMeasurableCategory"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableCategory_ja" xml:lang="en">計測可能物カテゴリ</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物のカテゴリ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableCategory" xlink:to="detailMeasurableCategory_lbl"/>
+        <!-- bus:detailMeasurableIdentification 計測可能物識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableIdentification" xlink:label="detailMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableIdentification_ja" xml:lang="en">計測可能物識別子</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物の社内在庫部分またはSKU番号またはその他のコード識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableIdentification" xlink:to="detailMeasurableIdentification_lbl"/>
+        <!-- bus:detailSchemaForMeasurableIdentification 計測可能物識別子スキーマ -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSchemaForMeasurableIdentification" xlink:label="detailSchemaForMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailSchemaForMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSchemaForMeasurableIdentification_ja" xml:lang="en">計測可能物識別子スキーマ</label>
+        <label xlink:type="resource" xlink:label="detailSchemaForMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物のIDを検証するスキーマの、URIまたはその他の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSchemaForMeasurableIdentification" xlink:to="detailSchemaForMeasurableIdentification_lbl"/>
+        <!-- bus:detailSecondaryMeasurableCode 計測可能物第二識別子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSecondaryMeasurableCode" xlink:label="detailSecondaryMeasurableCode"/>
+        <label xlink:type="resource" xlink:label="detailSecondaryMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSecondaryMeasurableCode_ja" xml:lang="en">計測可能物第二識別子</label>
+        <label xlink:type="resource" xlink:label="detailSecondaryMeasurableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">第二識別子。（例えば、ベンダーでの品目番号）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSecondaryMeasurableCode" xlink:to="detailSecondaryMeasurableCode_lbl"/>
+        <!-- bus:detailSchemaForSecondaryMeasurableIdentification 計測可能物第二識別子スキーマ -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailSchemaForSecondaryMeasurableIdentification" xlink:label="detailSchemaForSecondaryMeasurableIdentification"/>
+        <label xlink:type="resource" xlink:label="detailSchemaForSecondaryMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailSchemaForSecondaryMeasurableIdentification_ja" xml:lang="en">計測可能物第二識別子スキーマ</label>
+        <label xlink:type="resource" xlink:label="detailSchemaForSecondaryMeasurableIdentification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物の第二IDを検証するスキーマの、URIまたはその他の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSchemaForSecondaryMeasurableIdentification" xlink:to="detailSchemaForSecondaryMeasurableIdentification_lbl"/>
+        <!-- bus:detailMeasurableDescription 計測可能物説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableDescription" xlink:label="detailMeasurableDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableDescription_ja" xml:lang="en">計測可能物説明</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物の説明。（たとえば、在庫やその他の識別子）</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableDescription" xlink:to="detailMeasurableDescription_lbl"/>
+        <!-- bus:detailMeasurableQuantity 数量 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableQuantity" xlink:label="detailMeasurableQuantity"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableQuantity_ja" xml:lang="en">数量</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この取引における、単位数量。金額計算用ではない。平方フィート、人数など。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableQuantity" xlink:to="detailMeasurableQuantity_lbl"/>
+        <!-- bus:detailMeasurableQualifier 修飾子 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableQualifier" xlink:label="detailMeasurableQualifier"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableQualifier_ja" xml:lang="en">修飾子</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">PKI又はバランススコアカード情報を適正に把握するための、等級付け、検査コード、格付けその他の修飾子を示す。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableQualifier" xlink:to="detailMeasurableQualifier_lbl"/>
+        <!-- bus:detailMeasurableUnitOfMeasure 計量単位 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableUnitOfMeasure" xlink:label="detailMeasurableUnitOfMeasure"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableUnitOfMeasure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableUnitOfMeasure_ja" xml:lang="en">計量単位</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableUnitOfMeasure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">単位の説明。たとえば、個、箱、ダースなど。ISO標準のコードを推奨。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableUnitOfMeasure" xlink:to="detailMeasurableUnitOfMeasure_lbl"/>
+        <!-- bus:detailMeasurablePerUnitCostPrice 単価 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurablePerUnitCostPrice" xlink:label="detailMeasurablePerUnitCostPrice"/>
+        <label xlink:type="resource" xlink:label="detailMeasurablePerUnitCostPrice_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurablePerUnitCostPrice_ja" xml:lang="en">単価</label>
+        <label xlink:type="resource" xlink:label="detailMeasurablePerUnitCostPrice_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計測可能物の単価。
+measurableQuantity * measurableCostPerUnit = amountであることを期待するかもしれないが、外部規則がなければ必須ではない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurablePerUnitCostPrice" xlink:to="detailMeasurablePerUnitCostPrice_lbl"/>
+        <!-- bus:detailMeasurableStartTime 開始日時 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableStartTime" xlink:label="detailMeasurableStartTime"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableStartTime_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableStartTime_ja" xml:lang="en">開始日時</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableStartTime_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計量期間の開始時刻。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableStartTime" xlink:to="detailMeasurableStartTime_lbl"/>
+        <!-- bus:detailMeasurableEndTime 終了日時 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailMeasurableEndTime" xlink:label="detailMeasurableEndTime"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableEndTime_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailMeasurableEndTime_ja" xml:lang="en">終了日時</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableEndTime_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">計量期間の終了時刻。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableEndTime" xlink:to="detailMeasurableEndTime_lbl"/>
+        <!-- bus:detailDepreciationMortgageJurisdiction 抵当債務管轄 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageJurisdiction" xlink:label="detailDepreciationMortgageJurisdiction"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageJurisdiction_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageJurisdiction_ja" xml:lang="en">抵当債務管轄</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageJurisdiction_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">管轄地区。（連邦、州、ローカル、等）。たとえば、米国連邦政府、ケベック州、その他の識別子。
+[設定値のリスト]
+(F)、(federal：連邦)、(S)、(state：州)、(L)、(local：地域)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageJurisdiction" xlink:to="detailDepreciationMortgageJurisdiction_lbl"/>
+        <!-- bus:detailDepreciationMethod 減価償却方法 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMethod" xlink:label="detailDepreciationMethod"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMethod_ja" xml:lang="en">減価償却方法</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却方法のタイプ。ローンのパーセンテージや減価償却方法に関する情報を含む。単なる情報提供を目的とする。たとえば、20%、5年、DDB(倍額定率)。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMethod" xlink:to="detailDepreciationMethod_lbl"/>
+        <!-- bus:detailDepreciationMortgageLife 抵当債務期間 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageLife" xlink:label="detailDepreciationMortgageLife"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageLife_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageLife_ja" xml:lang="en">抵当債務期間</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageLife_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">存在する期間数。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageLife" xlink:to="detailDepreciationMortgageLife_lbl"/>
+        <!-- bus:detailDepreciationMortgageDescription 債務説明 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageDescription" xlink:label="detailDepreciationMortgageDescription"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageDescription_ja" xml:lang="en">債務説明</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却や債権債務、ローン、信用供与等に関する項目の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageDescription" xlink:to="detailDepreciationMortgageDescription_lbl"/>
+        <!-- bus:detailDepreciationMortgageStartDate 開始日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageStartDate" xlink:label="detailDepreciationMortgageStartDate"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageStartDate_ja" xml:lang="en">開始日付</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の開始日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageStartDate" xlink:to="detailDepreciationMortgageStartDate_lbl"/>
+        <!-- bus:detailDepreciationMortgageEndDate 終了日付 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageEndDate" xlink:label="detailDepreciationMortgageEndDate"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageEndDate_ja" xml:lang="en">終了日付</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の終了日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageEndDate" xlink:to="detailDepreciationMortgageEndDate_lbl"/>
+        <!-- bus:detailDepreciationMortgageAmount 手数料 -->
+        <loc xlink:type="locator" xlink:href="../bus-2026-MM-DD.xsd#bus_detailDepreciationMortgageAmount" xlink:label="detailDepreciationMortgageAmount"/>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="bus_detailDepreciationMortgageAmount_ja" xml:lang="en">手数料</label>
+        <label xlink:type="resource" xlink:label="detailDepreciationMortgageAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">減価償却や債権債務、ローン、信用供与等で請求されるコストや手数料。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDepreciationMortgageAmount" xlink:to="detailDepreciationMortgageAmount_lbl"/>
+  </labelLink>
+</linkbase>

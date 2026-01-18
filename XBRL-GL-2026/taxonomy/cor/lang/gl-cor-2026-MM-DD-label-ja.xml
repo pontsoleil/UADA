@@ -1,0 +1,537 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- gl-cor:accountingEntries 【会計仕訳】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_accountingEntries" xlink:label="accountingEntries"/>
+        <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_accountingEntries_ja" xml:lang="en">【会計仕訳】</label>
+        <label xlink:type="resource" xlink:label="accountingEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRL GLのルート要素。 この要素にはデータは登録されない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="accountingEntries" xlink:to="accountingEntries_lbl"/>
+        <!-- gl-cor:documentInformation 【文書情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_documentInformation" xlink:label="documentInformation"/>
+        <label xlink:type="resource" xlink:label="documentInformation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_documentInformation_ja" xml:lang="en">【文書情報】</label>
+        <label xlink:type="resource" xlink:label="documentInformation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この会計仕訳に関する情報の親タグ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentInformation" xlink:to="documentInformation_lbl"/>
+        <!-- gl-cor:entityParty 【事業体情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entityParty" xlink:label="entityParty"/>
+        <label xlink:type="resource" xlink:label="entityParty_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entityParty_ja" xml:lang="en">【事業体情報】</label>
+        <label xlink:type="resource" xlink:label="entityParty_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体情報（報告組織に関する情報）の入れ物。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityParty" xlink:to="entityParty_lbl"/>
+        <!-- gl-cor:entryHeader 【仕訳情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryHeader" xlink:label="entryHeader"/>
+        <label xlink:type="resource" xlink:label="entryHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryHeader_ja" xml:lang="en">【仕訳情報】</label>
+        <label xlink:type="resource" xlink:label="entryHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">エントリヘッダー/仕訳記入ヘッダーの親タグ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryHeader" xlink:to="entryHeader_lbl"/>
+        <!-- gl-cor:documentType 文書種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_documentType" xlink:label="documentType"/>
+        <label xlink:type="resource" xlink:label="documentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_documentType_ja" xml:lang="en">文書種別</label>
+        <label xlink:type="resource" xlink:label="documentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">・科目:科目体系ファイルの情報。 ・残高:特定の期間について、勘定科目(または勘定科目リスト)の、完了し検証された仕訳リストの累算結果。時に総勘定元帳と呼ばれる。 ・仕訳:個々の勘定記入のリスト。転記/検証されていることもあり、されていないこともある。 ・仕訳帳:特定の期間における、その期間の開始残高を含む貸借が一致(Dr=Cr)した仕訳のリスト 。 ・元帳:特定の期間における特定の勘定科目(または勘定科目リスト)についての、仕訳の全リスト 。注意－貸借が一致する必要はない。 ・資産:仕訳記入の一部として必ずしも含まれていないが、そこから抽出可能な売掛金、買掛金、在庫、固定資産、その他の情報のリスト。 ・試算表:事業体に対する、特定期間の全勘定科目リストでの、完了し検証された仕訳リストの、貸借が一致（Dr=Cr)した累算結果。 ・税率表:税率表をあらわすデータを自動的に解釈できるようにする。税率表は、コード、税務当局情報、レートをあらわす複数のtaxes構造データを使って定義される。taxTableCodeはtaxes構造データ内で相互に参照されるが、これらのマスタファイルが参照可能。 ・マッピング情報:互いに関係があるデータセットの間の対応関係を集めたもの。例えば、企業グループ内の各会社で使用する勘定科目と全社勘定科目との対応付け、または明細データと最終的な報告書上の要約された科目への対応付け。 ・差分情報:同じクラス（種類）で異なるバージョンを持つ項目の変更・差分情報。例えば、勘定科目一覧のようなマスタファイルの特定科目の更新情報など。  ・マスターファイル:マスタファイルの一覧。例えば、顧客マスタ又は在庫/棚卸マスタなど。  ・取引伝票:取引に用いる情報の集合。例えば、納入業者からのインボイス 又は顧客からの受注情報など。  ・プロファイル情報:確立された文書説明情報及び特にXBRL GLプロファイルを理解し決定するこの情報の集合の意味を示す。説明情報は、名前空間宣言、スキーマ参照及びこれらの規約を通して決定する。  ・その他：その他のすべての表現形式  多くの場合、日付または科目によりソートされる。会計処理方法や用語は慣行により適合させる。 [設定値のリスト] (account：科目)、(balance：残高)、(entries：仕訳)、(journal：仕訳帳)、(ledger：元帳)、(assets：資産)、(trialbalance：試算表)、(taxtables：税率表)、(other：その他)、(Mapping：マッピング情報)、(versioning：差分情報)、(master_file：マスターファイル)、(trade_documents：取引伝票)、(profile_compliant：プロファイル情報)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentType" xlink:to="documentType_lbl"/>
+        <!-- gl-cor:auditNumber 監査番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_auditNumber" xlink:label="auditNumber"/>
+        <label xlink:type="resource" xlink:label="auditNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_auditNumber_ja" xml:lang="en">監査番号</label>
+        <label xlink:type="resource" xlink:label="auditNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このファイルの一意識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="auditNumber" xlink:to="auditNumber_lbl"/>
+        <!-- gl-cor:revisesAuditNumber 改訂前監査番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_revisesAuditNumber" xlink:label="revisesAuditNumber"/>
+        <label xlink:type="resource" xlink:label="revisesAuditNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_revisesAuditNumber_ja" xml:lang="en">改訂前監査番号</label>
+        <label xlink:type="resource" xlink:label="revisesAuditNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳の束が以前の仕訳の束を改訂する場合に、以前の束を示す。元の文書のuniqueIDが指定される。開発者は、例外報告を考慮すべきである。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="revisesAuditNumber" xlink:to="revisesAuditNumber_lbl"/>
+        <!-- gl-cor:actionToTakeWithPreviousData 改訂前データ処置 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_actionToTakeWithPreviousData" xlink:label="actionToTakeWithPreviousData"/>
+        <label xlink:type="resource" xlink:label="actionToTakeWithPreviousData_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_actionToTakeWithPreviousData_ja" xml:lang="en">改訂前データ処置</label>
+        <label xlink:type="resource" xlink:label="actionToTakeWithPreviousData_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">以前のデータの束に対する操作のガイダンス。 取替え-古いデータを無効にし上書きする。
+補完-元々含まれていたかのように、そのデータに所属させる。
+[設定値のリスト]
+(supplement：補完)、(supersede：取替え)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="actionToTakeWithPreviousData" xlink:to="actionToTakeWithPreviousData_lbl"/>
+        <!-- gl-cor:language 言語 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_language" xlink:label="language"/>
+        <label xlink:type="resource" xlink:label="language_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_language_ja" xml:lang="en">言語</label>
+        <label xlink:type="resource" xlink:label="language_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主要言語。 実用的には、このフィールドの内容はISO639-1988言語コードに一致すべきである。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="language" xlink:to="language_lbl"/>
+        <!-- gl-cor:creationDate 作成日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_creationDate" xlink:label="creationDate"/>
+        <label xlink:type="resource" xlink:label="creationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_creationDate_ja" xml:lang="en">作成日付</label>
+        <label xlink:type="resource" xlink:label="creationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ファイルが作成された日付/時間。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="creationDate" xlink:to="creationDate_lbl"/>
+        <!-- gl-cor:documentComment 文書コメント -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_documentComment" xlink:label="documentComment"/>
+        <label xlink:type="resource" xlink:label="documentComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_documentComment_ja" xml:lang="en">文書コメント</label>
+        <label xlink:type="resource" xlink:label="documentComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書全体に対する説明文。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentComment" xlink:to="documentComment_lbl"/>
+        <!-- gl-cor:periodCoveredStart 対象期間開始日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_periodCoveredStart" xlink:label="periodCoveredStart"/>
+        <label xlink:type="resource" xlink:label="periodCoveredStart_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_periodCoveredStart_ja" xml:lang="en">対象期間開始日付</label>
+        <label xlink:type="resource" xlink:label="periodCoveredStart_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">内容の日付範囲の開始日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredStart" xlink:to="periodCoveredStart_lbl"/>
+        <!-- gl-cor:periodCoveredEnd 対象期間終了日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_periodCoveredEnd" xlink:label="periodCoveredEnd"/>
+        <label xlink:type="resource" xlink:label="periodCoveredEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_periodCoveredEnd_ja" xml:lang="en">対象期間終了日付</label>
+        <label xlink:type="resource" xlink:label="periodCoveredEnd_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">内容の日付範囲の終了日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="periodCoveredEnd" xlink:to="periodCoveredEnd_lbl"/>
+        <!-- gl-cor:entityPartyName  -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entityPartyName" xlink:label="entityPartyName"/>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entityPartyName_ja" xml:lang="en"></label>
+        <label xlink:type="resource" xlink:label="entityPartyName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja"></label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyName" xlink:to="entityPartyName_lbl"/>
+        <!-- gl-cor:entityPartyId  -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entityPartyId" xlink:label="entityPartyId"/>
+        <label xlink:type="resource" xlink:label="entityPartyId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entityPartyId_ja" xml:lang="en"></label>
+        <label xlink:type="resource" xlink:label="entityPartyId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja"></label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyId" xlink:to="entityPartyId_lbl"/>
+        <!-- gl-cor:entityPartyBusinessDescription 業種説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entityPartyBusinessDescription" xlink:label="entityPartyBusinessDescription"/>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entityPartyBusinessDescription_ja" xml:lang="en">業種説明</label>
+        <label xlink:type="resource" xlink:label="entityPartyBusinessDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">事業体の事業の種類についての説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyBusinessDescription" xlink:to="entityPartyBusinessDescription_lbl"/>
+        <!-- gl-cor:entityPartyAddress 【住所】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entityPartyAddress" xlink:label="entityPartyAddress"/>
+        <label xlink:type="resource" xlink:label="entityPartyAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entityPartyAddress_ja" xml:lang="en">【住所】</label>
+        <label xlink:type="resource" xlink:label="entityPartyAddress_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告事業体の住所構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entityPartyAddress" xlink:to="entityPartyAddress_lbl"/>
+        <!-- gl-cor:entryDatePosted 転記済日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryDatePosted" xlink:label="entryDatePosted"/>
+        <label xlink:type="resource" xlink:label="entryDatePosted_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryDatePosted_ja" xml:lang="en">転記済日付</label>
+        <label xlink:type="resource" xlink:label="entryDatePosted_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳が総勘定元帳に転記された(検証された)日付。 postingDateで示されるような会計上意味のある日付を表さないかもしれない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDatePosted" xlink:to="entryDatePosted_lbl"/>
+        <!-- gl-cor:entryCreator 仕訳作成者 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryCreator" xlink:label="entryCreator"/>
+        <label xlink:type="resource" xlink:label="entryCreator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryCreator_ja" xml:lang="en">仕訳作成者</label>
+        <label xlink:type="resource" xlink:label="entryCreator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">最初に入力したオペレータのイニシャル/名前。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryCreator" xlink:to="entryCreator_lbl"/>
+        <!-- gl-cor:entryDate 入力日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryDate" xlink:label="entryDate"/>
+        <label xlink:type="resource" xlink:label="entryDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryDate_ja" xml:lang="en">入力日付</label>
+        <label xlink:type="resource" xlink:label="entryDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">コンピュータへ入力した実際の日付/時刻(システム日付から自動的に与えられ、システム時計の変更により、しばしば誤った値になる)を示す。 転記日付とは別に管理される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDate" xlink:to="entryDate_lbl"/>
+        <!-- gl-cor:entryTypeIdentifier 種別識別子 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryTypeIdentifier" xlink:label="entryTypeIdentifier"/>
+        <label xlink:type="resource" xlink:label="entryTypeIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryTypeIdentifier_ja" xml:lang="en">種別識別子</label>
+        <label xlink:type="resource" xlink:label="entryTypeIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">以下の値のうちのひとつ。
+整理、予算、比較、外部会計事務所、通常、無視、消去、提案、反復、組替、シミュレーション、税、その他
+[設定値のリスト]
+(adjusting：整理)、(budget：予算)、(comparative：比較)、(external-accountant：外部会計事務所)、(standard：通常)、(passed-adjusting：無視)、(eliminating：消去)、(proposed：提案)、(recurring：反復)、(reclassifying：組替)、(simulated：シミュレーション)、(tax：税)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryTypeIdentifier" xlink:to="entryTypeIdentifier_lbl"/>
+        <!-- gl-cor:sourceJournal 元仕訳帳種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_sourceJournal" xlink:label="sourceJournal"/>
+        <label xlink:type="resource" xlink:label="sourceJournal_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_sourceJournal_ja" xml:lang="en">元仕訳帳種別</label>
+        <label xlink:type="resource" xlink:label="sourceJournal_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元仕訳帳。仕訳が処理される仕訳帳のコード。コードは仕訳帳に一意な指標であり、以下から選択する。
+出金(仕入先への小切手送付)、入金(他者からの小切手受領)、固定資産、振替、一般仕訳帳、在庫管理、個別原価、仕入帳(仕入による負債)、賃金台帳、売上台帳、通常仕訳、ユーザ定義、その他
+[設定値のリスト]
+(cd：出金)、(cr：入金)、(fa：固定資産)、(gi：振替)、(gj：一般仕訳帳)、(im：在庫管理)、(jc：個別原価)、(pj：仕入帳)、(pl：賃金台帳)、(sj：売上台帳)、(se：通常仕訳)、(ud：ユーザ定義)、(ot：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="sourceJournal" xlink:to="sourceJournal_lbl"/>
+        <!-- gl-cor:entryIdentifier 仕訳識別子 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryIdentifier" xlink:label="entryIdentifier"/>
+        <label xlink:type="resource" xlink:label="entryIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryIdentifier_ja" xml:lang="en">仕訳識別子</label>
+        <label xlink:type="resource" xlink:label="entryIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元仕訳帳中の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryIdentifier" xlink:to="entryIdentifier_lbl"/>
+        <!-- gl-cor:entryDescription 仕訳説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryDescription" xlink:label="entryDescription"/>
+        <label xlink:type="resource" xlink:label="entryDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryDescription_ja" xml:lang="en">仕訳説明</label>
+        <label xlink:type="resource" xlink:label="entryDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このエントリヘッダーによって説明された仕訳の説明(例えば、期首残高)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDescription" xlink:to="entryDescription_lbl"/>
+        <!-- gl-cor:entryQualifier 仕訳修飾子 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryQualifier" xlink:label="entryQualifier"/>
+        <label xlink:type="resource" xlink:label="entryQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryQualifier_ja" xml:lang="en">仕訳修飾子</label>
+        <label xlink:type="resource" xlink:label="entryQualifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の修飾子。総勘定元帳や試算表で、開始残高や決算残高のように、記された値が報告日で集約されていることを明示することが重要なときに有用な、仕訳の種別を修飾するもの。会計システムにおいて、BBF（繰越残高）として知られるもの。指定可能な値は以下。標準、繰越残高、その他
+[設定値のリスト]
+(standard：標準)、(balance-brought-forward：繰越残高)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryQualifier" xlink:to="entryQualifier_lbl"/>
+        <!-- gl-cor:entryQualifierDescription 仕訳修飾子説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryQualifierDescription" xlink:label="entryQualifierDescription"/>
+        <label xlink:type="resource" xlink:label="entryQualifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryQualifierDescription_ja" xml:lang="en">仕訳修飾子説明</label>
+        <label xlink:type="resource" xlink:label="entryQualifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の修飾子の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryQualifierDescription" xlink:to="entryQualifierDescription_lbl"/>
+        <!-- gl-cor:typeOfDifferenceBetweenBookAndTax 帳簿価税務簿価差異種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_typeOfDifferenceBetweenBookAndTax" xlink:label="typeOfDifferenceBetweenBookAndTax"/>
+        <label xlink:type="resource" xlink:label="typeOfDifferenceBetweenBookAndTax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_typeOfDifferenceBetweenBookAndTax_ja" xml:lang="en">帳簿価税務簿価差異種別</label>
+        <label xlink:type="resource" xlink:label="typeOfDifferenceBetweenBookAndTax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">帳簿と税務会計処理方法との差異の種別を示す値。永久か一時的かまたは無し。値の省略時は「無し」と同じ。
+[設定値のリスト]
+(permanent：永久)、(temporary：一時的)、(none：無し)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="typeOfDifferenceBetweenBookAndTax" xlink:to="typeOfDifferenceBetweenBookAndTax_lbl"/>
+        <!-- gl-cor:entryNumberCounter 仕訳番号カウンタ -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryNumberCounter" xlink:label="entryNumberCounter"/>
+        <label xlink:type="resource" xlink:label="entryNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryNumberCounter_ja" xml:lang="en">仕訳番号カウンタ</label>
+        <label xlink:type="resource" xlink:label="entryNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の一意なリファレンス　　カウンタ</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryNumberCounter" xlink:to="entryNumberCounter_lbl"/>
+        <!-- gl-cor:entryDetail 【仕訳明細】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_entryDetail" xlink:label="entryDetail"/>
+        <label xlink:type="resource" xlink:label="entryDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_entryDetail_ja" xml:lang="en">【仕訳明細】</label>
+        <label xlink:type="resource" xlink:label="entryDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の親タグ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="entryDetail" xlink:to="entryDetail_lbl"/>
+        <!-- gl-cor:detailLineNumber 明細行番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailLineNumber" xlink:label="detailLineNumber"/>
+        <label xlink:type="resource" xlink:label="detailLineNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailLineNumber_ja" xml:lang="en">明細行番号</label>
+        <label xlink:type="resource" xlink:label="detailLineNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailLineNumber" xlink:to="detailLineNumber_lbl"/>
+        <!-- gl-cor:detailLineNumberCounter 明細行番号カウンタ -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailLineNumberCounter" xlink:label="detailLineNumberCounter"/>
+        <label xlink:type="resource" xlink:label="detailLineNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailLineNumberCounter_ja" xml:lang="en">明細行番号カウンタ</label>
+        <label xlink:type="resource" xlink:label="detailLineNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細行の一意なリファレンス　　カウンタ</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailLineNumberCounter" xlink:to="detailLineNumberCounter_lbl"/>
+        <!-- gl-cor:detailPostingDate 転記日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailPostingDate" xlink:label="detailPostingDate"/>
+        <label xlink:type="resource" xlink:label="detailPostingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailPostingDate_ja" xml:lang="en">転記日付</label>
+        <label xlink:type="resource" xlink:label="detailPostingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingDate" xlink:to="detailPostingDate_lbl"/>
+        <!-- gl-cor:detailDocumentType 元文書種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDocumentType" xlink:label="detailDocumentType"/>
+        <label xlink:type="resource" xlink:label="detailDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDocumentType_ja" xml:lang="en">元文書種別</label>
+        <label xlink:type="resource" xlink:label="detailDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">小切手、借方メモ、貸方メモ、財務費用、顧客への請求書、顧客オーダー、仕入先オーダー、その他支払い、督促状、手形、ベンダからの請求書、出荷票、受領票、手修正、その他の列挙値による、元文書の説明。[設定値のリスト] (check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentType" xlink:to="detailDocumentType_lbl"/>
+        <!-- gl-cor:detailDocumentTypeDescription 元文書種別説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDocumentTypeDescription" xlink:label="detailDocumentTypeDescription"/>
+        <label xlink:type="resource" xlink:label="detailDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDocumentTypeDescription_ja" xml:lang="en">元文書種別説明</label>
+        <label xlink:type="resource" xlink:label="detailDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元文書の種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentTypeDescription" xlink:to="detailDocumentTypeDescription_lbl"/>
+        <!-- gl-cor:detailDocumentNumber 元文書番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDocumentNumber" xlink:label="detailDocumentNumber"/>
+        <label xlink:type="resource" xlink:label="detailDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDocumentNumber_ja" xml:lang="en">元文書番号</label>
+        <label xlink:type="resource" xlink:label="detailDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書、小切手、証憑、その他の元文書の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentNumber" xlink:to="detailDocumentNumber_lbl"/>
+        <!-- gl-cor:detailApplyToNumber 適用先番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailApplyToNumber" xlink:label="detailApplyToNumber"/>
+        <label xlink:type="resource" xlink:label="detailApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailApplyToNumber_ja" xml:lang="en">適用先番号</label>
+        <label xlink:type="resource" xlink:label="detailApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。
+未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailApplyToNumber" xlink:to="detailApplyToNumber_lbl"/>
+        <!-- gl-cor:detailDocumentReference 元文書参照情報 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDocumentReference" xlink:label="detailDocumentReference"/>
+        <label xlink:type="resource" xlink:label="detailDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDocumentReference_ja" xml:lang="en">元文書参照情報</label>
+        <label xlink:type="resource" xlink:label="detailDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentReference" xlink:to="detailDocumentReference_lbl"/>
+        <!-- gl-cor:detailDocumentDate 元文書日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDocumentDate" xlink:label="detailDocumentDate"/>
+        <label xlink:type="resource" xlink:label="detailDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDocumentDate_ja" xml:lang="en">元文書日付</label>
+        <label xlink:type="resource" xlink:label="detailDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentDate" xlink:to="detailDocumentDate_lbl"/>
+        <!-- gl-cor:detailPostingStatus 転記状態 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailPostingStatus" xlink:label="detailPostingStatus"/>
+        <label xlink:type="resource" xlink:label="detailPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailPostingStatus_ja" xml:lang="en">転記状態</label>
+        <label xlink:type="resource" xlink:label="detailPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">・据置：入力されたが、まだ転記できない。
+・転記済：転記済み。
+・提案済：検証が必要な項目。
+・シミュレーション：仮定のためにシミュレートされた項目。
+・税：税項目。
+・未転記：入力されたが、まだ検証も転記もされていない。
+・取消済：入力されたが、取り消された。
+・その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingStatus" xlink:to="detailPostingStatus_lbl"/>
+        <!-- gl-cor:detailPostingStatusDescription 転記状態説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailPostingStatusDescription" xlink:label="detailPostingStatusDescription"/>
+        <label xlink:type="resource" xlink:label="detailPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailPostingStatusDescription_ja" xml:lang="en">転記状態説明</label>
+        <label xlink:type="resource" xlink:label="detailPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記状態の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingStatusDescription" xlink:to="detailPostingStatusDescription_lbl"/>
+        <!-- gl-cor:detailDescription 説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailDescription" xlink:label="detailDescription"/>
+        <label xlink:type="resource" xlink:label="detailDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailDescription_ja" xml:lang="en">説明</label>
+        <label xlink:type="resource" xlink:label="detailDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この明細行のみに対する説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDescription" xlink:to="detailDescription_lbl"/>
+        <!-- gl-cor:detailAcknowledgementDate 承認日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAcknowledgementDate" xlink:label="detailAcknowledgementDate"/>
+        <label xlink:type="resource" xlink:label="detailAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAcknowledgementDate_ja" xml:lang="en">承認日付</label>
+        <label xlink:type="resource" xlink:label="detailAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領済みの物品/サービスを承認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAcknowledgementDate" xlink:to="detailAcknowledgementDate_lbl"/>
+        <!-- gl-cor:detailConfirmationDate 確認日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailConfirmationDate" xlink:label="detailConfirmationDate"/>
+        <label xlink:type="resource" xlink:label="detailConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailConfirmationDate_ja" xml:lang="en">確認日付</label>
+        <label xlink:type="resource" xlink:label="detailConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領を確認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailConfirmationDate" xlink:to="detailConfirmationDate_lbl"/>
+        <!-- gl-cor:monetaryAmount 金額 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_monetaryAmount" xlink:label="monetaryAmount"/>
+        <label xlink:type="resource" xlink:label="monetaryAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_monetaryAmount_ja" xml:lang="en">金額</label>
+        <label xlink:type="resource" xlink:label="monetaryAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">entryDetailの代表的な金額を示す。entryDetailごとにひとつの値を持つ。たとえば、仕訳帳の行、残高、請求書の行の金額。明細が会計業務用でなく、measurableQuantityなどの他の要素が設定されている場合は不要。符号付数値であり、金額を解釈するために用意されたsignOfAmountおよびdebitCreditCodeとあわせて使用される。通貨単位はamountCurrencyで決定される。amountCurrencyが指定されない場合は、既定または自国の通貨単位となる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="monetaryAmount" xlink:to="monetaryAmount_lbl"/>
+        <!-- gl-cor:signIndicationForAmount 金額符号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_signIndicationForAmount" xlink:label="signIndicationForAmount"/>
+        <label xlink:type="resource" xlink:label="signIndicationForAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_signIndicationForAmount_ja" xml:lang="en">金額符号</label>
+        <label xlink:type="resource" xlink:label="signIndicationForAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額の符号。貸借識別子と関連して使用される場合にだけ、4つの可能なフィールドを提供する。記入エラー後の総貸借が膨張しないように、おもに仕訳の訂正に使用される。 D+は借方を増加させる。D-は借方を減少させる。C+は貸方を減少させる。C-は貸方を増加させる。
+[設定値のリスト]
+(+)、(-)、(plus：プラス)、(minus：マイナス)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="signIndicationForAmount" xlink:to="signIndicationForAmount_lbl"/>
+        <!-- gl-cor:debitcreditIdentifier 貸借区分コード -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_debitcreditIdentifier" xlink:label="debitcreditIdentifier"/>
+        <label xlink:type="resource" xlink:label="debitcreditIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_debitcreditIdentifier_ja" xml:lang="en">貸借区分コード</label>
+        <label xlink:type="resource" xlink:label="debitcreditIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額が借方か貸方か不定かを示す識別子。
+[設定値のリスト]
+(D)、(C)、(debit：借方)、(credit：貸方)、(undefined：不定)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="debitcreditIdentifier" xlink:to="debitcreditIdentifier_lbl"/>
+        <!-- gl-cor:invoiceType 請求書種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_invoiceType" xlink:label="invoiceType"/>
+        <label xlink:type="resource" xlink:label="invoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_invoiceType_ja" xml:lang="en">請求書種別</label>
+        <label xlink:type="resource" xlink:label="invoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書の種別。(self-billed、ePoS)
+[設定値のリスト]
+(ePos：POSシステムからの発行)、(self-billed：手動発行)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="invoiceType" xlink:to="invoiceType_lbl"/>
+        <!-- gl-cor:shipFrom 出荷元 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_shipFrom" xlink:label="shipFrom"/>
+        <label xlink:type="resource" xlink:label="shipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_shipFrom_ja" xml:lang="en">出荷元</label>
+        <label xlink:type="resource" xlink:label="shipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">organizationAddressLocationIdentifierの参照情報。または自由記述。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="shipFrom" xlink:to="shipFrom_lbl"/>
+        <!-- gl-cor:dateShippedReceived 出荷/受領日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_dateShippedReceived" xlink:label="dateShippedReceived"/>
+        <label xlink:type="resource" xlink:label="dateShippedReceived_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_dateShippedReceived_ja" xml:lang="en">出荷/受領日付</label>
+        <label xlink:type="resource" xlink:label="dateShippedReceived_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">物品/サービスを出荷/受領した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dateShippedReceived" xlink:to="dateShippedReceived_lbl"/>
+        <!-- gl-cor:maturityDateOrDateDue 支払期日 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_maturityDateOrDateDue" xlink:label="maturityDateOrDateDue"/>
+        <label xlink:type="resource" xlink:label="maturityDateOrDateDue_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_maturityDateOrDateDue_ja" xml:lang="en">支払期日</label>
+        <label xlink:type="resource" xlink:label="maturityDateOrDateDue_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払期日やその他の期日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="maturityDateOrDateDue" xlink:to="maturityDateOrDateDue_lbl"/>
+        <!-- gl-cor:paymentTerms 支払条件 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_paymentTerms" xlink:label="paymentTerms"/>
+        <label xlink:type="resource" xlink:label="paymentTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_paymentTerms_ja" xml:lang="en">支払条件</label>
+        <label xlink:type="resource" xlink:label="paymentTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">割引/支払い条件。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="paymentTerms" xlink:to="paymentTerms_lbl"/>
+        <!-- gl-cor:detailAccountIdentifier 【科目識別子】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAccountIdentifier" xlink:label="detailAccountIdentifier"/>
+        <label xlink:type="resource" xlink:label="detailAccountIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAccountIdentifier_ja" xml:lang="en">【科目識別子】</label>
+        <label xlink:type="resource" xlink:label="detailAccountIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">タプル。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountIdentifier" xlink:to="detailAccountIdentifier_lbl"/>
+        <!-- gl-cor:detailIdentifierReference 【CVE情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierReference" xlink:label="detailIdentifierReference"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierReference_ja" xml:lang="en">【CVE情報】</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員のための識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierReference" xlink:to="detailIdentifierReference_lbl"/>
+        <!-- gl-cor:detailXbrl 【XBRL情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailXbrl" xlink:label="detailXbrl"/>
+        <label xlink:type="resource" xlink:label="detailXbrl_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailXbrl_ja" xml:lang="en">【XBRL情報】</label>
+        <label xlink:type="resource" xlink:label="detailXbrl_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrl" xlink:to="detailXbrl_lbl"/>
+        <!-- gl-cor:detailTax 【税情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTax" xlink:label="detailTax"/>
+        <label xlink:type="resource" xlink:label="detailTax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTax_ja" xml:lang="en">【税情報】</label>
+        <label xlink:type="resource" xlink:label="detailTax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税関連の情報のタプル。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTax" xlink:to="detailTax_lbl"/>
+        <!-- gl-cor:detailMainAccountNumber 主勘定科目コード -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailMainAccountNumber" xlink:label="detailMainAccountNumber"/>
+        <label xlink:type="resource" xlink:label="detailMainAccountNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailMainAccountNumber_ja" xml:lang="en">主勘定科目コード</label>
+        <label xlink:type="resource" xlink:label="detailMainAccountNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目。仕訳が関連する会計バケットを特定するためのコード。例えば、現金を表す1000、販売費を表す567GAAZ、税を表すZ。
+部門、支店、事業部、マネージャ、その他の識別子は、Subaccount領域に記述される。転記の必要がなければ、勘定科目は必要ではない。総勘定元帳に転記するにはほとんどの場合必要。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMainAccountNumber" xlink:to="detailMainAccountNumber_lbl"/>
+        <!-- gl-cor:detailMainAccountDescription 主勘定科目説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailMainAccountDescription" xlink:label="detailMainAccountDescription"/>
+        <label xlink:type="resource" xlink:label="detailMainAccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailMainAccountDescription_ja" xml:lang="en">主勘定科目説明</label>
+        <label xlink:type="resource" xlink:label="detailMainAccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目コードの説明。主勘定科目コードとして使用されるコードについての、人が読める記述。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMainAccountDescription" xlink:to="detailMainAccountDescription_lbl"/>
+        <!-- gl-cor:detailAccountClassification 主勘定科目区分 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAccountClassification" xlink:label="detailAccountClassification"/>
+        <label xlink:type="resource" xlink:label="detailAccountClassification_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAccountClassification_ja" xml:lang="en">主勘定科目区分</label>
+        <label xlink:type="resource" xlink:label="detailAccountClassification_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目の種別。FASB Concepts 6および、同様の国際的な様式。xbrlInfoが他のXBRL項目と関係付けられる場合、データ交換より現存システム(audit)を示すべき。
+[設定値のリスト]
+(asset：資産)、(liability：負債)、(equity：資本)、(income：収益)、(gain：利得)、(expense：費用)、(loss：損失)、(contr-to-equity：資本増加)、(distr-from-equity：資本減少)、(comprehensive-income：包括利益)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountClassification" xlink:to="detailAccountClassification_lbl"/>
+        <!-- gl-cor:detailAccountClassificationDescription 主勘定科目区分説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAccountClassificationDescription" xlink:label="detailAccountClassificationDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountClassificationDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAccountClassificationDescription_ja" xml:lang="en">主勘定科目区分説明</label>
+        <label xlink:type="resource" xlink:label="detailAccountClassificationDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目の区分の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountClassificationDescription" xlink:to="detailAccountClassificationDescription_lbl"/>
+        <!-- gl-cor:detailParentAccountNumber 親勘定科目コード -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailParentAccountNumber" xlink:label="detailParentAccountNumber"/>
+        <label xlink:type="resource" xlink:label="detailParentAccountNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailParentAccountNumber_ja" xml:lang="en">親勘定科目コード</label>
+        <label xlink:type="resource" xlink:label="detailParentAccountNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">子勘定科目から親勘定科目に包み込む科目。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailParentAccountNumber" xlink:to="detailParentAccountNumber_lbl"/>
+        <!-- gl-cor:detailPurposeOfAccount 勘定科目目的 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailPurposeOfAccount" xlink:label="detailPurposeOfAccount"/>
+        <label xlink:type="resource" xlink:label="detailPurposeOfAccount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailPurposeOfAccount_ja" xml:lang="en">勘定科目目的</label>
+        <label xlink:type="resource" xlink:label="detailPurposeOfAccount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">勘定科目群の使用法を示すコード。連結、European, IFRS, 見返、プライマリ, 税, USGAAP, Japanese,その他。日本企業では、見返仕訳で要求される税務処理に利用するかもしれない。空白の場合、企業の既定の勘定方法とみなす。
+[設定値のリスト]
+(consolidating：連結)、(european：ヨーロッパ)、(ifrs：IFRS)、(offsetting：見返)、(primary：プライマリ)、(tax：税)、(usgaap：US GAAP)、(japanese：日本)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPurposeOfAccount" xlink:to="detailPurposeOfAccount_lbl"/>
+        <!-- gl-cor:detailPurposeOfAccountDescription 勘定科目目的説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailPurposeOfAccountDescription" xlink:label="detailPurposeOfAccountDescription"/>
+        <label xlink:type="resource" xlink:label="detailPurposeOfAccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailPurposeOfAccountDescription_ja" xml:lang="en">勘定科目目的説明</label>
+        <label xlink:type="resource" xlink:label="detailPurposeOfAccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">勘定科目群の使用法の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPurposeOfAccountDescription" xlink:to="detailPurposeOfAccountDescription_lbl"/>
+        <!-- gl-cor:detailAccountType 科目種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAccountType" xlink:label="detailAccountType"/>
+        <label xlink:type="resource" xlink:label="detailAccountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAccountType_ja" xml:lang="en">科目種別</label>
+        <label xlink:type="resource" xlink:label="detailAccountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目の種別。
+[設定値のリスト]
+(account：勘定科目)、(bank：銀行)、(employee：従業員)、(customer：顧客)、(job：ジョブ)、(vendor：仕入先)、(measurable：計測可能物)、(statistical：統計)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountType" xlink:to="detailAccountType_lbl"/>
+        <!-- gl-cor:detailAccountTypeDescription 科目種別説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAccountTypeDescription" xlink:label="detailAccountTypeDescription"/>
+        <label xlink:type="resource" xlink:label="detailAccountTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAccountTypeDescription_ja" xml:lang="en">科目種別説明</label>
+        <label xlink:type="resource" xlink:label="detailAccountTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">科目の種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAccountTypeDescription" xlink:to="detailAccountTypeDescription_lbl"/>
+        <!-- gl-cor:subaccount 【サブ科目情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_subaccount" xlink:label="subaccount"/>
+        <label xlink:type="resource" xlink:label="subaccount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_subaccount_ja" xml:lang="en">【サブ科目情報】</label>
+        <label xlink:type="resource" xlink:label="subaccount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">複数のaccountSubIDと説明文を含むタプル。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="subaccount" xlink:to="subaccount_lbl"/>
+        <!-- gl-cor:subaccountDescription サブ科目説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_subaccountDescription" xlink:label="subaccountDescription"/>
+        <label xlink:type="resource" xlink:label="subaccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_subaccountDescription_ja" xml:lang="en">サブ科目説明</label>
+        <label xlink:type="resource" xlink:label="subaccountDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">accountSubIDに関する説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="subaccountDescription" xlink:to="subaccountDescription_lbl"/>
+        <!-- gl-cor:subaccountId サブ科目コード -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_subaccountId" xlink:label="subaccountId"/>
+        <label xlink:type="resource" xlink:label="subaccountId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_subaccountId_ja" xml:lang="en">サブ科目コード</label>
+        <label xlink:type="resource" xlink:label="subaccountId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">主勘定科目をaccountMainIDに指定したときに、各プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子に使用されるコードはここに指定する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="subaccountId" xlink:to="subaccountId_lbl"/>
+        <!-- gl-cor:typeOfSubaccount サブ科目種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_typeOfSubaccount" xlink:label="typeOfSubaccount"/>
+        <label xlink:type="resource" xlink:label="typeOfSubaccount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_typeOfSubaccount_ja" xml:lang="en">サブ科目種別</label>
+        <label xlink:type="resource" xlink:label="typeOfSubaccount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">小勘定科目の種別。プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子がここに配置される。 例えば、責任単位、事業単位、クラス、部、プロジェクト、基金、プログラム、ジョブ、プロフィットセンター、支店、セットアップクラス、部門、ユニット</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="typeOfSubaccount" xlink:to="typeOfSubaccount_lbl"/>
+        <!-- gl-cor:detailIdentifierCode CVE識別番号（内部） -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierCode" xlink:label="detailIdentifierCode"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierCode_ja" xml:lang="en">CVE識別番号（内部）</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceに関係付けられた、内部ID番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierCode" xlink:to="detailIdentifierCode_lbl"/>
+        <!-- gl-cor:detailIdentifierOrganizationType CVE組織種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierOrganizationType" xlink:label="detailIdentifierOrganizationType"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierOrganizationType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierOrganizationType_ja" xml:lang="en">CVE組織種別</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierOrganizationType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の組織種別。
+[設定値のリスト]
+(individual：個人)、(organization：組織)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierOrganizationType" xlink:to="detailIdentifierOrganizationType_lbl"/>
+        <!-- gl-cor:detailIdentifierOrganizationTypeDescription CVE組織種別説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierOrganizationTypeDescription" xlink:label="detailIdentifierOrganizationTypeDescription"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierOrganizationTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierOrganizationTypeDescription_ja" xml:lang="en">CVE組織種別説明</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierOrganizationTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の組織種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierOrganizationTypeDescription" xlink:to="detailIdentifierOrganizationTypeDescription_lbl"/>
+        <!-- gl-cor:detailIdentifierDescription CVE説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierDescription" xlink:label="detailIdentifierDescription"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierDescription_ja" xml:lang="en">CVE説明</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierDescription" xlink:to="detailIdentifierDescription_lbl"/>
+        <!-- gl-cor:detailIdentifierType CVE種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierType" xlink:label="detailIdentifierType"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierType_ja" xml:lang="en">CVE種別</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実体の種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierType" xlink:to="detailIdentifierType_lbl"/>
+        <!-- gl-cor:detailIdentifierCategory CVEカテゴリ -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailIdentifierCategory" xlink:label="detailIdentifierCategory"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailIdentifierCategory_ja" xml:lang="en">CVEカテゴリ</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員の分類に使用する。　（住居/商業/機関/政府や、小売/卸や、ビジネスで使用されるその他の分類）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierCategory" xlink:to="detailIdentifierCategory_lbl"/>
+        <!-- gl-cor:externalAuthority 【外部機関】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_externalAuthority" xlink:label="externalAuthority"/>
+        <label xlink:type="resource" xlink:label="externalAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_externalAuthority_ja" xml:lang="en">【外部機関】</label>
+        <label xlink:type="resource" xlink:label="externalAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">識別子と関係付けられる外部機関への参照情報を含む構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="externalAuthority" xlink:to="externalAuthority_lbl"/>
+        <!-- gl-cor:identifierPhone 【CVE電話番号】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierPhone" xlink:label="identifierPhone"/>
+        <label xlink:type="resource" xlink:label="identifierPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierPhone_ja" xml:lang="en">【CVE電話番号】</label>
+        <label xlink:type="resource" xlink:label="identifierPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の電話番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierPhone" xlink:to="identifierPhone_lbl"/>
+        <!-- gl-cor:identifierFax 【CVEFAX番号】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierFax" xlink:label="identifierFax"/>
+        <label xlink:type="resource" xlink:label="identifierFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierFax_ja" xml:lang="en">【CVEFAX番号】</label>
+        <label xlink:type="resource" xlink:label="identifierFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のFAX番号の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierFax" xlink:to="identifierFax_lbl"/>
+        <!-- gl-cor:identifierEmail 【CVEEメールアドレス】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierEmail" xlink:label="identifierEmail"/>
+        <label xlink:type="resource" xlink:label="identifierEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierEmail_ja" xml:lang="en">【CVEEメールアドレス】</label>
+        <label xlink:type="resource" xlink:label="identifierEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子のEメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierEmail" xlink:to="identifierEmail_lbl"/>
+        <!-- gl-cor:identifierContact 【CVE担当者情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierContact" xlink:label="identifierContact"/>
+        <label xlink:type="resource" xlink:label="identifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierContact_ja" xml:lang="en">【CVE担当者情報】</label>
+        <label xlink:type="resource" xlink:label="identifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者情報の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContact" xlink:to="identifierContact_lbl"/>
+        <!-- gl-cor:externalAuthorityCode 外部機関付与識別番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_externalAuthorityCode" xlink:label="externalAuthorityCode"/>
+        <label xlink:type="resource" xlink:label="externalAuthorityCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_externalAuthorityCode_ja" xml:lang="en">外部機関付与識別番号</label>
+        <label xlink:type="resource" xlink:label="externalAuthorityCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">identifierReferenceと関係付けられる、外部機関（たとえば、税務署）によるID番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="externalAuthorityCode" xlink:to="externalAuthorityCode_lbl"/>
+        <!-- gl-cor:externalAuthorityName 外部機関名 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_externalAuthorityName" xlink:label="externalAuthorityName"/>
+        <label xlink:type="resource" xlink:label="externalAuthorityName_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_externalAuthorityName_ja" xml:lang="en">外部機関名</label>
+        <label xlink:type="resource" xlink:label="externalAuthorityName_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外部機関の名前（たとえば、税務署）</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="externalAuthorityName" xlink:to="externalAuthorityName_lbl"/>
+        <!-- gl-cor:externalAuthorityVerificationDate 外部機関認証日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_externalAuthorityVerificationDate" xlink:label="externalAuthorityVerificationDate"/>
+        <label xlink:type="resource" xlink:label="externalAuthorityVerificationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_externalAuthorityVerificationDate_ja" xml:lang="en">外部機関認証日付</label>
+        <label xlink:type="resource" xlink:label="externalAuthorityVerificationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">外部機関が最後に認証した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="externalAuthorityVerificationDate" xlink:to="externalAuthorityVerificationDate_lbl"/>
+        <!-- gl-cor:identifierContactPhone 【CVE担当者電話番号】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierContactPhone" xlink:label="identifierContactPhone"/>
+        <label xlink:type="resource" xlink:label="identifierContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierContactPhone_ja" xml:lang="en">【CVE担当者電話番号】</label>
+        <label xlink:type="resource" xlink:label="identifierContactPhone_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">電話番号</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactPhone" xlink:to="identifierContactPhone_lbl"/>
+        <!-- gl-cor:identifierContactFax 【CVE担当者FAX番号】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierContactFax" xlink:label="identifierContactFax"/>
+        <label xlink:type="resource" xlink:label="identifierContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierContactFax_ja" xml:lang="en">【CVE担当者FAX番号】</label>
+        <label xlink:type="resource" xlink:label="identifierContactFax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">FAX番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactFax" xlink:to="identifierContactFax_lbl"/>
+        <!-- gl-cor:identifierContactEmail 【CVE担当者Eメールアドレス】 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_identifierContactEmail" xlink:label="identifierContactEmail"/>
+        <label xlink:type="resource" xlink:label="identifierContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_identifierContactEmail_ja" xml:lang="en">【CVE担当者Eメールアドレス】</label>
+        <label xlink:type="resource" xlink:label="identifierContactEmail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Eメールアドレス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="identifierContactEmail" xlink:to="identifierContactEmail_lbl"/>
+        <!-- gl-cor:detailXbrlAllocation XBRL割当 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailXbrlAllocation" xlink:label="detailXbrlAllocation"/>
+        <label xlink:type="resource" xlink:label="detailXbrlAllocation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailXbrlAllocation_ja" xml:lang="en">XBRL割当</label>
+        <label xlink:type="resource" xlink:label="detailXbrlAllocation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">与えられた情報が、期首残高、期末残高、期中増減のいずれであるかを示す。
+[設定値のリスト]
+(beginning_balance：期首残高)、(ending_balance：期末残高)、(period_change：期中増減)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlAllocation" xlink:to="detailXbrlAllocation_lbl"/>
+        <!-- gl-cor:detailXbrlSummaryReportingElement 集約報告エレメント -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailXbrlSummaryReportingElement" xlink:label="detailXbrlSummaryReportingElement"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailXbrlSummaryReportingElement_ja" xml:lang="en">集約報告エレメント</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係付けられた、XMLタクソノミ中のXBRL要素または、XML要素。XBRLコンセプトへのマッピング。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryReportingElement" xlink:to="detailXbrlSummaryReportingElement_lbl"/>
+        <!-- gl-cor:detailXbrlMatchingElement 明細対応エレメント -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailXbrlMatchingElement" xlink:label="detailXbrlMatchingElement"/>
+        <label xlink:type="resource" xlink:label="detailXbrlMatchingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailXbrlMatchingElement_ja" xml:lang="en">明細対応エレメント</label>
+        <label xlink:type="resource" xlink:label="detailXbrlMatchingElement_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係付けられた、XBRL-GLインスタンス中のXBRL要素。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlMatchingElement" xlink:to="detailXbrlMatchingElement_lbl"/>
+        <!-- gl-cor:detailTaxAuthority 課税庁 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxAuthority" xlink:label="detailTaxAuthority"/>
+        <label xlink:type="resource" xlink:label="detailTaxAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxAuthority_ja" xml:lang="en">課税庁</label>
+        <label xlink:type="resource" xlink:label="detailTaxAuthority_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係する課税庁の名前。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxAuthority" xlink:to="detailTaxAuthority_lbl"/>
+        <!-- gl-cor:detailTaxTableCode 税率表コード -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxTableCode" xlink:label="detailTaxTableCode"/>
+        <label xlink:type="resource" xlink:label="detailTaxTableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxTableCode_ja" xml:lang="en">税率表コード</label>
+        <label xlink:type="resource" xlink:label="detailTaxTableCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関係する課税庁で使用される税率表のコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxTableCode" xlink:to="detailTaxTableCode_lbl"/>
+        <!-- gl-cor:detailTaxDescription 課税庁説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxDescription" xlink:label="detailTaxDescription"/>
+        <label xlink:type="resource" xlink:label="detailTaxDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxDescription_ja" xml:lang="en">課税庁説明</label>
+        <label xlink:type="resource" xlink:label="detailTaxDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">課税庁の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxDescription" xlink:to="detailTaxDescription_lbl"/>
+        <!-- gl-cor:detailAmountOfTaxes 税額 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailAmountOfTaxes" xlink:label="detailAmountOfTaxes"/>
+        <label xlink:type="resource" xlink:label="detailAmountOfTaxes_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailAmountOfTaxes_ja" xml:lang="en">税額</label>
+        <label xlink:type="resource" xlink:label="detailAmountOfTaxes_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税額。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAmountOfTaxes" xlink:to="detailAmountOfTaxes_lbl"/>
+        <!-- gl-cor:detailBasisForTaxation 課税基準 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailBasisForTaxation" xlink:label="detailBasisForTaxation"/>
+        <label xlink:type="resource" xlink:label="detailBasisForTaxation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailBasisForTaxation_ja" xml:lang="en">課税基準</label>
+        <label xlink:type="resource" xlink:label="detailBasisForTaxation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">課税基準。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailBasisForTaxation" xlink:to="detailBasisForTaxation_lbl"/>
+        <!-- gl-cor:detailTaxPercentageRate 税率 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxPercentageRate" xlink:label="detailTaxPercentageRate"/>
+        <label xlink:type="resource" xlink:label="detailTaxPercentageRate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxPercentageRate_ja" xml:lang="en">税率</label>
+        <label xlink:type="resource" xlink:label="detailTaxPercentageRate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">VAT(物品税)またはその他の税のパーセント比率。
+0から1.0の間の値。たとえば50%は0.5とあらわす。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxPercentageRate" xlink:to="detailTaxPercentageRate_lbl"/>
+        <!-- gl-cor:detailTaxCategory 税区分 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxCategory" xlink:label="detailTaxCategory"/>
+        <label xlink:type="resource" xlink:label="detailTaxCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxCategory_ja" xml:lang="en">税区分</label>
+        <label xlink:type="resource" xlink:label="detailTaxCategory_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税のクラス又はカテゴリ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxCategory" xlink:to="detailTaxCategory_lbl"/>
+        <!-- gl-cor:detailTaxCommentExemptionReason 税コメント/免税理由 -->
+        <loc xlink:type="locator" xlink:href="../gl-cor-2026-MM-DD.xsd#gl-cor_detailTaxCommentExemptionReason" xlink:label="detailTaxCommentExemptionReason"/>
+        <label xlink:type="resource" xlink:label="detailTaxCommentExemptionReason_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-cor_detailTaxCommentExemptionReason_ja" xml:lang="en">税コメント/免税理由</label>
+        <label xlink:type="resource" xlink:label="detailTaxCommentExemptionReason_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">免税理由やその他のコメントのための、追加の文またはコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailTaxCommentExemptionReason" xlink:to="detailTaxCommentExemptionReason_lbl"/>
+  </labelLink>
+</linkbase>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/taf/2026-MM-DD" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD"
+  xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2026-MM-DD"
+>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gl-gen-2026-MM-DD.xsd"/>
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="gl-taf-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <!-- item/tuple element -->
+  <element name="tickingField" id="gl-taf_tickingField" type="gl-taf:tickingFieldItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="documentRemainingBalance" id="gl-taf_documentRemainingBalance" type="gl-taf:documentRemainingBalanceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="ucr" id="gl-taf_ucr" type="gl-taf:ucrItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocument" id="gl-taf_detailOriginatingDocument" type="gl-taf:detailOriginatingDocumentComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailOriginatingDocumentType" id="gl-taf_detailOriginatingDocumentType" type="gl-gen:documentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocumentNumber" id="gl-taf_detailOriginatingDocumentNumber" type="gl-taf:detailOriginatingDocumentNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocumentDate" id="gl-taf_detailOriginatingDocumentDate" type="gl-taf:detailOriginatingDocumentDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocumentIdentifierType" id="gl-taf_detailOriginatingDocumentIdentifierType" type="gl-gen:identifierTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocumentIdentifierCode" id="gl-taf_detailOriginatingDocumentIdentifierCode" type="gl-taf:detailOriginatingDocumentIdentifierCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailOriginatingDocumentIdentifierTaxCode" id="gl-taf_detailOriginatingDocumentIdentifierTaxCode" type="gl-taf:detailOriginatingDocumentIdentifierTaxCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

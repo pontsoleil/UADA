@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- gl-usk:idForReversingStandardOrMasterEntry ID for Reversing, Standard or Master Entry -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_idForReversingStandardOrMasterEntry" xlink:label="idForReversingStandardOrMasterEntry"/>
+        <label xlink:type="resource" xlink:label="idForReversingStandardOrMasterEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_idForReversingStandardOrMasterEntry_en" xml:lang="en">ID for Reversing, Standard or Master Entry</label>
+        <label xlink:type="resource" xlink:label="idForReversingStandardOrMasterEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For standard, reversing, master, cancelling or other entries an ID associated with those entries.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="idForReversingStandardOrMasterEntry" xlink:to="idForReversingStandardOrMasterEntry_lbl"/>
+        <!-- gl-usk:recurringStandardDescription Recurring Standard Description -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_recurringStandardDescription" xlink:label="recurringStandardDescription"/>
+        <label xlink:type="resource" xlink:label="recurringStandardDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_recurringStandardDescription_en" xml:lang="en">Recurring Standard Description</label>
+        <label xlink:type="resource" xlink:label="recurringStandardDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description to accompany standard or recurring ID</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="recurringStandardDescription" xlink:to="recurringStandardDescription_lbl"/>
+        <!-- gl-usk:frequencyInterval Frequency Interval -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_frequencyInterval" xlink:label="frequencyInterval"/>
+        <label xlink:type="resource" xlink:label="frequencyInterval_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_frequencyInterval_en" xml:lang="en">Frequency Interval</label>
+        <label xlink:type="resource" xlink:label="frequencyInterval_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the interval.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyInterval" xlink:to="frequencyInterval_lbl"/>
+        <!-- gl-usk:frequencyUnit Frequency Unit -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_frequencyUnit" xlink:label="frequencyUnit"/>
+        <label xlink:type="resource" xlink:label="frequencyUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_frequencyUnit_en" xml:lang="en">Frequency Unit</label>
+        <label xlink:type="resource" xlink:label="frequencyUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the unit.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="frequencyUnit" xlink:to="frequencyUnit_lbl"/>
+        <!-- gl-usk:repetitionsRemaining Repetitions Remaining -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_repetitionsRemaining" xlink:label="repetitionsRemaining"/>
+        <label xlink:type="resource" xlink:label="repetitionsRemaining_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_repetitionsRemaining_en" xml:lang="en">Repetitions Remaining</label>
+        <label xlink:type="resource" xlink:label="repetitionsRemaining_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Number of times that the recurring entry will repeat</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="repetitionsRemaining" xlink:to="repetitionsRemaining_lbl"/>
+        <!-- gl-usk:nextDateRepeat Next Date Repeat -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_nextDateRepeat" xlink:label="nextDateRepeat"/>
+        <label xlink:type="resource" xlink:label="nextDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_nextDateRepeat_en" xml:lang="en">Next Date Repeat</label>
+        <label xlink:type="resource" xlink:label="nextDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Date next repeated or standard posted</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="nextDateRepeat" xlink:to="nextDateRepeat_lbl"/>
+        <!-- gl-usk:lastDateRepeat Last Date Repeat -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_lastDateRepeat" xlink:label="lastDateRepeat"/>
+        <label xlink:type="resource" xlink:label="lastDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_lastDateRepeat_en" xml:lang="en">Last Date Repeat</label>
+        <label xlink:type="resource" xlink:label="lastDateRepeat_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Date last repeated or standard posted</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="lastDateRepeat" xlink:to="lastDateRepeat_lbl"/>
+        <!-- gl-usk:endDateOfRepeatingEntry End Date of Repeating Entry -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_endDateOfRepeatingEntry" xlink:label="endDateOfRepeatingEntry"/>
+        <label xlink:type="resource" xlink:label="endDateOfRepeatingEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_endDateOfRepeatingEntry_en" xml:lang="en">End Date of Repeating Entry</label>
+        <label xlink:type="resource" xlink:label="endDateOfRepeatingEntry_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">For standard or recurring journals, stop date/time for repetitive entry.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="endDateOfRepeatingEntry" xlink:to="endDateOfRepeatingEntry_lbl"/>
+        <!-- gl-usk:reverse Reverse -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_reverse" xlink:label="reverse"/>
+        <label xlink:type="resource" xlink:label="reverse_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_reverse_en" xml:lang="en">Reverse</label>
+        <label xlink:type="resource" xlink:label="reverse_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Should entry be reversed?</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reverse" xlink:to="reverse_lbl"/>
+        <!-- gl-usk:reversingDate Reversing Date -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_reversingDate" xlink:label="reversingDate"/>
+        <label xlink:type="resource" xlink:label="reversingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_reversingDate_en" xml:lang="en">Reversing Date</label>
+        <label xlink:type="resource" xlink:label="reversingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Date this entry should be reversed</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="reversingDate" xlink:to="reversingDate_lbl"/>
+        <!-- gl-usk:detailJobIdentifier Detail_ Job Identifier -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobIdentifier" xlink:label="detailJobIdentifier"/>
+        <label xlink:type="resource" xlink:label="detailJobIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobIdentifier_en" xml:lang="en">Detail_ Job Identifier</label>
+        <label xlink:type="resource" xlink:label="detailJobIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobIdentifier" xlink:to="detailJobIdentifier_lbl"/>
+        <!-- gl-usk:detailJobDescription Detail_ Job Description -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobDescription" xlink:label="detailJobDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobDescription_en" xml:lang="en">Detail_ Job Description</label>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of job</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobDescription" xlink:to="detailJobDescription_lbl"/>
+        <!-- gl-usk:detailJobPhase Detail_ Job Phase -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobPhase" xlink:label="detailJobPhase"/>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobPhase_en" xml:lang="en">Detail_ Job Phase</label>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhase" xlink:to="detailJobPhase_lbl"/>
+        <!-- gl-usk:detailJobPhaseDescription Detail_ Job Phase Description -->
+        <loc xlink:type="locator" xlink:href="../gl-usk-2026-MM-DD.xsd#gl-usk_detailJobPhaseDescription" xlink:label="detailJobPhaseDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-usk_detailJobPhaseDescription_en" xml:lang="en">Detail_ Job Phase Description</label>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Description of Job code, phase, activity</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhaseDescription" xlink:to="detailJobPhaseDescription_lbl"/>
+  </labelLink>
+</linkbase>

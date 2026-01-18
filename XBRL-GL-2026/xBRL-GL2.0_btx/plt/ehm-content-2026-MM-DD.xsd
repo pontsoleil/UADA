@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/ehm/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:ehm="http://www.xbrl.org/int/gl/ehm/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <include schemaLocation="../ehm/ehm-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="detailSerialOrLotCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailNextSerialOrLotNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotQuantityItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotOriginalQuantityItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotRemainingQuantityItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotOriginationItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotExpirationItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotManufacturerItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotBatchDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotWarrantyStartDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotWarrantyEndDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotWarrantyPeriodItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotWarrantPeriodUnitItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailWarrantyVendorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailWarrantyContractItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSerialOrLotCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="detailSerialOrLotComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="ehm:detailSerialOrLotCode" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotDescription" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotNumber" minOccurs="0"/>
+          <element ref="ehm:detailNextSerialOrLotNumber" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotQuantity" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotOriginalQuantity" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotRemainingQuantity" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotOrigination" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotExpiration" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotManufacturer" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotBatchDescription" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotWarrantyStartDate" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotWarrantyEndDate" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotWarrantyPeriod" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotWarrantPeriodUnit" minOccurs="0"/>
+          <element ref="ehm:detailWarrantyVendor" minOccurs="0"/>
+          <element ref="ehm:detailWarrantyContract" minOccurs="0"/>
+          <element ref="ehm:detailSerialOrLotComment" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

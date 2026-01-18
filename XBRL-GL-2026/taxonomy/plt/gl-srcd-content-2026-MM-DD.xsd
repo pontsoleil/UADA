@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/srcd/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <include schemaLocation="../srcd/gl-srcd-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="summaryReportingTaxonomyIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="summaryReportingTaxonomySchemaReferenceHrefAttributeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="summaryReportingTaxonomyHeaderItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="summaryReportingTaxonomyDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryTuplePathItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlDetailedContentFilterItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlReportingDateSelectorItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryOperatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryUnitNumeratorItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryUnitDenominatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryReportingTaxonomyIdReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailRichTextCommentCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailRichTextCommentDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailRichTextCommentContentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailRichTextCommentLocatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="summaryReportingTaxonomiesComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-srcd:summaryReportingTaxonomyId" minOccurs="0"/>
+          <element ref="gl-srcd:summaryReportingTaxonomySchemaReferenceHrefAttribute" minOccurs="0"/>
+          <element ref="gl-srcd:summaryReportingTaxonomyHeader" minOccurs="0"/>
+          <element ref="gl-srcd:summaryReportingTaxonomyDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailRichTextCommentComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-srcd:detailRichTextCommentCode" minOccurs="0"/>
+          <element ref="gl-srcd:detailRichTextCommentDescription" minOccurs="0"/>
+          <element ref="gl-srcd:detailRichTextCommentContent" minOccurs="0"/>
+          <element ref="gl-srcd:detailRichTextCommentLocator" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

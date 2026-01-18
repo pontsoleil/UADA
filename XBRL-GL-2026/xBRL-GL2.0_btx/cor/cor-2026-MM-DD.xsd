@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD"
+  xmlns:cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD"
+>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gen-2026-MM-DD.xsd"/>
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="cor-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <!-- item/tuple element -->
+  <element name="documentInformation" id="cor_documentInformation" type="cor:documentInformationComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="entityParty" id="cor_entityParty" type="cor:entityPartyComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="documentType" id="cor_documentType" type="cor:documentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="auditNumber" id="cor_auditNumber" type="cor:auditNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="revisesAuditNumber" id="cor_revisesAuditNumber" type="cor:revisesAuditNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="actionToTakeWithPreviousData" id="cor_actionToTakeWithPreviousData" type="cor:actionToTakeWithPreviousDataItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="language" id="cor_language" type="cor:languageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="creationDate" id="cor_creationDate" type="cor:creationDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="documentComment" id="cor_documentComment" type="cor:documentCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="periodCoveredStart" id="cor_periodCoveredStart" type="cor:periodCoveredStartItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="periodCoveredEnd" id="cor_periodCoveredEnd" type="cor:periodCoveredEndItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entityPartyName" id="cor_entityPartyName" type="cor:entityPartyNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entityPartyId" id="cor_entityPartyId" type="cor:entityPartyIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entityPartyBusinessDescription" id="cor_entityPartyBusinessDescription" type="cor:entityPartyBusinessDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="entityPartyAddress" id="cor_entityPartyAddress" type="cor:entityPartyAddressComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerIdentifierCode" id="cor_headerIdentifierCode" type="cor:headerIdentifierCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierOrganizationType" id="cor_headerIdentifierOrganizationType" type="gen:identifierOrganizationTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierOrganizationTypeDescription" id="cor_headerIdentifierOrganizationTypeDescription" type="cor:headerIdentifierOrganizationTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierDescription" id="cor_headerIdentifierDescription" type="cor:headerIdentifierDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierType" id="cor_headerIdentifierType" type="gen:identifierTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierCategory" id="cor_headerIdentifierCategory" type="cor:headerIdentifierCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="externalAuthority" id="cor_externalAuthority" type="cor:externalAuthorityComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="identifierPhone" id="cor_identifierPhone" type="cor:identifierPhoneComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="identifierFax" id="cor_identifierFax" type="cor:identifierFaxComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="identifierEmail" id="cor_identifierEmail" type="cor:identifierEmailComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="externalAuthorityCode" id="cor_externalAuthorityCode" type="cor:externalAuthorityCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="externalAuthorityName" id="cor_externalAuthorityName" type="cor:externalAuthorityNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="externalAuthorityVerificationDate" id="cor_externalAuthorityVerificationDate" type="cor:externalAuthorityVerificationDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="identifierContactPhone" id="cor_identifierContactPhone" type="cor:identifierContactPhoneComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="identifierContactFax" id="cor_identifierContactFax" type="cor:identifierContactFaxComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="identifierContactEmail" id="cor_identifierContactEmail" type="cor:identifierContactEmailComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerTaxAuthority" id="cor_headerTaxAuthority" type="cor:headerTaxAuthorityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTaxTableCode" id="cor_headerTaxTableCode" type="cor:headerTaxTableCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTaxDescription" id="cor_headerTaxDescription" type="cor:headerTaxDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerAmountOfTaxes" id="cor_headerAmountOfTaxes" type="cor:headerAmountOfTaxesItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerBasisForTaxation" id="cor_headerBasisForTaxation" type="cor:headerBasisForTaxationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTaxPercentageRate" id="cor_headerTaxPercentageRate" type="cor:headerTaxPercentageRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTaxCategory" id="cor_headerTaxCategory" type="cor:headerTaxCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTaxCommentExemptionReason" id="cor_headerTaxCommentExemptionReason" type="cor:headerTaxCommentExemptionReasonItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountIdentifier" id="cor_detailAccountIdentifier" type="cor:detailAccountIdentifierComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailXbrl" id="cor_detailXbrl" type="cor:detailXbrlComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailTax" id="cor_detailTax" type="cor:detailTaxComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailAccountNumber" id="cor_detailAccountNumber" type="cor:detailAccountNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountDescription" id="cor_detailAccountDescription" type="cor:detailAccountDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountClassification" id="cor_detailAccountClassification" type="cor:detailAccountClassificationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountClassificationDescription" id="cor_detailAccountClassificationDescription" type="cor:detailAccountClassificationDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailParentAccountNumber" id="cor_detailParentAccountNumber" type="cor:detailParentAccountNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailPurposeOfAccount" id="cor_detailPurposeOfAccount" type="cor:detailPurposeOfAccountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailPurposeOfAccountDescription" id="cor_detailPurposeOfAccountDescription" type="cor:detailPurposeOfAccountDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountType" id="cor_detailAccountType" type="cor:detailAccountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAccountTypeDescription" id="cor_detailAccountTypeDescription" type="cor:detailAccountTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="subaccount" id="cor_subaccount" type="cor:subaccountComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="subaccountDescription" id="cor_subaccountDescription" type="cor:subaccountDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="subaccountId" id="cor_subaccountId" type="cor:subaccountIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="type" id="cor_type" type="cor:typeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="parentSubaccount" id="cor_parentSubaccount" type="cor:parentSubaccountComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="parentSubaccountCode" id="cor_parentSubaccountCode" type="cor:parentSubaccountCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="parentSubaccountType" id="cor_parentSubaccountType" type="cor:parentSubaccountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="parentSubaccountReportingTreeId" id="cor_parentSubaccountReportingTreeId" type="cor:parentSubaccountReportingTreeIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="parentSubaccountPercentage" id="cor_parentSubaccountPercentage" type="cor:parentSubaccountPercentageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierCode" id="cor_detailIdentifierCode" type="cor:detailIdentifierCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierOrganizationType" id="cor_detailIdentifierOrganizationType" type="gen:identifierOrganizationTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierOrganizationTypeDescription" id="cor_detailIdentifierOrganizationTypeDescription" type="cor:detailIdentifierOrganizationTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierDescription" id="cor_detailIdentifierDescription" type="cor:detailIdentifierDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierType" id="cor_detailIdentifierType" type="gen:identifierTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierCategory" id="cor_detailIdentifierCategory" type="cor:detailIdentifierCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlAllocation" id="cor_detailXbrlAllocation" type="cor:detailXbrlAllocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlSummaryReportingElement" id="cor_detailXbrlSummaryReportingElement" type="cor:detailXbrlSummaryReportingElementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlMatchingElement" id="cor_detailXbrlMatchingElement" type="cor:detailXbrlMatchingElementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxAuthority" id="cor_detailTaxAuthority" type="cor:detailTaxAuthorityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxTableCode" id="cor_detailTaxTableCode" type="cor:detailTaxTableCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxDescription" id="cor_detailTaxDescription" type="cor:detailTaxDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAmountOfTaxes" id="cor_detailAmountOfTaxes" type="cor:detailAmountOfTaxesItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailBasisForTaxation" id="cor_detailBasisForTaxation" type="cor:detailBasisForTaxationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxPercentageRate" id="cor_detailTaxPercentageRate" type="cor:detailTaxPercentageRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxCategory" id="cor_detailTaxCategory" type="cor:detailTaxCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailTaxCommentExemptionReason" id="cor_detailTaxCommentExemptionReason" type="cor:detailTaxCommentExemptionReasonItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

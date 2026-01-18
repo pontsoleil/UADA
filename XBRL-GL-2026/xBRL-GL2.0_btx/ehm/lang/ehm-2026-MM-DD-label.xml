@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- ehm:detailSerialOrLot Detail_ Serial or Lot -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLot" xlink:label="detailSerialOrLot"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLot_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLot_en" xml:lang="en">Detail_ Serial or Lot</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLot_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Class for holding information about serial numbers or lots (batches). As a class, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable class.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLot" xlink:to="detailSerialOrLot_lbl"/>
+        <!-- ehm:detailSerialOrLotCode Detail_ Serial or Lot Code -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotCode" xlink:label="detailSerialOrLotCode"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotCode_en" xml:lang="en">Detail_ Serial or Lot Code</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Is this item tracked by serial numbers or lot numbers? A serial number is usually a unique number assigned to a single; a lot or batch number is provided when a batch of items is fungible but must be differentiated from similar items from other batches. Enumerated indicator for serial or lot items. Enumeration are: serial, lot, other, neither. If not included within the class, neither is assumed.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotCode" xlink:to="detailSerialOrLotCode_lbl"/>
+        <!-- ehm:detailSerialOrLotDescription Detail_ Serial or Lot Description -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotDescription" xlink:label="detailSerialOrLotDescription"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotDescription_en" xml:lang="en">Detail_ Serial or Lot Description</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description associated with gl-ehm:serialLotCode to provide specialization and especially to provide clarification for the enumerated value of other in serialLotCode. Examples might be “batch” or “group”.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotDescription" xlink:to="detailSerialOrLotDescription_lbl"/>
+        <!-- ehm:detailSerialOrLotNumber Detail_ Serial or Lot Number -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotNumber" xlink:label="detailSerialOrLotNumber"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotNumber_en" xml:lang="en">Detail_ Serial or Lot Number</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The holder for that actual serial number or lot (batch) number/code assigned to an item or a batch of items.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotNumber" xlink:to="detailSerialOrLotNumber_lbl"/>
+        <!-- ehm:detailNextSerialOrLotNumber Detail_ Next Serial or Lot Number -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailNextSerialOrLotNumber" xlink:label="detailNextSerialOrLotNumber"/>
+        <label xlink:type="resource" xlink:label="detailNextSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailNextSerialOrLotNumber_en" xml:lang="en">Detail_ Next Serial or Lot Number</label>
+        <label xlink:type="resource" xlink:label="detailNextSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A field for holding the next expected serial or lot number to be given to future assignments, or for chaining between already assigned items.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailNextSerialOrLotNumber" xlink:to="detailNextSerialOrLotNumber_lbl"/>
+        <!-- ehm:detailSerialOrLotQuantity Detail_ Serial or Lot Quantity -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotQuantity" xlink:label="detailSerialOrLotQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotQuantity_en" xml:lang="en">Detail_ Serial or Lot Quantity</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The quantity of units in this particular batch. Unit of measure is the gl-bus:measurableUnitofMeasure.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotQuantity" xlink:to="detailSerialOrLotQuantity_lbl"/>
+        <!-- ehm:detailSerialOrLotOriginalQuantity Detail_ Serial or Lot Original Quantity -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotOriginalQuantity" xlink:label="detailSerialOrLotOriginalQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOriginalQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotOriginalQuantity_en" xml:lang="en">Detail_ Serial or Lot Original Quantity</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOriginalQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The quantity of units in this batch on inception.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotOriginalQuantity" xlink:to="detailSerialOrLotOriginalQuantity_lbl"/>
+        <!-- ehm:detailSerialOrLotRemainingQuantity Detail_ Serial or Lot Remaining Quantity -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotRemainingQuantity" xlink:label="detailSerialOrLotRemainingQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotRemainingQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotRemainingQuantity_en" xml:lang="en">Detail_ Serial or Lot Remaining Quantity</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotRemainingQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The remaining quantity of units from the original batch; may be the same as the quantity in this batch or include other batches from the same original batch.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotRemainingQuantity" xlink:to="detailSerialOrLotRemainingQuantity_lbl"/>
+        <!-- ehm:detailSerialOrLotOrigination Detail_ Serial or Lot Origination -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotOrigination" xlink:label="detailSerialOrLotOrigination"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOrigination_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotOrigination_en" xml:lang="en">Detail_ Serial or Lot Origination</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOrigination_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Date of manufacture or creation.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotOrigination" xlink:to="detailSerialOrLotOrigination_lbl"/>
+        <!-- ehm:detailSerialOrLotExpiration Detail_ Serial or Lot Expiration -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotExpiration" xlink:label="detailSerialOrLotExpiration"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotExpiration_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotExpiration_en" xml:lang="en">Detail_ Serial or Lot Expiration</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotExpiration_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Expiration date of the batch.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotExpiration" xlink:to="detailSerialOrLotExpiration_lbl"/>
+        <!-- ehm:detailSerialOrLotManufacturer Detail_ Serial or Lot Manufacturer -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotManufacturer" xlink:label="detailSerialOrLotManufacturer"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotManufacturer_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotManufacturer_en" xml:lang="en">Detail_ Serial or Lot Manufacturer</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotManufacturer_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Manufacturer of the item (serial) or items (lot/batch).</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotManufacturer" xlink:to="detailSerialOrLotManufacturer_lbl"/>
+        <!-- ehm:detailSerialOrLotBatchDescription Detail_ Serial or Lot Batch Description -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotBatchDescription" xlink:label="detailSerialOrLotBatchDescription"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotBatchDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotBatchDescription_en" xml:lang="en">Detail_ Serial or Lot Batch Description</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotBatchDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A name or description of the items in the lot or batch.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotBatchDescription" xlink:to="detailSerialOrLotBatchDescription_lbl"/>
+        <!-- ehm:detailSerialOrLotWarrantyStartDate Detail_ Serial or Lot Warranty Start Date -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotWarrantyStartDate" xlink:label="detailSerialOrLotWarrantyStartDate"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotWarrantyStartDate_en" xml:lang="en">Detail_ Serial or Lot Warranty Start Date</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">If the items are covered by warranty, when that warranty covered will begin or has begun.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyStartDate" xlink:to="detailSerialOrLotWarrantyStartDate_lbl"/>
+        <!-- ehm:detailSerialOrLotWarrantyEndDate Detail_ Serial or Lot Warranty End Date -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotWarrantyEndDate" xlink:label="detailSerialOrLotWarrantyEndDate"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotWarrantyEndDate_en" xml:lang="en">Detail_ Serial or Lot Warranty End Date</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">If the items are covered by warranty, when that warranty covered will end or ended.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyEndDate" xlink:to="detailSerialOrLotWarrantyEndDate_lbl"/>
+        <!-- ehm:detailSerialOrLotWarrantyPeriod Detail_ Serial or Lot Warranty Period -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotWarrantyPeriod" xlink:label="detailSerialOrLotWarrantyPeriod"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotWarrantyPeriod_en" xml:lang="en">Detail_ Serial or Lot Warranty Period</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Warranty period – numeric portion; for a 30 day warranty period, the 30 would go here, and the day would go in gl-ehm:serialLotWarrantyPeriodUnit.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyPeriod" xlink:to="detailSerialOrLotWarrantyPeriod_lbl"/>
+        <!-- ehm:detailSerialOrLotWarrantPeriodUnit Detail_ Serial or Lot Warrant Period Unit -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotWarrantPeriodUnit" xlink:label="detailSerialOrLotWarrantPeriodUnit"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantPeriodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotWarrantPeriodUnit_en" xml:lang="en">Detail_ Serial or Lot Warrant Period Unit</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantPeriodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Warrant period – time or cycle unit portion. Values from the XBRL Unit Registry (www.xbrl.org/utr/utr.xml) are suggested where possible. Examples might include: H (hours), D (days), M (months), Y (years), machine cycles, km (kilometers).</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantPeriodUnit" xlink:to="detailSerialOrLotWarrantPeriodUnit_lbl"/>
+        <!-- ehm:detailWarrantyVendor Detail_ Warranty Vendor -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailWarrantyVendor" xlink:label="detailWarrantyVendor"/>
+        <label xlink:type="resource" xlink:label="detailWarrantyVendor_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailWarrantyVendor_en" xml:lang="en">Detail_ Warranty Vendor</label>
+        <label xlink:type="resource" xlink:label="detailWarrantyVendor_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The vendor providing warranty; this may differ from the manufacturer.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailWarrantyVendor" xlink:to="detailWarrantyVendor_lbl"/>
+        <!-- ehm:detailWarrantyContract Detail_ Warranty Contract -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailWarrantyContract" xlink:label="detailWarrantyContract"/>
+        <label xlink:type="resource" xlink:label="detailWarrantyContract_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailWarrantyContract_en" xml:lang="en">Detail_ Warranty Contract</label>
+        <label xlink:type="resource" xlink:label="detailWarrantyContract_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Contract or document information related to the warranty, such as a contract number and date or a URL with more information.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailWarrantyContract" xlink:to="detailWarrantyContract_lbl"/>
+        <!-- ehm:detailSerialOrLotComment Detail_ Serial or Lot Comment -->
+        <loc xlink:type="locator" xlink:href="../ehm-2026-MM-DD.xsd#ehm_detailSerialOrLotComment" xlink:label="detailSerialOrLotComment"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="ehm_detailSerialOrLotComment_en" xml:lang="en">Detail_ Serial or Lot Comment</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format text related to the serial number or lot.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotComment" xlink:to="detailSerialOrLotComment_lbl"/>
+  </labelLink>
+</linkbase>

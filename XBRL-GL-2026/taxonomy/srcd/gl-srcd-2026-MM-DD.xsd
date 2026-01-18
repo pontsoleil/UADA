@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/srcd/2026-MM-DD" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD"
+  xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2026-MM-DD"
+>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gl-gen-2026-MM-DD.xsd"/>
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="gl-srcd-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <!-- item/tuple element -->
+  <element name="summaryReportingTaxonomies" id="gl-srcd_summaryReportingTaxonomies" type="gl-srcd:summaryReportingTaxonomiesComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="summaryReportingTaxonomyId" id="gl-srcd_summaryReportingTaxonomyId" type="gl-srcd:summaryReportingTaxonomyIdItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="summaryReportingTaxonomySchemaReferenceHrefAttribute" id="gl-srcd_summaryReportingTaxonomySchemaReferenceHrefAttribute" type="gl-srcd:summaryReportingTaxonomySchemaReferenceHrefAttributeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="summaryReportingTaxonomyHeader" id="gl-srcd_summaryReportingTaxonomyHeader" type="gl-srcd:summaryReportingTaxonomyHeaderItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="summaryReportingTaxonomyDescription" id="gl-srcd_summaryReportingTaxonomyDescription" type="gl-srcd:summaryReportingTaxonomyDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailRichTextComment" id="gl-srcd_detailRichTextComment" type="gl-srcd:detailRichTextCommentComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailXbrlSummaryTuplePath" id="gl-srcd_detailXbrlSummaryTuplePath" type="gl-srcd:detailXbrlSummaryTuplePathItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlDetailedContentFilter" id="gl-srcd_detailXbrlDetailedContentFilter" type="gl-srcd:detailXbrlDetailedContentFilterItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlReportingDateSelector" id="gl-srcd_detailXbrlReportingDateSelector" type="gl-srcd:detailXbrlReportingDateSelectorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlSummaryOperator" id="gl-srcd_detailXbrlSummaryOperator" type="gl-srcd:detailXbrlSummaryOperatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlSummaryUnitNumerator" id="gl-srcd_detailXbrlSummaryUnitNumerator" type="gl-srcd:detailXbrlSummaryUnitNumeratorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlSummaryUnitDenominator" id="gl-srcd_detailXbrlSummaryUnitDenominator" type="gl-srcd:detailXbrlSummaryUnitDenominatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailXbrlSummaryReportingTaxonomyIdReference" id="gl-srcd_detailXbrlSummaryReportingTaxonomyIdReference" type="gl-srcd:detailXbrlSummaryReportingTaxonomyIdReferenceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailRichTextCommentCode" id="gl-srcd_detailRichTextCommentCode" type="gl-srcd:detailRichTextCommentCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailRichTextCommentDescription" id="gl-srcd_detailRichTextCommentDescription" type="gl-srcd:detailRichTextCommentDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailRichTextCommentContent" id="gl-srcd_detailRichTextCommentContent" type="gl-srcd:detailRichTextCommentContentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailRichTextCommentLocator" id="gl-srcd_detailRichTextCommentLocator" type="gl-srcd:detailRichTextCommentLocatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/ehm/2026-MM-DD" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD"
+  xmlns:ehm="http://www.xbrl.org/int/gl/ehm/2026-MM-DD"
+>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gen-2026-MM-DD.xsd"/>
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="ehm-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <!-- item/tuple element -->
+  <element name="detailSerialOrLot" id="ehm_detailSerialOrLot" type="ehm:detailSerialOrLotComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailSerialOrLotCode" id="ehm_detailSerialOrLotCode" type="ehm:detailSerialOrLotCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotDescription" id="ehm_detailSerialOrLotDescription" type="ehm:detailSerialOrLotDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotNumber" id="ehm_detailSerialOrLotNumber" type="ehm:detailSerialOrLotNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailNextSerialOrLotNumber" id="ehm_detailNextSerialOrLotNumber" type="ehm:detailNextSerialOrLotNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotQuantity" id="ehm_detailSerialOrLotQuantity" type="ehm:detailSerialOrLotQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotOriginalQuantity" id="ehm_detailSerialOrLotOriginalQuantity" type="ehm:detailSerialOrLotOriginalQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotRemainingQuantity" id="ehm_detailSerialOrLotRemainingQuantity" type="ehm:detailSerialOrLotRemainingQuantityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotOrigination" id="ehm_detailSerialOrLotOrigination" type="ehm:detailSerialOrLotOriginationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotExpiration" id="ehm_detailSerialOrLotExpiration" type="ehm:detailSerialOrLotExpirationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotManufacturer" id="ehm_detailSerialOrLotManufacturer" type="ehm:detailSerialOrLotManufacturerItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotBatchDescription" id="ehm_detailSerialOrLotBatchDescription" type="ehm:detailSerialOrLotBatchDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotWarrantyStartDate" id="ehm_detailSerialOrLotWarrantyStartDate" type="ehm:detailSerialOrLotWarrantyStartDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotWarrantyEndDate" id="ehm_detailSerialOrLotWarrantyEndDate" type="ehm:detailSerialOrLotWarrantyEndDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotWarrantyPeriod" id="ehm_detailSerialOrLotWarrantyPeriod" type="ehm:detailSerialOrLotWarrantyPeriodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotWarrantPeriodUnit" id="ehm_detailSerialOrLotWarrantPeriodUnit" type="ehm:detailSerialOrLotWarrantPeriodUnitItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailWarrantyVendor" id="ehm_detailWarrantyVendor" type="ehm:detailWarrantyVendorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailWarrantyContract" id="ehm_detailWarrantyContract" type="ehm:detailWarrantyContractItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailSerialOrLotComment" id="ehm_detailSerialOrLotComment" type="ehm:detailSerialOrLotCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xbrll="http://www.xbrl.org/2003/linkbase" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:gl-gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD" xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD" xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD" xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-MM-DD">
+    <annotation>
+        <appinfo>
+            <xbrll:linkbaseRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="gl-ext-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef"/>
+        </appinfo>
+    </annotation>
+    <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gl-gen-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" schemaLocation="../cor/gl-cor-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" schemaLocation="../bus/gl-bus-2026-MM-DD.xsd"/>
+    
+    <element name="accountingEntries" id="gl-ext_accountingEntries" type="gl-ext:accountingEntriesComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="documentHeader" id="gl-ext_documentHeader" type="gl-ext:documentHeaderComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="documentLine" id="gl-ext_documentLine" type="gl-ext:documentLineComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    
+    <element name="documentAmount" id="gl-ext_documentAmount" type="gl-ext:documentAmountComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerAmount" id="gl-ext_headerAmount" type="gl-ext:headerAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerAmountType" id="gl-ext_headerAmountType" type="gl-ext:headerAmountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="lineAmount" id="gl-ext_lineAmount" type="gl-ext:lineAmountComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="amount" id="gl-ext_amount" type="gl-ext:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="amountType" id="gl-ext_amountType" type="gl-ext:amountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentTaxes" id="gl-ext_documentTaxest" type="gl-ext:documentTaxesComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerTaxAuthority" id="gl-ext_taxAuthority" type="gl-cor:taxAuthorityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxTableCode" id="gl-ext_headerTaxTableCode" type="gl-ext:headerTaxTableCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxAmount" id="gl-ext_headerTaxAmount" type="gl-ext:headerTaxAmountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxBasis" id="gl-ext_headerTaxBasis" type="gl-ext:headerTaxBasisItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxPercentageRate" id="gl-ext_headerTaxPercentageRate" type="gl-ext:headerTaxPercentageRateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxCode" id="gl-ext_headerTaxCode" type="gl-ext:headerTaxCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxCommentExemption" id="gl-ext_taxCommentExemption" type="gl-cor:taxCommentExemptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTaxDescription" id="gl-ext_taxDescription" type="gl-cor:taxDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierReference" id="gl-ext_documentIdentifierReference" type="gl-ext:documentIdentifierReferenceComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierCategory" id="gl-ext_headerIdentifierCategory" type="gl-cor:identifierCategoryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierCode" id="gl-ext_headerIdentifierCode" type="gl-cor:identifierCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierDescription" id="gl-ext_headerIdentifierDescription" type="gl-cor:identifierDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierActive" id="gl-ext_headerIdentifierActive" type="gl-gen:activeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierPurpose" id="gl-ext_headerIdentifierPurpose" type="gl-ext:headerIdentifierPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+	<element name="documentIdentifierAddress" id="gl-ext_documentIdentifierAddress" type="gl-ext:documentIdentifierAddressComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierAddressName" id="gl-ext_headerIdentifierAddressName" type="gl-ext:headerIdentifierAddressNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressDescription" id="gl-ext_headerIdentifierAddressDescription" type="gl-ext:headerIdentifierAddressDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressPurpose" id="gl-ext_headerIdentifierAddressPurpose" type="gl-ext:headerIdentifierAddressPurposeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressLocationIdentifier" id="gl-ext_headerIdentifierAddressLocationIdentifier" type="gl-ext:headerIdentifierAddressLocationIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressBuildingNumber" id="gl-ext_headerIdentifierAddressBuildingNumber" type="gl-ext:headerIdentifierAddressBuildingNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressStreet" id="gl-ext_headerIdentifierAddressStreet" type="gl-ext:headerIdentifierAddressStreetItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressStreet2" id="gl-ext_headerIdentifierAddressStreet2" type="gl-ext:headerIdentifierAddressStreet2ItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressCity" id="gl-ext_headerIdentifierAddressCity" type="gl-ext:headerIdentifierAddressCityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressStateOrProvince" id="gl-ext_headerIdentifierAddressStateOrProvince" type="gl-ext:headerIdentifierAddressStateOrProvinceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressZipOrPostalCode" id="gl-ext_headerIdentifierAddressZipOrPostalCode" type="gl-ext:headerIdentifierAddressZipOrPostalCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    <element name="headerIdentifierAddressCountry" id="gl-ext_headerIdentifierAddressCountry" type="gl-ext:headerIdentifierAddressCountryItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/> 
+    
+    <element name="documentIdentifierPhoneNumber" id="gl-ext_documentIdentifierPhoneNumber" type="gl-ext:documentIdentifierPhoneNumberComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierPhone" id="gl-ext_headerIdentifierPhone" type="gl-ext:headerIdentifierPhoneItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierPhoneNumberDescription" id="gl-ext_headerIdentifierPhoneNumberDescription" type="gl-ext:headerIdentifierPhoneNumberDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+    <element name="documentIdentifierEMail" id="gl-ext_documentIdentifierEMail" type="gl-ext:documentIdentifierEmailAddressComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierEmail" id="gl-ext_headerIdentifierEmail" type="gl-ext:headerIdentifierEmailItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierEmailAddressUsage" id="gl-ext_headerIdentifierEmailAddressUsage" type="gl-ext:headerIdentifierEmailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierFaxNumber" id="gl-ext_documentIdentifierFaxNumber" type="gl-ext:documentIdentifierFaxNumberComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierFax" id="gl-ext_headerIdentifierFax" type="gl-ext:headerIdentifierFaxItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierFaxNumberUsage" id="gl-ext_headerIdentifierFaxNumberUsage" type="gl-ext:headerIdentifierFaxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierExternalReference" id="gl-ext_documentIdentifierExternalReference" type="gl-ext:documentIdentifierExternalReferenceComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierAuthorityCode" id="gl-ext_headerIdentifierAuthorityCode" type="gl-ext:headerIdentifierAuthorityCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierAuthority" id="gl-ext_headerIdentifierAuthority" type="gl-cor:identifierAuthorityItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierAuthorityVerificationDate" id="gl-ext_headerIdentifierAuthorityVerificationDate" type="gl-cor:identifierAuthorityVerificationDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierType" id="gl-ext_headerIdentifierType" type="gl-gen:identifierTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactPrefix" id="gl-ext_headerIdentifierContactPrefix" type="gl-cor:identifierContactPrefixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierContactInformation" id="gl-ext_documentIdentifierContactInformation" type="gl-ext:documentIdentifierContactInformationComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierContactFirstName" id="gl-ext_headerIdentifierContactFirstName" type="gl-cor:identifierContactFirstNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactSuffix" id="gl-ext_headerIdentifierContactSuffix" type="gl-cor:identifierContactSuffixItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactAttentionLine" id="gl-ext_headerIdentifierContactAttentionLine" type="gl-cor:identifierContactAttentionLineItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactPositionRole" id="gl-ext_headerIdentifierContactPositionRole" type="gl-cor:identifierContactPositionRoleItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierContactEMail" id="gl-ext_documentIdentifierContactEMail" type="gl-ext:documentIdentifierContactEMailComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierContactEmailAddress" id="gl-ext_headerIdentifierContactEmailAddress" type="gl-ext:headerIdentifierContactEmailAddressItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactEmailAddressUsage" id="gl-ext_headerIdentifierContactEmailAddressUsage" type="gl-ext:headerIdentifierContactEmailAddressUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierContactPhone" id="gl-ext_documentIdentifierContactPhone" type="gl-ext:documentIdentifierContactPhoneComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierContactPhoneNumber" id="gl-ext_headerIdentifierContactPhoneNumber" type="gl-ext:headerIdentifierContactPhoneNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactPhoneNumberDescription" id="gl-ext_headerIdentifierContactPhoneNumberDescription" type="gl-ext:headerIdentifierContactPhoneNumberDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentIdentifierContactFax" id="gl-ext_documentIdentifierContactFax" type="gl-ext:documentIdentifierContactFaxComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerIdentifierContactFaxNumber" id="gl-ext_headerIdentifierContactFaxNumber" type="gl-ext:headerIdentifierContactFaxNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactFaxNumberUsage" id="gl-ext_headerIdentifierContactFaxNumberUsage" type="gl-ext:headerIdentifierContactFaxNumberUsageItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+    <element name="headerIdentifierContactType" id="gl-ext_headerIdentifierContactType" type="gl-cor:identifierContactTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierContactLastName" id="gl-ext_headerIdentifierContactLastName" type="gl-cor:identifierContactLastNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+    <element name="headerIdentifierContactLocationIdentifierCrossReference" id="gl-ext_headerIdentifierContactLocationIdentifierCrossReference" type="gl-cor:identifierContactLastNameItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+
+    <element name="headerIdentifierOrganizationType" id="gl-ext_headerIdentifierOrganizationType" type="gl-gen:identifierOrganizationTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerIdentifierOrganizationTypeDescription" id="gl-ext_headerIdentifierOrganizationTypeDescription" type="gl-cor:identifierOrganizationTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerShipFrom" id="gl-ext_headerShipFrom" type="gl-cor:shipFromItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerShipReceivedDate" id="gl-ext_headerShipReceivedDate" type="gl-cor:shipReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerShipTo" id="gl-ext_headerShipTo" type="gl-ext:shipToItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerShippingDate" id="gl-ext_headerShippingDate" type="gl-ext:shippingDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+    <element name="documentXbrlInfo" id="gl-ext_documentXbrlInfo" type="gl-cor:xbrlInfoComplexType" substitutionGroup="xbrli:tuple" nillable="true"/>
+    <element name="headerXbrlInclude" id="gl-ext_headerXbrlInclude" type="gl-gen:xbrlIncludeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerSummaryReportingElement" id="gl-ext_headerSummaryReportingElement" type="gl-cor:summaryReportingElementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDetailMatchingElement" id="gl-ext_headerDetailMatchingElement" type="gl-cor:detailMatchingElementItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerMaturityDate" id="gl-ext_headerMaturityDate" type="gl-cor:maturityDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerTerms" id="gl-ext_headerTerms" type="gl-cor:termsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerInvoiceType" id="gl-ext_headerInvoiceType" type="gl-gen:invoiceTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentType" id="gl-ext_headerDocumentType" type="gl-gen:documentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentTypeDescription" id="gl-ext_headerDocumentTypeDescription" type="gl-cor:documentTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentNumber" id="gl-ext_headerDocumentNumber" type="gl-cor:documentNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentApplyToNumber" id="gl-ext_headerDocumentApplyToNumber" type="gl-cor:documentApplyToNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentReference" id="gl-ext_headerDocumentReference" type="gl-cor:documentReferenceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentDate" id="gl-ext_headerDocumentDate" type="gl-cor:documentDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentReceivedDate" id="gl-ext_headerDocumentReceivedDate" type="gl-bus:documentReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDocumentLocation" id="gl-ext_headerDocumentLocation" type="gl-bus:documentLocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerPaymentMethod" id="gl-ext_headerPaymentMethod" type="gl-bus:paymentMethodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerPostingStatus" id="gl-ext_headerPostingStatus" type="gl-gen:postingStatusItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerPostingStatusDescription" id="gl-ext_headerPostingStatusDescription" type="gl-cor:postingStatusDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerDateAcknowledged" id="gl-ext_headerDateAcknowledged" type="gl-cor:dateAcknowledgedItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    <element name="headerConfirmedDate" id="gl-ext_headerConfirmedDate" type="gl-cor:confirmedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+    
+
+</schema>

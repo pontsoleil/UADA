@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- btx:businessTransactions 【ビジネス取引】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_businessTransactions" xlink:label="businessTransactions"/>
+        <label xlink:type="resource" xlink:label="businessTransactions_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_businessTransactions_ja" xml:lang="en">【ビジネス取引】</label>
+        <label xlink:type="resource" xlink:label="businessTransactions_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XBRL GLのルート要素。 注文、出荷、請求書およびそれに対応する仕訳など、1つまたは複数の業務文書と会計仕訳によって表現される経済事象。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="businessTransactions" xlink:to="businessTransactions_lbl"/>
+        <!-- btx:transactionHeader 【取引ヘッダ】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_transactionHeader" xlink:label="transactionHeader"/>
+        <label xlink:type="resource" xlink:label="transactionHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_transactionHeader_ja" xml:lang="en">【取引ヘッダ】</label>
+        <label xlink:type="resource" xlink:label="transactionHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">取引文書のヘッダ・レコードをまとめて保持する親クラス。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="transactionHeader" xlink:to="transactionHeader_lbl"/>
+        <!-- btx:headerDatePosted 転記済日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDatePosted" xlink:label="headerDatePosted"/>
+        <label xlink:type="resource" xlink:label="headerDatePosted_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDatePosted_ja" xml:lang="en">転記済日付</label>
+        <label xlink:type="resource" xlink:label="headerDatePosted_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この仕訳が総勘定元帳に転記された(検証された)日付。 postingDateで示されるような会計上意味のある日付を表さないかもしれない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDatePosted" xlink:to="headerDatePosted_lbl"/>
+        <!-- btx:headerEntryCreator 仕訳作成者 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerEntryCreator" xlink:label="headerEntryCreator"/>
+        <label xlink:type="resource" xlink:label="headerEntryCreator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerEntryCreator_ja" xml:lang="en">仕訳作成者</label>
+        <label xlink:type="resource" xlink:label="headerEntryCreator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">最初に入力したオペレータのイニシャル/名前。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerEntryCreator" xlink:to="headerEntryCreator_lbl"/>
+        <!-- btx:headerEntryLastModifier 仕訳最終更新者 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerEntryLastModifier" xlink:label="headerEntryLastModifier"/>
+        <label xlink:type="resource" xlink:label="headerEntryLastModifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerEntryLastModifier_ja" xml:lang="en">仕訳最終更新者</label>
+        <label xlink:type="resource" xlink:label="headerEntryLastModifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記前に最後にこの仕訳を修正した者の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerEntryLastModifier" xlink:to="headerEntryLastModifier_lbl"/>
+        <!-- btx:headerEntryDate 入力日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerEntryDate" xlink:label="headerEntryDate"/>
+        <label xlink:type="resource" xlink:label="headerEntryDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerEntryDate_ja" xml:lang="en">入力日付</label>
+        <label xlink:type="resource" xlink:label="headerEntryDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">コンピュータへ入力した実際の日付/時刻(システム日付から自動的に与えられ、システム時計の変更により、しばしば誤った値になる)を示す。 転記日付とは別に管理される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerEntryDate" xlink:to="headerEntryDate_lbl"/>
+        <!-- btx:headerResponsiblePerson 責任者 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerResponsiblePerson" xlink:label="headerResponsiblePerson"/>
+        <label xlink:type="resource" xlink:label="headerResponsiblePerson_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerResponsiblePerson_ja" xml:lang="en">責任者</label>
+        <label xlink:type="resource" xlink:label="headerResponsiblePerson_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳を作成したか、仕訳に責任を持つ者の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerResponsiblePerson" xlink:to="headerResponsiblePerson_lbl"/>
+        <!-- btx:headerTypeIdentifier 種別識別子 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerTypeIdentifier" xlink:label="headerTypeIdentifier"/>
+        <label xlink:type="resource" xlink:label="headerTypeIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerTypeIdentifier_ja" xml:lang="en">種別識別子</label>
+        <label xlink:type="resource" xlink:label="headerTypeIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">以下の値のうちのひとつ。
+整理、予算、比較、外部会計事務所、通常、無視、消去、提案、反復、組替、シミュレーション、税、その他
+[設定値のリスト]
+(adjusting：整理)、(budget：予算)、(comparative：比較)、(external-accountant：外部会計事務所)、(standard：通常)、(passed-adjusting：無視)、(eliminating：消去)、(proposed：提案)、(recurring：反復)、(reclassifying：組替)、(simulated：シミュレーション)、(tax：税)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTypeIdentifier" xlink:to="headerTypeIdentifier_lbl"/>
+        <!-- btx:headerPostingCode 転記コード -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerPostingCode" xlink:label="headerPostingCode"/>
+        <label xlink:type="resource" xlink:label="headerPostingCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerPostingCode_ja" xml:lang="en">転記コード</label>
+        <label xlink:type="resource" xlink:label="headerPostingCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記の期間を表すコード。例えば、会計期間ファイルのコードにもとづく期間１～１３。ソフトウエアベンダーが、この値をエクスポートすることは推奨しない。期間の最終番号を提供することを勧める。可能な値としては、W1からW53、M1からM13、Q1からQ4など。開発者や出力ファイルの作成者には、実際の終了日付を提供することを勧める。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPostingCode" xlink:to="headerPostingCode_lbl"/>
+        <!-- btx:headerNumberOfEntries 仕訳総数 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerNumberOfEntries" xlink:label="headerNumberOfEntries"/>
+        <label xlink:type="resource" xlink:label="headerNumberOfEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerNumberOfEntries_ja" xml:lang="en">仕訳総数</label>
+        <label xlink:type="resource" xlink:label="headerNumberOfEntries_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の総数。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerNumberOfEntries" xlink:to="headerNumberOfEntries_lbl"/>
+        <!-- btx:headerComment 仕訳摘要 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerComment" xlink:label="headerComment"/>
+        <label xlink:type="resource" xlink:label="headerComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerComment_ja" xml:lang="en">仕訳摘要</label>
+        <label xlink:type="resource" xlink:label="headerComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳の摘要</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerComment" xlink:to="headerComment_lbl"/>
+        <!-- btx:headerEntryNumberCounter 文書番号カウンタ -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerEntryNumberCounter" xlink:label="headerEntryNumberCounter"/>
+        <label xlink:type="resource" xlink:label="headerEntryNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerEntryNumberCounter_ja" xml:lang="en">文書番号カウンタ</label>
+        <label xlink:type="resource" xlink:label="headerEntryNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書の一意なリファレンス　　カウンタ</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerEntryNumberCounter" xlink:to="headerEntryNumberCounter_lbl"/>
+        <!-- btx:headerDocumentType 元文書種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentType" xlink:label="headerDocumentType"/>
+        <label xlink:type="resource" xlink:label="headerDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentType_ja" xml:lang="en">元文書種別</label>
+        <label xlink:type="resource" xlink:label="headerDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客への請求書、ベンダからの請求書、小切手、その他の列挙値による、元文書の説明。
+[設定値のリスト]
+(check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentType" xlink:to="headerDocumentType_lbl"/>
+        <!-- btx:headerDocumentTypeDescription 元文書種別説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentTypeDescription" xlink:label="headerDocumentTypeDescription"/>
+        <label xlink:type="resource" xlink:label="headerDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentTypeDescription_ja" xml:lang="en">元文書種別説明</label>
+        <label xlink:type="resource" xlink:label="headerDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元文書の種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentTypeDescription" xlink:to="headerDocumentTypeDescription_lbl"/>
+        <!-- btx:headerInvoiceType 請求書種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerInvoiceType" xlink:label="headerInvoiceType"/>
+        <label xlink:type="resource" xlink:label="headerInvoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerInvoiceType_ja" xml:lang="en">請求書種別</label>
+        <label xlink:type="resource" xlink:label="headerInvoiceType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書の種別。(self-billed、ePoS)
+[設定値のリスト]
+(ePos：POSシステムからの発行)、(self-billed：手動発行)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerInvoiceType" xlink:to="headerInvoiceType_lbl"/>
+        <!-- btx:headerDocumentNumber 元文書番号 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentNumber" xlink:label="headerDocumentNumber"/>
+        <label xlink:type="resource" xlink:label="headerDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentNumber_ja" xml:lang="en">元文書番号</label>
+        <label xlink:type="resource" xlink:label="headerDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書、小切手、証憑、その他の元文書の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentNumber" xlink:to="headerDocumentNumber_lbl"/>
+        <!-- btx:headerApplyToNumber 適用先番号 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerApplyToNumber" xlink:label="headerApplyToNumber"/>
+        <label xlink:type="resource" xlink:label="headerApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerApplyToNumber_ja" xml:lang="en">適用先番号</label>
+        <label xlink:type="resource" xlink:label="headerApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerApplyToNumber" xlink:to="headerApplyToNumber_lbl"/>
+        <!-- btx:headerDocumentReference 元文書参照情報 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentReference" xlink:label="headerDocumentReference"/>
+        <label xlink:type="resource" xlink:label="headerDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentReference_ja" xml:lang="en">元文書参照情報</label>
+        <label xlink:type="resource" xlink:label="headerDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentReference" xlink:to="headerDocumentReference_lbl"/>
+        <!-- btx:headerDocumentDate 元文書日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentDate" xlink:label="headerDocumentDate"/>
+        <label xlink:type="resource" xlink:label="headerDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentDate_ja" xml:lang="en">元文書日付</label>
+        <label xlink:type="resource" xlink:label="headerDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentDate" xlink:to="headerDocumentDate_lbl"/>
+        <!-- btx:headerReceivedDate 元文書受領日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerReceivedDate" xlink:label="headerReceivedDate"/>
+        <label xlink:type="resource" xlink:label="headerReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerReceivedDate_ja" xml:lang="en">元文書受領日付</label>
+        <label xlink:type="resource" xlink:label="headerReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">（必要であれば）文書の受領が記録された日付/時刻。実際に受領された日付をあらわす。転記日付は別に管理される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerReceivedDate" xlink:to="headerReceivedDate_lbl"/>
+        <!-- btx:headerDocumentLocation 元文書格納場所 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDocumentLocation" xlink:label="headerDocumentLocation"/>
+        <label xlink:type="resource" xlink:label="headerDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDocumentLocation_ja" xml:lang="en">元文書格納場所</label>
+        <label xlink:type="resource" xlink:label="headerDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書の格納場所である、URI、ファイル名またはその他の参照情報。代わりに、文書のテキストも記述可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDocumentLocation" xlink:to="headerDocumentLocation_lbl"/>
+        <!-- btx:headerPaymentMethod 支払方法 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerPaymentMethod" xlink:label="headerPaymentMethod"/>
+        <label xlink:type="resource" xlink:label="headerPaymentMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerPaymentMethod_ja" xml:lang="en">支払方法</label>
+        <label xlink:type="resource" xlink:label="headerPaymentMethod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払いのために使用された、または使用される方法。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPaymentMethod" xlink:to="headerPaymentMethod_lbl"/>
+        <!-- btx:headerPostingStatus 転記状態 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerPostingStatus" xlink:label="headerPostingStatus"/>
+        <label xlink:type="resource" xlink:label="headerPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerPostingStatus_ja" xml:lang="en">転記状態</label>
+        <label xlink:type="resource" xlink:label="headerPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">・据置：入力されたが、まだ転記できない。
+・転記済：転記済み。
+・提案済：検証が必要な項目。
+・シミュレーション：仮定のためにシミュレートされた項目。
+・税：税項目。
+・未転記：入力されたが、まだ検証も転記もされていない。
+・取消済：入力されたが、取り消された。
+・その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPostingStatus" xlink:to="headerPostingStatus_lbl"/>
+        <!-- btx:headerPostingStatusDescription 転記状態説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerPostingStatusDescription" xlink:label="headerPostingStatusDescription"/>
+        <label xlink:type="resource" xlink:label="headerPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerPostingStatusDescription_ja" xml:lang="en">転記状態説明</label>
+        <label xlink:type="resource" xlink:label="headerPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記状態の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPostingStatusDescription" xlink:to="headerPostingStatusDescription_lbl"/>
+        <!-- btx:headerAcknowledgementDate 承認日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerAcknowledgementDate" xlink:label="headerAcknowledgementDate"/>
+        <label xlink:type="resource" xlink:label="headerAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerAcknowledgementDate_ja" xml:lang="en">承認日付</label>
+        <label xlink:type="resource" xlink:label="headerAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領済みの物品/サービスを承認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAcknowledgementDate" xlink:to="headerAcknowledgementDate_lbl"/>
+        <!-- btx:headerConfirmationDate 確認日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerConfirmationDate" xlink:label="headerConfirmationDate"/>
+        <label xlink:type="resource" xlink:label="headerConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerConfirmationDate_ja" xml:lang="en">確認日付</label>
+        <label xlink:type="resource" xlink:label="headerConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領を確認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerConfirmationDate" xlink:to="headerConfirmationDate_lbl"/>
+        <!-- btx:headerShipFrom 出荷元 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerShipFrom" xlink:label="headerShipFrom"/>
+        <label xlink:type="resource" xlink:label="headerShipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerShipFrom_ja" xml:lang="en">出荷元</label>
+        <label xlink:type="resource" xlink:label="headerShipFrom_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">使用されていれば住所識別子の参照情報。または自由記述。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerShipFrom" xlink:to="headerShipFrom_lbl"/>
+        <!-- btx:headerDateShippedReceived 出荷/受領日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerDateShippedReceived" xlink:label="headerDateShippedReceived"/>
+        <label xlink:type="resource" xlink:label="headerDateShippedReceived_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerDateShippedReceived_ja" xml:lang="en">出荷/受領日付</label>
+        <label xlink:type="resource" xlink:label="headerDateShippedReceived_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">物品/サービスを出荷/受領した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerDateShippedReceived" xlink:to="headerDateShippedReceived_lbl"/>
+        <!-- btx:headerMaturityDateOrDateDue 支払期日 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerMaturityDateOrDateDue" xlink:label="headerMaturityDateOrDateDue"/>
+        <label xlink:type="resource" xlink:label="headerMaturityDateOrDateDue_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerMaturityDateOrDateDue_ja" xml:lang="en">支払期日</label>
+        <label xlink:type="resource" xlink:label="headerMaturityDateOrDateDue_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払期日やその他の期日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerMaturityDateOrDateDue" xlink:to="headerMaturityDateOrDateDue_lbl"/>
+        <!-- btx:headerPaymentTerms 支払条件 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerPaymentTerms" xlink:label="headerPaymentTerms"/>
+        <label xlink:type="resource" xlink:label="headerPaymentTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerPaymentTerms_ja" xml:lang="en">支払条件</label>
+        <label xlink:type="resource" xlink:label="headerPaymentTerms_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">割引/支払い条件。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerPaymentTerms" xlink:to="headerPaymentTerms_lbl"/>
+        <!-- btx:headerIdentifierReference 【CVE情報】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerIdentifierReference" xlink:label="headerIdentifierReference"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerIdentifierReference_ja" xml:lang="en">【CVE情報】</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員のための識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierReference" xlink:to="headerIdentifierReference_lbl"/>
+        <!-- btx:headerTax 【税情報】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerTax" xlink:label="headerTax"/>
+        <label xlink:type="resource" xlink:label="headerTax_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerTax_ja" xml:lang="en">【税情報】</label>
+        <label xlink:type="resource" xlink:label="headerTax_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税関連の情報のタプル。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerTax" xlink:to="headerTax_lbl"/>
+        <!-- btx:headerAmountStructure 【ヘッダー金額構造】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerAmountStructure" xlink:label="headerAmountStructure"/>
+        <label xlink:type="resource" xlink:label="headerAmountStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerAmountStructure_ja" xml:lang="en">【ヘッダー金額構造】</label>
+        <label xlink:type="resource" xlink:label="headerAmountStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書全体に適用される金額や通貨情報（文書レベルの合計額や集計された税額など）を表現する構造。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAmountStructure" xlink:to="headerAmountStructure_lbl"/>
+        <!-- btx:transactionDetail 【仕訳明細】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_transactionDetail" xlink:label="transactionDetail"/>
+        <label xlink:type="resource" xlink:label="transactionDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_transactionDetail_ja" xml:lang="en">【仕訳明細】</label>
+        <label xlink:type="resource" xlink:label="transactionDetail_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の親タグ。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="transactionDetail" xlink:to="transactionDetail_lbl"/>
+        <!-- btx:headerIdentifierContact 【CVE担当者情報】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerIdentifierContact" xlink:label="headerIdentifierContact"/>
+        <label xlink:type="resource" xlink:label="headerIdentifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerIdentifierContact_ja" xml:lang="en">【CVE担当者情報】</label>
+        <label xlink:type="resource" xlink:label="headerIdentifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者情報の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerIdentifierContact" xlink:to="headerIdentifierContact_lbl"/>
+        <!-- btx:headerAmount 金額 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerAmount" xlink:label="headerAmount"/>
+        <label xlink:type="resource" xlink:label="headerAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerAmount_ja" xml:lang="en">金額</label>
+        <label xlink:type="resource" xlink:label="headerAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">指定された通貨で表現された金額の数値。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAmount" xlink:to="headerAmount_lbl"/>
+        <!-- btx:headerAmountType 金額種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerAmountType" xlink:label="headerAmountType"/>
+        <label xlink:type="resource" xlink:label="headerAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerAmountType_ja" xml:lang="en">金額種別</label>
+        <label xlink:type="resource" xlink:label="headerAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税額、課税標準額、値引金額、追加請求金額など、金額の種類または役割を指定するコードまたはテキスト。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerAmountType" xlink:to="headerAmountType_lbl"/>
+        <!-- btx:headerCurrencyCode 通貨コード -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerCurrencyCode" xlink:label="headerCurrencyCode"/>
+        <label xlink:type="resource" xlink:label="headerCurrencyCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerCurrencyCode_ja" xml:lang="en">通貨コード</label>
+        <label xlink:type="resource" xlink:label="headerCurrencyCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額が表現される通貨を指定するコード。通常は ISO 4217 通貨コードを用いる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerCurrencyCode" xlink:to="headerCurrencyCode_lbl"/>
+        <!-- btx:headerCurrencyCodeType 通貨コード種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_headerCurrencyCodeType" xlink:label="headerCurrencyCodeType"/>
+        <label xlink:type="resource" xlink:label="headerCurrencyCodeType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_headerCurrencyCodeType_ja" xml:lang="en">通貨コード種別</label>
+        <label xlink:type="resource" xlink:label="headerCurrencyCodeType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額に対する通貨の役割（機能通貨、ローカル通貨、報告通貨、取引通貨など）を指定するコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="headerCurrencyCodeType" xlink:to="headerCurrencyCodeType_lbl"/>
+        <!-- btx:detailLineNumber 明細行番号 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailLineNumber" xlink:label="detailLineNumber"/>
+        <label xlink:type="resource" xlink:label="detailLineNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailLineNumber_ja" xml:lang="en">明細行番号</label>
+        <label xlink:type="resource" xlink:label="detailLineNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">仕訳明細の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailLineNumber" xlink:to="detailLineNumber_lbl"/>
+        <!-- btx:detailLineNumberCounter 明細行番号カウンタ -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailLineNumberCounter" xlink:label="detailLineNumberCounter"/>
+        <label xlink:type="resource" xlink:label="detailLineNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailLineNumberCounter_ja" xml:lang="en">明細行番号カウンタ</label>
+        <label xlink:type="resource" xlink:label="detailLineNumberCounter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細行の一意なリファレンス　　カウンタ</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailLineNumberCounter" xlink:to="detailLineNumberCounter_lbl"/>
+        <!-- btx:detailPostingDate 転記日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailPostingDate" xlink:label="detailPostingDate"/>
+        <label xlink:type="resource" xlink:label="detailPostingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailPostingDate_ja" xml:lang="en">転記日付</label>
+        <label xlink:type="resource" xlink:label="detailPostingDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingDate" xlink:to="detailPostingDate_lbl"/>
+        <!-- btx:detailMemoLine メモ行フラグ -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailMemoLine" xlink:label="detailMemoLine"/>
+        <label xlink:type="resource" xlink:label="detailMemoLine_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailMemoLine_ja" xml:lang="en">メモ行フラグ</label>
+        <label xlink:type="resource" xlink:label="detailMemoLine_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">明細行が単に追加の詳細を与えるものであり、転記金額に含めるべきでないことを示すブール値。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMemoLine" xlink:to="detailMemoLine_lbl"/>
+        <!-- btx:detailDocumentType 元文書種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentType" xlink:label="detailDocumentType"/>
+        <label xlink:type="resource" xlink:label="detailDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentType_ja" xml:lang="en">元文書種別</label>
+        <label xlink:type="resource" xlink:label="detailDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">小切手、借方メモ、貸方メモ、財務費用、顧客への請求書、顧客オーダー、仕入先オーダー、その他支払い、督促状、手形、ベンダからの請求書、出荷票、受領票、手修正、その他の列挙値による、元文書の説明。[設定値のリスト]
+ (check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentType" xlink:to="detailDocumentType_lbl"/>
+        <!-- btx:detailDocumentTypeDescription 元文書種別説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentTypeDescription" xlink:label="detailDocumentTypeDescription"/>
+        <label xlink:type="resource" xlink:label="detailDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentTypeDescription_ja" xml:lang="en">元文書種別説明</label>
+        <label xlink:type="resource" xlink:label="detailDocumentTypeDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元文書の種別の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentTypeDescription" xlink:to="detailDocumentTypeDescription_lbl"/>
+        <!-- btx:detailDocumentNumber 元文書番号 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentNumber" xlink:label="detailDocumentNumber"/>
+        <label xlink:type="resource" xlink:label="detailDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentNumber_ja" xml:lang="en">元文書番号</label>
+        <label xlink:type="resource" xlink:label="detailDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">請求書、小切手、証憑、その他の元文書の識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentNumber" xlink:to="detailDocumentNumber_lbl"/>
+        <!-- btx:detailApplyToNumber 適用先番号 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailApplyToNumber" xlink:label="detailApplyToNumber"/>
+        <label xlink:type="resource" xlink:label="detailApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailApplyToNumber_ja" xml:lang="en">適用先番号</label>
+        <label xlink:type="resource" xlink:label="detailApplyToNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。
+未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailApplyToNumber" xlink:to="detailApplyToNumber_lbl"/>
+        <!-- btx:detailDocumentReference 元文書参照情報 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentReference" xlink:label="detailDocumentReference"/>
+        <label xlink:type="resource" xlink:label="detailDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentReference_ja" xml:lang="en">元文書参照情報</label>
+        <label xlink:type="resource" xlink:label="detailDocumentReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentReference" xlink:to="detailDocumentReference_lbl"/>
+        <!-- btx:detailDocumentDate 元文書日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentDate" xlink:label="detailDocumentDate"/>
+        <label xlink:type="resource" xlink:label="detailDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentDate_ja" xml:lang="en">元文書日付</label>
+        <label xlink:type="resource" xlink:label="detailDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentDate" xlink:to="detailDocumentDate_lbl"/>
+        <!-- btx:detailReceivedDate 元文書受領日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailReceivedDate" xlink:label="detailReceivedDate"/>
+        <label xlink:type="resource" xlink:label="detailReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailReceivedDate_ja" xml:lang="en">元文書受領日付</label>
+        <label xlink:type="resource" xlink:label="detailReceivedDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">（必要であれば）文書の受領が記録された日付/時刻。実際に受領された日付をあらわす。転記日付は別に管理される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailReceivedDate" xlink:to="detailReceivedDate_lbl"/>
+        <!-- btx:detailDocumentLocation 元文書格納場所 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDocumentLocation" xlink:label="detailDocumentLocation"/>
+        <label xlink:type="resource" xlink:label="detailDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDocumentLocation_ja" xml:lang="en">元文書格納場所</label>
+        <label xlink:type="resource" xlink:label="detailDocumentLocation_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書の格納場所である、URI、ファイル名またはその他の参照情報。代わりに、文書のテキストも記述可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDocumentLocation" xlink:to="detailDocumentLocation_lbl"/>
+        <!-- btx:detailPostingStatus 転記状態 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailPostingStatus" xlink:label="detailPostingStatus"/>
+        <label xlink:type="resource" xlink:label="detailPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailPostingStatus_ja" xml:lang="en">転記状態</label>
+        <label xlink:type="resource" xlink:label="detailPostingStatus_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">据置：入力されたが、まだ転記できない。
+転記済：転記済み。
+提案済：検証が必要な項目。
+シミュレーション：仮定のためにシミュレートされた項目。
+税：税項目。
+未転記：入力されたが、まだ検証も転記もされていない。
+取消済：入力されたが、取り消された。
+その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingStatus" xlink:to="detailPostingStatus_lbl"/>
+        <!-- btx:detailPostingStatusDescription 転記状態説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailPostingStatusDescription" xlink:label="detailPostingStatusDescription"/>
+        <label xlink:type="resource" xlink:label="detailPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailPostingStatusDescription_ja" xml:lang="en">転記状態説明</label>
+        <label xlink:type="resource" xlink:label="detailPostingStatusDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">転記状態の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailPostingStatusDescription" xlink:to="detailPostingStatusDescription_lbl"/>
+        <!-- btx:detailDescription 説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailDescription" xlink:label="detailDescription"/>
+        <label xlink:type="resource" xlink:label="detailDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailDescription_ja" xml:lang="en">説明</label>
+        <label xlink:type="resource" xlink:label="detailDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この明細行のみに対する説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailDescription" xlink:to="detailDescription_lbl"/>
+        <!-- btx:detailAcknowledgementDate 承認日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailAcknowledgementDate" xlink:label="detailAcknowledgementDate"/>
+        <label xlink:type="resource" xlink:label="detailAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailAcknowledgementDate_ja" xml:lang="en">承認日付</label>
+        <label xlink:type="resource" xlink:label="detailAcknowledgementDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領済みの物品/サービスを承認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAcknowledgementDate" xlink:to="detailAcknowledgementDate_lbl"/>
+        <!-- btx:detailConfirmationDate 確認日付 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailConfirmationDate" xlink:label="detailConfirmationDate"/>
+        <label xlink:type="resource" xlink:label="detailConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailConfirmationDate_ja" xml:lang="en">確認日付</label>
+        <label xlink:type="resource" xlink:label="detailConfirmationDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">出荷/受領を確認した日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailConfirmationDate" xlink:to="detailConfirmationDate_lbl"/>
+        <!-- btx:detailMeasurableClassIdentifier 測定可能分類コード -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailMeasurableClassIdentifier" xlink:label="detailMeasurableClassIdentifier"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailMeasurableClassIdentifier_ja" xml:lang="en">測定可能分類コード</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">在庫、固定資産、その他の測定可能な分類を識別するための列挙コード。列挙例：原材料、仕掛品、製品、組立品、備品、土地、建物、機械、家具、車両、その他。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableClassIdentifier" xlink:to="detailMeasurableClassIdentifier_lbl"/>
+        <!-- btx:detailMeasurableClassDescription 測定可能分類の説明 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailMeasurableClassDescription" xlink:label="detailMeasurableClassDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailMeasurableClassDescription_ja" xml:lang="en">測定可能分類の説明</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">「その他」の列挙値を補足・特定するための自由記述形式の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableClassDescription" xlink:to="detailMeasurableClassDescription_lbl"/>
+        <!-- btx:detailGeospatialCoordinate 地理座標 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailGeospatialCoordinate" xlink:label="detailGeospatialCoordinate"/>
+        <label xlink:type="resource" xlink:label="detailGeospatialCoordinate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailGeospatialCoordinate_ja" xml:lang="en">地理座標</label>
+        <label xlink:type="resource" xlink:label="detailGeospatialCoordinate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">本項目の関連位置を入力。形式は以下のいずれか：
+・度分秒 (DMS): 41°24'12.2"N 2°10'26.5"E
+・度と小数分 (DMM): 41 24.2028, 2 10.4418
+・10進度 (DD): 41.40338, 2.17403</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailGeospatialCoordinate" xlink:to="detailGeospatialCoordinate_lbl"/>
+        <!-- btx:detailIdentifierReference 【CVE情報】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailIdentifierReference" xlink:label="detailIdentifierReference"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailIdentifierReference_ja" xml:lang="en">【CVE情報】</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">顧客、仕入先、従業員のための識別子。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierReference" xlink:to="detailIdentifierReference_lbl"/>
+        <!-- btx:detailAmountStructure 【行金額構造】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailAmountStructure" xlink:label="detailAmountStructure"/>
+        <label xlink:type="resource" xlink:label="detailAmountStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailAmountStructure_ja" xml:lang="en">【行金額構造】</label>
+        <label xlink:type="resource" xlink:label="detailAmountStructure_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">個々の明細行に適用される金額や通貨情報（行レベルの正味金額、税計算基礎額、値引または追加請求など）を表現する構造。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAmountStructure" xlink:to="detailAmountStructure_lbl"/>
+        <!-- btx:detailIdentifierContact 【CVE担当者情報】 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailIdentifierContact" xlink:label="detailIdentifierContact"/>
+        <label xlink:type="resource" xlink:label="detailIdentifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailIdentifierContact_ja" xml:lang="en">【CVE担当者情報】</label>
+        <label xlink:type="resource" xlink:label="detailIdentifierContact_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">CVE識別子の担当者情報の構造体。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailIdentifierContact" xlink:to="detailIdentifierContact_lbl"/>
+        <!-- btx:detailAmount 金額 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailAmount" xlink:label="detailAmount"/>
+        <label xlink:type="resource" xlink:label="detailAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailAmount_ja" xml:lang="en">金額</label>
+        <label xlink:type="resource" xlink:label="detailAmount_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">指定された通貨で表現された金額の数値。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAmount" xlink:to="detailAmount_lbl"/>
+        <!-- btx:detailAmountType 金額種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailAmountType" xlink:label="detailAmountType"/>
+        <label xlink:type="resource" xlink:label="detailAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailAmountType_ja" xml:lang="en">金額種別</label>
+        <label xlink:type="resource" xlink:label="detailAmountType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">税額、課税標準額、値引金額、追加請求金額など、金額の種類または役割を指定するコードまたはテキスト。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailAmountType" xlink:to="detailAmountType_lbl"/>
+        <!-- btx:detailCurrencyCode 通貨コード -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailCurrencyCode" xlink:label="detailCurrencyCode"/>
+        <label xlink:type="resource" xlink:label="detailCurrencyCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailCurrencyCode_ja" xml:lang="en">通貨コード</label>
+        <label xlink:type="resource" xlink:label="detailCurrencyCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額が表現される通貨を指定するコード。通常は ISO 4217 通貨コードを用いる。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailCurrencyCode" xlink:to="detailCurrencyCode_lbl"/>
+        <!-- btx:detailCurrencyCodeType 通貨コード種別 -->
+        <loc xlink:type="locator" xlink:href="../btx-2026-MM-DD.xsd#btx_detailCurrencyCodeType" xlink:label="detailCurrencyCodeType"/>
+        <label xlink:type="resource" xlink:label="detailCurrencyCodeType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="btx_detailCurrencyCodeType_ja" xml:lang="en">通貨コード種別</label>
+        <label xlink:type="resource" xlink:label="detailCurrencyCodeType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">金額に対する通貨の役割（機能通貨、ローカル通貨、報告通貨、取引通貨など）を指定するコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailCurrencyCodeType" xlink:to="detailCurrencyCodeType_lbl"/>
+  </labelLink>
+</linkbase>

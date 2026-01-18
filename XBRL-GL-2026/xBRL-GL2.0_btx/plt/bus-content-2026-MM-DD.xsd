@@ -1,0 +1,1076 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:usk="http://www.xbrl.org/int/gl/usk/2026-MM-DD"
+  xmlns:bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/usk/2026-MM-DD" schemaLocation="usk-content-2026-MM-DD.xsd"/>
+  <include schemaLocation="../bus/bus-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="creatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodCountItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodUnitItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodUnitDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="sourceApplicationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="targetApplicationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyDefaultAccountingMethodPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyDefaultAccountingMethodPurposeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyBusinessDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyFiscalYearStartItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyFiscalYearEndItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="organizationIdentifierCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="organizationIdentifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyLocationIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyBuildingNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyStreetItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyAddressDetailItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyCityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyStateOrProvinceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyCountryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyZipOrPostalCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyWebSiteUrlItemType">
+    <simpleContent>
+      <restriction base="xbrli:anyURIItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyWebSiteDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactPrefixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactLastNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactFirstNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactSuffixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactAttentionLineItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactPositionRoleItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactContactTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyContactLocationIdCrossReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodPurposeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodStartDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountingMethodEndDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantTypeOfEngagementItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantTypeOfEngagementDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantLocationIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantBuildingNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantStreetItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantAddressDetailItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantCityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantStateOrProvinceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantCountryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantZipOrPostalCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactPrefixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactLastNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactFirstNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactSuffixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactAttentionLineItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactPositionRoleItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactContactTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="accountantContactLocationIdCrossReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarTitleItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarTypeCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarClosedStatusItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPurposeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodStartDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodEndDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodClosedDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierLocationIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierBuildingNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierStreetItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierAddressDetailItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierCityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierStateOrProvinceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierCountryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="identifierZipOrPostalCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactPrefixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactLastNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactFirstNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactSuffixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactAttentionLineItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactPositionRoleItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactContactTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierContactLocationIdCrossReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountingMethodItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountingMethodDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountingMethodPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountingMethodPurposeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierPurposeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactPrefixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactLastNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactFirstNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactSuffixItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactAttentionLineItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactPositionRoleItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactContactTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierContactLocationIdCrossReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableCodeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableIdentificationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSchemaForMeasurableIdentificationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSecondaryMeasurableCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailSchemaForSecondaryMeasurableIdentificationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableQuantityItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableQualifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableUnitOfMeasureItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurablePerUnitCostPriceItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableStartTimeItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableEndTimeItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageJurisdictionItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMethodItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageLifeItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageStartDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageEndDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="entityPartyPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyPhoneNumber" minOccurs="0"/>
+          <element ref="bus:entityPartyPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyFaxNumber" minOccurs="0"/>
+          <element ref="bus:entityPartyFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyEmailAddress" minOccurs="0"/>
+          <element ref="bus:entityPartyEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="organizationIdentifierComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:organizationIdentifierCode" minOccurs="0"/>
+          <element ref="bus:organizationIdentifierDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyWebSiteComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyWebSiteUrl" minOccurs="0"/>
+          <element ref="bus:entityPartyWebSiteDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyContactComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyContactPrefix" minOccurs="0"/>
+          <element ref="bus:entityPartyContactLastName" minOccurs="0"/>
+          <element ref="bus:entityPartyContactFirstName" minOccurs="0"/>
+          <element ref="bus:entityPartyContactSuffix" minOccurs="0"/>
+          <element ref="bus:entityPartyContactAttentionLine" minOccurs="0"/>
+          <element ref="bus:entityPartyContactPositionRole" minOccurs="0"/>
+          <element ref="bus:entityPartyContactContactType" minOccurs="0"/>
+          <element ref="bus:entityPartyContactLocationIdCrossReference" minOccurs="0"/>
+          <element ref="bus:entityPartyContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyContactFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyContactEmail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountingMethodStructureComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountingMethod" minOccurs="0"/>
+          <element ref="bus:accountingMethodDescription" minOccurs="0"/>
+          <element ref="bus:accountingMethodPurpose" minOccurs="0"/>
+          <element ref="bus:accountingMethodPurposeDescription" minOccurs="0"/>
+          <element ref="bus:accountingMethodStartDate" minOccurs="0"/>
+          <element ref="bus:accountingMethodEndDate" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantName" minOccurs="0"/>
+          <element ref="bus:accountantTypeOfEngagement" minOccurs="0"/>
+          <element ref="bus:accountantTypeOfEngagementDescription" minOccurs="0"/>
+          <element ref="bus:accountantAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:accountantContact" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="reportingCalendarComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:reportingCalendarCode" minOccurs="0"/>
+          <element ref="bus:reportingCalendarDescription" minOccurs="0"/>
+          <element ref="bus:reportingCalendarTitle" minOccurs="0"/>
+          <element ref="bus:reportingCalendarTypeCode" minOccurs="0"/>
+          <element ref="bus:reportingCalendarClosedStatus" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPurpose" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPurposeDescription" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPeriod" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyContactPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyContactPhoneNumber" minOccurs="0"/>
+          <element ref="bus:entityPartyContactPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyContactFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyContactFaxNumber" minOccurs="0"/>
+          <element ref="bus:entityPartyContactFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyContactEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyContactEmailAddress" minOccurs="0"/>
+          <element ref="bus:entityPartyContactEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantAddressComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantName" minOccurs="0"/>
+          <element ref="bus:accountantDescription" minOccurs="0"/>
+          <element ref="bus:accountantPurpose" minOccurs="0"/>
+          <element ref="bus:accountantLocationId" minOccurs="0"/>
+          <element ref="bus:accountantBuildingNumber" minOccurs="0"/>
+          <element ref="bus:accountantStreet" minOccurs="0"/>
+          <element ref="bus:accountantAddressDetail" minOccurs="0"/>
+          <element ref="bus:accountantCity" minOccurs="0"/>
+          <element ref="bus:accountantStateOrProvince" minOccurs="0"/>
+          <element ref="bus:accountantCountry" minOccurs="0"/>
+          <element ref="bus:accountantZipOrPostalCode" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantContactComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantContactPrefix" minOccurs="0"/>
+          <element ref="bus:accountantContactLastName" minOccurs="0"/>
+          <element ref="bus:accountantContactFirstName" minOccurs="0"/>
+          <element ref="bus:accountantContactSuffix" minOccurs="0"/>
+          <element ref="bus:accountantContactAttentionLine" minOccurs="0"/>
+          <element ref="bus:accountantContactPositionRole" minOccurs="0"/>
+          <element ref="bus:accountantContactContactType" minOccurs="0"/>
+          <element ref="bus:accountantContactLocationIdCrossReference" minOccurs="0"/>
+          <element ref="bus:accountantContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:accountantContactFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:accountantContactEmail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantContactPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantContactPhoneNumber" minOccurs="0"/>
+          <element ref="bus:accountantContactPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantContactFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantContactFaxNumber" minOccurs="0"/>
+          <element ref="bus:accountantContactFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="accountantContactEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:accountantContactEmailAddress" minOccurs="0"/>
+          <element ref="bus:accountantContactEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="reportingCalendarPeriodComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:reportingCalendarPeriodId" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPeriodDescription" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPeriodStartDate" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPeriodEndDate" minOccurs="0"/>
+          <element ref="bus:reportingCalendarPeriodClosedDate" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierAddressComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierDescription" minOccurs="0"/>
+          <element ref="bus:identifierPurpose" minOccurs="0"/>
+          <element ref="bus:identifierLocationId" minOccurs="0"/>
+          <element ref="bus:identifierBuildingNumber" minOccurs="0"/>
+          <element ref="bus:identifierStreet" minOccurs="0"/>
+          <element ref="bus:identifierAddressDetail" minOccurs="0"/>
+          <element ref="bus:identifierCity" minOccurs="0"/>
+          <element ref="bus:identifierStateOrProvince" minOccurs="0"/>
+          <element ref="bus:identifierCountry" minOccurs="0"/>
+          <element ref="bus:identifierZipOrPostalCode" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailMeasurableComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:detailMeasurableCode" minOccurs="0"/>
+          <element ref="bus:detailMeasurableCodeDescription" minOccurs="0"/>
+          <element ref="bus:detailMeasurableCategory" minOccurs="0"/>
+          <element ref="bus:detailMeasurableIdentification" minOccurs="0"/>
+          <element ref="bus:detailSchemaForMeasurableIdentification" minOccurs="0"/>
+          <element ref="bus:detailSecondaryMeasurableCode" minOccurs="0"/>
+          <element ref="bus:detailSchemaForSecondaryMeasurableIdentification" minOccurs="0"/>
+          <element ref="bus:detailMeasurableDescription" minOccurs="0"/>
+          <element ref="bus:detailMeasurableQuantity" minOccurs="0"/>
+          <element ref="bus:detailMeasurableQualifier" minOccurs="0"/>
+          <element ref="bus:detailMeasurableUnitOfMeasure" minOccurs="0"/>
+          <element ref="bus:detailMeasurablePerUnitCostPrice" minOccurs="0"/>
+          <element ref="bus:detailMeasurableStartTime" minOccurs="0"/>
+          <element ref="bus:detailMeasurableEndTime" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailJobComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="usk:detailJobId" minOccurs="0"/>
+          <element ref="usk:detailJobDescription" minOccurs="0"/>
+          <element ref="usk:detailJobPhase" minOccurs="0"/>
+          <element ref="usk:detailJobPhaseDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailDepreciationMortgageComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:detailDepreciationMortgageJurisdiction" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMethod" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMortgageLife" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMortgageDescription" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMortgageStartDate" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMortgageEndDate" minOccurs="0"/>
+          <element ref="bus:detailDepreciationMortgageAmount" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

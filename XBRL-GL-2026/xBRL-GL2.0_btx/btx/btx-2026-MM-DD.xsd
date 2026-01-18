@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/btx/2026-MM-DD" attributeFormDefault="unqualified" elementFormDefault="qualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:gen="http://www.xbrl.org/int/gl/gen/2026-MM-DD"
+  xmlns:btx="http://www.xbrl.org/int/gl/btx/2026-MM-DD"
+>
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/gen/2026-MM-DD" schemaLocation="../gen/gen-2026-MM-DD.xsd"/>
+  <annotation>
+    <appinfo>
+      <link:linkbaseRef xlink:type="simple" xlink:href="btx-2026-MM-DD-presentation.xml" xlink:title="Presentation Links, all" xlink:role="http://www.xbrl.org/2003/role/presentationLinkbaseRef" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </appinfo>
+  </annotation>
+  <!-- item/tuple element -->
+  <element name="businessTransactions" id="btx_businessTransactions" type="btx:businessTransactionsComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="transactionHeader" id="btx_transactionHeader" type="btx:transactionHeaderComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerDatePosted" id="btx_headerDatePosted" type="btx:headerDatePostedItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerEntryCreator" id="btx_headerEntryCreator" type="btx:headerEntryCreatorItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerEntryLastModifier" id="btx_headerEntryLastModifier" type="btx:headerEntryLastModifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerEntryDate" id="btx_headerEntryDate" type="btx:headerEntryDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerResponsiblePerson" id="btx_headerResponsiblePerson" type="btx:headerResponsiblePersonItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerTypeIdentifier" id="btx_headerTypeIdentifier" type="btx:headerTypeIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerPostingCode" id="btx_headerPostingCode" type="btx:headerPostingCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerNumberOfEntries" id="btx_headerNumberOfEntries" type="btx:headerNumberOfEntriesItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerComment" id="btx_headerComment" type="btx:headerCommentItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerEntryNumberCounter" id="btx_headerEntryNumberCounter" type="btx:headerEntryNumberCounterItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentType" id="btx_headerDocumentType" type="gen:documentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentTypeDescription" id="btx_headerDocumentTypeDescription" type="btx:headerDocumentTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerInvoiceType" id="btx_headerInvoiceType" type="gen:invoiceTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentNumber" id="btx_headerDocumentNumber" type="btx:headerDocumentNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerApplyToNumber" id="btx_headerApplyToNumber" type="btx:headerApplyToNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentReference" id="btx_headerDocumentReference" type="btx:headerDocumentReferenceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentDate" id="btx_headerDocumentDate" type="btx:headerDocumentDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerReceivedDate" id="btx_headerReceivedDate" type="btx:headerReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDocumentLocation" id="btx_headerDocumentLocation" type="btx:headerDocumentLocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerPaymentMethod" id="btx_headerPaymentMethod" type="btx:headerPaymentMethodItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerPostingStatus" id="btx_headerPostingStatus" type="gen:postingStatusItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerPostingStatusDescription" id="btx_headerPostingStatusDescription" type="btx:headerPostingStatusDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerAcknowledgementDate" id="btx_headerAcknowledgementDate" type="btx:headerAcknowledgementDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerConfirmationDate" id="btx_headerConfirmationDate" type="btx:headerConfirmationDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerShipFrom" id="btx_headerShipFrom" type="btx:headerShipFromItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerDateShippedReceived" id="btx_headerDateShippedReceived" type="btx:headerDateShippedReceivedItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerMaturityDateOrDateDue" id="btx_headerMaturityDateOrDateDue" type="btx:headerMaturityDateOrDateDueItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerPaymentTerms" id="btx_headerPaymentTerms" type="btx:headerPaymentTermsItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerIdentifierReference" id="btx_headerIdentifierReference" type="btx:headerIdentifierReferenceComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerTax" id="btx_headerTax" type="btx:headerTaxComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerAmountStructure" id="btx_headerAmountStructure" type="btx:headerAmountStructureComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="transactionDetail" id="btx_transactionDetail" type="btx:transactionDetailComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerIdentifierContact" id="btx_headerIdentifierContact" type="btx:headerIdentifierContactComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="headerAmount" id="btx_headerAmount" type="gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerAmountType" id="btx_headerAmountType" type="btx:headerAmountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerCurrencyCode" id="btx_headerCurrencyCode" type="btx:headerCurrencyCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="headerCurrencyCodeType" id="btx_headerCurrencyCodeType" type="btx:headerCurrencyCodeTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailLineNumber" id="btx_detailLineNumber" type="btx:detailLineNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailLineNumberCounter" id="btx_detailLineNumberCounter" type="btx:detailLineNumberCounterItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailPostingDate" id="btx_detailPostingDate" type="btx:detailPostingDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailMemoLine" id="btx_detailMemoLine" type="btx:detailMemoLineItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentType" id="btx_detailDocumentType" type="gen:documentTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentTypeDescription" id="btx_detailDocumentTypeDescription" type="btx:detailDocumentTypeDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentNumber" id="btx_detailDocumentNumber" type="btx:detailDocumentNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailApplyToNumber" id="btx_detailApplyToNumber" type="btx:detailApplyToNumberItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentReference" id="btx_detailDocumentReference" type="btx:detailDocumentReferenceItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentDate" id="btx_detailDocumentDate" type="btx:detailDocumentDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailReceivedDate" id="btx_detailReceivedDate" type="btx:detailReceivedDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDocumentLocation" id="btx_detailDocumentLocation" type="btx:detailDocumentLocationItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailPostingStatus" id="btx_detailPostingStatus" type="gen:postingStatusItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailPostingStatusDescription" id="btx_detailPostingStatusDescription" type="btx:detailPostingStatusDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailDescription" id="btx_detailDescription" type="btx:detailDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAcknowledgementDate" id="btx_detailAcknowledgementDate" type="btx:detailAcknowledgementDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailConfirmationDate" id="btx_detailConfirmationDate" type="btx:detailConfirmationDateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailMeasurableClassIdentifier" id="btx_detailMeasurableClassIdentifier" type="btx:detailMeasurableClassIdentifierItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailMeasurableClassDescription" id="btx_detailMeasurableClassDescription" type="btx:detailMeasurableClassDescriptionItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailGeospatialCoordinate" id="btx_detailGeospatialCoordinate" type="btx:detailGeospatialCoordinateItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailIdentifierReference" id="btx_detailIdentifierReference" type="btx:detailIdentifierReferenceComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailAmountStructure" id="btx_detailAmountStructure" type="btx:detailAmountStructureComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailIdentifierContact" id="btx_detailIdentifierContact" type="btx:detailIdentifierContactComplexType" substitutionGroup="xbrli:tuple" nillable="false"/>
+  <element name="detailAmount" id="btx_detailAmount" type="gen:amountItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailAmountType" id="btx_detailAmountType" type="btx:detailAmountTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailCurrencyCode" id="btx_detailCurrencyCode" type="btx:detailCurrencyCodeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+  <element name="detailCurrencyCodeType" id="btx_detailCurrencyCodeType" type="btx:detailCurrencyCodeTypeItemType" substitutionGroup="xbrli:item" nillable="true" xbrli:periodType="instant"/>
+</schema>

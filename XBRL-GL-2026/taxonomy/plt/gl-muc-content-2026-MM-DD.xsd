@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/muc/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <include schemaLocation="../muc/gl-muc-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="defaultCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="currencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyExchangeRateDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyForeignCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyTriangulationCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyTriangulationExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyTriangulationExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyTriangulationExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyCrossTriangulationExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyCrossTriangulationExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyCrossTriangulationExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMulticurrencyCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxAmountInForeignCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxForeignCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxExchangeRateDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxExchangeRateCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxAmountInTriangulationCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTriangulationCurrencyItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTriangulationCurrencyExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTriangulationCurrencyExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTriangulationCurrencyExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxForeignToTriangulationCurrencyExchangeRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxForeignToTriangulationCurrencyExchangeRateSourceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxForeignToTriangulationCurrencyExchangeRateTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="detailMulticurrencyStructureComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="gl-muc:detailMulticurrencyExchangeRateDate" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyForeignCurrencyAmount" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyForeignCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyExchangeRateType" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyTriangulationCurrencyAmount" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyTriangulationCurrency" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyTriangulationExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyTriangulationExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyTriangulationExchangeRateType" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyCrossTriangulationExchangeRate" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyCrossTriangulationExchangeRateSource" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyCrossTriangulationExchangeRateType" minOccurs="0"/>
+          <element ref="gl-muc:detailMulticurrencyComment" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

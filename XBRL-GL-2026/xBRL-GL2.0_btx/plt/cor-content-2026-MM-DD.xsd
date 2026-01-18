@@ -1,0 +1,617 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:lnk="http://www.xbrl.org/int/gl/lnk/2026-MM-DD"
+  xmlns:muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+  xmlns:bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+  xmlns:cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/lnk/2026-MM-DD" schemaLocation="lnk-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/muc/2026-MM-DD" schemaLocation="muc-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" schemaLocation="bus-content-2026-MM-DD.xsd"/>
+  <include schemaLocation="../cor/cor-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="documentTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="auditNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="revisesAuditNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="actionToTakeWithPreviousDataItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="languageItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="creationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="documentCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodCoveredStartItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="periodCoveredEndItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="entityPartyBusinessDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierOrganizationTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerIdentifierCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityNameItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="externalAuthorityVerificationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxAuthorityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxTableCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerAmountOfTaxesItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerBasisForTaxationItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxPercentageRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTaxCommentExemptionReasonItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountClassificationItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountClassificationDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailParentAccountNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPurposeOfAccountItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPurposeOfAccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAccountTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="subaccountDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="subaccountIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="typeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="parentSubaccountCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="parentSubaccountTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="parentSubaccountReportingTreeIdItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="parentSubaccountPercentageItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierOrganizationTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailIdentifierCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlAllocationItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlSummaryReportingElementItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailXbrlMatchingElementItemType">
+    <simpleContent>
+      <restriction base="xbrli:QNameItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxAuthorityItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxTableCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAmountOfTaxesItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailBasisForTaxationItemType">
+    <simpleContent>
+      <restriction base="xbrli:monetaryItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxPercentageRateItemType">
+    <simpleContent>
+      <restriction base="xbrli:pureItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxCategoryItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailTaxCommentExemptionReasonItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="documentInformationComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:documentType"/>
+          <element ref="cor:auditNumber" minOccurs="0"/>
+          <element ref="cor:revisesAuditNumber" minOccurs="0"/>
+          <element ref="cor:actionToTakeWithPreviousData" minOccurs="0"/>
+          <element ref="cor:language" minOccurs="0"/>
+          <element ref="cor:creationDate" minOccurs="0"/>
+          <element ref="bus:creator" minOccurs="0"/>
+          <element ref="cor:documentComment" minOccurs="0"/>
+          <element ref="cor:periodCoveredStart" minOccurs="0"/>
+          <element ref="cor:periodCoveredEnd" minOccurs="0"/>
+          <element ref="bus:periodCount" minOccurs="0"/>
+          <element ref="bus:periodUnit" minOccurs="0"/>
+          <element ref="bus:periodUnitDescription" minOccurs="0"/>
+          <element ref="bus:sourceApplication" minOccurs="0"/>
+          <element ref="bus:targetApplication" minOccurs="0"/>
+          <element ref="muc:defaultCurrency" minOccurs="0"/>
+          <element ref="lnk:summaryReportingTaxonomies" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:entityPartyName" minOccurs="0"/>
+          <element ref="cor:entityPartyId" minOccurs="0"/>
+          <element ref="cor:entityPartyBusinessDescription" minOccurs="0"/>
+          <element ref="bus:entityPartyDefaultAccountingMethodPurpose" minOccurs="0"/>
+          <element ref="bus:entityPartyDefaultAccountingMethodPurposeDescription" minOccurs="0"/>
+          <element ref="bus:entityPartyBusinessDescription" minOccurs="0"/>
+          <element ref="bus:entityPartyFiscalYearStart" minOccurs="0"/>
+          <element ref="bus:entityPartyFiscalYearEnd" minOccurs="0"/>
+          <element ref="bus:entityPartyPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyEmail" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:organizationIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:entityPartyAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyWebSite" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:entityPartyContact" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:accountingMethodStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:accountant" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:reportingCalendar" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="entityPartyAddressComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:entityPartyName" minOccurs="0"/>
+          <element ref="bus:entityPartyDescription" minOccurs="0"/>
+          <element ref="bus:entityPartyPurpose" minOccurs="0"/>
+          <element ref="bus:entityPartyLocationId" minOccurs="0"/>
+          <element ref="bus:entityPartyBuildingNumber" minOccurs="0"/>
+          <element ref="bus:entityPartyStreet" minOccurs="0"/>
+          <element ref="bus:entityPartyAddressDetail" minOccurs="0"/>
+          <element ref="bus:entityPartyCity" minOccurs="0"/>
+          <element ref="bus:entityPartyStateOrProvince" minOccurs="0"/>
+          <element ref="bus:entityPartyCountry" minOccurs="0"/>
+          <element ref="bus:entityPartyZipOrPostalCode" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="externalAuthorityComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:externalAuthorityCode" minOccurs="0"/>
+          <element ref="cor:externalAuthorityName" minOccurs="0"/>
+          <element ref="cor:externalAuthorityVerificationDate" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierPhoneNumber" minOccurs="0"/>
+          <element ref="bus:identifierPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierFaxNumber" minOccurs="0"/>
+          <element ref="bus:identifierFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierEmailAddress" minOccurs="0"/>
+          <element ref="bus:identifierEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactPhoneComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierContactPhoneNumber" minOccurs="0"/>
+          <element ref="bus:identifierContactPhoneNumberDescription" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactFaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierContactFaxNumber" minOccurs="0"/>
+          <element ref="bus:identifierContactFaxNumberUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="identifierContactEmailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:identifierContactEmailAddress" minOccurs="0"/>
+          <element ref="bus:identifierContactEmailAddressUsage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailAccountIdentifierComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:detailAccountNumber" minOccurs="0"/>
+          <element ref="cor:detailAccountDescription" minOccurs="0"/>
+          <element ref="cor:detailAccountClassification" minOccurs="0"/>
+          <element ref="cor:detailAccountClassificationDescription" minOccurs="0"/>
+          <element ref="cor:detailParentAccountNumber" minOccurs="0"/>
+          <element ref="cor:detailPurposeOfAccount" minOccurs="0"/>
+          <element ref="cor:detailPurposeOfAccountDescription" minOccurs="0"/>
+          <element ref="cor:detailAccountType" minOccurs="0"/>
+          <element ref="cor:detailAccountTypeDescription" minOccurs="0"/>
+          <element ref="bus:detailAccountingMethod" minOccurs="0"/>
+          <element ref="bus:detailAccountingMethodDescription" minOccurs="0"/>
+          <element ref="bus:detailAccountingMethodPurpose" minOccurs="0"/>
+          <element ref="bus:detailAccountingMethodPurposeDescription" minOccurs="0"/>
+          <element ref="cor:subaccount" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailXbrlComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:detailXbrlAllocation" minOccurs="0"/>
+          <element ref="cor:detailXbrlSummaryReportingElement" minOccurs="0"/>
+          <element ref="cor:detailXbrlMatchingElement" minOccurs="0"/>
+          <element ref="lnk:detailXbrlSummaryTuplePath" minOccurs="0"/>
+          <element ref="lnk:detailXbrlDetailedContentFilter" minOccurs="0"/>
+          <element ref="lnk:detailXbrlReportingDateSelector" minOccurs="0"/>
+          <element ref="lnk:detailXbrlSummaryOperator" minOccurs="0"/>
+          <element ref="lnk:detailXbrlSummaryUnitNumerator"/>
+          <element ref="lnk:detailXbrlSummaryUnitDenominator" minOccurs="0"/>
+          <element ref="lnk:detailXbrlSummaryReportingTaxonomyIdReference" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailTaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:detailTaxAuthority" minOccurs="0"/>
+          <element ref="cor:detailTaxTableCode" minOccurs="0"/>
+          <element ref="cor:detailTaxDescription" minOccurs="0"/>
+          <element ref="cor:detailAmountOfTaxes" minOccurs="0"/>
+          <element ref="cor:detailBasisForTaxation" minOccurs="0"/>
+          <element ref="cor:detailTaxPercentageRate" minOccurs="0"/>
+          <element ref="cor:detailTaxCategory" minOccurs="0"/>
+          <element ref="cor:detailTaxCommentExemptionReason" minOccurs="0"/>
+          <element ref="muc:detailTaxAmountInForeignCurrency" minOccurs="0"/>
+          <element ref="muc:detailTaxForeignCurrency" minOccurs="0"/>
+          <element ref="muc:detailTaxExchangeRateDate" minOccurs="0"/>
+          <element ref="muc:detailTaxExchangeRate" minOccurs="0"/>
+          <element ref="muc:detailTaxExchangeRateSource" minOccurs="0"/>
+          <element ref="muc:detailTaxExchangeRateType" minOccurs="0"/>
+          <element ref="muc:detailTaxExchangeRateComment" minOccurs="0"/>
+          <element ref="muc:detailTaxAmountInTriangulationCurrency" minOccurs="0"/>
+          <element ref="muc:detailTaxTriangulationCurrency" minOccurs="0"/>
+          <element ref="muc:detailTaxTriangulationCurrencyExchangeRate" minOccurs="0"/>
+          <element ref="muc:detailTaxTriangulationCurrencyExchangeRateSource" minOccurs="0"/>
+          <element ref="muc:detailTaxTriangulationCurrencyExchangeRateType" minOccurs="0"/>
+          <element ref="muc:detailTaxForeignToTriangulationCurrencyExchangeRate" minOccurs="0"/>
+          <element ref="muc:detailTaxForeignToTriangulationCurrencyExchangeRateSource" minOccurs="0"/>
+          <element ref="muc:detailTaxForeignToTriangulationCurrencyExchangeRateType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="subaccountComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:subaccountDescription" minOccurs="0"/>
+          <element ref="cor:subaccountId" minOccurs="0"/>
+          <element ref="cor:type" minOccurs="0"/>
+          <element ref="cor:parentSubaccount" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="parentSubaccountComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:parentSubaccountCode" minOccurs="0"/>
+          <element ref="cor:parentSubaccountType" minOccurs="0"/>
+          <element ref="cor:parentSubaccountReportingTreeId" minOccurs="0"/>
+          <element ref="cor:parentSubaccountPercentage" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

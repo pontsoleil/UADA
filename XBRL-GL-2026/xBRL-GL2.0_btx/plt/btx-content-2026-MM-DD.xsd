@@ -1,0 +1,546 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/btx/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:ehm="http://www.xbrl.org/int/gl/ehm/2026-MM-DD"
+  xmlns:cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD"
+  xmlns:muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+  xmlns:taf="http://www.xbrl.org/int/gl/taf/2026-MM-DD"
+  xmlns:bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+  xmlns:lnk="http://www.xbrl.org/int/gl/lnk/2026-MM-DD"
+  xmlns:btx="http://www.xbrl.org/int/gl/btx/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/ehm/2026-MM-DD" schemaLocation="ehm-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" schemaLocation="cor-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/muc/2026-MM-DD" schemaLocation="muc-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/taf/2026-MM-DD" schemaLocation="taf-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" schemaLocation="bus-content-2026-MM-DD.xsd"/>
+  <import namespace="http://www.xbrl.org/int/gl/lnk/2026-MM-DD" schemaLocation="lnk-content-2026-MM-DD.xsd"/>
+  <include schemaLocation="../btx/btx-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="headerDatePostedItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerEntryCreatorItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerEntryLastModifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerEntryDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerResponsiblePersonItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerTypeIdentifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerPostingCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerNumberOfEntriesItemType">
+    <simpleContent>
+      <restriction base="xbrli:integerItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerCommentItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerEntryNumberCounterItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDocumentTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDocumentNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerApplyToNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDocumentReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDocumentDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerReceivedDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDocumentLocationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerPaymentMethodItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerPostingStatusDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerAcknowledgementDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerConfirmationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerShipFromItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerDateShippedReceivedItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerMaturityDateOrDateDueItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerPaymentTermsItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerAmountTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerCurrencyCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="headerCurrencyCodeTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailLineNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailLineNumberCounterItemType">
+    <simpleContent>
+      <restriction base="xbrli:decimalItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPostingDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMemoLineItemType">
+    <simpleContent>
+      <restriction base="xbrli:booleanItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentTypeDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailApplyToNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentReferenceItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailReceivedDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDocumentLocationItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailPostingStatusDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAcknowledgementDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailConfirmationDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateTimeItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableClassIdentifierItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailMeasurableClassDescriptionItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailGeospatialCoordinateItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailAmountTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailCurrencyCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailCurrencyCodeTypeItemType">
+    <simpleContent>
+      <restriction base="xbrli:tokenItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="businessTransactionsComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:documentInformation"/>
+          <element ref="cor:entityParty" minOccurs="0"/>
+          <element ref="btx:transactionHeader" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="transactionHeaderComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="btx:headerDatePosted" minOccurs="0"/>
+          <element ref="btx:headerEntryCreator" minOccurs="0"/>
+          <element ref="btx:headerEntryLastModifier" minOccurs="0"/>
+          <element ref="btx:headerEntryDate" minOccurs="0"/>
+          <element ref="btx:headerResponsiblePerson" minOccurs="0"/>
+          <element ref="btx:headerTypeIdentifier" minOccurs="0"/>
+          <element ref="btx:headerPostingCode" minOccurs="0"/>
+          <element ref="btx:headerNumberOfEntries" minOccurs="0"/>
+          <element ref="btx:headerComment" minOccurs="0"/>
+          <element ref="btx:headerEntryNumberCounter" minOccurs="0"/>
+          <element ref="btx:headerDocumentType" minOccurs="0"/>
+          <element ref="btx:headerDocumentTypeDescription" minOccurs="0"/>
+          <element ref="btx:headerInvoiceType" minOccurs="0"/>
+          <element ref="btx:headerDocumentNumber" minOccurs="0"/>
+          <element ref="btx:headerApplyToNumber" minOccurs="0"/>
+          <element ref="btx:headerDocumentReference" minOccurs="0"/>
+          <element ref="btx:headerDocumentDate" minOccurs="0"/>
+          <element ref="btx:headerReceivedDate" minOccurs="0"/>
+          <element ref="btx:headerDocumentLocation" minOccurs="0"/>
+          <element ref="btx:headerPaymentMethod" minOccurs="0"/>
+          <element ref="btx:headerPostingStatus" minOccurs="0"/>
+          <element ref="btx:headerPostingStatusDescription" minOccurs="0"/>
+          <element ref="btx:headerAcknowledgementDate" minOccurs="0"/>
+          <element ref="btx:headerConfirmationDate" minOccurs="0"/>
+          <element ref="btx:headerShipFrom" minOccurs="0"/>
+          <element ref="btx:headerDateShippedReceived" minOccurs="0"/>
+          <element ref="btx:headerMaturityDateOrDateDue" minOccurs="0"/>
+          <element ref="btx:headerPaymentTerms" minOccurs="0"/>
+          <element ref="btx:headerIdentifierReference" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:headerTax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:headerAmountStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:transactionDetail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="headerIdentifierReferenceComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:headerIdentifierCode" minOccurs="0"/>
+          <element ref="bus:headerIdentifierPurpose" minOccurs="0"/>
+          <element ref="cor:headerIdentifierOrganizationType" minOccurs="0"/>
+          <element ref="cor:headerIdentifierOrganizationTypeDescription" minOccurs="0"/>
+          <element ref="cor:headerIdentifierDescription" minOccurs="0"/>
+          <element ref="cor:headerIdentifierType" minOccurs="0"/>
+          <element ref="cor:headerIdentifierCategory" minOccurs="0"/>
+          <element ref="cor:externalAuthority" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierEmail" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:identifierAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:headerIdentifierContact" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="headerTaxComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:headerTaxAuthority" minOccurs="0"/>
+          <element ref="cor:headerTaxTableCode" minOccurs="0"/>
+          <element ref="cor:headerTaxDescription" minOccurs="0"/>
+          <element ref="cor:headerAmountOfTaxes" minOccurs="0"/>
+          <element ref="cor:headerBasisForTaxation" minOccurs="0"/>
+          <element ref="cor:headerTaxPercentageRate" minOccurs="0"/>
+          <element ref="cor:headerTaxCategory" minOccurs="0"/>
+          <element ref="cor:headerTaxCommentExemptionReason" minOccurs="0"/>
+          <element ref="muc:headerTaxAmountInForeignCurrency" minOccurs="0"/>
+          <element ref="muc:headerTaxForeignCurrency" minOccurs="0"/>
+          <element ref="muc:headerTaxExchangeRateDate" minOccurs="0"/>
+          <element ref="muc:headerTaxExchangeRate" minOccurs="0"/>
+          <element ref="muc:headerTaxExchangeRateSource" minOccurs="0"/>
+          <element ref="muc:headerTaxExchangeRateType" minOccurs="0"/>
+          <element ref="muc:headerTaxExchangeRateComment" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="headerAmountStructureComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="btx:headerAmount"/>
+          <element ref="btx:headerAmountType" minOccurs="0"/>
+          <element ref="btx:headerCurrencyCode" minOccurs="0"/>
+          <element ref="btx:headerCurrencyCodeType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="transactionDetailComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="btx:detailLineNumber" minOccurs="0"/>
+          <element ref="btx:detailLineNumberCounter" minOccurs="0"/>
+          <element ref="btx:detailPostingDate" minOccurs="0"/>
+          <element ref="btx:detailMemoLine" minOccurs="0"/>
+          <element ref="btx:detailDocumentType" minOccurs="0"/>
+          <element ref="btx:detailDocumentTypeDescription" minOccurs="0"/>
+          <element ref="btx:detailDocumentNumber" minOccurs="0"/>
+          <element ref="btx:detailApplyToNumber" minOccurs="0"/>
+          <element ref="btx:detailDocumentReference" minOccurs="0"/>
+          <element ref="btx:detailDocumentDate" minOccurs="0"/>
+          <element ref="btx:detailReceivedDate" minOccurs="0"/>
+          <element ref="btx:detailDocumentLocation" minOccurs="0"/>
+          <element ref="btx:detailPostingStatus" minOccurs="0"/>
+          <element ref="btx:detailPostingStatusDescription" minOccurs="0"/>
+          <element ref="btx:detailDescription" minOccurs="0"/>
+          <element ref="btx:detailAcknowledgementDate" minOccurs="0"/>
+          <element ref="btx:detailConfirmationDate" minOccurs="0"/>
+          <element ref="btx:detailMeasurableClassIdentifier" minOccurs="0"/>
+          <element ref="btx:detailMeasurableClassDescription" minOccurs="0"/>
+          <element ref="btx:detailGeospatialCoordinate" minOccurs="0"/>
+          <element ref="cor:detailAccountIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="muc:detailMulticurrency" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:detailIdentifierReference" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:detailXbrl" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:detailMeasurable" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:detailJob" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:detailDepreciationMortgage" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="ehm:detailSerialOrLot" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:detailTax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:detailAmountStructure" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="taf:detailOriginatingDocument" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="lnk:detailRichTextComment" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="headerIdentifierContactComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:headerIdentifierContactPrefix" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactLastName" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactFirstName" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactSuffix" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactAttentionLine" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactPositionRole" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactContactType" minOccurs="0"/>
+          <element ref="bus:headerIdentifierContactLocationIdCrossReference" minOccurs="0"/>
+          <element ref="cor:identifierContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierContactFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierContactEmail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailIdentifierReferenceComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="cor:detailIdentifierCode" minOccurs="0"/>
+          <element ref="bus:detailIdentifierPurpose" minOccurs="0"/>
+          <element ref="cor:detailIdentifierOrganizationType" minOccurs="0"/>
+          <element ref="cor:detailIdentifierOrganizationTypeDescription" minOccurs="0"/>
+          <element ref="cor:detailIdentifierDescription" minOccurs="0"/>
+          <element ref="cor:detailIdentifierType" minOccurs="0"/>
+          <element ref="cor:detailIdentifierCategory" minOccurs="0"/>
+          <element ref="cor:externalAuthority" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierEmail" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="bus:identifierAddress" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="btx:detailIdentifierContact" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailAmountStructureComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="btx:detailAmount"/>
+          <element ref="btx:detailAmountType" minOccurs="0"/>
+          <element ref="btx:detailCurrencyCode" minOccurs="0"/>
+          <element ref="btx:detailCurrencyCodeType" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+  <complexType name="detailIdentifierContactComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="bus:detailIdentifierContactPrefix" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactLastName" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactFirstName" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactSuffix" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactAttentionLine" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactPositionRole" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactContactType" minOccurs="0"/>
+          <element ref="bus:detailIdentifierContactLocationIdCrossReference" minOccurs="0"/>
+          <element ref="cor:identifierContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierContactFax" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:identifierContactEmail" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

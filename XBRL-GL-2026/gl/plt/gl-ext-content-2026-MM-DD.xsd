@@ -1,0 +1,568 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/ext/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+    xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:xbrli="http://www.xbrl.org/2003/instance"
+    xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-MM-DD"
+    xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD"
+    xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+    xmlns:gl-usk="http://www.xbrl.org/int/gl/usk/2026-MM-DD"
+    xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+    xmlns:gl-ehm="http://www.xbrl.org/int/gl/ehm/2026-MM-DD"
+    xmlns:gl-taf="http://www.xbrl.org/int/gl/taf/2026-MM-DD"
+    xmlns:gl-srcd="http://www.xbrl.org/int/gl/srcd/2026-MM-DD">
+    <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/cor/2026-MM-DD" schemaLocation="gl-cor-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/bus/2026-MM-DD" schemaLocation="gl-bus-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/usk/2026-MM-DD" schemaLocation="gl-usk-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/muc/2026-MM-DD" schemaLocation="gl-muc-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/ehm/2026-MM-DD" schemaLocation="gl-ehm-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/taf/2026-MM-DD" schemaLocation="gl-taf-content-2026-MM-DD.xsd"/>
+    <import namespace="http://www.xbrl.org/int/gl/srcd/2026-MM-DD" schemaLocation="gl-srcd-content-2026-MM-DD.xsd"/>
+    <include schemaLocation="../ext/gl-ext-2026-MM-DD.xsd"/>
+    <complexType name="accountingEntriesComplexType">
+        <complexContent>
+            <extension base="gl-ext:accountingEntriesRestrictionType">
+                <sequence>
+                    <element ref="gl-ext:documentHeader" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="accountingEntriesRestrictionType">
+        <complexContent>
+            <restriction base="gl-cor:accountingEntriesComplexType">
+                <sequence>
+                    <element ref="gl-cor:documentInfo" minOccurs="1" maxOccurs="1"/>
+                    <element ref="gl-cor:entityInformation" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="documentAmountComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerAmount"/>
+                    <element ref="gl-ext:headerAmountType" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerAmountItemType">
+        <simpleContent>
+            <restriction base="xbrli:monetaryItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerAmountTypeItemType">
+        <simpleContent>
+            <restriction base="xbrli:tokenItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="lineAmountComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:amount"/>
+                    <element ref="gl-ext:amountType" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="amountItemType">
+        <simpleContent>
+            <restriction base="xbrli:monetaryItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="amountTypeItemType">
+        <simpleContent>
+            <restriction base="xbrli:tokenItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentTaxesComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerTaxTableCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerTaxAmount" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerTaxBasis" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerTaxPercentageRate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerTaxCode" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerTaxTableCodeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerTaxAmountItemType">
+        <simpleContent>
+            <restriction base="xbrli:monetaryItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerTaxBasisItemType">
+        <simpleContent>
+            <restriction base="xbrli:monetaryItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerTaxPercentageRateItemType">
+        <simpleContent>
+            <restriction base="xbrli:pureItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerTaxCodeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="documentIdentifierExternalReferenceComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierAuthorityCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAuthority" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAuthorityVerificationDate" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierAuthorityCodeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAuthorityItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAuthorityVerificationDateItemType">
+        <simpleContent>
+            <restriction base="xbrli:dateTimeItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="headerIdentifierPurposeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="documentIdentifierAddressComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierAddressName" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressPurpose" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressLocationIdentifier" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressBuildingNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressStreet" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressStreet2" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressCity" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressStateOrProvince" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressZipOrPostalCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierAddressCountry" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressNameItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressDescriptionItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressPurposeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressLocationIdentifierItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressBuildingNumberItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressStreetItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressStreet2ItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressCityItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressStateOrProvinceItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressZipOrPostalCodeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierAddressCountryItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="documentIdentifierPhoneNumberComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierPhoneNumberDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierPhone" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierPhoneNumberDescriptionItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierPhoneItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentIdentifierFaxNumberComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierFaxNumberUsage" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierFax" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierFaxNumberUsageItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierFaxItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentIdentifierEmailAddressComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierEmailAddressUsage" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierEmail" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierEmailAddressUsageItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierEmailItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="documentIdentifierContactInformationComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierContactPrefix" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactLastName" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactFirstName" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactSuffix" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactAttentionLine" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactPositionRole" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentIdentifierContactPhone" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentIdentifierContactFax" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentIdentifierContactEMail" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerIdentifierContactType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactLocationIdentifierCrossReference" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierContactPrefixItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactLastNameItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactFirstNameItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactSuffixItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactAttentionLineItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactPositionRoleItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    
+    <complexType name="documentIdentifierContactEMailComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierContactEmailAddressUsage" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactEmailAddress" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierContactEmailAddressUsageItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactEmailAddressItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentIdentifierContactPhoneComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierContactPhoneNumberDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactPhoneNumber" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierContactPhoneNumberDescriptionItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactPhoneNumberItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentIdentifierContactFaxComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierContactFaxNumberUsage" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierContactFaxNumber" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="headerIdentifierContactFaxNumberUsageItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="headerIdentifierContactFaxNumberItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    
+    <complexType name="headerIdentifierContactTypeItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+
+    <complexType name="documentIdentifierReferenceComplexType">
+        <complexContent>
+            <restriction base="anyType">
+                <sequence>
+                    <element ref="gl-ext:headerIdentifierCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentIdentifierExternalReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerIdentifierOrganizationType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierOrganizationTypeDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerIdentifierCategory" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentIdentifierEMail" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentIdentifierPhoneNumber" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentIdentifierFaxNumber" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerIdentifierPurpose" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentIdentifierAddress" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentIdentifierContactInformation" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerIdentifierActive" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+                <attribute name="id" type="ID"/>
+            </restriction>
+        </complexContent>
+    </complexType>
+
+    <complexType name="documentHeaderComplexType">
+        <complexContent>
+            <extension base="gl-ext:documentHeaderRestrictionType">
+                <sequence>
+                    <element ref="gl-ext:documentIdentifierReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerDocumentType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentTypeDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerInvoiceType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentApplyToNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentReference" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentReceivedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerDocumentLocation" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerPaymentMethod" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerPostingStatus" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerPostingStatusDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentXbrlInfo" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:headerDateAcknowledged" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerConfirmedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerShipFrom" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerShipReceivedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerMaturityDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:headerTerms" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-ext:documentAmount" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentTaxes" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ext:documentLine" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="shipToItemType">
+        <simpleContent>
+            <restriction base="xbrli:stringItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="shippingDateItemType">
+        <simpleContent>
+            <restriction base="xbrli:dateTimeItemType"/>
+        </simpleContent>
+    </complexType>
+    <complexType name="documentHeaderRestrictionType">
+        <complexContent>
+            <restriction base="gl-cor:entryHeaderComplexType">
+                <sequence>
+                    <element ref="gl-cor:postedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:enteredBy" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:enteredByModified" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:enteredDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:entryResponsiblePerson" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:sourceJournalID" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:sourceJournalDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:entryType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:entryOrigin" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:entryNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:entryComment" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:qualifierEntry" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:qualifierEntryDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:postingCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:batchID" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:batchDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:numberOfEntries" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:entryNumberCounter" minOccurs="0" maxOccurs="1"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+    <complexType name="documentLineComplexType">
+        <complexContent>
+            <extension base="gl-ext:documentLineRestrictionType">
+                <sequence>
+                    <element ref="gl-ext:lineAmount" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+    <complexType name="documentLineRestrictionType">
+        <complexContent>
+            <restriction base="gl-cor:entryDetailComplexType">
+                <sequence>
+                    <element ref="gl-cor:lineNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:lineNumberCounter" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:account" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-cor:postingDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:allocationCode" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:identifierReference" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-cor:documentType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:documentTypeDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:invoiceType" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:documentNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:documentApplyToNumber" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:documentReference" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:documentDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:documentReceivedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:documentChargeReimb" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:documentLocation" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:paymentMethod" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:postingStatus" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:postingStatusDescription" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:xbrlInfo" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-cor:detailComment" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:dateAcknowledged" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:confirmedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:shipFrom" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:shipReceivedDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:maturityDate" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-cor:terms" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-bus:measurable" minOccurs="0" maxOccurs="unbounded"/>
+                    <!--<element ref="gl-bus:jobInfo" minOccurs="0" maxOccurs="unbounded"/>-->
+                    <element ref="gl-bus:depreciationMortgage" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-ehm:measurableClassID" minOccurs="0"/>
+                    <element ref="gl-ehm:measurableClassDescription" minOccurs="0"/>
+                    <element ref="gl-ehm:costingMethodCode" minOccurs="0"/>
+                    <element ref="gl-ehm:costingMethodDescription" minOccurs="0"/>
+                    <element ref="gl-ehm:geospatialCoordinate" minOccurs="0"/>
+                    <element ref="gl-ehm:serialLot" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-cor:taxes" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-taf:tickingField" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-taf:documentRemainingBalance" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-taf:uniqueConsignmentReference" minOccurs="0" maxOccurs="1"/>
+                    <element ref="gl-taf:originatingDocumentStructure" minOccurs="0" maxOccurs="unbounded"/>
+                    <element ref="gl-srcd:richTextComment" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+            </restriction>
+        </complexContent>
+    </complexType>
+</schema>

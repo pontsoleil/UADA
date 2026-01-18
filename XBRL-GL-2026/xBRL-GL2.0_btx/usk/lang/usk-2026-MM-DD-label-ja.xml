@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- usk:detailJobId ジョブ識別子 -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobId" xlink:label="detailJobId"/>
+        <label xlink:type="resource" xlink:label="detailJobId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobId_ja" xml:lang="en">ジョブ識別子</label>
+        <label xlink:type="resource" xlink:label="detailJobId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関連するジョブ番号かジョブコード。 科目に組み込めるかもしれないが、多くのシステムでは独立したジョブコードシステムを持っている。おもに、ジョブの識別が別システムであり、科目体系に含まれないときに使用される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobId" xlink:to="detailJobId_lbl"/>
+        <!-- usk:detailJobDescription ジョブ説明 -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobDescription" xlink:label="detailJobDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobDescription_ja" xml:lang="en">ジョブ説明</label>
+        <label xlink:type="resource" xlink:label="detailJobDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobDescription" xlink:to="detailJobDescription_lbl"/>
+        <!-- usk:detailJobPhase ジョブフェーズ -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobPhase" xlink:label="detailJobPhase"/>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobPhase_ja" xml:lang="en">ジョブフェーズ</label>
+        <label xlink:type="resource" xlink:label="detailJobPhase_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブコード、フェーズ、活動。 簡単なジョブ番号より詳細な定義が可能。基本的には、ジョブからフェーズを導くのみだが、コストコードにまでいたるように拡張可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhase" xlink:to="detailJobPhase_lbl"/>
+        <!-- usk:detailJobPhaseDescription ジョブフェーズ説明 -->
+        <loc xlink:type="locator" xlink:href="../usk-2026-MM-DD.xsd#usk_detailJobPhaseDescription" xlink:label="detailJobPhaseDescription"/>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="usk_detailJobPhaseDescription_ja" xml:lang="en">ジョブフェーズ説明</label>
+        <label xlink:type="resource" xlink:label="detailJobPhaseDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ジョブコード、フェーズ、活動の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailJobPhaseDescription" xlink:to="detailJobPhaseDescription_lbl"/>
+  </labelLink>
+</linkbase>

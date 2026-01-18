@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- gl-ehm:detailMeasurableClassIdentifier 測定可能分類コード -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailMeasurableClassIdentifier" xlink:label="detailMeasurableClassIdentifier"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailMeasurableClassIdentifier_ja" xml:lang="en">測定可能分類コード</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassIdentifier_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">在庫、固定資産、その他の測定可能な分類を識別するための列挙コード。列挙例：原材料、仕掛品、製品、組立品、備品、土地、建物、機械、家具、車両、その他。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableClassIdentifier" xlink:to="detailMeasurableClassIdentifier_lbl"/>
+        <!-- gl-ehm:detailMeasurableClassDescription 測定可能分類の説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailMeasurableClassDescription" xlink:label="detailMeasurableClassDescription"/>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailMeasurableClassDescription_ja" xml:lang="en">測定可能分類の説明</label>
+        <label xlink:type="resource" xlink:label="detailMeasurableClassDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">「その他」の列挙値を補足・特定するための自由記述形式の説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailMeasurableClassDescription" xlink:to="detailMeasurableClassDescription_lbl"/>
+        <!-- gl-ehm:detailGeospatialCoordinate 地理座標 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailGeospatialCoordinate" xlink:label="detailGeospatialCoordinate"/>
+        <label xlink:type="resource" xlink:label="detailGeospatialCoordinate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailGeospatialCoordinate_ja" xml:lang="en">地理座標</label>
+        <label xlink:type="resource" xlink:label="detailGeospatialCoordinate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">本項目の関連位置を入力。形式は以下のいずれか：
+・度分秒 (DMS): 41°24'12.2"N 2°10'26.5"E
+・度と小数分 (DMM): 41 24.2028, 2 10.4418
+・10進度 (DD): 41.40338, 2.17403</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailGeospatialCoordinate" xlink:to="detailGeospatialCoordinate_lbl"/>
+        <!-- gl-ehm:costingMethodCode 原価計算方法コード -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_costingMethodCode" xlink:label="costingMethodCode"/>
+        <label xlink:type="resource" xlink:label="costingMethodCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_costingMethodCode_ja" xml:lang="en">原価計算方法コード</label>
+        <label xlink:type="resource" xlink:label="costingMethodCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">在庫または他の測定可能な対象の原価計算方法を示す列挙コード。列挙例：LIFO、FIFO、平均法、加重平均法、標準原価法、税基準、帳簿基準、その他。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="costingMethodCode" xlink:to="costingMethodCode_lbl"/>
+        <!-- gl-ehm:costingMethodDescription 原価計算方法の説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_costingMethodDescription" xlink:label="costingMethodDescription"/>
+        <label xlink:type="resource" xlink:label="costingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_costingMethodDescription_ja" xml:lang="en">原価計算方法の説明</label>
+        <label xlink:type="resource" xlink:label="costingMethodDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">「その他」の列挙値に関する補足説明または特定のための自由記述形式。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="costingMethodDescription" xlink:to="costingMethodDescription_lbl"/>
+        <!-- gl-ehm:detailSerialOrLot 【シリアル番号・ロット情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLot" xlink:label="detailSerialOrLot"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLot_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLot_ja" xml:lang="en">【シリアル番号・ロット情報】</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLot_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">シリアル番号やロット（バッチ）に関する情報を保持するタプル。単一の構造内に複数のシリアル番号やロット情報を保持可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLot" xlink:to="detailSerialOrLot_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotCode シリアル・ロット識別コード -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotCode" xlink:label="detailSerialOrLotCode"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotCode_ja" xml:lang="en">シリアル・ロット識別コード</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この項目はシリアル番号またはロット番号で管理されているか？シリアル番号は一意に付番されたもので、ロット番号は同一バッチの区別を目的に使用される。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotCode" xlink:to="detailSerialOrLotCode_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotDescription シリアル・ロットの説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotDescription" xlink:label="detailSerialOrLotDescription"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotDescription_ja" xml:lang="en">シリアル・ロットの説明</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">gl-ehm:serialLotCode の「その他」の値のための自由記述の説明（例：バッチ、グループなど）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotDescription" xlink:to="detailSerialOrLotDescription_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotNumber シリアル番号・ロット番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotNumber" xlink:label="detailSerialOrLotNumber"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotNumber_ja" xml:lang="en">シリアル番号・ロット番号</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">対象アイテムやロットに割り当てられた実際の番号／コードを保持する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotNumber" xlink:to="detailSerialOrLotNumber_lbl"/>
+        <!-- gl-ehm:detailNextSerialOrLotNumber 次のシリアル・ロット番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailNextSerialOrLotNumber" xlink:label="detailNextSerialOrLotNumber"/>
+        <label xlink:type="resource" xlink:label="detailNextSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailNextSerialOrLotNumber_ja" xml:lang="en">次のシリアル・ロット番号</label>
+        <label xlink:type="resource" xlink:label="detailNextSerialOrLotNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">今後割り当て予定の次のシリアル／ロット番号や、既に割り当てられたアイテムの連結に使用。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailNextSerialOrLotNumber" xlink:to="detailNextSerialOrLotNumber_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotQuantity シリアル・ロットの数量 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotQuantity" xlink:label="detailSerialOrLotQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotQuantity_ja" xml:lang="en">シリアル・ロットの数量</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">該当ロット内の単位数。単位は gl-bus:measurableUnitofMeasure に基づく。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotQuantity" xlink:to="detailSerialOrLotQuantity_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotOriginalQuantity シリアル・ロット元数量 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotOriginalQuantity" xlink:label="detailSerialOrLotOriginalQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOriginalQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotOriginalQuantity_ja" xml:lang="en">シリアル・ロット元数量</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOriginalQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">このロットが生成された時点の元の数量。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotOriginalQuantity" xlink:to="detailSerialOrLotOriginalQuantity_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotRemainingQuantity シリアル・ロット残数量 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotRemainingQuantity" xlink:label="detailSerialOrLotRemainingQuantity"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotRemainingQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotRemainingQuantity_ja" xml:lang="en">シリアル・ロット残数量</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotRemainingQuantity_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">元ロットからの残りの数量。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotRemainingQuantity" xlink:to="detailSerialOrLotRemainingQuantity_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotOrigination シリアル・ロット生成日 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotOrigination" xlink:label="detailSerialOrLotOrigination"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOrigination_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotOrigination_ja" xml:lang="en">シリアル・ロット生成日</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotOrigination_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">製造日または作成日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotOrigination" xlink:to="detailSerialOrLotOrigination_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotExpiration シリアル・ロット有効期限 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotExpiration" xlink:label="detailSerialOrLotExpiration"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotExpiration_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotExpiration_ja" xml:lang="en">シリアル・ロット有効期限</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotExpiration_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ロットの有効期限。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotExpiration" xlink:to="detailSerialOrLotExpiration_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotManufacturer シリアル・ロット製造元 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotManufacturer" xlink:label="detailSerialOrLotManufacturer"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotManufacturer_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotManufacturer_ja" xml:lang="en">シリアル・ロット製造元</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotManufacturer_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">シリアル番号またはロットの製造者。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotManufacturer" xlink:to="detailSerialOrLotManufacturer_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotBatchDescription シリアル・ロットバッチの説明 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotBatchDescription" xlink:label="detailSerialOrLotBatchDescription"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotBatchDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotBatchDescription_ja" xml:lang="en">シリアル・ロットバッチの説明</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotBatchDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">ロットまたはバッチ内のアイテムの名称や説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotBatchDescription" xlink:to="detailSerialOrLotBatchDescription_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotWarrantyStartDate 保証開始日 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotWarrantyStartDate" xlink:label="detailSerialOrLotWarrantyStartDate"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotWarrantyStartDate_ja" xml:lang="en">保証開始日</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyStartDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証対象となる場合の保証開始日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyStartDate" xlink:to="detailSerialOrLotWarrantyStartDate_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotWarrantyEndDate 保証終了日 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotWarrantyEndDate" xlink:label="detailSerialOrLotWarrantyEndDate"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotWarrantyEndDate_ja" xml:lang="en">保証終了日</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyEndDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証対象となる場合の保証終了日。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyEndDate" xlink:to="detailSerialOrLotWarrantyEndDate_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotWarrantyPeriod 保証期間（数値） -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotWarrantyPeriod" xlink:label="detailSerialOrLotWarrantyPeriod"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotWarrantyPeriod_ja" xml:lang="en">保証期間（数値）</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantyPeriod_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証期間の数値部分（例：30日保証の場合は「30」）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantyPeriod" xlink:to="detailSerialOrLotWarrantyPeriod_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotWarrantPeriodUnit 保証期間（単位） -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotWarrantPeriodUnit" xlink:label="detailSerialOrLotWarrantPeriodUnit"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantPeriodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotWarrantPeriodUnit_ja" xml:lang="en">保証期間（単位）</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotWarrantPeriodUnit_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証期間の単位（例：日、月、年、km、機械サイクルなど）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotWarrantPeriodUnit" xlink:to="detailSerialOrLotWarrantPeriodUnit_lbl"/>
+        <!-- gl-ehm:detailWarrantyVendor 保証提供業者 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailWarrantyVendor" xlink:label="detailWarrantyVendor"/>
+        <label xlink:type="resource" xlink:label="detailWarrantyVendor_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailWarrantyVendor_ja" xml:lang="en">保証提供業者</label>
+        <label xlink:type="resource" xlink:label="detailWarrantyVendor_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証を提供するベンダー（製造者とは異なる可能性あり）。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailWarrantyVendor" xlink:to="detailWarrantyVendor_lbl"/>
+        <!-- gl-ehm:detailWarrantyContract 保証契約情報 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailWarrantyContract" xlink:label="detailWarrantyContract"/>
+        <label xlink:type="resource" xlink:label="detailWarrantyContract_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailWarrantyContract_ja" xml:lang="en">保証契約情報</label>
+        <label xlink:type="resource" xlink:label="detailWarrantyContract_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">保証に関する契約番号、日付、URL などの情報。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailWarrantyContract" xlink:to="detailWarrantyContract_lbl"/>
+        <!-- gl-ehm:detailSerialOrLotComment シリアル・ロット備考 -->
+        <loc xlink:type="locator" xlink:href="../gl-ehm-2026-MM-DD.xsd#gl-ehm_detailSerialOrLotComment" xlink:label="detailSerialOrLotComment"/>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-ehm_detailSerialOrLotComment_ja" xml:lang="en">シリアル・ロット備考</label>
+        <label xlink:type="resource" xlink:label="detailSerialOrLotComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">シリアルまたはロットに関する自由形式のテキスト。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailSerialOrLotComment" xlink:to="detailSerialOrLotComment_lbl"/>
+  </labelLink>
+</linkbase>

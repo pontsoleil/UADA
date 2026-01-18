@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<schema targetNamespace="http://www.xbrl.org/int/gl/taf/2026-MM-DD" elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:taf="http://www.xbrl.org/int/gl/taf/2026-MM-DD">
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <include schemaLocation="../taf/taf-2026-MM-DD.xsd"/>
+  <!-- item data type -->
+  <complexType name="detailOriginatingDocumentNumberItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailOriginatingDocumentDateItemType">
+    <simpleContent>
+      <restriction base="xbrli:dateItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailOriginatingDocumentIdentifierCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <complexType name="detailOriginatingDocumentIdentifierTaxCodeItemType">
+    <simpleContent>
+      <restriction base="xbrli:stringItemType">
+      </restriction>
+    </simpleContent>
+  </complexType>
+  <!-- tuple data type -->
+  <complexType name="detailOriginatingDocumentComplexType">
+    <complexContent>
+      <restriction base="anyType">
+        <sequence>
+          <element ref="taf:detailOriginatingDocumentType" minOccurs="0"/>
+          <element ref="taf:detailOriginatingDocumentNumber" minOccurs="0"/>
+          <element ref="taf:detailOriginatingDocumentDate" minOccurs="0"/>
+          <element ref="taf:detailOriginatingDocumentIdentifierType" minOccurs="0"/>
+          <element ref="taf:detailOriginatingDocumentIdentifierCode" minOccurs="0"/>
+          <element ref="taf:detailOriginatingDocumentIdentifierTaxCode" minOccurs="0"/>
+        </sequence>
+        <attribute name="id" type="ID"/>
+      </restriction>
+    </complexContent>
+  </complexType>
+</schema>

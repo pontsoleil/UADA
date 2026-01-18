@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <presentationLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <!-- Summary Reporting Taxonomies -->
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_summaryReportingTaxonomies" xlink:label="lnk_summaryReportingTaxonomies" xlink:title="loc: lnk_summaryReportingTaxonomies"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_summaryReportingTaxonomyId" xlink:label="lnk_summaryReportingTaxonomyId" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyId Summary Reporting Taxonomy ID"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_summaryReportingTaxonomies" xlink:to="lnk_summaryReportingTaxonomyId" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyId" use="optional" order="10"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:label="lnk_summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomySchemaReferenceHrefAttribute Summary Reporting Taxonomy Schema Reference Href Attribute"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_summaryReportingTaxonomies" xlink:to="lnk_summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomySchemaReferenceHrefAttribute" use="optional" order="20"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_summaryReportingTaxonomyHeader" xlink:label="lnk_summaryReportingTaxonomyHeader" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyHeader Summary Reporting Taxonomy Header"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_summaryReportingTaxonomies" xlink:to="lnk_summaryReportingTaxonomyHeader" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyHeader" use="optional" order="30"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_summaryReportingTaxonomyDescription" xlink:label="lnk_summaryReportingTaxonomyDescription" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyDescription Summary Reporting Taxonomy Description"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_summaryReportingTaxonomies" xlink:to="lnk_summaryReportingTaxonomyDescription" xlink:title="presentation: lnk_summaryReportingTaxonomies to lnk_summaryReportingTaxonomyDescription" use="optional" order="40"/>
+    <!-- Detail_ Rich Text Comment -->
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_detailRichTextComment" xlink:label="lnk_detailRichTextComment" xlink:title="loc: lnk_detailRichTextComment"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_detailRichTextCommentCode" xlink:label="lnk_detailRichTextCommentCode" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentCode Detail_ Rich Text Comment Code"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_detailRichTextComment" xlink:to="lnk_detailRichTextCommentCode" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentCode" use="optional" order="10"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_detailRichTextCommentDescription" xlink:label="lnk_detailRichTextCommentDescription" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentDescription Detail_ Rich Text Comment Description"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_detailRichTextComment" xlink:to="lnk_detailRichTextCommentDescription" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentDescription" use="optional" order="20"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_detailRichTextCommentContent" xlink:label="lnk_detailRichTextCommentContent" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentContent Detail_ Rich Text Comment Content"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_detailRichTextComment" xlink:to="lnk_detailRichTextCommentContent" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentContent" use="optional" order="30"/>
+    <loc xlink:type="locator" xlink:href="lnk-2026-MM-DD.xsd#lnk_detailRichTextCommentLocator" xlink:label="lnk_detailRichTextCommentLocator" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentLocator Detail_ Rich Text Comment Locator"/>
+    <presentationArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/parent-child" xlink:from="lnk_detailRichTextComment" xlink:to="lnk_detailRichTextCommentLocator" xlink:title="presentation: lnk_detailRichTextComment to lnk_detailRichTextCommentLocator" use="optional" order="40"/>
+  </presentationLink>
+</linkbase>

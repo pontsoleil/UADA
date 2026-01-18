@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- gl-taf:tickingField チェック欄 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_tickingField" xlink:label="tickingField"/>
+        <label xlink:type="resource" xlink:label="tickingField_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_tickingField_ja" xml:lang="en">チェック欄</label>
+        <label xlink:type="resource" xlink:label="tickingField_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">項目が消去または完了されたことを示す。勘定のチェックが要求される場合、処理済を示すチェックマークまたは文字が指定される。支払またはDR/CRのメモに対する元文書が、消し込まれたことを確認するためにも使用可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="tickingField" xlink:to="tickingField_lbl"/>
+        <!-- gl-taf:documentRemainingBalance 文書上残高 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_documentRemainingBalance" xlink:label="documentRemainingBalance"/>
+        <label xlink:type="resource" xlink:label="documentRemainingBalance_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_documentRemainingBalance_ja" xml:lang="en">文書上残高</label>
+        <label xlink:type="resource" xlink:label="documentRemainingBalance_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">文書上の残高。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="documentRemainingBalance" xlink:to="documentRemainingBalance_lbl"/>
+        <!-- gl-taf:ucr UCRコード -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_ucr" xlink:label="ucr"/>
+        <label xlink:type="resource" xlink:label="ucr_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_ucr_ja" xml:lang="en">UCRコード</label>
+        <label xlink:type="resource" xlink:label="ucr_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Unique Consignment ReferenceまたはUCR。国際委託販売のための"origin to destination"参照コード。World Customs OrganizationとEAN International (EAN)が共同で開発している。
+(http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="ucr" xlink:to="ucr_lbl"/>
+        <!-- gl-taf:detailOriginatingDocument 【発生元文書情報】 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocument" xlink:label="detailOriginatingDocument"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocument_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocument_ja" xml:lang="en">【発生元文書情報】</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocument_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocument" xlink:to="detailOriginatingDocument_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentType 発生元文書種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentType" xlink:label="detailOriginatingDocumentType"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentType_ja" xml:lang="en">発生元文書種別</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の種別。小切手(check)、借方メモ(debit-memo)、貸方メモ(credit-memo)、財務費用(finance-charge)、顧客への請求書(invoice)、顧客オーダ(order-customer)、仕入先オーダ(order-vendor)、その他支払い(payment-other)、督促状(reminder)、手形(tegata)、ベンダからの請求書(voucher)、出荷票(shipment)、受領票(receipt)、手修正(manual-adjustment)、その他(other)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentType" xlink:to="detailOriginatingDocumentType_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentNumber 発生元文書番号 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentNumber" xlink:label="detailOriginatingDocumentNumber"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentNumber_ja" xml:lang="en">発生元文書番号</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentNumber_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の番号。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentNumber" xlink:to="detailOriginatingDocumentNumber_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentDate 発生元文書日付 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentDate" xlink:label="detailOriginatingDocumentDate"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentDate_ja" xml:lang="en">発生元文書日付</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentDate_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の日付。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentDate" xlink:to="detailOriginatingDocumentDate_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentIdentifierType 発生元文書対象CVE種別 -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentIdentifierType" xlink:label="detailOriginatingDocumentIdentifierType"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentIdentifierType_ja" xml:lang="en">発生元文書対象CVE種別</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierType_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の対象となるCVEの種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentIdentifierType" xlink:to="detailOriginatingDocumentIdentifierType_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentIdentifierCode 発生元文書対象CVEコード -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentIdentifierCode" xlink:label="detailOriginatingDocumentIdentifierCode"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentIdentifierCode_ja" xml:lang="en">発生元文書対象CVEコード</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の対象となるCVEのコード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentIdentifierCode" xlink:to="detailOriginatingDocumentIdentifierCode_lbl"/>
+        <!-- gl-taf:detailOriginatingDocumentIdentifierTaxCode 発生元文書対象CVE納税者コード -->
+        <loc xlink:type="locator" xlink:href="../gl-taf-2026-MM-DD.xsd#gl-taf_detailOriginatingDocumentIdentifierTaxCode" xlink:label="detailOriginatingDocumentIdentifierTaxCode"/>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierTaxCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="gl-taf_detailOriginatingDocumentIdentifierTaxCode_ja" xml:lang="en">発生元文書対象CVE納税者コード</label>
+        <label xlink:type="resource" xlink:label="detailOriginatingDocumentIdentifierTaxCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">発生元文書の対象となるCVEの納税者コード。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailOriginatingDocumentIdentifierTaxCode" xlink:to="detailOriginatingDocumentIdentifierTaxCode_lbl"/>
+  </labelLink>
+</linkbase>
