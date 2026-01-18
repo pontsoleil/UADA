@@ -1,4 +1,0 @@
-invoiceID,taxCategoryCode,taxCategoryRate,taxCategoryTaxableAmount,taxCategoryTaxAmount
-INV001,S,0.10,15000,150
-INV001,AA,0.08,1200,96
-INV002,S,0.10,620,62

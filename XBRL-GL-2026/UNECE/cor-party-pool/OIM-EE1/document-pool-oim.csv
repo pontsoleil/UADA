@@ -1,0 +1,3 @@
+document,document_line,DocumentID,DocumentTypeCode,DocumentLineID,DocumentLineStatusCode
+1,,DOC-001,cor:Invoice,,
+1,1,DOC-001,,1,cor:Open

@@ -1,0 +1,7 @@
+document,document_line,DocumentID,DocumentTypeCode,DocumentLineID,DocumentLineStatusCode
+1,,DOC-001,uncl_1001:_380,,
+1,1,,,1,cor:Open
+1,2,,,2,cor:Closed
+2,,DOC-002,uncl_1001:_380,,
+2,1,,,1,cor:Open
+2,2,,,2,cor:Closed

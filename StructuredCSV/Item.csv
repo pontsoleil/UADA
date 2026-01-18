@@ -1,5 +1,0 @@
-ID,name,price,baseQuantity,uom,taxCategoryCode,taxCategoryRate
-1001,オフィスチェア,15000,1.000,EA,S,0.10
-2001,ミネラルウォーター,1200,1.000,BOX,AA,0.08
-A001,Notebook,500,1.000,EA,S,0.10
-A002,"Ballpoint Pen",120,1.000,EA,S,0.10
