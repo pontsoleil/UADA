@@ -8,7 +8,7 @@ Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Creation Date: 2025-05-18
-Last Modified: 2025-05-19
+Last Modified: 2025-10-08
 
 MIT License
 
@@ -39,6 +39,7 @@ import csv
 # import copy
 import re
 # from collections import OrderedDict, Counter
+import unicodedata
 
 def file_path(pathname):
     _pathname = pathname.replace("/", os.sep)
@@ -52,9 +53,11 @@ class SchemaModule:
     def __init__ (
             self,
             bsm_file,
+            DATE,
             root_term,
             remove_chars,
             encoding,
+            annotation,
             trace,
             debug
         ):
@@ -69,78 +72,100 @@ class SchemaModule:
         self.encoding = encoding.strip() if encoding else 'utf-8-sig'
         # Set debug and trace flags, and file path separator
         self.root_element = self.normalize_text(root_term)
-        self.schema_file = f'{self.root_element}.xsd'
+        dir = os.path.dirname(__file__)
+        self.schema_file = f'{self.root_element}_BSM_{DATE}.xsd'
+        self.schema_file = file_path(f'{dir}/{self.schema_file}')
 
+        self.DATE = DATE
+        self.ANNOTATION = annotation
         self.TRACE = trace
         self.DEBUG = debug
 
         self.class_id_map = {}
         self.object_class_dict = {}
-        self.version_date = "20230720135040"
-        self.version_num = "4p1"
+
+        self.WS = "  "
+        WS = self.WS
+        self.version_date = "20250901"
+        self.version_num = "4p3"
         self.html = [
-            '<?xml version="1.0" encoding="UTF-8"?>',
             '<!-- ====================================================================== -->',
             f'<!-- ===== {self.root_element} Schema Module {" " * (59 - len(f"{self.root_element} Schema Module "))}===== -->',
             '<!-- ====================================================================== -->',
             '<!--',
-            'Schema agency:  ',
-            'Schema version: ',
-            'Schema date:    ',
+            'Schema agency:  ITCA',
+            'Schema version: ver 4.3',
+            'Schema date:    2025-09-01',
             '-->',
-            '<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" ',
-            'xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" ',
-            f'xmlns:rsm="urn:un:unece:uncefact:3055:413:data:standard:{self.root_element}:{self.version_num}" ',
-            'xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33" ',
-            f'targetNamespace="urn:un:unece:uncefact:3055:413:data:standard:{self.root_element}:{self.version_num}" ',
-            'elementFormDefault="qualified" ',
-            'attributeFormDefault="unqualified" ',
-            f'version="{self.version_date}">',
+            '<xsd:schema',
+            2*WS + f'targetNamespace="urn:un:unece:uncefact:data:standard:{self.root_element}:{self.version_num}" ',
+            2*WS + 'xmlns:xsd="http://www.w3.org/2001/XMLSchema"',
+            2*WS + 'xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" ',
+            2*WS + 'xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:34"',
+            2*WS + 'xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:34"',
+            2*WS + 'xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:34"',
+            2*WS + f'xmlns:rsm="urn:un:unece:uncefact:data:standard:{self.root_element}:{self.version_num}" ',
+            2*WS + 'elementFormDefault="qualified" attributeFormDefault="unqualified" ',
+            2*WS + f'version="{self.version_date}">',
             '<!-- ======================================================================= -->',
             '<!-- ===== Imports                                                     ===== -->',
             '<!-- ======================================================================= -->',
+            '<!-- ======================================================================= -->',
             '<!-- ===== Import of Unqualified Data Type Schema Module               ===== -->',
             '<!-- ======================================================================= -->',
-            '  <xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:33" schemaLocation="UnqualifiedDataType_33p0.xsd"/>',
+            WS + '<xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:34"',
+            2*WS + 'schemaLocation="XMLSchemas-D23B/13DEC23/uncefact/data/standard/UnqualifiedDataType_34p0.xsd"/>',
             '<!-- ======================================================================= -->',
-            '<!-- ===== Element Declarations                                        ===== -->',
+            '<!-- ===== Import of Qualified Data Type Schema Module                 ===== -->',
             '<!-- ======================================================================= -->',
-            '<!-- ===== Root Element Declarations                                   ===== -->',
+            WS + '<xsd:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:34"',
+            2*WS + 'schemaLocation="XMLSchemas-D23B/13DEC23/uncefact/data/standard/QualifiedDataType_34p0.xsd"/>',
             '<!-- ======================================================================= -->',
-            '<!-- Global型宣言 -->',
-            f'  <xsd:element name="{self.root_element}" type="rsm:{self.root_element}Type"/>',
+            '<!-- ===== Import of Reusable Aggregate Business Information Entity Schema Module ===== -->',
             '<!-- ======================================================================= -->',
-            '<!-- ===== Type Definitions                                            ===== -->'
+            WS + '<xsd:import namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:34"',
+            2*WS + 'schemaLocation="XMLSchemas-D23B/13DEC23/uncefact/data/standard/ReusableAggregateBusinessInformationEntity_34p0.xsd"/>',
+            '<!-- ======================================================================= -->',
+            '<!-- ===== Type Declarations                                        ===== -->',
+            '<!-- ======================================================================= -->'
         ]
 
-    def debug_print(self, text):
+    def print(self, message):
         if self.DEBUG:
-            print(text)
+            print(message)
 
-    def trace_print(self, text):
+    def debug_print(self, message):
+        if self.DEBUG:
+            print(f"[DEBUG] {message}")
+
+    def error_print(self, message):
         if self.TRACE or self.DEBUG:
-            print(text)
+            print(f"[ERROR] {message}")
 
-    def normalize_text(self, text):
-        if not text:
-            return ""
-        # Replace "-", ".", and "_" with a space
-        replaced = text.translate(str.maketrans('', '', self.REMOVE_CHARS))
-        # Replace multiple spaces with a single space and trim leading/trailing spaces
-        normalized = re.sub(r'\s+', " ", replaced).strip()
-        return normalized
+    def trace_print(self, message):
+        if self.TRACE or self.DEBUG:
+            print(f"[TRACE] {message}")
+
+    def normalize_text(self, s):
+        # 全角→半角・互換文字を標準化（＜Lin＞→<Lin> など）
+        t = unicodedata.normalize('NFKC', s)
+        t = re.sub(r"\s*\[[^\]]*\]", "", t)
+        # ＜Lin＞（<Lin>）が含まれるか
+        has_lin = "<Lin>" in t
+        if has_lin:
+            t = t.replace("<Lin>", "")  # まず除去
+        # 空白と " ._/()-" を全部削除
+        # \s は改行や全角空白も含む
+        cleaned = re.sub(r"[.\s_/()\-]+", "", t)
+        result = ("Line" + cleaned) if has_lin else cleaned
+        return result
 
     # Utility function to update class term
     def update_class_term(self, row):
-        unid = row['unid']
+        unid = row["UNID"]
         property_type = row["property_type"]
-        if not unid:
-            return None
         _type = row['property_type']
-        class_term = row['class_term']
-        if "." in class_term:
-            class_term = class_term[:class_term.index(".")]
-        class_term = self.normalize_text(class_term)
+        class_term = self.normalize_text(row['class_term'])
         if "Class"==property_type:
             if class_term not in self.class_id_map:
                 class_num = str(len(list(self.class_id_map))).zfill(2)
@@ -159,11 +184,11 @@ class SchemaModule:
             _id = f"{class_id}_{str(seq)}"
         row["id"] = _id
         row["class_term"] = class_term
-        property_term = row['property_term']
+        property_term = self.normalize_text(row['property_term'])
         if property_term:
             property_term = self.normalize_text(property_term)
             row["property_term"] = property_term
-        associated_class = row['associated_class']
+        associated_class = self.normalize_text(row['associated_class'])
         if associated_class:
             associated_class = self.normalize_text(associated_class)
             row["associated_class"] = associated_class
@@ -176,27 +201,86 @@ class SchemaModule:
             self.object_class_dict[class_term]['properties'][unid]['class_term'] = class_term
         return class_term, property_term, associated_class
 
-    def annotation(self, html, unid, acronym, den, definition, label_local, definition_local, leading_space=""):
-        html += [
-            f'{leading_space}    <xsd:annotation>',
-            f'{leading_space}      <xsd:documentation xml:lang="en">',
-            f'{leading_space}        <ccts:UniqueID>{unid}</ccts:UniqueID>',
-            f'{leading_space}        <ccts:Acronym>{acronym}</ccts:Acronym>',
-            f'{leading_space}        <ccts:DictionaryEntryName>{den}</ccts:DictionaryEntryName>',
-            f'{leading_space}        <ccts:Definition>{definition}</ccts:Definition>',
-            f'{leading_space}      </xsd:documentation>',
-            f'{leading_space}      <xsd:documentation xml:lang="ja">',
-            f'{leading_space}        <ccts:Name>{label_local}</ccts:Name>',
-            f'{leading_space}        <ccts:Definition>{definition_local}</ccts:Definition>',
-            f'{leading_space}      </xsd:documentation>',
-            f'{leading_space}    </xsd:annotation>'
+    def annotation(self, unid, acronym, den, short_name, definition, label_sme, definition_sme, multiplicity, multiplicity_sme, leading_level=0):
+        if not self.ANNOTATION:
+            return ""
+        WS = "  "
+        html = [
+            WS*(3*(leading_level - 1) + 2) + '<xsd:annotation>',
+            WS*(3*(leading_level - 1) + 3) + '<xsd:documentation xml:lang="en">'
         ]
+        if unid:
+            html.append(WS*(3*(leading_level - 1) + 4) + f'<ccts:UniqueID>{unid}</ccts:UniqueID>')
+        if acronym:
+            html.append(WS*(3*(leading_level - 1) + 4) + f'<ccts:Acronym>{acronym}</ccts:Acronym>')
+        if den:
+            html.append(WS*(3*(leading_level - 1) + 4) + f'<ccts:DictionaryEntryName>{den}</ccts:DictionaryEntryName>')
+        if short_name:
+            html.append(WS*(3*(leading_level - 1) + 4) + f'<ccts:Name>{short_name}</ccts:Name>')
+        if definition:
+            # 改行文字を削除
+            text = re.sub(r'[\r\n]+', '', definition)
+            # 半角・全角スペースの連続を単一の半角スペースに変換
+            text = re.sub(r'[ \u3000]+', ' ', text)
+            text = text.strip()
+            text = WS*(3*(leading_level - 1) + 4) + f'<ccts:Definition>{text}'
+
+            if re.match(r".*([01]\.\.[1n]).*", multiplicity):
+                min = multiplicity[0]
+                max = multiplicity[-1]
+                if "n"==max:
+                    max="unbounded"
+                text += f' [Occurence Min={min} Max={max}]'
+            elif not multiplicity:
+                pass
+            else:
+                msg = f'"{den}"の多重度[{multiplicity}]不正'
+                self.error_print(msg)
+
+            text += '</ccts:Definition>'
+            html.append(text)
+
+        html += [
+            WS*(3*(leading_level - 1) + 3) + '</xsd:documentation>',
+            WS*(3*(leading_level - 1) + 3) + '<xsd:documentation xml:lang="ja">'
+        ]
+
+        if label_sme:
+            html.append(WS*(3*(leading_level - 1) + 4) + f'<ccts:Name>{label_sme}</ccts:Name>')
+
+        if definition_sme:
+            # 改行文字を削除
+            text = re.sub(r'[\r\n]+', '', definition_sme)
+            # 半角・全角スペースの連続を単一の半角スペースに変換
+            text = re.sub(r'[ \u3000]+', ' ', text)
+            text = text.strip()
+            text = WS*(3*(leading_level - 1) + 4) + f'<ccts:Definition>{text}'
+
+            if re.match(r".*([01]\.\.[1n]).*", multiplicity_sme):
+                min = multiplicity_sme[0]
+                max = multiplicity_sme[-1]
+                if "n"==max:
+                    max="unbounded"
+                text += f' [Occurence Min={min} Max={max}]'
+            elif not multiplicity_sme:
+                pass
+            else:
+                msg = f'"{den}"の多重度[{multiplicity_sme}]不正'
+                self.error_print(msg)
+            text += '</ccts:Definition>'
+            html.append(text)
+
+        html += [
+            WS*(3*(leading_level - 1) + 3) + '</xsd:documentation>',
+            WS*(3*(leading_level - 1) + 2) + '</xsd:annotation>'
+        ]
+
         return html
 
     def schema(self):
+        WS = "  "
+        header = ["version", "sme_nr", "mbie_nr", "level", "property_type", "class_term", "sequence", "multiplicity", "multiplicity_SME", "identifier", "property_term", "representation_term", "code_list", "XML datatype", "associated_class", "selector", "fixed_value", "label_SME_ja", "label_SME_SME", "definition_SME_SME", "label_SME", "definition_SME", "UNID", "acronym", "DEN", "definition", "short_name", "element", "XML element name", "xpath"]
         # read CSV file
-        header =  ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'acronym', 'id', 'domain_name', 'element', 'label_local', 'definition_local', 'den', 'unid']
-
         with open(self.bsm_file, encoding = self.encoding, newline='') as f:
             reader = csv.DictReader(f, fieldnames = header)
             next(reader)
@@ -215,83 +299,136 @@ class SchemaModule:
                 self.debug_print(f"{id} {record['property_type']} | {class_term} | {record['associated_class'] or record['property_term']}")
 
         for key, data in self.object_class_dict.items():
-            acronym = data["acronym"]
-            unid = data["unid"]
-            den = data["den"]
-            element = data["element"]
+            c_acronym = data["acronym"]
+            unid = data["UNID"]
+            den = data["DEN"]
+            label_SME = data["label_SME"]
+            short_name = data["short_name"]
+            multiplicity = data["multiplicity"]
+            multiplicity_SME = data["multiplicity_SME"]
             definition = data["definition"]
-            label_local = data["label_local"]
-            definition_local = data["definition_local"]
-            definition_local =  re.sub(r'\s+', ' ', definition_local).strip()
-            self.html += [
-                '<!-- ======================================================================= -->',
-                f'<!-- ===== {element}Type {" " * (66 - len(f"===== {element}Type "))}===== -->',
-                '<!-- ======================================================================= -->',
-                f'  <xsd:complexType name="{element}Type">',
-            ]
-            self.annotation(self.html, unid, acronym, den, definition, label_local, definition_local)
-            self.html.append('    <xsd:sequence>')
+            definition_SME = data["definition_SME"]
+            definition_SME =  re.sub(r'\s+', ' ', definition_SME).strip()
+            # leading_space = None
+            """
+            Schema header
+            """
+            self.print("\n".join(self.html))
+            if "MA"==c_acronym:
+                element = data['element']
+                # xml_datatype = None
+                html = [
+                    '<!-- ======================================================================= -->',
+                    '<!-- ===== Element Declarations                                        ===== -->',
+                    '<!-- ======================================================================= -->',
+                    '<!-- ===== Root Element Declarations                                   ===== -->',
+                    '<!-- ======================================================================= -->',
+                    '<!-- ======================================================================= -->',
+                    f'<!-- ===== {element} {" " * (66 - len(f"===== {element} "))}===== -->',
+                    '<!-- ======================================================================= -->',
+                    WS + f'<xsd:element name="{element}"  type="rsm:{element}Type">',
+                ]
+                # annotation
+                self.print("\n".join(html))
+                self.html += html
+                html = [
+                    WS + '</xsd:element>',
+                    '<!-- ======================================================================= -->',
+                    f'<!-- ===== {element}Type {" " * (66 - len(f"===== {element}Type "))}===== -->',
+                    '<!-- ======================================================================= -->',
+                    WS + f'<xsd:complexType name="{element}Type">',
+                ]
+                self.print("\n".join(html))
+                self.html += html
+                html = ""
+                if self.ANNOTATION:
+                    html = self.annotation(unid, c_acronym, den, short_name, definition, label_SME, definition_SME, multiplicity, multiplicity_SME, 1)
+                html += [2*WS + '<xsd:sequence>']   
+                self.print("\n".join(html))
+                self.html += html
+            else:
+                element = data['class_term']
+                # xml_datatype = data["XML datatype"]
+                html = [
+                    '<!-- ======================================================================= -->',
+                    f'<!-- ===== {element}Type {" " * (66 - len(f"===== {element}Type "))}===== -->',
+                    '<!-- ======================================================================= -->',
+                    WS + f'<xsd:complexType name="{element}Type">',
+                ]
+                self.print("\n".join(html))
+                self.html += html
+                html = ""
+                if self.ANNOTATION:
+                    html = self.annotation(unid, c_acronym, den, short_name, definition, label_SME, definition_SME, multiplicity, multiplicity_SME, 1)
+                html += [2*WS + '<xsd:sequence>']
+                self.print("\n".join(html))
+                self.html += html
+            # self.print("\n".join(html))
+            # self.html += html
+
             for k, v in data["properties"].items():
-                unid = v["unid"]
+                unid = v["UNID"]
                 acronym = v["acronym"]
-                den = v["den"]
+                den = v["DEN"]
                 property_type = v["property_type"]
                 element = v["element"]
                 multiplicity = v["multiplicity"]
-                min = multiplicity[0]
-                max = multiplicity[-1]
+                if re.match(r".*([01]\.\.[1n]).*", multiplicity):
+                    min = multiplicity[0]
+                    max = multiplicity[-1]
+                    if "n"==max:
+                        max="unbounded"
+                else:
+                    msg = f'"{den}"の多重度[{multiplicity}]不正'
+                    self.error_print(msg)
                 multiplicity = ""
                 if "1"!=min:
                     multiplicity = f' minOccurs="{min}"'
                 if "1"!=max:
-                    multiplicity += ' maxOccurs="unbounded"'
+                    multiplicity += f' maxOccurs="{max}"'
+                multiplicity_SME = v["multiplicity_SME"]
                 property_term = v["property_term"]
+                label_SME = v["label_SME"]
+                short_name = v["short_name"]
                 definition = v["definition"]
-                label_local = v["label_local"]
-                definition_local = v["definition_local"]
-                definition_local =  re.sub(r'\s+', ' ', definition_local).strip()
+                definition_SME = v["definition_SME"]
+                definition_SME =  re.sub(r'\s+', ' ', definition_SME).strip()
                 if "Attribute"==property_type:
-                    representation_term = v["representation_term"]
-                    # Define a mapping for the representation term to data type conversion
-                    representation_map = {
-                        "Identifier": "ID",
-                        "Date Time": "DateTime"
-                    }
-                    # Default to using the representation_term as data_type
-                    data_type = representation_map.get(representation_term, representation_term)
-                    # Construct the name
-                    name = f"{property_term}{data_type}"
-                    # Replace suffixes for specific cases
-                    if name.endswith("IdentificationID"):
-                        name = name.replace("IdentificationID", "ID")
-                    elif name.endswith("Text"):
-                        name = name.replace("Text", "")
-                    # data_type = representation_term
-                    # if "Identifier"==representation_term:
-                    #     data_type = "ID"
-                    # elif "Date Time"==representation_term:
-                    #     data_type = "DateTime"
-                    # name = f"{property_term}{data_type}"
-                    # if name.endswith("IdentificationID"):
-                    #    name = name.replace("IdentificationID", "ID")
-                    # elif name.endswith("Text"):
-                    #    name = name.replace("Text", "")
-                    self.html += [
-                        f'      <xsd:element name="{name}" type="udt:{data_type}Type"{multiplicity}>',
-                    ]
-                else:
+                    name = v["XML element name"]
+                    data_type = v["XML datatype"]
                     associated_class = v["associated_class"]
-                    name = f"{property_term}{associated_class}" 
-                    self.html += [
-                        f'      <xsd:element name="{name}" type="rsm:{associated_class}Type"{multiplicity}>'
-                    ]
-                self.annotation(self.html, unid, acronym, den, definition, label_local, definition_local, "    ")
-                self.html.append(f'      </xsd:element>')
+                    if name and data_type:
+                        html = 3*WS + f'<xsd:element name="{name}" type="{data_type}"{multiplicity}>'
+                        self.print(html)
+                        self.html.append(html)
+                    else:
+                        continue
+                elif "Composition"==property_type:
+                    name = v["XML element name"]
+                    data_type = v["XML datatype"]
+                    associated_class = v["associated_class"]
+                    if name and associated_class:                    
+                        html = 3*WS + f'<xsd:element name="{name}" type="rsm:{associated_class}Type"{multiplicity}>'
+                        self.print(html)
+                        self.html.append(html)
+                    else:
+                        continue
+                else:
+                    continue
+                if self.annotation:
+                    html = self.annotation(unid, c_acronym, den, short_name, definition, label_SME, definition_SME, multiplicity, multiplicity_SME, 2)
+                    self.print("\n".join(html))
+                    self.html += html
+                html = 3*WS + f'</xsd:element>'
+                self.print(html)
+                self.html.append(html)
 
-            self.html += [
-                '    </xsd:sequence>',
-                f'  </xsd:complexType>'
+            html = [
+                2*WS + '</xsd:sequence>',
+                WS + '</xsd:complexType>',	
             ]
+            self.print("\n".join(html))
+            self.html += html
 
         self.html.append('</xsd:schema>')
 
@@ -303,30 +440,36 @@ class SchemaModule:
 
 # Main function to execute the script
 def main():
-    # Create the parser
-    parser = argparse.ArgumentParser(
-        prog='sme_schema.py',
-        usage='%(prog)s BSM_file -r Root class term -e encoding [options] ',
-        description='Converts logical model to HMD with graph walk.'
-    )
-    parser.add_argument('BSM_file', metavar='BSM_file', type = str, help='Business semantic model file path')
-    # Allow multiple values with action='append' or nargs='+'
-    parser.add_argument("-r", "--root", help="Root class term for schema module to process.")
-    parser.add_argument('-e', '--encoding', required = False, default='utf-8-sig', help='File encoding, default is utf-8-sig')
-    parser.add_argument('-t', '--trace', required = False, action='store_true')
-    parser.add_argument('-d', '--debug', required = False, action='store_true')
+    # # Create the parser
+    # parser = argparse.ArgumentParser(
+    #     prog='sme_schema.py',
+    #     usage='%(prog)s BSM_file -r Root class term -e encoding [options] ',
+    #     description='Converts logical model to HMD with graph walk.'
+    # )
+    # parser.add_argument('BSM_file', metavar='BSM_file', type = str, help='Business semantic model file path')
+    # # Allow multiple values with action='append' or nargs='+'
+    # parser.add_argument("-r", "--root", help="Root class term for schema module to process.")
+    # parser.add_argument('-e', '--encoding', required = False, default='utf-8-sig', help='File encoding, default is utf-8-sig')
+    # parser.add_argument('-t', '--trace', required = False, action='store_true')
+    # parser.add_argument('-d', '--debug', required = False, action='store_true')
 
-    args = parser.parse_args()
+    # args = parser.parse_args()
 
+    BSM_File = "SME_common10-08_BSM.csv"
+    root = "SMEConsolidatedSelfInvoice"
+    encoding = 'utf-8-sig'
+    DATE = "10-08"
     REMOVE_CHARS = " -._'"
 
     processor = SchemaModule(
-        bsm_file = args.BSM_file.strip(),
-        root_term = args.root.strip() if args.root else None,
+        bsm_file = BSM_File,
+        DATE = DATE,
+        root_term = root,
         remove_chars = REMOVE_CHARS,
-        encoding = args.encoding.strip() if args.encoding else None,
-        trace = args.trace,
-        debug = args.debug
+        encoding = encoding,
+        annotation = True,
+        trace = True,
+        debug = True
     )
 
     processor.schema()

@@ -1,0 +1,19 @@
+﻿XML datatype,D23B,UNTDID
+qdt:AccountingAccountTypeCodeType,/uncefact/codelist/standard/EDIFICAS-EU_AccountingAccountType_D11A.xsd,
+qdt:AccountingDebitCreditStatusCodeType,/uncefact/codelist/standard/UNECE_StatusDescriptionCode_AccountingDebitCredit_D23A.xsd,
+qdt:AllowanceChargeReasonCodeType,/uncefact/codelist/standard/UNECE_AllowanceChargeReasonCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred4465.htm
+qdt:CountryIDType,/uncefact/identifierlist/standard/ISO_ISOTwo-letterCountryCode_SecondEdition2006.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred3207.htm
+qdt:CurrencyCodeType,/uncefact/codelist/standard/ISO_ISO3AlphaCurrencyCode_2012-08-31.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred6345.htm
+qdt:DateMandatoryDateTimeType,"<xsd:union memberTypes=""xsd:dateTime xsd:date""/>",
+qdt:DocumentCodeType,/uncefact/codelist/standard/UNECE_DocumentNameCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred1001.htm
+qdt:FinancialAdjustmentReasonCodeType,/uncefact/codelist/standard/UNECE_AdjustmentReasonDescriptionCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred4465.htm
+qdt:FormattedDateTimeType,/uncefact/codelist/standard/UNECE_TimePointFormatCode_D23A.xsd,
+qdt:InvoiceDocumentCodeType,/uncefact/codelist/standard/UNECE_DocumentNameCode_Invoice_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred1001.htm
+qdt:MessageFunctionCodeType,/uncefact/codelist/standard/UNECE_MessageFunctionCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred1225.htm
+qdt:PaymentMeansCodeType,/uncefact/codelist/standard/UNECE_PaymentMeansCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred4461.htm
+qdt:PaymentTermsIDType,/uncefact/identifierlist/standard/UNECE_PaymentTermsDescriptionIdentifier_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred4277.htm
+qdt:PaymentTermsTypeCodeType,/uncefact/codelist/standard/UNECE_PaymentTermsTypeCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred4279.htm
+qdt:PriceTypeCodeType,/uncefact/codelist/standard/UNECE_PriceTypeCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred5375.htm
+qdt:ReferenceCodeType,/uncefact/codelist/standard/UNECE_ReferenceTypeCode_D23A.xsd,https://service.unece.org/trade/untdid/d98b/uncl/uncl1153.htm
+qdt:TaxCategoryCodeType,/uncefact/codelist/standard/UNECE_DutyorTaxorFeeCategoryCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred5305.htm
+qdt:TaxTypeCodeType,/uncefact/codelist/standard/UNECE_DutyTaxFeeTypeCode_D23A.xsd,https://service.unece.org/trade/untdid/d23a/tred/tred5153.htm

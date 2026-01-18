@@ -1,0 +1,712 @@
+﻿UNID,short_name,short_name_ja,definition,definition_ja
+UN01003138,Branch Financial Institution,支店金融機関,"A sub-division of a bank, building society, credit union, stock brokerage, or similar business; established primarily to provide financial services and financial transactions.",銀行、住宅金融組合、信用組合、証券会社、または類似の事業における部門。主に金融サービスおよび金融取引を提供するために設立される。
+UN01003139,ID,ID,The unique identifier for this branch of a financial institution.,金融機関の支店を識別する固有の識別子。
+UN01003140,Name,名前,"The name, expressed as text, for this branch of a financial institution.",金融機関の支店の名称（テキスト表記）。
+UN01003141,Address,住所,The location address for this branch of a financial institution.,金融機関の支店所在地の住所。
+UN01005861,CIIH Exchanged Document,CIIH交換文書,"A collection of data for a Cross Industry Invoice Header (CIIH) that is exchanged between two or more parties in written, printed or electronic form.",書面、印刷物、または電子形式で2つ以上の事業者間で交換される、インボイスヘッダのデータ集合。
+UN01005862,ID,ID,The unique identifier of this CIIH exchanged document.,CIIHの取引文書の固有識別子。
+UN01005863,Name,名前,"A name, expressed as text, of this CIIH exchanged document.",CIIHの取引文書の名称（テキストで表現）。
+UN01005864,Type Code,タイプコード,The code specifying the type of CIIH exchanged document.,交換されるCIIHの文書の種類を指定するコード。
+UN01005865,Issue Date Time,発行日時,"The date, time, date time or other date time value for the issuance of this CIIH exchanged document.",CIIHの取引文書の発行日、時刻、日付時刻、またはその他の日付時刻値。
+UN01005866,Copy Indicator,コピーインジケーター,The indication of whether or not this CIIH exchanged document is a copy.,CIIHの取引文書が複写であるかどうかの表示。
+UN01005867,Purpose Text,目的テキスト,"The purpose, expressed as text, of this CIIH exchanged document.",CIIHの取引文書の目的をテキストで表現したもの。
+UN01005868,Language Code,言語コード,A unique identifier for a language used in this CIIH exchanged document.,CIIHの取引文書で使用される言語の一意の識別子。
+UN01005869,Purpose Code,目的コード,"The code specifying the purpose of this CIIH exchanged document, such as request or reminder.",CIIHの取引文書の目的（要求、リマインダーなど）を指定するコード。
+UN01005870,Revision Date Time,改訂日時,"Thedate,time,datetimeorotherdatetimevaluefortherevisionofthisCIIHexchangeddocument.",CIIHの取引文書の改訂に関する日付、時刻、日付時刻、またはその他の日付時刻の値。
+UN01005871,Version ID,バージョンID,TheuniqueidentifierfortheversionofthisCIIHexchangeddocument.,CIIHの取引文書のバージョンを一意に識別する識別子。
+UN01005872,Global ID,グローバルID,The unique global identifier for this CIIH exchanged document.,CIIHの取引文書の一意のグローバル識別子。
+UN01005873,Revision ID,リビジョンID,The unique identifier of the revision of this CIIH exchanged document.,CIIHの取引文書の改訂版の一意の識別子。
+UN01005874,Previous Revision ID,前のリビジョンID,The unique identifier of the previous revision of this CIIH exchanged document.,CIIHの取引文書の前の改訂版の一意の識別子。
+UN01005875,Category Code,カテゴリーコード,The code specifying the category for this CIIH exchanged document.,CIIHの取引文書のカテゴリを指定するコード。
+UN01006038,Control Requirement Indicator,制御要件指標,The indication of whether or not there is a control requirement for this CIIH exchanged document.,CIIHの取引文書に管理要件があるかどうかの表示。
+UN01014635,Response Reason Code,応答理由コード,The code specifying the response reason of this CIIH exchanged document.,CIIHの取引文書の応答理由を特定するコード。
+UN01014636,Subtype Code,サブタイプコード,The code specifying the subtype of this CIIH exchanged document.,CIIHの取引文書のサブタイプを特定するコード。
+UN01015491,Requested Response Type Code,要求された応答タイプコード,A code specifying a type of response requested for this CIIH exchanged document.,CIIHの取引文書に対して要求される応答の種類を指定するコード。
+UN01005876,Note,注記,A note included in this CIIH exchanged document.,CIIHの取引文書に含まれる注記。
+UN01005877,Issuer,発行者,The party that issues this CIIH exchanged document.,CIIHの取引文書を発行する事業者。
+UN01012686,Signatory Document Authentication,署名文書の認証,The signatory authentication for this CIIH exchanged document.,CIIHの取引文書の署名者認証。
+UN01012702,Other Referenced Documents,その他の参考文献,Other documents referenced by this CIIH exchanged document.,CIIHの取引文書が参照するその他の文書。
+UN01015490,Attached Binary File,添付されたバイナリファイル,A binary file attached to this CIIH exchanged document.,CIIHの取引文書に添付されたバイナリファイル。
+UN01005878,CIIH Trade Agreement,CIIH取引協定,The contractual terms of the supply chain trade agreement for this Cross Industry Invoice Header (CIIH).,CIIHサプライチェーン取引契約の契約条件。
+UN01008552,Buyer Reference Text,買い手参照テキスト,"The buyer reference, expressed as text, for this CIIH supply chain trade agreement.",CIIHサプライチェーン取引契約の買い手参照（テキストで表現）。
+UN01005879,Seller,売り手,The party that is the seller for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約における売り手事業者。
+UN01005880,Buyer,買い手,The party that is the buyer for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約における買い手である事業者。
+UN01005881,Buyer Assigned Accountant,買い手指定の会計士,The trade party assigned as an accountant by the buyer for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約において、買手により会計担当者として指名された取引当事者。
+UN01005882,Seller Assigned Accountant,売り手指定の会計士,The trade party assigned as an accountant by the seller for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約において、売り手によって会計担当者として割り当てられた取引事業者。
+UN01005883,Buyer Tax Representative,買い手の税務代理人,The trade party acting as a tax representative for the buyer for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約における買い手の税務代理人として活動する取引事業者。
+UN01005884,Seller Tax Representative,売り手税務代理人,The trade party acting as a tax representative for the seller for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約における売主の税務代理人として活動する取引事業者。
+UN01005885,Delivery Terms,配送条件,The trade terms of delivery applicable to this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約に適用される取引納品条件。
+UN01005886,Seller Order Document,売り手注文書,The seller order document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約から参照される売り手注文書。
+UN01005887,Buyer Order Document,買い手注文書,The buyer order document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される買い手注文書。
+UN01005888,Quotation Document,見積書,The quotation document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される見積書。
+UN01005889,Order Response Document,注文回答書,The order response document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される発注応答文書。
+UN01005890,Contract Document,契約書,The contract document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される契約文書。
+UN01005891,Demand Forecast Document,需要予測文書,The demand forecast document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される需要予測文書。
+UN01005892,Supply Instruction Document,供給指示書,The supply instruction document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される供給指示書。
+UN01005893,Promotional Deal Document,プロモーション取引文書,The promotional deal document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照されるプロモーション取引文書。
+UN01005894,Price List Document,価格表文書,The price list document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される価格表文書。
+UN01005895,Additional Document,追加文書,An additional document referenced from this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される追加文書。
+UN01006058,Buyer Requisitioner,買い手の購買依頼者,A Cross Industry (CI) trade party who is a buyer requisitioner in this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約において買い手要求者であるインボイス取引事業者。
+UN01006061,Requisitioner Document,請求者文書,A requisitioner Cross Industry (CI) document referenced in this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約で参照される要求者インボイス文書。
+UN01008553,Buyer Agent,バイヤーエージェント,The party representing the buyer in this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約において買い手を代表する事業者。
+UN01008554,Sales Agent,販売代理店,The party representing the seller in this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約において売り手を代表する事業者。
+UN01011516,Procuring Project,調達プロジェクト,The procuring project specified for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約に指定された調達プロジェクト。
+UN01012688,Pricing Base Applicable Logistics Location,価格設定ベース 適用可能な物流拠点,The logistics location applicable to the pricing base for this CIIH supply chain trade agreement.,CIIHサプライチェーン取引契約の価格設定基準に適用される物流拠点。
+UN01005896,CIIH Trade Delivery,CIIH 取引配送,Cross Industry Invoice Header (CIIH) supply chain shipping arrangements and movement of products and or services including despatch and delivery.,CIIHサプライチェーンにおける出荷手配および製品・サービスの移動（発送および配送を含む）。
+UN01005897,Consignment,委託,The Cross Industry (CI) supply chain consignment related to this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品に関連するインボイスサプライチェーン委託品。
+UN01005898,Ship To Party,配送先事業者,The Cross Industry (CI) trade party who is the ship to party for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送における荷受先となるインボイス取引事業者。
+UN01005899,Ultimate Ship To Party,最終配送先事業者,The Cross Industry (CI) trade party who is the ultimate ship to party for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送における最終的な荷受先となるインボイス取引事業者。
+UN01005900,Ship From Party,配送元事業者,The Cross Industry (CI) trade party who is the ship from party for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送における出荷元となるインボイス取引事業者。
+UN01005901,Actual Despatch Event,実際の発送イベント,The Cross Industry (CI) actual supply chain despatch event for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送に関するインボイスの実際のサプライチェーン発送イベント。
+UN01005902,Actual Pick-Up Event,実際のピックアップイベント,The Cross Industry (CI) actual supply chain pick-up event for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送におけるインボイスの実際のサプライチェーン集荷イベント。
+UN01005903,Actual Delivery Event,実際の配送イベント,The Cross Industry (CI) actual supply chain delivery event for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送におけるインボイスの実際のサプライチェーン配送イベント。
+UN01005904,Actual Receipt Event,実際の受領イベント,The Cross Industry (CI) actual supply chain receipt event for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送に対するインボイスの実際のサプライチェーン受領イベント。
+UN01005905,Despatch Advice Document,発送通知書,The Cross Industry (CI) despatch advice document referenced from this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品から参照されたインボイス発送通知書。
+UN01005906,Receiving Advice Document,受領案内文書,The Cross Industry (CI) receiving advice document referenced from this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送から参照されるインボイス受領通知文書。
+UN01005907,Delivery Note Document,納品書,The Cross Industry (CI) delivery note document referenced from this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品から参照されるインボイス納品書文書。
+UN01005908,Additional Document,追加文書,An additional Cross Industry (CI) document referenced from this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品から参照される追加の文書。
+UN01008615,Consumption Report Document,消費報告書,The consumption report document referenced from this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品から参照される消費レポート文書。
+UN01009053,Previous Delivery Event,前回の配送イベント,A previous delivery event for this CIIH supply chain trade delivery.,CIIHサプライチェーン取引納品に関連する過去の納品イベント。
+UN01005909,CIIH Trade Settlement,CIIH取引決済,The information that enables the financial reconciliation of the Cross Industry Invoice Header (CIIH) of a supply chain transaction with the item(s) that the financial transaction is intended to settle.,サプライチェーン取引におけるCIIHと、当該金融取引で決済対象となる項目との財務照合を可能にする情報。
+UN01005910,Deprecated Due Payable Amount,減価償却支払額,"A monetary value that is an exact amount due and payable for this CIIH supply chain trade settlement, such as the amount due to the creditor.",CIIHサプライチェーン取引決済において正確に支払うべき金額（例：債権者への支払額）を示す金額。
+UN01005911,Creditor Reference ID,債権者参照ID,"The unique identifier of the creditor reference for this CIIH supply chain trade settlement, such as a specific identifier assigned by the creditor to reference the financial transaction.",CIIHサプライチェーン取引決済における債権者参照の固有識別子。例えば、金融取引を参照するために債権者が割り当てた特定の識別子。
+UN01005912,Payment Reference Text,支払い参照テキスト,"A payment reference, expressed as text, for this CIIH supply chain trade settlement.",CIIHサプライチェーン取引決済における支払参照情報（テキスト形式）。
+UN01005913,Tax Currency Code,税通貨コード,The code specifying the tax currency for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における税通貨を指定するコード。
+UN01005914,Invoice Currency Code,請求書通貨コード,The code specifying the invoice currency for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における請求書通貨を指定するコード。
+UN01005915,Payment Currency Code,支払い通貨コード,The code specifying the payment currency for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における支払通貨を指定するコード。
+UN01006043,Creditor Reference Type Code,債権者参照タイプコード,A code specifying the creditor reference type for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における債権者参照タイプを指定するコード。
+UN01006044,Creditor Reference Type Text,債権者参照タイプテキスト,"A creditor reference type, expressed as text, for this CIIH supply chain trade settlement.",CIIHサプライチェーン取引決済における債権者参照タイプをテキストで表したもの。
+UN01006045,Creditor Reference Issuer ID,債権者参照発行者ID,An identifier of the creditor reference issuer for this CIIH supply change trade settlement.,CIIHサプライチェーン取引決済における債権者参照発行者の識別子。
+UN01008771,Invoice Issuer Reference Text,請求書発行者参照テキスト,"The invoicer reference, expressed as text, for this CIIH supply chain trade settlement.",CIIHサプライチェーン取引決済における請求書参照（テキスト形式）。
+UN01009054,Invoice Date Time,請求書発行日時,"The date, time, date time or other date time value of the invoice in this CIIH supply chain trade settlement.",CIIHサプライチェーン取引決済における請求書の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01009055,Next Invoice Date Time,次回請求書発行日時,"A date, time, date time or other date time value of the next invoice in this CIIH supply chain trade settlement.",CIIHサプライチェーン取引決済における次回の請求書の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01009056,Credit Reason Code,クレジット理由コード,The code specifying the reason for a credit being given in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済において与えられるクレジットの理由を特定するコード。
+UN01009057,Credit Reason Text,クレジット理由テキスト,A textual description of the reason for a credit being given in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済において与えられたクレジットの理由を説明するテキスト。
+UN01005916,Invoicer,請求書発行者,The Cross Industry (CI) trade party issuing the invoice for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済の請求書を発行する取引事業者。
+UN01005917,Invoicee,請求先,The Cross Industry (CI) trade party to whom an invoice is issued for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済において請求書が発行される取引事業者。
+UN01005918,Payee,受取人,The Cross Industry (CI) payee party for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済におけるインボイスの支払先事業者。
+UN01005919,Payer,支払者,The Cross Industry (CI) payer party for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済におけるインボイスの支払者事業者。
+UN01005920,Tax Currency Exchange,税金の両替,The Cross Industry (CI) trade currency exchange applicable to a tax in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における税金に適用される取引通貨為替レート。
+UN01005921,Invoice Currency Exchange,請求書通貨交換,The Cross Industry (CI) trade currency exchange applicable to the invoice in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における請求書に適用される取引通貨為替レート。
+UN01005922,Payment Currency Exchange,支払い通貨両替,The Cross Industry (CI) trade currency exchange applicable to the payment of this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済の支払いに適用される取引通貨為替レート。
+UN01005923,Payment Means,支払い方法,A Cross Industry (CI) trade settlement payment means specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された取引決済支払手段。
+UN01005924,Tax,税,A Cross Industry (CI) trade tax applicable to this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に適用される取引税。
+UN01005925,Billing Period,請求期間,The Cross Industry (CI) billing period specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定されたインボイスの請求期間。
+UN01005926,Allowance/Charge,手当/料金,A Cross Industry (CI) trade allowance or charge specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された取引手当または請求額。
+UN01005927,Calculated Tax Subtotal,計算された税金小計,A Cross Industry (CI) trade tax subtotal calculated for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に対して計算された取引税小計。
+UN01005928,Service Charge,サービス料,A Cross Industry (CI) logistics service charge specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定されたインボイスの物流サービス料。
+UN01005929,Payment Terms,支払い条件,Cross Industry (CI) trade payment terms specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された取引支払条件。
+UN01005930,Monetary Summation,金銭合計,The CIIH trade settlement monetary summation specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定されたCIIHの取引決済の金銭合計。
+UN01005931,Financial Adjustment,財政調整,A Cross Industry (CI) financial adjustment specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定されたインボイスの金額調整。
+UN01005932,Invoice Document,請求書書類,The Cross Industry (CI) invoice document referenced from this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済から参照されるCI文書。
+UN01005933,Pro-Forma Invoice Document,プロフォーマ請求書,The Cross Industry (CI) pro-forma invoice document referenced from this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済から参照されるインボイスの仮請求書文書。
+UN01005934,Letter Of Credit Document,信用状文書,The Cross Industry (CI) letter of credit document referenced from this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済から参照されるインボイスの信用状書類。
+UN01006072,Financial Card,金融カード,A financial card specified in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済で指定された金融カード。
+UN01006074,Accounts Payable,買掛金勘定,A payable Cross Industry (CI) accounting account specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された支払用インボイスの会計勘定。
+UN01006075,Accounts Receivable,売掛金,A receivable Cross Industry (CI) accounting account specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された受取側のインボイスの会計勘定。
+UN01006076,Purchase Accounting Account,購入会計アカウント,A purchase Cross Industry (CI) accounting account specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された購入用インボイスの会計勘定。
+UN01006077,Sales Accounting Account,売上会計アカウント,A sales Cross Industry (CI) accounting account specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された売上インボイスの会計勘定。
+UN01006082,Factoring Agreement Document,ファクタリング契約書,A factoring agreement Cross Industry (CI) document referenced in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済で参照されるファクタリング契約文書。
+UN01006083,Factoring List Document,ファクタリングリスト文書,A factoring list Cross Industry (CI) document referenced in this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済で参照されるファクタリングリスト文書。
+UN01008772,Ultimate Payee,最終受取人,The ultimate payee party for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済の最終支払先事業者。
+UN01008773,Advance Payment,前払い,An advance payment specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された前払い金。
+UN01015492,Outstanding Monetary Summation,未払い金合計,The monetary summation totals outstanding for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済における未決済の金銭合計額。
+UN01015598,Advance Payment,前払い,An advance payment specified for this CIIH supply chain trade settlement.,CIIHサプライチェーン取引決済に指定された前払い金。
+UN01005936,CIIH Trade Transaction,CIIH取引取引,"The trade line items, trade agreement, trade delivery and trade settlement details included in this Cross Industry Invoice Header (CIIH).",CIIHに含まれる取引明細項目、取引契約、取引納品、取引決済の詳細。
+UN01005937,Trade Agreement,取引協定,The CIIH supply chain trade agreement applicable to this CIIH supply chain trade transaction.,CIIHサプライチェーン取引に適用されるCIIHサプライチェーン取引契約。
+UN01005938,Trade Delivery,トレードデリバリー,The CIIH supply chain trade delivery applicable to this CIIH supply chain trade transaction.,CIIHサプライチェーン取引に適用されるCIIHサプライチェーン取引納品。
+UN01005939,Trade Settlement,取引決済,The CIIH supply chain trade settlement applicable to this CIIH supply chain trade transaction.,CIIHサプライチェーン取引に適用されるCIIHサプライチェーン決済。
+UN01005940,Trade Line Item,取引明細項目,A Cross Industry Invoice Line (CIIL) supply chain trade line item included in this CIIH supply chain trade transaction.,CIIHサプライチェーン取引に含まれるCIILサプライチェーン取引明細項目。
+UN01005941,CIIH Monetary Summation,CIIH 金銭合計,A collection of trade settlement monetary totals specified for this Cross Industry Invoice Header (CIIH).,CIIHに対して指定された取引決済の金銭総額の集合。
+UN01005942,Deprecated Line Total Amount,廃止予定の行の合計金額,A monetary value of the line amount total being reported in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額で報告される行合計金額の金額。
+UN01005943,Charge Total Amount,請求合計金額,A monetary value of the total of all charge amounts being reported on header level in this CIIH trade settlement monetary summation.,CIIHの取引決済金銭合計においてヘッダレベルで報告される全請求金額の合計金額。
+UN01005944,Allowance Total Amount,手当合計額,A monetary value of the total of all allowance amounts being reported on header level in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額においてヘッダレベルで報告される全割引金額の合計金額。
+UN01005945,Tax Basis Total Amount,課税標準合計額,A monetary value of the total of all tax basis amounts being reported in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額で報告される全ての税ベース金額の合計金額。
+UN01005946,Tax Total Amount,税金合計額,A monetary value of the total of all tax amounts being reported in this CIIH trade settlement monetary summation.,CIIHの取引決済金銭合計で報告されるすべての税額の合計金額。
+UN01005947,Rounding Amount,端数処理金額,A monetary value of a rounding amount being applied in this CIIH trade settlement monetary summation.,CIIHの取引決済金銭合計に適用される丸め額の金額。
+UN01005948,Grand Total Amount,合計金額,"A monetary value of the grand total of this CIIH trade settlement monetary summation, including taxes and allowances and charges.",税金、割当量、および課徴金を含む、CIIHの取引決済金銭合計の総計の金額。
+UN01005949,Information Amount,情報量,A monetary value of an amount being reported for information in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において情報として報告される金額の金額。
+UN01005950,Total Prepaid Amount,前払い合計金額,A monetary value of a prepaid total reported in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において報告される前払金総額の金額。
+UN01005951,Total Discount Amount,合計割引額,A monetary value of a total discount reported in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額で報告されている割引総額の金額。
+UN01005952,Total Allowance/Charge Amount,合計控除額/請求額,A monetary value of the total of allowance and charge amounts reported on header level in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額においてヘッダレベルで報告される手当金と手数料の合計金額の金額。
+UN01008445,Due Payable Amount,支払金額,"A monetary value that is an amount due and payable for this CIIH trade settlement monetary summation, such as the amount due to the creditor.",CIIHの取引決済合計金額において支払期日が到来し支払義務のある金額（債権者への支払額など）。
+UN01008446,Retail Value Excluding Tax Amount,税抜小売価格,A monetary value which constitutes the retail value excluding all duties and taxes stated for information purposes in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において情報提供目的で記載される、全ての関税及び税金を除く小売価格を構成する金額。
+UN01008447,Total Deposit Fee Amount,合計預入金額,A monetary value of the total deposit fee stated for information purposes in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において情報提供目的で記載された預託金総額の金額。
+UN01008448,Product Value Excluding Tobacco Tax Amount,たばこ税額を除いた商品価格,A monetary value which constitutes the total product value excluding tobacco tax stated for information purposes in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において情報提供目的で記載された、たばこ税を除く製品総額を構成する金額。
+UN01008449,Total Retail Value Amount,合計小売価格,A monetary value which constitutes the total retail value stated for information purposes in this CIIH trade settlement monetary summation.,CIIHの取引決済金銭総計において情報提供目的で記載される小売総額を構成する金額。
+UN01008450,Gross Line Total Amount,グロス明細行合計金額,"A monetary value of the total of all line amounts, excluding line level allowances and charges and taxes, being reported in this CIIH trade settlement monetary summation.",CIIHの取引決済合計金額において報告される、全行金額の合計額（行レベルの手数料・課徴金・税金を除く）の金額。
+UN01008451,Net Line Total Amount,ネット明細行合計金額,"A monetary value of the total of all line amounts, including line level allowances and charges and excluding line level taxes, being reported in this CIIH trade settlement monetary summation.",CIIHの取引決済合計金額において報告される、行レベルの手数料・課徴金を含み、行レベル税金を除く全ライン金額の合計額。
+UN01008452,Net Including Taxes Line Total Amount,税込み金額合計,"A monetary value of the total of all line amounts, including line level allowances and charges and including line level taxes, being reported in this CIIH trade settlement monetary summation.",CIIHの取引決済合計金額において報告される、行レベルの手数料・課徴金および行レベル税を含む全ライン金額の合計額。
+UN01012697,Total Insurance Charges,保険料合計,The monetary value of the total of all insurance charges being reported in this CIIH trade settlement monetary summation.,CIIHの取引決済合計金額において報告される、全ての保険料金の合計金額。
+UN01013091,Including Taxes Line Total Amount,税込み合計金額,"A monetary value of the line total, including taxes, being reported in this CIIH trade settlement monetary summation.",CIIHの取引決済合計金額で報告される、税込みのライン総額の金額。
+UN01015493,Referenced Document,参照文書,A document referenced for the monetary summation of this CIIH trade settlement.,CIIHの取引決済の合計金額に参照される文書。
+UN01009647,CIILB Subordinate Trade Line Item,CIILB 従属取引明細項目,A collection of information specific to a Cross Industry Invoice Line Breakdown (CIILB) item being used or reported on for trade purposes.,取引目的で使用または報告されるCIILB 従属取引明細行の固有情報の集合体。
+UN01009648,ID,ID,An identifier for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目の識別子。
+UN01014637,Category Code,カテゴリーコード,The code specifying the category of this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目のカテゴリを指定するコード。
+UN01014638,Response Reason Code,応答理由コード,The code specifying the response reason of this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目の応答理由を特定するコード。
+UN01015599,Requested Response Type Code,要求された応答タイプコード,The code specifying the type of response requested for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目に対して要求される応答のタイプを指定するコード。
+UN01009652,Specified Product,指定製品,The referenced product specified for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目に対して指定された参照製品。
+UN01010016,Applicable Product,対象製品,A product applicable for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目に適用される製品。
+UN01009649,Trade Agreement,取引協定,The supply chain trade agreement specified for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細行に指定されたサプライチェーン取引協定。
+UN01009650,Trade Delivery,トレードデリバリー,The supply chain trade delivery specified for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細行に指定されたサプライチェーン取引納品。
+UN01009651,Trade Settlement,取引決済,The supply chain trade settlement specified for this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目に指定されたサプライチェーン取引決済。
+UN01015533,Included Note,付属ノート,A note included in this CIILB subordinate trade line item.,CIILB 従属取引明細行の下位取引明細項目に含まれる注記。
+UN01009653,CIILB Trade Agreement,CIILB取引協定,The contractual terms of a Cross Industry Invoice Line Breakdown (CIILB) supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約の契約条件。
+UN01009654,Seller Order Document,売り手注文書,The seller order document referenced in this CIILB supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約で参照される売り手注文書。
+UN01009655,Buyer Order Document,買い手注文書,The buyer order document referenced in this CIILB supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約で参照される買い手注文書。
+UN01009656,Additional Document,追加文書,An additional document referenced in this CIILB supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約で参照される追加文書。
+UN01009657,Product Gross Price,商品総額,A gross product price in this CIILB supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約における総製品価格。
+UN01009658,Product Net Price,商品の正味価格,A net product price in this CIILB supply chain trade agreement.,CIILB 従属取引明細行のサプライチェーン取引契約における正味製品価格。
+UN01009659,CIILB Trade Delivery,CIILB トレードデリバリー,Cross Industry Invoice Line Breakdown (CIILB) supply chain shipping arrangements and movement of products and or services including despatch and delivery.,CIILB 従属取引明細行のサプライチェーンにおける出荷手配、および発送・配送を含む製品および／またはサービスの移動。
+UN01009660,Package Quantity,パッケージ数量,The number of packages in this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送における梱包数。
+UN01009661,Product Unit Quantity,製品単位数量,The number of product units in this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送における製品単位数。
+UN01009662,Per Package Unit Quantity,パッケージ単位数量,The number of units per package in this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送における1梱包あたりの製品単位数。
+UN01014639,Billed Quantity,請求数量,The billed quantity of this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送における請求数量。
+UN01009663,Included Packaging,同梱パッケージ,Packaging included in this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送に含まれる包装。
+UN01014640,Actual Delivery Event,実際の配送イベント,The actual supply chain delivery event for a line item in this CIILB supply chain trade delivery.,CIILB 従属取引明細行のサプライチェーン取引配送における、明細行の実際のサプライチェーン配送イベント。
+UN01009664,CIILB Trade Settlement,CIILB取引決済,The Cross Industry Invoice Line Breakdown (CIILB) information that enables the financial reconciliation of a supply chain transaction with the item(s) that the financial transaction is intended to settle.,サプライチェーン取引と、その財務取引が決済対象とする項目との金額調整を可能にする、CIILB 従属取引明細行の情報。
+UN01014641,Direction Code,方向コード,The code specifying whether this CIILB supply chain trade settlement is an addition or a subtraction.,CIILB 従属取引明細行のサプライチェーン取引決済が加算か減算かを指定するコード。
+UN01009665,Tax,税,The trade tax applicable to this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に適用される取引税。
+UN01014642,Invoice Document,請求書書類,The invoice document referenced for this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に参照される請求書文書。
+UN01014643,Specified Financial Adjustment,特定財務調整,A financial adjustment specified for this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に対して指定された金額調整。
+UN01014644,Specified Allowance Charge,指定手当金,An allowance or charge specified for this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に対して指定された手当または課金。
+UN01014894,Billing Period,請求期間,The billing period specified for this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に指定された請求期間。
+UN01015534,Purchase Accounting Account,買い手会計アカウント,A purchase accounting account specified for this CIILB supply chain trade settlement.,CIILB 従属取引明細行のサプライチェーン取引決済に指定された購入会計勘定。
+UN01005953,CIIL Document Line,CIIL文書明細行,A document line for this Cross Industry Invoice Line (CIIL).,CIILの文書行。
+UN01005954,ID,ID,The unique identifier of the line of this CIIL document line.,CIILの文書行の行の一意の識別子。
+UN01005955,Status Code,ステータスコード,The code specifying the status of this CIIL document line.,CIILの文書行のステータスを指定するコード。
+UN01005956,Status Reason Code,ステータス理由コード,The code specifying the line status reason for this CIIL document line.,CIILの文書行の行ステータス理由を指定するコード。
+UN01009058,Parent Line ID,親明細行ID,The identifier of the parent line of this CIIL document line.,CIILの文書行の親行の識別子。
+UN01014645,Category Code,カテゴリーコード,The code specifying the category of this CIIL document line.,CIILの文書行のカテゴリを指定するコード。
+UN01014646,Response Reason Code,応答理由コード,The code specifying the response reason of this CIIL document line.,CIILの文書行の応答理由を指定するコード。
+UN01015600,Requested Response Type Code,要求された応答タイプコード,The code specifying the type of response requested for this CIIL document line.,CIILの文書行に対して要求される応答のタイプを指定するコード。
+UN01005957,Note,注記,A Cross Industry (CI) note included in this CIIL document line.,CIILの文書行に含まれるインボイスの的注記。
+UN01014895,Reference Document,参考資料,A document referenced from this CIIL document line.,CIILの文書行から参照される文書。
+UN01005958,CIIL Trade Agreement,CIIL取引協定,The contractual terms applicable to a line item in a Cross Industry Invoice Line (CIIL) supply chain trade agreement.,CIILのサプライチェーン取引契約における行項目に適用される契約条件。
+UN01008555,Buyer Reference Text,買い手参照テキスト,"The buyer reference, expressed as text, for this CIIL supply chain trade agreement.",CIILのサプライチェーン取引契約の買い手参照（テキストで表現）。
+UN01005959,Delivery Terms,配送条件,The Cross Industry (CI) terms of delivery applicable to a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約のライン項目に適用される、インボイスの配送条件。
+UN01005960,Seller Order Document,売り手注文書,The Cross Industry (CI) seller order document referenced from a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約のライン項目から参照されるインボイスの売り手注文文書。
+UN01005961,Buyer Order Document,買い手注文書,The Cross Industry (CI) buyer order document referenced from a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約のライン項目から参照される、インボイスのバイヤー注文文書。
+UN01005962,Quotation Document,見積書,The Cross Industry (CI) quotation document referenced from a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約の明細項目から参照される、インボイスの見積書。
+UN01005963,Contract Document,契約書,The Cross Industry (CI) contract document referenced from a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約の明細項目から参照される、インボイスの契約文書。
+UN01005964,Demand Forecast Document,需要予測文書,The Cross Industry (CI) demand forecast document referenced from a line item this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約の明細項目から参照される、インボイスの需要予測文書。
+UN01005965,Additional Document,追加文書,An additional Cross Industry (CI) document referenced from a line item in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約の行項目から参照される追加の文書。
+UN01005966,Product Gross Price,商品総額,The Cross Industry (CI) gross product price in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約におけるインボイスの総製品価格。
+UN01005967,Product Net Price,商品の正味価格,The Cross Industry (CI) net product price in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約におけるインボイスの正味製品価格。
+UN01006059,Buyer Requisitioner,買い手の購買依頼者,A Cross Industry (CI) trade party who is a buyer requisitioner in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約における買い手要求者である取引事業者。
+UN01006062,Requisitioner Document,請求者文書,A requisitioner Cross Industry (CI) document referenced in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約で参照される要求者文書。
+UN01008556,Promotional Deal Document,プロモーション取引文書,The promotional deal document referenced in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約で参照されるプロモーション取引文書。
+UN01009666,Item Seller,アイテム売り手,The item seller party for this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約における品目売り手事業者。
+UN01009667,Item Buyer,アイテム買い手,The item buyer party for this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約におけるアイテム買い手事業者。
+UN01009668,Specified Marketplace,指定されたマーケットプレイス,The marketplace included in this CIIL supply chain trade agreement.,CIILのサプライチェーン取引契約に含まれるマーケットプレイス。
+UN01005968,CIIL Trade Delivery,CIILトレードデリバリー,Supply chain shipping arrangements applicable to a line item for a Cross Industry Invoice Line (CIIL) supply chain trade delivery.,CIILのサプライチェーン取引納品における、行項目に適用されるサプライチェーン出荷手配。
+UN01005969,Billed Quantity,請求数量,The quantity billed for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における品目ごとの請求数量。
+UN01005970,Charge Free Quantity,無料数量,The quantity that is free of charge for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における当該品目の無償数量。
+UN01005971,Package Quantity,パッケージ数量,The number of packages of a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における明細行のパッケージ数。
+UN01005972,Product Unit Quantity,製品単位数量,The number of product units of a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における、行項目の製品単位数。
+UN01005973,Per Package Unit Quantity,パッケージ単位数量,The number of units per package in this line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における本品目の1パッケージあたりの単位数。
+UN01005974,Net Weight,正味重量,The measure of the net weight (mass) of a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における明細行の正味重量（質量）の測定値。
+UN01005975,Gross Weight,総重量,The measure of the gross weight (mass) of a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、行項目の総重量（質量）の測定値。
+UN01005976,Theoretical Weight,理論重量,The measure of the theoretical weight of a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における明細行の理論重量の測定値。
+UN01011517,Requested Quantity,要求数量,The quantity requested for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における明細行の要求数量。
+UN01011518,Received Quantity,受領数量,The quantity received for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、明細行の受領数量。
+UN01005977,Adjustment,調整,A Cross Industry (CI) delivery adjustment specified for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品における行項目に対して指定されたインボイスの納品調整。
+UN01005978,Included Packaging,同梱パッケージ,Cross Industry (CI) supply chain packaging for a line item included in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品に含まれる品目のインボイスのサプライチェーン包装。
+UN01005979,Consignment,委託,The Cross Industry (CI) supply chain consignment of a line item related to this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送に関連する行項目のインボイスのサプライチェーン委託。
+UN01005980,Ship To Party,配送先事業者,The Cross Industry (CI) trade party who is the ship to party for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における行項目の出荷先である取引事業者。
+UN01005981,Ultimate Ship To Party,最終配送先事業者,The Cross Industry (CI) trade party who is the ultimate ship to party for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における行項目の最終的な出荷先である取引事業者。
+UN01005982,Ship From Party,配送元事業者,The Cross Industry (CI) trade party who is the ship from party for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における行項目の出荷元である取引先。
+UN01005983,Actual Despatch Event,実際の発送イベント,The Cross Industry (CI) actual supply chain despatch event for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、行項目に対するインボイスの実際のサプライチェーン発送イベント。
+UN01005984,Actual Pick-Up Event,実際のピックアップイベント,The Cross Industry (CI) actual supply chain pick-up event for a line item in this CIIH supply chain trade delivery.,CIIHサプライチェーン取引配送における、行項目に対するインボイスの実際のサプライチェーン集荷イベント。
+UN01005985,Requested Delivery Event,要求された配送イベント,The Cross Industry (CI) requested supply chain delivery event for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、行項目に対するインボイスの要求サプライチェーン配送イベント。
+UN01005986,Actual Delivery Event,実際の配送イベント,The Cross Industry (CI) actual supply chain delivery event for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、行項目に対するインボイスの実際のサプライチェーン配送イベント。
+UN01005987,Actual Receipt Event,実際の受領イベント,The Cross Industry (CI) actual supply chain receipt event for a line item in this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送における、行項目に対するインボイスの実際のサプライチェーン受領イベント。
+UN01006039,Despatch Advice Document,発送通知書,The Cross Industry (CI) despatch advice document referenced from this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送から参照されるインボイスの発送通知文書。
+UN01006040,Receiving Advice Document,受領案内文書,The Cross Industry (CI) receiving advice document referenced from this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品から参照されるインボイスの受領通知文書。
+UN01006041,Delivery Note Document,納品書,The Cross Industry (CI) delivery note document referenced from this CIIL supply chain trade delivery.,CIILのサプライチェーン取引配送から参照されるインボイスの納品書文書。
+UN01006042,Additional Document,追加文書,A Cross Industry (CI) additional document referenced from this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品から参照されるインボイスの追加文書。
+UN01008616,Consumption Report Document,消費報告書,The consumption report document referenced from this CIIL supply chain trade delivery.,CIILのサプライチェーン取引納品から参照される消費レポート文書。
+UN01005988,CIIL Trade Line Item,CIIL 取引明細,A collection of Cross Industry Invoice Line (CIIL) information specific to an item being used or reported on for supply chain trade purposes.,サプライチェーン取引目的で使用または報告される品目に固有のCIILの情報の集合。
+UN01005989,Document Line,文書明細行,The document line associated with this CIIL supply chain trade line item.,CIILのサプライチェーン取引明細項目に関連付けられた文書明細行。
+UN01005990,Trade Agreement,取引協定,The CIIL supply chain trade agreement specified for this CIIL supply chain trade line item.,CIILのサプライチェーン取引明細項目に指定されたCIILのサプライチェーン取引契約。
+UN01005991,Trade Delivery,取引配送,The CIIL supply chain trade delivery specified for this CIIL supply chain trade line item.,CIILのサプライチェーン取引明細項目に指定されたCIILのサプライチェーン取引納品。
+UN01005992,Trade Settlement,取引決済,The CIIL supply chain trade settlement specified for this CIIL supply chain trade line item.,CIILのサプライチェーン取引明細項目に指定されているCIILのサプライチェーン取引決済。
+UN01005993,Product,製品,The Cross Industry (CI) trade product specified for this CIIL supply chain trade line item.,CIILのサプライチェーン取引明細項目に指定されたインボイス取引製品。
+UN01009669,Subordinate Trade Line Item,従属取引明細項目,A CIILB trade line item subordinate to this supply chain trade line item.,サプライチェーン取引明細項目に従属するCIILB 従属取引明細行の取引明細項目。
+UN01005994,CIIL Trade Settlement,CIIL取引決済,The Cross Industry Invoice Line (CIIL) information that enables the financial reconciliation of a supply chain transaction with the item(s) that the financial transaction is intended to settle.,サプライチェーン取引と、その金融取引が決済対象とする項目との財務上の照合を可能にする、CIILの情報。
+UN01005995,Payment Reference Text,支払い参照文書,"A payment reference, expressed as text, for this CIIL supply chain trade settlement.",CIILのサプライチェーン取引決済の支払参照（テキストで表現）。
+UN01008774,Invoice Issuer Reference Text,請求書発行者参照文書,"The invoicer reference, expressed as text, for this CIIL supply chain trade settlement.",CIILのサプライチェーン取引決済の請求者参照（テキストで表現）。
+UN01013029,Invoice Date Time,請求書発行日時,"The date, time, date time or other date time value of the invoice in this CIIL supply chain trade settlement.",CIILのサプライチェーン取引決済における請求書の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01014647,Direction Code,方向コード,The code specifying whether this CIIL supply chain trade settlement is an addition or a subtraction.,CIILのサプライチェーン取引決済が加算か減算かを指定するコード。
+UN01005996,Tax,税,A Cross Industry (CI) tax applicable to this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に適用されるインボイスの税。
+UN01005997,Billing Period,請求期間,The Cross Industry (CI) billing period specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたインボイスの請求期間。
+UN01005998,Allowance/Charge,手当/料金,A Cross Industry (CI) allowance or charge specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたインボイスの手当または請求額。
+UN01005999,Calculated Tax Subtotal,計算された税金小計,A Cross Industry (CI) tax subtotal calculated for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に対して計算されたインボイスの税小計。
+UN01006000,Service Charge,サービス料,A Cross Industry (CI) logistics service charge specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたインボイスの物流サービス料。
+UN01006001,Payment Terms,支払い条件,Cross Industry (CI) payment terms specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたインボイスの支払条件。
+UN01006002,Monetary Summation,金銭合計,The CIIL trade settlement monetary summation specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたCIILの取引決済の合計金額。
+UN01006003,Financial Adjustment,財政調整,A Cross Industry (CI) financial adjustment specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定されたインボイスの金額調整。
+UN01006004,Invoice Document,請求書書類,The Cross Industry (CI) invoice document referenced from this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済から参照されるCI文書。
+UN01006005,Additional Document,追加文書,An additional Cross Industry (CI) document referenced from this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済から参照される追加の文書。
+UN01006073,Financial Card,金融カード,The financial card specified in this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済で指定された財務カード。
+UN01006078,Accounts Payable,買掛金勘定,A payable Cross Industry (CI) accounting account specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定された支払用インボイスの会計勘定。
+UN01006079,Accounts Receivable,売掛金,A receivable Cross Industry (CI) accounting account specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定された、受取側のインボイスの会計勘定。
+UN01006080,Purchase Accounting Account,購入会計アカウント,A purchase Cross Industry (CI) accounting account specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定された購入インボイスの会計勘定。
+UN01006081,Sales Accounting Account,売上会計アカウント,A sales Cross Industry (CI) accounting account specified for this CIIL supply chain trade settlement.,CIILのサプライチェーン取引決済に指定された売上インボイスの会計勘定。
+UN01006006,CIIL Monetary Summation,CIIL 金銭合計,A collection of trade settlement monetary totals specified for this Cross Industry Invoice Line (CIIL).,CIILに対して指定された取引決済金額の合計の集合。
+UN01006007,Deprecated Line Total Amount,廃止予定の行の合計金額,A monetary value of the line amount total being reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される行合計金額の金額。
+UN01006008,Charge Total Amount,請求合計金額,A monetary value of the total of all charge amounts being reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される全請求金額の合計金額。
+UN01006009,Allowance Total Amount,手当合計額,A monetary value of the total of all allowance amounts being reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される、すべての手数料金額の合計金額。
+UN01006010,Tax Basis Total Amount,課税標準合計額,A monetary value of the total of all tax basis amounts being reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される全ての税ベース金額の合計金額。
+UN01006011,Tax Total Amount,税金合計額,A monetary value of the total of all tax amounts being reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される、すべての税額の合計金額。
+UN01006012,Information Amount,情報量,A monetary value of an amount being reported for information in this CIIL trade settlement monetary summation.,CIILの取引決済金銭要約において情報提供のために報告される金額の金額。
+UN01006013,Total Allowance/Charge Amount,合計控除額/請求額,A monetary value of a total allowance and charge reported in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額で報告される、手当および費用の合計金額。
+UN01008453,Product Weight Loss Amount,製品の重量減少量,"A monetary value of the loss of weight of a product, such as fresh goods, stated for information purposes in this CIIL trade settlement monetary summation.",CIILの取引決済合計金額において情報提供目的で記載される、生鮮品などの製品の重量損失の金額。
+UN01008454,Total Retail Value Amount,合計小売価格,A monetary value which constitutes the total retail value stated for information purposes in this CIIL trade settlement monetary summation.,CIILの取引決済合計金額において情報提供目的で記載される小売総額を構成する金額。
+UN01008455,Gross Line Total Amount,グロス明細行合計金額,"A monetary value of the line amount total, excluding line level allowances and charges and taxes, being reported in this CIIL trade settlement monetary summation.",CIILの取引決済合計金額において報告される、行レベルの手数料・割増金・税金を除く行合計金額の金額。
+UN01008456,Net Line Total Amount,ネット明細行合計金額,"A monetary value of the line amount total, including line level allowances and charges and excluding line level taxes, being reported in this CIIL trade settlement monetary summation.",CIILの取引決済合計金額において報告される、行レベルの手数料・割増金を含み、行レベルの税金を除く、ライン金額総額の金額。
+UN01008457,Net Line Total Amount Including Taxes,税込みネット明細行合計金額,"A monetary value of the line amount total, including line level allowances, charges, and taxes, being reported in this CIIL trade settlement monetary summation.",CIILの取引決済合計金額において報告される、行レベルの手数料、課徴金、税を含むライン金額総額の金額。
+UN01011519,Grand Total Amount,合計金額,The monetary value of the grand total amount of this CIIL trade settlement monetary summation.,CIILの取引決済における金銭的総額の金額。
+UN01013030,Line Total Amount Including Taxes,税込み合計金額,"The monetary value of the line total, including taxes, being reported in this CIIL trade settlement monetary summation.",CIILの取引決済合計金額において報告される、税込みの行合計金額の金額。
+UN01015590,Advance Payment,前払い,A specific Cross Industry (CI) business arrangement whereby a prepaid discharge of obligations in respect of funds or securities is transferred between two or more parties.,資金または有価証券に関する義務の事前支払による免除を、2つ以上の事業者間で移転する特定の取引契約。
+UN01015591,Paid Amount,支払金額,The monetary value of the funds or securities paid in this CI advance payment.,インボイスの前払金において支払われた資金または有価証券の金額。
+UN01015592,Formatted Received Date Time,フォーマットされた受信日時,The formatted date or date time value when this CI advance payment has been received.,インボイスの前払いが受領された日付または日付時刻のフォーマット値。
+UN01015593,ID,ID,The identifier for this CI advance payment.,インボイスの前払いの識別子。
+UN01015594,Included Tax,税込,A trade tax included in this CI advance payment.,インボイスの前払いに含まれる取引税。
+UN01015595,Invoice Document,請求書書類,An invoice document referenced by this CI advance payment.,インボイスの前払金が参照する請求書文書。
+UN01015596,Payment Terms,支払い条件,The trade payment terms identified for this CI advance payment.,インボイスの前払金に指定された取引支払条件。
+UN01005398,CI Creditor Financial Account,CI債権者金融口座,A specific Cross Industry (CI) business arrangement whereby credits arising from transactions are recorded.,取引から生じるクレジットを記録する特定のインボイスのビジネス取り決め。
+UN01005399,IBAN ID,IBAN ID,The unique International Bank Account Number (IBAN) identifier for this CI creditor financial account.,インボイスの債権者金融口座の一意の国際銀行口座番号（IBAN）識別子。
+UN01005400,Name,名前,"The account name, expressed as text, of this CI creditor financial account.",インボイスの債権者金融口座の口座名（テキスト表記）。
+UN01005401,Proprietary ID,独自のID,The unique proprietary identifier for this CI creditor financial account.,インボイスの債権者金融口座の一意の固有識別子。
+UN01012127,Type Code,タイプコード,The code specifying the type of financial account for this CI creditor.,インボイスの債権者の金融口座の種類を特定するコード。
+UN01005402,CI Creditor Financial Institution,CI債権金融機関,"A bank, building society, credit union, stock brokerage, or similar business of the Cross Industry (CI) party that receives money.",資金を受け取るインボイスの事業者の銀行、住宅金融組合、信用組合、証券会社、または類似の事業体。
+UN01005403,BIC ID,BIC ID,The unique Bank Identification Code (BIC) as defined in ISO 9362 for this CI creditor financial institution.,インボイスの債権者金融機関の、ISO 9362 で定義される固有の銀行識別コード (BIC)。
+UN01005404,Clearing System Name,システム名のクリア,"The clearing system name, expressed as text, for this CI creditor financial institution.",インボイスの債権者金融機関の決済システム名をテキストで表現したもの。
+UN01005405,CHIPS Universal ID,CHIPSユニバーサルID,The unique (United States) Clearing House Interbank Payments System (CHIPS) Universal Identification (UID) as assigned by the New York Clearing House for this CI creditor financial institution.,インボイスの債権者金融機関に対してニューヨーク決済機関が割り当てた、固有の（米国）決済機関間決済システム（CHIPS）ユニバーサル識別子（UID）。
+UN01005406,New Zealand NCC ID,ニュージーランド NCC ID,The unique New Zealand National Clearing Code (NCC) identifier as assigned by the New Zealand Bankers' Association (NZBA) for this CI creditor financial institution.,インボイスの債権金融機関に対してニュージーランド銀行協会（NZBA）が割り当てた、固有のニュージーランド国内決済コード（NCC）識別子。
+UN01005407,Irish NSC ID,アイルランドNSC ID,The unique Irish National Sorting Code (NSC) identifier as assigned by the Irish Payments Services Organisation (IPSO) for this CI creditor financial institution.,アイルランド決済サービス機構（IPSO）が、インボイスの債権金融機関に割り当てた固有のアイルランド国内仕分けコード（NSC）識別子。
+UN01005408,UK Sort Code ID,英国ソートコードID,The unique United Kingdom (UK) Sort Code identifier as assigned by the UK Payment Association (APACS) for this CI creditor financial institution.,英国決済協会（APACS）が、インボイスの債権金融機関に割り当てた、英国（UK）固有のソートコード識別子。
+UN01005409,CHIPS Participant ID,CHIPS参加者ID,The unique (United States) Clearing House Interbank Payment System (CHIPS) Participant Identifier (ID) as assigned by the New York Clearing House for this CI creditor financial institution.,インボイスの債権金融機関に対してニューヨーク決済機関が割り当てた、固有の（米国）決済機関間決済システム（CHIPS）参加者識別子（ID）。
+UN01005410,Swiss BC ID,スイスBC ID,The unique Swiss Bank Code (BC) identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、固有のスイス銀行コード（BC）識別子。
+UN01005411,Fedwire Routing Number ID,Fedwireルーティング番号ID,The unique Fedwire Routing Number identifier as assigned by the American Bankers Association (ABA) for this CI creditor financial institution.,米国銀行協会（ABA）が、インボイスの債権金融機関に割り当てた固有の Fedwire ルーティング番号識別子。
+UN01005412,Portuguese NCC ID,ポルトガル語のNCC ID,The unique Portuguese National Clearing Code (NCC) identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、ポルトガル国内の固有の全国決済コード（NCC）識別子。
+UN01005413,Russian Central Bank ID,ロシア中央銀行ID,The unique Russian Central Bank Identification Code identifier for this CI creditor financial institution.,インボイスの債権金融機関に割り当てられた、ロシア中央銀行識別コードの一意の識別子。
+UN01005414,Italian Domestic ID,イタリア国内ID,The unique Italian Domestic Identification Code identifier as assigned by the Associazione Bancaria Italiana (ABI) for this CI creditor financial institution.,イタリア銀行協会（ABI）が、インボイスの債権金融機関に割り当てた固有のイタリア国内識別コード識別子。
+UN01005415,Austrian Bankleitzahl ID,オーストリアのBankleitzahl ID,The unique Austrian Bankleitzahl identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、オーストリアの銀行識別番号（Bankleitzahl）の一意の識別子。
+UN01005416,Canadian Payments Association ID,カナダ決済協会ID,The unique Canadian Payments Association Routing Number identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、カナダ決済協会（Canadian Payments Assoインボイスのation）の固有のルーティング番号識別子。
+UN01005417,SIC ID,SIC ID,The unique Swiss Interbank Clearing (SIC) Code identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、スイス銀行間決済（SIC）コードの一意の識別子。
+UN01005418,German Bankleitzahl ID,ドイツのBankleitzahl ID,The unique German Bankleitzahl identifier for this CI creditor financial institution.,インボイスの債権金融機関に割り当てられた、ドイツ銀行の固有の Bankleitzahl 識別子。
+UN01005419,Spanish Domestic Interbanking ID,スペイン国内インターバンキングID,The unique Spanish Domestic Interbanking Code identifier as assigned by the Centro de Cooperacion Interbancaria (CCI) for this CI creditor financial institution.,インボイスの債権金融機関に対して、Centro de Cooperaインボイスのon Interbancaria (Cインボイスの) によって割り当てられた、スペイン国内の銀行間取引コードの固有識別子。
+UN01005420,South African NCC ID,南アフリカのNCC ID,The unique South African National Clearing Code (NCC) identifier as assigned by the South African Bankers Services Company Ltd. (BankServ) for this CI creditor financial institution.,南アフリカ銀行サービス会社（BankServ）が、インボイスの債権金融機関に割り当てた、南アフリカ固有の全国決済コード（NCC）識別子。
+UN01005421,Hong Kong Bank ID,香港銀行ID,The unique Hong Kong Bank Code identifier for this CI creditor financial institution.,インボイスの債権金融機関の固有の香港銀行コード識別子。
+UN01005422,Australian BSB ID,オーストラリアBSB ID,The unique Australian Bank State Branch (BSB) Code identifier as assigned by the Australian Payments Clearing Association (APCA) for this CI creditor financial institution.,インボイスの債権金融機関に対して、オーストラリア決済協会（APCA）によって割り当てられた、オーストラリアの銀行州支店（BSB）コード識別子。
+UN01005423,Indian Financial System ID,インド金融システムID,The unique Indian Financial System Code identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、インドの金融システムコード識別子。
+UN01005424,Hellenic Bank ID,ギリシャ銀行ID,The unique Hellenic Bank Identification Code identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、ギリシャ銀行識別コード（Hellenic Bank Identification Code）の一意の識別子。
+UN01005425,Polish National Clearing ID,ポーランド国民クリアリングID,The unique Polish National Clearing Code identifier for this CI creditor financial institution.,インボイスの債権金融機関に対する、ポーランドの全国決済コード識別子。
+UN01005426,Name,名前,"The name, expressed as text, for this CI creditor financial institution.",インボイスの債権金融機関の名称（テキストで表現）。
+UN01011521,Japan Financial Institution Common ID,日本金融機関共通ID,The Japan Financial Institution Common identifier as assigned by the Japanese Bankers Association for this CI creditor financial institution.,日本銀行協会が割り当てた、インボイスの債権金融機関の日本金融機関共通識別子。
+UN01005427,Address,住所,The location address for this CI creditor financial institution.,インボイスの債権金融機関の所在地住所。
+UN01005428,Branch,支店,The sub-division (branch) financial institution for this CI creditor financial institution.,インボイスの債権金融機関の支社（支店）金融機関。
+UN01005471,CI Document Context Parameter,CI文書コンテキストパラメータ,A feature that is fixed for a particular Cross Industry (CI) document context.,特定の文書コンテキストに対して固定される機能。
+UN01005472,ID,ID,The unique identifier of this CI document context parameter.,インボイスの文書コンテキストパラメータの一意の識別子。
+UN01005473,Value Text,値テキスト,"The value, expressed as text, of this CI document context parameter.",インボイスの文書コンテキストパラメータの値（テキストで表現）。
+UN01005474,Version,バージョン,The CI document version specified for this CI document context parameter.,インボイスの文書コンテキストパラメータに指定されたインボイスの文書のバージョン。
+UN01005475,CI Document Version,CI文書バージョン,A specific variant of a Cross Industry (CI) document.,文書の特定のバリエーション。
+UN01005476,ID,ID,The unique identifier for this CI document version.,インボイスの文書バージョンの固有識別子。
+UN01005477,Name,名前,"The name, expressed as text, of this CI document version.",インボイスの文書バージョンの名前（テキストで表現）。
+UN01005478,Issue Date Time,発行日時,"The date, time, date time or other date time value of issue of this CI document version.",インボイスの文書バージョンの発行日、時刻、日付時刻、またはその他の日付時刻値。
+UN01005479,CI Document Context,CI文書のコンテキスト,"The scenario or setting of a Cross Industry (CI) exchanged document, such as its business process application context.",取引文書のシナリオまたは設定（例：ビジネスプロセスアプリケーションコンテキスト）。
+UN01005480,Transaction ID,取引ID,The identifier of a specified transaction in this CI exchanged document context.,インボイスの取引文書コンテキストにおける特定トランザクションの識別子。
+UN01012746,Transaction Processing Date Time,取引処理日時,"The date, time, date time, or other date time value of the processing of a transaction for this CI exchanged document context.",インボイスの取引文書コンテキストにおけるトランザクション処理の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01014648,Test Indicator,テストインジケーター,The indication of whether or not this CI exchanged document context is a test.,インボイスの取引文書コンテキストがテストであるかどうかの示唆。
+UN01005481,Business Process,ビジネスプロセス,A business process CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたビジネスプロセスインボイスの文書コンテキストパラメータ。
+UN01005482,BIM,ビジネス情報マスター（BIM）,A Business Information Master (BIM) CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたビジネス情報マスター（BIM）インボイスの文書コンテキストパラメータ。
+UN01005483,Scenario,シナリオ,A scenario CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたシナリオインボイスの文書コンテキストパラメータ。
+UN01005484,Application,応用,An application CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたアプリケーションインボイスの文書コンテキストパラメータ。
+UN01005485,Guideline,ガイドライン,A guideline CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたガイドラインインボイスの文書コンテキストパラメータ。
+UN01005486,Subset,サブセット,A subset CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたサブセットインボイスの文書コンテキストパラメータ。
+UN01008333,Message Standard,メッセージ標準,The message standard CI document context parameter specified for this CI exchanged document context.,インボイスの取引文書コンテキストに対して指定されたメッセージ標準インボイスの文書コンテキストパラメータ。
+UN01012742,User Specified Parameter,ユーザー指定パラメータ,A user specified document context parameter for this CI exchanged document context.,インボイスの取引文書コンテキストに対してユーザーが指定した文書コンテキストパラメータ。
+UN01005487,CI Financial Adjustment,CI財務調整,A correction or modification to reflect actual Cross Industry (CI) financial conditions.,実際のインボイスの財務状況を反映するための修正または変更。
+UN01005488,Reason Code,理由コード,The code specifying a reason for this CI financial adjustment.,インボイスの金額調整の理由を特定するコード。
+UN01005489,Reason Text,理由テキスト,"A reason, expressed as text, for this CI financial adjustment.",インボイスの金額調整の理由（テキストで表現）。
+UN01005490,Actual Amount,実際の金額,An actual monetary value added or subtracted as a result of this CI financial adjustment.,インボイスの金額調整の結果として加算または減算された実際の金額。
+UN01005491,Actual Quantity,実際の数量,The actual quantity added or subtracted as a result of this CI financial adjustment.,インボイスの金額調整の結果として加算または減算された実際の数量。
+UN01005492,Actual Date Time,実際の日時,"The actual date, time, date time, or other date time value of this CI financial adjustment.",インボイスの金額調整の実際の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01014649,Direction Code,方向コード,The code specifying whether the CI financial adjustment is an addition or a subtraction.,インボイスの金額調整が増額か減額かを指定するコード。
+UN01009670,Claim Related Party,クレーム関連当事者,The claim related party for this CI financial adjustment.,インボイスの金額調整に関連する請求関係事業者。
+UN01009671,Referenced Invoice Document,参照請求書文書,The invoice document referenced for this CI financial adjustment.,インボイスの金額調整で参照される請求書文書。
+UN01014897,Related Tax,関連税,A trade tax related to this CI financial adjustment.,インボイスの金額調整に関連する取引税。
+UN01005557,CI Note,CIノート,"A textual or coded Cross Industry (CI) description, such as a remark or additional information.",備考や追加情報などの、テキストまたはコード化されたインボイスの説明。
+UN01005558,Subject Text,件名テキスト,"The subject, expressed as text, of this CI note.",インボイスの注記の主題（テキストで表現）。
+UN01005559,Content Code,コンテンツコード,The code specifying the content of this CI note.,インボイスの注記の内容を指定するコード。
+UN01005560,Content Text,コンテンツテキスト,"Content, expressed as text, of this CI note.",インボイスの注記の内容（テキストで表現）。
+UN01005561,Subject Code,件名コード,The code specifying the subject of this CI note.,インボイスの注記の主題を特定するコード。
+UN01005562,ID,ID,The unique identifier for this CI note.,インボイスの注記の一意の識別子。
+UN01005567,CI Product Characteristic,CI製品特性,A prominent attribute or aspect of a Cross Industry (CI) product.,インボイスの製品の顕著な属性または側面。
+UN01005568,ID,ID,A unique identifier for this CI product characteristic.,インボイスの製品特性の一意の識別子。
+UN01005569,Type Code,タイプコード,The code specifying a type of CI product characteristic.,インボイスの製品特性の種類を指定するコード。
+UN01005570,Description,説明,A textual description of this CI product characteristic.,インボイスの製品特性のテキストによる説明。
+UN01005571,Value Measure,価値測定,The measure of a value for this CI product characteristic.,インボイスの製品特性の値の測定値。
+UN01005572,Measurement Method Code,測定方法コード,The code specifying a measurement method for this CI product characteristic.,インボイスの製品特性の測定方法を指定するコード。
+UN01008297,Content Type Code,コンテンツタイプコード,The code specifying the content type of this CI product characteristic.,インボイスの製品特性のコンテンツタイプを指定するコード。
+UN01008298,Value Code,値コード,The code specifying the value of this CI product characteristic.,インボイスの製品特性の値を指定するコード。
+UN01008299,Value Date Time,値日付時刻,"The value for this CI product characteristic expressed as a date, time, date time, or other date time value.",日付、時刻、日付時刻、またはその他の日付時刻値として表現された、インボイスの製品特性の値。
+UN01008300,Value Indicator,価値指標,The value for this CI product characteristic expressed as an indicator.,インボイスの製品特性の値を指標として表現したもの。
+UN01011457,Value Text,値テキスト,"A value, expressed as text, for this CI product characteristic.",インボイスの製品特性の値をテキストで表現したもの。
+UN01008301,Applicable Referenced Standard,適用可能な参照規格,The referenced standard that is applicable to this CI product characteristic.,インボイスの製品特性に適用される参照規格。
+UN01008302,Applicable Condition,適用条件,A condition applicable to this CI product characteristic.,インボイスの製品特性に適用される条件。
+UN01008303,Value Binary File,値バイナリファイル,The value for this CI product characteristic expressed in a binary file.,インボイスの製品特性の値をバイナリファイルで表現したもの。
+UN01005573,CI Product Classification,CI製品分類,A systematic arrangement of Cross Industry (CI) products in classes or categories according to established criteria.,確立された基準に従って、インボイスの製品をクラスまたはカテゴリーに体系的に分類したもの。
+UN01005574,System ID,システムID,The unique identifier of the classification system for this CI product classification.,インボイスの製品分類の分類システムの一意の識別子。
+UN01005575,System Name,システム名,"A name, expressed as text, of the classification system for this CI product classification.",インボイスの製品分類の分類システムの名称（テキストで表現）。
+UN01005576,Class Code,クラスコード,The code specifying the class for this CI product classification.,インボイスの製品分類のクラスを指定するコード。
+UN01005577,Class Name,クラス名,"A class name, expressed as text, for this CI product classification.",インボイスの製品分類のクラス名をテキストで表現したもの。
+UN01005578,Sub-Class Code,サブクラスコード,The code specifying the sub class for this CI product classification.,インボイスの製品分類におけるサブクラスを特定するコード。
+UN01007142,Product Class Characteristic,製品クラスの特性,A product characteristic for this CI product classification.,インボイスの製品分類における製品特性。
+UN01008310,Applicable Referenced Standard,適用可能な参照規格,The referenced standard that is applicable to this CI product classification.,インボイスの製品分類に適用される参照規格。
+UN01005579,CI Referenced Document,CI参照文書,"Written, printed or electronic matter that is referenced for Cross Industry (CI) purposes.",インボイスの目的で参照される文書、印刷物、または電子媒体。
+UN01005580,Issuer Assigned ID,発行者割り当てID,The issuer assigned identifier for this CI referenced document.,インボイスの参照文書に対して発行者が割り当てた識別子。
+UN01005581,URI,URI,The unique Uniform Resource Identifier (URI) for this CI referenced document.,インボイスの参照文書に対する固有の統一リソース識別子（URI）。
+UN01005582,Issue Date Time,発行日時,The date or date time for the issuance of this CI referenced document.,インボイスの参照文書の発行日または発行日時。
+UN01005583,Status Code,ステータスコード,The code specifying the status for this CI referenced document.,インボイスの参照文書のステータスを指定するコード。
+UN01005584,Copy Indicator,コピーインジケーター,The indication of whether or not the CI referenced document is a copy.,インボイスの参照文書が複製であるかどうかの表示。
+UN01005585,Line ID,行ID,The unique identifier of a line in this CI referenced document.,インボイスの参照文書内の行の一意の識別子。
+UN01005586,Reference Type Code,参照タイプコード,The code specifying the reference type of this CI referenced document.,インボイスの参照文書の参照タイプを指定するコード。
+UN01005587,Global ID,グローバルID,The unique global identifier for this CI referenced document.,インボイスの参照文書に対する一意のグローバル識別子。
+UN01005588,Revision ID,リビジョンID,The unique identifier for a revision of this CI referenced document.,インボイスの参照文書の改訂版に対する一意の識別子。
+UN01005589,Name,名前,"A name, expressed as text, for this CI referenced document.",インボイスの参照文書の名前（テキストで表現）。
+UN01006415,Information,情報,"Information, expressed as text, for this CI referenced document.",インボイスの参照文書に関する情報（テキストで表現）。
+UN01007143,Previous Revision ID,前のリビジョンID,An identifier for a previous revision of this CI referenced document.,インボイスの参照文書の以前のリビジョンの識別子。
+UN01007144,Section Name,セクション名,"A section name, expressed as text, for this CI referenced document.",インボイスの参照文書のセクション名をテキストで表現したもの。
+UN01009672,Type Code,タイプコード,The code specifying the type of CI referenced document.,参照されるインボイスの文書のタイプを指定するコード。
+UN01011455,Attached Binary Object,添付されたバイナリオブジェクト,A binary object that is attached or otherwise appended to this CI referenced document.,インボイスの参照文書に添付または付加されたバイナリオブジェクト。
+UN01012725,Page ID,ページID,The identifier of the page for this CI referenced document.,インボイスの参照文書のページの識別子。
+UN01012922,Receipt Date Time,受領日時,"The date, time, date time, or other date time value for the receipt of this CI referenced document.",インボイスの参照文書の受領日時、時刻、日付時刻、またはその他の日付時刻値。
+UN01012923,Subordinate Line ID,従属回線ID,The identifier of the subordinate line of this CI referenced document.,インボイスの参照文書の従属行の識別子。
+UN01013317,Purpose Code,目的コード,The code specifying the purpose of this CI referenced document.,インボイスの参照文書の目的を指定するコード。
+UN01013318,Category Code,カテゴリーコード,The code specifying the category of this CI referenced document.,インボイスの参照文書のカテゴリを指定するコード。
+UN01013374,Assigned ID,割り当てられたID,The requisitioner assigned identifier for this CI referenced document.,インボイスの参照文書に割り当てられた要求者の識別子。
+UN01014899,Subtype Code,サブタイプコード,A code specifying a subtype of this CI referenced document.,インボイスの参照文書のサブタイプを指定するコード。
+UN01005590,Issuer,発行者,The trade party that issued this CI referenced document.,インボイスの参照文書を発行した取引先。
+UN01005591,Attached Binary File,添付されたバイナリファイル,A specified binary file attached to this CI referenced document.,インボイスの参照文書に添付された指定バイナリファイル。
+UN01007145,Effective Period,有効期間,The specified period within which this CI referenced document is effective.,インボイスの参照文書が有効な指定期間。
+UN01012726,Included Note,付属ノート,A note included in this CI referenced document.,インボイスの参照文書に含まれる注記。
+UN01005608,CI Specified Period,CI指定期間,An interval of time specified for Cross Industry (CI) purposes.,インボイスの目的で指定された時間間隔。
+UN01005609,Duration Measure,期間測定,A measure of the length of time for this CI specified period.,インボイスの指定期間の長さの尺度。
+UN01005610,Inclusive Indicator,包括的指標,The indication of whether or not start and end dates are included in this CI specified period.,開始日および終了日がインボイスの指定期間に含まれるかどうかの表示。
+UN01005611,Description,説明,A textual description of this CI specified period of time.,インボイスの指定期間に関するテキストによる説明。
+UN01005612,Start Date Time,開始日時,"The date, time, date time or other date time value for the start of this CI specified period of time.",インボイスで指定された期間の開始日、時刻、日付時刻、またはその他の日付時刻値。
+UN01005613,End Date Time,終了日時,"The date, time, date time or other date time value for the end of this CI specified period of time.",インボイスで指定された期間の終了を示す日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005614,Complete Date Time,完了日時,"The date, time, date time or other date time value for a complete CI specified period of time, such as a specific month or a specific week.",特定の月や特定の週など、インボイスで指定された期間全体の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005615,Season Code,シーズンコード,The code specifying the season for this CI specified period.,インボイスの指定期間の季節を指定するコード。
+UN01005616,ID,ID,The unique identifier of this CI specified period.,インボイスの指定期間の固有識別子。
+UN01005617,Name,名前,"A name, expressed as text, of this CI specified period.",インボイスの指定期間の名称（テキストで表現）。
+UN01005618,Sequence Number,シーケンス番号,The sequence number for this CI specified period.,インボイスの指定期間のシーケンス番号。
+UN01005619,Start Date Flexibility Code,開始日柔軟性コード,The code specifying the flexibility of the start date of this CI specified period.,インボイスの指定期間の開始日の柔軟性を指定するコード。
+UN01005620,Continuous Indicator,連続インジケーター,The indication of whether or not this CI specified period is continuous.,インボイスの指定期間が連続的であるかどうかの表示。
+UN01005626,CI Supply Chain Event,CIサプライチェーンイベント,An occurrence or a happening in a Cross Industry (CI) supply chain.,インボイスのサプライチェーンにおける発生または出来事。
+UN01005627,ID,ID,The unique identifier for this CI supply chain event.,インボイスのサプライチェーンイベントの一意の識別子。
+UN01005628,Occurrence Date Time,発生日時,"The date, time, date time, or other date time value of an occurrence of this CI supply chain event.",インボイスのサプライチェーンイベントの発生日時、日付時刻、またはその他の日付時刻値。
+UN01005629,Type Code,タイプコード,The code specifying the type of CI supply chain event.,インボイスのサプライチェーンイベントのタイプを指定するコード。
+UN01005630,Description,説明,A textual description of this CI supply chain event.,インボイスのサプライチェーンイベントのテキストによる説明。
+UN01005631,Description Binary Object,説明バイナリオブジェクト,"Binary object data, such as a photograph, describing this CI supply chain event.",インボイスのサプライチェーンイベントを説明する写真などのバイナリオブジェクトデータ。
+UN01005632,Unit Quantity,単位数量,The number of units for this CI supply chain event.,インボイスのサプライチェーンイベントの数量。
+UN01006683,Latest Occurrence Date Time,最新の発生日時,"The date, time, date time, or other date time value of the latest occurrence of this CI supply chain event.",インボイスのサプライチェーンイベントの最新の発生日時、時刻、日付時刻、またはその他の日付時刻値。
+UN01006684,Earliest Occurrence Date Time,最も早い発生日時,"The date, time, date time, or other date time value of the earliest occurrence of this CI supply chain event.",インボイスのサプライチェーンイベントの最も早い発生の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01011493,Occurrence Time,発生時刻,The time of an occurrence of this CI supply chain event.,インボイスのサプライチェーンイベントの発生時刻。
+UN01013372,Due Date Time,期日時刻,"The due date, time, date time, or other date time value of this CI supply chain event.",インボイスのサプライチェーンイベントの期日、時刻、日付時刻、またはその他の日付時刻値。
+UN01005633,Period,期間,The specified period of time during which this CI supply chain event occurs.,インボイスのサプライチェーンイベントが発生する指定期間。
+UN01005634,Location,位置,The logistics location where this CI supply chain event occurs.,インボイスのサプライチェーンイベントが発生する物流拠点。
+UN01005670,CI Trade Settlement Payment Means,CI取引決済支払手段,The means by which a payment will be or has been made for Cross Industry (CI) trade settlement purposes.,取引決済の目的で支払いがなされる、またはなされた手段。
+UN01005671,Payment Channel Code,支払いチャネルコード,The code specifying the payment channel through which this CI trade settlement payment means is to be processed (Reference United Nations Code List (UNCL) 4435).,インボイスの取引決済の支払手段が処理される支払チャネルを指定するコード（国連コードリスト（UNCL）4435 を参照）。
+UN01005672,Type Code,タイプコード,"The code specifying the type of CI trade settlement payment means, such as cash or cheque.",現金や小切手など、インボイスの取引決済の支払手段のタイプを指定するコード。
+UN01005673,Guarantee Method Code,保証方法コード,The code specifying the method of guarantee for this CI trade settlement payment means.,インボイスの取引決済支払手段の保証方法を特定するコード。
+UN01005674,Payment Method Code,支払い方法コード,The code specifying the method by which a payment may be made for this CI trade settlement payment means.,インボイスの取引決済支払手段に対して支払いが実行される可能性のある方法を特定するコード。
+UN01005675,ID,ID,An identifier for the CI trade settlement payment means.,インボイスの取引決済支払手段の識別子。
+UN01011456,Information,情報,"Information, expressed as text, for this CI trade settlement payment means.",インボイスの取引決済手段に関する情報をテキストで表現したもの。
+UN01015504,Paid Amount,支払金額,The monetary value paid or to be paid by this CI trade settlement payment means.,インボイスの取引決済支払手段によって支払われた、または支払われるべき金額。
+UN01005676,Payer Debtor Financial Account,支払債務者金融口座,The debtor financial account of the payer party for this CI trade settlement payment means.,インボイスの取引決済支払手段における支払者側の債務者金融口座。
+UN01005677,Payee Creditor Financial Account,受取人債権者金融口座,The creditor financial account of the payee party for this CI trade settlement payment means.,インボイスの取引決済支払手段における支払先事業者の債権者金融口座。
+UN01005678,Payer Debtor Financial Institution,支払人 債務者 金融機関,The debtor financial institution of the payer party specified for this CI trade settlement payment means.,インボイスの取引決済支払手段に指定された支払者側の債務者金融機関。
+UN01005679,Payee Creditor Financial Institution,受取人 債権者 金融機関,The creditor financial institution of the payee party specified for this CI trade settlement payment means.,インボイスの取引決済手段に指定された支払先事業者の債権者金融機関。
+UN01006057,Financial Card,金融カード,The trade settlement financial card applicable to this CI trade settlement payment means.,インボイスの取引決済支払いに適用される取引決済金融カード。
+UN01005680,CI Trade Accounting Account,CI取引会計アカウント,"A specific Cross Industry (CI) trade account for recording debits and credits to general accounting, cost accounting or budget accounting.",一般会計、原価計算、または予算会計への借方および貸方を記録するための特定の取引勘定。
+UN01005681,ID,ID,The unique identifier for this CI trade accounting account.,インボイスの取引会計勘定に対する固有識別子。
+UN01005682,Set Trigger Code,トリガーコードの設定,The code specifying a set trigger for this CI trade accounting account to be used in response to a specific event or a set of events.,特定のイベントまたは一連のイベントに対応して使用される、インボイスの取引会計勘定に対する設定トリガーを指定するコード。
+UN01005683,Type Code,タイプコード,"The code specifying the type of CI trade accounting account, such as general (main), secondary, cost accounting or budget account.",インボイスの取引会計勘定の種類（一般（メイン）、二次、原価計算、予算勘定など）を指定するコード。
+UN01005684,Amount Type Code,金額種別コード,The code specifying the amount type for this CI trade accounting account.,インボイスの取引会計勘定の金額タイプを指定するコード。
+UN01005685,Name,名前,"The name, expressed as text, of this CI trade accounting account.",インボイスの取引勘定の名称（テキストで表現）。
+UN01005686,Cost Reference Dimension Pattern Text,コスト参照ディメンションパターンテキスト,"The cost reference dimension pattern, expressed as text, for this CI trade accounting account.",インボイスの取引会計勘定のコスト参照ディメンションパターン（テキストで表現）。
+UN01015537,Sub Account ID,サブアカウントID,The identifier of the sub account for this CI trade accounting account.,インボイスの取引会計勘定のサブ勘定の識別子。
+UN01005687,CI Trade Address,CI取引先住所,The place at which a particular Cross Industry (CI) trade related organization or person may be found or reached.,特定の取引関連組織または人物が所在し、または連絡が取れる場所。
+UN01005688,ID,ID,The unique identifier for this CI trade address.,インボイスの取引先住所の一意の識別子。
+UN01005689,Postcode,郵便番号,The postcode of this CI trade address.,インボイスの取引先住所の郵便番号。
+UN01005690,Post Office Box,私書箱,"The identifier, expressed as text, of a post office box for this CI trade address.",インボイスの取引先住所の私書箱の識別子（テキストで表現）。
+UN01005691,Building Name,建物名,"The name, expressed as text, of a building, a house or other structure on a street at this CI trade address.",インボイスの取引先住所の通りに位置する建物、家屋、その他の構造物の名称（テキスト表記）。
+UN01005692,Line One,1行目,"The first free form line, expressed as text, of this CI trade address.",インボイスの取引先住所の最初の自由形式行（テキストで表現）。
+UN01005693,Line Two,2行目,"The second free form line, expressed as text, of this CI trade address.",インボイスの取引先住所の2番目の自由形式行（テキストで表現）。
+UN01005694,Line Three,3行目,"The third free form line, expressed as text, of this CI trade address.",インボイスの取引先住所の3番目の自由形式行（テキスト表記）。
+UN01005695,Line Four,4行目,"The fourth free form line, expressed as text, of this CI trade address.",インボイスの取引先住所の4番目の自由形式行（テキスト表記）。
+UN01005696,Line Five,5行目,"The fifth free form line, expressed as text, of this CI trade address.",インボイスの取引先住所の5番目の自由形式行（テキスト表記）。
+UN01005697,Street Name,通り名,"The name, expressed as text, of a street or thoroughfare for this CI trade address.",インボイスの取引先住所の道路または幹線道路の名称（テキスト表記）。
+UN01005698,City Name,都市名,"The name, expressed as text, of the city, town or village of this CI trade address.",インボイスの取引先住所の都市、町、または村の名称（テキスト表記）。
+UN01005699,City Sub-DivisionText,市区町村区分テキスト,"The name, expressed as text, of the sub-division of a city for this CI trade address, for example a district or borough.",インボイスの取引先住所の都市の区画（例：地区、区）の名称（テキストで表現）。
+UN01005700,Country Code,国コード,The unique identifier of the country for this CI trade address.,インボイスの取引先住所の国固有識別子。
+UN01005701,Country Name,国名,"A name, expressed as text, of the country for this CI trade address.",インボイスの取引先住所の国名をテキストで表現したもの。
+UN01005702,Country Sub-Division Code,国区分コード,The unique identifier of the sub-division of the country for this CI trade address.,インボイスの取引先住所の国における下位区分の一意の識別子。
+UN01005703,Country Sub-Division Name,国区分名,"A name, expressed as text, of the sub-division of a country for this CI trade address.",インボイスの取引先住所の国の下位区分をテキストで表現した名称。
+UN01005704,Attention Of,宛,"The name, expressed as text, of a person or department in the organization to whom incoming mail is marked with words such as 'for the attention of' or 'FAO' or 'ATTN' for this CI trade address.",インボイスの取引先住所宛ての郵便物に「for the attention of」「FAO」「ATTN」などの表記がされる、当該組織内の担当者または部署の名称（テキスト表記）。
+UN01005705,Care Of,気付,"The name, expressed as text, of a person or organization at this CI trade address to whom incoming mail is marked with words such as 'care of' or 'C/O'.",インボイスの取引先住所において、到着郵便物に「care of」または「C/O」などの表記がされる個人または組織の名称（テキスト表記）。
+UN01006054,Building Number,建物番号,"The number, expressed as text, of a building or house on a street at this CI trade address.",インボイスの取引先住所における、通り沿いの建物または家屋番号（テキスト表記）。
+UN01008283,Additional Street Name,追加の通り名,"The additional name of a street, expressed as text, for this CI trade address.",インボイスの取引先住所における、テキストで表される通りの追加名称。
+UN01008284,Department Name,部署名,"The name, expressed as text, of a department for this CI trade address.",インボイスの取引先住所における部署名をテキストで表記したもの。
+UN01005706,CI Trade Allowance/Charge,CI 取引手当/手数料,"A component of pricing, such as a service, promotion, allowance or charge, for Cross Industry (CI) trade purposes.",取引目的の価格設定要素（サービス、プロモーション、手当、料金など）。
+UN01005707,Charge Indicator,充電インジケーター,The indication of whether or not this CI trade allowance charge is a charge.,インボイスの取引手当料金が課金対象であるか否かの表示。
+UN01005708,ID,ID,The unique identifier for this CI trade allowance charge.,インボイスの取引手当料金の一意の識別子。
+UN01005709,Sequence Number,シーケンス番号,The sequence number for applying this CI trade allowance charge.,インボイスの取引手当料金を適用するためのシーケンス番号。
+UN01005710,Calculation Percent,計算パーセント,The percentage applied to calculate this CI trade allowance charge.,インボイスの取引手当料金を計算するために適用されるパーセンテージ。
+UN01005711,Basis Quantity,基準数量,The quantity on which this CI trade allowance charge is based.,インボイスの取引手当料金の計算基準となる数量。
+UN01005712,Prepaid Indicator,プリペイドインジケーター,The indication of whether or not this CI trade allowance charge is prepaid.,インボイスの取引許容料が前払いであるかどうかの表示。
+UN01005713,Actual Amount,実際の金額,An actual monetary value of this CI trade allowance charge.,インボイスの取引許容料の実際の金額。
+UN01005714,Reason Code,理由コード,The code specifying the reason for this CI trade allowance charge.,インボイスの取引許容料の理由を特定するコード。
+UN01005715,Reason Text,理由テキスト,"The reason, expressed as text, for this CI trade allowance charge.",インボイスの取引許容料の理由をテキストで表現したもの。
+UN01008285,Type Code,タイプコード,The code specifying the type of this CI trade allowance or charge.,インボイスの取引手当または手数料の種類を特定するコード。
+UN01008286,Basis Amount,基準額,The monetary value that is the basis on which this CI trade allowance or charge is calculated.,インボイスの取引手当または手数料の計算基準となる金額。
+UN01008287,Unit Basis Amount,単位基準額,The monetary value of the unit basis on which this CI trade allowance or charge is calculated.,インボイスの取引控除額または課徴金の計算基準となる単位の金額。
+UN01005716,Tax Category,税金のカテゴリ,A tax category of this CI trade allowance charge.,インボイスの取引手当課徴金の税区分。
+UN01005717,Actual Currency Exchange,実際の通貨交換,The actual trade currency exchange for this CI trade allowance charge.,インボイスの取引手当課金に対する実際の取引通貨為替レート。
+UN01005718,CI Trade Contact,CI取引連絡先,A person or a department that acts as a point of contact with another person or department in a Cross Industry (CI) trading relationship.,取引関係において、他の個人または部門との連絡窓口として機能する個人または部門。
+UN01005719,ID,ID,The unique identifier for this CI trade contact.,インボイスの取引連絡窓口の固有識別子。
+UN01005720,Person Name,人名,"The name, expressed as text, of this CI trade contact person.",インボイスの取引連絡担当者の名前（テキスト表記）。
+UN01005721,Department Name,部署名,"The name, expressed as text, of the department which is this CI trade contact.",インボイスの取引連絡窓口である部署の名称（テキスト表記）。
+UN01005722,Type Code,タイプコード,The code specifying the type of CI trade contact.,インボイスの取引連絡先のタイプを指定するコード。
+UN01005723,Job Title,役職,"The job title, position or designation, expressed as text, of this CI trade contact.",インボイスの取引連絡先の役職名、地位、または肩書きをテキストで表したもの。
+UN01005724,Responsibility Text,責任テキスト,"The responsibility, expressed as text, of this CI trade contact.",インボイスの取引連絡先の責任範囲（テキスト表記）。
+UN01005725,Person ID,人物ID,A unique identifier for this CI trade contact person.,インボイスの取引連絡担当者に対する固有識別子。
+UN01013394,Authorized Person Name,承認者名,"The name, expressed as text, of the authorized person for this CI trade contact.",インボイスの取引連絡先の承認者の名前（テキストで表現）。
+UN01005726,Telephone,電話,The telephone communication information for this CI trade contact.,インボイスの取引連絡先の電話通信情報。
+UN01005727,Direct Telephone,直通電話,The direct telephone communication information for this CI trade contact.,インボイスの取引連絡先の直通電話連絡情報。
+UN01005728,Mobile Telephone,携帯電話,The mobile telephone communication information for this CI trade contact.,インボイスの取引連絡先の携帯電話通信情報。
+UN01005729,Fax,ファックス,The fax communication information for this CI trade contact.,インボイスの取引連絡先のファックス通信情報。
+UN01005730,Email Address,電子メールアドレス,The email URI communication information for this CI trade contact.,インボイスの取引連絡先の電子メール URI 通信情報。
+UN01005731,Telex,テレックス,The telegraphy (Telex) communication information for this CI trade contact.,インボイスの取引先に関する電報（テレックス）通信情報。
+UN01005732,VOIP,VOIP,The Voice Over Internet Protocol (VOIP) communication information for this CI trade contact.,インボイスの取引先に関する Voice Over Internet Protocol (VOIP) 通信情報。
+UN01005733,Instant Messaging,インスタントメッセージ,The instant messaging communication information for this CI trade contact.,インボイスの取引先に関するインスタントメッセージング通信情報。
+UN01005734,Note,注記,A note specified for this CI trade contact.,インボイスの取引先に対して指定されたメモ。
+UN01008316,Person,人,The contact person specified for this CI trade contact.,インボイスの取引連絡先に対して指定された担当者。
+UN01005735,CI Trade Country,CI 取引国,A geopolitical area used or referenced for Cross Industry (CI) trade purposes.,取引目的で使用または参照される地政学的領域。
+UN01005736,Code,コード,The unique identifier for this CI trade country.,インボイスの取引先の国の固有識別子。
+UN01005737,Name,名前,"A name, expressed as text, for this CI trade country.",インボイスの取引先の国の名称（テキスト表記）。
+UN01007156,Subordinate Country Sub-Division,従属国区分,"A sub-division that is subordinate to this CI trade country, such as a state, a county, a canton, a province.",インボイスの取引先の国に属する州、郡、カントン、省などの下位区分。
+UN01007297,ID,ID,The unique identifier for this CI trade country sub-division.,インボイスの取引先の国の下位区分に対する一意の識別子。
+UN01007298,Name,名前,"A name, expressed as text, of this CI trade country sub-division.",インボイスの取引先の国の下位区分を表す名称（テキスト形式）。
+UN01005738,CI Currency Exchange,CI外貨両替,The conversion of one currency to another for Cross Industry (CI) trade purposes.,取引目的における通貨間の換算。
+UN01005739,Source Currency Code,ソース通貨コード,The code specifying the source currency of a CI trade currency conversion.,インボイスの取引通貨換算における基軸通貨を指定するコード。
+UN01005740,Source Unit Basis,ソースユニットベース,The numeric unit basis of the source currency used in this CI trade currency exchange rate calculation.,インボイスの取引通貨為替レート計算で使用される、原通貨の数値単位ベース。
+UN01005741,Target Currency Code,対象通貨コード,The code specifying the target currency of a CI trade currency conversion.,インボイスの取引通貨換算における対象通貨を指定するコード。
+UN01005742,Target Unit Basis,ターゲットユニットベース,The numeric unit basis of the target currency used in this CI trade currency exchange rate calculation.,インボイスの取引通貨為替レート計算で使用される対象通貨の数値単位基準。
+UN01005743,Market ID,市場ID,The unique identifier of the currency exchange market from which the exchange rate is taken for CI trade purposes.,インボイスの取引目的で為替レートを取得する為替市場の一意の識別子。
+UN01005744,Conversion Rate,コンバージョン率,The rate used for conversion from the source currency to the target currency for CI trade purposes.,インボイスの取引目的で原通貨から対象通貨への変換に使用されるレート。
+UN01005745,Conversion Rate Date Time,コンバージョン率 日付 時間,"The date, time, date time or other date time value of the conversion rate for this CI trade currency exchange.",インボイスの取引通貨換算の為替レートの日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005746,Referenced Document,参照文書,The document referenced for this CI trade currency exchange.,インボイスの取引通貨交換で参照される文書。
+UN01005756,CI Trade Party,CI取引事業者,"An individual, a group, or a body having a role in a Cross Industry (CI) trade business function.",取引業務機能において役割を持つ個人、グループ、または組織。
+UN01005757,ID,ID,A unique identifier of this CI trade party.,インボイスの取引事業者の固有識別子。
+UN01005758,Global ID,グローバルID,A globally unique identifier of this CI trade party.,インボイスの取引事業者のグローバルに一意の識別子。
+UN01005759,Name,名前,"The name, expressed as text, for this CI trade party.",インボイスの取引事業者の名称（テキストで表現）。
+UN01006744,Role Code,役割コード,A code specifying the role of this CI trade party.,インボイスの取引事業者の役割を特定するコード。
+UN01011453,Description,説明,A textual description of this CI trade party.,インボイスの取引事業者のテキストによる説明。
+UN01013039,Registered ID,登録ID,The registered identifier of this CI trade party.,インボイスの取引事業者の登録識別子。
+UN01012924,DUNS ID,DUNS ID,The Data Universal Numbering System (DUNS) identifier of this CI trade party.,インボイスの取引事業者のデータユニバーサルナンバリングシステム（DUNS）識別子。
+UN01012925,Type Code,タイプコード,A code specifying the type of CI trade party.,インボイスの取引事業者のタイプを指定するコード。
+UN01005760,Legal Organization,法的組織,The legally constituted organization specified for this CI trade party.,インボイスの取引事業者に指定された法的に構成された組織。
+UN01005761,Defined Contact,定義された連絡先,A trade contact defined for this CI trade party.,インボイスの取引事業者に定義された取引連絡先。
+UN01005762,Postal Address,郵便番号,The postal address for this CI trade party.,インボイスの取引事業者の住所。
+UN01005763,URI,URI,"A Uniform Resource Identifier (URI) communication for this CI trade party, such as a web or email address.",インボイスの取引事業者の統一リソース識別子（URI）通信（Web アドレスや電子メールアドレスなど）。
+UN01005764,Tax Registration,税務登録,A tax registration specified for this CI trade party.,インボイスの取引事業者に指定された税務登録情報。
+UN01005765,End Point URI,エンドポイントURI,The communication address of the end point URI for this CI trade party.,インボイスの取引事業者のエンドポイント URI の通信アドレス。
+UN01006691,Logo Binary File,ロゴバイナリファイル,A file containing a specified binary representation of a logo associated with this CI trade party.,インボイスの取引先に関連付けられたロゴの指定されたバイナリ表現を含むファイル。
+UN01012706,Specified Logistics Location,指定物流拠点,The logistics related location specified for this CI trade party.,インボイスの取引事業者に指定された物流関連場所。
+UN01005779,CI Payment Terms,CI支払条件,Conditions by which payment has been or will be made for Cross Industry (CI) trade purposes.,取引目的で支払いが行われた、または行われる条件。
+UN01005780,ID,ID,The unique identifier of these CI trade payment terms.,インボイスの取引支払条件の一意の識別子。
+UN01005781,From Event Code,イベントコードから,The code specifying the event from which these CI trade payment terms apply.,インボイスの取引支払条件が適用されるイベントを特定するコード。
+UN01005782,Settlement Period Measure,決済期間措置,The measure of the settlement period for these CI trade payment terms.,インボイスの取引支払条件における決済期間の測定単位。
+UN01005783,Description,説明,A textual description of these CI trade payment terms.,インボイスの取引支払条件のテキストによる説明。
+UN01005784,Due Date Time,期日時刻,"The date, time, date time, or other date time value of the due date specified by these CI trade payment terms.",インボイスの取引支払条件によって指定された支払期日の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005785,Deprecated Instruction Type Code,非推奨の命令タイプコード,The code specifying the type of instruction for these CI trade payment terms.,インボイスの取引支払条件における指示の種類を特定するコード。
+UN01005786,Payment Means ID,支払い手段ID,An identifier of the payment means in these CI trade payment terms.,インボイスの取引支払条件における支払手段の識別子。
+UN01005787,Partial Payment Percent,部分支払い率,"The partial payment, expressed as a percentage, in these CI trade payment terms.",インボイスの取引支払条件における部分支払額（パーセンテージで表示）。
+UN01006049,Direct Debit Mandate ID,口座振替委任ID,An identifier of a direct debit mandate in these CI trade payment terms.,インボイスの取引支払条件における口座引落指示の識別子。
+UN01008502,Type Code,タイプコード,The code specifying the type of these CI trade payment terms.,インボイスの取引支払条件のタイプを指定するコード。
+UN01009059,Partial Payment Amount,一部支払金額,A monetary value of a partial payment in these CI trade payment terms.,インボイスの取引支払条件における部分支払いの金額。
+UN01014673,Bill Start Date Time,請求開始日時,"The date, time, date time, or other date time value of the bill start specified by these CI trade payment terms.",インボイスの取引支払条件で指定される請求開始の日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01015539,Instructed Amount,指示金額,The monetary value that has been instructed to be transferred between debtor and creditor for these CI trade payment terms.,インボイスの取引支払条件において、債務者と債権者間で振り込むよう指示された金額。
+UN01005788,Payment Penalty Terms,支払いペナルティ条件,Trade payment penalty terms applicable to these CI trade payment terms.,インボイスの取引支払条件に適用される取引支払遅延金条件。
+UN01005789,Payment Discount Terms,支払い割引条件,Trade payment discount terms applicable to these CI trade payment terms.,インボイスの取引支払条件に適用される取引支払割引条件。
+UN01009060,Payee,受取人,A payee party in these CI trade payment terms.,インボイスの取引支払条件における支払先事業者。
+UN01005790,CI Trade Price,CI取引価格,A sum of money for which something is or may be bought or sold for Cross Industry (CI) trade purposes.,取引で何かが購入または売却される、あるいは購入または売却される可能性のある金額。
+UN01005791,Type Code,タイプコード,The code specifying the type of CI trade price.,インボイスの取引価格の種類を特定するコード。
+UN01005792,Charge Amount,請求金額,A monetary value of this CI trade price charge.,インボイスの取引価格の課金対象となる金額。
+UN01005793,Basis Quantity,基準数量,The quantity on which this CI trade price is based.,インボイスの取引価格の算定基準となる数量。
+UN01005794,Order Unit Conversion Factor Numeric,注文単位変換係数数値,The value used as the factor to convert the order unit into the price unit for this CI trade price.,インボイスの取引価格において、注文単位を価格単位に変換するための係数として使用される値。
+UN01007157,Change Reason Text,変更理由テキスト,"A reason, expressed as text, for a change of this CI trade price.",インボイスの取引価格の変更理由（テキストで表現）。
+UN01007158,Minimum Quantity,最小数量,The minimum quantity in a range for which this CI trade price applies.,インボイスの取引価格が適用される範囲内の最小数量。
+UN01007159,Maximum Quantity,最大数量,The maximum quantity in a range for which this CI trade price applies.,インボイスの取引価格が適用される範囲内の最大数量。
+UN01013364,Type Text,テキストを入力,"A type, expressed as text, for this CI trade price.",インボイスの取引価格のタイプ（テキストで表現）。
+UN01014674,Basis Date Time,基準日時,"The date, time, date time, or other date time value used as the basis for this CI trade price.",インボイスの取引価格の基準となる日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005795,Applied Allowance/Charge,適用控除/手数料,An allowance or charge applied to this CI trade price.,インボイスの取引価格に適用される割増料金または割引料金。
+UN01005796,Validity Period,有効期間,The specified period for which this CI trade price is valid.,インボイスの取引価格が有効な指定期間。
+UN01005797,Referenced Document,参照文書,A document referenced for this CI trade price.,インボイスの取引価格に参照される文書。
+UN01007162,Delivery Location,配送場所,A delivery location for this CI trade price.,インボイスの取引価格の配送場所。
+UN01007163,Comparison Price,比較価格,A price that provides a comparison with this CI trade price.,インボイスの取引価格との比較を提供する価格。
+UN01005809,CI Trade Product,CI取引製品,Any tangible output or service produced by human or mechanical effort or by a natural process for Cross Industry (CI) trade purposes.,取引目的のために、人的・機械的努力または自然プロセスによって生産される有形の産出物またはサービス。
+UN01005810,ID,ID,The unique identifier for this CI trade product.,インボイスの取引製品の一意の識別子。
+UN01005811,Global ID,グローバルID,The unique global identifier for this CI trade product.,インボイスの取引製品の一意のグローバル識別子。
+UN01005812,Seller Assigned ID,売り手が割り当てたID,The unique seller assigned identifier for this CI trade product.,インボイスの取引製品に対して売り手が割り当てた固有識別子。
+UN01005813,Buyer Assigned ID,買い手割り当てID,The unique buyer assigned identifier for this CI trade product.,インボイスの取引製品に対して買い手が割り当てた固有識別子。
+UN01005814,Manufacturer Assigned ID,メーカー割り当てID,The unique manufacturer assigned identifier for this CI trade product.,インボイスの取引製品に対して製造者が割り当てた固有識別子。
+UN01005815,Name,名前,"A name, expressed as text, for this CI trade product.",インボイスの取引製品の名称（テキストで表現）。
+UN01005816,Trade Name,商号,"The trade name, expressed as text, for this CI trade product.",インボイスの取引製品の商号（テキストで表現）。
+UN01005817,Description,説明,A textual description for this CI trade product.,インボイスの取引製品のテキストによる説明。
+UN01005818,Type Code,タイプコード,The code specifying the type of CI trade product.,インボイスの取引製品のタイプを特定するコード。
+UN01005819,Net Weight,正味重量,The measure of the net weight (mass) of this CI trade product.,インボイスの取引製品の正味重量（質量）の単位。
+UN01005820,Gross Weight,総重量,The measure of the gross weight (mass) of this CI trade product.,インボイスの取引製品の総重量（質量）の測定値。
+UN01007167,Drained Net Weight,排水後の正味重量,The measure of the drained net weight (mass) of this CI trade product.,インボイスの取引製品の脱水後の正味重量（質量）の単位。
+UN01007168,Brand Name,ブランド名,"The brand name, expressed as text, for this CI trade product.",インボイスの取引製品のブランド名（テキスト表記）。
+UN01007169,Sub-Brand Name,サブブランド名,"The sub-brand name, expressed as text, for this CI trade product.",インボイスの取引製品のサブブランド名（テキスト表記）。
+UN01008524,Product Group ID,製品グループID,A unique identifier for a product group for this CI trade product.,インボイスの取引製品の製品グループ固有識別子。
+UN01008525,Area Density Measure,面密度測定,"The measure of the area density, such as paper density in grams per square metre (gsm), of this CI trade product.",インボイスの取引製品の面積密度（例：平方メートルあたりのグラム数（gsm）による紙密度）の測定値。
+UN01008526,Colour Code,カラーコード,The code specifying the colour for this CI trade product.,インボイスの取引製品の色を指定するコード。
+UN01008527,Colour Description,色の説明,A textual description of the colour of this CI trade product.,インボイスの取引製品の色に関するテキストによる説明。
+UN01008528,Use Description,使用説明,A textual description of a use of this CI trade product.,インボイスの取引製品の使用方法に関するテキストによる説明。
+UN01008529,Designation Text,指定テキスト,"A designation, expressed as text, for this CI trade product.",インボイスの取引製品の名称（テキスト表記）。
+UN01008530,End Item Name,最終品目名,"An end item name, expressed as text, for this CI trade product.",インボイスの取引製品の最終品目名をテキストで表したもの。
+UN01008531,Latest Product Data Change Date Time,最新の製品データ変更日時,"The date, time, date time, or other date time value of the latest change in the product data for this CI trade product.",インボイスの取引製品の製品データにおける最新の変更日時、日付時刻、またはその他の日付時刻値。
+UN01008532,End Item Type Code,最終製品タイプコード,A code specifying a type of end item for this CI trade product.,インボイスの取引製品の最終品目の種類を特定するコード。
+UN01008533,Variable Measure Indicator,変数測定インジケーター,"The indication of whether or not instances of this CI trade product have a variable measure, such as weight, length or volume.",インボイスの取引製品のインスタンスに重量、長さ、体積などの可変測定値があるかどうかの表示。
+UN01012942,Additional Description,追加説明,An additional textual description for this CI trade product.,インボイスの取引製品に関する追加のテキスト記述。
+UN01012943,Batch ID,バッチID,A batch identifier for this CI trade product.,インボイスの取引製品のバッチ識別子。
+UN01012944,Common Name,通称,"A common name, expressed as text, for this CI trade product.",インボイスの取引製品の一般的な名称（テキストで表現）。
+UN01012945,Concise Description,簡潔な説明,An concise textual description for this CI trade product.,インボイスの取引製品の簡潔なテキストによる説明。
+UN01012946,Configurable Indicator,設定可能なインジケーター,The indication of whether or not this CI trade product is configurable.,インボイスの取引製品が構成可能であるかどうかの表示。
+UN01012947,Content Unit Quantity,内容量 単位 数量,The number of content units of this CI trade product.,インボイスの取引製品のコンテンツ単位数。
+UN01012948,Customer Assigned ID,顧客割り当てID,A customer assigned identifier of this CI trade product.,インボイスの取引製品の顧客割り当て識別子。
+UN01012949,Gross Volume Measure,総容積測定,A measure of gross volume of this CI trade product.,インボイスの取引製品の総容積の測定値。
+UN01012950,Industry Assigned ID,業界割り当てID,An industry assigned identifier for this CI trade product.,インボイスの取引製品に対する業界割り当て識別子。
+UN01012951,Model ID,モデルID,A model identifier for this CI trade product.,インボイスの取引製品のモデル識別子。
+UN01012952,Net Volume Measure,正味体積測定,A measure of a net volume for this CI trade product.,インボイスの取引製品の正味量の測定値。
+UN01012953,Recycling Type Code,リサイクル種別コード,The code specifying the type of recycling for this CI trade product.,インボイスの取引製品のリサイクルタイプを指定するコード。
+UN01012954,Status Code,ステータスコード,A code specifying a status for this CI trade product.,インボイスの取引製品のステータスを指定するコード。
+UN01012955,Unit Type Code,ユニットタイプコード,A code specifying a type of unit for this CI trade product.,インボイスの取引製品の単位タイプを指定するコード。
+UN01013366,Export Indicator,輸出指標,The indication of whether or not this CI trade product is for export.,インボイスの取引製品が輸出用であるかどうかの表示。
+UN01015538,Classification Code,分類コード,The code specifying the classification for this CI trade product.,インボイスの取引製品の分類を指定するコード。
+UN01005821,Characteristic,特性,A product characteristic applicable to this CI trade product.,インボイスの取引製品に適用される製品特性。
+UN01005822,Material Goods Characteristic,物質的商品特性,A material goods characteristic applicable to this CI trade product.,インボイスの取引製品に適用される有形財の特性。
+UN01005823,Classification,分類,A product classification designated for this CI trade product.,インボイスの取引製品に指定された製品分類。
+UN01005824,Individual Product Instance,個々の製品インスタンス,An individual instance of this Cross Industry (CI) trade product.,インボイス取引製品の個別インスタンス。
+UN01005825,Certification Evidence Document,認定証明書類,A Cross Industry (CI) certification evidence document reference for this CI trade product.,インボイスの取引製品に対するインボイスの認証証拠文書の参照。
+UN01005826,Inspection Document,検査書類,A Cross Industry (CI) inspection document referenced from this CI trade product.,インボイスの取引製品から参照されるインボイスの検査文書。
+UN01005827,Origin Country,原産国,The country of origin for this Cross Industry (CI) trade product.,インボイス取引製品の原産国。
+UN01005828,Dimensions,寸法,Linear spatial dimensions of this Cross Industry (CI) trade product.,インボイス取引製品の直線的な空間寸法。
+UN01005829,Minimum Dimensions,最小寸法,Minimum linear spatial dimensions of this Cross Industry (CI) trade product.,インボイス取引製品の最小直線空間寸法。
+UN01005830,Maximum Dimensions,最大寸法,Maximum linear spatial dimensions of this Cross Industry (CI) trade product.,インボイス取引製品の最大直線空間寸法。
+UN01005831,Manufacturer,メーカー,The party who is the manufacturer of this Cross Industry (CI) trade product.,インボイス取引製品の製造者。
+UN01007171,MSDS Document,MSDS文書,The Material Safety Data Sheet (MSDS) document referenced for this CI trade product.,インボイスの取引製品に参照される物質安全データシート（MSDS）文書。
+UN01007172,Additional Document,追加文書,"An additional referenced document for this CI trade product, such as a manual or a certificate.",インボイスの取引製品に関する追加参照文書（マニュアルや証明書など）。
+UN01007173,Information Note,情報メモ,An information note for this CI trade product.,インボイスの取引製品に関する情報ノート。
+UN01008534,Brand Owner,ブランドオーナー,The party that owns the brand of this CI trade product.,インボイスの取引製品のブランドを所有する事業者。
+UN01008535,Legal Rights Owner,法的権利所有者,The party that owns the legal rights for this CI trade product.,インボイスの取引製品の法的権利を所有する事業者。
+UN01008536,Presentation Binary File,プレゼンテーションバイナリファイル,A binary file presentation specified for this CI trade product.,インボイスの取引製品に指定されたバイナリファイル形式。
+UN01012674,Buyer Supplied Parts Reference Document,買い手支給部品参照文書,A buyer supplied parts document reference for this CI trade product.,インボイスの取引製品に関する購入者提供部品文書参照。
+UN01005799,Global Serial ID,グローバルシリアルID,The unique global serial identifier for this CI trade product instance.,インボイスの取引製品インスタンスの固有のグローバルシリアル識別子。
+UN01005800,Batch ID,バッチID,The unique batch identifier for this CI trade product instance.,インボイスの取引製品インスタンスの一意のバッチ識別子。
+UN01005801,Kanban ID,カンバンID,The unique kanban identifier for this CI trade product instance.,インボイスの取引製品インスタンスの一意なカンバン識別子。
+UN01005802,Supplier Assigned Serial ID,サプライヤーが割り当てたシリアルID,The unique supplier assigned serial identifier for this CI trade product instance.,インボイスの取引製品インスタンスに対してサプライヤーが割り当てた一意のシリアル識別子。
+UN01005803,Best Before Date Time,賞味期限,"The date, time, date time, or other date time value before which it is best to consume this CI trade product instance.",インボイスの取引製品インスタンスを消費するのに最適な期限となる日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005804,Expiry Date Time,有効期限,"The date, time, date time, or other date time value of expiry of this CI trade product instance.",インボイスの取引製品インスタンスの有効期限となる日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01005805,Sell By Date Time,販売期限日時,"The date, time, date time, or other date time value after which this CI trade product instance should not be sold.",インボイスの取引製品インスタンスが販売されるべきでない日付、時刻、日付時刻、またはその他の日付時刻値。
+UN01006745,Serial ID,シリアルID,A serial identifier for this CI trade product instance.,インボイスの取引製品インスタンスのシリアル識別子。
+UN01007164,Registration ID,登録ID,"A registration identifier, such as a vehicle licence plate identification, for this CI trade product instance.",インボイスの取引製品インスタンスの登録識別子（例：車両ナンバープレート識別番号）。
+UN01005806,Product Characteristic,製品特性,A product characteristic for this CI trade product instance.,インボイスの取引製品インスタンスの製品特性。
+UN01005807,Production Event,制作イベント,The production event for this CI trade product instance.,インボイスの取引製品インスタンスの生産イベント。
+UN01005808,Packaging Event,パッケージングイベント,The packaging event for this CI trade product instance.,インボイスの取引製品インスタンスの包装イベント。
+UN01007165,Material Goods Characteristic,物質的商品特性,A material characteristic applicable to this CI trade product instance.,インボイスの取引製品インスタンスに適用される材料特性。
+UN01005832,CI Trade Tax,CI取引税,"A Cross Industry (CI) trade related fiscal tax, duty or levy.",取引に関連する財政税、関税、または賦課金。
+UN01005833,Calculated Amount,計算金額,"A monetary value resulting from the calculation of this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の計算結果として得られる金額。
+UN01005834,Type Code,タイプコード,"The code specifying the type of CI trade related tax, levy or duty, such as a code for a Value Added Tax (VAT).",付加価値税（VAT）などの、インボイスの取引関連の税、課徴金、関税の種類を指定するコード。
+UN01005835,Exemption Reason Text,免除理由テキスト,"The reason, expressed as text, for exemption from this CI trade related tax, levy or duty.",インボイスの取引関連税・賦課金・関税の免除理由（テキスト表記）。
+UN01005836,Calculated Rate,計算レート,"The rate used to calculate the amount of this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の金額を計算するために使用される税率。
+UN01005837,Calculation Sequence Number,計算シーケンス番号,"The numeric expression of the sequence in which this CI trade related tax is to be or has been applied when multiple taxes are applicable per calculation, such as first ""Value Added Tax (VAT)"", second ""Transfer"".",計算ごとに複数の税が適用される場合、インボイスの取引関連税が適用される順序または適用された順序の数値表現。例：最初に「付加価値税（VAT）」、次に「移転税」。
+UN01005838,Basis Quantity,基準数量,"The quantity used as the basis for calculating the amount of this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の金額計算の基礎となる数量。
+UN01005839,Basis Amount,基準額,"A monetary value used as the basis on which this CI trade related tax, levy or duty is calculated.",インボイスの取引関連税、課徴金または関税の計算の基礎となる金額。
+UN01005840,Unit Basis Amount,単位基準額,"A monetary value that constitutes the per unit basis on which this CI trade related tax, levy or duty is calculated.",インボイスの取引関連税、賦課金または関税の計算における単位当たりの基準となる金額。
+UN01005841,Category Code,カテゴリーコード,"The code specifying the category to which this CI trade related tax, levy or duty applies, such as codes for ""Exempt from Tax"", ""Standard Rate"", ""Free Export Item - Tax Not Charged"" .",インボイスの取引関連税、課徴金、または関税が適用されるカテゴリーを指定するコード。「免税」、「標準税率」、「免税輸出品 - 課税対象外」などのコード。
+UN01005842,Currency Code,通貨コード,"The code specifying the currency for this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の通貨を指定するコード。
+UN01005843,Jurisdiction Text,管轄テキスト,"A jurisdiction, expressed as text, to which this CI trade related tax, levy or duty applies.",インボイスの取引関連税、賦課金または関税が適用される管轄区域（テキストで表現）。
+UN01005844,Customs Duty Indicator,関税指標,"The indication of whether or not this CI trade related tax, levy or duty is a customs duty.",インボイスの取引関連税、賦課金または関税が関税であるかどうかの表示。
+UN01005845,Exemption Reason Code,免除理由コード,"The code specifying a reason for exemption from this CI trade related tax, levy or duty.",インボイスの取引関連税、課徴金、または関税が免除される理由を指定するコード。
+UN01005846,Basis Allowance Rate,基礎控除率,"The rate of the tax basis allowance (deduction or discount) used to calculate the CI trade related tax, levy or duty.",インボイスの取引関連税、課徴金または関税の計算に使用される税額控除（控除または割引）の率。
+UN01005847,Deprecated Tax Point Date,廃止された課税ポイント日付,"The date of the tax point when this CI trade related tax, levy or duty becomes applicable.",インボイスの取引関連税、賦課金または関税が適用される課税時点の日付。
+UN01005848,Type Text,テキストを入力,"The type, expressed as text, of this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の種類（テキストで表示）。
+UN01005849,Information Amount,情報量,"A monetary value being reported for information for this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税について情報提供のために報告される金額。
+UN01005850,Category Name,カテゴリ名,"A category name, expressed as text, of this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税のカテゴリー名（テキストで表現）。
+UN01006052,Due Date Type Code,期日タイプコード,The code specifying a type of due date for this CI trade tax.,インボイスの取引税の支払期日の種類を特定するコード。
+UN01007174,Applicable Rate Percent,適用レートパーセント,"The applicable rate of CI trade tax, expressed as a percentage.",インボイスの取引税に適用される税率（パーセンテージで表示）。
+UN01013040,Grand Total Amount,合計金額,The monetary value of the grand total of the basis plus tax for this CI trade tax.,インボイスの取引税の課税標準額と税額の合計金額。
+UN01013096,Tax Calculation Method Code,税計算方法コード,"The code specifying the method by which this CI trade related tax, levy or duty is calculated, such as codes for ""tax calculated after line total summation"", ""tax calculated before line total summation"", ""tax back calculated based on grand total"".",インボイスの取引関連税、課徴金、または関税の計算方法を指定するコード（「行合計後の税額計算」、「行合計前の税額計算」、「総計に基づく税額逆算」などのコード）。
+UN01014650,Local Tax System ID,地方税システムID,The identifier of the local tax system for this CI trade tax.,インボイスの取引税における地域税体系を識別する識別子
+UN01005851,Accounting Account,会計アカウント,"A specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税に指定された会計勘定科目。
+UN01005852,Buyer Deductible Tax Accounting Account,買い手控除税会計アカウント,"The buyer deductible tax specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引関連税、賦課金または関税の買い手控除可能税指定会計勘定。
+UN01005853,Buyer Non-Deductible Tax Accounting Account,買い手の非控除税会計アカウント,"The buyer non-deductible tax specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引関連税、課徴金、または関税に関する、買い手控除不可税の指定会計勘定。
+UN01005854,Buyer Repayable Tax Accounting Account,買主未払税会計アカウント,"The buyer repayable tax specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引に関連する税金、課徴金、または関税について、買い手が返済すべき税金の指定会計勘定。
+UN01005855,Seller Payable Tax Accounting Account,売り手未払税金会計勘定,"The seller payable tax specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引に関連する税金、課徴金、または関税について、売り手が支払うべき税金の指定会計勘定。
+UN01005856,Seller Refundable Tax Accounting Account,売り手還付税会計アカウント,"The seller refundable tax specified accounting account for this CI trade related tax, levy or duty.",インボイスの取引関連税、課徴金または関税に対する売手の還付可能税指定会計勘定。
+UN01006064,Service Supply Country,サービス供給国,The country where a service was supplied for this CI trade tax.,インボイスの取引税の対象となるサービスが提供された国。
+UN01007175,Applicable Location,適用場所,A location where this CI trade tax is applicable.,インボイスの取引税が適用される場所。
+UN01005857,CI Communication,CIコミュニケーション,The exchange of messages or information for Cross Industry (CI) purposes.,インボイス目的のためのメッセージまたは情報の交換。
+UN01005858,URI,URI,"The Uniform Resource Identifier (URI), such as a web or an email address, for this CI universal communication.",インボイスのユニバーサルコミュニケーションの、Web アドレスや E メールアドレスなどの統一リソース識別子 (URI)。
+UN01005859,Channel Code,チャネルコード,"The code specifying the channel or manner in which a CI universal communication can be made, such as telephone or email.",インボイスのユニバーサルコミュニケーションを行うチャネルまたは方法を指定するコード（例：電話または電子メール）。
+UN01005860,Complete Number,完全な番号,The text string of characters that make up the complete number for this CI universal communication.,インボイスのユニバーサルコミュニケーションの完全な番号を構成する文字列。
+UN01000371,Procuring Project,調達プロジェクト,"An endeavour carefully planned to achieve a procurement of goods, works and service.",物品、工事、サービスの調達を達成するために慎重に計画された取り組み。
+UN01000372,ID,ID,The unique identifier of this procuring project.,調達プロジェクトの固有識別子。
+UN01000373,Description,説明,The textual description of this procuring project.,調達プロジェクトのテキストによる説明。
+UN01000374,Name,名前,"The name, expressed as text, of this procuring project.",調達プロジェクトの名称（テキスト表記）。
+UN01000375,Works Type Code,作品種別コード,"A code specifying the type of work, such as surveying or consulting, for this procuring project.",調達プロジェクトにおける測量やコンサルティングなどの作業の種類を特定するコード。
+UN01000376,Sub-Works Type Code,サブワークスタイプコード,"A code specifying the type of sub works, such as land surveying or information technology consulting, for this procuring project.",調達プロジェクトにおける下請工事の種類（例：土地測量、情報技術コンサルティング）を特定するコード。
+UN01000377,Type Code,タイプコード,"The code specifying the type of procuring project, such as goods, works and service.",調達プロジェクトの種類（物品、工事、サービスなど）を特定するコード。
+UN01000378,Constraint Indicator,制約インジケーター,The indication of whether or not the project is constrained by an authority such as the World Trade Organization (WTO) for this procuring project.,調達プロジェクトが、世界貿易機関（WTO）などの機関による制約を受けるかどうかの表示。
+UN01000379,Total Budget Amount,総予算額,"The monetary value of the total budget which includes net amount, taxes, and material and instalment costs for this procuring project.",本調達プロジェクトの総予算額（純額、税金、資材費、分割払い費用を含む）。
+UN01000380,Net Budget Amount,純予算額,The monetary value of the net budget for this procuring project.,当該調達プロジェクトの純予算の金額。
+UN01000381,Project Actualization Location,プロジェクト実現場所,The physical actualization location of this procuring project.,本調達プロジェクトの物理的実施場所。
+UN01000382,Tendering Planned Period,入札予定期間,The planned period for performing this procuring project in the tendering process.,入札プロセスにおける本調達プロジェクトの計画実施期間。
+UN01011486,Inspection Event,検査イベント,The inspection event specified for this procuring project.,本調達プロジェクトに指定された検査イベント。
+UN01011489,Project Plan Period,プロジェクト計画期間,A planned period for this procuring project.,本調達プロジェクトの計画期間。
+UN01006014,Binary File,バイナリファイル,A specified computer file or program stored in a binary format.,バイナリ形式で保存された特定のコンピュータファイルまたはプログラム。
+UN01006015,ID,ID,A unique identifier for this specified binary file.,指定されたバイナリファイルの一意の識別子。
+UN01006016,Title,タイトル,"A title, expressed as text, for this specified binary file.",指定されたバイナリファイルの、テキストで表現されたタイトル。
+UN01006017,Author Name,著者名,"A name of an author, expressed as text, of this specified binary file.",指定されたバイナリファイルの作者名（テキストで表現）。
+UN01006018,Version ID,バージョンID,The unique version identifier for this specified binary file.,指定されたバイナリファイルの一意のバージョン識別子。
+UN01006019,Name,名前,"The file name, expressed as text, of this specified binary file.",指定されたバイナリファイルのファイル名（テキストで表現）。
+UN01006020,URI,URI,The unique Uniform Resource Identifier (URI) for this specified binary file.,指定されたバイナリファイルの一意のURI（Uniform Resource Identifier）。
+UN01006021,MIME Code,MIMEコード,The code specifying the Multipurpose Internet Mail Extensions (MIME) type for this specified binary file.,指定されたバイナリファイルの多目的インターネットメール拡張（MIME）タイプを指定するコード。
+UN01006022,Encoding Code,エンコードコード,The code specifying the encoding of this specified binary file.,指定されたバイナリファイルのエンコーディングを指定するコード。
+UN01006023,Character Set Code,文字セットコード,The code specifying the character set for this specified binary file.,指定されたバイナリファイルの文字セットを指定するコード。
+UN01006024,Included Binary Object,含まれるバイナリオブジェクト,A binary object included in this specified binary file.,指定されたバイナリファイルに含まれるバイナリオブジェクト。
+UN01006025,Access Text,アクセステキスト,"Access information, expressed as text, for this specified binary file, such as security and download parameters.",指定されたバイナリファイルに関するアクセス情報（テキスト形式で表現）。セキュリティやダウンロードパラメータなど。
+UN01006026,Description,説明,A textual description of this specified binary file.,指定されたバイナリファイルのテキストによる説明。
+UN01006027,Size,サイズ,The measure of the size of this specified binary file.,指定されたバイナリファイルのサイズを測定する値。
+UN01006028,Access Availability Period,アクセス利用可能期間,The specified period when access to this binary file is available.,バイナリファイルへのアクセスが可能な指定期間。
+UN01004493,Trade Settlement Financial Card,取引決済金融カード,A card used to represent a financial account for a trade settlement.,取引決済用の金融口座を表すために使用されるカード。
+UN01004494,Microchip Indicator,マイクロチップインジケーター,The indication of whether or not this trade settlement financial card has a microchip.,取引決済金融カードにマイクロチップが搭載されているかどうかの表示。
+UN01004495,ID,ID,"The unique identifier, commonly known as the card number, of this trade settlement financial card.",取引決済金融カードの一意の識別子（一般にカード番号として知られる）。
+UN01004496,Type Code,タイプコード,"The code specifying the type of this trade settlement financial card, such as debit or credit.",取引決済金融カードのタイプ（デビットカードやクレジットカードなど）を指定するコード。
+UN01004497,Cardholder Name,クレジットカード名義人氏名,The cardholder name as it appears on this trade settlement financial card. This may include both an individual authorized to use the card as well as the organization that owns the card.,取引決済金融カードに記載されているカード名義人名。カードの使用を許可された個人と、カードを所有する組織の両方が含まれる場合があります。
+UN01004498,Expiry Date,有効期限,The date of expiry up to which this trade settlement financial card is valid.,取引決済金融カードが有効である期限。
+UN01004499,Verification Number,確認番号,The unique card verification number for security purposes to help verify the card user is in actual possession of this trade settlement financial card.,セキュリティ目的で、カード利用者が実際に取引決済金融カードを所持していることを確認するための固有のカード検証番号。
+UN01004500,Valid From Date,有効開始日,The date from which this trade settlement financial card is valid.,取引決済金融カードが有効となる開始日。
+UN01006085,Credit Limit Amount,信用限度額,A monetary value of the credit limit for this trade settlement financial card.,本取引決済金融カードの与信限度額（金額）。
+UN01006086,Credit Available Amount,クレジット利用可能額,A monetary value of the credit available for this trade settlement financial card.,取引決済金融カードの利用可能残高の金額。
+UN01006087,Interest Rate,金利,The interest rate expressed as a percentage for this trade settlement financial card.,取引決済金融カードの金利（パーセンテージで表示）。
+UN01009966,Issuing Company Name,発行会社名,"An issuing company name, expressed as text, for this trade settlement financial card.",取引決済金融カードの発行会社名をテキストで表示したもの。
+UN01009967,Description,説明,A textual description of this trade settlement financial card.,取引決済金融カードの説明文。

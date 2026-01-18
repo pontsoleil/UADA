@@ -1,0 +1,33 @@
+= 共通EDI 日本版コアインボイス（2階層 RSM） - Statement（鑑）定義
+:toc: left
+:sectnums:
+:lang: ja
+
+
+
+== モデル方針（2階層：ヘッダ／行）
+* 月次請求の**繰越・当月発生・入金・差引**をヘッダ集計に集約（CCBDA ACCを2層で表現）。
+* 行はイベント（入金・調整・参照インボイス等）。
+
+== 1. ヘッダ（Statement）
+[cols="30,30,20,20",options="header"]
+|===
+| label_csv | 説明 | UN/CEFACT XPath | JP-PINT XPath
+| OpeningBalance | 前月末未清算 | CIIH_TradeSettlementMonetarySummation/... | 
+| ChargesThisPeriod | 当月請求合計 |  | 
+| PaymentsThisPeriod | 当月入金合計 |  | 
+| Adjustments | 調整（丸め等） |  | 
+| ClosingBalance | 当月末未清算 |  | 
+|===
+
+== 2. 行（Events）
+[cols="25,25,25,25",options="header"]
+|===
+| label_csv | 種別 | UN/CEFACT XPath | 備考
+| Payment | 入金 |  | 参照: 送金番号/日付
+| InvoiceRef | 当月請求参照 |  | GrandTotal 要約
+| Adjustment | 調整 |  | 
+|===
+
+== 付録 A：整合式
+`Closing = Opening + ChargesThisPeriod − PaymentsThisPeriod ± Adjustments`

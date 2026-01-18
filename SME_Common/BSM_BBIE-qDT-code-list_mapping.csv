@@ -1,0 +1,310 @@
+﻿BBIE (DEN),XML element,qDT / XML datatype,code-list
+Branch_ Financial Institution. Identification. Identifier,ID,udt:IDType,
+Branch_ Financial Institution. Name. Text,Name,udt:TextType,
+CIIH_ Supply Chain_ Trade Settlement. Tax_ Currency. Code,TaxCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CIIH_ Supply Chain_ Trade Settlement. Invoice_ Currency. Code,InvoiceCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CIIH_ Supply Chain_ Trade Settlement. Payment_ Currency. Code,PaymentCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CIIH_ Trade Settlement_ Monetary Summation. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Total Prepaid. Amount,TotalPrepaidAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Due Payable. Amount,DuePayableAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Charge Total. Amount,ChargeTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Allowance Total. Amount,AllowanceTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Tax Total. Amount,TaxTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Total Prepaid. Amount,TotalPrepaidAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Due Payable. Amount,DuePayableAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Net_ Line Total. Amount,NetLineTotalAmount,udt:AmountType,
+CIIH_ Trade Settlement_ Monetary Summation. Including Taxes_ Line Total. Amount,IncludingTaxesLineTotalAmount,udt:AmountType,
+CIILB_ Subordinate_ Trade Line Item. Identification. Identifier,ID,udt:IDType,
+CIILB_ Subordinate_ Trade Line Item. Category. Code,CategoryCode,udt:CodeType,JECxxxx The code specifying the category of this CIILB subordinate trade line item. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CIILB_ Subordinate_ Trade Line Item. Requested_ Response Type. Code,RequestedResponseTypeCode,,UNCL4343
+CIILB_ Supply Chain_ Trade Delivery. Product_ Unit. Quantity,ProductUnitQuantity,udt:QuantityType,
+CIILB_ Supply Chain_ Trade Delivery. Per Package_ Unit. Quantity,PerPackageUnitQuantity,udt:QuantityType,
+CIILB_ Supply Chain_ Trade Delivery. Billed. Quantity,BilledQuantity,udt:QuantityType, A billed quantity of this CIILB supply chain trade delivery. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CIILB_ Supply Chain_ Trade Settlement. Direction. Code,DirectionCode,udt:CodeType,JECxxxx The code specifying whether the CIILB supply chain trade settlement must be subtracted or added. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CIIL_ Document Line_ Document. Line. Identifier,LineID,udt:IDType,
+CIIL_ Document Line_ Document. Category. Code,CategoryCode,udt:CodeType,"JECxxxx（TDID1003Messagetypecode,Codespecifyingatypeofmessage.An..6コード表の指定はない） [1003)] The code specifying the category of this CIIL document line."
+CIIL_ Document Line_ Document. Requested_ Response Type. Code,RequestedResponseTypeCode,,UNCL4343 [4343)]
+CIIL_ Supply Chain_ Trade Settlement. Direction. Code,DirectionCode,udt:CodeType,JECxxxx The code specifying whether the CIIL supply chain trade settlement must be subtracted or added. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CIIL_ Trade Settlement_ Monetary Summation. Charge Total. Amount,ChargeTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Allowance Total. Amount,AllowanceTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Tax Total. Amount,TaxTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Gross_ Line Total. Amount,GrossLineTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Net_ Line Total. Amount,NetLineTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Net Including Taxes_ Line Total. Amount,NetIncludingTaxesLineTotalAmount,udt:AmountType,
+CIIL_ Trade Settlement_ Monetary Summation. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CI_ Advance_ Payment. Paid. Amount,PaidAmount,udt:AmountType,
+CI_ Advance_ Payment. Formatted_ Received. Date Time,FormattedReceivedDateTime,qdt:FormattedDateTimeType,
+CI_ Advance_ Payment. Identification. Identifier,ID,udt:IDType,
+CI_ Creditor_ Financial Account. Account Name. Text,AccountName,udt:TextType,
+CI_ Creditor_ Financial Account. Proprietary_ Identification. Identifier,ProprietaryID,udt:IDType,
+CI_ Creditor_ Financial Account. Type. Code,TypeCode,udt:CodeType,預金項目コード [4437)]
+CI_ Creditor_ Financial Institution. Name. Text,Name,udt:TextType,
+CI_ Creditor_ Financial Institution. Japan Financial Institution Common_ Identification. Identifier,JapanFinancialInstitutionCommonID,udt:IDType,
+CI_ Document Context_ Parameter. Identification. Identifier,ID,udt:IDType,
+CI_ Document Context_ Parameter. Value. Text,Value,udt:TextType,
+CI_ Document Context_ Parameter. Identification. Identifier,ID,udt:IDType,JECxxxx
+CI_ Document Context_ Parameter. Value. Text,Value,udt:TextType,
+CI_ Document Context_ Parameter. Identification. Identifier,ID,udt:IDType,
+CI_ Document Context_ Parameter. Value. Text,Value,udt:TextType,
+CI_ Document Context_ Parameter. Identification. Identifier,ID,udt:IDType,JECxxxx
+CI_ Document Context_ Parameter. Value. Text,Value,udt:TextType,
+CI_ Document_ Version. Identification. Identifier,ID,udt:IDType,
+CI_ Document_ Version. Issue. Date Time,IssueDateTime,udt:DateTimeType,
+CI_ Financial_ Adjustment. Reason. Code,ReasonCode,qdt:FinancialAdjustmentReasonCodeType,UNCL4465 [4465)]
+CI_ Financial_ Adjustment. Reason. Text,Reason,udt:TextType,
+CI_ Financial_ Adjustment. Actual. Amount,ActualAmount,udt:AmountType,
+CI_ Financial_ Adjustment. Direction. Code,DirectionCode,qdt:AccountingDebitCreditStatusCodeType,JECxxxx The code specifying whether the CI financial adjustment must be subtracted or added. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CI_ Financial_ Adjustment. Reason. Code,ReasonCode,qdt:FinancialAdjustmentReasonCodeType,UNCL4465 [4465)]
+CI_ Financial_ Adjustment. Reason. Text,Reason,udt:TextType,
+CI_ Financial_ Adjustment. Actual. Amount,ActualAmount,udt:AmountType,
+CI_ Financial_ Adjustment. Actual. Date Time,ActualDateTime,udt:DateTimeType,
+CI_ Note. Subject. Text,Subject,udt:TextType,
+CI_ Note. Content. Text,Content,udt:TextType,
+CI_ Note. Identification. Identifier,ID,udt:IDType,
+CI_ Note. Subject. Text,Subject,udt:TextType,
+CI_ Note. Content. Text,Content,udt:TextType,
+CI_ Note. Identification. Identifier,ID,udt:IDType,
+CI_ Product_ Characteristic. Description. Text,Description,udt:TextType,
+CI_ Product_ Characteristic. Value. Text,Value,udt:TextType,
+CI_ Product_ Classification. System. Identifier,SystemID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Information. Text,Information,udt:TextType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Attachment. Binary Object,AttachmentBinaryObject,udt:BinaryObjectType,
+CI_ Referenced_ Document. Category. Code,CategoryCode,udt:CodeType,"JECxxxx（TDID1003Messagetypecode,Codespecifyingatypeofmessage.An..6コード表の指定はない） [1003)]"
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Category. Code,CategoryCode,udt:CodeType,"JECxxxx（TDID1003Messagetypecode,Codespecifyingatypeofmessage.An..6コード表の指定はない） [1003)]"
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Information. Text,Information,udt:TextType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Attachment. Binary Object,AttachmentBinaryObject,udt:BinaryObjectType,
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Line. Identifier,LineID,udt:IDType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Name. Text,Name,udt:TextType,
+CI_ Referenced_ Document. Information. Text,Information,udt:TextType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Attachment. Binary Object,AttachmentBinaryObject,udt:BinaryObjectType,
+CI_ Referenced_ Document. Category. Code,CategoryCode,udt:CodeType,"JECxxxx（TDID1003Messagetypecode,Codespecifyingatypeofmessage.An..6コード表の指定はない） [1003)]"
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Line. Identifier,LineID,udt:IDType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Line. Identifier,LineID,udt:IDType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Referenced_ Document. Attachment. Binary Object,AttachmentBinaryObject,udt:BinaryObjectType,
+CI_ Referenced_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Line. Identifier,LineID,udt:IDType,
+CI_ Referenced_ Document. Reference_ Type. Code,ReferenceTypeCode,qdt:ReferenceCodeType,UNCL1153 [1153)]
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Issuer Assigned_ Identification. Identifier,IssuerAssignedID,udt:IDType,
+CI_ Referenced_ Document. URI_ Identification. Identifier,URIID,udt:IDType,
+CI_ Referenced_ Document. Issue. Date Time,IssueDateTime,qdt:DateMandatoryDateTimeType,
+CI_ Referenced_ Document. Line. Identifier,LineID,udt:IDType,
+CI_ Referenced_ Document. Revision_ Identification. Identifier,RevisionID,udt:IDType,
+CI_ Referenced_ Document. Type. Code,TypeCode,qdt:DocumentCodeType,UNCL1001 [1001)]
+CI_ Specified_ Period. Start. Date Time,StartDateTime,udt:DateTimeType,
+CI_ Specified_ Period. End. Date Time,EndDateTime,udt:DateTimeType,
+CI_ Specified_ Period. Start. Date Time,StartDateTime,udt:DateTimeType,
+CI_ Specified_ Period. End. Date Time,EndDateTime,udt:DateTimeType,
+CI_ Supply Chain_ Event. Occurrence. Date Time,OccurrenceDateTime,udt:DateTimeType,
+CI_ Tax_ Registration. Identification. Identifier,ID,udt:IDType,
+CI_ Trade Settlement_ Payment Means. Type. Code,TypeCode,qdt:PaymentMeansCodeType,UNCL4461 [4461)]
+CI_ Trade Settlement_ Payment Means. Information. Text,Information,udt:TextType,
+CI_ Trade Settlement_ Payment Means. Paid. Amount,PaidAmount,udt:AmountType, The monetary value paid or to be paid by this CI trade settlement payment means. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CI_ Trade_ Accounting Account. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Accounting Account. Type. Code,TypeCode,qdt:AccountingAccountTypeCodeType,
+CI_ Trade_ Accounting Account. Name. Text,Name,udt:TextType,
+CI_ Trade_ Accounting Account. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Accounting Account. Type. Code,TypeCode,qdt:AccountingAccountTypeCodeType,
+CI_ Trade_ Accounting Account. Name. Text,Name,udt:TextType,
+CI_ Trade_ Address. Postcode. Code,PostcodeCode,udt:CodeType,UNCL3251（各国で制定したコード） [3251)]
+CI_ Trade_ Address. Line One. Text,LineOne,udt:TextType,
+CI_ Trade_ Address. Line Two. Text,LineTwo,udt:TextType,
+CI_ Trade_ Address. Line Three. Text,LineThree,udt:TextType,
+CI_ Trade_ Address. Country. Identifier,CountryID,qdt:CountryIDType,ISO3166-1:Alpha2
+CI_ Trade_ Allowance Charge. Charge. Indicator,ChargeIndicator,udt:IndicatorType,
+CI_ Trade_ Allowance Charge. Calculation. Percent,CalculationPercent,udt:PercentType,
+CI_ Trade_ Allowance Charge. Actual. Amount,ActualAmount,udt:AmountType,
+CI_ Trade_ Allowance Charge. Reason. Code,ReasonCode,qdt:AllowanceChargeReasonCodeType,UNCL4465 [4465)]
+CI_ Trade_ Allowance Charge. Reason. Text,Reason,udt:TextType,
+CI_ Trade_ Allowance Charge. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Allowance Charge. Charge. Indicator,ChargeIndicator,udt:IndicatorType,JECxxxx
+CI_ Trade_ Allowance Charge. Calculation. Percent,CalculationPercent,udt:PercentType,
+CI_ Trade_ Allowance Charge. Actual. Amount,ActualAmount,udt:AmountType,
+CI_ Trade_ Allowance Charge. Reason. Code,ReasonCode,qdt:AllowanceChargeReasonCodeType,UNCL4465 [4465)]
+CI_ Trade_ Allowance Charge. Reason. Text,Reason,udt:TextType,
+CI_ Trade_ Allowance Charge. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Contact. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Contact. Person Name. Text,PersonName,udt:TextType,
+CI_ Trade_ Contact. Department Name. Text,DepartmentName,udt:TextType,
+CI_ Trade_ Contact. Person_ Identification. Identifier,PersonID,udt:IDType,
+CI_ Trade_ Country. Identification. Identifier,ID,qdt:CountryIDType,ISO3166-1:Alpha2
+CI_ Trade_ Currency Exchange. Source Currency. Code,SourceCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CI_ Trade_ Currency Exchange. Target Currency. Code,TargetCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CI_ Trade_ Currency Exchange. Conversion. Rate,ConversionRate,udt:RateType,
+CI_ Trade_ Currency Exchange. Conversion Rate. Date Time,ConversionRateDateTime,udt:DateTimeType,
+CI_ Trade_ Currency Exchange. Source Currency. Code,SourceCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CI_ Trade_ Currency Exchange. Target Currency. Code,TargetCurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CI_ Trade_ Currency Exchange. Conversion. Rate,ConversionRate,udt:RateType,
+CI_ Trade_ Currency Exchange. Conversion Rate. Date Time,ConversionRateDateTime,udt:DateTimeType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO6523
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO6523
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Registered_ Identification. Identifier,RegisteredID,udt:IDType,ISO6523
+CI_ Trade_ Party. Type. Code,TypeCode,udt:CodeType,JECxxxx
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO6523
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO6523
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Party. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Party. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO6523
+CI_ Trade_ Party. Name. Text,Name,udt:TextType,
+CI_ Trade_ Payment Terms. Type. Code,TypeCode,qdt:PaymentTermsTypeCodeType,UNCL4279 [4279)]
+CI_ Trade_ Payment Terms. Identification. Identifier,ID,qdt:PaymentTermsIDType,
+CI_ Trade_ Payment Terms. Description. Text,Description,udt:TextType,
+CI_ Trade_ Payment Terms. Due Date. Date Time,DueDateDateTime,udt:DateTimeType,
+CI_ Trade_ Payment Terms. Type. Code,TypeCode,qdt:PaymentTermsTypeCodeType,UNCL4279 [4279)]
+CI_ Trade_ Payment Terms. Instructed. Amount,InstructedAmount,udt:AmountType,
+CI_ Trade_ Price. Type. Code,TypeCode,qdt:PriceTypeCodeType,UNCL5375 [5375)]
+CI_ Trade_ Price. Charge. Amount,ChargeAmount,udt:AmountType,
+CI_ Trade_ Price. Basis. Quantity,BasisQuantity,udt:QuantityType,"数量単位コード_x000D_
+UNECE Rec20"
+CI_ Trade_ Product. Identification. Identifier,ID,udt:IDType,
+CI_ Trade_ Product. Global_ Identification. Identifier,GlobalID,udt:IDType,ISO/IEC 6523
+CI_ Trade_ Product. Seller Assigned_ Identification. Identifier,SellerAssignedID,udt:IDType,
+CI_ Trade_ Product. Buyer Assigned_ Identification. Identifier,BuyerAssignedID,udt:IDType,
+CI_ Trade_ Product. Manufacturer Assigned_ Identification. Identifier,ManufacturerAssignedID,udt:IDType,
+CI_ Trade_ Product. Name. Text,Name,udt:TextType,
+CI_ Trade_ Product. Description. Text,Description,udt:TextType,
+CI_ Trade_ Product. Variable Measure. Indicator,VariableMeasureIndicator,udt:IndicatorType,JECxxxx
+CI_ Trade_ Tax. Calculated. Amount,CalculatedAmount,udt:AmountType,
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Calculated. Rate,CalculatedRate,udt:RateType,
+CI_ Trade_ Tax. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Currency. Code,CurrencyCode,qdt:CurrencyCodeType,ISO4217通貨コード [[6345]
+CI_ Trade_ Tax. Category Name. Text,CategoryName,udt:TextType,
+CI_ Trade_ Tax. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CI_ Trade_ Tax. Calculation Method. Code,CalculationMethodCode,udt:CodeType,JECxxxx
+CI_ Trade_ Tax. Local Tax System. Identifier,LocalTaxSystemID,udt:IDType,JECxxxx The identifier of the local tax system for this CI trade tax. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Rate_ Applicable. Percent,RateApplicablePercent,udt:PercentType,
+CI_ Trade_ Tax. Calculated. Amount,CalculatedAmount,udt:AmountType,
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Calculated. Rate,CalculatedRate,udt:RateType,
+CI_ Trade_ Tax. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Category Name. Text,CategoryName,udt:TextType,
+CI_ Trade_ Tax. Rate_ Applicable. Percent,RateApplicablePercent,udt:PercentType,
+CI_ Trade_ Tax. Grand Total. Amount,GrandTotalAmount,udt:AmountType,
+CI_ Trade_ Tax. Local Tax System. Identifier,LocalTaxSystemID,udt:IDType,JECxxxx The identifier of the local tax system for this CI trade tax. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Rate_ Applicable. Percent,RateApplicablePercent,udt:PercentType,
+CI_ Trade_ Tax. Type. Code,TypeCode,qdt:TaxTypeCodeType,UNCL5153 [5153)]
+CI_ Trade_ Tax. Basis. Amount,BasisAmount,udt:AmountType,
+CI_ Trade_ Tax. Category. Code,CategoryCode,qdt:TaxCategoryCodeType,UNCL5305 [5305)]
+CI_ Trade_ Tax. Rate_ Applicable. Percent,RateApplicablePercent,udt:PercentType,
+CI_ Universal_ Communication. URI. Identifier,URIID,udt:IDType,
+CI_ Universal_ Communication. URI. Identifier,URIID,udt:IDType,"CCLでは、UNCL3148  Communication address identifierが指定されている。
+また、CEN/TS 16931-3-3のSyntax bindingでもこの要素との対応が指定されている。
+これは、具体的なコード一覧でなく任意のコードが使用可能。登録機関をSC Identification Scheme. Identifierで指定する。
+Desc: To identify a communication address. Repr: an..512 (https://service.unece.org/trade/untdid/d01a/tred/tred3148.htm)"
+CI_ Universal_ Communication. Complete Number. Text,CompleteNumber,udt:TextType,
+CI_ Universal_ Communication. Complete Number. Text,CompleteNumber,udt:TextType,
+CI_ Universal_ Communication. URI. Identifier,URIID,udt:IDType,"CCLでは、UNCL3148  Communication address identifierが指定されている。
+また、CEN/TS 16931-3-3のSyntax bindingでもこの要素との対応が指定されている。
+これは、具体的なコード一覧でなく任意のコードが使用可能。登録機関をSC Identification Scheme. Identifierで指定する。
+Desc: To identify a communication address. Repr: an..512 (https://service.unece.org/trade/untdid/d01a/tred/tred3148.htm)"
+Procuring_ Project. Identification. Identifier,ID,udt:IDType,
+Procuring_ Project. Name. Text,Name,udt:TextType,
+Specified_ Binary File. Identification. Identifier,ID,udt:IDType,
+Specified_ Binary File. File Name. Text,FileName,udt:TextType,
+Specified_ Binary File. URI. Identifier,URIID,udt:IDType,
+Specified_ Binary File. MIME. Code,MIMECode,udt:CodeType,RFC1341
+Specified_ Binary File. Description. Text,Description,udt:TextType,
+Trade Settlement_ Financial Card. Identification. Identifier,ID,udt:IDType,
+Trade Settlement_ Financial Card. Type. Code,TypeCode,udt:CodeType,
+Trade Settlement_ Financial Card. Cardholder Name. Text,CardholderName,udt:TextType,
+Trade Settlement_ Financial Card. Issuing Company Name. Text,IssuingCompanyName,udt:TextType," An issuing company name, expressed as text, for this trade settlement financial card. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)"
+CIIH_ Exchanged_ Document. Identification. Identifier,ID,udt:IDType,
+CIIH_ Exchanged_ Document. Name. Text,Name,udt:TextType,
+CIIH_ Exchanged_ Document. Type. Code,TypeCode,qdt:InvoiceDocumentCodeType,UNCL1001 [1001)]
+CIIH_ Exchanged_ Document. Issue. Date Time,IssueDateTime,udt:DateTimeType,日時様式 ISO8601
+CIIH_ Exchanged_ Document. Language. Identifier,LanguageID,udt:IDType,"言語コード_x000D_
+ISO639"
+CIIH_ Exchanged_ Document. Purpose. Code,PurposeCode,qdt:MessageFunctionCodeType,UNCL1225 [1225)]
+CIIH_ Exchanged_ Document. Previous Revision_ Identification. Identifier,PreviousRevisionID,udt:IDType,
+CIIH_ Exchanged_ Document. Category. Code,CategoryCode,udt:CodeType,JECxxxx [1003)]
+CIIH_ Exchanged_ Document. Subtype. Code,SubtypeCode,udt:CodeType,JECxxxx The code specifying the subtype of the CIIH exchanged document. Check code list at UN/CEFACT Web Vocabularies (https://vocabulary.uncefact.org/code-lists)
+CI_ Exchanged Document_ Context. Specified_ Transaction. Identifier,SpecifiedTransactionID,udt:IDType,
+CI_ Exchanged Document_ Context. Processing_ Transaction. Date Time,ProcessingTransactionDateTime,udt:DateTimeType,

@@ -1,0 +1,40 @@
+﻿Code,URL,Code name,Desc,Repr,Note
+1000,https://service.unece.org/trade/untdid/d23a/tred/tred1000.htm,1000 Document name,Name of a document.,an..35,コード値の定義なし
+1001,https://service.unece.org/trade/untdid/d23a/tred/tred1001.htm,1001 Document name code,Code specifying the document name.,an..3,
+1003,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,1003 Document Type Identifier,Document type identifier such as INVOIC. See also 0065,an..6,
+1004,https://service.unece.org/trade/untdid/d23a/tred/tred1004.htm,1004 Document identifier,To identify a document.,an..70,コード値の定義なし
+1153,https://service.unece.org/trade/untdid/d23a/tred/tred1153.htm,1153 Reference code qualifier,Code qualifying a reference.,an..3,
+1156,https://service.unece.org/trade/untdid/d23a/tred/tred1156.htm,1156 Document line identifier,To identify a line of a document.,an..6,コード値の定義なし
+1225,https://service.unece.org/trade/untdid/d23a/tred/tred1225.htm,1225 Message function code,Code indicating the function of the message.,an..3,
+2007,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,2007 Document Issue Date Time,"Date that a document was issued and when appropriate, signed or otherwise authenticated",an..19,
+2193,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,2193 Event Date Time,Date and or time of an event ,an..19,
+3036,https://service.unece.org/trade/untdid/d23a/tred/tred3036.htm,3036 Party name,Name of a party.,an..70,コード値の定義なし
+3039,https://service.unece.org/trade/untdid/d23a/tred/tred3039.htm,3039 Party identifier,Code specifying the identity of a party.,an..35,コード値の定義なし
+3148,https://service.unece.org/trade/untdid/d23a/tred/tred3148.htm,3148 Communication address identifier,To identify a communication address.,an..512,コード値の定義なし
+3207,https://service.unece.org/trade/untdid/d23a/tred/tred3207.htm,3207 Country identifier,Identification of the name of the country or other geographical entity as defined in ISO 3166-1 and UN/ECE Recommendation 3.,an..3,ISO 3166-1 and UN/ECE Recommendation 3
+3286,https://service.unece.org/trade/untdid/d23a/tred/tred3286.htm,3286 Address component description,Free form description of the component of an address.,an..70,コード値の定義なし
+3412,https://service.unece.org/trade/untdid/d23a/tred/tred3412.htm,3412 Contact name," Name of a contact, such as a department or employee.",an..256,コード値の定義なし
+3413,https://service.unece.org/trade/untdid/d23a/tred/tred3413.htm,3413 Contact identifier,"To identify a contact, such as a department or employee.",an..17,コード値の定義なし
+3432,https://service.unece.org/trade/untdid/d23a/tred/tred3432.htm,3432 Institution name,Name of an institution.,an..70,コード値の定義なし
+3433,https://service.unece.org/trade/untdid/d23a/tred/tred3433.htm,3433 Institution name code,Code specifying the name of an institution.,an..11,コード値の定義なし
+3492,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,3492 Seller Bank Account Identifier,To identify an account with the bank designated to receive payment,an..10,コード値不明
+3453,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,3453 Language Identifier,To identify a language,an..3,
+4142,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,4142 Document Information Text,Text related to a document.,an..512,コード値不明
+4276,https://service.unece.org/trade/untdid/d23a/tred/tred4276.htm,4276 Payment terms description,Free form description of the conditions of payment between the parties to a transaction.,an..35,コード値の定義なし
+4277,https://service.unece.org/trade/untdid/d23a/tred/tred4277.htm,4277 Payment terms description identifier,Identification of the terms of payment between the parties to a transaction (generic term).,an..17,コードが定義されているが、UN/ECE Recommendation No. 17 Paytermsの使用を推奨
+4279,https://service.unece.org/trade/untdid/d23a/tred/tred4279.htm,4279 Payment terms type code qualifier,Code qualifying the type of payment terms.,an..3,
+4343,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,4343 Response Type Code,Code specifying the type of acknowledgment required or transmitted.,an..3,
+4440,https://service.unece.org/trade/untdid/d23a/tred/tred4440.htm,4440 Free text,Free form text.,an..512,コード値の定義なし
+4461,https://service.unece.org/trade/untdid/d23a/tred/tred4461.htm,4461 Payment means code,Code identifying a means of payment.,an..3,
+4465,https://service.unece.org/trade/untdid/d23a/tred/tred4465.htm,4465 Adjustment reason description code,Code specifying the adjustment reason.,an..3,
+5153,https://service.unece.org/trade/untdid/d23a/tred/tred5153.htm,5153 Duty or tax or fee type name code,"Code specifying a type of duty, tax or fee.",an..3,
+5305,https://service.unece.org/trade/untdid/d23a/tred/tred5305.htm,5305 Duty or tax or fee category code,Code specifying a duty or tax or fee category.,an..3,
+5375,https://service.unece.org/trade/untdid/d23a/tred/tred5375.htm,5375 Price type code,Code specifying the type of price.,an..3,
+5402,https://service.unece.org/trade/untdid/d23a/tred/tred5402.htm,5402 Currency exchange rate,To specify the rate at which one specified currency is  expressed in another specified currency.,n..12,数字
+5510,https://unece.org/DAM/trade/untdid/UNTDED2005.pdf,5510 Valuation Adjustment Percentage Numeric ,Percentage adjustment made to the valuation ,n..18,数字
+6345,https://service.unece.org/trade/untdid/d23a/tred/tred6345.htm,6345 Currency identification code,Code specifying a monetary unit.,an..3,ISO 4217を使用すること
+7036,https://service.unece.org/trade/untdid/d23a/tred/tred7036.htm,7036 Characteristic description,Free form description of a characteristic.,an..35,コード値の定義なし
+7110,https://service.unece.org/trade/untdid/d23a/tred/tred7110.htm,7110 Characteristic value description,ree form description of the value of a characteristic.,an..35,コード値の定義なし
+7134,https://service.unece.org/trade/untdid/d23a/tred/tred7134.htm,7134 Product name,Name identifying a product.,an..35,コード値の定義なし
+7135,https://service.unece.org/trade/untdid/d23a/tred/tred7135.htm,7135 Product identifier,To identify a product.,an..35,コード値の定義なし
+9019,https://service.unece.org/trade/untdid/d23a/tred/tred9019.htm,9019 Attribute description code,Code specifying an attribute.,an..17,コード値の定義なし

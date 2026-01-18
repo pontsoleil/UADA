@@ -1,0 +1,135 @@
+﻿<!-- ====================================================================== -->
+<!-- ===== SMEConsolidatedSelfInvoice Schema Module                   ===== -->
+<!-- ====================================================================== -->
+<!--
+Schema agency:  ITCA
+Schema version: ver 4.3
+Schema date:    2025-09-01
+-->
+<xsd:schema
+    targetNamespace="urn:un:unece:uncefact:data:standard:SMEConsolidatedSelfInvoice:4p3" 
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:ccts="urn:un:unece:uncefact:documentation:standard:CoreComponentsTechnicalSpecification:2" 
+    xmlns:udt="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:34"
+    xmlns:qdt="urn:un:unece:uncefact:data:standard:QualifiedDataType:34"
+    xmlns:ram="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:34"
+    xmlns:rsm="urn:un:unece:uncefact:data:standard:SMEConsolidatedSelfInvoice:4p3" 
+    elementFormDefault="qualified" attributeFormDefault="unqualified" 
+    version="20250901">
+<!-- ======================================================================= -->
+<!-- ===== Imports                                                     ===== -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ===== Import of Unqualified Data Type Schema Module               ===== -->
+<!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:UnqualifiedDataType:34"
+    schemaLocation="XMLSchemas-D23B/13DEC23/uncefact/data/standard/UnqualifiedDataType_34p0.xsd"/>
+<!-- ======================================================================= -->
+<!-- ===== Import of Qualified Data Type Schema Module                 ===== -->
+<!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:QualifiedDataType:34"
+    schemaLocation="XMLSchemas-D23B/13DEC23/uncefact/data/standard/QualifiedDataType_34p0.xsd"/>
+<!-- ======================================================================= -->
+<!-- ===== Import of Reusable Aggregate Business Information Entity Schema Module ===== -->
+<!-- ======================================================================= -->
+  <xsd:import namespace="urn:un:unece:uncefact:data:standard:ReusableAggregateBusinessInformationEntity:34"
+    schemaLocation="ReusableAggregateBusinessInformationEntity-sme_4p3_include.xsd"/>
+<!-- ======================================================================= -->
+<!-- ===== Element Declarations                                        ===== -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ===== Root Element Declarations                                   ===== -->
+<!-- ======================================================================= -->
+<!-- ======================================================================= -->
+<!-- ===== SMEConsolidatedSelfInvoice                                  ===== -->
+<!-- ======================================================================= -->
+  <xsd:element name="SMEConsolidatedSelfInvoice"  type="rsm:SMEConsolidatedSelfInvoiceType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>CII</ccts:UniqueID>
+        <ccts:Acronym>RSM</ccts:Acronym>
+        <ccts:DictionaryEntryName>SME_ Consolidated Self Invoice</ccts:DictionaryEntryName>
+        <ccts:Version>4.3</ccts:Version>
+      </xsd:documentation>
+      <xsd:documentation xml:lang="ja">
+        <ccts:Name>統合仕入明細（検収）書</ccts:Name>
+        <ccts:Definition>発注者が受注者に交付する統合仕入明細（検収）文書（メッセージ）</ccts:Definition>
+        <ccts:Cardinality>1..1</ccts:Cardinality>
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+<!-- ======================================================================= -->
+<!-- ===== SMEConsolidatedSelfInvoiceType                              ===== -->
+<!-- ======================================================================= -->
+  <xsd:complexType name="SMEConsolidatedSelfInvoiceType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        <ccts:UniqueID>CII-2</ccts:UniqueID>
+        <ccts:Acronym>MA</ccts:Acronym>
+        <ccts:DictionaryEntryName>SME_ Consolidated Self Invoice</ccts:DictionaryEntryName>
+        <ccts:Version>4.3</ccts:Version>
+      </xsd:documentation>
+      <xsd:documentation xml:lang="ja">
+        <ccts:Name>統合仕入明細（検収）書</ccts:Name>
+        <ccts:Definition>発注者が受注者に交付する統合仕入明細（検収）文書（メッセージ）</ccts:Definition>
+        <ccts:Cardinality>1..1</ccts:Cardinality>
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="CIExchangedDocumentContext" type="ram:CIExchangedDocumentContext_smeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII01</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>SME_ Consolidated Self Invoice. Specified. CI_ Exchanged Document_ Context</ccts:DictionaryEntryName>
+            <ccts:Version>4.3</ccts:Version>
+            <ccts:Definition>The scenario or setting of a Cross Industry (CI) exchanged document, such as its business process application context.</ccts:Definition>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:Name>CI Document Context</ccts:Name>
+          </xsd:documentation>
+          <xsd:documentation xml:lang="ja">
+            <ccts:Name>取引設定クラス</ccts:Name>
+            <ccts:Definition>メッセージの内容に関する情報</ccts:Definition>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CIIHExchangedDocument" type="ram:CIIHExchangedDocument_smeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII02</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>SME_ Consolidated Self Invoice. Specified. CIIH_ Exchanged_ Document</ccts:DictionaryEntryName>
+            <ccts:Version>4.3</ccts:Version>
+            <ccts:Definition>A collection of data for a Cross Industry Invoice Header (CIIH) that is exchanged between two or more parties in written, printed or electronic form.</ccts:Definition>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:Name>CIIH Exchanged Document</ccts:Name>
+          </xsd:documentation>
+          <xsd:documentation xml:lang="ja">
+            <ccts:Name>インボイス文書クラス</ccts:Name>
+            <ccts:Definition>インボイス文書に関する情報項目</ccts:Definition>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="CIIHSupplyChainTradeTransaction" type="ram:CIIHSupplyChainTradeTransaction_smeType" minOccurs="0">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            <ccts:UniqueID>CII03</ccts:UniqueID>
+            <ccts:Acronym>ASMA</ccts:Acronym>
+            <ccts:DictionaryEntryName>SME_ Consolidated Self Invoice. Specified. CIIH_ Supply Chain_ Trade Transaction</ccts:DictionaryEntryName>
+            <ccts:Version>4.3</ccts:Version>
+            <ccts:Definition>The trade line items, trade agreement, trade delivery and trade settlement details included in this Cross Industry Invoice Header (CIIH).</ccts:Definition>
+            <ccts:Cardinality>0..1</ccts:Cardinality>
+            <ccts:Name>CIIH Trade Transaction</ccts:Name>
+          </xsd:documentation>
+          <xsd:documentation xml:lang="ja">
+            <ccts:Name>インボイス文書取引内容クラス</ccts:Name>
+            <ccts:Definition>取引内容に関する情報</ccts:Definition>
+            <ccts:Cardinality>1..1</ccts:Cardinality>
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
