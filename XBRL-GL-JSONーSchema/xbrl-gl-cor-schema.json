@@ -1,0 +1,136 @@
+{
+    "$schema": "http://json-schema.org/draft/2020-12/schema#",
+    "$id": "http://xbrl.org/XBRL-GL-YYYY-MM-DD/schemas/gl-cor.json",
+    "title": "XBRL GL Core Module Schema (Garden of Eden)",
+    "description": "Fully modular schema where all definitions and properties are declared globally and referenced.",
+    "type": "object",
+    "properties": {
+        "accountingEntries": {
+            "type": "array",
+            "items": {
+                "$ref": "#/$defs/accountingEntriesComplextype"
+            }
+        }
+    },
+    "$defs": {
+        "accountingEntriesComplextype": {
+            "type": "object",
+            "properties": {
+                "entryHeader": {
+                    "$ref": "#/$defs/entryHeaderComplexType"
+                }
+            },
+            "required": [
+                "entryHeader"
+            ]
+        },
+        "entryHeaderComplexType": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "headerID": {
+                        "$ref": "#/$defs/headerID",
+                        "x-order": 1
+                    },
+                    "headerDate": {
+                        "$ref": "#/$defs/headerDate",
+                        "x-order": 2
+                    },
+                    "headerDescription": {
+                        "$ref": "#/$defs/headerDescription",
+                        "x-order": 3
+                    },
+                    "entryDetail": {
+                        "$ref": "#/$defs/entryDetailComplexType",
+                        "x-order": 4
+                    }
+                },
+                "required": [
+                    "headerID", "headerDate", "entryDetail"
+                ]
+            }
+        },
+        "headerID": {
+            "type": "object",
+            "$ref": "#/$defs/idItemtype"
+        },
+        "headerDate": {
+            "type": "object",
+            "$ref": "#/$defs/dateItemtype"
+        },
+        "headerDescription": {
+            "type": "object",
+            "$ref": "#/$defs/descriptionItemtype"
+        },
+        "entryDetailComplexType": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "lineNumber": {
+                        "$ref": "#/$defs/lineNumber",
+                        "x-order": 1
+                    },
+                    "accountCode": {
+                        "$ref": "#/$defs/accountCode",
+                        "x-order": 2
+                    },
+                    "debitAmount": {
+                        "$ref": "#/$defs/debitAmount",
+                        "x-order": 3
+                    },
+                    "creditAmount": {
+                        "$ref": "#/$defs/creditAmount",
+                        "x-order": 4
+                    },
+                    "detailDescription": {
+                        "$ref": "#/$defs/detailDescription",
+                        "x-order": 5
+                    }
+                },
+                "required": [
+                    "lineNumber", "accountCode", "debitAmount", "creditAmount"
+                ]
+            }
+        },
+        "lineNumber": {
+            "type": "object",
+            "$ref": "#/$defs/lineNumberItemType"
+        },
+        "accountCode": {
+            "type": "object",
+            "$ref": "#/$defs/accountCodeItemType"
+        },
+        "debitAmount": {
+            "type": "object",
+            "$ref": "#/$defs/amountItemType"
+        },
+        "creditAmount": {
+            "type": "object",
+            "$ref": "#/$defs/amountItemType"
+        },
+        "detailDescription": {
+            "type": "object",
+            "$ref": "#/$defs/descriptionItemtype"
+        },
+        "idItemtype": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/idType"
+        },
+        "dateItemtype": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/dateType"
+        },
+        "descriptionItemtype": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/textType"
+        },
+        "lineNumberItemType": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/numericType"
+        },
+        "accountCodeItemType": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/codeType"
+        },
+        "amountItemType": {
+            "$ref": "D23B/UNECE-BasicComponents.json#/$defs/udt/$defs/amountType"
+        }
+    }
+}
