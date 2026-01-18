@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- ELR -->
+  <link:roleRef roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437/role/account-type-code-qualifier" xlink:type="simple"
+                xlink:href="uncl_4437-d24a.xsd#role_account_type_code_qualifier"/>
+  <!-- EE1 -->
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437/role/account-type-code-qualifier">
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#accountTypeCodeQualifierDomain" xlink:label="dom"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_1" xlink:label="_1"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_2" xlink:label="_2"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_3" xlink:label="_3"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_4" xlink:label="_4"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_5" xlink:label="_5"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_6" xlink:label="_6"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_7" xlink:label="_7"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_8" xlink:label="_8"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_9" xlink:label="_9"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_10" xlink:label="_10"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_11" xlink:label="_11"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_12" xlink:label="_12"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_13" xlink:label="_13"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_14" xlink:label="_14"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_15" xlink:label="_15"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_16" xlink:label="_16"/>
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_17" xlink:label="_17"/>
+
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_1" order="1"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_2" order="2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_3" order="3"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_4" order="4"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_5" order="5"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_6" order="6"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_7" order="7"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_8" order="8"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_9" order="9"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_10" order="10"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_11" order="11"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_12" order="12"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_13" order="13"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_14" order="14"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_15" order="15"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_16" order="16"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="_17" order="17"/>
+  </link:definitionLink>
+
+</link:linkbase>

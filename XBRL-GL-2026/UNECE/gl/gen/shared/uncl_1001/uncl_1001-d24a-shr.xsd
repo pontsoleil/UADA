@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:uncl_1001="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001"
+  targetNamespace="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:include schemaLocation="../../pool/uncl_1001/uncl_1001-d24a.xsd"/>
+  <xs:annotation>
+    <xs:appinfo>
+      <!-- Selection profile for UNTDID 1001 (d24a): uncl_1001 -->
+      <!-- Reuses base domain head: uncl_1001:documentNameCodeDomain -->
+      <!-- Linkbase -->
+      <link:linkbaseRef xlink:href="uncl_1001-d24a-shr-def.xml" xlink:type="simple"
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

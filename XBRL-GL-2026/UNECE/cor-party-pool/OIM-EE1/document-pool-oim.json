@@ -1,0 +1,58 @@
+{
+  "documentInfo": {
+    "documentType": "https://xbrl.org/2021/xbrl-csv",
+    "namespaces": {
+      "ns0": "http://www.example.com",
+      "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+      "xbrli": "http://www.xbrl.org/2003/instance",
+      "xbrldi": "http://xbrl.org/2006/xbrldi",
+      "xlink": "http://www.w3.org/1999/xlink",
+      "link": "http://www.xbrl.org/2003/linkbase",
+      "iso4217": "http://www.xbrl.org/2003/iso4217",
+      "cor": "http://example.org/xbrl/gl/cor"
+    },
+    "taxonomy": [
+      "document-pool-oim.xsd"
+    ]
+  },
+  "tableTemplates": {
+    "document_pool_template": {
+      "dimensions": {
+        "period": "2026-01-01T00:00:00",
+        "entity": "ns0:Example Co.",
+        "cor:d_document": "$document",
+        "cor:d_document_line": "$document_line"
+      },
+      "columns": {
+        "document": {},
+        "document_line": {},
+        "DocumentID": {
+          "dimensions": {
+            "concept": "cor:DocumentID"
+          }
+        },
+        "DocumentTypeCode": {
+          "dimensions": {
+            "concept": "cor:DocumentTypeCode"
+          }
+        },
+        "DocumentLineID": {
+          "dimensions": {
+            "concept": "cor:DocumentLineID"
+          }
+        },
+        "DocumentLineStatusCode": {
+          "dimensions": {
+            "concept": "cor:DocumentLineStatusCode"
+          }
+        }
+      }
+    }
+  },
+  "tables": {
+    "document_pool_table": {
+      "template": "document_pool_template",
+      "url": "document-pool-oim.csv"
+    }
+  }
+}

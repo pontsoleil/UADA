@@ -1,0 +1,269 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Sample vendor-invoice listing using XBRL GL (illustrative only; not real company data). -->
+<!-- Only a subset of XBRL GL facts is included here. Additional facts may be required depending on local rules and system design. -->
+<!-- The root of an XBRL instance document is xbrli:xbrl. -->
+<xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xbrli="http://www.xbrl.org/2003/instance"
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+	xmlns:btx="http://www.xbrl.org/int/gl/btx/2026-MM-DD"
+	xmlns:cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD"
+	xmlns:muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+	xmlns:bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+	xmlns:plt="http://www.xbrl.org/int/gl/plt/2026-MM-DD"
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+	xmlns:iso639="http://www.xbrl.org/2005/iso639"
+	xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2026-MM-DD ../plt/plt-all-2026-MM-DD.xsd">
+	<xbrll:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../plt/plt-all-2026-MM-DD.xsd"/>
+	<!-- Contexts are required by XBRL 2.1 for facts. In XBRL GL, business dates are carried explicitly in XBRL GL elements (e.g., documentDate, headerDatePosted); the context is typically used only as an XBRL technical container. -->
+	<xbrli:context id="now">
+		<!-- Context for this instance. The identifier in the entity element is a sample identifier for the reporting entity. -->
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.xbrl.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<!-- By convention, the context instant is often set to a file/report creation date; XBRL GL date facts carry the business meaning. -->
+			<xbrli:instant>2005-07-05</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<!-- Units are required by XBRL for numeric facts. Monetary facts use ISO 4217 (e.g., EUR). Ratios/rates typically use xbrli:pure. -->
+	<xbrli:unit id="EUR">
+		<!-- ISO 4217 unit for monetary amounts in EUR. -->
+		<xbrli:measure>iso4217:EUR</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NotUsed">
+		<!-- Generic unit for rates/ratios (xbrli:pure). -->
+		<xbrli:measure>xbrli:pure</xbrli:measure>
+	</xbrli:unit>
+	<!-- accountingEntries is the main XBRL GL container inside the XBRL instance. A single instance may contain multiple accountingEntries blocks (e.g., master data and transactions). entriesType indicates the intended content/purpose of each block. -->
+	<btx:businessTransactions>
+		<!-- documentInformation provides metadata about this accountingEntries block (including entriesType). -->
+		<cor:documentInformation>
+			<!-- documentType indicates the purpose of this accountingEntries block. This example uses "other" as a generic value; processors should also consider documentType (voucher) and identifierType (V = vendor) to interpret the content. -->
+			<cor:documentType contextRef="now">other</cor:documentType>
+			<!-- auditNumber can be used to identify and track a batch/report for later replacement or correction. -->
+			<cor:auditNumber contextRef="now">001</cor:auditNumber>
+			<cor:language contextRef="now">iso639:en</cor:language>
+			<!-- creationDate is the date the information in this accountingEntries block was created (similar to a "printed on" date). -->
+			<cor:creationDate contextRef="now">2005-07-05</cor:creationDate>
+			<bus:creator contextRef="now">XBRL GL Working Group</bus:creator>
+			<!-- documentComment is a free-text description of why/what this batch contains. -->
+			<cor:documentComment contextRef="now">A best practice listing of invoices instance document</cor:documentComment>
+			<!-- periodCoveredStart/End indicates the covered period for this listing (here, based on documentDate). -->
+			<cor:periodCoveredStart contextRef="now">2005-06-01</cor:periodCoveredStart>
+			<cor:periodCoveredEnd contextRef="now">2005-06-30</cor:periodCoveredEnd>
+			<bus:sourceApplication contextRef="now">XABRA</bus:sourceApplication>
+			<muc:defaultCurrency contextRef="now">iso4217:EUR</muc:defaultCurrency>
+		</cor:documentInformation>
+		<!-- entityInformation identifies the reporting entity (the company producing the export). -->
+		<cor:entityParty>
+			<!-- organisationIdentifiers carries the reporting entity’s identifier and description. -->
+			<bus:organizationIdentifier>
+				<bus:organizationIdentifierCode contextRef="now">ABC Company</bus:organizationIdentifierCode>
+				<bus:organizationIdentifierDescription contextRef="now">Company Name</bus:organizationIdentifierDescription>
+			</bus:organizationIdentifier>
+		</cor:entityParty>
+		<!-- Each vendor invoice is represented as a transacttionHeader with one or more transactionDetail items. -->
+		<btx:transactionHeader>
+			<!-- headerDatePosted/enteredDate are system-handling dates. documentDate is the business document date. Keep these distinct for auditability. -->
+			<btx:headerDatePosted contextRef="now">2005-07-01</btx:headerDatePosted>
+			<btx:headerEntryCreator contextRef="now">Otto Wellwood</btx:headerEntryCreator>
+			<btx:headerEntryDate contextRef="now">2005-07-01</btx:headerEntryDate>
+			<!-- headerComment provides a free-text comment about this invoice/document. -->
+			<btx:headerComment contextRef="now">Invoice:#51029 Vendor:#1130</btx:headerComment>
+			<!-- headerEntryNumberCounter is an internal entry identifier; documentNumber is the invoice/voucher number. transacttionHeader holds the common document-level attributes for its lines. -->
+			<btx:headerEntryNumberCounter contextRef="now" unitRef="NotUsed" decimals="0">50</btx:headerEntryNumberCounter>
+			<btx:headerDocumentType contextRef="now">voucher</btx:headerDocumentType>
+			<!-- headerDocumentNumber is the invoice/voucher number as printed on the document. -->
+			<btx:headerDocumentNumber contextRef="now">51029</btx:headerDocumentNumber>
+			<!-- headerDocumentReference is an additional reference/description (often a composite of internal numbering schemes). -->
+			<btx:headerDocumentReference contextRef="now">Voucher#:100900 </btx:headerDocumentReference>
+			<!-- headerDocumentDate is the business document date (e.g., the date shown on the invoice). -->
+			<btx:headerDocumentDate contextRef="now">2005-06-15</btx:headerDocumentDate>
+			<!-- headerReceivedDate is the date the document was received by the reporting entity. -->
+			<btx:headerReceivedDate contextRef="now">2005-06-14</btx:headerReceivedDate>
+			<!-- headerDocumentLocation can record where the original invoice is stored (physical or electronic). -->
+			<btx:headerDocumentLocation contextRef="now">Fred's desk drawer.</btx:headerDocumentLocation>
+			<!-- headerMaturityDateOrDateDue is the payment due date. -->
+			<btx:headerMaturityDateOrDateDue contextRef="now">2005-07-15</btx:headerMaturityDateOrDateDue>
+			<!-- headerPaymentTerms provides payment/settlement terms; it is free text in this example. -->
+			<btx:headerPaymentTerms contextRef="now">2% 10 Net 30</btx:headerPaymentTerms>
+			<!-- headerIdentifierReference identifies the counterparty (vendor). In this example it is provided at transacttionHeader level; transactionDetail items are implicitly for the same vendor unless overridden. -->
+			<btx:headerIdentifierReference>
+				<cor:headerIdentifierCode contextRef="now">1130</cor:headerIdentifierCode>
+				<cor:headerIdentifierDescription contextRef="now">Rettaler Property Ltd</cor:headerIdentifierDescription>
+				<!-- headerIdentifierType "V" indicates a vendor counterparty; documentType "voucher" indicates a vendor invoice document. -->
+				<cor:headerIdentifierType contextRef="now">V</cor:headerIdentifierType>
+			</btx:headerIdentifierReference>
+			<btx:headerTax>
+				<cor:headerTaxTableCode contextRef="now">VAT</cor:headerTaxTableCode>
+				<cor:headerAmountOfTaxes contextRef="now" unitRef="EUR" decimals="2">160</cor:headerAmountOfTaxes>
+				<cor:headerBasisForTaxation contextRef="now" unitRef="EUR" decimals="2">800</cor:headerBasisForTaxation>
+				<cor:headerTaxPercentageRate contextRef="now" unitRef="NotUsed" decimals="0">20</cor:headerTaxPercentageRate>
+				<cor:headerTaxCategory contextRef="now">S</cor:headerTaxCategory>
+			</btx:headerTax>
+			<!-- Header totals are expressed using headerAmount + headerAmountType pairs (e.g., net total, gross total). -->
+			<btx:headerAmountStructure>
+				<btx:headerAmount contextRef="now" unitRef="EUR" decimals="2">800</btx:headerAmount>
+				<btx:headerAmountType contextRef="now">Sum of line net amount</btx:headerAmountType>
+			</btx:headerAmountStructure>
+			<btx:headerAmountStructure>
+				<btx:headerAmount contextRef="now" unitRef="EUR" decimals="2">960</btx:headerAmount>
+				<btx:headerAmountType contextRef="now">Total amount with tax</btx:headerAmountType>
+			</btx:headerAmountStructure>
+			<btx:transactionDetail>
+				<!-- lineNumber is the document line sequence number (as on the invoice). -->
+				<btx:detailLineNumber contextRef="now">1</btx:detailLineNumber>
+				<!-- Accounts may be recorded at line level (e.g., expense/asset accounts) but are omitted in this illustration. -->
+				<btx:detailDescription contextRef="now">Vendor#:1130 Document#:51029 Date: 6/15/05</btx:detailDescription>
+				<!-- measurable carries line-item identification and quantities (code/description/quantity/unit/cost-per-unit). Here, line amounts equal quantity × cost-per-unit. -->
+				<bus:detailMeasurable>
+					<bus:detailMeasurableCode contextRef="now">IN</bus:detailMeasurableCode>
+					<bus:detailMeasurableIdentification contextRef="now">Widget1</bus:detailMeasurableIdentification>
+					<bus:detailMeasurableDescription contextRef="now">Red Widger</bus:detailMeasurableDescription>
+					<bus:detailMeasurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">100</bus:detailMeasurableQuantity>
+					<bus:detailMeasurableUnitOfMeasure contextRef="now">Each</bus:detailMeasurableUnitOfMeasure>
+					<bus:detailMeasurablePerUnitCostPrice contextRef="now" decimals="2" unitRef="EUR">5</bus:detailMeasurablePerUnitCostPrice>
+				</bus:detailMeasurable>
+				<cor:detailTax>
+					<cor:detailTaxTableCode contextRef="now">VAT</cor:detailTaxTableCode>
+					<cor:detailTaxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</cor:detailTaxPercentageRate>
+					<cor:detailTaxCategory contextRef="now">S</cor:detailTaxCategory>
+				</cor:detailTax>
+				<!-- Some systems store signed amounts and/or a debit/credit indicator. For invoices, amounts are typically unsigned and interpreted by amountType. -->
+				<!-- Line amounts may represent extended line amounts; other charges/allowances can be separate lines or separate amountType entries. Take care to avoid double counting when transforming into accounting entries. -->
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">500</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Net</btx:detailAmountType>
+				</btx:detailAmountStructure>
+			</btx:transactionDetail>
+			<!-- transactionDetail elements carry line-specific facts (lineNumber, measurable, taxes, amounts). Common document facts remain on transacttionHeader. -->
+			<btx:transactionDetail>
+				<btx:detailLineNumber contextRef="now">2</btx:detailLineNumber>
+				<bus:detailMeasurable>
+					<bus:detailMeasurableCode contextRef="now">IN</bus:detailMeasurableCode>
+					<bus:detailMeasurableIdentification contextRef="now">Gidget3</bus:detailMeasurableIdentification>
+					<bus:detailMeasurableDescription contextRef="now">Sally Field of Dreams Edition</bus:detailMeasurableDescription>
+					<bus:detailMeasurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">15</bus:detailMeasurableQuantity>
+					<bus:detailMeasurableUnitOfMeasure contextRef="now">Each</bus:detailMeasurableUnitOfMeasure>
+					<bus:detailMeasurablePerUnitCostPrice contextRef="now" decimals="2" unitRef="EUR">20</bus:detailMeasurablePerUnitCostPrice>
+				</bus:detailMeasurable>
+				<cor:detailTax>
+					<cor:detailTaxTableCode contextRef="now">VAT</cor:detailTaxTableCode>
+					<cor:detailTaxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</cor:detailTaxPercentageRate>
+					<cor:detailTaxCategory contextRef="now">S</cor:detailTaxCategory>
+				</cor:detailTax>
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">300</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Net</btx:detailAmountType>
+				</btx:detailAmountStructure>
+			</btx:transactionDetail>
+		</btx:transactionHeader>
+		<btx:transactionHeader>
+			<btx:headerDatePosted contextRef="now">2005-07-01</btx:headerDatePosted>
+			<btx:headerEntryCreator contextRef="now">Otto Wellwood</btx:headerEntryCreator>
+			<btx:headerEntryDate contextRef="now">2005-07-01</btx:headerEntryDate>
+			<btx:headerComment contextRef="now">Invoice:#4321 Vendor:#8765</btx:headerComment>
+			<btx:headerEntryNumberCounter contextRef="now" unitRef="NotUsed" decimals="0">51</btx:headerEntryNumberCounter>
+			<btx:headerDocumentType contextRef="now">voucher</btx:headerDocumentType>
+			<btx:headerDocumentNumber contextRef="now">234</btx:headerDocumentNumber>
+			<btx:headerDocumentReference contextRef="now">Voucher#:100901 </btx:headerDocumentReference>
+			<btx:headerDocumentDate contextRef="now">2005-06-15</btx:headerDocumentDate>
+			<btx:headerReceivedDate contextRef="now">2005-06-14</btx:headerReceivedDate>
+			<btx:headerDocumentLocation contextRef="now">Fred's desk drawer.</btx:headerDocumentLocation>
+			<btx:headerMaturityDateOrDateDue contextRef="now">2005-07-15</btx:headerMaturityDateOrDateDue>
+			<btx:headerPaymentTerms contextRef="now">2% 10 Net 30</btx:headerPaymentTerms>
+			<btx:headerIdentifierReference>
+				<cor:headerIdentifierCode contextRef="now">4310</cor:headerIdentifierCode>
+				<cor:headerIdentifierDescription contextRef="now">Example Ltd</cor:headerIdentifierDescription>
+				<cor:headerIdentifierType contextRef="now">V</cor:headerIdentifierType>
+			</btx:headerIdentifierReference>			
+			<btx:headerTax>
+				<cor:headerTaxTableCode contextRef="now">VAT</cor:headerTaxTableCode>
+				<cor:headerAmountOfTaxes contextRef="now" unitRef="EUR" decimals="2">11060</cor:headerAmountOfTaxes>
+				<cor:headerBasisForTaxation contextRef="now" unitRef="EUR" decimals="2">55300</cor:headerBasisForTaxation>
+				<cor:headerTaxPercentageRate contextRef="now" unitRef="NotUsed" decimals="0">20</cor:headerTaxPercentageRate>
+				<cor:headerTaxCategory contextRef="now">S</cor:headerTaxCategory>
+			</btx:headerTax>
+			<btx:headerTax>
+				<cor:headerTaxTableCode contextRef="now">VAT</cor:headerTaxTableCode>
+				<cor:headerAmountOfTaxes contextRef="now" unitRef="EUR" decimals="2">200</cor:headerAmountOfTaxes>
+				<cor:headerBasisForTaxation contextRef="now" unitRef="EUR" decimals="2">2000</cor:headerBasisForTaxation>
+				<cor:headerTaxPercentageRate contextRef="now" unitRef="NotUsed" decimals="0">10</cor:headerTaxPercentageRate>
+				<cor:headerTaxCategory contextRef="now">AA</cor:headerTaxCategory>
+			</btx:headerTax>
+			<btx:headerAmountStructure>
+				<btx:headerAmount contextRef="now" unitRef="EUR" decimals="2">57300</btx:headerAmount>
+				<btx:headerAmountType contextRef="now">Sum of line net amount</btx:headerAmountType>
+			</btx:headerAmountStructure>
+			<btx:headerAmountStructure>
+				<btx:headerAmount contextRef="now" unitRef="EUR" decimals="2">68560</btx:headerAmount>
+				<btx:headerAmountType contextRef="now">Total amount with tax</btx:headerAmountType>
+			</btx:headerAmountStructure>
+			<btx:transactionDetail>
+				<btx:detailLineNumber contextRef="now">1</btx:detailLineNumber>
+				<bus:detailMeasurable>
+					<bus:detailMeasurableCode contextRef="now">IN</bus:detailMeasurableCode>
+					<bus:detailMeasurableIdentification contextRef="now">4576</bus:detailMeasurableIdentification>
+					<bus:detailMeasurableDescription contextRef="now">Self Adjusting Paper Clips</bus:detailMeasurableDescription>
+					<bus:detailMeasurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">2000</bus:detailMeasurableQuantity>
+					<bus:detailMeasurableUnitOfMeasure contextRef="now">Each</bus:detailMeasurableUnitOfMeasure>
+					<bus:detailMeasurablePerUnitCostPrice contextRef="now" decimals="2" unitRef="EUR">27</bus:detailMeasurablePerUnitCostPrice>
+				</bus:detailMeasurable>
+				<cor:detailTax>
+					<cor:detailTaxTableCode contextRef="now">VAT</cor:detailTaxTableCode>
+					<cor:detailTaxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</cor:detailTaxPercentageRate>
+					<cor:detailTaxCategory contextRef="now">S</cor:detailTaxCategory>
+				</cor:detailTax>
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">54000</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Net</btx:detailAmountType>
+				</btx:detailAmountStructure>
+			</btx:transactionDetail>
+			<btx:transactionDetail>
+				<btx:detailLineNumber contextRef="now">2</btx:detailLineNumber>
+				<bus:detailMeasurable>
+					<bus:detailMeasurableCode contextRef="now">IN</bus:detailMeasurableCode>
+					<bus:detailMeasurableIdentification contextRef="now">4800</bus:detailMeasurableIdentification>
+					<bus:detailMeasurableDescription contextRef="now">Self Expanding Paper Sheets</bus:detailMeasurableDescription>
+					<bus:detailMeasurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">100</bus:detailMeasurableQuantity>
+					<bus:detailMeasurableUnitOfMeasure contextRef="now">Each</bus:detailMeasurableUnitOfMeasure>
+					<bus:detailMeasurablePerUnitCostPrice contextRef="now" decimals="2" unitRef="EUR">15</bus:detailMeasurablePerUnitCostPrice>
+				</bus:detailMeasurable>
+				<cor:detailTax>
+					<cor:detailTaxTableCode contextRef="now">VAT</cor:detailTaxTableCode>
+					<cor:detailTaxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</cor:detailTaxPercentageRate>
+					<cor:detailTaxCategory contextRef="now">S</cor:detailTaxCategory>
+				</cor:detailTax>
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">1500</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Net</btx:detailAmountType>
+				</btx:detailAmountStructure>
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">200</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Allowance</btx:detailAmountType>
+				</btx:detailAmountStructure>
+			</btx:transactionDetail>
+			<btx:transactionDetail>
+				<btx:detailLineNumber contextRef="now">3</btx:detailLineNumber>
+				<bus:detailMeasurable>
+					<bus:detailMeasurableCode contextRef="now">IN</bus:detailMeasurableCode>
+					<bus:detailMeasurableIdentification contextRef="now">120</bus:detailMeasurableIdentification>
+					<bus:detailMeasurableDescription contextRef="now">Waste Basket</bus:detailMeasurableDescription>
+					<bus:detailMeasurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">50</bus:detailMeasurableQuantity>
+					<bus:detailMeasurableUnitOfMeasure contextRef="now">Each</bus:detailMeasurableUnitOfMeasure>
+					<bus:detailMeasurablePerUnitCostPrice contextRef="now" decimals="2" unitRef="EUR">10</bus:detailMeasurablePerUnitCostPrice>
+				</bus:detailMeasurable>
+				<cor:detailTax>
+					<cor:detailTaxTableCode contextRef="now">VAT</cor:detailTaxTableCode>
+					<cor:detailTaxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">10</cor:detailTaxPercentageRate>
+					<cor:detailTaxCategory contextRef="now">AA</cor:detailTaxCategory>
+				</cor:detailTax>
+				<btx:detailAmountStructure>
+					<btx:detailAmount contextRef="now" decimals="2" unitRef="EUR">2000</btx:detailAmount>
+					<btx:detailAmountType contextRef="now">Net</btx:detailAmountType>
+				</btx:detailAmountStructure>
+			</btx:transactionDetail>
+		</btx:transactionHeader>
+	</btx:businessTransactions>
+</xbrli:xbrl>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xl="http://www.xbrl.org/2003/XLink" 
+    xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+    xmlns:link="http://www.xbrl.org/2003/linkbase" 
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+    xmlns:uncl_5305="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305" 
+    targetNamespace="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305" 
+    elementFormDefault="qualified" attributeFormDefault="unqualified" 
+>
+	<xs:include schemaLocation="../../pool/uncl_5305/uncl_5305-d23a.xsd"/>
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- Selection profile for UNTDID 5305 (d23a): uncl_5305 -->
+			<!-- Reuses base domain head: uncl_5305:dutyOrTaxOrFeeCategoryCodeDomain -->
+			<!-- Linkbase -->
+			<link:linkbaseRef xlink:href="uncl_5305-d23a-shr-def.xml" xlink:type="simple"
+                              xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+		</xs:appinfo>
+	</xs:annotation>
+</xs:schema>

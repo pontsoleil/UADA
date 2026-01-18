@@ -1,0 +1,109 @@
+﻿seq,level,Property type,Identifier,Class,Property Term,BaseType,Associated Class,Multiplicity,Documentation,module,LocalLabel,LocalDocumentation
+1,1,Abstract Class,,Communication,,,,0..*,The exchange of messages or information between parties using a specified communication channel.,bus,【通信手段】,当事者間でメッセージまたは情報を交換するための通信手段情報。
+2,2,Attribute,,Communication,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+3,2,Attribute,,Communication,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+AO (Uniform Resource Location : URL) Identification of the Uniform Resource Location (URL) Synonym: World wide web address.
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+AO(URL) URL（Uniform Resource Location）の識別。同義語：ワールドワイドウェブアドレス。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+4,2,Attribute,,Communication,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+5,1,Class,,Phone,,,,0..*,"Phone number information, as a specialisation of Communication.",bus,【電話番号】,電話番号情報（通信手段の特化）。
+6,2,Specialization,,Phone,,,Communication,1,Specialisation of Communication for telephone. Communication Channel Code SHALL be 'telephone'.,bus,【通信手段】,通信手段（電話）としての特化。通信チャネルコードは 'telephone' とする。
+7,2,Attribute,,Phone,Communication_ URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+8,2,Attribute,,Phone,Communication_ Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+9,2,Attribute,,Phone,Communication_ Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+10,1,Class,,Address,,,,0..*,Class which contains address information.,bus,【住所】,住所情報。
+11,2,Attribute,,Address,Street,String,,0..1,Street address,bus,住所通り,住所の通り。
+12,2,Attribute,,Address,Address Detail,String,,0..1,Address Detail,bus,住所詳細,住所詳細。
+13,2,Attribute,,Address,City,String,,0..1,City,bus,住所都市,住所の都市。
+14,2,Attribute,,Address,State or Province,String,,0..1,"State, province or region",bus,住所州,住所の州や地方。
+15,2,Attribute,,Address,Country,String,,0..1,Country,bus,住所国,住所の国。
+16,2,Attribute,,Address,Zip or Postal Code,String,,0..1,Zip or other postal code,bus,住所郵便番号,住所の郵便番号。
+17,1,Class,,Contact,,,,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+18,2,Attribute,,Contact,Prefix,String,,0..1,"Prefix (e.g. Dr., Mr., Mrs.)",bus,敬称,敬称(Dr.、Mr.、Mrs.など)
+19,2,Attribute,,Contact,Last Name,String,,0..1,Last or family name,bus,姓,姓
+20,2,Attribute,,Contact,First Name,String,,0..1,First or given name,bus,名,名、クリスチャンネーム
+21,2,Attribute,,Contact,Active,Boolean,,0..1,"Boolean to indicate whether the contact is active (=""true"") or inactive (=""false"")",bus,担当者有効性,担当者が有効か無効かを示すブール値。
+22,2,Composition,,Contact,,,Phone,0..*,Contact Phone Number,bus,【担当者電話番号】,担当者の電話番号。
+23,1,Class,,Accounting Method,,,,0..*,Class for identifying the methods of accounting used by the entity for different reporting purposes,bus,【会計処理方法】,異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのクラス。
+24,2,Attribute,,Accounting Method,Code,Token,,0..1,"For this entity, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other",bus,会計処理方法,"事業体の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)"
+25,2,Attribute,,Accounting Method,Description,String,,0..1,Free format description of the accounting method,bus,会計処理方法説明,会計処理方法の説明。
+26,2,Attribute,,Accounting Method,Start Date,Date Time,,0..1,Accounting Method Start Date,bus,会計処理方法開始日付,会計処理方法の開始日。
+27,2,Attribute,,Accounting Method,End Date,Date Time,,0..1,Accounting Method End Date,bus,会計処理方法終了日付,会計処理方法の終了日。
+28,1,Class,,Accountant,,,,0..*,Information about the relevant external accountant,bus,【会計事務所情報】,関連する外部会計事務所に関する情報。
+29,2,Attribute,,Accountant,Accountant Name,String,,0..1,Name of the accountant,bus,会計事務所名,会計事務所の名前。
+30,2,Attribute,,Accountant,Accountant Type of Engagement,Token,,0..1,"Type of engagement being performed by external accountant. Enumerated as: audit, review, compilation, tax, other.",bus,契約種別,"外部会計事務所によって実行される契約の種別。
+[設定値のリスト]
+(audit：監査)、(review：検査)、(compilation：帳簿作成)、(tax：税)、(other：その他)"
+31,2,Composition,,Accountant,,,Address,0..*,Class which contains accountant address information.,bus,【会計事務所住所】,会計事務所の住所情報を含むクラス。
+32,2,Composition,,Accountant,,,Contact,0..*,Accountant Contact Information Class,bus,【会計事務所担当者情報】,会計事務所の担当者情報のクラス。
+33,1,Class,,Period,,,,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+34,2,Attribute,PK,Period,ID,String,,0..1,An identifier for this period in this calendar,bus,報告期間識別子,このカレンダーにおけるこの期間の識別子。
+35,2,Attribute,,Period,Start Date,Date Time,,0..1,The beginning date/time of a period,bus,期間開始日付,期間の開始日付/時刻
+36,2,Attribute,,Period,End Date,Date Time,,0..1,The ending date/time of a period,bus,期間終了日付,期間の終了日付/時刻
+37,1,Class,,Reporting Calendar_ Period,,,,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+38,2,Specialization,,Reporting Calendar_ Period,,,Period,1,,bus,,
+39,2,Attribute,PK,Reporting Calendar_ Period,Period_  ID,String,,0..1,An identifier for this period in this calendar,bus,報告期間識別子,このカレンダーにおけるこの期間の識別子。
+40,2,Attribute,,Reporting Calendar_ Period,Period_  Start Date,Date Time,,0..1,The beginning date/time of a period,bus,期間開始日付,期間の開始日付/時刻
+41,2,Attribute,,Reporting Calendar_ Period,Period_  End Date,Date Time,,0..1,The ending date/time of a period,bus,期間終了日付,期間の終了日付/時刻
+42,2,Attribute,,Reporting Calendar_ Period,Period_  Closed Date,Date Time,,0..1,"The date/time a period has been closed for activity. If this is present with a nill value (xsi:nill=""true"") then the period is not closed.",bus,期間締日付,"この期間の活動が締め切られた日付/時刻。この値がニル値(xsi:nill=""true"")であれば、この期間は、締め切られていない。"
+43,1,Class,,Reporting Calendar,,,,0..*,A tool to collect the periods used to summarise results from transactions.,bus,【報告カレンダー】,取引の結果をまとめるための期間を集めるもの。
+44,2,Attribute,,Reporting Calendar,Code,String,,0..1,"The code used to identify this specific reporting calendar, unique across periods",bus,報告カレンダーコード,この報告カレンダーを識別するコード。複数期間にわたって一意。
+45,2,Attribute,,Reporting Calendar,Description,String,,0..1,A description of the reporting calendar (associated with the reportingCalendarCode given),bus,報告カレンダー説明,報告カレンダーの説明（reportingCalendarCodeと関係付けられる）。
+46,2,Composition,,Reporting Calendar,,,Reporting Calendar_ Period,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+47,1,Class,,Authority Registered Identifier,,,,0..*,Class representing an identifier that is registered with and issued or recognised by an external authority. It provides information about the authority responsible for the registration and verification of the identifier.,cor,【外部機関登録識別子】,外部機関に登録され、当該機関によって発行または認証される識別子を表すクラス。識別子の登録・認証を行う外部機関に関する情報も提供する。
+48,2,Attribute,PK,Authority Registered Identifier,Authority Registered ID,String,,0..1,"Identifier of the registered authority identifier record within this report, used to uniquely identify and reference the instance.",cor,外部機関登録識別子ID,外部機関に登録識別子のレコードを一意に識別するためのID。
+49,2,Attribute,,Authority Registered Identifier,Authority Registered Name,String,,0..1,Name or descriptive label of the identifier as registered with the authority.,cor,外部機関登録識別子名称,外部機関登録識別子に識別するためのID。
+50,2,Attribute,PK,Authority Registered Identifier,Authority Code,String,,0..1,Code identifying the external authority with which the identifier is registered.,cor,外部機関コード,当該識別子が登録されている外部機関を識別するコード。（例：税務当局コード）。
+51,2,Attribute,,Authority Registered Identifier,Authority Name,String,,0..1,Name of the external authority responsible for registering or verifying the identifier.,cor,外部機関名,識別子の登録または認証を行う外部機関の名称。（たとえば、税務署）
+52,2,Attribute,,Authority Registered Identifier,Authority Verification Date,Date Time,,0..1,Date on which the external authority last verified or confirmed the registered identifier.,cor,外部機関認証日付,外部機関が当該登録識別子を最後に認証または確認した日付。
+53,1,Class,,Party,,,,0..*,Class for the party,cor,,
+54,2,Attribute,PK,Party,ID,String,,0..1,ID Number of the party,cor,,
+55,2,Attribute,,Party,Name,String,,0..1,Name of the party,cor,,
+56,2,Attribute,,Party,Business Description,String,,0..1,Description of the nature of the business of the party.,cor,業種説明,事業体の事業の種類についての説明。
+57,2,Reference Association,,Party,,,Authority Registered Identifier,0..*,Class which contains various identifiers for the party.,cor,【事業体識別子】,組織に関する様々な識別子を含むクラス。
+58,2,Composition,,Party,,,Phone,0..*,Primary phone number of the party.,bus,【事業体電話番号】,事業体の主要電話番号情報。
+59,2,Composition,,Party,,,Address,0..*,Address class for the party,bus,【住所】,報告事業体の住所クラス。
+60,2,Composition,,Party,,,Contact,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+61,1,Class,,Entity_ Party,,,,0..1,Holder for entity information - information about the reporting organization.,cor,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。
+62,2,Specialization,,Entity_ Party,,,Party,1,,cor,,
+63,2,Attribute,PK,Entity_ Party,Party_  ID,String,,0..1,ID Number of the party,cor,,
+64,2,Attribute,,Entity_ Party,Party_  Name,String,,0..1,Name of the party,cor,,
+65,2,Attribute,,Entity_ Party,Party_  Business Description,String,,0..1,Description of the nature of the business of the party.,cor,業種説明,事業体の事業の種類についての説明。
+66,2,Reference Association,,Entity_ Party,,,Party_ Authority Registered Identifier,0..*,Class which contains various identifiers for theparty.,cor,【事業体識別子】,組織に関する様々な識別子を含むクラス。
+67,2,Composition,,Entity_ Party,,,Party_ Phone,0..*,Primary phone number of the party.,bus,【事業体電話番号】,事業体の主要電話番号情報。
+68,2,Composition,,Entity_ Party,,,Party_ Address,0..*,Address class for the party,bus,【住所】,報告事業体の住所クラス。
+69,2,Composition,,Entity_ Party,,,Party_ Contact,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+70,2,Attribute,,Entity_ Party,Default Accounting Method Purpose,Token,,0..1,"If not stated explicitly at the line level, the default reporting purpose - from book, tax, management, statutory, other",bus,既定会計処理方法目的,"明細レベルで明確に指定しない場合の、既定の報告目的を表す。帳簿、税、管理、スタチュトリ、その他から選択する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+71,2,Attribute,,Entity_ Party,Default Accounting Method Purpose Description,String,,0..1,Free format description of the default accounting method purpose,bus,既定会計処理方法目的説明,既定の会計処理方法目的の説明。
+72,2,Composition,,Entity_ Party,,,Accounting Method,0..*,Class for identifying the methods of accounting used by the entity for different reporting purposes,bus,【会計処理方法】,異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのクラス。
+73,2,Composition,,Entity_ Party,,,Accountant,0..*,Information about the relevant external accountant,bus,【会計事務所情報】,関連する外部会計事務所に関する情報。
+74,2,Composition,,Entity_ Party,,,Reporting Calendar,0..*,A tool to collect the periods used to summarise results from transactions.,bus,【報告カレンダー】,取引の結果をまとめるための期間を集めるもの。
+75,1,Class,,Accounting Entries,,,,1..*,Root for XBRL GL. No entry made here.,cor,【会計仕訳】,XBRL GLのルート要素。 この要素にはデータは登録されない。
+76,2,Composition,,Accounting Entries,,,Entity_ Party,0..1,Holder for entity information - information about the reporting organization.,cor,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。

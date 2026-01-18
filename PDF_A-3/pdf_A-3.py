@@ -3,16 +3,16 @@ import subprocess
 import pikepdf
 
 # # 変換元 PDF と 変換後 PDF
-input_pdf = "PDF_A-3/output.pdf"
-output_pdfa = "PDF_A-3/output_pdfa3_2025-08-21.pdf"
-xml_file = "PDF_A-3/Japan_PINT_Invoice_UBL_Example.xml"  # 埋め込むXML
-csv_file = "PDF_A-3/timesheet.csv"  # 埋め込むCSV
-json_file = "PDF_A-3/timesheet.json"  # 埋め込むJSON
-final_output_pdf = "PDF_A-3/final_output.pdf"
+input_pdf = "PDF_A3/output.pdf"
+output_pdfa = "PDF_A3/output_pdfa3_2025-08-21.pdf"
+xml_file = "PDF_A3/Japan_PINT_Invoice_UBL_Example.xml"  # 埋め込むXML
+csv_file = "PDF_A3/timesheet.csv"  # 埋め込むCSV
+json_file = "PDF_A3/timesheet.json"  # 埋め込むJSON
+final_output_pdf = "PDF_A3/final_output.pdf"
 
 gs_path = "/usr/local/bin/gs"
 
-# Ghostscript で PDF を PDF/A-3 に変換
+# Ghostscript で PDF を PDF/A3 に変換
 gs_command = [
     gs_path,
     "-dPDFA=3",
@@ -29,7 +29,7 @@ gs_command = [
 
 try:
     result = subprocess.run(gs_command, check=True, capture_output=True, text=True)
-    print("✅ PDF/A-3 変換成功！")
+    print("✅ PDF/A3 変換成功！")
 except subprocess.CalledProcessError as e:
     print("❌ Ghostscript エラー:", e)
     print(e.output)

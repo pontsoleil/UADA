@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema targetNamespace="http://www.xbrl.org/gl/ci/status" elementFormDefault="qualified" attributeFormDefault="unqualified" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+  xmlns:ciStatus="http://www.xbrl.org/gl/ci/status">
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <!-- Domain head (can be abstract organisational node) -->
+  <xs:element name="StatusDomain" id="ciStatus_StatusDomain" substitutionGroup="xbrli:item" type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant"/>
+  <!-- Domain members (enumeration values) -->
+  <xs:element name="Issued" id="ciStatus_Issued" substitutionGroup="xbrli:item" type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Cancelled" id="ciStatus_Cancelled" substitutionGroup="xbrli:item" type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Editing" id="ciStatus_Editing" substitutionGroup="xbrli:item" type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+</xs:schema>

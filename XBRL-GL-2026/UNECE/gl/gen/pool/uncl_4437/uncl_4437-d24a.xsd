@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:uncl_4437="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437"
+  targetNamespace="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:annotation>
+    <xs:appinfo>
+      <!-- UNTDID 4437: Account type code qualifier (release d24a) aligned pool -->
+      <!-- Member naming convention: _<code> (QName uncl_4437:_<code> etc.) -->
+      <!-- linkbase -->
+      <link:linkbaseRef xlink:type="simple" xlink:href="uncl_4437-d24a-def.xml" 
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="uncl_4437-d24a-lab.xml" 
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <!-- ELR -->
+      <link:roleType roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437/role/account-type-code-qualifier" id="role_account_type_code_qualifier">
+        <link:definition>Account type code qualifier (UNTDID 4437, d24a)</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>link:labelLink</link:usedOn>
+      </link:roleType>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <!-- Domain head (abstract) -->
+  <xs:element name="accountTypeCodeQualifierDomain" id="accountTypeCodeQualifierDomain" abstract="true"
+    substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+
+  <!-- Members (all codes) -->
+  <xs:element name="_1" id="_1" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_2" id="_2" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_3" id="_3" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_4" id="_4" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_5" id="_5" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_6" id="_6" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_7" id="_7" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_8" id="_8" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_9" id="_9" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_10" id="_10" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_11" id="_11" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_12" id="_12" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_13" id="_13" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_14" id="_14" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_15" id="_15" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_16" id="_16" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="_17" id="_17" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+
+</xs:schema>

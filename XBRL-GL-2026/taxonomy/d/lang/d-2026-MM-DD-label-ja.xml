@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- srcd:summaryReportingTaxonomies 【集約報告タクソノミ】 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomies" xlink:label="summaryReportingTaxonomies"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomies_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomies_ja" xml:lang="en">【集約報告タクソノミ】</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomies_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">この文書で示されたデータのロールアップ先となる、1つ以上の報告タクソノミの情報を、識別し提供する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomies" xlink:to="summaryReportingTaxonomies_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyId 集約報告タクソノミ識別子 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyId" xlink:label="summaryReportingTaxonomyId"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyId_ja" xml:lang="en">集約報告タクソノミ識別子</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">たとえばxbrlInfo内のsummaryReportingTaxonomyIDRefで参照できるように、報告タクソノミを識別する。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyId" xlink:to="summaryReportingTaxonomyId_lbl"/>
+        <!-- srcd:summaryReportingTaxonomySchemaReferenceHrefAttribute 集約報告タクソノミスキーマ参照情報 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomySchemaReferenceHrefAttribute_ja" xml:lang="en">集約報告タクソノミスキーマ参照情報</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">報告タクソノミ内の、schemaRef要素のhref属性の値。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:to="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyHeader 集約報告タクソノミヘッダ -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyHeader" xlink:label="summaryReportingTaxonomyHeader"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyHeader_ja" xml:lang="en">集約報告タクソノミヘッダ</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">必要なすべての情報が、複雑すぎて他の方法では定義できないときに、それらを記述する汎用的なデータ域。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyHeader" xlink:to="summaryReportingTaxonomyHeader_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyDescription 集約報告タクソノミ説明 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyDescription" xlink:label="summaryReportingTaxonomyDescription"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyDescription_ja" xml:lang="en">集約報告タクソノミ説明</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">人が利用するための、タクソノミの説明文。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyDescription" xlink:to="summaryReportingTaxonomyDescription_lbl"/>
+        <!-- srcd:detailRichTextComment 【リッチテキストコメント】 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextComment" xlink:label="detailRichTextComment"/>
+        <label xlink:type="resource" xlink:label="detailRichTextComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextComment_ja" xml:lang="en">【リッチテキストコメント】</label>
+        <label xlink:type="resource" xlink:label="detailRichTextComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextComment" xlink:to="detailRichTextComment_lbl"/>
+        <!-- srcd:detailXbrlSummaryTuplePath 集約タプルパス -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryTuplePath" xlink:label="detailXbrlSummaryTuplePath"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryTuplePath_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryTuplePath_ja" xml:lang="en">集約タプルパス</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryTuplePath_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">親タグ構造を特定するフィルタ。妥当なXPath記述でなければならない。XPathの結果はノードでなければならない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryTuplePath" xlink:to="detailXbrlSummaryTuplePath_lbl"/>
+        <!-- srcd:detailXbrlDetailedContentFilter 明細コンテントフィルタ -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlDetailedContentFilter" xlink:label="detailXbrlDetailedContentFilter"/>
+        <label xlink:type="resource" xlink:label="detailXbrlDetailedContentFilter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlDetailedContentFilter_ja" xml:lang="en">明細コンテントフィルタ</label>
+        <label xlink:type="resource" xlink:label="detailXbrlDetailedContentFilter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">フィルタリング手段。妥当なXPath記述でなければならない。XPathの結果はブール値でなければならない。結果がfalseの場合は、仕訳はF/S内の特定のfactsにマッピングされてはならない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlDetailedContentFilter" xlink:to="detailXbrlDetailedContentFilter_lbl"/>
+        <!-- srcd:detailXbrlReportingDateSelector 報告日付セレクタ -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlReportingDateSelector" xlink:label="detailXbrlReportingDateSelector"/>
+        <label xlink:type="resource" xlink:label="detailXbrlReportingDateSelector_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlReportingDateSelector_ja" xml:lang="en">報告日付セレクタ</label>
+        <label xlink:type="resource" xlink:label="detailXbrlReportingDateSelector_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">F/Sのコンテキストを生成するためのGLデータの概念を示す。QNameのリストでなければならない。個々のQNameはGL項目を示さなければならない。項目の並びはアクセスの優先度を示す。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlReportingDateSelector" xlink:to="detailXbrlReportingDateSelector_lbl"/>
+        <!-- srcd:detailXbrlSummaryOperator  -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryOperator" xlink:label="detailXbrlSummaryOperator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryOperator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryOperator_ja" xml:lang="en"></label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryOperator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja"></label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryOperator" xlink:to="detailXbrlSummaryOperator_lbl"/>
+        <!-- srcd:detailXbrlSummaryUnitNumerator 集約ユニット分子 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryUnitNumerator" xlink:label="detailXbrlSummaryUnitNumerator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitNumerator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryUnitNumerator_ja" xml:lang="en">集約ユニット分子</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitNumerator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のユニットの分子の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryUnitNumerator" xlink:to="detailXbrlSummaryUnitNumerator_lbl"/>
+        <!-- srcd:detailXbrlSummaryUnitDenominator 集約ユニット分母 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryUnitDenominator" xlink:label="detailXbrlSummaryUnitDenominator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitDenominator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryUnitDenominator_ja" xml:lang="en">集約ユニット分母</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitDenominator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">集約のユニットの分母の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryUnitDenominator" xlink:to="detailXbrlSummaryUnitDenominator_lbl"/>
+        <!-- srcd:detailXbrlSummaryReportingTaxonomyIdReference 集約報告タクソノミ識別子参照情報 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryReportingTaxonomyIdReference" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryReportingTaxonomyIdReference_ja" xml:lang="en">集約報告タクソノミ識別子参照情報</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">関連する報告タクソノミの識別子への参照情報。documentInfo内のsummaryReportingTaxonomies構造体で定義される。特定のタクソノミを示すxbrlInfo構造体の集合を、アプリケーションが識別できるようにする。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryReportingTaxonomyIdReference" xlink:to="detailXbrlSummaryReportingTaxonomyIdReference_lbl"/>
+        <!-- srcd:detailRichTextCommentCode リッチテキストコメントコード -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentCode" xlink:label="detailRichTextCommentCode"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentCode_ja" xml:lang="en">リッチテキストコメントコード</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントの用途を識別する、列挙コード。
+[設定値のリスト]
+link_footnote：リンクフットノート、footnote：フットノート、source_document：元文書、source_journal：元仕訳帳、batch：仕訳の束、other：その他</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentCode" xlink:to="detailRichTextCommentCode_lbl"/>
+        <!-- srcd:detailRichTextCommentDescription リッチテキストコメント説明 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentDescription" xlink:label="detailRichTextCommentDescription"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentDescription_ja" xml:lang="en">リッチテキストコメント説明</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントコードの説明。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentDescription" xlink:to="detailRichTextCommentDescription_lbl"/>
+        <!-- srcd:detailRichTextCommentContent リッチテキストコメント内容 -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentContent" xlink:label="detailRichTextCommentContent"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentContent_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentContent_ja" xml:lang="en">リッチテキストコメント内容</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentContent_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">リッチテキストコメントの内容。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentContent" xlink:to="detailRichTextCommentContent_lbl"/>
+        <!-- srcd:detailRichTextCommentLocator リッチテキストコメントロケータ -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentLocator" xlink:label="detailRichTextCommentLocator"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentLocator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentLocator_ja" xml:lang="en">リッチテキストコメントロケータ</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentLocator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">コメントが関係する項目を識別する、XPath表現。</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentLocator" xlink:to="detailRichTextCommentLocator_lbl"/>
+  </labelLink>
+</linkbase>

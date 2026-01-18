@@ -1,0 +1,267 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!-- Sample vendor-invoice listing using XBRL GL (illustrative only; not real company data). -->
+<!-- Only a subset of XBRL GL facts is included here. Additional facts may be required depending on local rules and system design. -->
+<!-- The root of an XBRL instance document is xbrli:xbrl. -->
+<xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xbrli="http://www.xbrl.org/2003/instance"
+	xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+	xmlns:gl-ext="http://www.xbrl.org/int/gl/ext/2026-MM-DD"
+	xmlns:gl-cor="http://www.xbrl.org/int/gl/cor/2026-MM-DD"
+	xmlns:gl-muc="http://www.xbrl.org/int/gl/muc/2026-MM-DD"
+	xmlns:gl-bus="http://www.xbrl.org/int/gl/bus/2026-MM-DD"
+	xmlns:gl-plt="http://www.xbrl.org/int/gl/plt/2026-MM-DD"
+	xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+	xmlns:iso639="http://www.xbrl.org/2005/iso639"
+	xsi:schemaLocation="http://www.xbrl.org/int/gl/plt/2026-MM-DD ../plt/gl-plt-all-2026-MM-DD.xsd">
+	<xbrll:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="../plt/gl-plt-ext-2026-MM-DD.xsd"/>
+	<!-- Contexts are required by XBRL 2.1 for facts. In XBRL GL, business dates are carried explicitly in XBRL GL elements (e.g., documentDate, postedDate); the context is typically used only as an XBRL technical container. -->
+	<xbrli:context id="now">
+		<!-- Context for this instance. The identifier in the entity element is a sample identifier for the reporting entity. -->
+		<xbrli:entity>
+			<xbrli:identifier scheme="http://www.xbrl.org/xbrlgl/sample">SAMPLE</xbrli:identifier>
+		</xbrli:entity>
+		<xbrli:period>
+			<!-- By convention, the context instant is often set to a file/report creation date; XBRL GL date facts carry the business meaning. -->
+			<xbrli:instant>2005-07-05</xbrli:instant>
+		</xbrli:period>
+	</xbrli:context>
+	<!-- Units are required by XBRL for numeric facts. Monetary facts use ISO 4217 (e.g., EUR). Ratios/rates typically use xbrli:pure. -->
+	<xbrli:unit id="EUR">
+		<!-- ISO 4217 unit for monetary amounts in EUR. -->
+		<xbrli:measure>iso4217:EUR</xbrli:measure>
+	</xbrli:unit>
+	<xbrli:unit id="NotUsed">
+		<!-- Generic unit for rates/ratios (xbrli:pure). -->
+		<xbrli:measure>xbrli:pure</xbrli:measure>
+	</xbrli:unit>
+	<!-- accountingEntries is the main XBRL GL container inside the XBRL instance. A single instance may contain multiple accountingEntries blocks (e.g., master data and transactions). entriesType indicates the intended content/purpose of each block. -->
+	<gl-ext:accountingEntries>
+		<!-- documentInfo provides metadata about this accountingEntries block (including entriesType). -->
+		<gl-cor:documentInfo>
+			<!-- entriesType indicates the purpose of this accountingEntries block. This example uses "other" as a generic value; processors should also consider documentType (voucher) and identifierType (V = vendor) to interpret the content. -->
+			<gl-cor:entriesType contextRef="now">other</gl-cor:entriesType>
+			<!-- uniqueID can be used to identify and track a batch/report for later replacement or correction. -->
+			<gl-cor:uniqueID contextRef="now">001</gl-cor:uniqueID>
+			<gl-cor:language contextRef="now">iso639:en</gl-cor:language>
+			<!-- creationDate is the date the information in this accountingEntries block was created (similar to a "printed on" date). -->
+			<gl-cor:creationDate contextRef="now">2005-07-05</gl-cor:creationDate>
+			<gl-bus:creator contextRef="now">XBRL GL Working Group</gl-bus:creator>
+			<!-- entriesComment is a free-text description of why/what this batch contains. -->
+			<gl-cor:entriesComment contextRef="now">A best practice listing of invoices instance document</gl-cor:entriesComment>
+			<!-- periodCoveredStart/End indicates the covered period for this listing (here, based on documentDate). -->
+			<gl-cor:periodCoveredStart contextRef="now">2005-06-01</gl-cor:periodCoveredStart>
+			<gl-cor:periodCoveredEnd contextRef="now">2005-06-30</gl-cor:periodCoveredEnd>
+			<gl-bus:sourceApplication contextRef="now">XABRA</gl-bus:sourceApplication>
+			<gl-muc:defaultCurrency contextRef="now">iso4217:EUR</gl-muc:defaultCurrency>
+		</gl-cor:documentInfo>
+		<!-- entityInformation identifies the reporting entity (the company producing the export). -->
+		<gl-cor:entityInformation>
+			<!-- organisationIdentifiers carries the reporting entity’s identifier and description. -->
+			<gl-bus:organizationIdentifiers>
+				<gl-bus:organizationIdentifier contextRef="now">ABC Company</gl-bus:organizationIdentifier>
+				<gl-bus:organizationDescription contextRef="now">Company Name</gl-bus:organizationDescription>
+			</gl-bus:organizationIdentifiers>
+		</gl-cor:entityInformation>
+		<!-- Each vendor invoice is represented as a documentHeader with one or more documentLine items. -->
+		<gl-ext:documentHeader>
+			<!-- postedDate/enteredDate are system-handling dates. documentDate is the business document date. Keep these distinct for auditability. -->
+			<gl-cor:postedDate contextRef="now">2005-07-01</gl-cor:postedDate>
+			<gl-cor:enteredBy contextRef="now">Otto Wellwood</gl-cor:enteredBy>
+			<gl-cor:enteredDate contextRef="now">2005-07-01</gl-cor:enteredDate>
+			<!-- entryOrigin indicates whether the entry was imported or manually entered. -->
+			<gl-bus:entryOrigin contextRef="now">imported entry</gl-bus:entryOrigin>
+			<!-- entryNumber is an internal entry identifier; documentNumber is the invoice/voucher number. documentHeader holds the common document-level attributes for its lines. -->
+			<gl-cor:entryNumber contextRef="now">50</gl-cor:entryNumber>
+			<!-- entryComment provides a free-text comment about this invoice/document. -->
+			<gl-cor:entryComment contextRef="now">Invoice: #51029 Vendor: #1130</gl-cor:entryComment>
+			<!-- identifierReference identifies the counterparty (vendor). In this example it is provided at documentHeader level; documentLine items are implicitly for the same vendor unless overridden. -->
+			<gl-ext:documentIdentifierReference>
+				<gl-ext:headerIdentifierCode contextRef="now">1130</gl-ext:headerIdentifierCode>
+				<gl-ext:headerIdentifierDescription contextRef="now">Rettaler Property Ltd</gl-ext:headerIdentifierDescription>
+				<!-- identifierType "V" indicates a vendor counterparty; documentType "voucher" indicates a vendor invoice document. -->
+				<gl-ext:headerIdentifierType contextRef="now">V</gl-ext:headerIdentifierType>
+			</gl-ext:documentIdentifierReference>
+
+			<gl-ext:headerDocumentType contextRef="now">voucher</gl-ext:headerDocumentType>
+			<!-- documentNumber is the invoice/voucher number as printed on the document. -->
+			<gl-ext:headerDocumentNumber contextRef="now">51029</gl-ext:headerDocumentNumber>
+			<!-- documentReference is an additional reference/description (often a composite of internal numbering schemes). -->
+			<gl-ext:headerDocumentReference contextRef="now">Voucher#: 100900 </gl-ext:headerDocumentReference>
+			<!-- documentDate is the business document date (e.g., the date shown on the invoice). -->
+			<gl-ext:headerDocumentDate contextRef="now">2005-06-15</gl-ext:headerDocumentDate>
+			<!-- documentReceivedDate is the date the document was received by the reporting entity. -->
+			<gl-ext:headerDocumentReceivedDate contextRef="now">2005-06-14</gl-ext:headerDocumentReceivedDate>
+			<!-- documentLocation can record where the original invoice is stored (physical or electronic). -->
+			<gl-ext:headerDocumentLocation contextRef="now">Fred's desk drawer.</gl-ext:headerDocumentLocation>
+			<!-- maturityDate is the payment due date. -->
+			<gl-ext:headerMaturityDate contextRef="now">2005-07-15</gl-ext:headerMaturityDate>
+			<!-- terms provides payment/settlement terms; it is free text in this example. -->
+			<gl-ext:headerTerms contextRef="now">2% 10 Net 30</gl-ext:headerTerms>
+			<!-- Header totals are expressed using headerAmount + headerAmountType pairs (e.g., net total, gross total). -->
+			<gl-ext:documentAmount>
+				<gl-ext:headerAmount contextRef="now" unitRef="EUR" decimals="2">800</gl-ext:headerAmount>
+				<gl-ext:headerAmountType contextRef="now">Sum of line net headerAmount</gl-ext:headerAmountType>
+			</gl-ext:documentAmount>
+			<gl-ext:documentAmount>
+				<gl-ext:headerAmount contextRef="now" unitRef="EUR" decimals="2">960</gl-ext:headerAmount>
+				<gl-ext:headerAmountType contextRef="now">Total headerAmount with tax</gl-ext:headerAmountType>
+			</gl-ext:documentAmount>
+			<gl-ext:documentTaxes>
+				<gl-ext:headerTaxTableCode contextRef="now">VAT</gl-ext:headerTaxTableCode>
+				<gl-ext:headerTaxAmount contextRef="now" unitRef="EUR" decimals="2">160</gl-ext:headerTaxAmount>
+				<gl-ext:headerTaxBasis contextRef="now" unitRef="EUR" decimals="2">800</gl-ext:headerTaxBasis>
+				<gl-ext:headerTaxPercentageRate contextRef="now" unitRef="NotUsed" decimals="0">20</gl-ext:headerTaxPercentageRate>
+				<gl-ext:headerTaxCode contextRef="now">S</gl-ext:headerTaxCode>
+			</gl-ext:documentTaxes>
+			<gl-ext:documentLine>
+				<!-- lineNumber is the document line sequence number (as on the invoice). -->
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<!-- Accounts may be recorded at line level (e.g., expense/asset accounts) but are omitted in this illustration. -->
+				<gl-cor:detailComment contextRef="now">Vendor#: 1130 Document#: 51029 Date: 6/15/05</gl-cor:detailComment>
+				<!-- measurable carries line-item identification and quantities (code/description/quantity/unit/cost-per-unit). Here, line amounts equal quantity × cost-per-unit. -->
+				<gl-bus:measurable>
+					<gl-bus:measurableCode contextRef="now">IN</gl-bus:measurableCode>
+					<gl-bus:measurableID contextRef="now">Widget1</gl-bus:measurableID>
+					<gl-bus:measurableDescription contextRef="now">Red Widger</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">100</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">Each</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableCostPerUnit contextRef="now" decimals="2" unitRef="EUR">5</gl-bus:measurableCostPerUnit>
+				</gl-bus:measurable>
+				<gl-cor:taxes>
+					<gl-cor:taxTableCode contextRef="now">VAT</gl-cor:taxTableCode>
+					<gl-cor:taxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</gl-cor:taxPercentageRate>
+					<gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+				</gl-cor:taxes>
+				<!-- Some systems store signed amounts and/or a debit/credit indicator. For invoices, amounts are typically unsigned and interpreted by amountType. -->
+				<!-- Line amounts may represent extended line amounts; other charges/allowances can be separate lines or separate amountType entries. Take care to avoid double counting when transforming into accounting entries. -->
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">500</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Net</gl-ext:amountType>
+				</gl-ext:lineAmount>
+			</gl-ext:documentLine>
+			<!-- documentLine elements carry line-specific facts (lineNumber, measurable, taxes, amounts). Common document facts remain on documentHeader. -->
+			<gl-ext:documentLine>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-bus:measurable>
+					<gl-bus:measurableCode contextRef="now">IN</gl-bus:measurableCode>
+					<gl-bus:measurableID contextRef="now">Gidget3</gl-bus:measurableID>
+					<gl-bus:measurableDescription contextRef="now">Sally Field of Dreams Edition</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">15</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">Each</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableCostPerUnit contextRef="now" decimals="2" unitRef="EUR">20</gl-bus:measurableCostPerUnit>
+				</gl-bus:measurable>
+				<gl-cor:taxes>
+					<gl-cor:taxTableCode contextRef="now">VAT</gl-cor:taxTableCode>
+					<gl-cor:taxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</gl-cor:taxPercentageRate>
+					<gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+				</gl-cor:taxes>
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">300</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Net</gl-ext:amountType>
+				</gl-ext:lineAmount>
+			</gl-ext:documentLine>
+		</gl-ext:documentHeader>
+		<gl-ext:documentHeader>
+			<gl-cor:postedDate contextRef="now">2005-07-01</gl-cor:postedDate>
+			<gl-cor:enteredBy contextRef="now">Otto Wellwood</gl-cor:enteredBy>
+			<gl-cor:enteredDate contextRef="now">2005-07-01</gl-cor:enteredDate>
+			<gl-cor:sourceJournalID contextRef="now">pj</gl-cor:sourceJournalID>
+			<gl-bus:sourceJournalDescription contextRef="now">Vendor purchases journal</gl-bus:sourceJournalDescription>
+			<gl-bus:entryOrigin contextRef="now">imported entry</gl-bus:entryOrigin>
+			<gl-cor:entryNumber contextRef="now">51</gl-cor:entryNumber>
+			<gl-cor:entryComment contextRef="now">Invoice: #4321 Vendor: #8765</gl-cor:entryComment>
+			<gl-ext:documentIdentifierReference>
+				<gl-ext:headerIdentifierCode contextRef="now">4310</gl-ext:headerIdentifierCode>
+				<gl-ext:headerIdentifierDescription contextRef="now">Example Ltd</gl-ext:headerIdentifierDescription>
+				<gl-ext:headerIdentifierType contextRef="now">V</gl-ext:headerIdentifierType>
+			</gl-ext:documentIdentifierReference>
+			<gl-ext:headerDocumentType contextRef="now">voucher</gl-ext:headerDocumentType>
+			<gl-ext:headerDocumentNumber contextRef="now">234</gl-ext:headerDocumentNumber>
+			<gl-ext:headerDocumentReference contextRef="now">Voucher#: 100901 </gl-ext:headerDocumentReference>
+			<gl-ext:headerDocumentDate contextRef="now">2005-06-15</gl-ext:headerDocumentDate>
+			<gl-ext:headerDocumentReceivedDate contextRef="now">2005-06-14</gl-ext:headerDocumentReceivedDate>
+			<gl-ext:headerDocumentLocation contextRef="now">Fred's desk drawer.</gl-ext:headerDocumentLocation>
+			<gl-ext:headerTerms contextRef="now">2% 10 Net 30</gl-ext:headerTerms>
+			<gl-ext:documentAmount>
+				<gl-ext:headerAmount contextRef="now" unitRef="EUR" decimals="2">55800</gl-ext:headerAmount>
+				<gl-ext:headerAmountType contextRef="now">Sum of line net documentAmount</gl-ext:headerAmountType>
+			</gl-ext:documentAmount>
+			<gl-ext:documentAmount>
+				<gl-ext:headerAmount contextRef="now" unitRef="EUR" decimals="2">66960</gl-ext:headerAmount>
+				<gl-ext:headerAmountType contextRef="now">Total documentAmount with tax</gl-ext:headerAmountType>
+			</gl-ext:documentAmount>
+			<gl-ext:documentTaxes>
+				<gl-ext:headerTaxTableCode contextRef="now">VAT</gl-ext:headerTaxTableCode>
+				<gl-ext:headerTaxAmount contextRef="now" unitRef="EUR" decimals="2">11160</gl-ext:headerTaxAmount>
+				<gl-ext:headerTaxBasis contextRef="now" unitRef="EUR" decimals="2">55800</gl-ext:headerTaxBasis>
+				<gl-ext:headerTaxPercentageRate contextRef="now" unitRef="NotUsed" decimals="0">20</gl-ext:headerTaxPercentageRate>
+				<gl-ext:headerTaxCode contextRef="now">S</gl-ext:headerTaxCode>
+			</gl-ext:documentTaxes>
+			<gl-ext:documentLine>
+				<gl-cor:lineNumber contextRef="now">1</gl-cor:lineNumber>
+				<gl-bus:measurable>
+					<gl-bus:measurableCode contextRef="now">IN</gl-bus:measurableCode>
+					<gl-bus:measurableID contextRef="now">4576</gl-bus:measurableID>
+					<gl-bus:measurableDescription contextRef="now">Self Adjusting Paper Clips</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">2000</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">Each</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableCostPerUnit contextRef="now" decimals="2" unitRef="EUR">27</gl-bus:measurableCostPerUnit>
+				</gl-bus:measurable>
+				<gl-cor:taxes>
+					<gl-cor:taxTableCode contextRef="now">VAT</gl-cor:taxTableCode>
+					<gl-cor:taxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</gl-cor:taxPercentageRate>
+					<gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+				</gl-cor:taxes>
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">54000</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Net</gl-ext:amountType>
+				</gl-ext:lineAmount>
+			</gl-ext:documentLine>
+			<gl-ext:documentLine>
+				<gl-cor:lineNumber contextRef="now">2</gl-cor:lineNumber>
+				<gl-bus:measurable>
+					<gl-bus:measurableCode contextRef="now">IN</gl-bus:measurableCode>
+					<gl-bus:measurableID contextRef="now">4800</gl-bus:measurableID>
+					<gl-bus:measurableDescription contextRef="now">Self Expanding Paper Sheets</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">100</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">Each</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableCostPerUnit contextRef="now" decimals="2" unitRef="EUR">15</gl-bus:measurableCostPerUnit>
+				</gl-bus:measurable>
+				<gl-cor:taxes>
+					<gl-cor:taxTableCode contextRef="now">VAT</gl-cor:taxTableCode>
+					<gl-cor:taxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</gl-cor:taxPercentageRate>
+					<gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+				</gl-cor:taxes>
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">1500</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Net</gl-ext:amountType>
+				</gl-ext:lineAmount>
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">200</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Allowance</gl-ext:amountType>
+				</gl-ext:lineAmount>
+			</gl-ext:documentLine>
+			<gl-ext:documentLine>
+				<gl-cor:lineNumber contextRef="now">3</gl-cor:lineNumber>
+				<gl-bus:measurable>
+					<gl-bus:measurableCode contextRef="now">IN</gl-bus:measurableCode>
+					<gl-bus:measurableID contextRef="now">120</gl-bus:measurableID>
+					<gl-bus:measurableDescription contextRef="now">Waste Basket</gl-bus:measurableDescription>
+					<gl-bus:measurableQuantity contextRef="now" decimals="2" unitRef="NotUsed">50</gl-bus:measurableQuantity>
+					<gl-bus:measurableUnitOfMeasure contextRef="now">Each</gl-bus:measurableUnitOfMeasure>
+					<gl-bus:measurableCostPerUnit contextRef="now" decimals="2" unitRef="EUR">10</gl-bus:measurableCostPerUnit>
+				</gl-bus:measurable>
+				<gl-cor:taxes>
+					<gl-cor:taxTableCode contextRef="now">VAT</gl-cor:taxTableCode>
+					<gl-cor:taxPercentageRate contextRef="now" decimals="0" unitRef="NotUsed">20</gl-cor:taxPercentageRate>
+					<gl-cor:taxCode contextRef="now">S</gl-cor:taxCode>
+				</gl-cor:taxes>
+				<gl-ext:lineAmount>
+					<gl-ext:amount contextRef="now" decimals="2" unitRef="EUR">500</gl-ext:amount>
+					<gl-ext:amountType contextRef="now">Net</gl-ext:amountType>
+				</gl-ext:lineAmount>
+			</gl-ext:documentLine>
+		</gl-ext:documentHeader>
+	</gl-ext:accountingEntries>
+</xbrli:xbrl>

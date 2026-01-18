@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+  xmlns:cor="http://example.org/xbrl/gl/cor"
+  xmlns:uncl_1001="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001"
+  xsi:schemaLocation="http://example.org/xbrl/gl/cor document-oim.xsd
+                      http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001 ../gen/shared/uncl_1001/uncl_1001-d24a-shr.xsd">
+  <link:schemaRef xlink:href="document-oim.xsd" xlink:type="simple"/>
+  <!-- Document row: document=1 -->
+  <xbrli:context id="c_doc_1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>1</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Document line rows: document_line=1 and 2 -->
+  <xbrli:context id="c_doc_1_line_1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>1</cor:_v>
+        </xbrldi:typedMember>
+        <xbrldi:typedMember dimension="cor:d_document_line">
+          <cor:_v>1</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <xbrli:context id="c_doc_1_line_2">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+         <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>1</cor:_v>
+        </xbrldi:typedMember>
+        <xbrldi:typedMember dimension="cor:d_document_line">
+          <cor:_v>2</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Document facts -->
+  <cor:DocumentID contextRef="c_doc_1">DOC-001</cor:DocumentID>
+  <!-- EE1 value is a QName referring to a member concept in UNTDID 1001 (e.g., _380 = Invoice) -->
+  <cor:DocumentTypeCode contextRef="c_doc_1">uncl_1001:_380</cor:DocumentTypeCode>
+
+  <!-- Document line facts -->
+  <cor:DocumentLineID contextRef="c_doc_1_line_1">1</cor:DocumentLineID>
+  <cor:DocumentLineStatusCode contextRef="c_doc_1_line_1">cor:Open</cor:DocumentLineStatusCode>
+
+  <cor:DocumentLineID contextRef="c_doc_1_line_2">2</cor:DocumentLineID>
+  <cor:DocumentLineStatusCode contextRef="c_doc_1_line_2">cor:Closed</cor:DocumentLineStatusCode>
+
+  <!-- Document row: document=2 -->
+  <xbrli:context id="c_doc_2">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>2</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Document line rows: document_line=1 and 2 -->
+  <xbrli:context id="c_doc_2_line_1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>2</cor:_v>
+        </xbrldi:typedMember>
+        <xbrldi:typedMember dimension="cor:d_document_line">
+          <cor:_v>1</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <xbrli:context id="c_doc_2_line_2">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.org/entity">TEST</xbrli:identifier>
+      <xbrli:segment>
+         <xbrldi:typedMember dimension="cor:d_document">
+          <cor:_v>2</cor:_v>
+        </xbrldi:typedMember>
+        <xbrldi:typedMember dimension="cor:d_document_line">
+          <cor:_v>2</cor:_v>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-11</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Document facts -->
+  <cor:DocumentID contextRef="c_doc_2">DOC-002</cor:DocumentID>
+  <!-- EE1 value is a QName referring to a member concept in UNTDID 1001 (e.g., _380 = Invoice) -->
+  <cor:DocumentTypeCode contextRef="c_doc_2">uncl_1001:_380</cor:DocumentTypeCode>
+
+  <!-- Document line facts -->
+  <cor:DocumentLineID contextRef="c_doc_2_line_1">1</cor:DocumentLineID>
+  <cor:DocumentLineStatusCode contextRef="c_doc_1_line_1">cor:Open</cor:DocumentLineStatusCode>
+
+  <cor:DocumentLineID contextRef="c_doc_2_line_2">2</cor:DocumentLineID>
+  <cor:DocumentLineStatusCode contextRef="c_doc_1_line_2">cor:Closed</cor:DocumentLineStatusCode>
+
+</xbrli:xbrl>

@@ -1,0 +1,75 @@
+code,qname,name,description
+1,uncl_1225:_1,Cancellation,Message cancelling a previous transmission for a given transaction.
+2,uncl_1225:_2,Addition,Message containing items to be added.
+3,uncl_1225:_3,Deletion,Message containing items to be deleted.
+4,uncl_1225:_4,Change,Message containing items to be changed.
+5,uncl_1225:_5,Replace,Message replacing a previous message.
+6,uncl_1225:_6,Confirmation,Message confirming the details of a previous transmission where such confirmation is required or recommended under the terms of a trading partner agreement.
+7,uncl_1225:_7,Duplicate,The message is a duplicate of a previously generated message.
+8,uncl_1225:_8,Status,Code indicating that the referenced message is a status.
+9,uncl_1225:_9,Original,Initial transmission related to a given transaction.
+10,uncl_1225:_10,Not found,Message whose reference number is not filed.
+11,uncl_1225:_11,Response,Message responding to a previous message or document.
+12,uncl_1225:_12,Not processed,Message indicating that the referenced message was received but not yet processed.
+13,uncl_1225:_13,Request,Code indicating that the referenced message is a request.
+14,uncl_1225:_14,Advance notification,Code indicating that the information contained in the message is an advance notification of information to follow.
+15,uncl_1225:_15,Reminder,Repeated message transmission for reminding purposes.
+16,uncl_1225:_16,Proposal,Message content is a proposal.
+17,uncl_1225:_17,"Cancel, to be reissued","Referenced transaction cancelled, reissued message will follow."
+18,uncl_1225:_18,Reissue,New issue of a previous message (maybe cancelled).
+19,uncl_1225:_19,Seller initiated change,Change information submitted by buyer but initiated by seller.
+20,uncl_1225:_20,Replace heading section only,Message to replace the heading of a previous message.
+21,uncl_1225:_21,Replace item detail and summary only,Message to replace item detail and summary of a previous message.
+22,uncl_1225:_22,Final transmission,"Final message in a related series of messages together making up a commercial, administrative or transport transaction."
+23,uncl_1225:_23,Transaction on hold,Message not to be processed until further release information.
+24,uncl_1225:_24,Delivery instruction,Delivery schedule message only used to transmit short- term delivery instructions.
+25,uncl_1225:_25,Forecast,Delivery schedule message only used to transmit long- term schedule information.
+26,uncl_1225:_26,Delivery instruction and forecast,Combination of codes '24' and '25'.
+27,uncl_1225:_27,Not accepted,Message to inform that the referenced message is not accepted by the recipient.
+28,uncl_1225:_28,"Accepted, with amendment in heading section",Message accepted but amended in heading section.
+29,uncl_1225:_29,Accepted without amendment,Referenced message is entirely accepted.
+30,uncl_1225:_30,"Accepted, with amendment in detail section",Referenced message is accepted but amended in detail section.
+31,uncl_1225:_31,Copy,"Indicates that the message is a copy of an original message that has been sent, e.g. for action or information."
+32,uncl_1225:_32,Approval,A message releasing an existing referenced message for action to the receiver.
+33,uncl_1225:_33,Change in heading section,Message changing the referenced message heading section.
+34,uncl_1225:_34,Accepted with amendment,The referenced message is accepted but amended.
+35,uncl_1225:_35,Retransmission,Change-free transmission of a message previously sent.
+36,uncl_1225:_36,Change in detail section,Message changing referenced detail section.
+37,uncl_1225:_37,Reversal of a debit,Reversal of a previously posted debit.
+38,uncl_1225:_38,Reversal of a credit,Reversal of a previously posted credit.
+39,uncl_1225:_39,Reversal for cancellation,Code indicating that the referenced message is reversing a cancellation of a previous transmission for a given transaction.
+40,uncl_1225:_40,Request for deletion,The message is given to inform the recipient to delete the referenced transaction.
+41,uncl_1225:_41,Finishing/closing order,Last of series of call-offs.
+42,uncl_1225:_42,Confirmation via specific means,Message confirming a transaction previously agreed via other means (e.g. phone).
+43,uncl_1225:_43,Additional transmission,Message already transmitted via another communication channel. This transmission is to provide electronically processable data only.
+44,uncl_1225:_44,Accepted without reserves,Message accepted without reserves.
+45,uncl_1225:_45,Accepted with reserves,Message accepted with reserves.
+46,uncl_1225:_46,Provisional,Message content is provisional.
+47,uncl_1225:_47,Definitive,Message content is definitive.
+48,uncl_1225:_48,"Accepted, contents rejected","Message to inform that the previous message is received, but it cannot be processed due to regulations, laws, etc."
+49,uncl_1225:_49,Settled dispute,The reported dispute is settled.
+50,uncl_1225:_50,Withdraw,Message withdrawing a previously approved message.
+51,uncl_1225:_51,Authorisation,Message authorising a message or transaction(s).
+52,uncl_1225:_52,Proposed amendment,A code used to indicate an amendment suggested by the sender.
+53,uncl_1225:_53,Test,Code indicating the message is to be considered as a test.
+54,uncl_1225:_54,Extract,A subset of the original.
+55,uncl_1225:_55,Notification only,The receiver may use the notification information for analysis only.
+56,uncl_1225:_56,Advice of ledger booked items,An advice that items have been booked in the ledger.
+57,uncl_1225:_57,Advice of items pending to be booked in the ledger,An advice that items are pending to be booked in the ledger.
+58,uncl_1225:_58,Pre-advice of items requiring further information,A pre-advice that items require further information.
+59,uncl_1225:_59,Pre-adviced items,A pre-advice of items.
+60,uncl_1225:_60,No action since last message,Code indicating the fact that no action has taken place since the last message.
+61,uncl_1225:_61,Complete schedule,The message function is a complete schedule.
+62,uncl_1225:_62,Update schedule,The message function is an update to a schedule.
+63,uncl_1225:_63,"Not accepted, provisional","Not accepted, subject to confirmation."
+64,uncl_1225:_64,Verification,The message is transmitted to verify information.
+65,uncl_1225:_65,Unsettled dispute,To report an unsettled dispute.
+66,uncl_1225:_66,Discharge of operation guarantee,A message related to a guarantee containing information about the discharge of an operation.
+67,uncl_1225:_67,Termination of operation guarantee,A message related to a guarantee containing information about the termination of an operation.
+68,uncl_1225:_68,Start of operation guarantee,A message related to a guarantee containing information about the start of an operation.
+69,uncl_1225:_69,New declaration data,A message related to a guarantee containing new declaration data.
+70,uncl_1225:_70,Amended declaration data,A message related to the amendment of declaration data.
+71,uncl_1225:_71,Refusal to start operation guarantee,A message related to a guarantee containing information about the refusal to start of an operation.
+72,uncl_1225:_72,Seals information (Start),A message related to a guarantee containing information about the seals during the start of an operation.
+73,uncl_1225:_73,Seals information (Terminate),A message related to a guarantee containing information about the seals during the termination of an operation. Data Element Cross Reference DataElement 1225 is used in the following Batch Segments: BGM DataElement 1225 is used in the following Interactive Segments: CLT DataElement 1225 is used in the following Interactive Composite Elements:
+E031,uncl_1225:E031,E972,"Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories"

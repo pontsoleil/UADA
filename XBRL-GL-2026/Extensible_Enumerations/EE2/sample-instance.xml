@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbrli:xbrl xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrll="http://www.xbrl.org/2003/linkbase"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+  xmlns:ci="http://www.xbrl.org/gl/ci" xsi:schemaLocation="http://www.xbrl.org/gl/ci ci-refdoc.xsd">
+
+  <!-- Taxonomy schema -->
+  <xbrll:schemaRef xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase" xlink:href="ci-refdoc.xsd"/>
+
+  <!-- Context for Referenced Document RD-1 -->
+  <xbrli:context id="c_rd1">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.com/entity">ABC</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="ci:ciRefDocAxis">
+          <ci:ciRefDocKey>RD-1</ci:ciRefDocKey>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-06</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Context for Referenced Document RD-2 -->
+  <xbrli:context id="c_rd2">
+    <xbrli:entity>
+      <xbrli:identifier scheme="http://example.com/entity">ABC</xbrli:identifier>
+      <xbrli:segment>
+        <xbrldi:typedMember dimension="ci:ciRefDocAxis">
+          <ci:ciRefDocKey>RD-2</ci:ciRefDocKey>
+        </xbrldi:typedMember>
+      </xbrli:segment>
+    </xbrli:entity>
+    <xbrli:period>
+      <xbrli:instant>2026-01-06</xbrli:instant>
+    </xbrli:period>
+  </xbrli:context>
+
+  <!-- Facts for RD-1 -->
+  <ci:issuerAssignedIdentification contextRef="c_rd1">INV-12345</ci:issuerAssignedIdentification>
+  <ci:uriIdentification contextRef="c_rd1">urn:example:inv:12345</ci:uriIdentification>
+  <ci:issueDateTime contextRef="c_rd1">2025-12-31T10:00:00</ci:issueDateTime>
+  <!-- EE 2.0 value: namespace#localName -->
+  <ci:statusCode contextRef="c_rd1">http://www.xbrl.org/gl/ci/status#Issued</ci:statusCode>
+
+  <!-- Facts for RD-2 -->
+  <ci:issuerAssignedIdentification contextRef="c_rd2">CN-90001</ci:issuerAssignedIdentification>
+  <ci:uriIdentification contextRef="c_rd2">urn:example:cn:90001</ci:uriIdentification>
+  <ci:issueDateTime contextRef="c_rd2">2026-01-03T15:30:00</ci:issueDateTime>
+  <!-- EE 2.0 value: namespace#localName -->
+  <ci:statusCode contextRef="c_rd2">http://www.xbrl.org/gl/ci/status#Cancelled</ci:statusCode>
+
+</xbrli:xbrl>

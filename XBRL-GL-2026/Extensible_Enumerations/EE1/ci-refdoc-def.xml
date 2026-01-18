@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:ci="http://www.xbrl.org/gl/ci"
+  xmlns:ciStatus="http://http://www.xbrl.org/gl/ci/status"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- roleRef -->
+  <link:roleRef roleURI="http://www.xbrl.org/gl/ci/role/ci-refdoc-table" xlink:type="simple" xlink:href="ci-refdoc.xsd#link_ci-refdoc-table"/>
+  <link:roleRef roleURI="http://www.xbrl.org/gl/ci/role/status-domain" xlink:type="simple" xlink:href="ci-refdoc.xsd#link_status-domain"/>
+  <!-- arcroleRef -->
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple" xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+
+  <!-- ====== Table for CI_Referenced_Document ====== -->
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/gl/ci/role/ci-refdoc-table">
+    <!-- Locators -->
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_ciRefDocHypercube" xlink:label="hc"/>
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_ciRefDocAxis" xlink:label="ax"/>
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_issuerAssignedIdentification" xlink:label="p_issuerId"/>
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_uriIdentification" xlink:label="p_uri"/>
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_issueDateTime" xlink:label="p_issueDt"/>
+    <link:loc xlink:type="locator" xlink:href="ci-refdoc.xsd#ci_statusCode" xlink:label="p_status"/>
+    <!-- add more BBIE locators... -->
+    <!-- (a) Hypercube contains the dimension -->
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:from="hc" xlink:to="ax" order="1"/>
+    <!-- (b) Each primary item is constrained by the hypercube (use segment) -->
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="p_issuerId" xlink:to="hc"
+      xbrldt:contextElement="segment" xbrldt:closed="true" order="1"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="p_uri" xlink:to="hc"
+      xbrldt:contextElement="segment" xbrldt:closed="true" order="1"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="p_issueDt" xlink:to="hc"
+      xbrldt:contextElement="segment" xbrldt:closed="true" order="1"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/all" xlink:from="p_status" xlink:to="hc"
+      xbrldt:contextElement="segment" xbrldt:closed="true" order="1"/>
+  </link:definitionLink>
+  <!-- ====== Status code domain for enum2 ====== -->
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/gl/ci/role/status-domain">
+    <link:loc xlink:type="locator" xlink:href="ci-status-codes.xsd#ciStatus_StatusDomain" xlink:label="d"/>
+    <link:loc xlink:type="locator" xlink:href="ci-status-codes.xsd#ciStatus_Issued" xlink:label="m1"/>
+    <link:loc xlink:type="locator" xlink:href="ci-status-codes.xsd#ciStatus_Cancelled" xlink:label="m2"/>
+    <link:loc xlink:type="locator" xlink:href="ci-status-codes.xsd#ciStatus_Editing" xlink:label="m3"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="d" xlink:to="m1" order="1"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="d" xlink:to="m2" order="2"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" xlink:from="d" xlink:to="m3" order="3"/>
+  </link:definitionLink>
+</link:linkbase>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xbrli="http://www.xbrl.org/2003/instance" xmlns:link="http://www.xbrl.org/2003/linkbase" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:uncl_5305="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305" targetNamespace="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+	<xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+	<xs:annotation>
+		<xs:appinfo>
+			<!-- UNTDID 5305: Duty or tax or fee category code (release d23a) aligned pool -->
+			<!-- Member naming convention: _<code> (QName uncl_5305:_<code> etc.) -->
+			<!-- linkbase -->
+			<link:linkbaseRef xlink:type="simple" xlink:href="uncl_5305-d23a-def.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+			<link:linkbaseRef xlink:type="simple" xlink:href="uncl_5305-d23a-lab.xml" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+			<!-- ELR -->
+			<link:roleType roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305/role/duty-or-tax-or-fee-category-code"
+			               id="role_duty_or_tax_or_fee_category_code">
+                <link:definition>Duty or tax or fee category code (UNTDID 5305, d23a)</link:definition>
+                <link:usedOn>link:definitionLink</link:usedOn>
+                <link:usedOn>link:labelLink</link:usedOn>
+            </link:roleType>
+		</xs:appinfo>
+	</xs:annotation>
+	<!-- Domain head (abstract) -->
+	<xs:element name="dutyOrTaxOrFeeCategoryCodeDomain" id="dutyOrTaxOrFeeCategoryCodeDomain" abstract="true" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<!-- Members (all codes) -->
+	<xs:element name="A" id="A" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="AA" id="AA" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="AB" id="AB" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="AC" id="AC" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="AD" id="AD" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="AE" id="AE" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="B" id="B" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="C" id="C" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="D" id="D" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="E" id="E" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="F" id="F" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="G" id="G" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="H" id="H" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="I" id="I" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="J" id="J" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="K" id="K" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="L" id="L" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="M" id="M" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="N" id="N" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="O" id="O" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="S" id="S" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+	<xs:element name="Z" id="Z" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+</xs:schema>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--extracted from OIM C:\Users\nobuy\GitHub\ISO-TC-295-SG1\SG1 PoC\xBRL\instance\pca.json-->
+<xbrl
+  xmlns="http://www.xbrl.org/2003/instance"
+  xmlns:iso4217="http://www.xbrl.org/2003/iso4217"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xbrldi="http://xbrl.org/2006/xbrldi"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:ns0="http://www.example.com"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:uncl_1001="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001"
+  xmlns:cor="http://example.org/xbrl/gl/cor">
+    <link:schemaRef xlink:href="document-oim.xsd" xlink:type="simple"/>
+    <xbrli:context id="c-01">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.example.com">Example co.</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:typedMember dimension="cor:d_document">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:instant>2023-08-10</xbrli:instant>
+        </xbrli:period>
+    </xbrli:context>
+    <cor:DocumentID contextRef="c-01" id="cor-table.r_1.DocumentID">0001-20090401-18-1-1-463</cor:DocumentID>
+    <cor:DocumentTypeCode contextRef="c-01" id="cor-table.r_1.DocumentTypeCode">uncl_1001:_380</cor:DocumentTypeCode>
+    <xbrli:context id="c-02">
+        <xbrli:entity>
+            <xbrli:identifier scheme="http://www.example.com">Example co.</xbrli:identifier>
+            <xbrli:segment>
+                <xbrldi:typedMember dimension="cor:d_document">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+                <xbrldi:typedMember dimension="cor:d_document_line">
+                    <cor:_v>1</cor:_v>
+                </xbrldi:typedMember>
+            </xbrli:segment>
+        </xbrli:entity>
+        <xbrli:period>
+            <xbrli:instant>2023-08-10</xbrli:instant>
+        </xbrli:period>
+    </xbrli:context>
+    <cor:DocumentLineID contextRef="c-02" id="cor-table.r_2.DocumentLineID">1</cor:DocumentLineID>
+    <cor:DocumentLineStatusCode contextRef="c-02" id="cor-table.r_2.DocumentLineStatusCode">cor:Open</cor:DocumentLineStatusCode>
+</xbrl>

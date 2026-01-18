@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- ELR -->
+  <link:roleRef roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4343/role/response-type-code" xlink:type="simple"
+                xlink:href="uncl_4343-d24a.xsd#role_response_type_code"/>
+
+  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#responseTypeCodeDomain" xlink:label="dom"/>
+    <link:label xlink:type="resource" xlink:label="lab_dom"
+                xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Response type code</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dom" xlink:to="lab_dom"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AA" xlink:label="_1"/>
+    <link:label xlink:type="resource" xlink:label="labAA" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AA Debit advice</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="labAA"/>
+    <link:label xlink:type="resource" xlink:label="docAA" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Receiver of the payment message needs to return a debit advice in response to the payment message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="docAA"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AB" xlink:label="_2"/>
+    <link:label xlink:type="resource" xlink:label="labAB" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AB Message acknowledgement</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="labAB"/>
+    <link:label xlink:type="resource" xlink:label="docAB" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indicates that an acknowledgement relating to receipt of message is required.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="docAB"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AC" xlink:label="_3"/>
+    <link:label xlink:type="resource" xlink:label="labAC" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AC Acknowledge - with detail and change</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="labAC"/>
+    <link:label xlink:type="resource" xlink:label="docAC" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Acknowledge complete including changes.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="docAC"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AD" xlink:label="_4"/>
+    <link:label xlink:type="resource" xlink:label="labAD" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AD Acknowledge - with detail, no change</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="labAD"/>
+    <link:label xlink:type="resource" xlink:label="docAD" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Acknowledge complete without changes.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="docAD"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AE" xlink:label="_5"/>
+    <link:label xlink:type="resource" xlink:label="labAE" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AE Debit advice for each transaction</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="labAE"/>
+    <link:label xlink:type="resource" xlink:label="docAE" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A debit advice is requested for each transaction in the message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="docAE"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AF" xlink:label="_6"/>
+    <link:label xlink:type="resource" xlink:label="labAF" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AF Debit advice/message acknowledgement</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="labAF"/>
+    <link:label xlink:type="resource" xlink:label="docAF" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The sender wishes to receive both a Debit Advice and an acknowledgement of receipt for a payment message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="docAF"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AG" xlink:label="_7"/>
+    <link:label xlink:type="resource" xlink:label="labAG" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AG Authentication</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="labAG"/>
+    <link:label xlink:type="resource" xlink:label="docAG" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Authentication, by a party, of a document established for him by another party.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="docAG"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AH" xlink:label="_8"/>
+    <link:label xlink:type="resource" xlink:label="labAH" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AH Debit advice/message acknowledgement for each transaction</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="labAH"/>
+    <link:label xlink:type="resource" xlink:label="docAH" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A debit advice and message acknowledgement are requested for each transaction in the message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="docAH"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AI" xlink:label="_9"/>
+    <link:label xlink:type="resource" xlink:label="labAI" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AI Acknowledge only changes</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="labAI"/>
+    <link:label xlink:type="resource" xlink:label="docAI" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Acknowledgement of changes only is required.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="docAI"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AJ" xlink:label="_10"/>
+    <link:label xlink:type="resource" xlink:label="labAJ" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AJ Pending</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="labAJ"/>
+    <link:label xlink:type="resource" xlink:label="docAJ" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the referenced offer or transaction (e.g. cargo booking or quotation request) is being dealt with.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="docAJ"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AK" xlink:label="_11"/>
+    <link:label xlink:type="resource" xlink:label="labAK" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AK Return only TIR transport information</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="labAK"/>
+    <link:label xlink:type="resource" xlink:label="docAK" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The sender of the message expects only TIR (Transports Internationaux Routiers) transport information in return.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="docAK"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AL" xlink:label="_12"/>
+    <link:label xlink:type="resource" xlink:label="labAL" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AL Return only declaration information</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="labAL"/>
+    <link:label xlink:type="resource" xlink:label="docAL" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Desc The sender of the message expects only declaration information in return.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="docAL"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AM" xlink:label="_13"/>
+    <link:label xlink:type="resource" xlink:label="labAM" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AM Return only guarantee information</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="labAM"/>
+    <link:label xlink:type="resource" xlink:label="docAM" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The sender of the message expects only guarantee information in return.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="docAM"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AN" xlink:label="_14"/>
+    <link:label xlink:type="resource" xlink:label="labAN" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AN Return all information regarding guarantee</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="labAN"/>
+    <link:label xlink:type="resource" xlink:label="docAN" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The sender of the message expects all information regarding the guarantee in return.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="docAN"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AP" xlink:label="_15"/>
+    <link:label xlink:type="resource" xlink:label="labAP" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AP Accepted</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="labAP"/>
+    <link:label xlink:type="resource" xlink:label="docAP" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) has been accepted.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="docAP"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AQ" xlink:label="_16"/>
+    <link:label xlink:type="resource" xlink:label="labAQ" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AQ Response expected</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="labAQ"/>
+    <link:label xlink:type="resource" xlink:label="docAQ" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The sender of the message expects a response.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="docAQ"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AR" xlink:label="_17"/>
+    <link:label xlink:type="resource" xlink:label="labAR" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AR Direct documentary credit collection</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="labAR"/>
+    <link:label xlink:type="resource" xlink:label="docAR" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Documentary credit collection forwarded directly.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="docAR"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#AS" xlink:label="_18"/>
+    <link:label xlink:type="resource" xlink:label="labAS" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AS Credit advice and message acknowledgement</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_18" xlink:to="labAS"/>
+    <link:label xlink:type="resource" xlink:label="docAS" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The receiver of the message is to acknowledge receipt of the message and sent a credit advice for each credit.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_18" xlink:to="docAS"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#CA" xlink:label="_19"/>
+    <link:label xlink:type="resource" xlink:label="labCA" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">CA Conditionally accepted</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_19" xlink:to="labCA"/>
+    <link:label xlink:type="resource" xlink:label="docCA" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) has been accepted under conditions indicated in this message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_19" xlink:to="docCA"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#CO" xlink:label="_20"/>
+    <link:label xlink:type="resource" xlink:label="labCO" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">CO Confirmation of measurements</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_20" xlink:to="labCO"/>
+    <link:label xlink:type="resource" xlink:label="docCO" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the message contains the physical measurements on which the charges will be based.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_20" xlink:to="docCO"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#NA" xlink:label="_21"/>
+    <link:label xlink:type="resource" xlink:label="labNA" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">NA No acknowledgement needed</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_21" xlink:to="labNA"/>
+    <link:label xlink:type="resource" xlink:label="docNA" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Specifies that no acknowledgement is needed in response to this message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_21" xlink:to="docNA"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#RE" xlink:label="_22"/>
+    <link:label xlink:type="resource" xlink:label="labRE" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">RE Rejected</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_22" xlink:to="labRE"/>
+    <link:label xlink:type="resource" xlink:label="docRE" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) is not accepted.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_22" xlink:to="docRE"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#UR" xlink:label="_23"/>
+    <link:label xlink:type="resource" xlink:label="labUR" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">UR Credit advice</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_23" xlink:to="labUR"/>
+    <link:label xlink:type="resource" xlink:label="docUR" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The message recipient is to send a credit advice in response to the message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_23" xlink:to="docUR"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#US" xlink:label="_24"/>
+    <link:label xlink:type="resource" xlink:label="labUS" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">US Acknowledgement when error</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_24" xlink:to="labUS"/>
+    <link:label xlink:type="resource" xlink:label="docUS" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">An acknowledgement is requested when an error occurred.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_24" xlink:to="docUS"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#UT" xlink:label="_25"/>
+    <link:label xlink:type="resource" xlink:label="labUT" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">UT Acknowledgment due to error</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_25" xlink:to="labUT"/>
+    <link:label xlink:type="resource" xlink:label="docUT" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">An acknowledgment is sent because an error was identified in the received message.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_25" xlink:to="docUT"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#UU" xlink:label="_26"/>
+    <link:label xlink:type="resource" xlink:label="labUU" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">UU Alternate date</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_26" xlink:to="labUU"/>
+    <link:label xlink:type="resource" xlink:label="docUU" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The solution proposed in the response applies to another date than the one requested.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_26" xlink:to="docUU"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4343-d24a.xsd#UV" xlink:label="_27"/>
+    <link:label xlink:type="resource" xlink:label="labUV" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">UV Alternate service</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_27" xlink:to="labUV"/>
+    <link:label xlink:type="resource" xlink:label="docUV" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">The solution proposed in the response applies to another service than the one requested. Data Element Cross Reference DataElement 4343 is used in the following Batch Segments: BGM DataElement 4343 is used in the following Interactive Segments: MSD Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_27" xlink:to="docUV"/>
+
+  </link:labelLink>
+
+</link:linkbase>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- ELR -->
+  <link:roleRef roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305/role/duty-or-tax-or-fee-category-code" xlink:type="simple"
+                xlink:href="uncl_5305-d23a.xsd#role_duty_or_tax_or_fee_category_code"/>
+
+  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#dutyOrTaxOrFeeCategoryCodeDomain" xlink:label="dom"/>
+    <link:label xlink:type="resource" xlink:label="lab_dom"
+                xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Duty or tax or fee category code</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dom" xlink:to="lab_dom"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#A" xlink:label="_1"/>
+    <link:label xlink:type="resource" xlink:label="labA" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">A Mixed tax rate</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="labA"/>
+    <link:label xlink:type="resource" xlink:label="docA" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that the rate is based on mixed tax.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="docA"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#AA" xlink:label="_2"/>
+    <link:label xlink:type="resource" xlink:label="labAA" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AA Lower rate</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="labAA"/>
+    <link:label xlink:type="resource" xlink:label="docAA" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Tax rate is lower than standard rate.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="docAA"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#AB" xlink:label="_3"/>
+    <link:label xlink:type="resource" xlink:label="labAB" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AB Exempt for resale</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="labAB"/>
+    <link:label xlink:type="resource" xlink:label="docAB" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A tax category code indicating the item is tax exempt when the item is bought for future resale.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="docAB"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#AC" xlink:label="_4"/>
+    <link:label xlink:type="resource" xlink:label="labAC" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AC Value Added Tax (VAT) not now due for payment</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="labAC"/>
+    <link:label xlink:type="resource" xlink:label="docAC" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A code to indicate that the Value Added Tax (VAT) amount which is due on the current invoice is to be paid on receipt of a separate VAT payment request.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="docAC"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#AD" xlink:label="_5"/>
+    <link:label xlink:type="resource" xlink:label="labAD" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AD Value Added Tax (VAT) due from a previous invoice</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="labAD"/>
+    <link:label xlink:type="resource" xlink:label="docAD" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">A code to indicate that the Value Added Tax (VAT) amount of a previous invoice is to be paid.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="docAD"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#AE" xlink:label="_6"/>
+    <link:label xlink:type="resource" xlink:label="labAE" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">AE VAT Reverse Charge</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="labAE"/>
+    <link:label xlink:type="resource" xlink:label="docAE" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that the standard VAT rate is levied from the invoicee.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="docAE"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#B" xlink:label="_7"/>
+    <link:label xlink:type="resource" xlink:label="labB" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">B Transferred (VAT)</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="labB"/>
+    <link:label xlink:type="resource" xlink:label="docB" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">VAT not to be paid to the issuer of the invoice but directly to relevant tax authority.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="docB"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#C" xlink:label="_8"/>
+    <link:label xlink:type="resource" xlink:label="labC" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">C Duty paid by supplier</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="labC"/>
+    <link:label xlink:type="resource" xlink:label="docC" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Duty associated with shipment of goods is paid by the supplier; customer receives goods with duty paid.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="docC"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#D" xlink:label="_9"/>
+    <link:label xlink:type="resource" xlink:label="labD" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">D Value Added Tax (VAT) margin scheme - travel agents</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="labD"/>
+    <link:label xlink:type="resource" xlink:label="docD" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the VAT margin scheme for travel agents is applied.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="docD"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#E" xlink:label="_10"/>
+    <link:label xlink:type="resource" xlink:label="labE" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">E Exempt from tax</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="labE"/>
+    <link:label xlink:type="resource" xlink:label="docE" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that taxes are not applicable.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="docE"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#F" xlink:label="_11"/>
+    <link:label xlink:type="resource" xlink:label="labF" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">F Value Added Tax (VAT) margin scheme - second-hand goods</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="labF"/>
+    <link:label xlink:type="resource" xlink:label="docF" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Indication that the VAT margin scheme for second-hand goods is applied.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="docF"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#G" xlink:label="_12"/>
+    <link:label xlink:type="resource" xlink:label="labG" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">G Free export item, tax not charged</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="labG"/>
+    <link:label xlink:type="resource" xlink:label="docG" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that the item is free export and taxes are not charged.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="docG"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#H" xlink:label="_13"/>
+    <link:label xlink:type="resource" xlink:label="labH" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">H Higher rate</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="labH"/>
+    <link:label xlink:type="resource" xlink:label="docH" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying a higher rate of duty or tax or fee.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="docH"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#I" xlink:label="_14"/>
+    <link:label xlink:type="resource" xlink:label="labI" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">I Value Added Tax (VAT) margin scheme - works of art</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="labI"/>
+    <link:label xlink:type="resource" xlink:label="docI" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Margin scheme  Works of art Indication that the VAT margin scheme for works of art is applied.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="docI"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#J" xlink:label="_15"/>
+    <link:label xlink:type="resource" xlink:label="labJ" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">J Value Added Tax (VAT) margin scheme - collectors items and</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="labJ"/>
+    <link:label xlink:type="resource" xlink:label="docJ" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">antiques Indication that the VAT margin scheme for collectors items and antiques is applied.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="docJ"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#K" xlink:label="_16"/>
+    <link:label xlink:type="resource" xlink:label="labK" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">K VAT exempt for EEA intra-community supply of goods and</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="labK"/>
+    <link:label xlink:type="resource" xlink:label="docK" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">services A tax category code indicating the item is VAT exempt due to an intra-community supply in the European Economic Area.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="docK"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#L" xlink:label="_17"/>
+    <link:label xlink:type="resource" xlink:label="labL" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">L Canary Islands general indirect tax</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="labL"/>
+    <link:label xlink:type="resource" xlink:label="docL" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Impuesto General Indirecto Canario (IGIC) is an indirect tax levied on goods and services supplied in the Canary Islands (Spain) by traders and professionals, as well as on import of goods.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="docL"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#M" xlink:label="_18"/>
+    <link:label xlink:type="resource" xlink:label="labM" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">M Tax for production, services and importation in Ceuta and</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_18" xlink:to="labM"/>
+    <link:label xlink:type="resource" xlink:label="docM" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Melilla Impuesto sobre la Producción, los Servicios y la Importación (IPSI) is an indirect municipal tax, levied on the production, processing and import of all kinds of movable tangible property, the supply of services and the transfer of immovable property located in the cities of Ceuta and Melilla.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_18" xlink:to="docM"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#N" xlink:label="_19"/>
+    <link:label xlink:type="resource" xlink:label="labN" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">N standard rate additional VAT</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_19" xlink:to="labN"/>
+    <link:label xlink:type="resource" xlink:label="docN" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">standard VAT calculated for an additional taxable base when the additional taxable base is not included in the document totals</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_19" xlink:to="docN"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#O" xlink:label="_20"/>
+    <link:label xlink:type="resource" xlink:label="labO" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">O Services outside scope of tax</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_20" xlink:to="labO"/>
+    <link:label xlink:type="resource" xlink:label="docO" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that taxes are not applicable to the services.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_20" xlink:to="docO"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#S" xlink:label="_21"/>
+    <link:label xlink:type="resource" xlink:label="labS" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">S Standard rate</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_21" xlink:to="labS"/>
+    <link:label xlink:type="resource" xlink:label="docS" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying the standard rate.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_21" xlink:to="docS"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_5305-d23a.xsd#Z" xlink:label="_22"/>
+    <link:label xlink:type="resource" xlink:label="labZ" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Z Zero rated goods</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_22" xlink:to="labZ"/>
+    <link:label xlink:type="resource" xlink:label="docZ" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code specifying that the goods are at a zero rate. Data Element Cross Reference DataElement 5305 is used in the following Batch Segments: TAX Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_22" xlink:to="docZ"/>
+
+  </link:labelLink>
+
+</link:linkbase>

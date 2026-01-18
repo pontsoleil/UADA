@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- (c) XBRL International.  See http://www.xbrl.org/legal -->
+<linkbase xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.xbrl.org/2003/linkbase http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"
+    xmlns="http://www.xbrl.org/2003/linkbase"
+    xmlns:xlink="http://www.w3.org/1999/xlink">
+    <labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+        <!-- srcd:summaryReportingTaxonomies Summary Reporting Taxonomies -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomies" xlink:label="summaryReportingTaxonomies"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomies_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomies_en" xml:lang="en">Summary Reporting Taxonomies</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomies_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Identifies and provides information about one or more target reporting taxonomies to which the data represented in the document rolls up to.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomies" xlink:to="summaryReportingTaxonomies_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyId Summary Reporting Taxonomy ID -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyId" xlink:label="summaryReportingTaxonomyId"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyId_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyId_en" xml:lang="en">Summary Reporting Taxonomy ID</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyId_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Identifies a target reporting taxonomy so that, for example, it can be referenced in the [summaryReportingTaxonomyIDRef] data field at [xbrlInfo] level.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyId" xlink:to="summaryReportingTaxonomyId_lbl"/>
+        <!-- srcd:summaryReportingTaxonomySchemaReferenceHrefAttribute Summary Reporting Taxonomy Schema Reference Href Attribute -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomySchemaReferenceHrefAttribute_en" xml:lang="en">Summary Reporting Taxonomy Schema Reference Href Attribute</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Value of the href attribute of schemaRef in the target reporting taxonomy.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomySchemaReferenceHrefAttribute" xlink:to="summaryReportingTaxonomySchemaReferenceHrefAttribute_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyHeader Summary Reporting Taxonomy Header -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyHeader" xlink:label="summaryReportingTaxonomyHeader"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyHeader_en" xml:lang="en">Summary Reporting Taxonomy Header</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyHeader_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">An all-purpose data field where all the information necessary when it is too complex to be defined otherwise.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyHeader" xlink:to="summaryReportingTaxonomyHeader_lbl"/>
+        <!-- srcd:summaryReportingTaxonomyDescription Summary Reporting Taxonomy Description -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_summaryReportingTaxonomyDescription" xlink:label="summaryReportingTaxonomyDescription"/>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_summaryReportingTaxonomyDescription_en" xml:lang="en">Summary Reporting Taxonomy Description</label>
+        <label xlink:type="resource" xlink:label="summaryReportingTaxonomyDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">A description of the taxonomy for human use.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="summaryReportingTaxonomyDescription" xlink:to="summaryReportingTaxonomyDescription_lbl"/>
+        <!-- srcd:detailRichTextComment Detail_ Rich Text Comment -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextComment" xlink:label="detailRichTextComment"/>
+        <label xlink:type="resource" xlink:label="detailRichTextComment_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextComment_en" xml:lang="en">Detail_ Rich Text Comment</label>
+        <label xlink:type="resource" xlink:label="detailRichTextComment_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Accepts text in rich text format, including XHTML. It can be used for different purposes, such as to create footnotes in XBRL instances or to create a comment for a document or an entry.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextComment" xlink:to="detailRichTextComment_lbl"/>
+        <!-- srcd:detailXbrlSummaryTuplePath Detail_ XBRL Summary Tuple Path -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryTuplePath" xlink:label="detailXbrlSummaryTuplePath"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryTuplePath_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryTuplePath_en" xml:lang="en">Detail_ XBRL Summary Tuple Path</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryTuplePath_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Specific filter for parent class class. This value must be valid XPath. And the result of the XPath must be resolved to a node.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryTuplePath" xlink:to="detailXbrlSummaryTuplePath_lbl"/>
+        <!-- srcd:detailXbrlDetailedContentFilter Detail_ XBRL Detailed Content Filter -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlDetailedContentFilter" xlink:label="detailXbrlDetailedContentFilter"/>
+        <label xlink:type="resource" xlink:label="detailXbrlDetailedContentFilter_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlDetailedContentFilter_en" xml:lang="en">Detail_ XBRL Detailed Content Filter</label>
+        <label xlink:type="resource" xlink:label="detailXbrlDetailedContentFilter_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Filtering mechanism. This value must be valid XPath. And the result of the XPath must be resolved to boolean. If the resulting value is false, the entry  must not mapped into specified facts in F/S.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlDetailedContentFilter" xlink:to="detailXbrlDetailedContentFilter_lbl"/>
+        <!-- srcd:detailXbrlReportingDateSelector Detail_ XBRL Reporting Date Selector -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlReportingDateSelector" xlink:label="detailXbrlReportingDateSelector"/>
+        <label xlink:type="resource" xlink:label="detailXbrlReportingDateSelector_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlReportingDateSelector_en" xml:lang="en">Detail_ XBRL Reporting Date Selector</label>
+        <label xlink:type="resource" xlink:label="detailXbrlReportingDateSelector_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This holds the concepts in GL data to create FS contexts.  The value must be a list of QName. Each QName must be resolved to GL items. Order of the items defines priority to access.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlReportingDateSelector" xlink:to="detailXbrlReportingDateSelector_lbl"/>
+        <!-- srcd:detailXbrlSummaryOperator Detail_ XBRL Summary Operator -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryOperator" xlink:label="detailXbrlSummaryOperator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryOperator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryOperator_en" xml:lang="en">Detail_ XBRL Summary Operator</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryOperator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">The operator applied to the amount or quantity when it is rolled up to a summary reporting element.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryOperator" xlink:to="detailXbrlSummaryOperator_lbl"/>
+        <!-- srcd:detailXbrlSummaryUnitNumerator Detail_ XBRL Summary Unit Numerator -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryUnitNumerator" xlink:label="detailXbrlSummaryUnitNumerator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitNumerator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryUnitNumerator_en" xml:lang="en">Detail_ XBRL Summary Unit Numerator</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitNumerator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This holds the list of measure information for unit numerator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryUnitNumerator" xlink:to="detailXbrlSummaryUnitNumerator_lbl"/>
+        <!-- srcd:detailXbrlSummaryUnitDenominator Detail_ XBRL Summary Unit Denominator -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryUnitDenominator" xlink:label="detailXbrlSummaryUnitDenominator"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitDenominator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryUnitDenominator_en" xml:lang="en">Detail_ XBRL Summary Unit Denominator</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryUnitDenominator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">This holds the list of measure information for unit denominator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryUnitDenominator" xlink:to="detailXbrlSummaryUnitDenominator_lbl"/>
+        <!-- srcd:detailXbrlSummaryReportingTaxonomyIdReference Detail_ XBRL Summary Reporting Taxonomy ID Reference -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailXbrlSummaryReportingTaxonomyIdReference" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference"/>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailXbrlSummaryReportingTaxonomyIdReference_en" xml:lang="en">Detail_ XBRL Summary Reporting Taxonomy ID Reference</label>
+        <label xlink:type="resource" xlink:label="detailXbrlSummaryReportingTaxonomyIdReference_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Reference to the ID of the relevant target reporting taxonomy, defined in the [summaryReportingTaxonomies] class at [documentInfo] level. Allows consuming applications to identify sets of [xbrlInfo] classs that point to a specific taxonomy.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailXbrlSummaryReportingTaxonomyIdReference" xlink:to="detailXbrlSummaryReportingTaxonomyIdReference_lbl"/>
+        <!-- srcd:detailRichTextCommentCode Detail_ Rich Text Comment Code -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentCode" xlink:label="detailRichTextCommentCode"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentCode_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentCode_en" xml:lang="en">Detail_ Rich Text Comment Code</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentCode_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">An enumerated code that identifies the purpose of the rich text comment. Enumerated values: link_footnote, footnote, source_document, source_journal, batch, other.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentCode" xlink:to="detailRichTextCommentCode_lbl"/>
+        <!-- srcd:detailRichTextCommentDescription Detail_ Rich Text Comment Description -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentDescription" xlink:label="detailRichTextCommentDescription"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentDescription_en" xml:lang="en">Detail_ Rich Text Comment Description</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentDescription_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Free format description of the Rich text Comment Code.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentDescription" xlink:to="detailRichTextCommentDescription_lbl"/>
+        <!-- srcd:detailRichTextCommentContent Detail_ Rich Text Comment Content -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentContent" xlink:label="detailRichTextCommentContent"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentContent_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentContent_en" xml:lang="en">Detail_ Rich Text Comment Content</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentContent_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">Content of the Rich Text Comment.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentContent" xlink:to="detailRichTextCommentContent_lbl"/>
+        <!-- srcd:detailRichTextCommentLocator Detail_ Rich Text Comment Locator -->
+        <loc xlink:type="locator" xlink:href="../d-2026-MM-DD.xsd#d_detailRichTextCommentLocator" xlink:label="detailRichTextCommentLocator"/>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentLocator_lbl" xlink:role="http://www.xbrl.org/2003/role/label" xlink:title="d_detailRichTextCommentLocator_en" xml:lang="en">Detail_ Rich Text Comment Locator</label>
+        <label xlink:type="resource" xlink:label="detailRichTextCommentLocator_lbl" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="ja">An XPath expression that identifies the item that the comment relates to.</label>
+        <labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="detailRichTextCommentLocator" xlink:to="detailRichTextCommentLocator_lbl"/>
+  </labelLink>
+</linkbase>

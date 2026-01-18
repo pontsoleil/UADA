@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- ELR -->
+  <link:roleRef roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305/role/duty-or-tax-or-fee-category-code" xlink:type="simple"
+                xlink:href="../../pool/uncl_5305/uncl_5305-d23a.xsd#role_duty_or_tax_or_fee_category_code"/>
+  <!-- EE1 -->
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_5305/role/duty-or-tax-or-fee-category-code">
+    <link:loc xlink:type="locator" xlink:href="../../pool/uncl_5305/uncl_5305-d23a.xsd#dutyOrTaxOrFeeCategoryCodeDomain" xlink:label="dom"/>
+    <link:loc xlink:type="locator" xlink:href="../../pool/uncl_5305/uncl_5305-d23a.xsd#AE" xlink:label="AE"/>
+
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="dom" xlink:to="AE" order="6" use="optional" priority="3"/>
+               
+  </link:definitionLink>
+
+</link:linkbase>

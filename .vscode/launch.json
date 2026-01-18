@@ -61,8 +61,7 @@
             // "args": ["../ISO21926/BSM/ISO21926_BSM_.csv", "../ISO21926/LHM/ISO21926_LHM_.csv"]//, "-t", "-d"]
             // "args": ["../ISO21926/BSM/ISO21926_BSMa.csv", "../ISO21926/LHM/ISO21926_LHMa.csv"]//, "-t", "-d"]
 
-            // LedgerExplorer/structured_ledger_explorer.py, LedgerExplorer/e-Tax_account_code.py
-            // "args": ["LedgerExplorer/parameters.json"]
+
 
             // XBRL-GL
 
@@ -265,6 +264,14 @@
             //     "-r", "Cross Industry_ Invoice",
             //     "-t", "-d"
             // ]
+
+            // // LedgerExplorer/structured_ledger_explorer.py, LedgerExplorer/e-Tax_account_code.py
+            // "args": ["LedgerExplorer/parameters.json"]
+
+            // replace_date.py
+            // "args": ["XBRL-GL-2026/gl"]
+
+            
         }
     ]
 }

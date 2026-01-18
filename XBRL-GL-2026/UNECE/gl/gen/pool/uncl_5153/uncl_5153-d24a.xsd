@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:uncl_5153="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_5153"
+  targetNamespace="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_5153"
+  elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:annotation>
+    <xs:appinfo>
+      <!-- UNTDID 5153: Duty or tax or fee type name code (release d24a) aligned pool -->
+      <!-- Member naming convention: _<code> (QName uncl_5153:_<code> etc.) -->
+      <!-- linkbase -->
+      <link:linkbaseRef xlink:type="simple" xlink:href="uncl_5153-d24a-def.xml" 
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:type="simple" xlink:href="uncl_5153-d24a-lab.xml" 
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <!-- ELR -->
+      <link:roleType roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_5153/role/duty-or-tax-or-fee-type-name-code" id="role_duty_or_tax_or_fee_type_name_code">
+        <link:definition>Duty or tax or fee type name code (UNTDID 5153, d24a)</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+        <link:usedOn>link:labelLink</link:usedOn>
+      </link:roleType>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <!-- Domain head (abstract) -->
+  <xs:element name="dutyOrTaxOrFeeTypeNameCodeDomain" id="dutyOrTaxOrFeeTypeNameCodeDomain" abstract="true"
+    substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant"/>
+
+  <!-- Members (all codes) -->
+  <xs:element name="AAA" id="AAA" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAB" id="AAB" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAC" id="AAC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAD" id="AAD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAE" id="AAE" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAF" id="AAF" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAG" id="AAG" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAH" id="AAH" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAI" id="AAI" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAJ" id="AAJ" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAK" id="AAK" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAL" id="AAL" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAM" id="AAM" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAO" id="AAO" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="AAP" id="AAP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="ADD" id="ADD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="BOL" id="BOL" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="CAP" id="CAP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="CAR" id="CAR" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="COC" id="COC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="CST" id="CST" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="CUD" id="CUD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="CVD" id="CVD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="ENV" id="ENV" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="EXC" id="EXC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="EXP" id="EXP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="FET" id="FET" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="FRE" id="FRE" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="GCN" id="GCN" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="GST" id="GST" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="ILL" id="ILL" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="IMP" id="IMP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="IND" id="IND" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="LAC" id="LAC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="LCN" id="LCN" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="LDP" id="LDP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="LOC" id="LOC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="LST" id="LST" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="MCA" id="MCA" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="MCD" id="MCD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="OTH" id="OTH" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="PDB" id="PDB" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="PDC" id="PDC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="PRF" id="PRF" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="SCN" id="SCN" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="SSS" id="SSS" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="STT" id="STT" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="SUP" id="SUP" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="SUR" id="SUR" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="SWT" id="SWT" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="TAC" id="TAC" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="TOT" id="TOT" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="TOX" id="TOX" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="TTA" id="TTA" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="VAD" id="VAD" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+  <xs:element name="VAT" id="VAT" substitutionGroup="xbrli:item"
+              type="xbrli:stringItemType" xbrli:periodType="instant"/>
+
+</xs:schema>

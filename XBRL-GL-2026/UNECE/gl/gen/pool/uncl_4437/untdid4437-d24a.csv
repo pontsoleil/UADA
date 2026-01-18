@@ -1,0 +1,18 @@
+code,qname,name,description
+1,uncl_4437:_1,Cost account,Code identifying a cost account.
+2,uncl_4437:_2,Budgetary account,Code identifying a budgetary account.
+3,uncl_4437:_3,Subsidiary account,Code identifying a subsidiary account.
+4,uncl_4437:_4,General account,Code identifying a general account.
+5,uncl_4437:_5,Related account,Account that is related to an other account.
+6,uncl_4437:_6,General trial balance,Code identifying a general trial balance.
+7,uncl_4437:_7,Subsidiary trial balance,Code identifying a subsidiary trial balance.
+8,uncl_4437:_8,Cost trial balance,Code identifying a cost trial balance.
+9,uncl_4437:_9,Budgetary trial balance,Code identifying a budgetary trial balance.
+10,uncl_4437:_10,General and cost trial balance,Code identifying a general and cost trial balance.
+11,uncl_4437:_11,General and budgetary trial balance,Code identifying a general and budgetary trial balance.
+12,uncl_4437:_12,General and subsidiary trial balance,Code identifying a general and subsidiary trial balance.
+13,uncl_4437:_13,Cost and budgetary trial balance,Code identifying a cost and budgetary trial balance.
+14,uncl_4437:_14,Cost and subsidiary trial balance,Code identifying a cost and subsidiary trial balance.
+15,uncl_4437:_15,Budgetary and subsidiary trial balance,Code identifying a budgetary and subsidiary trial balance.
+16,uncl_4437:_16,"General, cost and budgetary trial balance","Code identifying a general, cost and budgetary trial balance."
+17,uncl_4437:_17,Non recorded differences account,"Code identifying the account of non recorded differences. Data Element Cross Reference DataElement 4437 is used in the following Batch Segments: CPT Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories"

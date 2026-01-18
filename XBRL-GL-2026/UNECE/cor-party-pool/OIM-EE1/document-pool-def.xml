@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+
+  <link:roleRef roleURI="http://example.org/xbrl/gl/cor/role/pool-document" xlink:type="simple"
+                xlink:href="document-pool-oim.xsd#role-pool-document"/>
+  <link:roleRef roleURI="http://example.org/xbrl/gl/cor/role/pool-document-line" xlink:type="simple"
+                xlink:href="document-pool-oim.xsd#role-pool-document-line"/>
+  <link:roleRef roleURI="http://example.org/xbrl/gl/cor/role/pool-party" xlink:type="simple"
+                xlink:href="document-pool-oim.xsd#role-pool-party"/>
+  <!-- EE1 -->
+  <link:roleRef roleURI="http://example.org/xbrl/gl/cor/role/codelist-document-type-code" xlink:type="simple" 
+                xlink:href="document-pool-oim.xsd#role-codelist-document-type-code"/>
+  <link:roleRef roleURI="http://example.org/xbrl/gl/cor/role/codelist-document-line-status-code" xlink:type="simple" 
+                xlink:href="document-pool-oim.xsd#role-codelist-document-line-status-code"/>
+
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/all" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#all"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/hypercube-dimension" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#hypercube-dimension"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/dimension-domain" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#dimension-domain"/>
+  <link:arcroleRef arcroleURI="http://xbrl.org/int/dim/arcrole/domain-member" xlink:type="simple"
+                   xlink:href="http://www.xbrl.org/2005/xbrldt-2005.xsd#domain-member"/>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://example.org/xbrl/gl/cor/role/pool-document">
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#p_document" xlink:label="p_document"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#h_document" xlink:label="h_document"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#d_document" xlink:label="d_document"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#v_document" xlink:label="v_document"/>
+
+    <!-- p_document all (has-hypercube) h_document link_document -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/all"
+                        xlink:from="p_document" xlink:to="h_document"
+                        xlink:title="all (has-hypercube): p_document to h_document"
+                        order="1"
+                        xbrldt:closed="true"
+                        xbrldt:contextElement="segment"/>
+
+    <!-- hypercube-dimension -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension"
+                        xlink:from="h_document" xlink:to="d_document"
+                        xlink:title="hypercube-dimension: h_document to d_document"
+                        order="1"/>
+
+    <!-- dimension-domain -->
+
+    <!-- domain-member -->
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentID" xlink:label="cor_DocumentID"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_document" xlink:to="cor_DocumentID"
+                        order="1"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCode" xlink:label="cor_DocumentTypeCode"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_document" xlink:to="cor_DocumentTypeCode"
+                        order="2"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentIssueDateTime" xlink:label="cor_DocumentIssueDateTime"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_document" xlink:to="cor_DocumentIssueDateTime"
+                        order="3"/>
+
+    <!-- v_document to targetRole pool-party -->
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#v_party" xlink:label="v_party"/>
+    <link:definitionArc xlink:type="arc" 
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xbrldt:targetRole="http://example.org/xbrl/gl/cor/role/pool-party" 
+                        xlink:from="v_document" xlink:to="v_party" 
+                        xlink:title="domain-member: v_document to p_party in pool-party"
+                        order="4"/>
+
+    <!-- v_document to targetRole pool-document-line -->
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#v_document_line" xlink:label="v_document_line"/>
+    <link:definitionArc xlink:type="arc" 
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xbrldt:targetRole="http://example.org/xbrl/gl/cor/role/pool-document-line" 
+                        xlink:from="v_document" xlink:to="v_document_line" 
+                        xlink:title="domain-member: v_document to p_document_line in pool-document-line"
+                        order="5"/>
+  </link:definitionLink>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://example.org/xbrl/gl/cor/role/pool-party">
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#p_party" xlink:label="p_party"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#h_party" xlink:label="h_party"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#d_party" xlink:label="d_party"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#v_party" xlink:label="v_party"/>
+
+    <!-- p_party all (has-hypercube) h_party link_party -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/all"
+                        xlink:from="p_party" xlink:to="h_party"
+                        xlink:title="all (has-hypercube): p_party to h_party"
+                        order="1"
+                        xbrldt:closed="true"
+                        xbrldt:contextElement="segment"/>
+
+    <!-- hypercube-dimension -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension"
+                        xlink:from="h_party" xlink:to="d_party"
+                        xlink:title="hypercube-dimension: h_party to d_party"
+                        order="1"/>
+
+    <!-- dimension-domain -->
+
+    <!-- domain-member -->
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_PartyName" xlink:label="cor_PartyName"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_party" xlink:to="cor_PartyName"
+                        order="1"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_Address" xlink:label="cor_Address"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_party" xlink:to="cor_Address"
+                        order="2"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_Contact" xlink:label="cor_Contact"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_party" xlink:to="cor_Contact"
+                        order="3"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_TaxRegistration" xlink:label="cor_TaxRegistration"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_party" xlink:to="cor_TaxRegistration"
+                        order="4"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_AuthorityRegisteredIdentifier" xlink:label="cor_AuthorityRegisteredIdentifier"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_party" xlink:to="cor_AuthorityRegisteredIdentifier"
+                        order="5"/>
+  </link:definitionLink>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://example.org/xbrl/gl/cor/role/pool-document-line">
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#p_document_line" xlink:label="p_document_line"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#h_document_line" xlink:label="h_document_line"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#d_document_line" xlink:label="d_document_line"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#v_document_line" xlink:label="v_document_line"/>
+
+    <!-- p_document_line all (has-hypercube) h_document_line link_document_line -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/all"
+                        xlink:from="p_document_line" xlink:to="h_document_line"
+                        xlink:title="all (has-hypercube): p_document_line to h_document_line"
+                        order="1"
+                        xbrldt:closed="true"
+                        xbrldt:contextElement="segment"/>
+
+    <!-- hypercube-dimension -->
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/hypercube-dimension"
+                        xlink:from="h_document_line" xlink:to="d_document_line"
+                        xlink:title="hypercube-dimension: h_document_line to d_document_line"
+                        order="1"/>
+
+    <!-- dimension-domain -->
+
+    <!-- domain-member -->
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineID" xlink:label="cor_DocumentLineID"/>
+    <link:definitionArc xlink:type="arc"
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member"
+                        xlink:from="v_document_line" xlink:to="cor_DocumentLineID"
+                        order="1"/>
+
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCode" xlink:label="cor_DocumentLineStatusCode"/>
+    <link:definitionArc xlink:type="arc" 
+                        xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="v_document_line" xlink:to="cor_DocumentLineStatusCode" 
+                        order="2"/>
+  </link:definitionLink>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://example.org/xbrl/gl/cor/role/codelist-document-type-code">
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCodeDomain" xlink:label="cor_DocumentTypeCodeDomain"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCodeValue_Invoice" xlink:label="cor_DocumentTypeCodeValue_Invoice"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCodeValue_CreditNote" xlink:label="cor_DocumentTypeCodeValue_CreditNote"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCodeValue_Order" xlink:label="cor_DocumentTypeCodeValue_Order"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentTypeCodeValue_Other" xlink:label="cor_DocumentTypeCodeValue_Other"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentTypeCodeDomain" xlink:to="cor_DocumentTypeCodeValue_Invoice" order="1" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentTypeCodeDomain" xlink:to="cor_DocumentTypeCodeValue_CreditNote" order="2" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentTypeCodeDomain" xlink:to="cor_DocumentTypeCodeValue_Order" order="3" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentTypeCodeDomain" xlink:to="cor_DocumentTypeCodeValue_Other" order="4" xbrldt:usable="true"/>
+  </link:definitionLink>
+
+  <link:definitionLink xlink:type="extended" xlink:role="http://example.org/xbrl/gl/cor/role/codelist-document-line-status-code">
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCodeDomain" xlink:label="cor_DocumentLineStatusCodeDomain"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCodeValue_Open" xlink:label="cor_DocumentLineStatusCodeValue_Open"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCodeValue_Closed" xlink:label="cor_DocumentLineStatusCodeValue_Closed"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCodeValue_Cancelled" xlink:label="cor_DocumentLineStatusCodeValue_Cancelled"/>
+    <link:loc xlink:type="locator" xlink:href="document-pool-oim.xsd#cor_DocumentLineStatusCodeValue_Other" xlink:label="cor_DocumentLineStatusCodeValue_Other"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentLineStatusCodeDomain" xlink:to="cor_DocumentLineStatusCodeValue_Open" order="1" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentLineStatusCodeDomain" xlink:to="cor_DocumentLineStatusCodeValue_Closed" order="2" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentLineStatusCodeDomain" xlink:to="cor_DocumentLineStatusCodeValue_Cancelled" order="3" xbrldt:usable="true"/>
+    <link:definitionArc xlink:type="arc" xlink:arcrole="http://xbrl.org/int/dim/arcrole/domain-member" 
+                        xlink:from="cor_DocumentLineStatusCodeDomain" xlink:to="cor_DocumentLineStatusCodeValue_Other" order="4" xbrldt:usable="true"/>
+  </link:definitionLink>
+</link:linkbase>

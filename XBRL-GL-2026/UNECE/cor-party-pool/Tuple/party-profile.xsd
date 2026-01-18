@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://example.org/xbrl/gl/cor" 
+  elementFormDefault="qualified" attributeFormDefault="unqualified"
+  xmlns="http://www.w3.org/2001/XMLSchema"
+  xmlns:xbrli="http://www.xbrl.org/2003/instance"
+  xmlns:cor="http://example.org/xbrl/gl/cor">
+  
+  <import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+
+  <!-- Same namespace => include, not import -->
+  <include schemaLocation="party-pool.xsd"/>
+
+  <!-- Restricted Party type (removes Contact) -->
+  <element name="TradingName" type="xbrli:stringItemType" substitutionGroup="xbrli:item" xbrli:periodType="instant" abstract="false"/>
+
+  <!-- Step 1: restriction removes Contact -->
+  <complexType name="PartyTypeNoContact">
+    <complexContent>
+      <restriction base="cor:PartyType">
+        <sequence>
+          <element ref="cor:PartyName" minOccurs="0" maxOccurs="1"/>
+          <element ref="cor:Address" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:TaxRegistration" minOccurs="0" maxOccurs="unbounded"/>
+          <element ref="cor:AuthorityRegisteredIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+        </sequence>
+      </restriction>
+    </complexContent>
+  </complexType>
+
+  <!-- Step 2: extension adds TradingName (appended) -->
+  <complexType name="PartyTypeProfile">
+    <complexContent>
+      <extension base="cor:PartyTypeNoContact">
+        <sequence>
+          <element ref="cor:TradingName" minOccurs="0" maxOccurs="1"/>
+        </sequence>
+      </extension>
+    </complexContent>
+  </complexType>
+
+  <!-- Profile-specific Party tuple element -->
+  <element name="PartyProfile" type="cor:PartyTypeProfile" substitutionGroup="xbrli:tuple" nillable="false"/>
+</schema>

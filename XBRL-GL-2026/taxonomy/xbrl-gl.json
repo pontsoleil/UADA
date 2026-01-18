@@ -1,0 +1,1836 @@
+﻿{
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2021/xbrl-csv",
+        "namespaces": {
+            "ns0": "http://www.example.com",
+            "link": "http://www.xbrl.org/2003/linkbase",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xbrli": "http://www.xbrl.org/2003/instance",
+            "xbrldi": "http://xbrl.org/2006/xbrldi",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "gl-gen": "http://www.xbrl.org/int/gl/gen/2026-MM-DD",
+            "gl-cor": "http://www.xbrl.org/int/gl/cor/2026-MM-DD",
+            "gl-bus": "http://www.xbrl.org/int/gl/bus/2026-MM-DD",
+            "gl-muc": "http://www.xbrl.org/int/gl/muc/2026-MM-DD",
+            "gl-usk": "http://www.xbrl.org/int/gl/usk/2026-MM-DD",
+            "gl-taf": "http://www.xbrl.org/int/gl/taf/2026-MM-DD",
+            "gl-ehm": "http://www.xbrl.org/int/gl/ehm/2026-MM-DD",
+            "gl-srcd": "http://www.xbrl.org/int/gl/srcd/2026-MM-DD",
+            "gl-ext": "http://www.xbrl.org/int/gl/ext/2026-MM-DD",
+            "gl-plt": "http://www.xbrl.org/int/gl/plt/2026-MM-DD"
+        },
+        "taxonomy": [
+            "plt/gl-plt-oim-2026-MM-DD.xsd"
+        ]
+    },
+    "tableTemplates": {
+        "xbrl-gl_template": {
+            "dimensions": {
+                "period": "2025-05-17T00:00:00",
+                "entity": "ns0:Example Co.",
+                "gl-plt:d_cor_accountingEntries": "$cor_accountingEntries",
+                "gl-plt:d_srcd_summaryReportingTaxonomies": "$srcd_summaryReportingTaxonomies",
+                "gl-plt:d_bus_entityPartyPhone": "$bus_entityPartyPhone",
+                "gl-plt:d_bus_entityPartyFax": "$bus_entityPartyFax",
+                "gl-plt:d_bus_entityPartyEmail": "$bus_entityPartyEmail",
+                "gl-plt:d_bus_organizationIdentifiers": "$bus_organizationIdentifiers",
+                "gl-plt:d_cor_entityPartyAddress": "$cor_entityPartyAddress",
+                "gl-plt:d_bus_entityPartyWebSite": "$bus_entityPartyWebSite",
+                "gl-plt:d_bus_entityPartyContact": "$bus_entityPartyContact",
+                "gl-plt:d_bus_entityPartyContactPhone": "$bus_entityPartyContactPhone",
+                "gl-plt:d_bus_entityPartyContactFax": "$bus_entityPartyContactFax",
+                "gl-plt:d_bus_entityPartyContactEmail": "$bus_entityPartyContactEmail",
+                "gl-plt:d_bus_accountingMethodStructure": "$bus_accountingMethodStructure",
+                "gl-plt:d_bus_accountant": "$bus_accountant",
+                "gl-plt:d_bus_accountantAddress": "$bus_accountantAddress",
+                "gl-plt:d_bus_accountantContact": "$bus_accountantContact",
+                "gl-plt:d_bus_accountantContactPhone": "$bus_accountantContactPhone",
+                "gl-plt:d_bus_accountantContactFax": "$bus_accountantContactFax",
+                "gl-plt:d_bus_accountantContactEmail": "$bus_accountantContactEmail",
+                "gl-plt:d_bus_reportingCalendar": "$bus_reportingCalendar",
+                "gl-plt:d_bus_reportingCalendarPeriod": "$bus_reportingCalendarPeriod",
+                "gl-plt:d_cor_entryHeader": "$cor_entryHeader",
+                "gl-plt:d_cor_entryDetail": "$cor_entryDetail",
+                "gl-plt:d_cor_detailAccountIdentifier": "$cor_detailAccountIdentifier",
+                "gl-plt:d_cor_subaccount": "$cor_subaccount",
+                "gl-plt:d_muc_detailMulticurrencyStructure": "$muc_detailMulticurrencyStructure",
+                "gl-plt:d_cor_detailIdentifierReference": "$cor_detailIdentifierReference",
+                "gl-plt:d_cor_externalAuthority": "$cor_externalAuthority",
+                "gl-plt:d_cor_identifierPhone": "$cor_identifierPhone",
+                "gl-plt:d_cor_identifierFax": "$cor_identifierFax",
+                "gl-plt:d_cor_identifierEmail": "$cor_identifierEmail",
+                "gl-plt:d_bus_identifierAddress": "$bus_identifierAddress",
+                "gl-plt:d_cor_identifierContact": "$cor_identifierContact",
+                "gl-plt:d_cor_identifierContactPhone": "$cor_identifierContactPhone",
+                "gl-plt:d_cor_identifierContactFax": "$cor_identifierContactFax",
+                "gl-plt:d_cor_identifierContactEmail": "$cor_identifierContactEmail",
+                "gl-plt:d_cor_detailXbrl": "$cor_detailXbrl",
+                "gl-plt:d_bus_detailMeasurable": "$bus_detailMeasurable",
+                "gl-plt:d_bus_detailJob": "$bus_detailJob",
+                "gl-plt:d_bus_detailDepreciationMortgage": "$bus_detailDepreciationMortgage",
+                "gl-plt:d_ehm_detailSerialOrLot": "$ehm_detailSerialOrLot",
+                "gl-plt:d_cor_detailTax": "$cor_detailTax",
+                "gl-plt:d_taf_detailOriginatingDocument": "$taf_detailOriginatingDocument",
+                "gl-plt:d_srcd_detailRichTextComment": "$srcd_detailRichTextComment"
+            },
+            "columns": {
+                "cor_accountingEntries": {},
+                "srcd_summaryReportingTaxonomies": {},
+                "bus_entityPartyPhone": {},
+                "bus_entityPartyFax": {},
+                "bus_entityPartyEmail": {},
+                "bus_organizationIdentifiers": {},
+                "cor_entityPartyAddress": {},
+                "bus_entityPartyWebSite": {},
+                "bus_entityPartyContact": {},
+                "bus_entityPartyContactPhone": {},
+                "bus_entityPartyContactFax": {},
+                "bus_entityPartyContactEmail": {},
+                "bus_accountingMethodStructure": {},
+                "bus_accountant": {},
+                "bus_accountantAddress": {},
+                "bus_accountantContact": {},
+                "bus_accountantContactPhone": {},
+                "bus_accountantContactFax": {},
+                "bus_accountantContactEmail": {},
+                "bus_reportingCalendar": {},
+                "bus_reportingCalendarPeriod": {},
+                "cor_entryHeader": {},
+                "cor_entryDetail": {},
+                "cor_detailAccountIdentifier": {},
+                "cor_subaccount": {},
+                "muc_detailMulticurrencyStructure": {},
+                "cor_detailIdentifierReference": {},
+                "cor_externalAuthority": {},
+                "cor_identifierPhone": {},
+                "cor_identifierFax": {},
+                "cor_identifierEmail": {},
+                "bus_identifierAddress": {},
+                "cor_identifierContact": {},
+                "cor_identifierContactPhone": {},
+                "cor_identifierContactFax": {},
+                "cor_identifierContactEmail": {},
+                "cor_detailXbrl": {},
+                "bus_detailMeasurable": {},
+                "bus_detailJob": {},
+                "bus_detailDepreciationMortgage": {},
+                "ehm_detailSerialOrLot": {},
+                "cor_detailTax": {},
+                "taf_detailOriginatingDocument": {},
+                "srcd_detailRichTextComment": {},
+                "cor_documentType": {
+                    "dimensions": {
+                        "concept": "gl-cor:documentType"
+                    }
+                },
+                "cor_auditNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:auditNumber"
+                    }
+                },
+                "cor_revisesAuditNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:revisesAuditNumber"
+                    }
+                },
+                "cor_actionToTakeWithPreviousData": {
+                    "dimensions": {
+                        "concept": "gl-cor:actionToTakeWithPreviousData"
+                    }
+                },
+                "cor_language": {
+                    "dimensions": {
+                        "concept": "gl-cor:language"
+                    }
+                },
+                "cor_creationDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:creationDate"
+                    }
+                },
+                "bus_creator": {
+                    "dimensions": {
+                        "concept": "gl-bus:creator"
+                    }
+                },
+                "cor_documentComment": {
+                    "dimensions": {
+                        "concept": "gl-cor:documentComment"
+                    }
+                },
+                "cor_periodCoveredStart": {
+                    "dimensions": {
+                        "concept": "gl-cor:periodCoveredStart"
+                    }
+                },
+                "cor_periodCoveredEnd": {
+                    "dimensions": {
+                        "concept": "gl-cor:periodCoveredEnd"
+                    }
+                },
+                "bus_periodCount": {
+                    "dimensions": {
+                        "concept": "gl-bus:periodCount"
+                    }
+                },
+                "bus_periodUnit": {
+                    "dimensions": {
+                        "concept": "gl-bus:periodUnit"
+                    }
+                },
+                "bus_periodUnitDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:periodUnitDescription"
+                    }
+                },
+                "bus_sourceApplication": {
+                    "dimensions": {
+                        "concept": "gl-bus:sourceApplication"
+                    }
+                },
+                "bus_targetApplication": {
+                    "dimensions": {
+                        "concept": "gl-bus:targetApplication"
+                    }
+                },
+                "muc_defaultCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:defaultCurrency"
+                    }
+                },
+                "srcd_summaryReportingTaxonomyId": {
+                    "dimensions": {
+                        "concept": "gl-srcd:summaryReportingTaxonomyId"
+                    }
+                },
+                "srcd_summaryReportingTaxonomySchemaReferenceHrefAttribute": {
+                    "dimensions": {
+                        "concept": "gl-srcd:summaryReportingTaxonomySchemaReferenceHrefAttribute"
+                    }
+                },
+                "srcd_summaryReportingTaxonomyHeader": {
+                    "dimensions": {
+                        "concept": "gl-srcd:summaryReportingTaxonomyHeader"
+                    }
+                },
+                "srcd_summaryReportingTaxonomyDescription": {
+                    "dimensions": {
+                        "concept": "gl-srcd:summaryReportingTaxonomyDescription"
+                    }
+                },
+                "cor_entityPartyName": {
+                    "dimensions": {
+                        "concept": "gl-cor:entityPartyName"
+                    }
+                },
+                "cor_entityPartyId": {
+                    "dimensions": {
+                        "concept": "gl-cor:entityPartyId"
+                    }
+                },
+                "cor_entityPartyBusinessDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:entityPartyBusinessDescription"
+                    }
+                },
+                "bus_entityPartyDefaultAccountingMethodPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyDefaultAccountingMethodPurpose"
+                    }
+                },
+                "bus_entityPartyDefaultAccountingMethodPurposeDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyDefaultAccountingMethodPurposeDescription"
+                    }
+                },
+                "bus_entityPartyBusinessDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyBusinessDescription"
+                    }
+                },
+                "bus_entityPartyFiscalYearStart": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyFiscalYearStart"
+                    }
+                },
+                "bus_entityPartyFiscalYearEnd": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyFiscalYearEnd"
+                    }
+                },
+                "bus_entityPartyPhoneNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyPhoneNumber"
+                    }
+                },
+                "bus_entityPartyPhoneNumberDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyPhoneNumberDescription"
+                    }
+                },
+                "bus_entityPartyFaxNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyFaxNumber"
+                    }
+                },
+                "bus_entityPartyFaxNumberUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyFaxNumberUsage"
+                    }
+                },
+                "bus_entityPartyEmailAddress": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyEmailAddress"
+                    }
+                },
+                "bus_entityPartyEmailAddressUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyEmailAddressUsage"
+                    }
+                },
+                "bus_organizationIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:organizationIdentifier"
+                    }
+                },
+                "bus_organizationDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:organizationDescription"
+                    }
+                },
+                "bus_entityPartyName": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyName"
+                    }
+                },
+                "bus_entityPartyDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyDescription"
+                    }
+                },
+                "bus_entityPartyPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyPurpose"
+                    }
+                },
+                "bus_entityPartyLocationIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyLocationIdentifier"
+                    }
+                },
+                "bus_entityPartyBuildingNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyBuildingNumber"
+                    }
+                },
+                "bus_entityPartyStreet": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyStreet"
+                    }
+                },
+                "bus_entityPartyAddressDetail": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyAddressDetail"
+                    }
+                },
+                "bus_entityPartyCity": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyCity"
+                    }
+                },
+                "bus_entityPartyStateOrProvince": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyStateOrProvince"
+                    }
+                },
+                "bus_entityPartyCountry": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyCountry"
+                    }
+                },
+                "bus_entityPartyZipOrPostalCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyZipOrPostalCode"
+                    }
+                },
+                "bus_entityPartyWebSiteUrl": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyWebSiteUrl"
+                    }
+                },
+                "bus_entityPartyWebSiteDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyWebSiteDescription"
+                    }
+                },
+                "bus_entityPartyContactPrefix": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactPrefix"
+                    }
+                },
+                "bus_entityPartyContactLastName": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactLastName"
+                    }
+                },
+                "bus_entityPartyContactFirstName": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactFirstName"
+                    }
+                },
+                "bus_entityPartyContactSuffix": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactSuffix"
+                    }
+                },
+                "bus_entityPartyContactAttentionLine": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactAttentionLine"
+                    }
+                },
+                "bus_entityPartyContactPositionRole": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactPositionRole"
+                    }
+                },
+                "bus_entityPartyContactContactType": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactContactType"
+                    }
+                },
+                "bus_entityPartyContactLocationIdCrossReference": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactLocationIdCrossReference"
+                    }
+                },
+                "bus_entityPartyContactPhoneNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactPhoneNumber"
+                    }
+                },
+                "bus_entityPartyContactPhoneNumberDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactPhoneNumberDescription"
+                    }
+                },
+                "bus_entityPartyContactFaxNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactFaxNumber"
+                    }
+                },
+                "bus_entityPartyContactFaxNumberUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactFaxNumberUsage"
+                    }
+                },
+                "bus_entityPartyContactEmailAddress": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactEmailAddress"
+                    }
+                },
+                "bus_entityPartyContactEmailAddressUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:entityPartyContactEmailAddressUsage"
+                    }
+                },
+                "bus_accountingMethod": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethod"
+                    }
+                },
+                "bus_accountingMethodDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethodDescription"
+                    }
+                },
+                "bus_accountingMethodPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethodPurpose"
+                    }
+                },
+                "bus_accountingMethodPurposeDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethodPurposeDescription"
+                    }
+                },
+                "bus_accountingMethodStartDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethodStartDate"
+                    }
+                },
+                "bus_accountingMethodEndDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountingMethodEndDate"
+                    }
+                },
+                "bus_accountantName": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantName"
+                    }
+                },
+                "bus_typeOfEngagement": {
+                    "dimensions": {
+                        "concept": "gl-bus:typeOfEngagement"
+                    }
+                },
+                "bus_typeOfEngagementDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:typeOfEngagementDescription"
+                    }
+                },
+                "bus_accountantDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantDescription"
+                    }
+                },
+                "bus_accountantPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantPurpose"
+                    }
+                },
+                "bus_accountantLocationIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantLocationIdentifier"
+                    }
+                },
+                "bus_accountantBuildingNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantBuildingNumber"
+                    }
+                },
+                "bus_accountantStreet": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantStreet"
+                    }
+                },
+                "bus_accountantAddressDetail": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantAddressDetail"
+                    }
+                },
+                "bus_accountantCity": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantCity"
+                    }
+                },
+                "bus_accountantStateOrProvince": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantStateOrProvince"
+                    }
+                },
+                "bus_accountantCountry": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantCountry"
+                    }
+                },
+                "bus_accountantZipOrPostalCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantZipOrPostalCode"
+                    }
+                },
+                "bus_accountantContactPrefix": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactPrefix"
+                    }
+                },
+                "bus_accountantContactLastName": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactLastName"
+                    }
+                },
+                "bus_accountantContactFirstName": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactFirstName"
+                    }
+                },
+                "bus_accountantContactSuffix": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactSuffix"
+                    }
+                },
+                "bus_accountantContactAttentionLine": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactAttentionLine"
+                    }
+                },
+                "bus_accountantContactPositionRole": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactPositionRole"
+                    }
+                },
+                "bus_accountantContactContactType": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactContactType"
+                    }
+                },
+                "bus_accountantContactLocationIdCrossReference": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactLocationIdCrossReference"
+                    }
+                },
+                "bus_accountantContactPhoneNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactPhoneNumber"
+                    }
+                },
+                "bus_accountantContactPhoneNumberDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactPhoneNumberDescription"
+                    }
+                },
+                "bus_accountantContactFaxNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactFaxNumber"
+                    }
+                },
+                "bus_accountantContactFaxNumberUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactFaxNumberUsage"
+                    }
+                },
+                "bus_accountantContactEmailAddress": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactEmailAddress"
+                    }
+                },
+                "bus_accountantContactEmailAddressUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:accountantContactEmailAddressUsage"
+                    }
+                },
+                "bus_reportingCalendarCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarCode"
+                    }
+                },
+                "bus_reportingCalendarDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarDescription"
+                    }
+                },
+                "bus_reportingCalendarTitle": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarTitle"
+                    }
+                },
+                "bus_codeRelatedToTypeOfPeriods": {
+                    "dimensions": {
+                        "concept": "gl-bus:codeRelatedToTypeOfPeriods"
+                    }
+                },
+                "bus_descriptionOfPeriods": {
+                    "dimensions": {
+                        "concept": "gl-bus:descriptionOfPeriods"
+                    }
+                },
+                "bus_closedStatus": {
+                    "dimensions": {
+                        "concept": "gl-bus:closedStatus"
+                    }
+                },
+                "bus_reportingPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingPurpose"
+                    }
+                },
+                "bus_reportingPurposeDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingPurposeDescription"
+                    }
+                },
+                "bus_reportingCalendarPeriodIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarPeriodIdentifier"
+                    }
+                },
+                "bus_reportingCalendarPeriodDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarPeriodDescription"
+                    }
+                },
+                "bus_reportingCalendarPeriodStartDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarPeriodStartDate"
+                    }
+                },
+                "bus_reportingCalendarPeriodEndDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarPeriodEndDate"
+                    }
+                },
+                "bus_reportingCalendarPeriodClosedDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:reportingCalendarPeriodClosedDate"
+                    }
+                },
+                "cor_entryDatePosted": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryDatePosted"
+                    }
+                },
+                "cor_entryCreator": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryCreator"
+                    }
+                },
+                "bus_entryLastModifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:entryLastModifier"
+                    }
+                },
+                "cor_entryDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryDate"
+                    }
+                },
+                "bus_entryResponsiblePerson": {
+                    "dimensions": {
+                        "concept": "gl-bus:entryResponsiblePerson"
+                    }
+                },
+                "cor_entryTypeIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryTypeIdentifier"
+                    }
+                },
+                "bus_entryPostingCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:entryPostingCode"
+                    }
+                },
+                "bus_entryNumberOfEntries": {
+                    "dimensions": {
+                        "concept": "gl-bus:entryNumberOfEntries"
+                    }
+                },
+                "cor_sourceJournal": {
+                    "dimensions": {
+                        "concept": "gl-cor:sourceJournal"
+                    }
+                },
+                "bus_journalDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:journalDescription"
+                    }
+                },
+                "bus_entryOrigin": {
+                    "dimensions": {
+                        "concept": "gl-bus:entryOrigin"
+                    }
+                },
+                "cor_entryIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryIdentifier"
+                    }
+                },
+                "cor_entryDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryDescription"
+                    }
+                },
+                "cor_entryQualifier": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryQualifier"
+                    }
+                },
+                "cor_entryQualifierDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryQualifierDescription"
+                    }
+                },
+                "bus_batchIdForEntryGroup": {
+                    "dimensions": {
+                        "concept": "gl-bus:batchIdForEntryGroup"
+                    }
+                },
+                "bus_batchDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:batchDescription"
+                    }
+                },
+                "bus_totalDebits": {
+                    "dimensions": {
+                        "concept": "gl-bus:totalDebits"
+                    }
+                },
+                "bus_totalCredits": {
+                    "dimensions": {
+                        "concept": "gl-bus:totalCredits"
+                    }
+                },
+                "cor_typeOfDifferenceBetweenBookAndTax": {
+                    "dimensions": {
+                        "concept": "gl-cor:typeOfDifferenceBetweenBookAndTax"
+                    }
+                },
+                "bus_eliminationCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:eliminationCode"
+                    }
+                },
+                "bus_budgetScenarioPeriodStart": {
+                    "dimensions": {
+                        "concept": "gl-bus:budgetScenarioPeriodStart"
+                    }
+                },
+                "bus_budgetScenarioPeriodEnd": {
+                    "dimensions": {
+                        "concept": "gl-bus:budgetScenarioPeriodEnd"
+                    }
+                },
+                "bus_scenarioDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:scenarioDescription"
+                    }
+                },
+                "bus_scenarioCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:scenarioCode"
+                    }
+                },
+                "bus_budgetAllocationCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:budgetAllocationCode"
+                    }
+                },
+                "usk_idForReversingStandardOrMasterEntry": {
+                    "dimensions": {
+                        "concept": "gl-usk:idForReversingStandardOrMasterEntry"
+                    }
+                },
+                "usk_recurringStandardDescription": {
+                    "dimensions": {
+                        "concept": "gl-usk:recurringStandardDescription"
+                    }
+                },
+                "usk_frequencyInterval": {
+                    "dimensions": {
+                        "concept": "gl-usk:frequencyInterval"
+                    }
+                },
+                "usk_frequencyUnit": {
+                    "dimensions": {
+                        "concept": "gl-usk:frequencyUnit"
+                    }
+                },
+                "usk_repetitionsRemaining": {
+                    "dimensions": {
+                        "concept": "gl-usk:repetitionsRemaining"
+                    }
+                },
+                "usk_nextDateRepeat": {
+                    "dimensions": {
+                        "concept": "gl-usk:nextDateRepeat"
+                    }
+                },
+                "usk_lastDateRepeat": {
+                    "dimensions": {
+                        "concept": "gl-usk:lastDateRepeat"
+                    }
+                },
+                "usk_endDateOfRepeatingEntry": {
+                    "dimensions": {
+                        "concept": "gl-usk:endDateOfRepeatingEntry"
+                    }
+                },
+                "usk_reverse": {
+                    "dimensions": {
+                        "concept": "gl-usk:reverse"
+                    }
+                },
+                "usk_reversingDate": {
+                    "dimensions": {
+                        "concept": "gl-usk:reversingDate"
+                    }
+                },
+                "cor_entryNumberCounter": {
+                    "dimensions": {
+                        "concept": "gl-cor:entryNumberCounter"
+                    }
+                },
+                "cor_detailLineNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailLineNumber"
+                    }
+                },
+                "cor_detailLineNumberCounter": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailLineNumberCounter"
+                    }
+                },
+                "cor_detailPostingDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailPostingDate"
+                    }
+                },
+                "bus_detailMemoLine": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMemoLine"
+                    }
+                },
+                "cor_detailDocumentType": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDocumentType"
+                    }
+                },
+                "cor_detailDocumentTypeDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDocumentTypeDescription"
+                    }
+                },
+                "cor_detailDocumentNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDocumentNumber"
+                    }
+                },
+                "cor_detailApplyToNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailApplyToNumber"
+                    }
+                },
+                "cor_detailDocumentReference": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDocumentReference"
+                    }
+                },
+                "cor_detailDocumentDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDocumentDate"
+                    }
+                },
+                "bus_detailReceivedDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailReceivedDate"
+                    }
+                },
+                "bus_detailDocumentLocation": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDocumentLocation"
+                    }
+                },
+                "cor_detailPostingStatus": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailPostingStatus"
+                    }
+                },
+                "cor_detailPostingStatusDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailPostingStatusDescription"
+                    }
+                },
+                "cor_detailDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailDescription"
+                    }
+                },
+                "cor_detailAcknowledgementDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAcknowledgementDate"
+                    }
+                },
+                "cor_detailConfirmationDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailConfirmationDate"
+                    }
+                },
+                "ehm_detailMeasurableClassIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailMeasurableClassIdentifier"
+                    }
+                },
+                "ehm_detailMeasurableClassDescription": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailMeasurableClassDescription"
+                    }
+                },
+                "ehm_detailGeospatialCoordinate": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailGeospatialCoordinate"
+                    }
+                },
+                "cor_monetaryAmount": {
+                    "dimensions": {
+                        "concept": "gl-cor:monetaryAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "muc_currency": {
+                    "dimensions": {
+                        "concept": "gl-muc:currency"
+                    }
+                },
+                "cor_signIndicationForAmount": {
+                    "dimensions": {
+                        "concept": "gl-cor:signIndicationForAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "cor_debitcreditIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-cor:debitcreditIdentifier"
+                    }
+                },
+                "bus_allocationCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:allocationCode"
+                    }
+                },
+                "cor_invoiceType": {
+                    "dimensions": {
+                        "concept": "gl-cor:invoiceType"
+                    }
+                },
+                "bus_chargeableOrReimbursable": {
+                    "dimensions": {
+                        "concept": "gl-bus:chargeableOrReimbursable"
+                    }
+                },
+                "bus_paymentMethod": {
+                    "dimensions": {
+                        "concept": "gl-bus:paymentMethod"
+                    }
+                },
+                "cor_shipFrom": {
+                    "dimensions": {
+                        "concept": "gl-cor:shipFrom"
+                    }
+                },
+                "cor_dateShippedReceived": {
+                    "dimensions": {
+                        "concept": "gl-cor:dateShippedReceived"
+                    }
+                },
+                "cor_maturityDateOrDateDue": {
+                    "dimensions": {
+                        "concept": "gl-cor:maturityDateOrDateDue"
+                    }
+                },
+                "cor_paymentTerms": {
+                    "dimensions": {
+                        "concept": "gl-cor:paymentTerms"
+                    }
+                },
+                "ehm_costingMethodCode": {
+                    "dimensions": {
+                        "concept": "gl-ehm:costingMethodCode"
+                    }
+                },
+                "ehm_costingMethodDescription": {
+                    "dimensions": {
+                        "concept": "gl-ehm:costingMethodDescription"
+                    }
+                },
+                "taf_tickingField": {
+                    "dimensions": {
+                        "concept": "gl-taf:tickingField"
+                    }
+                },
+                "taf_documentRemainingBalance": {
+                    "dimensions": {
+                        "concept": "gl-taf:documentRemainingBalance"
+                    }
+                },
+                "taf_ucr": {
+                    "dimensions": {
+                        "concept": "gl-taf:ucr"
+                    }
+                },
+                "cor_detailMainAccountNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailMainAccountNumber"
+                    }
+                },
+                "cor_detailMainAccountDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailMainAccountDescription"
+                    }
+                },
+                "cor_detailAccountClassification": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAccountClassification"
+                    }
+                },
+                "cor_detailAccountClassificationDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAccountClassificationDescription"
+                    }
+                },
+                "cor_detailParentAccountNumber": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailParentAccountNumber"
+                    }
+                },
+                "cor_detailPurposeOfAccount": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailPurposeOfAccount"
+                    }
+                },
+                "cor_detailPurposeOfAccountDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailPurposeOfAccountDescription"
+                    }
+                },
+                "cor_detailAccountType": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAccountType"
+                    }
+                },
+                "cor_detailAccountTypeDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAccountTypeDescription"
+                    }
+                },
+                "bus_detailAccountingMethod": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailAccountingMethod"
+                    }
+                },
+                "bus_detailAccountingMethodDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailAccountingMethodDescription"
+                    }
+                },
+                "bus_detailAccountingMethodPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailAccountingMethodPurpose"
+                    }
+                },
+                "bus_detailAccountingMethodPurposeDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailAccountingMethodPurposeDescription"
+                    }
+                },
+                "cor_subaccountDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:subaccountDescription"
+                    }
+                },
+                "cor_subaccountId": {
+                    "dimensions": {
+                        "concept": "gl-cor:subaccountId"
+                    }
+                },
+                "cor_typeOfSubaccount": {
+                    "dimensions": {
+                        "concept": "gl-cor:typeOfSubaccount"
+                    }
+                },
+                "muc_detailMulticurrencyExchangeRateDate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyExchangeRateDate"
+                    }
+                },
+                "muc_detailMulticurrencyForeignCurrencyAmount": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyForeignCurrencyAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "muc_detailMulticurrencyForeignCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyForeignCurrency"
+                    }
+                },
+                "muc_detailMulticurrencyExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyExchangeRate"
+                    }
+                },
+                "muc_detailMulticurrencyExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyExchangeRateSource"
+                    }
+                },
+                "muc_detailMulticurrencyExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyExchangeRateType"
+                    }
+                },
+                "muc_detailMulticurrencyTriangulationCurrencyAmount": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyTriangulationCurrencyAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "muc_detailMulticurrencyTriangulationCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyTriangulationCurrency"
+                    }
+                },
+                "muc_detailMulticurrencyTriangulationExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyTriangulationExchangeRate"
+                    }
+                },
+                "muc_detailMulticurrencyTriangulationExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyTriangulationExchangeRateSource"
+                    }
+                },
+                "muc_detailMulticurrencyTriangulationExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyTriangulationExchangeRateType"
+                    }
+                },
+                "muc_detailMulticurrencyCrossTriangulationExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyCrossTriangulationExchangeRate"
+                    }
+                },
+                "muc_detailMulticurrencyCrossTriangulationExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyCrossTriangulationExchangeRateSource"
+                    }
+                },
+                "muc_detailMulticurrencyCrossTriangulationExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyCrossTriangulationExchangeRateType"
+                    }
+                },
+                "muc_detailMulticurrencyComment": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailMulticurrencyComment"
+                    }
+                },
+                "cor_detailIdentifierCode": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierCode"
+                    }
+                },
+                "bus_detailIdentifierPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailIdentifierPurpose"
+                    }
+                },
+                "cor_detailIdentifierOrganizationType": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierOrganizationType"
+                    }
+                },
+                "cor_detailIdentifierOrganizationTypeDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierOrganizationTypeDescription"
+                    }
+                },
+                "cor_detailIdentifierDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierDescription"
+                    }
+                },
+                "cor_detailIdentifierType": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierType"
+                    }
+                },
+                "cor_detailIdentifierCategory": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailIdentifierCategory"
+                    }
+                },
+                "cor_externalAuthorityCode": {
+                    "dimensions": {
+                        "concept": "gl-cor:externalAuthorityCode"
+                    }
+                },
+                "cor_externalAuthorityName": {
+                    "dimensions": {
+                        "concept": "gl-cor:externalAuthorityName"
+                    }
+                },
+                "cor_externalAuthorityVerificationDate": {
+                    "dimensions": {
+                        "concept": "gl-cor:externalAuthorityVerificationDate"
+                    }
+                },
+                "bus_identifierPhoneNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierPhoneNumber"
+                    }
+                },
+                "bus_identifierPhoneNumberDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierPhoneNumberDescription"
+                    }
+                },
+                "bus_identifierFaxNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierFaxNumber"
+                    }
+                },
+                "bus_identifierFaxNumberUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierFaxNumberUsage"
+                    }
+                },
+                "bus_identifierEmailAddress": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierEmailAddress"
+                    }
+                },
+                "bus_identifierEmailAddressUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierEmailAddressUsage"
+                    }
+                },
+                "bus_identifierDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierDescription"
+                    }
+                },
+                "bus_identifierPurpose": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierPurpose"
+                    }
+                },
+                "bus_identifierLocation": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierLocation"
+                    }
+                },
+                "bus_identifierBuildingNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierBuildingNumber"
+                    }
+                },
+                "bus_identifierStreet": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierStreet"
+                    }
+                },
+                "bus_identifierAddressDetail": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierAddressDetail"
+                    }
+                },
+                "bus_identifierCity": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierCity"
+                    }
+                },
+                "bus_identifierStateOrProvince": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierStateOrProvince"
+                    }
+                },
+                "bus_identifierCountry": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierCountry"
+                    }
+                },
+                "bus_identifierZipOrPostalCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierZipOrPostalCode"
+                    }
+                },
+                "bus_identifierContactPrefix": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactPrefix"
+                    }
+                },
+                "bus_identifierContactLastName": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactLastName"
+                    }
+                },
+                "bus_identifierContactFirstName": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactFirstName"
+                    }
+                },
+                "bus_identifierContactSuffix": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactSuffix"
+                    }
+                },
+                "bus_identifierContactAttentionLine": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactAttentionLine"
+                    }
+                },
+                "bus_identifierContactPositionRole": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactPositionRole"
+                    }
+                },
+                "bus_identifierContactContactType": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactContactType"
+                    }
+                },
+                "bus_identifierContactLocationIdCrossReference": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactLocationIdCrossReference"
+                    }
+                },
+                "bus_identifierContactPhoneNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactPhoneNumber"
+                    }
+                },
+                "bus_identifierContactPhoneNumberDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactPhoneNumberDescription"
+                    }
+                },
+                "bus_identifierContactFaxNumber": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactFaxNumber"
+                    }
+                },
+                "bus_identifierContactFaxNumberUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactFaxNumberUsage"
+                    }
+                },
+                "bus_identifierContactEmailAddress": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactEmailAddress"
+                    }
+                },
+                "bus_identifierContactEmailAddressUsage": {
+                    "dimensions": {
+                        "concept": "gl-bus:identifierContactEmailAddressUsage"
+                    }
+                },
+                "cor_detailXbrlAllocation": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailXbrlAllocation"
+                    }
+                },
+                "cor_detailXbrlSummaryReportingElement": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailXbrlSummaryReportingElement"
+                    }
+                },
+                "cor_detailXbrlMatchingElement": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailXbrlMatchingElement"
+                    }
+                },
+                "srcd_detailXbrlSummaryTuplePath": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlSummaryTuplePath"
+                    }
+                },
+                "srcd_detailXbrlDetailedContentFilter": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlDetailedContentFilter"
+                    }
+                },
+                "srcd_detailXbrlReportingDateSelector": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlReportingDateSelector"
+                    }
+                },
+                "srcd_detailXbrlSummaryOperator": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlSummaryOperator"
+                    }
+                },
+                "srcd_detailXbrlSummaryUnitNumerator": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlSummaryUnitNumerator"
+                    }
+                },
+                "srcd_detailXbrlSummaryUnitDenominator": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlSummaryUnitDenominator"
+                    }
+                },
+                "srcd_detailXbrlSummaryReportingTaxonomyIdReference": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailXbrlSummaryReportingTaxonomyIdReference"
+                    }
+                },
+                "bus_detailMeasurableCode": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableCode"
+                    }
+                },
+                "bus_detailMeasurableCodeDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableCodeDescription"
+                    }
+                },
+                "bus_detailMeasurableCategory": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableCategory"
+                    }
+                },
+                "bus_detailMeasurableIdentification": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableIdentification"
+                    }
+                },
+                "bus_detailSchemaForMeasurableIdentification": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailSchemaForMeasurableIdentification"
+                    }
+                },
+                "bus_detailSecondaryMeasurableIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailSecondaryMeasurableIdentifier"
+                    }
+                },
+                "bus_detailSchemaForSecondaryMeasurableIdentification": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailSchemaForSecondaryMeasurableIdentification"
+                    }
+                },
+                "bus_detailMeasurableDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableDescription"
+                    }
+                },
+                "bus_detailMeasurableQuantity": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableQuantity"
+                    }
+                },
+                "bus_detailMeasurableQualifier": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableQualifier"
+                    }
+                },
+                "bus_detailMeasurableUnitOfMeasure": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableUnitOfMeasure"
+                    }
+                },
+                "bus_detailMeasurablePerUnitCostPrice": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurablePerUnitCostPrice"
+                    }
+                },
+                "bus_detailMeasurableStartTime": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableStartTime"
+                    }
+                },
+                "bus_detailMeasurableEndTime": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailMeasurableEndTime"
+                    }
+                },
+                "usk_detailJobIdentifier": {
+                    "dimensions": {
+                        "concept": "gl-usk:detailJobIdentifier"
+                    }
+                },
+                "usk_detailJobDescription": {
+                    "dimensions": {
+                        "concept": "gl-usk:detailJobDescription"
+                    }
+                },
+                "usk_detailJobPhase": {
+                    "dimensions": {
+                        "concept": "gl-usk:detailJobPhase"
+                    }
+                },
+                "usk_detailJobPhaseDescription": {
+                    "dimensions": {
+                        "concept": "gl-usk:detailJobPhaseDescription"
+                    }
+                },
+                "bus_detailDepreciationMortgageJurisdiction": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageJurisdiction"
+                    }
+                },
+                "bus_detailDepreciationMethod": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMethod"
+                    }
+                },
+                "bus_detailDepreciationMortgageLife": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageLife"
+                    }
+                },
+                "bus_detailDepreciationMortgageDescription": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageDescription"
+                    }
+                },
+                "bus_detailDepreciationMortgageStartDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageStartDate"
+                    }
+                },
+                "bus_detailDepreciationMortgageEndDate": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageEndDate"
+                    }
+                },
+                "bus_detailDepreciationMortgageAmount": {
+                    "dimensions": {
+                        "concept": "gl-bus:detailDepreciationMortgageAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "ehm_detailSerialOrLotCode": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotCode"
+                    }
+                },
+                "ehm_detailSerialOrLotDescription": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotDescription"
+                    }
+                },
+                "ehm_detailSerialOrLotNumber": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotNumber"
+                    }
+                },
+                "ehm_detailNextSerialOrLotNumber": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailNextSerialOrLotNumber"
+                    }
+                },
+                "ehm_detailSerialOrLotQuantity": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotQuantity"
+                    }
+                },
+                "ehm_detailSerialOrLotOriginalQuantity": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotOriginalQuantity"
+                    }
+                },
+                "ehm_detailSerialOrLotRemainingQuantity": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotRemainingQuantity"
+                    }
+                },
+                "ehm_detailSerialOrLotOrigination": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotOrigination"
+                    }
+                },
+                "ehm_detailSerialOrLotExpiration": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotExpiration"
+                    }
+                },
+                "ehm_detailSerialOrLotManufacturer": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotManufacturer"
+                    }
+                },
+                "ehm_detailSerialOrLotBatchDescription": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotBatchDescription"
+                    }
+                },
+                "ehm_detailSerialOrLotWarrantyStartDate": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotWarrantyStartDate"
+                    }
+                },
+                "ehm_detailSerialOrLotWarrantyEndDate": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotWarrantyEndDate"
+                    }
+                },
+                "ehm_detailSerialOrLotWarrantyPeriod": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotWarrantyPeriod"
+                    }
+                },
+                "ehm_detailSerialOrLotWarrantPeriodUnit": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotWarrantPeriodUnit"
+                    }
+                },
+                "ehm_detailWarrantyVendor": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailWarrantyVendor"
+                    }
+                },
+                "ehm_detailWarrantyContract": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailWarrantyContract"
+                    }
+                },
+                "ehm_detailSerialOrLotComment": {
+                    "dimensions": {
+                        "concept": "gl-ehm:detailSerialOrLotComment"
+                    }
+                },
+                "cor_detailTaxAuthority": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxAuthority"
+                    }
+                },
+                "cor_detailTaxTableCode": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxTableCode"
+                    }
+                },
+                "cor_detailTaxDescription": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxDescription"
+                    }
+                },
+                "cor_detailAmountOfTaxes": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailAmountOfTaxes"
+                    }
+                },
+                "cor_detailBasisForTaxation": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailBasisForTaxation"
+                    }
+                },
+                "cor_detailTaxPercentageRate": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxPercentageRate"
+                    }
+                },
+                "cor_detailTaxCategory": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxCategory"
+                    }
+                },
+                "cor_detailTaxCommentExemptionReason": {
+                    "dimensions": {
+                        "concept": "gl-cor:detailTaxCommentExemptionReason"
+                    }
+                },
+                "muc_detailTaxAmountInForeignCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxAmountInForeignCurrency"
+                    }
+                },
+                "muc_detailTaxForeignCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxForeignCurrency"
+                    }
+                },
+                "muc_detailTaxExchangeRateDate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxExchangeRateDate"
+                    }
+                },
+                "muc_detailTaxExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxExchangeRate"
+                    }
+                },
+                "muc_detailTaxExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxExchangeRateSource"
+                    }
+                },
+                "muc_detailTaxExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxExchangeRateType"
+                    }
+                },
+                "muc_detailTaxExchangeRateComment": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxExchangeRateComment"
+                    }
+                },
+                "muc_detailTaxAmountInTriangulationCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxAmountInTriangulationCurrency"
+                    }
+                },
+                "muc_detailTaxTriangulationCurrency": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxTriangulationCurrency"
+                    }
+                },
+                "muc_detailTaxTriangulationCurrencyExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxTriangulationCurrencyExchangeRate"
+                    }
+                },
+                "muc_detailTaxTriangulationCurrencyExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxTriangulationCurrencyExchangeRateSource"
+                    }
+                },
+                "muc_detailTaxTriangulationCurrencyExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxTriangulationCurrencyExchangeRateType"
+                    }
+                },
+                "muc_detailTaxForeignToTriangulationCurrencyExchangeRate": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRate"
+                    }
+                },
+                "muc_detailTaxForeignToTriangulationCurrencyExchangeRateSource": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRateSource"
+                    }
+                },
+                "muc_detailTaxForeignToTriangulationCurrencyExchangeRateType": {
+                    "dimensions": {
+                        "concept": "gl-muc:detailTaxForeignToTriangulationCurrencyExchangeRateType"
+                    }
+                },
+                "taf_detailOriginatingDocumentType": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentType"
+                    }
+                },
+                "taf_detailOriginatingDocumentNumber": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentNumber"
+                    }
+                },
+                "taf_detailOriginatingDocumentDate": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentDate"
+                    }
+                },
+                "taf_detailOriginatingDocumentIdentifierType": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentIdentifierType"
+                    }
+                },
+                "taf_detailOriginatingDocumentIdentifierCode": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentIdentifierCode"
+                    }
+                },
+                "taf_detailOriginatingDocumentIdentifierTaxCode": {
+                    "dimensions": {
+                        "concept": "gl-taf:detailOriginatingDocumentIdentifierTaxCode"
+                    }
+                },
+                "srcd_detailRichTextCommentCode": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailRichTextCommentCode"
+                    }
+                },
+                "srcd_detailRichTextCommentDescription": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailRichTextCommentDescription"
+                    }
+                },
+                "srcd_detailRichTextCommentContent": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailRichTextCommentContent"
+                    }
+                },
+                "srcd_detailRichTextCommentLocator": {
+                    "dimensions": {
+                        "concept": "gl-srcd:detailRichTextCommentLocator"
+                    }
+                }
+            }
+        }
+    },
+    "tables": {
+        "xbrl-gl_table": {
+            "template": "xbrl-gl_template",
+            "url": "xbrl-gl_skeleton.csv"
+        }
+    }
+}

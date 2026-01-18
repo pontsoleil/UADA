@@ -1,0 +1,303 @@
+{
+    "documentInfo": {
+        "documentType": "https://xbrl.org/2021/xbrl-csv",
+        "namespaces": {
+            "ns0": "http://www.example.com",
+            "link": "http://www.xbrl.org/2003/linkbase",
+            "iso4217": "http://www.xbrl.org/2003/iso4217",
+            "iso639": "http://www.xbrl.org/2003/iso639",
+            "xsi": "http://www.w3.org/2001/XMLSchema-instance",
+            "xbrli": "http://www.xbrl.org/2003/instance",
+            "xbrldi": "http://xbrl.org/2006/xbrldi",
+            "xlink": "http://www.w3.org/1999/xlink",
+            "gen": "http://www.xbrl.org/int/gl/gen/2026-MM-DD",
+            "cor": "http://www.xbrl.org/int/gl/cor/2026-MM-DD",
+            "bus": "http://www.xbrl.org/int/gl/bus/2026-MM-DD",
+            "muc": "http://www.xbrl.org/int/gl/muc/2026-MM-DD",
+            "usk": "http://www.xbrl.org/int/gl/usk/2026-MM-DD",
+            "taf": "http://www.xbrl.org/int/gl/taf/2026-MM-DD",
+            "ehm": "http://www.xbrl.org/int/gl/ehm/2026-MM-DD",
+            "lnk": "http://www.xbrl.org/int/gl/lnk/2026-MM-DD",
+            "btx": "http://www.xbrl.org/int/gl/btx/2026-MM-DD",
+            "plt": "http://www.xbrl.org/int/gl/plt/2026-MM-DD"
+        },
+        "taxonomy": [
+            "plt/plt-oim-2026-MM-DD.xsd"
+        ]
+    },
+    "tableTemplates": {
+        "xbrl-gl_template": {
+            "dimensions": {
+                "period": "2025-05-17T00:00:00",
+                "entity": "ns0:Example Co.",
+                "plt:d_btx_businessTransactions": "$btx_businessTransactions",
+                "plt:d_bus_organizationIdentifiers": "$bus_organizationIdentifiers",
+                "plt:d_btx_transactionHeader": "$btx_transactionHeader",
+                "plt:d_btx_headerIdentifierReference": "$btx_headerIdentifierReference",
+                "plt:d_btx_headerTax": "$btx_headerTax",
+                "plt:d_btx_headerAmountStructure": "$btx_headerAmountStructure",
+                "plt:d_btx_transactionDetail": "$btx_transactionDetail",
+                "plt:d_bus_detailMeasurable": "$bus_detailMeasurable",
+                "plt:d_cor_detailTax": "$cor_detailTax",
+                "plt:d_btx_detailAmountStructure": "$btx_detailAmountStructure"
+            },
+            "columns": {
+                "btx_businessTransactions": {},
+                "bus_organizationIdentifiers": {},
+                "btx_transactionHeader": {},
+                "btx_headerIdentifierReference": {},
+                "btx_headerTax": {},
+                "btx_headerAmountStructure": {},
+                "btx_transactionDetail": {},
+                "bus_detailMeasurable": {},
+                "cor_detailTax": {},
+                "btx_detailAmountStructure": {},
+                "cor_documentType": {
+                    "dimensions": {
+                        "concept": "cor:documentType"
+                    }
+                },
+                "cor_auditNumber": {
+                    "dimensions": {
+                        "concept": "cor:auditNumber"
+                    }
+                },
+                "cor_language": {
+                    "dimensions": {
+                        "concept": "cor:language"
+                    }
+                },
+                "cor_creationDate": {
+                    "dimensions": {
+                        "concept": "cor:creationDate"
+                    }
+                },
+                "bus_creator": {
+                    "dimensions": {
+                        "concept": "bus:creator"
+                    }
+                },
+                "cor_documentComment": {
+                    "dimensions": {
+                        "concept": "cor:documentComment"
+                    }
+                },
+                "cor_periodCoveredStart": {
+                    "dimensions": {
+                        "concept": "cor:periodCoveredStart"
+                    }
+                },
+                "cor_periodCoveredEnd": {
+                    "dimensions": {
+                        "concept": "cor:periodCoveredEnd"
+                    }
+                },
+                "bus_sourceApplication": {
+                    "dimensions": {
+                        "concept": "bus:sourceApplication"
+                    }
+                },
+                "muc_defaultCurrency": {
+                    "dimensions": {
+                        "concept": "muc:defaultCurrency"
+                    }
+                },
+                "bus_organizationIdentifier": {
+                    "dimensions": {
+                        "concept": "bus:organizationIdentifier"
+                    }
+                },
+                "bus_organizationDescription": {
+                    "dimensions": {
+                        "concept": "bus:organizationDescription"
+                    }
+                },
+                "btx_headerDatePosted": {
+                    "dimensions": {
+                        "concept": "btx:headerDatePosted"
+                    }
+                },
+                "btx_headerEntryCreator": {
+                    "dimensions": {
+                        "concept": "btx:headerEntryCreator"
+                    }
+                },
+                "btx_headerEntryDate": {
+                    "dimensions": {
+                        "concept": "btx:headerEntryDate"
+                    }
+                },
+                "btx_headerComment": {
+                    "dimensions": {
+                        "concept": "btx:headerComment"
+                    }
+                },
+                "btx_headerEntryNumberCounter": {
+                    "dimensions": {
+                        "concept": "btx:headerEntryNumberCounter"
+                    }
+                },
+                "btx_headerDocumentReference": {
+                    "dimensions": {
+                        "concept": "btx:headerDocumentReference"
+                    }
+                },
+                "btx_headerDocumentDate": {
+                    "dimensions": {
+                        "concept": "btx:headerDocumentDate"
+                    }
+                },
+                "btx_headerReceivedDate": {
+                    "dimensions": {
+                        "concept": "btx:headerReceivedDate"
+                    }
+                },
+                "btx_headerDocumentLocation": {
+                    "dimensions": {
+                        "concept": "btx:headerDocumentLocation"
+                    }
+                },
+                "btx_headerMaturityDateOrDateDue": {
+                    "dimensions": {
+                        "concept": "btx:headerMaturityDateOrDateDue"
+                    }
+                },
+                "btx_headerPaymentTerms": {
+                    "dimensions": {
+                        "concept": "btx:headerPaymentTerms"
+                    }
+                },
+                "cor_headerIdentifierCode": {
+                    "dimensions": {
+                        "concept": "cor:headerIdentifierCode"
+                    }
+                },
+                "cor_headerIdentifierDescription": {
+                    "dimensions": {
+                        "concept": "cor:headerIdentifierDescription"
+                    }
+                },
+                "cor_headerIdentifierType": {
+                    "dimensions": {
+                        "concept": "cor:headerIdentifierType"
+                    }
+                },
+                "cor_headerTaxTableCode": {
+                    "dimensions": {
+                        "concept": "cor:headerTaxTableCode"
+                    }
+                },
+                "cor_headerAmountOfTaxes": {
+                    "dimensions": {
+                        "concept": "cor:headerAmountOfTaxes",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "cor_headerBasisForTaxation": {
+                    "dimensions": {
+                        "concept": "cor:headerBasisForTaxation"
+                    }
+                },
+                "cor_headerTaxPercentageRate": {
+                    "dimensions": {
+                        "concept": "cor:headerTaxPercentageRate"
+                    }
+                },
+                "cor_headerTaxCategory": {
+                    "dimensions": {
+                        "concept": "cor:headerTaxCategory"
+                    }
+                },
+                "btx_headerAmount": {
+                    "dimensions": {
+                        "concept": "btx:headerAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "btx_headerAmountType": {
+                    "dimensions": {
+                        "concept": "btx:headerAmountType"
+                    }
+                },
+                "btx_detailLineNumber": {
+                    "dimensions": {
+                        "concept": "btx:detailLineNumber"
+                    }
+                },
+                "btx_detailDescription": {
+                    "dimensions": {
+                        "concept": "btx:detailDescription"
+                    }
+                },
+                "bus_detailMeasurableCode": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurableCode"
+                    }
+                },
+                "bus_detailMeasurableIdentification": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurableIdentification"
+                    }
+                },
+                "bus_detailMeasurableDescription": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurableDescription"
+                    }
+                },
+                "bus_detailMeasurableQuantity": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurableQuantity"
+                    }
+                },
+                "bus_detailMeasurableUnitOfMeasure": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurableUnitOfMeasure"
+                    }
+                },
+                "bus_detailMeasurablePerUnitCostPrice": {
+                    "dimensions": {
+                        "concept": "bus:detailMeasurablePerUnitCostPrice"
+                    }
+                },
+                "cor_detailTaxTableCode": {
+                    "dimensions": {
+                        "concept": "cor:detailTaxTableCode"
+                    }
+                },
+                "cor_entryAmountOfTaxes": {
+                    "dimensions": {
+                        "concept": "cor:entryAmountOfTaxes",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "cor_detailTaxPercentageRate": {
+                    "dimensions": {
+                        "concept": "cor:detailTaxPercentageRate"
+                    }
+                },
+                "cor_detailTaxCategory": {
+                    "dimensions": {
+                        "concept": "cor:detailTaxCategory"
+                    }
+                },
+                "btx_detailAmount": {
+                    "dimensions": {
+                        "concept": "btx:detailAmount",
+                        "unit": "iso4217:USD"
+                    }
+                },
+                "btx_detailAmountType": {
+                    "dimensions": {
+                        "concept": "btx:detailAmountType"
+                    }
+                }
+            }
+        }
+    },
+    "tables": {
+        "xbrl-gl_table": {
+            "template": "xbrl-gl_template",
+            "url": "vendor_invoices.csv"
+        }
+    }
+}

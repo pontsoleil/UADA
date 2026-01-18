@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2026 (x64) (https://www.altova.com) by NOBUYUKI SANBUICHI (Sambuichi Professional Engineers Office) -->
+<xs:schema 
+  targetNamespace="http://example.org/xbrl/gl/cor" 
+  elementFormDefault="qualified" attributeFormDefault="unqualified" 
+  xmlns:cor="http://example.org/xbrl/gl/cor" 
+  xmlns:xlink="http://www.w3.org/1999/xlink" 
+  xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xmlns:xl="http://www.xbrl.org/2003/XLink" 
+  xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+  xmlns:link="http://www.xbrl.org/2003/linkbase" 
+  xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
+  xmlns:enum="http://xbrl.org/2014/extensible-enumerations">
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xs:import namespace="http://xbrl.org/2014/extensible-enumerations" schemaLocation="https://www.xbrl.org/2014/extensible-enumerations.xsd"/>
+  <xs:annotation>
+    <xs:appinfo>
+      <!-- linkbase -->
+      <link:linkbaseRef xlink:type="simple" xlink:href="document-pool-def.xml"
+                        xlink:role="http://www.xbrl.org/2003/role/definitionLinkbaseRef" 
+                        xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <!-- role type -->
+      <link:roleType id="role-pool-document"  
+                     roleURI="http://example.org/xbrl/gl/cor/role/pool-document">
+        <link:definition>Pool Document role</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="role-pool-document-line"  
+                     roleURI="http://example.org/xbrl/gl/cor/role/pool-document-line">
+        <link:definition>Pool Document Line role</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="role-pool-party"  
+                     roleURI="http://example.org/xbrl/gl/cor/role/pool-party">
+        <link:definition>Pool Party role</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="role-codelist-document-type-code" 
+                     roleURI="http://example.org/xbrl/gl/cor/role/codelist-document-type-code">
+        <link:definition>Code list role for DocumentTypeCode (EE1)</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+      <link:roleType id="role-codelist-document-line-status-code" 
+                     roleURI="http://example.org/xbrl/gl/cor/role/codelist-document-line-status-code">
+        <link:definition>Code list role for DocumentLineStatusCode (EE1)</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xs:appinfo>
+  </xs:annotation>
+
+  <!-- typed dimension referenced element -->
+  <xs:element name="_v" id="_v">
+    <xs:simpleType>
+      <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+  </xs:element>
+
+  <!-- Hypercube -->
+  <xs:element name="h_document" id="h_document" substitutionGroup="xbrldt:hypercubeItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="h_document_line" id="h_document_line" substitutionGroup="xbrldt:hypercubeItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="h_party" id="h_party" substitutionGroup="xbrldt:hypercubeItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+              
+  <!-- Dimension -->
+  <xs:element name="d_document" id="d_document" substitutionGroup="xbrldt:dimensionItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant" 
+              xbrldt:typedDomainRef="#_v"/>
+  <xs:element name="d_document_line" id="d_document_line" substitutionGroup="xbrldt:dimensionItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant" 
+              xbrldt:typedDomainRef="#_v"/>
+  <xs:element name="d_party" id="d_party" substitutionGroup="xbrldt:dimensionItem" 
+              nillable="true" abstract="true" xbrli:periodType="instant" 
+              xbrldt:typedDomainRef="#_v"/>
+              
+  <!-- Primary item -->
+  <xs:element name="p_document" id="p_document" type="xbrli:stringItemType" substitutionGroup="xbrli:item"
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="p_document_line" id="p_document_line" type="xbrli:stringItemType" substitutionGroup="xbrli:item" 
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="p_party" id="p_party" type="xbrli:stringItemType" substitutionGroup="xbrli:item" 
+              nillable="true" abstract="true" xbrli:periodType="instant"/>
+
+  <!-- Domain head (not a primary item) -->
+  <xs:element name="v_document" id="v_document" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="v_document_line" id="v_document_line" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="v_party" id="v_party" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="true" xbrli:periodType="instant"/>
+
+  <!-- EE Document Line Status Code -->
+  <xs:element name="DocumentLineStatusCodeDomain" id="cor_DocumentLineStatusCodeDomain" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="OtherDocumentLineStatus" id="cor_DocumentLineStatusCodeValue_Other" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Cancelled" id="cor_DocumentLineStatusCodeValue_Cancelled" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Closed" id="cor_DocumentLineStatusCodeValue_Closed" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Open" id="cor_DocumentLineStatusCodeValue_Open" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+
+  <!-- EE Document Type Code -->
+  <xs:element name="DocumentTypeCodeDomain" id="cor_DocumentTypeCodeDomain" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="true" xbrli:periodType="instant"/>
+  <xs:element name="OtherDocumentTypeCode" id="cor_DocumentTypeCodeValue_Other" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Order" id="cor_DocumentTypeCodeValue_Order" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="CreditNote" id="cor_DocumentTypeCodeValue_CreditNote" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Invoice" id="cor_DocumentTypeCodeValue_Invoice" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" abstract="false" xbrli:periodType="instant"/>
+
+  <!-- Domain members (“properties”) -->
+  <!-- Document -->
+  <xs:element name="DocumentID" id="cor_DocumentID" substitutionGroup="xbrli:item" 
+              type="xbrli:tokenItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="DocumentTypeCode" id="cor_DocumentTypeCode" substitutionGroup="xbrli:item" 
+              type="enum:enumerationItemType" nillable="true" abstract="false" xbrli:periodType="instant" 
+              enum:domain="cor:DocumentTypeCodeDomain" 
+              enum:linkrole="http://example.org/xbrl/gl/cor/role/codelist-document-type-code" enum:headUsable="false"/>
+  <xs:element name="DocumentIssueDateTime" id="cor_DocumentIssueDateTime" substitutionGroup="xbrli:item" 
+              type="xbrli:dateTimeItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+
+  <!-- DocumentLine -->
+  <xs:element name="DocumentLineID" id="cor_DocumentLineID" substitutionGroup="xbrli:item" 
+              type="xbrli:tokenItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="DocumentLineStatusCode" id="cor_DocumentLineStatusCode" substitutionGroup="xbrli:item" 
+              type="enum:enumerationItemType" nillable="true" abstract="false" xbrli:periodType="instant" 
+              enum:domain="cor:DocumentLineStatusCodeDomain" 
+              enum:linkrole="http://example.org/xbrl/gl/cor/role/codelist-document-line-status-code" enum:headUsable="false"/>
+
+  <!-- Party -->
+  <xs:element name="PartyName" id="cor_PartyName" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Address" id="cor_Address" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="Contact" id="cor_Contact" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="TaxRegistration" id="cor_TaxRegistration" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+  <xs:element name="AuthorityRegisteredIdentifier" id="cor_AuthorityRegisteredIdentifier" substitutionGroup="xbrli:item" 
+              type="xbrli:stringItemType" nillable="true" abstract="false" xbrli:periodType="instant"/>
+</xs:schema>

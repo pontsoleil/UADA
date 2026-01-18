@@ -1,0 +1,17 @@
+﻿btx_businessTransactions,bus_organizationIdentifier,btx_transactionHeader,btx_headerIdentifierReference,btx_headerTax,btx_headerAmountStructure,btx_transactionDetail,bus_detailMeasurable,cor_detailTax,btx_detailAmountStructure,cor_documentType,cor_auditNumber,cor_language,cor_creationDate,bus_creator,cor_documentComment,cor_periodCoveredStart,cor_periodCoveredEnd,bus_sourceApplication,muc_defaultCurrency,bus_organizationIdentifierCode,bus_organizationIdentifierDescription,btx_headerDatePosted,btx_headerEntryCreator,btx_headerEntryDate,btx_headerComment,btx_headerEntryNumberCounter,btx_headerDocumentReference,btx_headerDocumentDate,btx_headerReceivedDate,btx_headerDocumentLocation,btx_headerMaturityDateOrDateDue,btx_headerPaymentTerms,cor_headerIdentifierCode,cor_headerIdentifierDescription,cor_headerIdentifierType,cor_headerTaxTableCode,cor_headerAmountOfTaxes,cor_headerBasisForTaxation,cor_headerTaxPercentageRate,cor_headerTaxCategory,btx_headerAmount,btx_headerAmountType,btx_detailLineNumber,btx_detailDescription,bus_detailMeasurableCode,bus_detailMeasurableIdentification,bus_detailMeasurableDescription,bus_detailMeasurableQuantity,bus_detailMeasurableUnitOfMeasure,bus_detailMeasurablePerUnitCostPrice,cor_detailTaxTableCode,cor_detailTaxPercentageRate,cor_detailTaxCategory,btx_detailAmount,btx_detailAmountType
+1,,,,,,,,,,other,001,iso639:en,2005-07-05,XBRL GL Working Group,A best practice listing of invoices instance document,2005-06-01,2005-06-30,XABRA,iso4217:EUR,ABC Company,Company Name,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
+1,,1,,,,,,,,,,,,,,,,,,,,2005-07-01,Otto Wellwood,2005-07-01,Invoice: #51029 Vendor: #1130,50,Voucher#: 100900,2005-06-15,2005-06-14,Fred's desk drawer.,2005-07-15,2% 10 Net 30,1130,Rettaler Property Ltd,V,VAT,160,800,20,S,,,,,,,,,,,,,,,
+1,,1,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,800,Sum of line net headerAmount,,,,,,,,,,,,,
+1,,1,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,960,Total headerAmount with tax,,,,,,,,,,,,,
+1,,1,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,Vendor#: 1130 Document#: 51029 Date: 6/15/05,IN,Widget1,Red Widger,100,Each,5,VAT,20,S,500,Net
+1,,1,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,IN,Gidget3,Sally Field of Dreams Edition<,15,Each,20,VAT,20,S,300,Net
+1,,2,,,,,,,,,,,,,,,,,,,,2005-07-01,Otto Wellwood,2005-07-01,Invoice: #4321 Vendor: #8765,51,Voucher#: 100901,2005-06-15,2005-06-14,Fred's desk drawer.,2005-07-15,2% 10 Net 30,4310,Example Ltd,V,,,,,,,,,,,,,,,,,,,,
+1,,2,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,VAT,11060,55300,20,S,,,,,,,,,,,,,,,
+1,,2,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,VAT,200,2000,10,AA,,,,,,,,,,,,,,,
+1,,2,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,57300,Sum of line net headerAmount,,,,,,,,,,,,,
+1,,2,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,68560,Total headerAmount with tax,,,,,,,,,,,,,
+1,,2,,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1,,IN,4576,Self Adjusting Paper Clips,2000,Each,27,VAT,20,S,54000,Net
+1,,2,,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,2,,IN,4800,Self Expanding Paper Sheets,100,Each,15,VAT,20,S,,
+1,,2,,,,2,,,1,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,1500,Net
+1,,2,,,,2,,,2,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,200,Allowance
+1,,2,,,,3,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,3,,IN,120,Waste Basket,50,Each,10,VAT,10,AA,2000,Net

@@ -1,0 +1,57 @@
+code,qname,name,description
+AAA,uncl_5153:AAA,Petroleum tax,A tax levied on the volume of petroleum being transacted.
+AAB,uncl_5153:AAB,Provisional countervailing duty cash,Countervailing duty paid in cash prior to a formal finding of subsidization by Customs.
+AAC,uncl_5153:AAC,Provisional countervailing duty bond,Countervailing duty paid by posting a bond during an investigation period prior to a formal decision on subsidization by Customs.
+AAD,uncl_5153:AAD,Tobacco tax,A tax levied on tobacco products.
+AAE,uncl_5153:AAE,Energy fee,General fee or tax for the use of energy.
+AAF,uncl_5153:AAF,Coffee tax,A tax levied specifically on coffee products.
+AAG,uncl_5153:AAG,"Harmonised sales tax, Canadian","A harmonized sales tax consisting of a goods and service tax, a Canadian provincial sales tax and, as applicable, a Quebec sales tax which is recoverable."
+AAH,uncl_5153:AAH,Quebec sales tax,A sales tax charged within the Canadian province of Quebec which is recoverable.
+AAI,uncl_5153:AAI,Canadian provincial sales tax,A sales tax charged within Canadian provinces which is non-recoverable.
+AAJ,uncl_5153:AAJ,Tax on replacement part,"A tax levied on a replacement part, where the original part is returned."
+AAK,uncl_5153:AAK,Mineral oil tax,Tax that is levied specifically on products containing mineral oil.
+AAL,uncl_5153:AAL,Special tax,To indicate a special type of tax.
+AAM,uncl_5153:AAM,Insurance tax,A tax levied specifically on insurances.
+AAO,uncl_5153:AAO,Provincial Cannabis Tax,A tax levied on Cannabis products
+AAP,uncl_5153:AAP,Outstanding duty interest,Fee levied due to outstanding duties to be paid
+ADD,uncl_5153:ADD,Anti-dumping duty,Duty applied to goods ruled to have been dumped in an import market at a price lower than that in the exporter's domestic market.
+BOL,uncl_5153:BOL,Stamp duty (Imposta di Bollo),"Tax required in Italy, which may be fixed or graduated in various circumstances (e.g. VAT exempt documents or bank receipts)."
+CAP,uncl_5153:CAP,Agricultural levy,Levy imposed on agricultural products where there is a difference between the selling price between trading countries.
+CAR,uncl_5153:CAR,Car tax,A tax that is levied on the value of the automobile.
+COC,uncl_5153:COC,Paper consortium tax (Italy),Italian Paper consortium tax.
+CST,uncl_5153:CST,Commodity specific tax,"Tax related to a specified commodity, e.g. illuminants, salts."
+CUD,uncl_5153:CUD,Customs duty,"Duties laid down in the Customs tariff, to which goods are liable on entering or leaving the Customs territory (CCC)."
+CVD,uncl_5153:CVD,Countervailing duty,A duty on imported goods applied for compensate for subsidies granted to those goods in the exporting country.
+ENV,uncl_5153:ENV,Environmental tax,Tax assessed for funding or assuring environmental protection or clean-up.
+EXC,uncl_5153:EXC,Excise duty,"Customs or fiscal authorities code to identify a specific or ad valorem levy on a specific commodity, applied either domestically or at time of importation."
+EXP,uncl_5153:EXP,Agricultural export rebate,Monetary rebate given to the seller in certain circumstances when agricultural products are exported.
+FET,uncl_5153:FET,Federal excise tax,Tax levied by the federal government on the manufacture of specific items.
+FRE,uncl_5153:FRE,Free,No tax levied.
+GCN,uncl_5153:GCN,General construction tax,General tax for construction.
+GST,uncl_5153:GST,Goods and services tax,Tax levied on the final consumption of goods and services throughout the production and distribution chain.
+ILL,uncl_5153:ILL,Illuminants tax,Tax of illuminants.
+IMP,uncl_5153:IMP,Import tax,Tax assessed on imports.
+IND,uncl_5153:IND,Individual tax,A tax levied based on an individual's ability to pay.
+LAC,uncl_5153:LAC,Business license fee,Government assessed charge for permit to do business.
+LCN,uncl_5153:LCN,Local construction tax,Local tax for construction.
+LDP,uncl_5153:LDP,Light dues payable,Fee levied on a vessel to pay for port navigation lights.
+LOC,uncl_5153:LOC,Local sales tax,"Assessment charges on sale of goods or services by city, borough country or other taxing authorities below state or provincial level."
+LST,uncl_5153:LST,Lust tax,Tax imposed for clean-up of leaky underground storage tanks.
+MCA,uncl_5153:MCA,Monetary compensatory amount,Levy on Common Agricultural Policy (European Union) goods used to compensate for fluctuating currencies between member states.
+MCD,uncl_5153:MCD,Miscellaneous cash deposit,"Duty paid and held on deposit, by Customs, during an investigation period prior to a final decision being made on any aspect related to imported goods (except valuation) by Customs."
+OTH,uncl_5153:OTH,Other taxes,"Unspecified, miscellaneous tax charges."
+PDB,uncl_5153:PDB,Provisional duty bond,Anti-dumping duty paid by posting a bond during an investigation period prior to a formal decision on dumping by Customs.
+PDC,uncl_5153:PDC,Provisional duty cash,Anti-dumping duty paid in cash prior to a formal finding of dumping by Customs.
+PRF,uncl_5153:PRF,Preference duty,"Duties laid down in the Customs tariff, to which goods are liable on entering or leaving the Customs territory falling under a preferential regime such as Generalised System of Preferences (GSP)."
+SCN,uncl_5153:SCN,Special construction tax,Special tax for construction.
+SSS,uncl_5153:SSS,Shifted social securities,Social securities share of the invoice amount to be paid directly to the social securities collector.
+STT,uncl_5153:STT,State/provincial sales tax,"All applicable sale taxes by authorities at the state or provincial level, below national level."
+SUP,uncl_5153:SUP,Suspended duty,Duty suspended or deferred from payment.
+SUR,uncl_5153:SUR,Surtax,A tax or duty applied on and in addition to existing duties and taxes.
+SWT,uncl_5153:SWT,Shifted wage tax,Wage tax share of the invoice amount to be paid directly to the tax collector(s office).
+TAC,uncl_5153:TAC,Alcohol mark tax,A tax levied based on the type of alcohol being obtained.
+TOT,uncl_5153:TOT,Total,The summary amount of all taxes.
+TOX,uncl_5153:TOX,Turnover tax,Tax levied on the total sales/turnover of a corporation.
+TTA,uncl_5153:TTA,Tonnage taxes,Tax levied based on the vessel's net tonnage.
+VAD,uncl_5153:VAD,Valuation deposit,"Duty paid and held on deposit, by Customs, during an investigation period prior to a formal decision on valuation of the goods being made."
+VAT,uncl_5153:VAT,Value added tax,"A tax on domestic or imported goods applied to the value added at each stage in the production/distribution cycle. Data Element Cross Reference DataElement 5153 is used in the following Batch Composite Elements: C241 DataElement 5153 is used in the following Interactive Composite Elements: E020 Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories"

@@ -1,0 +1,107 @@
+code,qname,name,description
+1,uncl_4465:_1,Agreed settlement,An adjustment made based on an agreement between partners.
+2,uncl_4465:_2,Below specification goods,Goods of inferior quality.
+3,uncl_4465:_3,Damaged goods,An adjustment due to the damage of goods.
+4,uncl_4465:_4,Short delivery,An adjustment made because the delivered quantity was less than expected.
+5,uncl_4465:_5,Price query,An adjustment due to a price query.
+6,uncl_4465:_6,Proof of delivery required,The buyer requires that proof of delivery be made before payment.
+7,uncl_4465:_7,Payment on account,Buyer is to make payment later.
+8,uncl_4465:_8,Returnable container charge included,Adjustment made to deduct the returnable container charge.
+9,uncl_4465:_9,Invoice error,Invoice not in accordance with the order.
+10,uncl_4465:_10,Costs for draft,Cost of draft has been deducted from payment.
+11,uncl_4465:_11,Bank charges,Bank charges have been deducted from payment.
+12,uncl_4465:_12,Agent commission,Agent commission has been deducted from payment.
+13,uncl_4465:_13,Counter claim,Buyer claims an existing (financial) obligation from seller which (partly) offsets the outstanding invoice(s).
+14,uncl_4465:_14,Wrong delivery,Delivery not according to specifications.
+15,uncl_4465:_15,Goods returned to agent,Goods returned to agent.
+16,uncl_4465:_16,Goods partly returned,Goods partly returned.
+17,uncl_4465:_17,Transport damage,Goods damaged in transit.
+18,uncl_4465:_18,Goods on consignment,Buyer does not accept invoice(s) charge as it relates to goods where the ownership remains with the seller until sold.
+19,uncl_4465:_19,Trade discount,Trade discount deducted from payment.
+20,uncl_4465:_20,Deduction for late delivery,Penalty amount deducted for later delivery.
+21,uncl_4465:_21,Advertising costs,Advertising costs deducted from payment.
+22,uncl_4465:_22,Customs duties,Customs duties deducted from payment.
+23,uncl_4465:_23,Telephone and postal costs,Telephone and postal costs deducted from payment.
+24,uncl_4465:_24,Repair costs,Repair costs deducted from payment.
+25,uncl_4465:_25,Attorney fees,Attorney fees deducted from payment.
+26,uncl_4465:_26,Taxes,Taxes deducted from payment.
+27,uncl_4465:_27,Reclaimed deduction,Buyer reclaims an unspecified deduction from the invoice(s) (to be) paid.
+28,uncl_4465:_28,See separate advice,Buyer or seller refers to separate correspondence about a related shipment(s) and/or invoice(s) and/or a payment(s).
+29,uncl_4465:_29,Buyer refused to take delivery,Buyer refused to take delivery.
+30,uncl_4465:_30,Direct payment to seller,Buyer states to have paid to seller.
+31,uncl_4465:_31,Buyer disagrees with due date,Buyer disagrees with due date.
+32,uncl_4465:_32,Goods not delivered,Buyer has not received the goods.
+33,uncl_4465:_33,Late delivery,Goods delivered too late.
+34,uncl_4465:_34,Quoted as paid to you,Factor informs the seller that a certain invoice(s) was paid by the buyer directly to the seller.
+35,uncl_4465:_35,Goods returned,Buyer returned the goods to seller.
+36,uncl_4465:_36,Invoice not received,Buyer claims he did not receive the invoice for which payment is requested.
+37,uncl_4465:_37,Credit note to debtor/not to us,Factor informs the seller that he did not receive copy of a credit note sent to the buyer.
+38,uncl_4465:_38,Deducted bonus,Buyer has/will deduct a bonus he is entitled to from the payment.
+39,uncl_4465:_39,Deducted discount,Buyer has/will deduct the discount he is entitled to from the payment.
+40,uncl_4465:_40,Deducted freight costs,Buyer has/will deduct freight costs from the payment.
+41,uncl_4465:_41,Deduction against other invoices,Deduction against invoices already settled.
+42,uncl_4465:_42,Credit balance(s),Buyer makes use of existing credit balance(s) to offset (partly) the outstanding invoice(s).
+43,uncl_4465:_43,Reason unknown,Factor informs the seller that the reason of a commercial dispute raised by the buyer is unknown.
+44,uncl_4465:_44,Awaiting message from seller,Buyer or factor are waiting for a (reply) message from the seller before a commercial dispute can be settled.
+45,uncl_4465:_45,Debit note to seller,Buyer issued debit note to seller.
+46,uncl_4465:_46,Discount beyond terms,Buyer has taken a discount larger than the discount terms agreed with the seller.
+47,uncl_4465:_47,See buyer's letter,See correspondence from buyer.
+48,uncl_4465:_48,Allowance/charge error,Error made by seller in the amount of allowance/charge.
+49,uncl_4465:_49,Substitute product,Product delivered not fully according to specification.
+50,uncl_4465:_50,Terms of sale error,Terms of sale not according to purchase order.
+51,uncl_4465:_51,Required data missing,A message sent by buyer to seller or by seller to buyer did not contain data required to take action/decision.
+52,uncl_4465:_52,Wrong invoice,Invoice issued to wrong party.
+53,uncl_4465:_53,Duplicate invoice,Invoice sent twice.
+54,uncl_4465:_54,Weight error,Weight not in accordance with the order.
+55,uncl_4465:_55,Additional charge not authorized,Additional charge not authorised.
+56,uncl_4465:_56,Incorrect discount,Buyer states that calculated discount on the invoice(s) is wrongly calculated.
+57,uncl_4465:_57,Price change,Price has been changed.
+58,uncl_4465:_58,Variation,The adjustment is a variation from an agreed value.
+59,uncl_4465:_59,Chargeback,Balance of one or more items charged back to seller.
+60,uncl_4465:_60,Offset,Allocation of one or more debit items to one or more credit items or vice-versa.
+61,uncl_4465:_61,Indirect payment,Payment in settlement of an invoice has been made to a party other than the designated creditor.
+62,uncl_4465:_62,Financial reassignment,Previously assigned invoice/credit note is being reassigned.
+63,uncl_4465:_63,Reinstatement of chargeback/offset,Reversal or cancellation of a chargeback and/or offset relating to an incorrect balance.
+64,uncl_4465:_64,Expecting new terms,Buyer expects that seller revises the terms of payment of an invoice.
+65,uncl_4465:_65,Settlement to agent,Invoice has been/to be paid to seller's agent.
+66,uncl_4465:_66,Cash discount,An adjustment has been made due to the application of a cash discount.
+67,uncl_4465:_67,Delcredere costs,Costs deducted from a total amount to pay for the services of central payment.
+68,uncl_4465:_68,Early payment allowance adjustment,Adjustment results from the application of an early payment allowance.
+69,uncl_4465:_69,Incorrect due date for monetary amount,Adjustment has been made because an incorrect due date was referred to with regard to the monetary amount.
+70,uncl_4465:_70,Wrong monetary amount resulting from incorrect free goods,quantity Adjustment has been made because of a wrong monetary amount resulting from an incorrect free goods quantity.
+71,uncl_4465:_71,Rack or shelf replenishment service by a supplier,Adjustment due to the replenishment of the racks or shelves by a supplier.
+72,uncl_4465:_72,Temporary special promotion,Adjustment due to a temporary special promotion.
+73,uncl_4465:_73,Difference in tax rate,Adjustment due to a difference in tax rate.
+74,uncl_4465:_74,Quantity discount,Adjustment due to a quantity discount.
+75,uncl_4465:_75,Promotion discount,Adjustment due to a promotion discount.
+76,uncl_4465:_76,Cancellation deadline passed,The cancellation has occurred after the deadline.
+77,uncl_4465:_77,Pricing discount,An adjustment has been made due to the application of a pricing discount.
+78,uncl_4465:_78,Volume discount,Discount for reaching or exceeding an agreed accumulated volume.
+79,uncl_4465:_79,Sundry discount,Adjustment has been made due to the application of a sundry discount.
+80,uncl_4465:_80,Card holder signature missing,The adjustment was made due to the card holder not signing the filing document.
+81,uncl_4465:_81,Card expiry date missing,The adjustment was made due to the card acceptor not specifying the expiry date within the filing document.
+82,uncl_4465:_82,Card number error,The adjustment was made due to the card acceptor specifying an erroneous card number within the filing document.
+83,uncl_4465:_83,Card expired,The adjustment was made due to the card acceptor specifying an expired expiry date within the filing document or electronic data.
+84,uncl_4465:_84,Test card transaction,"The adjustment was made due to a test card transaction, used for installing, maintaining or debugging purposes."
+85,uncl_4465:_85,Permission limit exceeded,The adjustment was made due to the permission limit defined by card issuer or card company was exceeded without prior authorisation. Synonym: Floor limit.
+86,uncl_4465:_86,Wrong authorisation code,The adjustment was made due to the authorisation code provided did not fit to the specified transaction.
+87,uncl_4465:_87,Wrong authorised amount,The adjustment was made due to the specified amount not meeting the authorised amount for the transaction.
+88,uncl_4465:_88,Authorisation failed,The adjustment was made due to the authorisation needed had failed.
+89,uncl_4465:_89,Card acceptor data error,The adjustment was made due to the data regarding the card acceptor is erroneous.
+90,uncl_4465:_90,Treasury management service charge,Charge for the service of treasury management.
+91,uncl_4465:_91,Agreed discount,The reason for the adjustment is that a mutually agreed discount has been applied.
+92,uncl_4465:_92,Expediting fee,The reason for the adjustment is that a fee for expediting has been applied.
+93,uncl_4465:_93,Invoicing fee,The reason for the adjustment is that a fee for invoicing has been applied.
+94,uncl_4465:_94,Freight charge,The reason for the adjustment is that freight charges has been applied.
+95,uncl_4465:_95,Small order processing service charge,The reason for the adjustment is that a fee for processing of a small order (an order below a defined threshold) has been applied.
+96,uncl_4465:_96,Currency exchange differences,An adjustment made due to a change in a currency exchange rate.
+97,uncl_4465:_97,Insolvency,An adjustment made due to the partner's inability to pay open debts.
+98,uncl_4465:_98,Incorrect references,Adjustment has taken place because of incorrect references.
+99,uncl_4465:_99,Incorrect identification of the buyer,Adjustment has taken place because of incorrect identification of the buyer.
+100,uncl_4465:_100,Incorrect product identification,Adjustment has taken place because of incorrect product identification.
+101,uncl_4465:_101,New employee,The reason for the adjustment is a new employee.
+102,uncl_4465:_102,Employee retirement,The reason for the adjustment is the retirement of an employee.
+103,uncl_4465:_103,Salary change,The reason for the adjustment is a salary change.
+104,uncl_4465:_104,Parental leave,The reason for the adjustment is a parental leave.
+ZZZ,uncl_4465:ZZZ,Mutually defined,A code assigned within a code list to be used on an interim basis and as defined among trading partners until a precise code can be assigned to the code list. Data Element Cross Reference DataElement 4465 is used in the following Batch Segments: AJT DataElement 4465 is used in the following Interactive Composite Elements:
+E030,uncl_4465:E030,E979    E998,"Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories"

@@ -1,0 +1,28 @@
+code,qname,name,description
+AA,uncl_4343:AA,Debit advice,Receiver of the payment message needs to return a debit advice in response to the payment message.
+AB,uncl_4343:AB,Message acknowledgement,Indicates that an acknowledgement relating to receipt of message is required.
+AC,uncl_4343:AC,Acknowledge - with detail and change,Acknowledge complete including changes.
+AD,uncl_4343:AD,"Acknowledge - with detail, no change",Acknowledge complete without changes.
+AE,uncl_4343:AE,Debit advice for each transaction,A debit advice is requested for each transaction in the message.
+AF,uncl_4343:AF,Debit advice/message acknowledgement,The sender wishes to receive both a Debit Advice and an acknowledgement of receipt for a payment message.
+AG,uncl_4343:AG,Authentication,"Authentication, by a party, of a document established for him by another party."
+AH,uncl_4343:AH,Debit advice/message acknowledgement for each transaction,A debit advice and message acknowledgement are requested for each transaction in the message.
+AI,uncl_4343:AI,Acknowledge only changes,Acknowledgement of changes only is required.
+AJ,uncl_4343:AJ,Pending,Indication that the referenced offer or transaction (e.g. cargo booking or quotation request) is being dealt with.
+AK,uncl_4343:AK,Return only TIR transport information,The sender of the message expects only TIR (Transports Internationaux Routiers) transport information in return.
+AL,uncl_4343:AL,Return only declaration information,Desc The sender of the message expects only declaration information in return.
+AM,uncl_4343:AM,Return only guarantee information,The sender of the message expects only guarantee information in return.
+AN,uncl_4343:AN,Return all information regarding guarantee,The sender of the message expects all information regarding the guarantee in return.
+AP,uncl_4343:AP,Accepted,"Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) has been accepted."
+AQ,uncl_4343:AQ,Response expected,The sender of the message expects a response.
+AR,uncl_4343:AR,Direct documentary credit collection,Documentary credit collection forwarded directly.
+AS,uncl_4343:AS,Credit advice and message acknowledgement,The receiver of the message is to acknowledge receipt of the message and sent a credit advice for each credit.
+CA,uncl_4343:CA,Conditionally accepted,"Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) has been accepted under conditions indicated in this message."
+CO,uncl_4343:CO,Confirmation of measurements,Indication that the message contains the physical measurements on which the charges will be based.
+NA,uncl_4343:NA,No acknowledgement needed,Specifies that no acknowledgement is needed in response to this message.
+RE,uncl_4343:RE,Rejected,"Indication that the referenced offer or transaction (e.g., cargo booking or quotation request) is not accepted."
+UR,uncl_4343:UR,Credit advice,The message recipient is to send a credit advice in response to the message.
+US,uncl_4343:US,Acknowledgement when error,An acknowledgement is requested when an error occurred.
+UT,uncl_4343:UT,Acknowledgment due to error,An acknowledgment is sent because an error was identified in the received message.
+UU,uncl_4343:UU,Alternate date,The solution proposed in the response applies to another date than the one requested.
+UV,uncl_4343:UV,Alternate service,"The solution proposed in the response applies to another service than the one requested. Data Element Cross Reference DataElement 4343 is used in the following Batch Segments: BGM DataElement 4343 is used in the following Interactive Segments: MSD Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories"

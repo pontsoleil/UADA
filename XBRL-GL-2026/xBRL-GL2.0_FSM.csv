@@ -1,0 +1,940 @@
+﻿seq,level,Property type,Identifier,Class,Property Term,BaseType,Associated Class,Multiplicity,Documentation,module,LocalLabel,LocalDocumentation
+1,1,Class,,Communication,,,,0..*,The exchange of messages or information between parties using a specified communication channel.,bus,【通信手段】,当事者間でメッセージまたは情報を交換するための通信手段情報。
+2,2,Attribute,,Communication,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+3,2,Attribute,,Communication,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+AO (Uniform Resource Location : URL) Identification of the Uniform Resource Location (URL) Synonym: World wide web address.
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+AO(URL) URL（Uniform Resource Location）の識別。同義語：ワールドワイドウェブアドレス。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+4,2,Attribute,,Communication,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+5,2,Attribute,,Communication,Use Code,String,,0..1,"The code specifying the usage or purpose of this communication, such as main, investor-relations, direct. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.",bus,通信用途コード,"代表、IR用などの通信用途コード。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)"
+6,1,Class,,Phone,,,,0..*,"Phone number information, as a specialisation of Communication.",bus,【電話番号】,電話番号情報（通信手段の特化）。
+7,2,Specialization,,Phone,,,Communication,1,Specialisation of Communication for telephone. Communication Channel Code SHALL be 'telephone'.,bus,【通信手段】,通信手段（電話）としての特化。通信チャネルコードは 'telephone' とする。
+8,2,Attribute,,Phone,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+9,2,Attribute,,Phone,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+10,2,Attribute,,Phone,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+11,2,Attribute,,Phone,Use Code,String,,0..1,"The code specifying the usage or purpose of this communication, such as main, investor-relations, direct. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.",bus,通信用途コード,"代表、IR用などの通信用途コード。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)"
+12,1,Class,,Fax,,,,0..*,Fax number information.,bus,【FAX番号】,FAX番号情報。
+13,2,Specialization,,Fax,,,Communication,1,Specialisation of Communication for telephone. Communication Channel Code SHALL be 'telephone'.,bus,【通信手段】,通信手段（電話）としての特化。通信チャネルコードは 'telephone' とする。
+14,2,Attribute,,Fax,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+15,2,Attribute,,Fax,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+16,2,Attribute,,Fax,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+17,2,Attribute,,Fax,Use Code,String,,0..1,"The code specifying the usage or purpose of this communication, such as main, investor-relations, direct. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.",bus,通信用途コード,"代表、IR用などの通信用途コード。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)"
+18,1,Class,,Email,,,,0..*,Email address information.,bus,【Eメールアドレス】,Eメールアドレス情報。
+19,2,Specialization,,Email,,,Communication,1,Specialisation of Communication for telephone. Communication Channel Code SHALL be 'telephone'.,bus,【通信手段】,通信手段（電話）としての特化。通信チャネルコードは 'telephone' とする。
+20,2,Attribute,,Email,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+21,2,Attribute,,Email,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+22,2,Attribute,,Email,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+23,2,Attribute,,Email,Use Code,String,,0..1,"The code specifying the usage or purpose of this communication, such as main, investor-relations, direct. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.",bus,通信用途コード,"代表、IR用などの通信用途コード。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)"
+24,1,Class,,Web Site,,,,0..*,Web site information.,bus,【Webサイト】,ウェブサイト情報。
+25,2,Specialization,,Web Site,,,Communication,1,Specialisation of Communication for telephone. Communication Channel Code SHALL be 'telephone'.,bus,【通信手段】,通信手段（電話）としての特化。通信チャネルコードは 'telephone' とする。
+26,2,Attribute,,Web Site,URI Identifier,String,,0..1,"The Uniform Resource Identifier (URI), such as a web or an email address, for this communication.",bus,URI,メールアドレスやWebアドレス等のURI。
+27,2,Attribute,,Web Site,Channel Code,String,,0..1,"A code specifying the communication channel or medium through which contact information is provided or used.
+This code identifies the type of communication mechanism associated with a contact point, in accordance with UN/EDIFACT Data Element 3155 – Communication means type code. It enables consistent interpretation of contact details across systems and jurisdictions.
+Examples (non-exhaustive):
+TE (Telephone) Voice or data communication via a telephone network.
+FX (Telefax) Transmission of documents via facsimile equipment.
+EM (Electronic mail) Communication using electronic mail (email). 
+The Channel Code is used in conjunction with the corresponding communication identifier (e.g. phone number, fax number, or email address) and supports extensibility for additional communication types as defined by applicable code lists or jurisdictional requirements.",bus,通信チャネルコード,"連絡先情報が提供または使用される通信チャネルまたは媒体を指定するコード。
+このコードは、UN/EDIFACTデータ要素3155「通信手段種別コード」に基づき、連絡先に関連付けられた通信手段の種類を識別する。これにより、システムや管轄区域をまたいで連絡先情報を一貫して解釈できる。
+例（これらに限定されません）：
+TE(電話)　電話網を介した音声またはデータ通信。
+FX(テレファックス)　ファクシミリ機器を介した文書の送信。
+EM(電子メール)　電子メール（Eメール）を使用した通信。
+チャネルコードは、対応する通信識別子（電話番号、FAX番号、Eメールアドレスなど）と組み合わせて使用​​され、該当するコードリストまたは管轄区域の要件で定義されている追加の通信種別への拡張性をサポートする。"
+28,2,Attribute,,Web Site,Complete Number,String,,0..1,The text string of characters that make up the complete number for this communication.,bus,通信番号（完全）,国番号・市外局番等を含む完全な番号文字列（電話番号、FAX番号等）。
+29,2,Attribute,,Web Site,Use Code,String,,0..1,"The code specifying the usage or purpose of this communication, such as main, investor-relations, direct. Enumerated as: bookkeeper, controller, direct, fax, investor-relations, main, switchboard, other.",bus,通信用途コード,"代表、IR用などの通信用途コード。
+[設定値のリスト]
+(bookkeeper：記帳係)、(controller：会計責任者)、(direct：直通)、(fax：FAX)、(investor-relations：IR窓口)、(main：代表)、(switchboard：交換台)、(other：その他)"
+30,1,Class,,Address,,,,0..*,Class which contains address information.,bus,【住所】,住所情報。
+31,2,Attribute,,Address,Address Name,String,,0..1,Address Name,bus,住所名,住所の名前。
+32,2,Attribute,,Address,Address Description,String,,0..1,Address Description,bus,住所説明,住所の説明。
+33,2,Attribute,,Address,Address Purpose,String,,0..1,Address Purpose,bus,住所目的,住所の目的。
+34,2,Attribute,,Address,Location ID,String,,0..1,A code used to identify the location and to associate it with contacts and transactions,bus,所在地識別子,所在地を識別したり、窓口や取引と関係付けるコード。
+35,2,Attribute,,Address,Building Number,String,,0..1,Building Number,bus,住所建物番号,建物番号。
+36,2,Attribute,,Address,Street,String,,0..1,Street address,bus,住所通り,住所の通り。
+37,2,Attribute,,Address,Address Detail,String,,0..1,Address Detail,bus,住所詳細,住所詳細。
+38,2,Attribute,,Address,City,String,,0..1,City,bus,住所都市,住所の都市。
+39,2,Attribute,,Address,State or Province,String,,0..1,"State, province or region",bus,住所州,住所の州や地方。
+40,2,Attribute,,Address,Country,String,,0..1,Country,bus,住所国,住所の国。
+41,2,Attribute,,Address,Zip or Postal Code,String,,0..1,Zip or other postal code,bus,住所郵便番号,住所の郵便番号。
+42,2,Attribute,,Address,Address Active Indicator,Boolean,,0..1,"Boolean to indicate whether the address is active (=""true"") or inactive (=""false"")",bus,住所有効性,住所が有効か無効かを示すブール値。
+43,1,Class,,Document Information,,,,1..1,Parent for descriptive information about the accountingEntries Class in which it is contained.,bus,【文書情報】,この会計仕訳に関する情報の親タグ。
+44,2,Attribute,PK,Document Information,Number,String,,0..1,Unique identifier for this file.,bus,監査番号,このファイルの一意識別子。
+45,2,Attribute,PK,Document Information,Type,Token,,1..1,"account: information to fill in a chart of accounts file.  
+balance: the results of accumulation of a complete and validated list of entries for an account (or a list of account) in a specific period - sometimes called general ledger  
+entries: a list of individual accounting entries, which might be posted/validated or nonposted/validated   
+journal: a self-balancing (Dr = Cr) list of entries for a specific period including beginning balance for that period.  
+ledger: a complete list of entries for a specific account (or list of accounts) for a specific period; note - debits do not have to equal credits.   
+assets: a listing of open receivables, payables, inventory, fixed assets or other information that can be extracted from but are not necessarily included as part of a journal entry.  
+trialBalance: the self-balancing (Dr = Cr) result of accumulation of a complete and validated list of entries for the entity in a complete list of accounts in a specific period. 
+taxtables: aids automated interpretation of instances that represent tax tables; Tax table are defined by using multiple [taxes] classs to gather the population of codes, authorities and rates; through [taxTableCode] cross-references in the [taxes] class, these ""master file"" tax tables can be referenced. 
+mapping: a collection of mappings between interrelated data sets, such as a local and related corporate standard chart of accounts or detail data mapped to summarized end reporting concepts.   
+versioning: a collection of changes between two versions of the same class of information, such as updates to a master file like a chart of accounts.   
+master_file: a collection of master files, such as the customer or inventory master file.   
+trade_documents: a collection of trade/transactional documents, such as vendor invoices or customer orders.   
+profile_compliant: the meaning of this collection of information can be determined by understanding an established profile and especially an XBRL GL Profile. Profiles are determined through namespace declarations, schemaRef and conventions of those profiles.   
+other: for all other types of representations.
+
+Often sorted by date or by account, these terms have specific, and sometimes different, meanings in different areas. Common practice will drive accounting method/term matches.",bus,文書種別,"・科目:科目体系ファイルの情報。 ・残高:特定の期間について、勘定科目(または勘定科目リスト)の、完了し検証された仕訳リストの累算結果。時に総勘定元帳と呼ばれる。 ・仕訳:個々の勘定記入のリスト。転記/検証されていることもあり、されていないこともある。 ・仕訳帳:特定の期間における、その期間の開始残高を含む貸借が一致(Dr=Cr)した仕訳のリスト 。 ・元帳:特定の期間における特定の勘定科目(または勘定科目リスト)についての、仕訳の全リスト 。注意－貸借が一致する必要はない。 ・資産:仕訳記入の一部として必ずしも含まれていないが、そこから抽出可能な売掛金、買掛金、在庫、固定資産、その他の情報のリスト。 ・試算表:事業体に対する、特定期間の全勘定科目リストでの、完了し検証された仕訳リストの、貸借が一致（Dr=Cr)した累算結果。 ・税率表:税率表をあらわすデータを自動的に解釈できるようにする。税率表は、コード、税務当局情報、レートをあらわす複数のtaxes構造データを使って定義される。taxTableCodeはtaxes構造データ内で相互に参照されるが、これらのマスタファイルが参照可能。 ・マッピング情報:互いに関係があるデータセットの間の対応関係を集めたもの。例えば、企業グループ内の各会社で使用する勘定科目と全社勘定科目との対応付け、または明細データと最終的な報告書上の要約された科目への対応付け。 ・差分情報:同じクラス（種類）で異なるバージョンを持つ項目の変更・差分情報。例えば、勘定科目一覧のようなマスタファイルの特定科目の更新情報など。  ・マスターファイル:マスタファイルの一覧。例えば、顧客マスタ又は在庫/棚卸マスタなど。  ・取引伝票:取引に用いる情報の集合。例えば、納入業者からのインボイス 又は顧客からの受注情報など。  ・プロファイル情報:確立された文書説明情報及び特にXBRL GLプロファイルを理解し決定するこの情報の集合の意味を示す。説明情報は、名前空間宣言、スキーマ参照及びこれらの規約を通して決定する。  ・その他：その他のすべての表現形式  多くの場合、日付または科目によりソートされる。会計処理方法や用語は慣行により適合させる。 [設定値のリスト] (account：科目)、(balance：残高)、(entries：仕訳)、(journal：仕訳帳)、(ledger：元帳)、(assets：資産)、(trialbalance：試算表)、(taxtables：税率表)、(other：その他)、(Mapping：マッピング情報)、(versioning：差分情報)、(master_file：マスターファイル)、(trade_documents：取引伝票)、(profile_compliant：プロファイル情報)、(other：その他)"
+46,2,Attribute,,Document Information,Entry Date,Date Time,,0..1,Date/time file was created.,bus,作成日付,ファイルが作成された日付/時間。
+47,2,Attribute,,Document Information,Revises Audit Number,String,,0..1,"If this batch of information revises a previous batch of information, this field identifies the previous batch that is being revised. 'uniqueID' of the previous batch goes here. Developers should consider exception reporting.",bus,改訂前監査番号,この仕訳の束が以前の仕訳の束を改訂する場合に、以前の束を示す。元の文書のuniqueIDが指定される。開発者は、例外報告を考慮すべきである。
+48,2,Attribute,,Document Information,Action to Take with Previous Data,Token,,0..1,Provides guidance on action to take with previous set of data: supersedes - old data should be considered as obsolete/overwritten; supplements - belongs with that data as if it was included with it.,bus,改訂前データ処置,"以前のデータの束に対する操作のガイダンス。 取替え-古いデータを無効にし上書きする。
+補完-元々含まれていたかのように、そのデータに所属させる。
+[設定値のリスト]
+(supplement：補完)、(supersede：取替え)"
+49,2,Attribute,,Document Information,Language,QName,,0..1,"Primary language of the intellectual content. Where practical, the content of this field should coincide with ISO 639-1988 language codes.",bus,言語,主要言語。 実用的には、このフィールドの内容はISO639-1988言語コードに一致すべきである。
+50,2,Attribute,,Document Information,Creator,String,,0..1,Identifies the creator of the XBRL instance.,bus,作成者,ファイルの作成者の識別子。
+51,2,Attribute,,Document Information,Comment,String,,0..1,Text for entire document.,bus,文書コメント,文書全体に対する説明文。
+52,2,Attribute,,Document Information,Period Covered Start,Date Time,,0..1,"Start of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.",bus,対象期間開始日付,内容の日付範囲の開始日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。
+53,2,Attribute,,Document Information,Period Covered End,Date Time,,0..1,"End of date range for contents. Used as basis for many assumptions about data, including the date as of which open balances are open.",bus,対象期間終了日付,内容の日付範囲の終了日。 残高の開始日付などの、データに関する多くの仮定の基礎として使用される。
+54,2,Attribute,,Document Information,Period Count,Decimal,,0..1,"Number of periods or buckets, used by postingCode. Used to interpret posting date. It may be preferable to limit entries by period covered to be by individual reporting period.",bus,期間数,postingCodeで使用される期間又はバケットの数。 転記日付を説明するために使用される。対象期間の仕訳を個々の報告期間に限定することが望ましいかもしれない。
+55,2,Attribute,,Document Information,Period Unit,Token,,0..1,"Type of periods covered by periodCount. Enumerated as: daily, weekly, bi-weekly, semi-monthly, monthly, quarterly, thirdly, semiannual, annual, ad-hoc, current-period-only, other.",bus,期間単位,"periodCountで対象とする期間の種別。
+[設定値のリスト]
+(daily：日次)、(weekly：週次)、(bi-weekly：隔週)、(semi-monthly：半月ごと)、(monthly：月次)、(quarterly：四半期ごと)、(thirdly：年3回)、(semiannual：半年ごと)、(annual：年次)、(ad-hoc：随時)、(current-period-only：当期)、(other：その他)"
+56,2,Attribute,,Document Information,Period Unit Description,String,,0..1,Free format description of the period unit,bus,期間単位説明,対象期間単位の説明。
+57,2,Attribute,,Document Information,Source Application,String,,0..1,"Product or service that produced this file. Used by many systems (e.g., VAT). Version number can be included or extended.",bus,作成元アプリケーション,このファイルを作り出した製品又はサービス。 多くのシステム(例えば、VATなど)で、使用される。 バージョン番号を含むことも可能。
+58,2,Attribute,,Document Information,Target Application,String,,0..1,Particular use for which file was generated.,bus,対象アプリケーション,ファイルが作成された用途。
+59,2,Attribute,,Document Information,Default Currency,QName,,0..1,"The default currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. Recommend ISO 4217 coding",bus,既定通貨,XBRLインスタンス内に指定する方法のかわりに、金額の既定の通貨を指定可能。多通貨環境で特に重要。ISO4217コード体系を推奨。
+60,2,Composition,,Document Information,,,Summary Reporting Taxonomies,0..*,Identifies and provides information about one or more target reporting taxonomies to which the data represented in the document rolls up to.,lnk,【集約報告タクソノミ】,この文書で示されたデータのロールアップ先となる、1つ以上の報告タクソノミの情報を、識別し提供する。
+61,1,Class,,Contact,,,,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+62,2,Attribute,,Contact,Prefix,String,,0..1,"Prefix (e.g. Dr., Mr., Mrs.)",bus,敬称,敬称(Dr.、Mr.、Mrs.など)
+63,2,Attribute,,Contact,Last Name,String,,0..1,Last or family name,bus,姓,姓
+64,2,Attribute,,Contact,First Name,String,,0..1,First or given name,bus,名,名、クリスチャンネーム
+65,2,Attribute,,Contact,Suffix,String,,0..1,"Suffix (e.g. MD, CPA, Jr.)",bus,付加名称,付加名称(MD、CPA、Jr.など)
+66,2,Attribute,,Contact,Attention Line,String,,0..1,Attention Line,bus,アテンションライン,アテンションライン
+67,2,Attribute,,Contact,Position Role,String,,0..1,Position or role,bus,地位/役職,地位や役職。
+68,2,Attribute,,Contact,Type,String,,0..1,"Role of contact. Examples include: Source Service, Sender, Recipient, Invoicer, Auditor, Accountant",bus,担当者役割,担当者の役割。例：ソースサービス、送付元、受取人、請求先、監査人、会計事務所。
+69,2,Attribute,,Contact,Location ID cross reference,String,,0..1,This code is used to associate the contact with a specific location for the Entity. Its value should be the same as that of the organizationAddressLocationIdentifier,bus,所在地相互参照情報,担当者と事業体の位置情報を関係付けるためのコード。organizationAddressLocationIdentifierと同じ値であるべき。
+70,2,Attribute,,Contact,Active,Boolean,,0..1,"Boolean to indicate whether the contact is active (=""true"") or inactive (=""false"")",bus,担当者有効性,担当者が有効か無効かを示すブール値。
+71,2,Composition,,Contact,,,Phone,0..*,Contact Phone Number,bus,【担当者電話番号】,担当者の電話番号。
+72,2,Composition,,Contact,,,Fax,0..*,Contact Fax Number Class,bus,【担当者FAX番号】,担当者のFAX番号のクラス。
+73,2,Composition,,Contact,,,Email,0..*,Contact E-mail address class,bus,【担当者Eメールアドレス】,担当者のEメールアドレスのクラス。
+74,1,Class,,Accounting Method,,,,0..*,Class for identifying the methods of accounting used by the entity for different reporting purposes,bus,【会計処理方法】,異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのクラス。
+75,2,Attribute,,Accounting Method,Code,Token,,0..1,"For this entity, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other",bus,会計処理方法,"事業体の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)"
+76,2,Attribute,,Accounting Method,Description,String,,0..1,Free format description of the accounting method,bus,会計処理方法説明,会計処理方法の説明。
+77,2,Attribute,,Accounting Method,Purpose,Token,,0..1,"For this entity, the reporting purpose represented - from book, tax, management, statutory, other",bus,会計処理方法目的,"事業体の報告の目的を表す。帳簿、税、管理、スタチュトリ、その他から選択する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+78,2,Attribute,,Accounting Method,Purpose Description,String,,0..1,Free format description of the accounting method purpose,bus,会計処理方法目的説明,会計処理方法の目的の説明。
+79,2,Attribute,,Accounting Method,Start Date,Date Time,,0..1,Accounting Method Start Date,bus,会計処理方法開始日付,会計処理方法の開始日。
+80,2,Attribute,,Accounting Method,End Date,Date Time,,0..1,Accounting Method End Date,bus,会計処理方法終了日付,会計処理方法の終了日。
+81,1,Class,,Accountant,,,,0..*,Information about the relevant external accountant,bus,【会計事務所情報】,関連する外部会計事務所に関する情報。
+82,2,Attribute,,Accountant,Accountant Name,String,,0..1,Name of the accountant,bus,会計事務所名,会計事務所の名前。
+83,2,Attribute,,Accountant,Accountant Type of Engagement,Token,,0..1,"Type of engagement being performed by external accountant. Enumerated as: audit, review, compilation, tax, other.",bus,契約種別,"外部会計事務所によって実行される契約の種別。
+[設定値のリスト]
+(audit：監査)、(review：検査)、(compilation：帳簿作成)、(tax：税)、(other：その他)"
+84,2,Attribute,,Accountant,Accountant Type of Engagement Description,String,,0..1,Free format description of the type of engagement,bus,契約種別説明,契約種別の説明。
+85,2,Composition,,Accountant,,,Address,0..*,Class which contains accountant address information.,bus,【会計事務所住所】,会計事務所の住所情報を含むクラス。
+86,2,Composition,,Accountant,,,Contact,0..*,Accountant Contact Information Class,bus,【会計事務所担当者情報】,会計事務所の担当者情報のクラス。
+87,1,Class,,Period,,,,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+88,2,Attribute,PK,Period,ID,String,,0..1,An identifier for this period in this calendar,bus,報告期間識別子,このカレンダーにおけるこの期間の識別子。
+89,2,Attribute,,Period,Description,String,,0..1,A description of this specific reporting period in this calendar.,bus,期間説明,このカレンダーにおけるこの特定の期間の説明。
+90,2,Attribute,,Period,Start Date,Date Time,,0..1,The beginning date/time of a period,bus,期間開始日付,期間の開始日付/時刻
+91,2,Attribute,,Period,End Date,Date Time,,0..1,The ending date/time of a period,bus,期間終了日付,期間の終了日付/時刻
+92,1,Class,,Reporting Calendar_ Period,,,,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+93,2,Specialization,,Reporting Calendar_ Period,,,Period,1,,bus,,
+94,2,Attribute,PK,Reporting Calendar_ Period,ID,String,,0..1,An identifier for this period in this calendar,bus,報告期間識別子,このカレンダーにおけるこの期間の識別子。
+95,2,Attribute,,Reporting Calendar_ Period,Description,String,,0..1,A description of this specific reporting period in this calendar.,bus,期間説明,このカレンダーにおけるこの特定の期間の説明。
+96,2,Attribute,,Reporting Calendar_ Period,Start Date,Date Time,,0..1,The beginning date/time of a period,bus,期間開始日付,期間の開始日付/時刻
+97,2,Attribute,,Reporting Calendar_ Period,End Date,Date Time,,0..1,The ending date/time of a period,bus,期間終了日付,期間の終了日付/時刻
+98,2,Attribute,,Reporting Calendar_ Period,Closed Date,Date Time,,0..1,"The date/time a period has been closed for activity. If this is present with a nill value (xsi:nill=""true"") then the period is not closed.",bus,期間締日付,"この期間の活動が締め切られた日付/時刻。この値がニル値(xsi:nill=""true"")であれば、この期間は、締め切られていない。"
+99,1,Class,,Reporting Calendar,,,,0..*,A tool to collect the periods used to summarise results from transactions.,bus,【報告カレンダー】,取引の結果をまとめるための期間を集めるもの。
+100,2,Attribute,,Reporting Calendar,Code,String,,0..1,"The code used to identify this specific reporting calendar, unique across periods",bus,報告カレンダーコード,この報告カレンダーを識別するコード。複数期間にわたって一意。
+101,2,Attribute,,Reporting Calendar,Description,String,,0..1,A description of the reporting calendar (associated with the reportingCalendarCode given),bus,報告カレンダー説明,報告カレンダーの説明（reportingCalendarCodeと関係付けられる）。
+102,2,Attribute,,Reporting Calendar,Title,String,,0..1,A description of the reporting period. The actual beginning and ending dates are found within the 'reportingCalendarPeriod' class,bus,報告カレンダータイトル,報告期間の説明。実際の開始日及び終了日はreportingCalendarPeriodに記述する。
+103,2,Attribute,,Reporting Calendar,Type Code,Token,,0..1,"A code for the type of period involved. Enumerated as: monthly, quarterly, semi-annually, 4-5-4, ad-hoc, other.",bus,期間種別コード,"報告期間の種別コード。月次、四半期ごと、半期ごと、4-5-4、随時、その他
+[設定値のリスト]
+(monthly：月次)、(quarterly：四半期ごと)、(semi-annually：半期ごと)、(4-5-4：4-5-4)、(ad-hoc：随時)、(other：その他)"
+104,2,Attribute,,Reporting Calendar,Type Code Description,String,,0..1,A description of the type of period involved.,bus,期間種別説明,報告期間の種別の説明。
+105,2,Attribute,,Reporting Calendar,Closed Status,Token,,0..1,"An identifier on whether the reporting calendar is still open for activity. enumerated, ""open"", ""closed"", ""pending""",bus,締状態,"報告カレンダーがオープンかどうかを示す識別子。オープン、締切り済み、保留中
+[設定値のリスト]
+(open：オープン)、(closed：締切り済み)、(pending：保留中)"
+106,2,Attribute,,Reporting Calendar,Purpose,Token,,0..1,A description of the accounting set of books involved. Uses enumeration from accounting method purpose.,bus,報告目的,"帳簿の集合の説明。会計処理方法の目的の列挙値を使用する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+107,2,Attribute,,Reporting Calendar,Purpose Description,String,,0..1,Free format description of the reporting purpose,bus,報告目的説明,報告目的の説明。
+108,2,Composition,,Reporting Calendar,,,Reporting Calendar_ Period,0..*,A tool to collect a specific set of periods used to summarize results from transactions.,bus,【報告カレンダー期間】,取引の結果をまとめるための特定の期間を集めるもの。
+109,1,Class,,Authority Registered Identifier,,,,0..*,Class representing an identifier that is registered with and issued or recognised by an external authority. It provides information about the authority responsible for the registration and verification of the identifier.,cor,【外部機関登録識別子】,外部機関に登録され、当該機関によって発行または認証される識別子を表すクラス。識別子の登録・認証を行う外部機関に関する情報も提供する。
+110,2,Attribute,PK,Authority Registered Identifier,Authority Registered ID,String,,0..1,"Identifier of the registered authority identifier record within this report, used to uniquely identify and reference the instance.",cor,外部機関登録識別子ID,外部機関に登録識別子のレコードを一意に識別するためのID。
+111,2,Attribute,,Authority Registered Identifier,Authority Registered Name,String,,0..1,Name or descriptive label of the identifier as registered with the authority.,cor,外部機関登録識別子名称,外部機関登録識別子に識別するためのID。
+112,2,Attribute,PK,Authority Registered Identifier,Authority Code,String,,0..1,Code identifying the external authority with which the identifier is registered.,cor,外部機関コード,当該識別子が登録されている外部機関を識別するコード。（例：税務当局コード）。
+113,2,Attribute,,Authority Registered Identifier,Authority Name,String,,0..1,Name of the external authority responsible for registering or verifying the identifier.,cor,外部機関名,識別子の登録または認証を行う外部機関の名称。（たとえば、税務署）
+114,2,Attribute,,Authority Registered Identifier,Authority Verification Date,Date Time,,0..1,Date on which the external authority last verified or confirmed the registered identifier.,cor,外部機関認証日付,外部機関が当該登録識別子を最後に認証または確認した日付。
+115,1,Abstract Class,,Identifier Reference,,,,0..*,"Identification for customer, vendor, or employee.",cor,【CVE情報】,顧客、仕入先、従業員のための識別子。
+116,2,Attribute,PK,Identifier Reference,Type,Token,,0..1,"Entity type (enumerated): C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.",cor,CVE種別,"実体の種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)"
+117,2,Attribute,PK,Identifier Reference, Code,String,,0..1,Internal ID Number associated with identifierReference,cor,CVE識別番号（内部）,CVE情報に関係付けられた、内部ID番号。
+118,2,Attribute,,Identifier Reference,Organization Type,Token,,0..1,"Identifier Organization Type. Enumerated as: individual, organization, other.",cor,CVE組織種別,"CVE識別子の組織種別。
+[設定値のリスト]
+(individual：個人)、(organization：組織)、(other：その他)"
+119,2,Attribute,,Identifier Reference,Organization Type Description,String,,0..1,Free format description of the identifier organization type,cor,CVE組織種別説明,CVE識別子の組織種別の説明。
+120,2,Attribute,,Identifier Reference,Purpose,String,,0..1,"Freeform for codes like purchasing, billing, manufacturing at identifier level.",cor,CVE目的,購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。
+121,2,Attribute,,Identifier Reference,Description,String,,0..1,Textual description of identifierReference.,cor,CVE説明,CVE情報の説明。
+122,2,Attribute,,Identifier Reference,Category,String,,0..1,"For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).",cor,CVEカテゴリ,顧客、仕入先、従業員の分類に使用する。　（住居/商業/機関/政府や、小売/卸や、ビジネスで使用されるその他の分類）。
+123,2,Attribute,,Identifier Reference,Active,Boolean,,0..1,"Boolean to indicate whether the identifier is active (=""true"") or inactive (=""false"")",cor,CVE有効性,CVE識別子が有効か無効かを示すブール値。
+124,2,Reference Association,,Identifier Reference,,,Authority Registered Identifier,0..1,Class representing an identifier that is registered with and issued or recognised by an external authority. It provides information about the authority responsible for the registration and verification of the identifier.,cor,【外部機関登録識別子】,外部機関に登録され、当該機関によって発行または認証される識別子を表すクラス。識別子の登録・認証を行う外部機関に関する情報も提供する。
+125,2,Composition,,Identifier Reference,,,Phone,0..*,Phone number related to Identifier.,bus,【電話番号】,CVE識別子の電話番号。
+126,2,Composition,,Identifier Reference,,,Fax,0..*,Fax number class related to identifier.,bus,【FAX番号】,CVE識別子のFAX番号のクラス。
+127,2,Composition,,Identifier Reference,,,Email,0..*,Email address for Identifier.,bus,【CVEEメールアドレス】,CVE識別子のEメールアドレス。
+128,2,Composition,,Identifier Reference,,,Address,0..*,"Address (block) of customer, vendor, employee for integration purposes, VAT.",bus,【CVE住所】,統合目的やVATのための、顧客、仕入先、従業員の住所(ブロック)。
+129,2,Composition,,Identifier Reference,,,Contact,0..*,Identifier Contact Information Class,bus,【CVE担当者情報】,CVE識別子の担当者情報のクラス。
+130,1,Class,,Detail_ Identifier Reference,,,,0..*,"Identification for customer, vendor, or employee applied at the transaction detail (line) level.",cor,【行CVE情報】,顧客、仕入先、従業員のための識別子。
+131,2,Specialization,,Detail_ Identifier Reference,,,Identifier Reference,1,,cor,,
+132,2,Attribute,PK,Detail_ Identifier Reference,Type,Token,,0..1,"Entity type (enumerated): C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.",cor,CVE種別,"実体の種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)"
+133,2,Attribute,PK,Detail_ Identifier Reference, Code,String,,0..1,Internal ID Number associated with identifierReference,cor,CVE識別番号（内部）,identifierReferenceに関係付けられた、内部ID番号。
+134,2,Attribute,,Detail_ Identifier Reference,Organization Type,Token,,0..1,"Identifier Organization Type. Enumerated as: individual, organization, other.",cor,CVE組織種別,"CVE識別子の組織種別。
+[設定値のリスト]
+(individual：個人)、(organization：組織)、(other：その他)"
+135,2,Attribute,,Detail_ Identifier Reference,Organization Type Description,String,,0..1,Free format description of the identifier organization type,cor,CVE組織種別説明,CVE識別子の組織種別の説明。
+136,2,Attribute,,Detail_ Identifier Reference,Purpose,String,,0..1,"Freeform for codes like purchasing, billing, manufacturing at identifier level.",bus,CVE目的,購買、請求、製造などの、CVE識別子のレベルのコードの自由記述。
+137,2,Attribute,,Detail_ Identifier Reference,Description,String,,0..1,Textual description of identifierReference.,cor,CVE説明,identifierReferenceの説明。
+138,2,Attribute,,Detail_ Identifier Reference,Category,String,,0..1,"For use as Customer, Vendor or Employee Class (such as Residential/Commercial/Institutional/Government or Retail/Wholesale or other classifications used by business).",cor,CVEカテゴリ,顧客、仕入先、従業員の分類に使用する。　（住居/商業/機関/政府や、小売/卸や、ビジネスで使用されるその他の分類）。
+139,2,Attribute,,Detail_ Identifier Reference,Active,Boolean,,0..1,"Boolean to indicate whether the identifier is active (=""true"") or inactive (=""false"")",cor,CVE有効性,CVE識別子が有効か無効かを示すブール値。
+140,2,Reference Association,,Detail_ Identifier Reference,,,Authority Registered Identifier,0..1,Class representing an identifier that is registered with and issued or recognised by an external authority. It provides information about the authority responsible for the registration and verification of the identifier.,cor,【外部機関登録識別子】,外部機関に登録され、当該機関によって発行または認証される識別子を表すクラス。識別子の登録・認証を行う外部機関に関する情報も提供する。
+141,2,Composition,,Detail_ Identifier Reference,,,Phone,0..*,Phone number related to Identifier.,bus,【電話番号】,CVE識別子の電話番号。
+142,2,Composition,,Detail_ Identifier Reference,,,Fax,0..*,Fax number class related to identifier.,bus,【FAX番号】,CVE識別子のFAX番号のクラス。
+143,2,Composition,,Detail_ Identifier Reference,,,Email,0..*,Email address for Identifier.,bus,【CVEEメールアドレス】,CVE識別子のEメールアドレス。
+144,2,Composition,,Detail_ Identifier Reference,,,Address,0..*,"Address (block) of customer, vendor, employee for integration purposes, VAT.",bus,【CVE住所】,統合目的やVATのための、顧客、仕入先、従業員の住所(ブロック)。
+145,2,Composition,,Detail_ Identifier Reference,,,Contact,0..*,Identifier Contact Information Class,bus,【CVE担当者情報】,CVE識別子の担当者情報のクラス。
+146,1,Class,,Party,,,,0..*,Class for the party,cor,,
+147,2,Attribute,PK,Party,Party ID,String,,0..1,ID Number of the party,cor,,
+148,2,Attribute,,Party,Party Name,String,,0..1,Name of the party,cor,,
+149,2,Attribute,,Party,Party Business Description,String,,0..1,Description of the nature of the business of the party.,cor,業種説明,事業体の事業の種類についての説明。
+150,2,Reference Association,,Party,,,Authority Registered Identifier,0..*,Class which contains various identifiers for the party.,cor,【事業体識別子】,組織に関する様々な識別子を含むクラス。
+151,2,Composition,,Party,,,Phone,0..*,Primary phone number of the party.,bus,【事業体電話番号】,事業体の主要電話番号情報。
+152,2,Composition,,Party,,,Fax,0..*,Class for holding company fax information.,bus,【事業体FAX番号】,事業体のFAX番号情報のクラス。
+153,2,Composition,,Party,,,Email,0..*,Class for holding company email information.,bus,【事業体Eメールアドレス】,事業体のEメールアドレス情報のクラス。
+154,2,Composition,,Party,,,Address,0..*,Address class for the party,bus,【住所】,報告事業体の住所クラス。
+155,2,Composition,,Party,,,Web Site,0..*,Primary web site of the party.,bus,【事業体Webサイト】,事業体の代表ウェブサイト。
+156,2,Composition,,Party,,,Contact,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+157,1,Class,,Entity_ Party,,,,0..1,Holder for entity information - information about the reporting organization.,cor,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。
+158,2,Specialization,,Entity_ Party,,,Party,1,,cor,,
+159,2,Attribute,PK,Entity_ Party,ID,String,,0..1,ID Number of the party,cor,,
+160,2,Attribute,,Entity_ Party,Name,String,,0..1,Name of the party,cor,,
+161,2,Attribute,,Entity_ Party,Business Description,String,,0..1,Description of the nature of the business of the party.,cor,業種説明,事業体の事業の種類についての説明。
+162,2,Reference Association,,Entity_ Party,,,Authority Registered Identifier,0..*,Class which contains various identifiers for theparty.,cor,【事業体識別子】,組織に関する様々な識別子を含むクラス。
+163,2,Composition,,Entity_ Party,,,Phone,0..*,Primary phone number of the party.,bus,【事業体電話番号】,事業体の主要電話番号情報。
+164,2,Composition,,Entity_ Party,,,Fax,0..*,Class for holding company fax information.,bus,【事業体FAX番号】,事業体のFAX番号情報のクラス。
+165,2,Composition,,Entity_ Party,,,Email,0..*,Class for holding company email information.,bus,【事業体Eメールアドレス】,事業体のEメールアドレス情報のクラス。
+166,2,Composition,,Entity_ Party,,,Address,0..*,Address class for the party,bus,【住所】,報告事業体の住所クラス。
+167,2,Composition,,Entity_ Party,,,Web Site,0..*,Primary web site of the party.,bus,【事業体Webサイト】,事業体の代表ウェブサイト。
+168,2,Composition,,Entity_ Party,,,Contact,0..*,Information about contacts.,bus,【担当者情報】,担当者に関する情報。
+169,2,Attribute,,Entity_ Party,Default Accounting Method Purpose,Token,,0..1,"If not stated explicitly at the line level, the default reporting purpose - from book, tax, management, statutory, other",bus,既定会計処理方法目的,"明細レベルで明確に指定しない場合の、既定の報告目的を表す。帳簿、税、管理、スタチュトリ、その他から選択する。
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+170,2,Attribute,,Entity_ Party,Default Accounting Method Purpose Description,String,,0..1,Free format description of the default accounting method purpose,bus,既定会計処理方法目的説明,既定の会計処理方法目的の説明。
+171,2,Attribute,,Entity_ Party,Fiscal Year Start,Date,,0..1,"Start of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.",bus,会計年度開始日付,会計年度の開始日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。
+172,2,Attribute,,Entity_ Party,Fiscal Year End,Date,,0..1,"End of fiscal year. Where appropriate, corporate year period representation permits non-365 or 366 day years (more appropriate for internal sharing than data from external sources), In Europe, some jurisdictions allow 2 year minus 1 day fiscal years.",bus,会計年度終了日付,会計年度の終了日。妥当であれば、企業の会計年度表示において、366日や365日でない年も許可する（外部ソースからのデータより内部共有のための方が適している）。ヨーロッパでは、2年マイナス1日の会計年度を許可するところもある。
+173,2,Composition,,Entity_ Party,,,Accounting Method,0..*,Class for identifying the methods of accounting used by the entity for different reporting purposes,bus,【会計処理方法】,異なる報告目的に応じて事業体が使用する会計処理方法を識別するためのクラス。
+174,2,Composition,,Entity_ Party,,,Accountant,0..*,Information about the relevant external accountant,bus,【会計事務所情報】,関連する外部会計事務所に関する情報。
+175,2,Composition,,Entity_ Party,,,Reporting Calendar,0..*,A tool to collect the periods used to summarise results from transactions.,bus,【報告カレンダー】,取引の結果をまとめるための期間を集めるもの。
+176,1,Class,,Subaccount,,,,0..*,Class to hold multiple accountSubIDs and Descriptions,cor,【補助勘定科目情報】,複数のaccountSubIDと説明文を含むクラス。
+177,2,Attribute,PK,Subaccount,ID,String,,0..1,"Where the primary account was placed in accountMainID, the code used for each profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here.",cor,補助勘定科目コード,主勘定科目をaccountMainIDに指定したときに、各プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子に使用されるコードはここに指定する。
+178,2,Attribute,,Subaccount,Description,String,,0..1,The description that accompanies accountSubID belongs here.,cor,補助勘定科目説明,accountSubIDに関する説明。
+179,2,Attribute,,Subaccount,Type,Token,,0..1,"Type of sub-account - profit center, division, business unit, fund, program, branch, project, class, su-class or other modifier is placed here. For example:: Accountability center: Business unit: Class:Department: Project: Fund: Program:Job: Profit center: Branch: Setup class: Division: Unit",cor,補助勘定科目種別,小勘定科目の種別。プロフィットセンタ、事業部、事業体、基金、プログラム、支店、プロジェクト、クラス、su-クラス又は他の修飾子がここに配置される。 例えば、責任単位、事業単位、クラス、部、プロジェクト、基金、プログラム、ジョブ、プロフィットセンター、支店、セットアップクラス、部門、ユニット
+180,2,Reference Association,,Subaccount,,,Parent Subaccount,0..1,Reference to the ID of the parent subaccount.,cor,親補助勘定科目コード,
+181,1,Class,,Parent Subaccount,,,,0..*,Class for showing the detail necessary to roll up from one segment (type of subaccount) to another.,cor,【親補助勘定科目情報】,あるセグメント（補助勘定の種別）から別のセグメントへ集約（ロールアップ）するために必要な詳細を表すクラス。
+182,2,Attribute,PK,Parent Subaccount,Parent Code,String,,0..1,Subaccount NUMBER this subaccount rolls up to - see also subaccount type it rolls up to.,cor,親補助勘定科目コード,この小勘定科目のロールアップ先の小勘定科目の番号-ロールアップ先の小勘定科目の種別も参照。
+183,2,Attribute,,Parent Subaccount,Parent Type,String,,0..1,The describer of the segment this subaccount rolls up to.,cor,親補助勘定科目種別,この小勘定科目のロールアップ先のセグメントの説明。
+184,2,Attribute,,Parent Subaccount,Parent Reporting Tree ID,String,,0..1,Used for representing descriptions of reporting trees.,cor,親補助勘定レポーティングツリーID,レポーティングツリーの階層構造における親ノードを識別するために用いられる識別子。
+185,2,Attribute,,Parent Subaccount,Parent Percentage,Pure,,0..1,"For partial allocations of amounts to different parents, the percentage of a child that will be allocated to a parent.",cor,親補助勘定科目配分パーセンテージ,異なる親科目に配分する場合に、親科目に割り当てるパーセンテージ。
+186,1,Abstract Class,,Account Identifier,,,,0..*,"Class: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so: 
+
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",cor,【科目識別子】,"クラス。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division"
+187,2,Attribute,PK,Account Identifier,Number,String,,0..1,"Main account - the code used to identify the accounting bucket the entry has been assigned to. Examples might be 1000 for Cash, 567GAAZ for Sales Expense or Z for tax payments. Identifiers such as department, branch, division, manager, or other modifiers are noted in the Subaccount area. Before needing to post, account is not necessary. Posting to the general ledger almost always requires an entry here.",cor,主勘定科目コード,"主勘定科目。仕訳が関連する会計バケットを特定するためのコード。例えば、現金を表す1000、販売費を表す567GAAZ、税を表すZ。
+部門、支店、事業部、マネージャ、その他の識別子は、Subaccount領域に記述される。転記の必要がなければ、勘定科目は必要ではない。総勘定元帳に転記するにはほとんどの場合必要。"
+188,2,Attribute,,Account Identifier,Description,String,,0..1,Description of accountMainID - the human readable describer that accompanies the code used in accountMainID,cor,主勘定科目説明,主勘定科目コードの説明。主勘定科目コードとして使用されるコードについての、人が読める記述。
+189,2,Attribute,,Account Identifier,Classification,Token,,0..1,"Account type - FASB Concepts 6 and similar international designs. When xbrlInfo is used to associated other XBRL reporting items, this field is more suited to representing existing systems (audit) than data interchange. Enumerated as: asset, liability, equity, income, gain, expense, loss, contr-to-equity, distr-from-equity, comprehensive-income, other.",cor,主勘定科目区分,"主勘定科目の種別。FASB Concepts 6および、同様の国際的な様式。xbrlInfoが他のXBRL項目と関係付けられる場合、データ交換より現存システム(audit)を示すべき。
+[設定値のリスト]
+(asset：資産)、(liability：負債)、(equity：資本)、(income：収益)、(gain：利得)、(expense：費用)、(loss：損失)、(contr-to-equity：資本増加)、(distr-from-equity：資本減少)、(comprehensive-income：包括利益)、(other：その他)"
+190,2,Attribute,,Account Identifier,Classification Description,String,,0..1,Free format description of the account classification,cor,主勘定科目区分説明,主勘定科目の区分の説明。
+191,2,Attribute,,Account Identifier,Parent Number,String,,0..1,Roll up item from child natural account to parent natural account.,cor,親勘定科目コード,子勘定科目から親勘定科目に包み込む科目。
+192,2,Attribute,,Account Identifier,Purpose of Account,Token,,0..1,"Code related to usage for account aggregate - Consolidating, European, IFRS, Offsetting, Primary, Tax, USGAAP, Japanese, Other. Japanese companies will use this for the tax required offsetting entry. If left blank, assumes default accounting method for company.",cor,勘定科目目的,"勘定科目群の使用法を示すコード。連結、European, IFRS, 見返、プライマリ, 税, USGAAP, Japanese,その他。日本企業では、見返仕訳で要求される税務処理に利用するかもしれない。空白の場合、企業の既定の勘定方法とみなす。
+[設定値のリスト]
+(consolidating：連結)、(european：ヨーロッパ)、(ifrs：IFRS)、(offsetting：見返)、(primary：プライマリ)、(tax：税)、(usgaap：US GAAP)、(japanese：日本)、(other：その他)"
+193,2,Attribute,,Account Identifier,Purpose of Description,String,,0..1,Description of usage for aggregate account,cor,勘定科目目的説明,勘定科目群の使用法の説明。
+194,2,Attribute,,Account Identifier,Type,Token,,0..1,"Type of account. Enumerated as: account, bank, employee, customer, job, vendor, measurable, statistical, other.",cor,科目種別,"科目の種別。
+[設定値のリスト]
+(account：勘定科目)、(bank：銀行)、(employee：従業員)、(customer：顧客)、(job：ジョブ)、(vendor：仕入先)、(measurable：計測可能物)、(statistical：統計)、(other：その他)"
+195,2,Attribute,,Account Identifier,Type Description,String,,0..1,Free format description of the account type,cor,科目種別説明,科目の種別の説明。
+196,2,Attribute,,Account Identifier,Accounting Method,Token,,0..1,"For this entry, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other",bus,仕訳会計処理方法,"この仕訳の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)"
+197,2,Attribute,,Account Identifier,Accounting Method Description,String,,0..1,Free format description of the entry accounting method,bus,仕訳会計処理方法説明,仕訳の会計処理方法の説明。
+198,2,Attribute,,Account Identifier,Accounting Method Purpose,Token,,0..1,"For this entry, the reporting purpose represented - from book, tax, management, statutory, other",bus,仕訳会計処理方法目的,"仕訳の報告の目的を表す。帳簿、税、管理、スタチュトリ、その他
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+199,2,Attribute,,Account Identifier,Accounting Method Purpose Description,String,,0..1,Free format description of the entry accounting method purpose,bus,仕訳会計処理方法目的説明,仕訳の会計処理方法の目的の説明。
+200,2,Attribute,,Account Identifier,Active,Boolean,,0..1,"Boolean to indicate whether the account is active (=""true"") or inactive (=""false"")",cor,科目有効性,科目が有効か無効かを示すブール値。
+201,2,Reference Association,,Account Identifier,,,Subaccount,0..*,Class to hold multiple accountSubIDs and Descriptions,cor,【サブ科目情報】,複数のaccountSubIDと説明文を含むクラス。
+202,1,Class,,Detail_ Account Identifier,,,,0..*,"Class: parent container for account numbers and identifiers applied at the transaction detail (line) level. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so: 
+
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",cor,【行科目識別子】,"クラス。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division"
+203,2,Specialization,,Detail_ Account Identifier,,,Account Identifier,1,,cor,,
+204,2,Attribute,PK,Detail_ Account Identifier,Number,String,,0..1,"Main account - the code used to identify the accounting bucket the entry has been assigned to. Examples might be 1000 for Cash, 567GAAZ for Sales Expense or Z for tax payments. Identifiers such as department, branch, division, manager, or other modifiers are noted in the Subaccount area. Before needing to post, account is not necessary. Posting to the general ledger almost always requires an entry here.",cor,主勘定科目コード,"主勘定科目。仕訳が関連する会計バケットを特定するためのコード。例えば、現金を表す1000、販売費を表す567GAAZ、税を表すZ。
+部門、支店、事業部、マネージャ、その他の識別子は、Subaccount領域に記述される。転記の必要がなければ、勘定科目は必要ではない。総勘定元帳に転記するにはほとんどの場合必要。"
+205,2,Attribute,,Detail_ Account Identifier,Description,String,,0..1,Description of accountMainID - the human readable describer that accompanies the code used in accountMainID,cor,主勘定科目説明,主勘定科目コードの説明。主勘定科目コードとして使用されるコードについての、人が読める記述。
+206,2,Attribute,,Detail_ Account Identifier,Classification,Token,,0..1,"Account type - FASB Concepts 6 and similar international designs. When xbrlInfo is used to associated other XBRL reporting items, this field is more suited to representing existing systems (audit) than data interchange. Enumerated as: asset, liability, equity, income, gain, expense, loss, contr-to-equity, distr-from-equity, comprehensive-income, other.",cor,主勘定科目区分,"主勘定科目の種別。FASB Concepts 6および、同様の国際的な様式。xbrlInfoが他のXBRL項目と関係付けられる場合、データ交換より現存システム(audit)を示すべき。
+[設定値のリスト]
+(asset：資産)、(liability：負債)、(equity：資本)、(income：収益)、(gain：利得)、(expense：費用)、(loss：損失)、(contr-to-equity：資本増加)、(distr-from-equity：資本減少)、(comprehensive-income：包括利益)、(other：その他)"
+207,2,Attribute,,Detail_ Account Identifier,Classification Description,String,,0..1,Free format description of the account classification,cor,主勘定科目区分説明,主勘定科目の区分の説明。
+208,2,Attribute,,Detail_ Account Identifier,Parent Number,String,,0..1,Roll up item from child natural account to parent natural account.,cor,親勘定科目コード,子勘定科目から親勘定科目に包み込む科目。
+209,2,Attribute,,Detail_ Account Identifier,Purpose of Account,Token,,0..1,"Code related to usage for account aggregate - Consolidating, European, IFRS, Offsetting, Primary, Tax, USGAAP, Japanese, Other. Japanese companies will use this for the tax required offsetting entry. If left blank, assumes default accounting method for company.",cor,勘定科目目的,"勘定科目群の使用法を示すコード。連結、European, IFRS, 見返、プライマリ, 税, USGAAP, Japanese,その他。日本企業では、見返仕訳で要求される税務処理に利用するかもしれない。空白の場合、企業の既定の勘定方法とみなす。
+[設定値のリスト]
+(consolidating：連結)、(european：ヨーロッパ)、(ifrs：IFRS)、(offsetting：見返)、(primary：プライマリ)、(tax：税)、(usgaap：US GAAP)、(japanese：日本)、(other：その他)"
+210,2,Attribute,,Detail_ Account Identifier,Purpose of Description,String,,0..1,Description of usage for aggregate account,cor,勘定科目目的説明,勘定科目群の使用法の説明。
+211,2,Attribute,,Detail_ Account Identifier,Type,Token,,0..1,"Type of account. Enumerated as: account, bank, employee, customer, job, vendor, measurable, statistical, other.",cor,科目種別,"科目の種別。
+[設定値のリスト]
+(account：勘定科目)、(bank：銀行)、(employee：従業員)、(customer：顧客)、(job：ジョブ)、(vendor：仕入先)、(measurable：計測可能物)、(statistical：統計)、(other：その他)"
+212,2,Attribute,,Detail_ Account Identifier,Type Description,String,,0..1,Free format description of the account type,cor,科目種別説明,科目の種別の説明。
+213,2,Attribute,,Detail_ Account Identifier,Accounting Method,Token,,0..1,"For this entry, the method of accounting represented - from: accrual, cash, modified cash, modified accrual, encumbrance, special methods, hybrid methods, other",bus,仕訳会計処理方法,"この仕訳の会計処理方法を表す。発生基準、現金基準、修正現金基準、修正発生基準、債務基準、特別な方法、混合方法、その他
+[設定値のリスト]
+(accrual：発生基準)、(cash：現金基準)、(modified cash：修正現金基準)、(modified accrual：修正発生基準)、(encumbrance：債務基準)、(special methods：特別な方法)、(hybrid methods：混合方法)、(other：その他)"
+214,2,Attribute,,Detail_ Account Identifier,Accounting Method Description,String,,0..1,Free format description of the entry accounting method,bus,仕訳会計処理方法説明,仕訳の会計処理方法の説明。
+215,2,Attribute,,Detail_ Account Identifier,Accounting Method Purpose,Token,,0..1,"For this entry, the reporting purpose represented - from book, tax, management, statutory, other",bus,仕訳会計処理方法目的,"仕訳の報告の目的を表す。帳簿、税、管理、スタチュトリ、その他
+[設定値のリスト]
+(book：帳簿)、(tax：税)、(management：管理)、(statutory：スタチュトリ)、(other：その他)"
+216,2,Attribute,,Detail_ Account Identifier,Accounting Method Purpose Description,String,,0..1,Free format description of the entry accounting method purpose,bus,仕訳会計処理方法目的説明,仕訳の会計処理方法の目的の説明。
+217,2,Attribute,,Detail_ Account Identifier,Active,Boolean,,0..1,"Boolean to indicate whether the account is active (=""true"") or inactive (=""false"")",cor,科目有効性,科目が有効か無効かを示すブール値。
+218,2,Reference Association,,Detail_ Account Identifier,,,Subaccount,0..*,Class to hold multiple accountSubIDs and Descriptions,cor,【サブ科目情報】,複数のaccountSubIDと説明文を含むクラス。
+219,1,Abstract Class,,Multicurrency,,,,0..*,Class to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,muc,【多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+220,2,Attribute,,Multicurrency,Exchange Rate Date,Date Time,,0..1,Date of exchange rate (other than original transaction date) on which amount is expressed as amountRestatedAmount or amountTriangulationAmount,muc,換算レート日付,（原取引の日付ではなく）、amountRestatedAmountまたはamountTriangulationAmountが示された換算レートの日付。
+221,2,Attribute,,Multicurrency,Foreign Currency Amount,Monetary,,0..1,The amount in the foreign currency identified by amountRestatedCurrency as of multicurrencyDetailExchangeRateDate.,muc,換算額,amountRestatedCurrencyで指定された外貨での、multicurrencyDetailExchangeRateDate時点の、換算額。
+222,2,Attribute,,Multicurrency,Foreign Currency,QName,,0..1,The currency in which amountRestatedAmount is expressed. Recommended ISO 4217 coding.,muc,換算通貨,amountRestatedAmountで使用される通貨。ISO4217コードを推奨。
+223,2,Attribute,,Multicurrency,Exchange Rate,Pure,,0..1,Exchange rate used to convert amountRestatedAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by foreign currency),muc,換算レート,amountRestatedAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨を外貨通貨で割った値）
+224,2,Attribute,,Multicurrency,Exchange Rate Source,String,,0..1,"Source of Exchange Rate for restated amount - for example, Reuters, Bloomberg",muc,換算レート情報源,"外貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+225,2,Attribute,,Multicurrency,Exchange Rate Type,String,,0..1,"Type of Exchange Rate for restated amount - for example, spot rate, forward contract etc.",muc,換算レート種別,外貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+226,2,Attribute,,Multicurrency,Triangulation Currency Amount,Monetary,,0..1,The amount in the triangulation currency identified by amountTriangulationCurrency as of multicurrencyDetailExchangeRateDate.,muc,トライアンギュレーション通貨換算額,amountTriangulationCurrencyで指定されたトライアンギュレーション通貨での、multicurrencyDetailExchangeRateDate時点の換算額。
+227,2,Attribute,,Multicurrency,Triangulation Currency,QName,,0..1,The currency used for tringulation between amountRestatedCurrency and the home currency. Recommended ISO 4217 coding.,muc,トライアンギュレーション通貨,amountRestatedCurrencyと自国通貨間のトライアンギュレーション取引で使用される通貨。ISO4217コードを推奨。
+228,2,Attribute,,Multicurrency,Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by triangulation currency),muc,トライアンギュレーション通貨換算レート,amountTriangulationAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨をトライアンギュレーション通貨で割った値）
+229,2,Attribute,,Multicurrency,Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for triangulation amount - for example, Reuters, Bloomberg",muc,トライアンギュレーション通貨換算レート情報源,"トライアンギュレーション通貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+230,2,Attribute,,Multicurrency,Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for triangulation amount - for example, spot rate, forward contract etc.",muc,トライアンギュレーション通貨換算レート種別,トライアンギュレーション通貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+231,2,Attribute,,Multicurrency,Cross Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert from amountRestatedAmount to amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as foreign currency divided by triangulation currency),muc,換算通貨トライアンギュレーション通貨換算レート,amountRestatedAmountからamountTriangulationAmountへの、multicurrencyDetailExchangeRateDate時点の換算レート。（外貨通貨をトライアンギュレーション通貨で割った値）
+232,2,Attribute,,Multicurrency,Cross Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for converting between foreign currency and triangulation currency - for example, Reuters, Bloomberg",muc,換算通貨トライアンギュレーション通貨換算レート情報源,"外貨通貨とトライアンギュレーション通貨の間の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+233,2,Attribute,,Multicurrency,Cross Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for converting between foreign currency and triangulation currency - for example, spot rate, forward contract etc.",muc,換算通貨トライアンギュレーション通貨換算レート種別,外貨通貨とトライアンギュレーション通貨の間の換算レートの種別。たとえば、スポット・レート、先物など。
+234,2,Attribute,,Multicurrency,Comment,String,,0..1,Comment describing the enclosing multicurrencyDetail class's contents. May include reason for recording additional exchange rates other than that used at the time of the original transaction.,muc,多通貨明細コメント,multicurrencyDetailの内容のコメント。原取引時以外の、追加の換算レートを記録する理由などを記述。
+235,1,Class,,Detail_ Multicurrency,,,,0..*,Class to provide additional information related to home currencies that differ from original currencies applied at the transaction detail (line) level and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,muc,【行多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+236,2,Specialization,,Detail_ Multicurrency,,,Multicurrency,1,,muc,,
+237,2,Attribute,,Detail_ Multicurrency,Exchange Rate Date,Date Time,,0..1,Date of exchange rate (other than original transaction date) on which amount is expressed as amountRestatedAmount or amountTriangulationAmount,muc,換算レート日付,（原取引の日付ではなく）、amountRestatedAmountまたはamountTriangulationAmountが示された換算レートの日付。
+238,2,Attribute,,Detail_ Multicurrency,Foreign Currency Amount,Monetary,,0..1,The amount in the foreign currency identified by amountRestatedCurrency as of multicurrencyDetailExchangeRateDate.,muc,換算額,amountRestatedCurrencyで指定された外貨での、multicurrencyDetailExchangeRateDate時点の、換算額。
+239,2,Attribute,,Detail_ Multicurrency,Foreign Currency,QName,,0..1,The currency in which amountRestatedAmount is expressed. Recommended ISO 4217 coding.,muc,換算通貨,amountRestatedAmountで使用される通貨。ISO4217コードを推奨。
+240,2,Attribute,,Detail_ Multicurrency,Exchange Rate,Pure,,0..1,Exchange rate used to convert amountRestatedAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by foreign currency),muc,換算レート,amountRestatedAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨を外貨通貨で割った値）
+241,2,Attribute,,Detail_ Multicurrency,Exchange Rate Source,String,,0..1,"Source of Exchange Rate for restated amount - for example, Reuters, Bloomberg",muc,換算レート情報源,"外貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+242,2,Attribute,,Detail_ Multicurrency,Exchange Rate Type,String,,0..1,"Type of Exchange Rate for restated amount - for example, spot rate, forward contract etc.",muc,換算レート種別,外貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+243,2,Attribute,,Detail_ Multicurrency,Triangulation Currency Amount,Monetary,,0..1,The amount in the triangulation currency identified by amountTriangulationCurrency as of multicurrencyDetailExchangeRateDate.,muc,トライアンギュレーション通貨換算額,amountTriangulationCurrencyで指定されたトライアンギュレーション通貨での、multicurrencyDetailExchangeRateDate時点の換算額。
+244,2,Attribute,,Detail_ Multicurrency,Triangulation Currency,QName,,0..1,The currency used for tringulation between amountRestatedCurrency and the home currency. Recommended ISO 4217 coding.,muc,トライアンギュレーション通貨,amountRestatedCurrencyと自国通貨間のトライアンギュレーション取引で使用される通貨。ISO4217コードを推奨。
+245,2,Attribute,,Detail_ Multicurrency,Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by triangulation currency),muc,トライアンギュレーション通貨換算レート,amountTriangulationAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨をトライアンギュレーション通貨で割った値）
+246,2,Attribute,,Detail_ Multicurrency,Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for triangulation amount - for example, Reuters, Bloomberg",muc,トライアンギュレーション通貨換算レート情報源,"トライアンギュレーション通貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+247,2,Attribute,,Detail_ Multicurrency,Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for triangulation amount - for example, spot rate, forward contract etc.",muc,トライアンギュレーション通貨換算レート種別,トライアンギュレーション通貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+248,2,Attribute,,Detail_ Multicurrency,Cross Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert from amountRestatedAmount to amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as foreign currency divided by triangulation currency),muc,換算通貨トライアンギュレーション通貨換算レート,amountRestatedAmountからamountTriangulationAmountへの、multicurrencyDetailExchangeRateDate時点の換算レート。（外貨通貨をトライアンギュレーション通貨で割った値）
+249,2,Attribute,,Detail_ Multicurrency,Cross Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for converting between foreign currency and triangulation currency - for example, Reuters, Bloomberg",muc,換算通貨トライアンギュレーション通貨換算レート情報源,"外貨通貨とトライアンギュレーション通貨の間の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+250,2,Attribute,,Detail_ Multicurrency,Cross Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for converting between foreign currency and triangulation currency - for example, spot rate, forward contract etc.",muc,換算通貨トライアンギュレーション通貨換算レート種別,外貨通貨とトライアンギュレーション通貨の間の換算レートの種別。たとえば、スポット・レート、先物など。
+251,2,Attribute,,Detail_ Multicurrency,Comment,String,,0..1,Comment describing the enclosing multicurrencyDetail class's contents. May include reason for recording additional exchange rates other than that used at the time of the original transaction.,muc,多通貨明細コメント,multicurrencyDetailの内容のコメント。原取引時以外の、追加の換算レートを記録する理由などを記述。
+252,1,Abstract Class,,XBRL,,,,0..*,This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.,cor,【XBRL情報】,XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。
+253,2,Attribute,,XBRL,Allocation,Token,,0..1,"Indicates that the information being given is beginning_balance, ending_balance, period_change.",cor,XBRL割当,"与えられた情報が、期首残高、期末残高、期中増減のいずれであるかを示す。
+[設定値のリスト]
+(beginning_balance：期首残高)、(ending_balance：期末残高)、(period_change：期中増減)"
+254,2,Attribute,,XBRL,Summary Reporting Element,QName,,0..1,Associated XBRL element or XML element within an XML taxonomy - mapping to an XBRL concept.,cor,集約報告エレメント,関係付けられた、XMLタクソノミ中のXBRL要素または、XML要素。XBRLコンセプトへのマッピング。
+255,2,Attribute,,XBRL,Detail Matching Element,QName,,0..1,Associated XBRL element in XBRL-GL instance.,cor,明細対応エレメント,関係付けられた、XBRL-GLインスタンス中のXBRL要素。
+256,2,Attribute,,XBRL,Summary Tuple Path,String,,0..1,Specific filter for parent class class. This value must be valid XPath. And the result of the XPath must be resolved to a node.,lnk,集約タプルパス,親タグ構造を特定するフィルタ。妥当なXPath記述でなければならない。XPathの結果はノードでなければならない。
+257,2,Attribute,,XBRL,Detailed Content Filter,String,,0..1,"Filtering mechanism. This value must be valid XPath. And the result of the XPath must be resolved to boolean. If the resulting value is false, the entry  must not mapped into specified facts in F/S.",lnk,明細コンテントフィルタ,フィルタリング手段。妥当なXPath記述でなければならない。XPathの結果はブール値でなければならない。結果がfalseの場合は、仕訳はF/S内の特定のfactsにマッピングされてはならない。
+258,2,Attribute,,XBRL,Reporting Date Selector,Token,,0..1,This holds the concepts in GL data to create FS contexts.  The value must be a list of QName. Each QName must be resolved to GL items. Order of the items defines priority to access.,lnk,報告日付セレクタ,F/Sのコンテキストを生成するためのGLデータの概念を示す。QNameのリストでなければならない。個々のQNameはGL項目を示さなければならない。項目の並びはアクセスの優先度を示す。
+259,2,Attribute,,XBRL,Summary Operator,String,,0..1,The operator applied to the amount or quantity when it is rolled up to a summary reporting element.,lnk,,
+260,2,Attribute,,XBRL,Summary Unit Numerator,Token,,1..1,This holds the list of measure information for unit numerator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.,lnk,集約ユニット分子,集約のユニットの分子の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。
+261,2,Attribute,,XBRL,Summary Unit Denominator,Token,,0..1,This holds the list of measure information for unit denominator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.,lnk,集約ユニット分母,集約のユニットの分母の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。
+262,2,Attribute,,XBRL,Summary Reporting Taxonomy ID Reference,String,,0..1,"Reference to the ID of the relevant target reporting taxonomy, defined in the [summaryReportingTaxonomies] class at [documentInfo] level. Allows consuming applications to identify sets of [xbrlInfo] classs that point to a specific taxonomy.",lnk,集約報告タクソノミ識別子参照情報,関連する報告タクソノミの識別子への参照情報。documentInfo内のsummaryReportingTaxonomiesクラスで定義される。特定のタクソノミを示すxbrlInfoクラスの集合を、アプリケーションが識別できるようにする。
+263,1,Class,,Detail_ XBRL,,,,0..*,This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.,cor,【行XBRL情報】,XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。
+264,2,Specialization,,Detail_ XBRL,,,XBRL,1,,cor,,
+265,2,Attribute,,Detail_ XBRL,Allocation,Token,,0..1,"Indicates that the information being given is beginning_balance, ending_balance, period_change.",cor,XBRL割当,"与えられた情報が、期首残高、期末残高、期中増減のいずれであるかを示す。
+[設定値のリスト]
+(beginning_balance：期首残高)、(ending_balance：期末残高)、(period_change：期中増減)"
+266,2,Attribute,,Detail_ XBRL,Summary Reporting Element,QName,,0..1,Associated XBRL element or XML element within an XML taxonomy - mapping to an XBRL concept.,cor,集約報告エレメント,関係付けられた、XMLタクソノミ中のXBRL要素または、XML要素。XBRLコンセプトへのマッピング。
+267,2,Attribute,,Detail_ XBRL,Detail Matching Element,QName,,0..1,Associated XBRL element in XBRL-GL instance.,cor,明細対応エレメント,関係付けられた、XBRL-GLインスタンス中のXBRL要素。
+268,2,Attribute,,Detail_ XBRL,Summary Tuple Path,String,,0..1,Specific filter for parent class class. This value must be valid XPath. And the result of the XPath must be resolved to a node.,lnk,集約タプルパス,親タグ構造を特定するフィルタ。妥当なXPath記述でなければならない。XPathの結果はノードでなければならない。
+269,2,Attribute,,Detail_ XBRL,Detailed Content Filter,String,,0..1,"Filtering mechanism. This value must be valid XPath. And the result of the XPath must be resolved to boolean. If the resulting value is false, the entry  must not mapped into specified facts in F/S.",lnk,明細コンテントフィルタ,フィルタリング手段。妥当なXPath記述でなければならない。XPathの結果はブール値でなければならない。結果がfalseの場合は、仕訳はF/S内の特定のfactsにマッピングされてはならない。
+270,2,Attribute,,Detail_ XBRL,Reporting Date Selector,Token,,0..1,This holds the concepts in GL data to create FS contexts.  The value must be a list of QName. Each QName must be resolved to GL items. Order of the items defines priority to access.,lnk,報告日付セレクタ,F/Sのコンテキストを生成するためのGLデータの概念を示す。QNameのリストでなければならない。個々のQNameはGL項目を示さなければならない。項目の並びはアクセスの優先度を示す。
+271,2,Attribute,,Detail_ XBRL,Summary Operator,String,,0..1,The operator applied to the amount or quantity when it is rolled up to a summary reporting element.,lnk,,
+272,2,Attribute,,Detail_ XBRL,Summary Unit Numerator,Token,,1..1,This holds the list of measure information for unit numerator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.,lnk,集約ユニット分子,集約のユニットの分子の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。
+273,2,Attribute,,Detail_ XBRL,Summary Unit Denominator,Token,,0..1,This holds the list of measure information for unit denominator. The value must be a list of QName. Each QName must be resolved to be measure information such as iso4217:usd.,lnk,集約ユニット分母,集約のユニットの分母の測定情報のリスト。QNameのリストでなければならない。QNameはiso4217:usdのような、解決される測定情報でなければならない。
+274,2,Attribute,,Detail_ XBRL,Summary Reporting Taxonomy ID Reference,String,,0..1,"Reference to the ID of the relevant target reporting taxonomy, defined in the [summaryReportingTaxonomies] class at [documentInfo] level. Allows consuming applications to identify sets of [xbrlInfo] classs that point to a specific taxonomy.",lnk,集約報告タクソノミ識別子参照情報,関連する報告タクソノミの識別子への参照情報。documentInfo内のsummaryReportingTaxonomiesクラスで定義される。特定のタクソノミを示すxbrlInfoクラスの集合を、アプリケーションが識別できるようにする。
+275,1,Abstract Class,,Measurable,,,,0..*,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",bus,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。
+276,2,Attribute,PK,Measurable,Code,Token,,0..1,"Code for measurable item including BP - Business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other",bus,計測可能物コード,"計測可能物のコード。ビジネスプロセス、固定資産/資産化項目、在庫、測定基準、無形資産、貯蔵品、従業員/提供元/請負者によるサービス、装置/機械によるサービス、その他
+[設定値のリスト]
+(BP：ビジネスプロセス)、(FA：固定資産/資産化項目)、(IN：在庫)、(KPI：測定基準)、(NT：無形資産)、(SP：貯蔵品)、(SV-P：従業員/提供元/請負者によるサービス)、(SV-M：装置/機械によるサービス)、(OT：その他)"
+277,2,Attribute,,Measurable,Code Description,String,,0..1,Free format description of the measurable code,bus,計測可能物コード説明,計測可能物のコードの説明。
+278,2,Attribute,,Measurable,Category,String,,0..1,Category of the measurable,bus,計測可能物カテゴリ,計測可能物のカテゴリ。
+279,2,Attribute,,Measurable,Identification,String,,0..1,Internal inventory part or SKU number or other code identifier for the measurable.,bus,計測可能物識別子,計測可能物の社内在庫部分またはSKU番号またはその他のコード識別子。
+280,2,Attribute,,Measurable,Schema for Identification,String,,0..1,URI or other identifier for schema with which measurable ID can be validated,bus,計測可能物識別子スキーマ,計測可能物のIDを検証するスキーマの、URIまたはその他の識別子。
+281,2,Attribute,,Measurable,Secondary Code,String,,0..1,Second identifier (such as vendor's item number),bus,計測可能物第二識別子,第二識別子。（例えば、ベンダーでの品目番号）。
+282,2,Attribute,,Measurable,Schema for Secondary Identification,String,,0..1,URI or other identifier for schema with which measurable ID Other can be validated,bus,計測可能物第二識別子スキーマ,計測可能物の第二IDを検証するスキーマの、URIまたはその他の識別子。
+283,2,Attribute,,Measurable,Description,String,,0..1,Text description of measurable (e.g. inventory item or other identifier),bus,計測可能物説明,計測可能物の説明。（たとえば、在庫やその他の識別子）
+284,2,Attribute,,Measurable,Quantity,Decimal,,0..1,"Number of units in this transaction; for non-monetary calculations; can be square footage, number of people, etc.",bus,数量,この取引における、単位数量。金額計算用ではない。平方フィート、人数など。
+285,2,Attribute,,Measurable,Qualifier,Token,,0..1,"Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Scorecard information",bus,修飾子,PKI又はバランススコアカード情報を適正に把握するための、等級付け、検査コード、格付けその他の修飾子を示す。
+286,2,Attribute,,Measurable,Unit of Measure,String,,0..1,"Description of unit: e.g. each, case, dozen, etc. ISO standard coding recommended.",bus,計量単位,単位の説明。たとえば、個、箱、ダースなど。ISO標準のコードを推奨。
+287,2,Attribute,,Measurable,Per Unit Cost/Price,Monetary,,0..1,"Per unit price of the measurable. Although one might expect that measurableQuantity * measurableCostPerUnit = amount, this is not mandated except by external rules sets.",bus,単価,"計測可能物の単価。
+measurableQuantity * measurableCostPerUnit = amountであることを期待するかもしれないが、外部規則がなければ必須ではない。"
+288,2,Attribute,,Measurable,Start Time,Date Time,,0..1,Start time of the duration being measured,bus,開始日時,計量期間の開始時刻。
+289,2,Attribute,,Measurable,End Time,Date Time,,0..1,End time of the duration being measured,bus,終了日時,計量期間の終了時刻。
+290,2,Attribute,,Measurable,Active,Boolean,,0..1,"Boolean to indicate whether the measurable is active (=""true"") or inactive (=""false"")",bus,計測可能物有効性,計測可能物が有効か無効かを示すブール値。
+291,1,Class,,Detail_ Measurable,,,,0..*,"Parent for information regarding measurable items applied at the transaction detail (line) level. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",bus,【行計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。
+292,2,Specialization,,Detail_ Measurable,,,Measurable,1,,bus,,
+293,2,Attribute,PK,Detail_ Measurable,Code,Token,,0..1,"Code for measurable item including BP - Business process, FA - Fixed asset/Capitalized item, IN - Inventory, KPI - Metric, NT - Intangible, SP - Supplies, SV-P - Service by employee, vendor or contractor, SV-M - Service by equipment/machinery, OT - Other",bus,計測可能物コード,"計測可能物のコード。ビジネスプロセス、固定資産/資産化項目、在庫、測定基準、無形資産、貯蔵品、従業員/提供元/請負者によるサービス、装置/機械によるサービス、その他
+[設定値のリスト]
+(BP：ビジネスプロセス)、(FA：固定資産/資産化項目)、(IN：在庫)、(KPI：測定基準)、(NT：無形資産)、(SP：貯蔵品)、(SV-P：従業員/提供元/請負者によるサービス)、(SV-M：装置/機械によるサービス)、(OT：その他)"
+294,2,Attribute,,Detail_ Measurable,Code Description,String,,0..1,Free format description of the measurable code,bus,計測可能物コード説明,計測可能物のコードの説明。
+295,2,Attribute,,Detail_ Measurable,Category,String,,0..1,Category of the measurable,bus,計測可能物カテゴリ,計測可能物のカテゴリ。
+296,2,Attribute,,Detail_ Measurable,Identification,String,,0..1,Internal inventory part or SKU number or other code identifier for the measurable.,bus,計測可能物識別子,計測可能物の社内在庫部分またはSKU番号またはその他のコード識別子。
+297,2,Attribute,,Detail_ Measurable,Schema for Identification,String,,0..1,URI or other identifier for schema with which measurable ID can be validated,bus,計測可能物識別子スキーマ,計測可能物のIDを検証するスキーマの、URIまたはその他の識別子。
+298,2,Attribute,,Detail_ Measurable,Secondary Code,String,,0..1,Second identifier (such as vendor's item number),bus,計測可能物第二識別子,第二識別子。（例えば、ベンダーでの品目番号）。
+299,2,Attribute,,Detail_ Measurable,Schema for Secondary Identification,String,,0..1,URI or other identifier for schema with which measurable ID Other can be validated,bus,計測可能物第二識別子スキーマ,計測可能物の第二IDを検証するスキーマの、URIまたはその他の識別子。
+300,2,Attribute,,Detail_ Measurable,Description,String,,0..1,Text description of measurable (e.g. inventory item or other identifier),bus,計測可能物説明,計測可能物の説明。（たとえば、在庫やその他の識別子）
+301,2,Attribute,,Detail_ Measurable,Quantity,Decimal,,0..1,"Number of units in this transaction; for non-monetary calculations; can be square footage, number of people, etc.",bus,数量,この取引における、単位数量。金額計算用ではない。平方フィート、人数など。
+302,2,Attribute,,Detail_ Measurable,Qualifier,Token,,0..1,"Field that can represent grading, inspection codes, ratings and other qualifiers to properly capture PKI/Balanced Scorecard information",bus,修飾子,PKI又はバランススコアカード情報を適正に把握するための、等級付け、検査コード、格付けその他の修飾子を示す。
+303,2,Attribute,,Detail_ Measurable,Unit of Measure,String,,0..1,"Description of unit: e.g. each, case, dozen, etc. ISO standard coding recommended.",bus,計量単位,単位の説明。たとえば、個、箱、ダースなど。ISO標準のコードを推奨。
+304,2,Attribute,,Detail_ Measurable,Per Unit Cost/Price,Monetary,,0..1,"Per unit price of the measurable. Although one might expect that measurableQuantity * measurableCostPerUnit = amount, this is not mandated except by external rules sets.",bus,単価,"計測可能物の単価。
+measurableQuantity * measurableCostPerUnit = amountであることを期待するかもしれないが、外部規則がなければ必須ではない。"
+305,2,Attribute,,Detail_ Measurable,Start Time,Date Time,,0..1,Start time of the duration being measured,bus,開始日時,計量期間の開始時刻。
+306,2,Attribute,,Detail_ Measurable,End Time,Date Time,,0..1,End time of the duration being measured,bus,終了日時,計量期間の終了時刻。
+307,2,Attribute,,Detail_ Measurable,Active,Boolean,,0..1,"Boolean to indicate whether the measurable is active (=""true"") or inactive (=""false"")",bus,計測可能物有効性,計測可能物が有効か無効かを示すブール値。
+308,1,Abstract Class,,Job,,,,0..*,"Class for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo class for each entry line, but there may be a need to express more than one.",bus,【ジョブ情報】,科目識別子で表現されるジョブとは別の、ジョブに関係する情報のクラス。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。
+309,2,Attribute,PK,Job,ID,String,,0..1,"Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.",usk,ジョブ識別子,関連するジョブ番号かジョブコード。 科目に組み込めるかもしれないが、多くのシステムでは独立したジョブコードシステムを持っている。おもに、ジョブの識別が別システムであり、科目体系に含まれないときに使用される。
+310,2,Attribute,,Job,Description,String,,0..1,Description of job,usk,ジョブ説明,ジョブの説明。
+311,2,Attribute,,Job,Phase,String,,0..1,"Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.",usk,ジョブフェーズ,ジョブコード、フェーズ、活動。 簡単なジョブ番号より詳細な定義が可能。基本的には、ジョブからフェーズを導くのみだが、コストコードにまでいたるように拡張可能。
+312,2,Attribute,,Job,Phase Description,String,,0..1,"Description of Job code, phase, activity",usk,ジョブフェーズ説明,ジョブコード、フェーズ、活動の説明。
+313,2,Attribute,,Job,Active,Boolean,,0..1,"Boolean to indicate whether the job is active (=""true"") or inactive (=""false"")",usk,ジョブ有効性,ジョブが有効か無効かを示すブール値。
+314,1,Class,,Detail_ Job,,,,0..*,"Class for holding job related information applied at the transaction detail (line) level, separate from jobs represented in account identifier. Would probably only have one jobinfo class for each entry line, but there may be a need to express more than one.",bus,【行ジョブ情報】,科目識別子で表現されるジョブとは別の、ジョブに関係する情報のクラス。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。
+315,2,Specialization,,Detail_ Job,,,Job,1,,bus,,
+316,2,Attribute,PK,Detail_ Job,ID,String,,0..1,"Associated job number or code. This could be built into the account, but many systems maintain a separate job coding system. Use primarily if job identification is a separate system, and not considered part of the chart of accounts.",usk,ジョブ識別子,関連するジョブ番号かジョブコード。 科目に組み込めるかもしれないが、多くのシステムでは独立したジョブコードシステムを持っている。おもに、ジョブの識別が別システムであり、科目体系に含まれないときに使用される。
+317,2,Attribute,,Detail_ Job,Description,String,,0..1,Description of job,usk,ジョブ説明,ジョブの説明。
+318,2,Attribute,,Detail_ Job,Phase,String,,0..1,"Job code, phase, activity. Allows greater granularity than a simple job number. Although the core only reaches down from job to phases, this can be customized to extend down to cost codes.",usk,ジョブフェーズ,ジョブコード、フェーズ、活動。 簡単なジョブ番号より詳細な定義が可能。基本的には、ジョブからフェーズを導くのみだが、コストコードにまでいたるように拡張可能。
+319,2,Attribute,,Detail_ Job,Phase Description,String,,0..1,"Description of Job code, phase, activity",usk,ジョブフェーズ説明,ジョブコード、フェーズ、活動の説明。
+320,2,Attribute,,Detail_ Job,Active,Boolean,,0..1,"Boolean to indicate whether the job is active (=""true"") or inactive (=""false"")",usk,ジョブ有効性,ジョブが有効か無効かを示すブール値。
+321,1,Abstract Class,,Depreciation Mortgage,,,,0..*,"Parent for information related to depreciation, mortgages, etc.",bus,【減価償却/抵当債務情報】,減価償却、抵当債務等に関連する情報の親タグ。
+322,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage Jurisdiction,Token,,0..1,"Jurisdiction (e.g. federal, state, local): e.g. US Federal, Province of Québec, other identifier. Enumerated as: F, federal, S, state, L, local, other.",bus,抵当債務管轄,"管轄地区。（連邦、州、ローカル、等）。たとえば、米国連邦政府、ケベック州、その他の識別子。
+[設定値のリスト]
+(F)、(federal：連邦)、(S)、(state：州)、(L)、(local：地域)、(other：その他)"
+323,2,Attribute,,Depreciation Mortgage,Depreciation Method,String,,0..1,"Type of depreciation method: used for information about the loan percentage for loan or the depreciation method. This is used for informational purposes only. Examples of entries are ""20%"", ""5 year DDB"" (Double Declining Balance).",bus,減価償却方法,減価償却方法のタイプ。ローンのパーセンテージや減価償却方法に関する情報を含む。単なる情報提供を目的とする。たとえば、20%、5年、DDB(倍額定率)。
+324,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage Life,Decimal,,0..1,Length of life in number of periods.,bus,抵当債務期間,存在する期間数。
+325,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage Description,String,,0..1,"Description of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,債務説明,減価償却や債権債務、ローン、信用供与等に関する項目の説明。
+326,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage Start Date,Date Time,,0..1,"Start of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,開始日付,減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の開始日。
+327,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage End Date,Date Time,,0..1,"End of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,終了日付,減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の終了日。
+328,2,Attribute,,Depreciation Mortgage,Depreciation Mortgage Amount,Monetary,,0..1,"Amount of a cost or fee charged for a mortgage, loan, credit facility, etc.",bus,手数料,減価償却や債権債務、ローン、信用供与等で請求されるコストや手数料。
+329,1,Class,,Detail_ Depreciation Mortgage,,,,0..*,"Parent for information related to depreciation, mortgages, etc.　applied at the transaction detail (line) level.",bus,【行減価償却/抵当債務情報】,減価償却、抵当債務等に関連する情報の親タグ。
+330,2,Specialization,,Detail_ Depreciation Mortgage,,,Depreciation Mortgage,1,,bus,,
+331,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage Jurisdiction,Token,,0..1,"Jurisdiction (e.g. federal, state, local): e.g. US Federal, Province of Québec, other identifier. Enumerated as: F, federal, S, state, L, local, other.",bus,抵当債務管轄,"管轄地区。（連邦、州、ローカル、等）。たとえば、米国連邦政府、ケベック州、その他の識別子。
+[設定値のリスト]
+(F)、(federal：連邦)、(S)、(state：州)、(L)、(local：地域)、(other：その他)"
+332,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Method,String,,0..1,"Type of depreciation method: used for information about the loan percentage for loan or the depreciation method. This is used for informational purposes only. Examples of entries are ""20%"", ""5 year DDB"" (Double Declining Balance).",bus,減価償却方法,減価償却方法のタイプ。ローンのパーセンテージや減価償却方法に関する情報を含む。単なる情報提供を目的とする。たとえば、20%、5年、DDB(倍額定率)。
+333,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage Life,Decimal,,0..1,Length of life in number of periods.,bus,抵当債務期間,存在する期間数。
+334,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage Description,String,,0..1,"Description of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,債務説明,減価償却や債権債務、ローン、信用供与等に関する項目の説明。
+335,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage Start Date,Date Time,,0..1,"Start of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,開始日付,減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の開始日。
+336,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage End Date,Date Time,,0..1,"End of the applicable period of each item related to depreciation, mortgage, loan, credit facility, etc.",bus,終了日付,減価償却や債権債務、ローン、信用供与等に関する項目の、適用期間の終了日。
+337,2,Attribute,,Detail_ Depreciation Mortgage,Depreciation Mortgage Amount,Monetary,,0..1,"Amount of a cost or fee charged for a mortgage, loan, credit facility, etc.",bus,手数料,減価償却や債権債務、ローン、信用供与等で請求されるコストや手数料。
+338,1,Abstract Class,,Serial or Lot,,,,0..*,"Class for holding information about serial numbers or lots (batches). As a class, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable class.",ehm,【シリアル番号・ロット情報】,シリアル番号やロット（バッチ）に関する情報を保持するクラス。単一の構造内に複数のシリアル番号やロット情報を保持可能。
+339,2,Attribute,PK,Serial or Lot,Code,Token,,0..1,"Is this item tracked by serial numbers or lot numbers? A serial number is usually a unique number assigned to a single; a lot or batch number is provided when a batch of items is fungible but must be differentiated from similar items from other batches. Enumerated indicator for serial or lot items. Enumeration are: serial, lot, other, neither. If not included within the class, neither is assumed.",ehm,シリアル・ロット識別コード,この項目はシリアル番号またはロット番号で管理されているか？シリアル番号は一意に付番されたもので、ロット番号は同一バッチの区別を目的に使用される。
+340,2,Attribute,,Serial or Lot,Description,String,,0..1,Free format description associated with gl-ehm:serialLotCode to provide specialization and especially to provide clarification for the enumerated value of other in serialLotCode. Examples might be “batch” or “group”.,ehm,シリアル・ロットの説明,gl-ehm:serialLotCode の「その他」の値のための自由記述の説明（例：バッチ、グループなど）。
+341,2,Attribute,,Serial or Lot,Number,String,,0..1,The holder for that actual serial number or lot (batch) number/code assigned to an item or a batch of items.,ehm,シリアル番号・ロット番号,対象アイテムやロットに割り当てられた実際の番号／コードを保持する。
+342,2,Attribute,,Serial or Lot,Next Number,String,,0..1,"A field for holding the next expected serial or lot number to be given to future assignments, or for chaining between already assigned items.",ehm,次のシリアル・ロット番号,今後割り当て予定の次のシリアル／ロット番号や、既に割り当てられたアイテムの連結に使用。
+343,2,Attribute,,Serial or Lot,Quantity,Decimal,,0..1,The quantity of units in this particular batch. Unit of measure is the gl-bus:measurableUnitofMeasure.,ehm,シリアル・ロットの数量,該当ロット内の単位数。単位は gl-bus:measurableUnitofMeasure に基づく。
+344,2,Attribute,,Serial or Lot,Original Quantity,Decimal,,0..1,The quantity of units in this batch on inception.,ehm,シリアル・ロット元数量,このロットが生成された時点の元の数量。
+345,2,Attribute,,Serial or Lot,Remaining Quantity,Decimal,,0..1,The remaining quantity of units from the original batch; may be the same as the quantity in this batch or include other batches from the same original batch.,ehm,シリアル・ロット残数量,元ロットからの残りの数量。
+346,2,Attribute,,Serial or Lot,Origination,Date Time,,0..1,Date of manufacture or creation.,ehm,シリアル・ロット生成日,製造日または作成日。
+347,2,Attribute,,Serial or Lot,Expiration,Date Time,,0..1,Expiration date of the batch.,ehm,シリアル・ロット有効期限,ロットの有効期限。
+348,2,Attribute,,Serial or Lot,Manufacturer,String,,0..1,Manufacturer of the item (serial) or items (lot/batch).,ehm,シリアル・ロット製造元,シリアル番号またはロットの製造者。
+349,2,Attribute,,Serial or Lot,Batch Description,String,,0..1,A name or description of the items in the lot or batch.,ehm,シリアル・ロットバッチの説明,ロットまたはバッチ内のアイテムの名称や説明。
+350,2,Attribute,,Serial or Lot,Warranty Start Date,Date Time,,0..1,"If the items are covered by warranty, when that warranty covered will begin or has begun.",ehm,保証開始日,保証対象となる場合の保証開始日。
+351,2,Attribute,,Serial or Lot,Warranty End Date,Date Time,,0..1,"If the items are covered by warranty, when that warranty covered will end or ended.",ehm,保証終了日,保証対象となる場合の保証終了日。
+352,2,Attribute,,Serial or Lot,Warranty Period,Decimal,,0..1,"Warranty period – numeric portion; for a 30 day warranty period, the 30 would go here, and the day would go in gl-ehm:serialLotWarrantyPeriodUnit.",ehm,保証期間（数値）,保証期間の数値部分（例：30日保証の場合は「30」）。
+353,2,Attribute,,Serial or Lot,Warrant Period Unit,String,,0..1,"Warrant period – time or cycle unit portion. Values from the XBRL Unit Registry (www.xbrl.org/utr/utr.xml) are suggested where possible. Examples might include: H (hours), D (days), M (months), Y (years), machine cycles, km (kilometers).",ehm,保証期間（単位）,保証期間の単位（例：日、月、年、km、機械サイクルなど）。
+354,2,Attribute,,Serial or Lot,Warranty Vendor,String,,0..1,The vendor providing warranty; this may differ from the manufacturer.,ehm,保証提供業者,保証を提供するベンダー（製造者とは異なる可能性あり）。
+355,2,Attribute,,Serial or Lot,Warranty Contract,String,,0..1,"Contract or document information related to the warranty, such as a contract number and date or a URL with more information.",ehm,保証契約情報,保証に関する契約番号、日付、URL などの情報。
+356,2,Attribute,,Serial or Lot,Comment,String,,0..1,Free format text related to the serial number or lot.,ehm,シリアル・ロット備考,シリアルまたはロットに関する自由形式のテキスト。
+357,1,Class,,Detail_ Serial or Lot,,,,0..*,"Class for holding information about serial numbers or lots (batches) applied at the transaction detail (line) level. As a class, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable class.",ehm,【行シリアル番号・ロット情報】,シリアル番号やロット（バッチ）に関する情報を保持するクラス。単一の構造内に複数のシリアル番号やロット情報を保持可能。
+358,2,Specialization,,Detail_ Serial or Lot,,,Serial or Lot,1,,ehm,,
+359,2,Attribute,PK,Detail_ Serial or Lot,Code,Token,,0..1,"Is this item tracked by serial numbers or lot numbers? A serial number is usually a unique number assigned to a single; a lot or batch number is provided when a batch of items is fungible but must be differentiated from similar items from other batches. Enumerated indicator for serial or lot items. Enumeration are: serial, lot, other, neither. If not included within the class, neither is assumed.",ehm,シリアル・ロット識別コード,この項目はシリアル番号またはロット番号で管理されているか？シリアル番号は一意に付番されたもので、ロット番号は同一バッチの区別を目的に使用される。
+360,2,Attribute,,Detail_ Serial or Lot,Description,String,,0..1,Free format description associated with gl-ehm:serialLotCode to provide specialization and especially to provide clarification for the enumerated value of other in serialLotCode. Examples might be “batch” or “group”.,ehm,シリアル・ロットの説明,gl-ehm:serialLotCode の「その他」の値のための自由記述の説明（例：バッチ、グループなど）。
+361,2,Attribute,,Detail_ Serial or Lot,Number,String,,0..1,The holder for that actual serial number or lot (batch) number/code assigned to an item or a batch of items.,ehm,シリアル番号・ロット番号,対象アイテムやロットに割り当てられた実際の番号／コードを保持する。
+362,2,Attribute,,Detail_ Serial or Lot,Next Number,String,,0..1,"A field for holding the next expected serial or lot number to be given to future assignments, or for chaining between already assigned items.",ehm,次のシリアル・ロット番号,今後割り当て予定の次のシリアル／ロット番号や、既に割り当てられたアイテムの連結に使用。
+363,2,Attribute,,Detail_ Serial or Lot,Quantity,Decimal,,0..1,The quantity of units in this particular batch. Unit of measure is the gl-bus:measurableUnitofMeasure.,ehm,シリアル・ロットの数量,該当ロット内の単位数。単位は gl-bus:measurableUnitofMeasure に基づく。
+364,2,Attribute,,Detail_ Serial or Lot,Original Quantity,Decimal,,0..1,The quantity of units in this batch on inception.,ehm,シリアル・ロット元数量,このロットが生成された時点の元の数量。
+365,2,Attribute,,Detail_ Serial or Lot,Remaining Quantity,Decimal,,0..1,The remaining quantity of units from the original batch; may be the same as the quantity in this batch or include other batches from the same original batch.,ehm,シリアル・ロット残数量,元ロットからの残りの数量。
+366,2,Attribute,,Detail_ Serial or Lot,Origination,Date Time,,0..1,Date of manufacture or creation.,ehm,シリアル・ロット生成日,製造日または作成日。
+367,2,Attribute,,Detail_ Serial or Lot,Expiration,Date Time,,0..1,Expiration date of the batch.,ehm,シリアル・ロット有効期限,ロットの有効期限。
+368,2,Attribute,,Detail_ Serial or Lot,Manufacturer,String,,0..1,Manufacturer of the item (serial) or items (lot/batch).,ehm,シリアル・ロット製造元,シリアル番号またはロットの製造者。
+369,2,Attribute,,Detail_ Serial or Lot,Batch Description,String,,0..1,A name or description of the items in the lot or batch.,ehm,シリアル・ロットバッチの説明,ロットまたはバッチ内のアイテムの名称や説明。
+370,2,Attribute,,Detail_ Serial or Lot,Warranty Start Date,Date Time,,0..1,"If the items are covered by warranty, when that warranty covered will begin or has begun.",ehm,保証開始日,保証対象となる場合の保証開始日。
+371,2,Attribute,,Detail_ Serial or Lot,Warranty End Date,Date Time,,0..1,"If the items are covered by warranty, when that warranty covered will end or ended.",ehm,保証終了日,保証対象となる場合の保証終了日。
+372,2,Attribute,,Detail_ Serial or Lot,Warranty Period,Decimal,,0..1,"Warranty period – numeric portion; for a 30 day warranty period, the 30 would go here, and the day would go in gl-ehm:serialLotWarrantyPeriodUnit.",ehm,保証期間（数値）,保証期間の数値部分（例：30日保証の場合は「30」）。
+373,2,Attribute,,Detail_ Serial or Lot,Warrant Period Unit,String,,0..1,"Warrant period – time or cycle unit portion. Values from the XBRL Unit Registry (www.xbrl.org/utr/utr.xml) are suggested where possible. Examples might include: H (hours), D (days), M (months), Y (years), machine cycles, km (kilometers).",ehm,保証期間（単位）,保証期間の単位（例：日、月、年、km、機械サイクルなど）。
+374,2,Attribute,,Detail_ Serial or Lot,Warranty Vendor,String,,0..1,The vendor providing warranty; this may differ from the manufacturer.,ehm,保証提供業者,保証を提供するベンダー（製造者とは異なる可能性あり）。
+375,2,Attribute,,Detail_ Serial or Lot,Warranty Contract,String,,0..1,"Contract or document information related to the warranty, such as a contract number and date or a URL with more information.",ehm,保証契約情報,保証に関する契約番号、日付、URL などの情報。
+376,2,Attribute,,Detail_ Serial or Lot,Comment,String,,0..1,Free format text related to the serial number or lot.,ehm,シリアル・ロット備考,シリアルまたはロットに関する自由形式のテキスト。
+377,1,Abstract Class,,Tax,,,,0..*,Class for holding tax related information,taf,【税情報】,税関連の情報のクラス。
+378,2,Attribute,,Tax,Tax Authority,String,,0..1,Name of the relevant tax authority,taf,課税庁,関係する課税庁の名前。
+379,2,Attribute,,Tax,Tax Table Code,String,,0..1,Tax table code used by the relevant tax authority,taf,税率表コード,関係する課税庁で使用される税率表のコード。
+380,2,Attribute,,Tax,Tax Description,String,,0..1,Description of tax authority,taf,課税庁説明,課税庁の説明。
+381,2,Attribute,,Tax,Amount of Tax,Monetary,,0..1,Amount of taxes,taf,税額,税額。
+382,2,Attribute,,Tax,Basis for Taxation,Monetary,,0..1,Basis for taxation,taf,課税基準,課税基準。
+383,2,Attribute,,Tax,Tax Percentage Rate,Pure,,0..1,Percent rate for VAT or other taxes normally a number between 0 and 1.0 - e.g. 50% is represented as 0.5,taf,税率,"VAT(物品税)またはその他の税のパーセント比率。
+0から1.0の間の値。たとえば50%は0.5とあらわす。"
+384,2,Attribute,,Tax,Tax Category,String,,0..1,A class or category of taxes,taf,税区分,税のクラス又はカテゴリ。
+385,2,Attribute,,Tax,Tax Category Code,Code,,0..1,"UNTDED 5153 Duty or tax or fee category code. Code specifying the category of duty, tax, or fee.",taf,税・関税・手数料区分コード,税・関税・手数料の区分を指定するコード（UNTDED 5153）。
+386,2,Attribute,,Tax,Tax Comment/Exemption Reason,String,,0..1,Additional text/code for exemption reasons or other comments.,taf,税コメント/免税理由,免税理由やその他のコメントのための、追加の文またはコード。
+387,2,Composition,,Tax,,,Tax_ Multicurrency,0..1,Class to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,taf,【多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+388,1,Class,,Tax_ Multicurrency,,,,0..*,Class to provide additional information related to home currencies that differ from original currencies applicable to the document as a whole and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,taf,【税多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+389,2,Specialization,,Tax_ Multicurrency,,,Multicurrency,1,,muc,,
+390,2,Attribute,,Tax_ Multicurrency,Exchange Rate Date,Date Time,,0..1,Date of exchange rate (other than original transaction date) on which amount is expressed as amountRestatedAmount or amountTriangulationAmount,taf,換算レート日付,（原取引の日付ではなく）、amountRestatedAmountまたはamountTriangulationAmountが示された換算レートの日付。
+391,2,Attribute,,Tax_ Multicurrency,Foreign Currency Amount,Monetary,,0..1,The amount in the foreign currency identified by amountRestatedCurrency as of multicurrencyDetailExchangeRateDate.,btx,換算額,amountRestatedCurrencyで指定された外貨での、multicurrencyDetailExchangeRateDate時点の、換算額。
+392,2,Attribute,,Tax_ Multicurrency,Foreign Currency,QName,,0..1,The currency in which amountRestatedAmount is expressed. Recommended ISO 4217 coding.,btx,換算通貨,amountRestatedAmountで使用される通貨。ISO4217コードを推奨。
+393,2,Attribute,,Tax_ Multicurrency,Exchange Rate,Pure,,0..1,Exchange rate used to convert amountRestatedAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by foreign currency),btx,換算レート,amountRestatedAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨を外貨通貨で割った値）
+394,2,Attribute,,Tax_ Multicurrency,Exchange Rate Source,String,,0..1,"Source of Exchange Rate for restated amount - for example, Reuters, Bloomberg",btx,換算レート情報源,"外貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+395,2,Attribute,,Tax_ Multicurrency,Exchange Rate Type,String,,0..1,"Type of Exchange Rate for restated amount - for example, spot rate, forward contract etc.",btx,換算レート種別,外貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+396,2,Attribute,,Tax_ Multicurrency,Triangulation Currency Amount,Monetary,,0..1,The amount in the triangulation currency identified by amountTriangulationCurrency as of multicurrencyDetailExchangeRateDate.,btx,トライアンギュレーション通貨換算額,amountTriangulationCurrencyで指定されたトライアンギュレーション通貨での、multicurrencyDetailExchangeRateDate時点の換算額。
+397,2,Attribute,,Tax_ Multicurrency,Triangulation Currency,QName,,0..1,The currency used for tringulation between amountRestatedCurrency and the home currency. Recommended ISO 4217 coding.,btx,トライアンギュレーション通貨,amountRestatedCurrencyと自国通貨間のトライアンギュレーション取引で使用される通貨。ISO4217コードを推奨。
+398,2,Attribute,,Tax_ Multicurrency,Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as national currency divided by triangulation currency),btx,トライアンギュレーション通貨換算レート,amountTriangulationAmountの算出に用いられた、multicurrencyDetailExchangeRateDate時点の換算レート。（自国通貨をトライアンギュレーション通貨で割った値）
+399,2,Attribute,,Tax_ Multicurrency,Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for triangulation amount - for example, Reuters, Bloomberg",btx,トライアンギュレーション通貨換算レート情報源,"トライアンギュレーション通貨換算額の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+400,2,Attribute,,Tax_ Multicurrency,Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for triangulation amount - for example, spot rate, forward contract etc.",btx,トライアンギュレーション通貨換算レート種別,トライアンギュレーション通貨換算額の換算レートの種別。たとえば、スポット・レート、先物など。
+401,2,Attribute,,Tax_ Multicurrency,Cross Triangulation Exchange Rate,Pure,,0..1,Exchange rate used to convert from amountRestatedAmount to amountTriangulationAmount as of multicurrencyDetailExchangeRateDate (expressed as foreign currency divided by triangulation currency),btx,換算通貨トライアンギュレーション通貨換算レート,amountRestatedAmountからamountTriangulationAmountへの、multicurrencyDetailExchangeRateDate時点の換算レート。（外貨通貨をトライアンギュレーション通貨で割った値）
+402,2,Attribute,,Tax_ Multicurrency,Cross Triangulation Exchange Rate Source,String,,0..1,"Source of Exchange Rate for converting between foreign currency and triangulation currency - for example, Reuters, Bloomberg",btx,換算通貨トライアンギュレーション通貨換算レート情報源,"外貨通貨とトライアンギュレーション通貨の間の換算レートの情報源。たとえば、Reuters, Bloomberg。"
+403,2,Attribute,,Tax_ Multicurrency,Cross Triangulation Exchange Rate Type,String,,0..1,"Type of Exchange Rate for converting between foreign currency and triangulation currency - for example, spot rate, forward contract etc.",btx,換算通貨トライアンギュレーション通貨換算レート種別,外貨通貨とトライアンギュレーション通貨の間の換算レートの種別。たとえば、スポット・レート、先物など。
+404,2,Attribute,,Tax_ Multicurrency,Comment,String,,0..1,Comment describing the enclosing multicurrencyDetail class's contents. May include reason for recording additional exchange rates other than that used at the time of the original transaction.,btx,多通貨明細コメント,multicurrencyDetailの内容のコメント。原取引時以外の、追加の換算レートを記録する理由などを記述。
+405,1,Class,,Detail_ Tax,,,,0..*,Class for holding tax related information applied at the transaction detail (line) level.,cor,【行税情報】,税関連の情報のクラス。
+406,2,Specialization,,Detail_ Tax,,,Tax,1,,taf,,
+407,2,Attribute,,Detail_ Tax,Tax Authority,String,,0..1,Name of the relevant tax authority,cor,課税庁,関係する課税庁の名前。
+408,2,Attribute,,Detail_ Tax,Tax Table Code,String,,0..1,Tax table code used by the relevant tax authority,cor,税率表コード,関係する課税庁で使用される税率表のコード。
+409,2,Attribute,,Detail_ Tax,Tax Description,String,,0..1,Description of tax authority,cor,課税庁説明,課税庁の説明。
+410,2,Attribute,,Detail_ Tax,Amount of Tax,Monetary,,0..1,Amount of taxes,cor,税額,税額。
+411,2,Attribute,,Detail_ Tax,Basis for Taxation,Monetary,,0..1,Basis for taxation,cor,課税基準,課税基準。
+412,2,Attribute,,Detail_ Tax,Tax Percentage Rate,Pure,,0..1,Percent rate for VAT or other taxes normally a number between 0 and 1.0 - e.g. 50% is represented as 0.5,cor,税率,"VAT(物品税)またはその他の税のパーセント比率。
+0から1.0の間の値。たとえば50%は0.5とあらわす。"
+413,2,Attribute,,Detail_ Tax,Tax Category,String,,0..1,A class or category of taxes,cor,税区分,税のクラス又はカテゴリ。
+414,2,Attribute,,Detail_ Tax,Tax Category Code,Code,,0..1,"UNTDED 5153 Duty or tax or fee category code. Code specifying the category of duty, tax, or fee.",btx,税・関税・手数料区分コード,税・関税・手数料の区分を指定するコード（UNTDED 5153）。
+415,2,Attribute,,Detail_ Tax,Tax Comment/Exemption Reason,String,,0..1,Additional text/code for exemption reasons or other comments.,cor,税コメント/免税理由,免税理由やその他のコメントのための、追加の文またはコード。
+416,2,Composition,,Detail_ Tax,,,Tax_ Multicurrency,0..1,Class to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,taf,【多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+417,1,Class,,Document,,,,0..*,"A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive class of related documents.",bus,【文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。
+418,2,Attribute,PK,Document,Number,String,,0..1,Document number,bus,文書番号,文書の番号。
+419,2,Attribute,PK,Document,Type,Token,,0..1,"Document type  check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.",bus,文書種別,文書の種別。小切手(check)、借方メモ(debit-memo)、貸方メモ(credit-memo)、財務費用(finance-charge)、顧客への請求書(invoice)、顧客オーダ(order-customer)、仕入先オーダ(order-vendor)、その他支払い(payment-other)、督促状(reminder)、手形(tegata)、ベンダからの請求書(voucher)、出荷票(shipment)、受領票(receipt)、手修正(manual-adjustment)、その他(other)
+420,2,Attribute,,Document,Date,Date,,0..1,Document date,bus,文書日付,文書の日付。
+421,2,Attribute,,Document,Identifier Type,Token,,0..1,"Document identifier type. Enumerated as: C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.",bus,文書対象CVE種別,"文書の対象となるCVEの種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)"
+422,2,Attribute,,Document,Identifier Code,String,,0..1,Document identifier code,bus,文書対象CVEコード,文書の対象となるCVEのコード。
+423,2,Attribute,,Document,Identifier Tax Code,String,,0..1,Document identifier tax code,bus,文書対象CVE納税者コード,文書の対象となるCVEの納税者コード。
+424,1,Class,,Originating_ Document,,,,0..*,"A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive class of related documents.",taf,【発生元文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。
+425,2,Specialization,,Originating_ Document,,,Document,1,,bus,,
+426,2,Attribute,PK,Originating_ Document,Number,String,,0..1,Originating document number,taf,発生元文書番号,発生元文書の番号。
+427,2,Attribute,PK,Originating_ Document,Type,Token,,0..1,"Originating document type  check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.",taf,発生元文書種別,発生元文書の種別。小切手(check)、借方メモ(debit-memo)、貸方メモ(credit-memo)、財務費用(finance-charge)、顧客への請求書(invoice)、顧客オーダ(order-customer)、仕入先オーダ(order-vendor)、その他支払い(payment-other)、督促状(reminder)、手形(tegata)、ベンダからの請求書(voucher)、出荷票(shipment)、受領票(receipt)、手修正(manual-adjustment)、その他(other)
+428,2,Attribute,,Originating_ Document,Date,Date,,0..1,Originating document date,taf,発生元文書日付,発生元文書の日付。
+429,2,Attribute,,Originating_ Document,Identifier Type,Token,,0..1,"Originating document identifier type. Enumerated as: C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.",taf,発生元文書対象CVE種別,"発生元文書の対象となるCVEの種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)"
+430,2,Attribute,,Originating_ Document,Identifier Code,String,,0..1,Originating document identifier code,taf,発生元文書対象CVEコード,発生元文書の対象となるCVEのコード。
+431,2,Attribute,,Originating_ Document,Identifier Tax Code,String,,0..1,Originating document identifier tax code,taf,発生元文書対象CVE納税者コード,発生元文書の対象となるCVEの納税者コード。
+432,1,Class,,Detail_ Originating_ Document,,,,0..*,"A tool to capture the flow of related documents in the business process applied at the transaction detail (line) level. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive class of related documents.",taf,【行発生元文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。
+433,2,Specialization,,Detail_ Originating_ Document,,,Document,1,,bus,,
+434,2,Attribute,PK,Detail_ Originating_ Document,Number,String,,0..1,Originating document number,taf,発生元文書番号,発生元文書の番号。
+435,2,Attribute,PK,Detail_ Originating_ Document,Type,Token,,0..1,"Originating document type  check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.",taf,発生元文書種別,発生元文書の種別。小切手(check)、借方メモ(debit-memo)、貸方メモ(credit-memo)、財務費用(finance-charge)、顧客への請求書(invoice)、顧客オーダ(order-customer)、仕入先オーダ(order-vendor)、その他支払い(payment-other)、督促状(reminder)、手形(tegata)、ベンダからの請求書(voucher)、出荷票(shipment)、受領票(receipt)、手修正(manual-adjustment)、その他(other)
+436,2,Attribute,,Detail_ Originating_ Document,Date,Date,,0..1,Originating document date,taf,発生元文書日付,発生元文書の日付。
+437,2,Attribute,,Detail_ Originating_ Document,Identifier Type,Token,,0..1,"Originating document identifier type. Enumerated as: C, customer, E, employee, V, vendor, O, other, I, salesperson-internal, X, salesperson-external, N, contractor.",taf,発生元文書対象CVE種別,"発生元文書の対象となるCVEの種別。 [設定値のリスト] (C)、(customer：顧客)、(E)、(employee：従業員)、(V)、(vendor：仕入先)、(O)、(other：その他)、(I)、(salesperson-internal：店舗内販売員)、(X)、(salesperson-external：外交販売員)、(N)、(contractor：請負者)"
+438,2,Attribute,,Detail_ Originating_ Document,Identifier Code,String,,0..1,Originating document identifier code,taf,発生元文書対象CVEコード,発生元文書の対象となるCVEのコード。
+439,2,Attribute,,Detail_ Originating_ Document,Identifier Tax Code,String,,0..1,Originating document identifier tax code,taf,発生元文書対象CVE納税者コード,発生元文書の対象となるCVEの納税者コード。
+440,1,Abstract Class,,Rich Text Comment,,,,0..*,"Accepts text in rich text format, including XHTML. It can be used for different purposes, such as to create footnotes in XBRL instances or to create a comment for a document or an entry.",lnk,【リッチテキストコメント】,XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。
+441,2,Attribute,,Rich Text Comment,Code,String,,0..1,"An enumerated code that identifies the purpose of the rich text comment. Enumerated values: link_footnote, footnote, source_document, source_journal, batch, other.",lnk,リッチテキストコメントコード,"リッチテキストコメントの用途を識別する、列挙コード。
+[設定値のリスト]
+link_footnote：リンクフットノート、footnote：フットノート、source_document：元文書、source_journal：元仕訳帳、batch：仕訳の束、other：その他"
+442,2,Attribute,,Rich Text Comment,Description,String,,0..1,Free format description of the Rich text Comment Code.,lnk,リッチテキストコメント説明,リッチテキストコメントコードの説明。
+443,2,Attribute,,Rich Text Comment,Content,String,,0..1,Content of the Rich Text Comment.,lnk,リッチテキストコメント内容,リッチテキストコメントの内容。
+444,2,Attribute,,Rich Text Comment,Locator,String,,0..1,An XPath expression that identifies the item that the comment relates to.,lnk,リッチテキストコメントロケータ,コメントが関係する項目を識別する、XPath表現。
+445,1,Class,,Detail_ Rich Text Comment,,,,0..*,"Accepts text in rich text format, including XHTML applied at the transaction detail (line) level. It can be used for different purposes, such as to create footnotes in XBRL instances or to create a comment for a document or an entry.",lnk,【行リッチテキストコメント】,XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。
+446,2,Specialization,,Detail_ Rich Text Comment,,,Rich Text Comment,1,,lnk,,
+447,2,Attribute,,Detail_ Rich Text Comment,Code,String,,0..1,"An enumerated code that identifies the purpose of the rich text comment. Enumerated values: link_footnote, footnote, source_document, source_journal, batch, other.",lnk,リッチテキストコメントコード,"リッチテキストコメントの用途を識別する、列挙コード。
+[設定値のリスト]
+link_footnote：リンクフットノート、footnote：フットノート、source_document：元文書、source_journal：元仕訳帳、batch：仕訳の束、other：その他"
+448,2,Attribute,,Detail_ Rich Text Comment,Description,String,,0..1,Free format description of the Rich text Comment Code.,lnk,リッチテキストコメント説明,リッチテキストコメントコードの説明。
+449,2,Attribute,,Detail_ Rich Text Comment,Content,String,,0..1,Content of the Rich Text Comment.,lnk,リッチテキストコメント内容,リッチテキストコメントの内容。
+450,2,Attribute,,Detail_ Rich Text Comment,Locator,String,,0..1,An XPath expression that identifies the item that the comment relates to.,lnk,リッチテキストコメントロケータ,コメントが関係する項目を識別する、XPath表現。
+451,1,Abstract Class,,Detail,,,,0..*,Parent for entry detail,cor,【仕訳明細】,仕訳明細の親タグ。
+452,2,Attribute,PK,Detail,Line Number Counter,Decimal,,0..1,Unique reference for the line - a numeric counter,cor,明細行番号カウンタ,明細行の一意なリファレンス　　カウンタ
+453,2,Attribute,,Detail,Line Number,String,,0..1,Identifier for a particular entry detail,cor,明細行番号,仕訳明細の識別子。
+454,2,Attribute,,Detail,Posting Date,Date Time,,0..1,"At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.",cor,転記日付,明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。
+455,2,Attribute,,Detail,Memo Line,Boolean,,0..1,A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.,bus,メモ行フラグ,明細行が単に追加の詳細を与えるものであり、転記金額に含めるべきでないことを示すブール値。
+456,2,Attribute,,Detail,Line Document Type,Token,,0..1,"An enumerated field describing the original source document, with check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.",bus,元文書種別,"小切手、借方メモ、貸方メモ、財務費用、顧客への請求書、顧客オーダー、仕入先オーダー、その他支払い、督促状、手形、ベンダからの請求書、出荷票、受領票、手修正、その他の列挙値による、元文書の説明。[設定値のリスト] (check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)"
+457,2,Attribute,,Detail,Document Type Description,String,,0..1,Free format description of the document type,cor,元文書種別説明,元文書の種別の説明。
+458,2,Attribute,,Detail,Line Document Number,String,,0..1,"Invoice, check, voucher, or other source document identifier",bus,元文書番号,請求書、小切手、証憑、その他の元文書の識別子。
+459,2,Attribute,,Detail,Apply To Number,String,,0..1,"Document number of primary invoice number, used to offset payments, debits and credits; for an invoice, usually the same as the documentNumber. When calculating open balance on an invoice, or open amount on payments in advance or not fully applied, this permits calculation of the open item.",cor,適用先番号,"支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。
+未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。"
+460,2,Attribute,,Detail,Document Reference,String,,0..1,Internal reference for the document above; number assigned internally to track the document,cor,元文書参照情報,上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。
+461,2,Attribute,,Detail,Line Document Date,Date Time,,0..1,"Date (and less likely in the paper world but possible in the e-world, time) on actual document (invoice, voucher, check date). Other dates control posting information.",bus,元文書日付,実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。
+462,2,Attribute,,Detail,Received Date,Date Time,,0..1,Date/time document was noted as received (if necessary). Represents actual date received. Posting dates are maintained separately.,bus,元文書受領日付,（必要であれば）文書の受領が記録された日付/時刻。実際に受領された日付をあらわす。転記日付は別に管理される。
+463,2,Attribute,,Detail,Document Location,String,,0..1,"Document location as URI, file name or other reference. Alternatively, text of document can be placed here.",bus,元文書格納場所,文書の格納場所である、URI、ファイル名またはその他の参照情報。代わりに、文書のテキストも記述可能。
+464,2,Attribute,,Detail,Posting Status,Token,,0..1,"deferred: although entered, it cannot be posted until a later time
+posted: already posted
+proposed: a proposed item that must be approved
+simulated: a simulated item, for what-if
+tax: a tax-specific entry
+unposted:entered but not yet posted or validated
+cancelled:entered and later cancelled
+other:other status - should be described in postingStatusDescription",cor,転記状態,"・据置：入力されたが、まだ転記できない。
+・転記済：転記済み。
+・提案済：検証が必要な項目。
+・シミュレーション：仮定のためにシミュレートされた項目。
+・税：税項目。
+・未転記：入力されたが、まだ検証も転記もされていない。
+・取消済：入力されたが、取り消された。
+・その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)"
+465,2,Attribute,,Detail,Posting Status Description,String,,0..1,Free format description of the posting status,cor,転記状態説明,転記状態の説明。
+466,2,Attribute,,Detail,Description,String,,0..1,Description of this line of detail only,cor,説明,この明細行のみに対する説明。
+467,2,Attribute,,Detail,Acknowledgement Date,Date Time,,0..1,Date of acknowledgement of goods/services shipped/received.,cor,承認日付,出荷/受領済みの物品/サービスを承認した日付。
+468,2,Attribute,,Detail,Confirmation Date,Date Time,,0..1,Date of confirmation of shipment/receipt.,cor,確認日付,出荷/受領を確認した日付。
+469,2,Attribute,,Detail,Measurable Class ID,Token,,0..1,"An enumerated code to identify the inventory, fixed asset or other measurable class. Enumerated as: raw material, work-in-process, finished goods, assemblies, supplies, land, building, machinery, furniture, vehicles, other.",ehm,測定可能分類コード,在庫、固定資産、その他の測定可能な分類を識別するための列挙コード。列挙例：原材料、仕掛品、製品、組立品、備品、土地、建物、機械、家具、車両、その他。
+470,2,Attribute,,Detail,Measurable Class Description,String,,0..1,Free format description associated with gl-ehm:measurableClassID to provide specialization or clarification for the enumerated value of other.,ehm,測定可能分類の説明,「その他」の列挙値を補足・特定するための自由記述形式の説明。
+471,2,Attribute,,Detail,Geospatial Coordinate,String,,0..1,"Enter a relevant location for this item. Format can be either:
+- Degrees, minutes, and seconds (DMS): 41°24'12.2""N 2°10'26.5""E
+- Degrees and decimal minutes (DMM): 41 24.2028, 2 10.4418
+- Decimal degrees (DD): 41.40338, 2.17403",ehm,地理座標,"本項目の関連位置を入力。形式は以下のいずれか：
+・度分秒 (DMS): 41°24'12.2""N 2°10'26.5""E
+・度と小数分 (DMM): 41 24.2028, 2 10.4418
+・10進度 (DD): 41.40338, 2.17403"
+472,2,Composition,,Detail,,,Detail_ Account Identifier,0..*,"Class: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so: 
+
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",cor,【科目識別子】,"クラス。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division"
+473,2,Composition,,Detail,,,Detail_ Multicurrency,0..*,Class to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,muc,【多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+474,2,Composition,,Detail,,,Detail_ Identifier Reference,0..*,"Identification for customer, vendor, or employee.",cor,【CVE情報】,顧客、仕入先、従業員のための識別子。
+475,2,Composition,,Detail,,,Detail_ XBRL,0..*,This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.,cor,【XBRL情報】,XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。
+476,2,Composition,,Detail,,,Detail_ Measurable,0..*,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",bus,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。
+477,2,Composition,,Detail,,,Detail_ Job,0..*,"Class for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo class for each entry line, but there may be a need to express more than one.",bus,【ジョブ情報】,科目識別子で表現されるジョブとは別の、ジョブに関係する情報のクラス。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。
+478,2,Composition,,Detail,,,Detail_ Depreciation Mortgage,0..*,"Parent for information related to depreciation, mortgages, etc.",bus,【減価償却/抵当債務情報】,減価償却、抵当債務等に関連する情報の親タグ。
+479,2,Composition,,Detail,,,Detail_ Serial or Lot,0..*,"Class for holding information about serial numbers or lots (batches). As a class, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable class.",ehm,【シリアル番号・ロット情報】,シリアル番号やロット（バッチ）に関する情報を保持するクラス。単一の構造内に複数のシリアル番号やロット情報を保持可能。
+480,2,Composition,,Detail,,,Detail_ Tax,0..*,Class for holding tax related information,cor,【税情報】,税関連の情報のクラス。
+481,2,Composition,,Detail,,,Detail_ Originating_ Document,0..*,"A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive class of related documents.",taf,【発生元文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。
+482,2,Composition,,Detail,,,Detail_ Rich Text Comment,0..*,"Accepts text in rich text format, including XHTML. It can be used for different purposes, such as to create footnotes in XBRL instances or to create a comment for a document or an entry.",lnk,【リッチテキストコメント】,XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。
+483,1,Class,,Entry_ Detail,,,,0..*,Parent for entry detail,cor,【仕訳明細】,仕訳明細の親タグ。
+484,2,Specialization,,Entry_ Detail,,,Detail,1,,cor,,
+485,2,Attribute,PK,Entry_ Detail,Line Number Counter,Decimal,,0..1,Unique reference for the line - a numeric counter,cor,明細行番号カウンタ,明細行の一意なリファレンス　　カウンタ
+486,2,Attribute,,Entry_ Detail,Line Number,String,,0..1,Identifier for a particular entry detail,cor,明細行番号,仕訳明細の識別子。
+487,2,Attribute,,Entry_ Detail,Posting Date,Date Time,,0..1,"At the detail level, this represents the accounting significance date. No matter what date the document is received, entered, or posted, this signifies the accounting date of the entry. If you want to see the financial results for March 5, 2002 and this entry is given that date, the entry will be part of the results for March 5, 2002. This is different from the postedDate found at the entryHeader level. If you want the accounting significance to be a particular date, it goes here. A single entry could represent multiple dates, but would only be posted on one date.",cor,転記日付,明細レベルで、会計上意義のある日付を示す。ドキュメントの受領、入力、転記の日付に関わらず、仕訳が会計処理された日付を示す。2002.03.05の財務結果を見たいときに、ここにその日付がある場合は、この明細は2002.03.05の結果の一部である。これは、entryHeaderにあるpostedDateとは異なる。特定の日付を会計上意義のある日付にしたいなら、ここに記述する。ひとつの仕訳が複数の日付をあらわせるが、ひとつの日でのみ転記される。
+488,2,Attribute,,Entry_ Detail,Memo Line,Boolean,,0..1,A boolean like entry that indicates whether an entryDetail line has been provided solely to provide additional details and that tools should not consider the amount in postings.,bus,メモ行フラグ,明細行が単に追加の詳細を与えるものであり、転記金額に含めるべきでないことを示すブール値。
+489,2,Attribute,,Entry_ Detail,Document Type,Token,,0..1,"An enumerated field describing the original source document, with check, debit-memo, credit-memo, finance-charge, invoice, order-customer, order-vendor, payment-other, reminder, tegata, voucher, shipment, receipt, manual-adjustment, other.",cor,元文書種別,"小切手、借方メモ、貸方メモ、財務費用、顧客への請求書、顧客オーダー、仕入先オーダー、その他支払い、督促状、手形、ベンダからの請求書、出荷票、受領票、手修正、その他の列挙値による、元文書の説明。[設定値のリスト] (check：小切手)、(debit-memo：借方メモ)、(credit-memo：貸方メモ)、(finance-charge：財務費用)、(invoice：顧客への請求書)、(order-customer：顧客オーダ)、(order-vendor：仕入先オーダ)、(payment-other：その他支払い)、(reminder：督促状)、(tegata：手形)、(voucher：ベンダからの請求書)、(shipment：出荷票)、(receipt：受領票)、(manual-adjustment：手修正)、(other：その他)"
+490,2,Attribute,,Entry_ Detail,Document Type Description,String,,0..1,Free format description of the document type,cor,元文書種別説明,元文書の種別の説明。
+491,2,Attribute,,Entry_ Detail,Document Number,String,,0..1,"Invoice, check, voucher, or other source document identifier",cor,元文書番号,請求書、小切手、証憑、その他の元文書の識別子。
+492,2,Attribute,,Entry_ Detail,Apply To Number,String,,0..1,"Document number of primary invoice number, used to offset payments, debits and credits; for an invoice, usually the same as the documentNumber. When calculating open balance on an invoice, or open amount on payments in advance or not fully applied, this permits calculation of the open item.",cor,適用先番号,"支払、借方、貸方の相殺に使用される、一次請求書の文書番号。請求書では通常documentNumberと等しい。
+未決済の請求書残高や、未決済の支払金額の計算時に、利用できる。"
+493,2,Attribute,,Entry_ Detail,Document Reference,String,,0..1,Internal reference for the document above; number assigned internally to track the document,cor,元文書参照情報,上の文書のための内部参照情報。文書を追跡するために内部的に割り当てた番号。
+494,2,Attribute,,Entry_ Detail,Document Date,Date Time,,0..1,"Date (and less likely in the paper world but possible in the e-world, time) on actual document (invoice, voucher, check date). Other dates control posting information.",cor,元文書日付,実際の文書（請求書、証憑、小切手）の日付（および、紙の世界ではありそうにないが、電子的には時刻）。 転記の情報は別の日付で管理する。
+495,2,Attribute,,Entry_ Detail,Received Date,Date Time,,0..1,Date/time document was noted as received (if necessary). Represents actual date received. Posting dates are maintained separately.,bus,元文書受領日付,（必要であれば）文書の受領が記録された日付/時刻。実際に受領された日付をあらわす。転記日付は別に管理される。
+496,2,Attribute,,Entry_ Detail,Document Location,String,,0..1,"Document location as URI, file name or other reference. Alternatively, text of document can be placed here.",bus,元文書格納場所,文書の格納場所である、URI、ファイル名またはその他の参照情報。代わりに、文書のテキストも記述可能。
+497,2,Attribute,,Entry_ Detail,Posting Status,Token,,0..1,"deferred: although entered, it cannot be posted until a later time
+posted: already posted
+proposed: a proposed item that must be approved
+simulated: a simulated item, for what-if
+tax: a tax-specific entry
+unposted:entered but not yet posted or validated
+cancelled:entered and later cancelled
+other:other status - should be described in postingStatusDescription",cor,転記状態,"・据置：入力されたが、まだ転記できない。
+・転記済：転記済み。
+・提案済：検証が必要な項目。
+・シミュレーション：仮定のためにシミュレートされた項目。
+・税：税項目。
+・未転記：入力されたが、まだ検証も転記もされていない。
+・取消済：入力されたが、取り消された。
+・その他：その他の状態。postingStatusDescriptionで説明されるべき。
+[設定値のリスト]
+(deferred：据置)、(posted：転記済)、(proposed：提案済)、(simulated：シミュレーション)、(tax：税)、(unposted：未転記)、(cancelled：取消済)、(other：その他)"
+498,2,Attribute,,Entry_ Detail,Posting Status Description,String,,0..1,Free format description of the posting status,cor,転記状態説明,転記状態の説明。
+499,2,Attribute,,Entry_ Detail,Description,String,,0..1,Description of this line of detail only,cor,説明,この明細行のみに対する説明。
+500,2,Attribute,,Entry_ Detail,Acknowledgement Date,Date Time,,0..1,Date of acknowledgement of goods/services shipped/received.,cor,承認日付,出荷/受領済みの物品/サービスを承認した日付。
+501,2,Attribute,,Entry_ Detail,Confirmation Date,Date Time,,0..1,Date of confirmation of shipment/receipt.,cor,確認日付,出荷/受領を確認した日付。
+502,2,Attribute,,Entry_ Detail,Measurable Class ID,Token,,0..1,"An enumerated code to identify the inventory, fixed asset or other measurable class. Enumerated as: raw material, work-in-process, finished goods, assemblies, supplies, land, building, machinery, furniture, vehicles, other.",ehm,測定可能分類コード,在庫、固定資産、その他の測定可能な分類を識別するための列挙コード。列挙例：原材料、仕掛品、製品、組立品、備品、土地、建物、機械、家具、車両、その他。
+503,2,Attribute,,Entry_ Detail,Measurable Class Description,String,,0..1,Free format description associated with gl-ehm:measurableClassID to provide specialization or clarification for the enumerated value of other.,ehm,測定可能分類の説明,「その他」の列挙値を補足・特定するための自由記述形式の説明。
+504,2,Attribute,,Entry_ Detail,Geospatial Coordinate,String,,0..1,"Enter a relevant location for this item. Format can be either:
+- Degrees, minutes, and seconds (DMS): 41°24'12.2""N 2°10'26.5""E
+- Degrees and decimal minutes (DMM): 41 24.2028, 2 10.4418
+- Decimal degrees (DD): 41.40338, 2.17403",ehm,地理座標,"本項目の関連位置を入力。形式は以下のいずれか：
+・度分秒 (DMS): 41°24'12.2""N 2°10'26.5""E
+・度と小数分 (DMM): 41 24.2028, 2 10.4418
+・10進度 (DD): 41.40338, 2.17403"
+505,2,Composition,,Entry_ Detail,,,Detail_ Account Identifier,0..*,"Class: parent container for account numbers and identifiers. No entry is made here, but each detail line may have multiple accounts assigned to it for reporting in different GAAPs, offsetting accounts in Japan, passing along information to consolidation systems about local versus consolidating accounts, etc. For example, the account 4783HG-QOWI-192837-1000 may be expressed so: 
+
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division",cor,【科目識別子】,"クラス。勘定科目番号と識別子の親コンテナ。 ここには記入されないが、個々の明細行は、異なるGAAPでの報告や、日本の見返勘定や、連結勘定科目に対する個別情報の連結会計システムへの伝達などのための、複数の勘定科目を持ちうる。例えば、勘定科目4783HG-QOWI-192837-1000は、次のように表現されうる。
+/account/accountMainID 1000  
+/account/accountMainDescription Cash  
+/account/accountSub/accountSubID 4783HG  
+/account/accountSub/accountSubDescription Department  
+/account/accountSub/accountSubID QOWI  
+/account/accountSub/accountSubDescription Branch  
+/account/accountSub/accountSubID 192837  
+/account/accountSub/accountSubDescription Division"
+506,2,Composition,,Entry_ Detail,,,Detail_ Multicurrency,0..*,Class to provide additional information related to home currencies that differ from original currencies and related exchange rates - typically this will be used to record exchange rates and amounts in currencies and/or on dates other than those of the original transaction. This class allows recording of exchange rates using a third currency as a triangulation currency. This is often EUR but is not restricted to being so. This class may be repeated as many times as necessary to record amounts in foreign currencies on the same or different dates.,muc,【多通貨明細】,"原取引時の通貨と異なる、自国通貨と換算レートに関する追加情報のクラス。－現在および原取引時の、換算レートおよび金額の記録に使用される。
+トライアンギュレーション通貨としての第三通貨の換算レートを記録できる。EURの場合が多いがそれに限らない。この構造は、同日または異なる日の外貨での金額を記録する必要がある限り、繰り返し指定可能。"
+507,2,Composition,,Entry_ Detail,,,Detail_ Identifier Reference,0..*,"Identification for customer, vendor, or employee.",cor,【CVE情報】,顧客、仕入先、従業員のための識別子。
+508,2,Composition,,Entry_ Detail,,,Detail_ XBRL,0..*,This will roll up to XBRL reporting information - this is a parent - repeatable so that the same item can be reported through many taxonomies. Care should be taken to consider what happens if people post to the same account but different XBRL elements.,cor,【XBRL情報】,XBRLレポート情報へのロールアップ情報。親タグであり、同じ項目が複数のタクソノミを通じて報告されうるように繰り返し可能。同一の勘定科目を異なるXBRL要素に転記した場合にどうなるか、注意深く考慮すべきである。
+509,2,Composition,,Entry_ Detail,,,Detail_ Measurable,0..*,"Parent for information regarding measurable items associated with the enclosing entryDetail line. Primary area used for holding performance measures. Based on needs for tracking inventory transactional detail, but suitable for anything assigned to an ""account"", ""reporting bucket"" or ""code"". Can be used to track any movements.",bus,【計測可能物情報】,明細行に関係付けられた、計測可能物の情報の親タグ。おもにパフォーマンス測定のために使用される。在庫移動の詳細の追跡の必要性に基づき、「科目」、「報告バケット」、「コード」に関係付けられるあらゆるものに適する。あらゆる活動を追跡するために使用可能。
+510,2,Composition,,Entry_ Detail,,,Detail_ Job,0..*,"Class for holding job related information, separate from jobs represented in account identifier. Would probably only have one jobinfo class for each entry line, but there may be a need to express more than one.",bus,【ジョブ情報】,科目識別子で表現されるジョブとは別の、ジョブに関係する情報のクラス。個々の明細行に対してひとつだけ存在すると思われるが、複数必要かもしれない。
+511,2,Composition,,Entry_ Detail,,,Detail_ Depreciation Mortgage,0..*,"Parent for information related to depreciation, mortgages, etc.",bus,【減価償却/抵当債務情報】,減価償却、抵当債務等に関連する情報の親タグ。
+512,2,Composition,,Entry_ Detail,,,Detail_ Serial or Lot,0..*,"Class for holding information about serial numbers or lots (batches). As a class, this permits multiple serial numbers or multiple lot number batches within a single gl-cor:measurable class.",ehm,【シリアル番号・ロット情報】,シリアル番号やロット（バッチ）に関する情報を保持するクラス。単一の構造内に複数のシリアル番号やロット情報を保持可能。
+513,2,Composition,,Entry_ Detail,,,Detail_ Tax,0..*,Class for holding tax related information,cor,【税情報】,税関連の情報のクラス。
+514,2,Composition,,Entry_ Detail,,,Detail_ Originating_ Document,0..*,"A tool to capture the flow of related documents in the business process. Some needs of end users require a greater history of the documents that are associated with a transaction, especially in the VAT audit area. Contains a repetitive class of related documents.",taf,【発生元文書情報】,業務プロセス上の、関連文書の流れを捕捉するためのもの。特にVAT監査では、エンドユーザの要求として、取引に関係する文書の履歴が必要とされる。関連文書情報の構造の繰り返しを含む。
+515,2,Composition,,Entry_ Detail,,,Detail_ Rich Text Comment,0..*,"Accepts text in rich text format, including XHTML. It can be used for different purposes, such as to create footnotes in XBRL instances or to create a comment for a document or an entry.",lnk,【リッチテキストコメント】,XHTMLを含む、リッチテキスト形式のテキストを受け入れる。XBRLインスタンスのフットノートの生成や、文書や伝票のコメントの生成などの、さまざまな目的で利用可能。
+516,2,Attribute,,Entry_ Detail,Monetary Amount,Monetary,,0..1,"This field (amount) represents the primary monetary amount related to the  subject of the entryDetail line. There is one primary monetary amount per entryDetail class. It may, for example, represent the amount of one line of a journal entry, the balance on a document, or the extended amount of a line item on an invoice. Amount is not required if detailed entry is used for non-financial work and other elements are populated, in particular measurableQuantity. The amount field is a signed number (either positive or negative itself) and used in conjunction with a separate signOfAmount and a separate debitCreditCode, which together are considered for understanding the monetary amount. The unit of measure is determined by amountCurrency if present, and by the default or home currency if amountCurrency is not present.",cor,金額,entryDetailの代表的な金額を示す。entryDetailごとにひとつの値を持つ。たとえば、仕訳帳の行、残高、請求書の行の金額。明細が会計業務用でなく、measurableQuantityなどの他の要素が設定されている場合は不要。符号付数値であり、金額を解釈するために用意されたsignOfAmountおよびdebitCreditCodeとあわせて使用される。通貨単位はamountCurrencyで決定される。amountCurrencyが指定されない場合は、既定または自国の通貨単位となる。
+517,2,Attribute,,Entry_ Detail,Currency,QName,,0..1,"The currency related to the amount can be entered here instead of the XBRL instance specified way, especially important in multi-currency situations. Recommend ISO 4217 coding.",muc,通貨,XBRLインスタンス内に指定する方法のかわりに、金額の通貨を指定可能。多通貨環境で特に重要。ISO4217コード体系を推奨。
+518,2,Attribute,,Entry_ Detail,Sign Indication for Amount,Token,,0..1,Sign of amount; provides 4 possible fields only when used in conjunction with debitCreditCode; primarily used for correcting entries so total debits and credits after an entry error are not inflated. D + increase DebitsD - decrease debitsC + decreases creditC - increases credit,cor,金額符号,"金額の符号。貸借識別子と関連して使用される場合にだけ、4つの可能なフィールドを提供する。記入エラー後の総貸借が膨張しないように、おもに仕訳の訂正に使用される。 D+は借方を増加させる。D-は借方を減少させる。C+は貸方を減少させる。C-は貸方を増加させる。
+[設定値のリスト]
+(+)、(-)、(plus：プラス)、(minus：マイナス)"
+519,2,Attribute,,Entry_ Detail,Debit/Credit Indicator,Token,,0..1,"Optional identifier of whether the amount is a (D)ebit, a (C)redit or Undefined",cor,貸借区分コード,"金額が借方か貸方か不定かを示す識別子。
+[設定値のリスト]
+(D)、(C)、(debit：借方)、(credit：貸方)、(undefined：不定)"
+520,2,Attribute,,Entry_ Detail,Allocation Code,String,,0..1,A code that is tied to the Enterprise's allocation system.,bus,配分コード,配賦システムに結びつけるコード。
+521,2,Attribute,,Entry_ Detail,Invoice Type,Token,,0..1,"Invoice Type  (self-billed, ePoS enumerated values)",cor,請求書種別,"請求書の種別。(self-billed、ePoS)
+[設定値のリスト]
+(ePos：POSシステムからの発行)、(self-billed：手動発行)"
+522,2,Attribute,,Entry_ Detail,Chargeable or Reimbursable,String,,0..1,"Is this entry chargeable to client, reimbursable? Used by some systems to indicate that account on posting/validation should be posted to a customer or vendor's account.",bus,請求支払可能フラグ,この仕訳は顧客に請求、支払可能か。いくつかのシステムでは転記/検証対象の科目が顧客や仕入先の科目に転記されるべきかどうかを示すために使用される。
+523,2,Attribute,,Entry_ Detail,Payment Method,String,,0..1,Method used or to be used to make the payment,bus,支払方法,支払いのために使用された、または使用される方法。
+524,2,Attribute,,Entry_ Detail,Ship From,String,,0..1,References organizationAddressLocationIdentifier where used. Otherwise freeform.,cor,出荷元,organizationAddressLocationIdentifierの参照情報。または自由記述。
+525,2,Attribute,,Entry_ Detail,Date Shipped/Received,Date Time,,0..1,Date goods/services are shipped/received.,cor,出荷/受領日付,物品/サービスを出荷/受領した日付。
+526,2,Attribute,,Entry_ Detail,Maturity Date or Date Due,Date Time,,0..1,Due date or other maturity date.,cor,支払期日,支払期日やその他の期日。
+527,2,Attribute,,Entry_ Detail,Payment Terms,String,,0..1,Discount/payment terms.,cor,支払条件,割引/支払い条件。
+528,2,Attribute,,Entry_ Detail,Costing Method Code,Token,,0..1,"An enumerated code for the inventory (or other measurable) costing method. Enumerated as: LIFO, FIFO, average, weighted-average, standard-cost, tax-basis, book-basis, other.",ehm,原価計算方法コード,在庫または他の測定可能な対象の原価計算方法を示す列挙コード。列挙例：LIFO、FIFO、平均法、加重平均法、標準原価法、税基準、帳簿基準、その他。
+529,2,Attribute,,Entry_ Detail,Costing Method Description,String,,0..1,Free format description associated with gl-ehm:costingMethodCode to provide specialization of clarification for the enumerated value of other.,ehm,原価計算方法の説明,「その他」の列挙値に関する補足説明または特定のための自由記述形式。
+530,2,Attribute,,Entry_ Detail,Ticking Field,Boolean,,0..1,"Signifies that an item has been cleared, finished, finalized. When checking accounts are called for, the tick or letter showing this was done appears in this field. Can also be used for identifying that the
+original document against which a payment or DR/CR memo applies has been reconciled.",taf,チェック欄,項目が消去または完了されたことを示す。勘定のチェックが要求される場合、処理済を示すチェックマークまたは文字が指定される。支払またはDR/CRのメモに対する元文書が、消し込まれたことを確認するためにも使用可能。
+531,2,Attribute,,Entry_ Detail,Document Remaining Balance,Monetary,,0..1,Balance remaining on the document,taf,文書上残高,文書上の残高。
+532,2,Attribute,,Entry_ Detail,UCR,String,,0..1,"Unique Consignment Reference or UCR. An ""origin to destination"" reference code for international consignments, developed in cooperation with the World Customs Organization and EAN International (EAN). (http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)",taf,UCRコード,"Unique Consignment ReferenceまたはUCR。国際委託販売のための""origin to destination""参照コード。World Customs OrganizationとEAN International (EAN)が共同で開発している。
+(http://www.wcoomd.org/ie/EN/press/UCR_new_e.pdf)"
+533,1,Abstract Class,,Header,,,,0..*,Parent for report headers.,cor,【ヘッダ情報】,ヘッダーの抽象クラス。
+534,2,Attribute,PK,Header,Number Counter,Decimal,,0..1,Unique reference for the record - a numeric counter.,cor,レコード番号カウンタ,レコードを一意に識別するための数値リファレンス。
+535,2,Attribute,,Header,Date Posted,Date Time,,0..1,Date this record was posted or finalized in the system.,cor,転記済日付,このレコードがシステム上で転記、または最終的に確定された日付。
+536,2,Attribute,,Header,Entry Creator,String,,0..1,Identifier of the user who originally created the record.,cor,作成者,最初にレコードを作成したユーザーの識別子または名称。
+537,2,Attribute,,Header,Entered Date,Date Time,,0..1,Represents the system-generated date/time of initial entry.,cor,入力日時,システムに最初に入力された際の、システム生成の日付および時刻。
+538,2,Attribute,,Header,Entry Last Modifier,String,,0..1,Identification for the last person who modified this record.,bus,最終更新者,このレコードを最後に修正したユーザーの識別子。
+539,2,Attribute,,Header,Entry Last Modified Date Time,Date Time,,0..1,Represents the system-generated date/time of the last update.,cor,最終更新日時,データが最後に更新された際のシステム上の日付および時刻（システムクロックより自動取得）。
+540,2,Attribute,,Header,Responsible Person,String,,0..1,Identifier of the person responsible for the record.,bus,責任者,当該レコードに対して責任を持つ者の識別子。
+541,2,Attribute,,Header,Entry Approved Date Time,Date Time,,0..1,Represents the system-generated date/time of approval.,cor,承認日時,レコードが承認された際のシステム上の日付および時刻。
+542,2,Attribute,,Header,Type Code,Token,,0..1,Identifier for the category or type of the record.,cor,種別識別子,レコードのカテゴリーや種別を識別するためのコード。
+543,2,Attribute,,Header,Posting Code,String,,0..1,Code representing the reporting or posting period.,bus,転記コード,報告期間や転記対象期間を表すコード。
+544,2,Attribute,,Header,Number of Entries,Integer,,0..1,The total number of associated sub-entries or data lines.,bus,総数,関連するサブエントリまたはデータ行の総数。
+545,2,Attribute,,Header,Comment,String,,0..1,Descriptive comment or note associated with the record.,cor,摘要,レコードに関連する摘要、注釈、または備考。
+546,1,Class,,Entry_ Header,,,,0..*,Parent for entry headers/journal entry headers.,cor,【仕訳情報】,エントリヘッダー/仕訳記入ヘッダーの親タグ。
+547,2,Specialization,,Entry_ Header,,,Header,1,,cor,,
+548,2,Attribute,PK,Entry_ Header,Number Counter,Decimal,,0..1,Unique reference for the entry - a numeric counter,cor,仕訳番号カウンタ,仕訳の一意なリファレンス　　カウンタ
+549,2,Attribute,,Entry_ Header,Date Posted,Date Time,,0..1,Date this entry was posted (validated) to the general ledger. May not represent the date of accounting significance which is represented by 'postingDate'.,cor,転記済日付,この仕訳が総勘定元帳に転記された(検証された)日付。 postingDateで示されるような会計上意味のある日付を表さないかもしれない。
+550,2,Attribute,,Entry_ Header,Entry Creator,String,,0..1,Initials/name of operator originally entering.,cor,仕訳作成者,最初に入力したオペレータのイニシャル/名前。
+551,2,Attribute,,Entry_ Header,Entry Last Modifier,String,,0..1,Identification for the last person modifying this entry before posting.,bus,仕訳最終更新者,転記前に最後にこの仕訳を修正した者の識別子。
+552,2,Attribute,,Entry_ Header,Entry Date,Date Time,,0..1,"Represents the actual date/time of entry into computer (automated from system date, often misrepresented by changing system clock). Posting dates are maintained separately.",cor,入力日付,コンピュータへ入力した実際の日付/時刻(システム日付から自動的に与えられ、システム時計の変更により、しばしば誤った値になる)を示す。 転記日付とは別に管理される。
+553,2,Attribute,,Entry_ Header,Responsible Person,String,,0..1,Identifier of person who created or originated or is otherwise responsible for the entry.,bus,責任者,仕訳を作成したか、仕訳に責任を持つ者の識別子。
+554,2,Attribute,,Entry_ Header,Type Code,Token,,0..1,"One of the following enumerated list: adjusting, budget, comparative, external-accountant, standard, passed-adjusting, eliminating, proposed, recurring, reclassifying, simulated, tax, other",cor,種別識別子,"以下の値のうちのひとつ。
+整理、予算、比較、外部会計事務所、通常、無視、消去、提案、反復、組替、シミュレーション、税、その他
+[設定値のリスト]
+(adjusting：整理)、(budget：予算)、(comparative：比較)、(external-accountant：外部会計事務所)、(standard：通常)、(passed-adjusting：無視)、(eliminating：消去)、(proposed：提案)、(recurring：反復)、(reclassifying：組替)、(simulated：シミュレーション)、(tax：税)、(other：その他)"
+555,2,Attribute,,Entry_ Header,Posting Code,String,,0..1,"Code for posting to period, e.g., period 1-13, based on codes in an accounting period file. We do not recommend that software vendors export here, but suggest providing period end numbers for the buckets. Possibilities W1 through W53, M1 through M13, Q1-Q4. Developers and others creating output files are encouraged to supply an actual end date.",bus,転記コード,転記の期間を表すコード。例えば、会計期間ファイルのコードにもとづく期間１～１３。ソフトウエアベンダーが、この値をエクスポートすることは推奨しない。期間の最終番号を提供することを勧める。可能な値としては、W1からW53、M1からM13、Q1からQ4など。開発者や出力ファイルの作成者には、実際の終了日付を提供することを勧める。
+556,2,Attribute,,Entry_ Header,Number of Entries,Integer,,0..1,The total number of entries.,bus,仕訳総数,仕訳の総数。
+557,2,Attribute,,Entry_ Header,Comment,String,,0..1,Comment of the entry,cor,仕訳摘要,仕訳の摘要
+558,2,Attribute,,Entry_ Header,Source Journal,Token,,0..1,"Source journal. The code of the journal in which the entry is processed. The code must be a unique indication for a journal and is selected from the following enumerated list:
+
+cd      cash disbursements (sending cheques to vendors)
+cr      cash receipts (receiving cheques from others)
+fa      fixed assets
+gi      giro/other bank adjustments
+gj      general journal
+im      inventory management
+jc      job cost
+pj      purchase journal (liabilities from purchases)
+pl      payroll journal
+sj      sales journal
+se      standard entries
+ud      user defined
+ot      other sources of entries",cor,元仕訳帳種別,"元仕訳帳。仕訳が処理される仕訳帳のコード。コードは仕訳帳に一意な指標であり、以下から選択する。
+出金(仕入先への小切手送付)、入金(他者からの小切手受領)、固定資産、振替、一般仕訳帳、在庫管理、個別原価、仕入帳(仕入による負債)、賃金台帳、売上台帳、通常仕訳、ユーザ定義、その他
+[設定値のリスト]
+(cd：出金)、(cr：入金)、(fa：固定資産)、(gi：振替)、(gj：一般仕訳帳)、(im：在庫管理)、(jc：個別原価)、(pj：仕入帳)、(pl：賃金台帳)、(sj：売上台帳)、(se：通常仕訳)、(ud：ユーザ定義)、(ot：その他)"
+559,2,Attribute,,Entry_ Header,Journal Description,String,,0..1,"Source journal (full description of general journal, payroll journal, accountant entries). A more easily readable journal indication. The most common journals are: Purchases, Sales, Cash, and General Journal.",bus,元仕訳帳説明,元仕訳帳(一般仕訳、給与台帳、会計事務所入力の完全な説明)。 よりわかりやすい仕訳帳の指標。 最も一般的な仕訳帳は、次の通り。 仕入、売上、現金、一般仕訳。
+560,2,Attribute,,Entry_ Header,Entry Origin,String,,0..1,"Origin of entry: accrual, manual entry, imported entry, exchange gain or loss",bus,仕訳起源,仕訳の起源。発生、手入力、インポート入力、為替換算による損益。
+561,2,Attribute,,Entry_ Header,Entry ID,String,,0..1,Identifier within source journal,cor,仕訳識別子,元仕訳帳中の識別子。
+562,2,Attribute,,Entry_ Header,Entry Description,String,,0..1,Description of entry described by this entry header (e.g. Opening Balance),cor,仕訳説明,このエントリヘッダーによって説明された仕訳の説明(例えば、期首残高)
+563,2,Attribute,,Entry_ Header,Entry Qualifier,Token,,0..1,"Entry Qualifier - An enumerated field that qualifies the type of entry, specifically useful for general ledger and trial balance environments when it is important to state the values represented are summarized as of the reporting date - opening or closing balances. In accounting systems, this is often known as BBF (balance brought forward.) Permitted values are: standard, balance-brought-forward and other.",cor,仕訳修飾子,"仕訳の修飾子。総勘定元帳や試算表で、開始残高や決算残高のように、記された値が報告日で集約されていることを明示することが重要なときに有用な、仕訳の種別を修飾するもの。会計システムにおいて、BBF（繰越残高）として知られるもの。指定可能な値は以下。標準、繰越残高、その他
+[設定値のリスト]
+(standard：標準)、(balance-brought-forward：繰越残高)、(other：その他)"
+564,2,Attribute,,Entry_ Header,Entry Qualifier Description,String,,0..1,Free format description of the entry qualifier,cor,仕訳修飾子説明,仕訳の修飾子の説明。
+565,2,Attribute,,Entry_ Header,Batch ID for Entry Group,String,,0..1,ID for a batch for this group of entries,bus,仕訳グループ識別子,この仕訳の集合に付ける、束の識別子。
+566,2,Attribute,,Entry_ Header,Batch Description,String,,0..1,Description of this batch,bus,仕訳グループ説明,この仕訳の束の説明。
+567,2,Attribute,,Entry_ Header,Total Debits,Monetary,,0..1,The total of all debit amounts.,bus,借方合計,借方金額の合計値。
+568,2,Attribute,,Entry_ Header,Total Credits,Monetary,,0..1,The total of all credit amounts.,bus,貸方合計,貸方金額の合計値。
+569,2,Attribute,,Entry_ Header,Type of Difference Between Book and Tax,Token,,0..1,"Enumerated field with possible values of permanent, temporary or none indicating the type of difference between book and tax accounting methods. Omission of this field is equivalent to ""none""",cor,帳簿価税務簿価差異種別,"帳簿と税務会計処理方法との差異の種別を示す値。永久か一時的かまたは無し。値の省略時は「無し」と同じ。
+[設定値のリスト]
+(permanent：永久)、(temporary：一時的)、(none：無し)"
+570,2,Attribute,,Entry_ Header,Elimination Code,String,,0..1,Informs destination ledger this is an intracompany entry which eliminates in consolidation,bus,相殺消去コード,連結決算時に消去される連結会社間仕訳であることを、受取側の元帳に通知する。
+571,2,Attribute,,Entry_ Header,Budget Scenario Period Start,Date Time,,0..1,Start of period covered by associated budgetScenario,bus,予算シナリオ期間開始日付,関係付けられたbudgetScenarioがカバーする期間の開始日。
+572,2,Attribute,,Entry_ Header,Budget Scenario Period End,Date Time,,0..1,End of period covered by associated budgetScenario,bus,予算シナリオ期間終了日付,関係付けられたbudgetScenarioがカバーする期間の終了日。
+573,2,Attribute,,Entry_ Header,Scenario Description,String,,0..1,Text related to budgetScenario,bus,シナリオ説明,budgetScenarioに関する記述。
+574,2,Attribute,,Entry_ Header,Scenario Code,String,,0..1,"Code for a budget scenario identifier (such as PB for 'preliminary budget', or RB for 'revised budget', or other identifier for entryType)",bus,シナリオコード,予算シナリオの識別コード。例えば、「PB」（予備予算）、「RB」（補正予算）、または他の仕訳種別の識別子。
+575,2,Attribute,,Entry_ Header,Budget Allocation Code,Token,,0..1,"Code associated with the calculation formula: e.g. (D)ivide by number of periods, (T)otal for period given",bus,予算配分コード,"計算式に関係付けられたコード。例えば、期間数での分割、与えられた期間の合計
+[設定値のリスト]
+(D：期間数での分割)、(T：与えられた期間の合計)"
+576,2,Attribute,,Entry_ Header,"ID for Reversing, Standard or Master Entry",String,,0..1,"For standard, reversing, master, cancelling or other entries an ID associated with those entries.",usk,反対/通常/マスタ仕訳識別子,通常、反対、マスタ、取消または他の仕訳のための、それらの仕訳を関連付けるID。
+577,2,Attribute,,Entry_ Header,Recurring Standard Description,String,,0..1,Description to accompany standard or recurring ID,usk,反復通常仕訳説明,通常仕訳または反復仕訳のIDの説明。
+578,2,Attribute,,Entry_ Header,Frequency Interval,Decimal,,0..1,"For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the interval.",usk,頻度間隔,通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、intervalを示す。
+579,2,Attribute,,Entry_ Header,Frequency Unit,String,,0..1,"For standard or recurring journals, how often entry may be made: every frequencyInterval frequencyUnit, such as every 7 (interval) days (unit) or every 1 (interval) quarter (unit). This field represents the unit.",usk,頻度単位,通常または反復仕訳において、仕訳が記入される頻度。frequencyInterval、frequencyUnitごと、たとえば7(interval)日(unit)ごと、1(interval)四半期(unit)ごとなどにおける、unitを示す。
+580,2,Attribute,,Entry_ Header,Repetitions Remaining,Integer,,0..1,Number of times that the recurring entry will repeat,usk,反復残回数,反復仕訳の繰り返し予定数。
+581,2,Attribute,,Entry_ Header,Next Date Repeat,Date Time,,0..1,Date next repeated or standard posted,usk,次回反復日付,次回の反復あるいは通常の転記日。
+582,2,Attribute,,Entry_ Header,Last Date Repeat,Date Time,,0..1,Date last repeated or standard posted,usk,前回反復日付,前回の反復あるいは通常の転記日。
+583,2,Attribute,,Entry_ Header,End Date of Repeating Entry,Date Time,,0..1,"For standard or recurring journals, stop date/time for repetitive entry.",usk,反復仕訳終了日付,通常仕訳または反復仕訳のための、反復入力の終了日付/時刻。
+584,2,Attribute,,Entry_ Header,Reverse,Boolean,,0..1,Should entry be reversed?,usk,反対仕訳要否,仕訳が取り消されるべきか。
+585,2,Attribute,,Entry_ Header,Reversing Date,Date Time,,0..1,Date this entry should be reversed,usk,反対仕訳日付,この仕訳が取り消されるべき日付。
+586,2,Composition,,Entry_ Header,,,Entry_ Detail,0..*,Parent for entry detail,cor,【仕訳明細】,仕訳明細の親タグ。
+587,1,Class,,Accounting Entries,,,,1..*,Root for XBRL GL. No entry made here.,cor,【会計仕訳】,XBRL GLのルート要素。 この要素にはデータは登録されない。
+588,2,Composition,,Accounting Entries,,,Document Information,1..1,Parent for descriptive information about the accountingEntries Class in which it is contained.,bus,【文書情報】,この会計仕訳に関する情報の親タグ。
+589,2,Composition,,Accounting Entries,,,Entity_ Party,0..1,Holder for entity information - information about the reporting organization.,cor,【事業体情報】,事業体情報（報告組織に関する情報）の入れ物。
+590,2,Composition,,Accounting Entries,,,Entry_ Header,0..*,Parent for entry headers/journal entry headers.,cor,【仕訳情報】,エントリヘッダー/仕訳記入ヘッダーの親タグ。
+591,1,Class,,Summary Reporting Taxonomies,,,,0..*,Identifies and provides information about one or more target reporting taxonomies to which the data represented in the document rolls up to.,lnk,【集約報告タクソノミ】,この文書で示されたデータのロールアップ先となる、1つ以上の報告タクソノミの情報を、識別し提供する。
+592,2,Attribute,,Summary Reporting Taxonomies,Summary Reporting Taxonomy ID,String,,0..1,"Identifies a target reporting taxonomy so that, for example, it can be referenced in the [summaryReportingTaxonomyIDRef] data field at [xbrlInfo] level.",lnk,集約報告タクソノミ識別子,たとえばxbrlInfo内のsummaryReportingTaxonomyIDRefで参照できるように、報告タクソノミを識別する。
+593,2,Attribute,,Summary Reporting Taxonomies,Summary Reporting Taxonomy Schema Reference Href Attribute,String,,0..1,Value of the href attribute of schemaRef in the target reporting taxonomy.,lnk,集約報告タクソノミスキーマ参照情報,報告タクソノミ内の、schemaRef要素のhref属性の値。
+594,2,Attribute,,Summary Reporting Taxonomies,Summary Reporting Taxonomy Header,String,,0..1,An all-purpose data field where all the information necessary when it is too complex to be defined otherwise.,lnk,集約報告タクソノミヘッダ,必要なすべての情報が、複雑すぎて他の方法では定義できないときに、それらを記述する汎用的なデータ域。
+595,2,Attribute,,Summary Reporting Taxonomies,Summary Reporting Taxonomy Description,String,,0..1,A description of the taxonomy for human use.,lnk,集約報告タクソノミ説明,人が利用するための、タクソノミの説明文。
+596,1,Class,,Summary Context_ Entity_ Segment_ Explicit Dimension,,,,0..*,This class allows to explicitly indicate the information related to an explicit dimension in the segment of the context for a fact in the FR instance.,lnk,【集約セグメントエクスプリシットディメンション】,集約セグメントのエクスプリシットディメンションの記述の指定場所。
+597,2,Attribute,,Summary Context_ Entity_ Segment_ Explicit Dimension,Summary Context_ Entity_ Segment_ Explicit Dimension Element,QName,,1..1,The QName value must be resolved to a valid explicit dimension item used in segment.,lnk,集約セグメントエクスプリシットディメンション,セグメントで利用されるQNameの値は妥当なエクプリシットディメンション項目を示さなければならない。
+598,1,Class,,Summary Context_ Entity_ Segment_ Typed Dimension,,,,0..*,This class allows to explicitly indicate the information related to a typed dimension in the segment of the context for a fact in the FR instance.,lnk,【集約セグメントタイプトディメンション】,集約セグメントのタイプトディメンションの記述の指定場所。
+599,2,Attribute,,Summary Context_ Entity_ Segment_ Typed Dimension,Summary Context_ Entity_ Segment_ Typed Dimension Element,QName,,1..1,The QName value must be resolved to a valid typed dimension item used in segment.,lnk,集約セグメントタイプトディメンション,セグメントで利用されるQNameの値は妥当なタイプトディメンション項目を示さなければならない。
+600,1,Class,,Summary Context_ Entity_ Segment_ Simple Element Content,,,,0..*,This class allows to explicitly indicate the information related to a simple element in the segment of  the context for a fact in the FR instance.,lnk,【集約セグメントシンプルエレメントコンテント】,セグメントの単一要素を表現するためのクラス。
+601,2,Attribute,,Summary Context_ Entity_ Segment_ Simple Element Content,Summary Context_ Entity_ Segment_ Simple Element,QName,,1..1,"QName for the segment simple element, if appropriate.",lnk,集約セグメントシンプルエレメント名,集約セグメントシンプルエレメントの記述のQName
+602,2,Attribute,,Summary Context_ Entity_ Segment_ Simple Element Content,Summary Context_ Entity_ Segment_ Simple Element Value,String,,1..1,The value of the segment simple element content.,lnk,集約セグメントシンプルエレメント値,集約セグメントシンプルエレメントの値。
+603,1,Class,,Summary Context_ Entity,,,,0..1,This class allows to explicitly indicate the entity information for a fact in the FR instance.,lnk,【集約エンティティ】,集約のエンティティの記述の指定場所。
+604,2,Attribute,,Summary Context_ Entity,Summary Context_ Entity_ ID,Token,,0..1,The value of the entity identifier.,lnk,集約エンティティ識別子,集約のエンティティ識別子の記述の指定場所。
+605,2,Attribute,,Summary Context_ Entity,Summary Context_ Entity_ Scheme,anyURI,,0..1,The value of the entity scheme.,lnk,集約エンティティスキーム,集約のエンティティスキームの記述の指定場所。
+606,2,Composition,,Summary Context_ Entity,,,Summary Context_ Entity_ Segment,0..1,This class allows to explicitly indicate the information related to the segment in the context for a fact in the FR instance.,lnk,【集約エンティティセグメント】,集約のエンティティセグメントの記述の指定場所。
+607,1,Class,,Summary Context_ Entity_ Segment,,,,0..1,This class allows to explicitly indicate the information related to the segment in the context for a fact in the FR instance.,lnk,【集約エンティティセグメント】,集約のエンティティセグメントの記述の指定場所。
+608,2,Composition,,Summary Context_ Entity_ Segment,,,Summary Context_ Entity_ Segment_ Explicit Dimension,0..*,This class allows to explicitly indicate the information related to an explicit dimension in the segment of the context for a fact in the FR instance.,lnk,【集約セグメントエクスプリシットディメンション】,集約セグメントのエクスプリシットディメンションの記述の指定場所。
+609,2,Composition,,Summary Context_ Entity_ Segment,,,Summary Context_ Entity_ Segment_ Typed Dimension,0..*,This class allows to explicitly indicate the information related to a typed dimension in the segment of the context for a fact in the FR instance.,lnk,【集約セグメントタイプトディメンション】,集約セグメントのタイプトディメンションの記述の指定場所。
+610,2,Composition,,Summary Context_ Entity_ Segment,,,Summary Context_ Entity_ Segment_ Simple Element Content,0..*,This class allows to explicitly indicate the information related to a simple element in the segment of  the context for a fact in the FR instance.,lnk,【集約セグメントシンプルエレメントコンテント】,セグメントの単一要素を表現するためのクラス。
+611,2,Attribute,,Summary Context_ Entity_ Segment,Summary Context_ Segment Non Dimensional Contents,String,,0..*,The value must be CDATA and a valid XML fragment.,lnk,集約セグメント非ディメンションコンテント,CDATAであり、妥当なXML記述でなければならない。
+612,1,Class,,Summary Context_ Period (choice),,,,0..1,"This class allows to explicitly indicate the period information for a fact in the FR instance. Instant, Period Start/End and Forever are alternative.",lnk,【集約ピリオド】,集約のピリオドの記述の指定場所。
+613,2,Attribute,,Summary Context_ Period (choice),Summary Context_ Period Instant,Date Time,,1..1,The value of the instant date.,lnk,集約ピリオドインスタント,集約のピリオドの特定の日付の記述の指定場所。
+614,2,Attribute,,Summary Context_ Period (choice),Summary Context_ Period Forever,String,,1..1,"If the context should indicate ""forever"", this concept must be used. It accepts no value.",lnk,集約ピリオド無期限,集約のピリオドが無期限であることを示す指定場所。
+615,2,Attribute,,Summary Context_ Period (choice),Summary Context_ Period Start Date (sequence),Date Time,,1..1,The value of the start date of the period.,lnk,集約ピリオド開始日付,集約のピリオドの開始日の記述の指定場所。
+616,2,Attribute,,Summary Context_ Period (choice),Summary Context_ Period End Date (sequence),Date Time,,1..1,The value of the end date of the period.,lnk,集約ピリオド終了日付,集約のピリオドの終了日の記述の指定場所。
+617,1,Class,,Summary Context_ Scenario_ Explicit Dimension,,,,0..*,This class allows to explicitly indicate the information related to an explicit dimension in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオエクスプリシットディメンション】,集約シナリオのエクスプリシットディメンションの記述の指定場所。
+618,2,Attribute,,Summary Context_ Scenario_ Explicit Dimension,Summary Context_ Scenario_ Explicit Dimension Element,QName,,1..1,The QName value must be resolved to a valid explicit dimension item used in scenario.,lnk,集約シナリオエクスプリシットディメンション,シナリオで利用されるQNameの値は妥当なエクプリシットディメンション項目を示さなければならない。
+619,1,Class,,Summary Context_ Scenario_ Typed Dimension,,,,0..*,This class allows to explicitly indicate the information related to a typed dimension in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオタイプトディメンション】,集約シナリオのタイプトディメンションの記述の指定場所。
+620,2,Attribute,,Summary Context_ Scenario_ Typed Dimension,Summary Context_ Scenario_ Typed Dimension Element,QName,,1..1,The QName value must be resolved to a valid typed dimension item used in scenario.,lnk,集約シナリオタイプトディメンション,シナリオで利用されるQNameの値は妥当なタイプトディメンション項目を示さなければならない。
+621,1,Class,,Summary Context_ Scenario_ Simple Element Content,,,,0..*,This class allows to explicitly indicate the information related to a simple element in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオシンプルエレメントコンテント】,シナリオの単一要素を表現するためのクラス。
+622,2,Attribute,,Summary Context_ Scenario_ Simple Element Content,Summary Context_ Scenario_ Simple Element,QName,,1..1,"QName for the scenario simple element, if appropriate.",lnk,集約シナリオシンプルエレメント名,集約シナリオシンプルエレメントの記述のQName
+623,2,Attribute,,Summary Context_ Scenario_ Simple Element Content,Summary Context_ Scenario_ Simple Element Value,String,,1..1,The value of the scenario simple element content.,lnk,集約シナリオシンプルエレメント値,集約シナリオシンプルエレメントの値。
+624,1,Class,,Summary Context_ Scenario,,,,0..1,This class allows to explicitly indicate the scenario information for a fact in the FR instance.,lnk,【集約シナリオ】,集約のシナリオの記述の指定場所。
+625,2,Composition,,Summary Context_ Scenario,,,Summary Context_ Scenario_ Explicit Dimension,0..*,This class allows to explicitly indicate the information related to an explicit dimension in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオエクスプリシットディメンション】,集約シナリオのエクスプリシットディメンションの記述の指定場所。
+626,2,Composition,,Summary Context_ Scenario,,,Summary Context_ Scenario_ Typed Dimension,0..*,This class allows to explicitly indicate the information related to a typed dimension in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオタイプトディメンション】,集約シナリオのタイプトディメンションの記述の指定場所。
+627,2,Composition,,Summary Context_ Scenario,,,Summary Context_ Scenario_ Simple Element Content,0..*,This class allows to explicitly indicate the information related to a simple element in the scenario of the context for a fact in the FR instance.,lnk,【集約シナリオシンプルエレメントコンテント】,シナリオの単一要素を表現するためのクラス。
+628,2,Attribute,,Summary Context_ Scenario,Summary Context_ Scenaio Non Dimensional Contents,String,,0..*,The value must be CDATA and a valid XML fragment.,lnk,集約シナリオ非ディメンションコンテント,CDATAであり、妥当なXML記述でなければならない。
+629,1,Class,,Summary Context,,,,0..1,This class allows to explicitly indicate the context information for a fact in the FR instance.,lnk,【集約コンテキスト】,集約のコンテキストの記述の指定場所。
+630,2,Composition,,Summary Context,,,Summary Context_ Entity,0..1,This class allows to explicitly indicate the entity information for a fact in the FR instance.,lnk,【集約エンティティ】,集約のエンティティの記述の指定場所。
+631,2,Composition,,Summary Context,,,Summary Context_ Period (choice),0..1,"This class allows to explicitly indicate the period information for a fact in the FR instance. Instant, Period Start/End and Forever are alternative.",lnk,【集約ピリオド】,集約のピリオドの記述の指定場所。
+632,2,Composition,,Summary Context,,,Summary Context_ Scenario,0..1,This class allows to explicitly indicate the scenario information for a fact in the FR instance.,lnk,【集約シナリオ】,集約のシナリオの記述の指定場所。

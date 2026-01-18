@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<factList>
+    <item name="cor:DocumentID">
+        <label>cor:DocumentID</label>
+        <contextRef>c-01</contextRef>
+        <value>0001-20090401-18-1-1-463</value>
+    </item>
+    <item name="cor:DocumentTypeCode">
+        <label>cor:DocumentTypeCode</label>
+        <contextRef>c-01</contextRef>
+        <value>uncl_1001:_380</value>
+    </item>
+    <item name="cor:DocumentLineID">
+        <label>cor:DocumentLineID</label>
+        <contextRef>c-02</contextRef>
+        <value>1</value>
+    </item>
+    <item name="cor:DocumentLineStatusCode">
+        <label>cor:DocumentLineStatusCode</label>
+        <contextRef>c-02</contextRef>
+        <value>cor:Open</value>
+    </item>
+</factList>

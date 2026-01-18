@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+  targetNamespace="http://example.org/xbrl/gl/cor" 
+  elementFormDefault="qualified" attributeFormDefault="unqualified" 
+  xmlns:cor="http://example.org/xbrl/gl/cor" 
+    xmlns:xlink="http://www.w3.org/1999/xlink" 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xl="http://www.xbrl.org/2003/XLink" 
+    xmlns:xbrli="http://www.xbrl.org/2003/instance" 
+    xmlns:link="http://www.xbrl.org/2003/linkbase" 
+    xmlns:xbrldt="http://xbrl.org/2005/xbrldt" 
+    xmlns:enum="http://xbrl.org/2014/extensible-enumerations"
+    xmlns:uncl_1001="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001">
+  <xs:import namespace="http://www.xbrl.org/2003/instance" schemaLocation="http://www.xbrl.org/2003/xbrl-instance-2003-12-31.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/2003/linkbase" schemaLocation="http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd"/>
+  <xs:import namespace="http://xbrl.org/2005/xbrldt" schemaLocation="http://www.xbrl.org/2005/xbrldt-2005.xsd"/>
+  <xs:import namespace="http://xbrl.org/2014/extensible-enumerations" schemaLocation="https://www.xbrl.org/2014/extensible-enumerations.xsd"/>
+  <xs:import namespace="http://www.xbrl.org/int/gl/2026-12-31/gen/uncl_1001" schemaLocation="../gen/shared/uncl_1001/uncl_1001-d24a-shr.xsd"/>
+  <xs:annotation>
+    <xs:appinfo>
+      <!-- linkbase -->
+      <link:linkbaseRef xlink:href="untdid1001-sel-invoice-basic-def.xml" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <link:linkbaseRef xlink:href="../untdid/1001/untdid1001-lab-d24a.xml" xlink:type="simple" xlink:arcrole="http://www.w3.org/1999/xlink/properties/linkbase"/>
+      <!-- role type -->
+      <link:roleType id="role_document_name_code_sel_invoice_basic" roleURI="http://example.org/xbrl/gl/cor/sel/invoice-basic/role/document-name-code">
+        <link:definition>UNTDID 1001 Document name code (D.24A)</link:definition>
+        <link:usedOn>link:definitionLink</link:usedOn>
+      </link:roleType>
+    </xs:appinfo>
+  </xs:annotation>
+  <!-- Domain head (abstract) -->
+  <xs:element name="documentNameCodeInvoiceDomain" id="documentNameCodeInvoiceDomain" substitutionGroup="xbrli:item" type="xbrli:stringItemType" xbrli:periodType="instant" abstract="true"/>
+</xs:schema>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<link:linkbase
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:link="http://www.xbrl.org/2003/linkbase"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xsi:schemaLocation="http://www.xbrl.org/2003/linkbase
+                      http://www.xbrl.org/2003/xbrl-linkbase-2003-12-31.xsd">
+  <!-- ELR -->
+  <link:roleRef roleURI="http://www.xbrl.org/int/gl/2026-12-31/gen/pool/uncl_4437/role/account-type-code-qualifier" xlink:type="simple"
+                xlink:href="uncl_4437-d24a.xsd#role_account_type_code_qualifier"/>
+
+  <link:labelLink xlink:type="extended" xlink:role="http://www.xbrl.org/2003/role/link">
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#accountTypeCodeQualifierDomain" xlink:label="dom"/>
+    <link:label xlink:type="resource" xlink:label="lab_dom"
+                xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">Account type code qualifier</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="dom" xlink:to="lab_dom"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_1" xlink:label="_1"/>
+    <link:label xlink:type="resource" xlink:label="lab_1" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">1 Cost account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="lab_1"/>
+    <link:label xlink:type="resource" xlink:label="doc_1" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a cost account.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_1" xlink:to="doc_1"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_2" xlink:label="_2"/>
+    <link:label xlink:type="resource" xlink:label="lab_2" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">2 Budgetary account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="lab_2"/>
+    <link:label xlink:type="resource" xlink:label="doc_2" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a budgetary account.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_2" xlink:to="doc_2"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_3" xlink:label="_3"/>
+    <link:label xlink:type="resource" xlink:label="lab_3" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">3 Subsidiary account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="lab_3"/>
+    <link:label xlink:type="resource" xlink:label="doc_3" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a subsidiary account.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_3" xlink:to="doc_3"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_4" xlink:label="_4"/>
+    <link:label xlink:type="resource" xlink:label="lab_4" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">4 General account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="lab_4"/>
+    <link:label xlink:type="resource" xlink:label="doc_4" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general account.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_4" xlink:to="doc_4"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_5" xlink:label="_5"/>
+    <link:label xlink:type="resource" xlink:label="lab_5" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">5 Related account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="lab_5"/>
+    <link:label xlink:type="resource" xlink:label="doc_5" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Account that is related to an other account.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_5" xlink:to="doc_5"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_6" xlink:label="_6"/>
+    <link:label xlink:type="resource" xlink:label="lab_6" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">6 General trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="lab_6"/>
+    <link:label xlink:type="resource" xlink:label="doc_6" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_6" xlink:to="doc_6"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_7" xlink:label="_7"/>
+    <link:label xlink:type="resource" xlink:label="lab_7" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">7 Subsidiary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="lab_7"/>
+    <link:label xlink:type="resource" xlink:label="doc_7" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a subsidiary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_7" xlink:to="doc_7"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_8" xlink:label="_8"/>
+    <link:label xlink:type="resource" xlink:label="lab_8" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">8 Cost trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="lab_8"/>
+    <link:label xlink:type="resource" xlink:label="doc_8" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a cost trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_8" xlink:to="doc_8"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_9" xlink:label="_9"/>
+    <link:label xlink:type="resource" xlink:label="lab_9" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">9 Budgetary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="lab_9"/>
+    <link:label xlink:type="resource" xlink:label="doc_9" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a budgetary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_9" xlink:to="doc_9"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_10" xlink:label="_10"/>
+    <link:label xlink:type="resource" xlink:label="lab_10" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">10 General and cost trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="lab_10"/>
+    <link:label xlink:type="resource" xlink:label="doc_10" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general and cost trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_10" xlink:to="doc_10"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_11" xlink:label="_11"/>
+    <link:label xlink:type="resource" xlink:label="lab_11" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">11 General and budgetary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="lab_11"/>
+    <link:label xlink:type="resource" xlink:label="doc_11" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general and budgetary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_11" xlink:to="doc_11"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_12" xlink:label="_12"/>
+    <link:label xlink:type="resource" xlink:label="lab_12" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">12 General and subsidiary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="lab_12"/>
+    <link:label xlink:type="resource" xlink:label="doc_12" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general and subsidiary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_12" xlink:to="doc_12"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_13" xlink:label="_13"/>
+    <link:label xlink:type="resource" xlink:label="lab_13" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">13 Cost and budgetary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="lab_13"/>
+    <link:label xlink:type="resource" xlink:label="doc_13" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a cost and budgetary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_13" xlink:to="doc_13"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_14" xlink:label="_14"/>
+    <link:label xlink:type="resource" xlink:label="lab_14" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">14 Cost and subsidiary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="lab_14"/>
+    <link:label xlink:type="resource" xlink:label="doc_14" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a cost and subsidiary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_14" xlink:to="doc_14"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_15" xlink:label="_15"/>
+    <link:label xlink:type="resource" xlink:label="lab_15" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">15 Budgetary and subsidiary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="lab_15"/>
+    <link:label xlink:type="resource" xlink:label="doc_15" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a budgetary and subsidiary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_15" xlink:to="doc_15"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_16" xlink:label="_16"/>
+    <link:label xlink:type="resource" xlink:label="lab_16" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">16 General, cost and budgetary trial balance</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="lab_16"/>
+    <link:label xlink:type="resource" xlink:label="doc_16" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying a general, cost and budgetary trial balance.</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_16" xlink:to="doc_16"/>
+
+    <link:loc xlink:type="locator" xlink:href="uncl_4437-d24a.xsd#_17" xlink:label="_17"/>
+    <link:label xlink:type="resource" xlink:label="lab_17" xlink:role="http://www.xbrl.org/2003/role/label" xml:lang="en">17 Non recorded differences account</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="lab_17"/>
+    <link:label xlink:type="resource" xlink:label="doc_17" xlink:role="http://www.xbrl.org/2003/role/documentation" xml:lang="en">Code identifying the account of non recorded differences. Data Element Cross Reference DataElement 4437 is used in the following Batch Segments: CPT Copyright United Nations, all rights reserved UN Economic Commission for Europe Palais des Nations, CH-1211 Geneva 10, Switzerland Tel: +41-22 917 1366 Fax: +41-22 917 0037 E-mail: TradeMaster@unece.org UN/EDIFACT Directories</link:label>
+    <link:labelArc xlink:type="arc" xlink:arcrole="http://www.xbrl.org/2003/arcrole/concept-label" xlink:from="_17" xlink:to="doc_17"/>
+
+  </link:labelLink>
+
+</link:linkbase>
