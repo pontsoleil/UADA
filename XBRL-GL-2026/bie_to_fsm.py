@@ -668,10 +668,13 @@ class Processor:
 
     def merge_abstract_class_modules(self, a: str, b: str) -> str:
         def extract_items(s: str) -> list[str]:
-            m = re.match(r"^\s*Abstract Class\((.*)\)\s*$", s)
-            if not m:
-                raise ValueError(f"Not an Abstract Class(...) string: {s!r}")
-            inner = m.group(1)
+            if "Abstract Class" in s:
+                m = re.match(r"^\s*Abstract Class\((.*)\)\s*$", s)
+                if not m:
+                    raise ValueError(f"Not an Abstract Class(...) string: {s!r}")
+                inner = m.group(1)
+            else:
+                return [s]
             # In case s contains " & ".
             parts = [p.strip() for p in inner.split("&")]
             return [p for p in parts if p]
