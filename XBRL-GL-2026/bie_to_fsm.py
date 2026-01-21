@@ -9,22 +9,26 @@ Designed by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 Written by SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 Creation Date: 2026-01-13
-Last Modified: 2026-01-13
+Last Modified: 2026-01-20
 
 MIT License
 
-(c) 2023-2025 SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
+(c) 2026 SAMBUICHI, Nobuyuki (Sambuichi Professional Engineers Office)
 
 ABOUT THIS SCRIPT
-enerate a Foundational Semantic Model (FSM) CSV from UN/CEFACT CCL BIE rows.
+Generate a Foundational Semantic Model (FSM) CSV from UN/CEFACT CCL BIE rows.
 
 This script:
-- reads one or more BIE CSV files,
-- registers all classes first (to allow forward references),
-- registers properties and normalises property terms / associations,
-- derives candidate abstract (super) classes from underscore-based class naming,
-- classifies properties using inheritance status codes (e.g., Shared/Aligned/Extension/Inheritance/Modified/Prohibited),
-- outputs a flattened FSM CSV with stable IDs.
+- reads a BIE CSV file (ABIE/ASBIE/BBIE rows, stopping at acronym END),
+- assigns internal IDs and levels (Class=level 1, others=level 2),
+- builds a class registry (object_class_dict) and attaches properties under each class,
+  merging duplicate properties and widening multiplicity/concatenating definitions where needed,
+- derives candidate abstract (super) classes from underscore-based class naming and/or
+  “In All Contexts” classes with sufficient properties,
+- normalises association targets (associated_class) to registered class terms where possible,
+- classifies properties in the flattened FSM output with inheritance status flags:
+  Shared / Aligned Pool / Extension / Inheritance / Modified[...] / Aligned / Prohibited,
+- outputs a flattened FSM CSV.
 """
 
 import os
@@ -201,7 +205,7 @@ class Processor:
         self.TRACE = trace
         self.DEBUG = debug
 
-        # Define CSV headers for internal processing and final BSM output
+        # Define CSV headers for internal processing and final FSM output
         self.bie_header = ['sequence', 'UNID', 'acronym', 'DEN', 'definition', 'class_term_qualifier', 'class_term', 'property_term_qualifier', 'property_term', 'datatype_qualifier', 'representation_term', 'qualified_data_type_UID', 'associated_class_qualifier', 'associated_class', 'business_term', 'usage_rule', 'sequence_number', 'occurrence_min', 'occurrence_max', 'context_categories', 'TDED', 'publication_source', 'short_name', 'BIE']
         self.header  = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'module', 'label_local', 'definition_local']
         self.out_header = ['sequence', 'level', 'property_type', 'identifier', 'class_term', 'property_term', 'representation_term', 'associated_class', 'multiplicity', 'definition', 'module', 'label_local', 'definition_local', 'id', 'inherited']
@@ -213,7 +217,7 @@ class Processor:
 
         self.current_module = None
         self.module_num = {}
-        self.module_id = None
+        self.module_code = None
         # self.module_abbrev_dict = {}
 
         self.current_class = None
@@ -368,35 +372,6 @@ class Processor:
             + extra
         )
 
-    def merge_class_term_with_element(self, class_term, element):
-        """
-        Generates a CamelCase XML element name by merging class terms and local names,
-        ensuring duplicates are removed.
-        """
-        if not element or ':' not in element:
-            return ""
-        namespace, localname = element.split(':')
-        if "_" in class_term:
-            class_term_ = class_term[:class_term.rindex("_")]
-            class_words = re.split(r'\s+', class_term_.strip())
-            class_prefix = LC3(class_term_)
-        else:
-            class_words = re.split(r'\s+', class_term.strip())
-            class_prefix = LC3(class_term)
-        local_words = split_camel_case(localname)
-        #  Remove duplicate words (case-insensitive)
-        remaining_words = [w for w in local_words if w.lower() not in [cw.lower() for cw in class_words]]
-        #  If all words are removed and the result is empty, keep the last word of the local name
-        if not remaining_words and local_words:
-            remaining_words = [local_words[-1]]
-        #  LC3 conversion
-        if remaining_words:
-            suffix = remaining_words[0].capitalize() + ''.join(w.title() for w in remaining_words[1:])
-            new_localname = class_prefix + suffix
-        else:
-            new_localname = class_prefix
-        return new_localname
-
     def getproperty_term(self, record):
         """
         Formats the property term based on its type and associated class.
@@ -411,80 +386,100 @@ class Processor:
         elif 'Attribute'==property_type:
             term = f"{property_term}. {representation_term}"
         else:
-            if property_term and property_term not in associated_class:
-                associated_class = associated_class[1+associated_class.index(":"):] if ":" in associated_class else associated_class
-                term = f'{property_term}_ {associated_class}'
-                record["property_term"] = ""
-                record['associated_class'] = term
-            else:
-                term = associated_class
+            term = f"{property_term}. {associated_class}"
         return term
 
-    def populate_record(self, record, seq):
+    def populate_record(self, data, seq):
         """
-        Transforms a CSV row into a structured record and generates unique IDs (e.g., CO01_01)
-        based on module and sequence.
+        Transform a BIE-derived row into an internal record and assign an ID/level.
+
+        Current ID scheme:
+        - Class rows:      CO####        (#### = per-class index within the hard-coded module "CO")
+        - Property rows:   CO####_###     (### increments within the current class)
+        - Specialization:  CO###_00       (reserved form; currently not created from BIE input)
+
+        Level:
+        - Class -> 1
+        - Others -> 2
         """
+        def normalize_ws(s: str) -> str:
+            return (s or "").replace("\u00A0", " ").replace("\u2007", " ").replace("\u202F", " ")
+        record = {
+            "sequence": data["sequence"],
+            "level": 1 if "Class" in data["property_type"] else 2,
+            "property_type": data["property_type"],
+            "identifier": "",
+            "class_term": (
+                f"{data['class_term_qualifier']}_ {data['class_term']}"
+                if data["class_term_qualifier"]
+                else data["class_term"]
+            ),
+            "property_term": (
+                f"{data['property_term_qualifier']}_ {data['property_term']}"
+                if data["property_term_qualifier"]
+                else data["property_term"]
+            ),
+            "representation_term": (
+                f"{data['datatype_qualifier']}_ {data['representation_term']}"
+                if data["datatype_qualifier"]
+                else data["representation_term"]
+            ),
+            "associated_class": (
+                f"{data['associated_class_qualifier']}_ {data['associated_class']}"
+                if data["associated_class_qualifier"]
+                else data["associated_class"]
+            ),
+            "sequence_number": data["sequence_number"],
+            "multiplicity": (
+                (
+                    f"{data['occurrence_min']}..{'*' if 'unbounded'==data['occurrence_max'] else data['occurrence_max']}"
+                )
+                if len(data["occurrence_min"]) > 0
+                else ""
+            ),
+            "definition": normalize_ws(data["definition"]),
+            "module": data["context_categories"],
+            "label_local": "",
+            "definition_local": "",
+            "UNID": data["UNID"],
+            "acronym": data["acronym"],
+            "DEN": data["DEN"],
+        }
+
         sequence = record['sequence']
         property_type = record['property_type']
-        module = record['module']
-        # module_abbrev = self.module_abbrev_dict[module]
-
-        property_term = (
-            record["property_term"].replace("  ", " ").strip()
-            if record["property_term"]
-            else ""
-        )
-
-        associated_class = (
-            record["associated_class"].replace("  ", " ").strip()
-            if record["associated_class"]
-            else ""
-        )
+        class_term = record["class_term"]
 
         if 'Specialization' == property_type:
-            id = f"{self.module_id}{str(self.class_num).zfill(2)}_00"
+            id = f"{self.module_code}{str(self.class_num).zfill(3)}_00"
             level = 2
         else:
             if 'Class' in property_type:
-                class_term = (
-                    record["class_term"].replace("  ", " ").strip()
-                    if record["class_term"]
-                    else self.error_print("Invalid row no class term defined.\n{record}")
-                )
                 if 'Abstract Class'==property_type:
                     self.abstract_classes.add(class_term)
                 if self.current_class != class_term:
-                    self.module_id = "UN" # self.module_dict.get(module, 'UN')
-                    if self.module_id not in self.module_num:
-                        self.module_num[self.module_id] = []
-                    if not class_term in self.module_num[self.module_id]:
-                        self.module_num[self.module_id].append(class_term)
-                    self.class_num = 1 + self.module_num[self.module_id].index(class_term)
+                    self.module_code = "CO" # self.module_dict.get(module, 'UN')
+                    if self.module_code not in self.module_num:
+                        self.module_num[self.module_code] = []
+                    if not class_term in self.module_num[self.module_code]:
+                        self.module_num[self.module_code].append(class_term)
+                    self.class_num = 1 + self.module_num[self.module_code].index(class_term)
                     self.current_class = class_term
-                id = f"{self.module_id}{str(self.class_num).zfill(2)}"
+                id = f"{self.module_code}{str(self.class_num).zfill(4)}"
                 self.current_class = class_term
-                seq = 0
                 level = 1
+                seq = 1
             else:
-                id = f"{self.module_id}{str(self.class_num).zfill(2)}_{str(seq).zfill(2)}"
+                id = f"{self.module_code}{str(self.class_num).zfill(4)}_{str(seq).zfill(3)}"
                 level = 2
-
-            seq += 1
+                seq += 1
 
         record['id'] = id
         record['level'] = level
-        record['class_term'] = self.current_class
-        record['property_term'] = property_term
-        record['associated_class'] = associated_class
+        if record['class_term']!=self.current_class:
+            record['class_term'] = self.current_class
 
-        if associated_class:
-            pass
-            # self.debug_print(f"{sequence} {id} '{self.current_class}' {property_type} associated_class:'{associated_class}'")
-        elif property_term:
-            pass
-            # self.debug_print(f"{sequence} {id} '{self.current_class}' property_term:'{property_term}'")
-        else:
+        if 'Class' in property_type:
             self.debug_print(f"{sequence} {id} '{self.current_class}'")
 
         return seq, record
@@ -572,12 +567,17 @@ class Processor:
 
     def process_record1(self, reader):
         """
-        Pass 1: Read rows, assign IDs/levels, and register classes.
+        Pass 1: Read BIE rows, assign IDs/levels, and build the class/property registry.
 
-        This pass populates:
-        - self.records: all rows with generated IDs and normalised fields,
-        - self.object_class_dict: class entries only, with an empty 'properties' dict,
-        so that associations can reference classes defined later in the file(s).
+        This pass:
+        - populates self.records with all parsed rows (with generated IDs and normalised fields),
+        - populates self.object_class_dict with:
+            * class entries (ABIE -> 'Class'), each with a 'properties' dict
+            * property entries under each class (ASBIE -> 'Composition', BBIE -> 'Attribute')
+            keyed by a normalised property term,
+        - merges duplicates of the same property term by:
+            * widening multiplicity conservatively
+            * concatenating definitions when they differ.
         """
         next(reader) # skip header
         self.current_class = ''
@@ -600,6 +600,7 @@ class Processor:
 
             if 'ABIE'==data['acronym']:
                 data['property_type'] = 'Class'
+                seq = 0
             elif 'ASBIE'==data['acronym']:
                 data['property_type'] = 'Composition'
             elif 'BBIE'==data['acronym']:
@@ -609,67 +610,23 @@ class Processor:
             else:
                 continue
 
-            record = {
-                "sequence": data["sequence"],
-                "level": 1 if "Class" in data["property_type"] else 2,
-                "property_type": data["property_type"],
-                "identifier": "",
-                "class_term": (
-                    f"{data['class_term_qualifier']}_ {data['class_term']}"
-                    if data["class_term_qualifier"]
-                    else data["class_term"]
-                ),
-                "property_term": (
-                    f"{data['property_term_qualifier']}_ {data['property_term']}"
-                    if data["property_term_qualifier"]
-                    else data["property_term"]
-                ),
-                "representation_term": (
-                    f"{data['datatype_qualifier']}_ {data['representation_term']}"
-                    if data["datatype_qualifier"]
-                    else data["representation_term"]
-                ),
-                "associated_class": (
-                    f"{data['associated_class_qualifier']}_ {data['associated_class']}"
-                    if data["associated_class_qualifier"]
-                    else data["associated_class"]
-                ),
-                "multiplicity": (
-                    f"{data['occurrence_min']}..{'*' if 'unbounded'==data['occurrence_max'] else data['occurrence_max']}"
-                ),
-                "definition": data["definition"],
-                "module": data["context_categories"],
-                "label_local": "",
-                "definition_local": "",
-                "UNID": data["UNID"],
-                "acronym": data["acronym"],
-                "DEN": data["DEN"]
-            }
+            seq, record = self.populate_record(data, seq)
 
-            seq = int(record['sequence'])
             valid, msg = self.check_csv_row(record)
             if not valid: self.error_print(f"Invalid row {seq}: {msg}")
-
-            seq, record = self.populate_record(record, seq)
 
             self.records.append(record)
 
             property_type = record['property_type'].strip()
-
             if 'Class' in property_type:
                 class_term = record['class_term'].strip()
                 if class_term in self.object_class_dict:
                     d1 = copy.deepcopy(self.object_class_dict[class_term])
-                    del d1['sequence']
                     del d1['properties']
-                    del d1['id']
                     d2 = copy.deepcopy(record)
-                    del d2['sequence']
-                    del d2['id']
-                    if d1!=d2:
-                        for item in self.deep_diff(d1, d2):
+                    for item in self.deep_diff(d1, d2):
+                        if 'sequence'!=item[0]:
                             self.trace_print(f"object_class_dict[{class_term}'] defines {item} differently.")
-                    continue
                 self.object_class_dict[class_term] = record
                 self.object_class_dict[class_term]['properties'] = {}
             else:
@@ -679,92 +636,138 @@ class Processor:
                     continue
                 if p_term in self.object_class_dict[class_term]['properties']:
                     d1 = self.object_class_dict[class_term]['properties'][p_term]
-                    del d1['sequence']
-                    del d1['id']
                     d2 = copy.deepcopy(record)
-                    del d2['sequence']
-                    del d2['id']
-                    if d1!=d2:
-                        for item in self.deep_diff(d1, d2):
+                    for item in self.deep_diff(d1, d2):
+                        if 'sequence'!=item[0]:
                             self.trace_print(f"object_class_dict['{class_term}']['properties']['{p_term}'] defines {item} differently.")
-                            if "multiplicity" == item[0]:
-                                d1_mult = item[1]
-                                d1_min = d1_mult[0]
-                                d1_max = d1_mult[-1]
-                                d2_mult = item[2]
-                                min = d2_mult[0]
-                                max = d2_mult[-1]
-                                if "0" == d1_min:
-                                    min = d1_min
-                                if "*" == d1_max:
+                        if "multiplicity" == item[0]:
+                            d1_mult = item[1]
+                            d1_min = d1_mult[0]
+                            d1_max = d1_mult[-1]
+                            d2_mult = item[2]
+                            min = d2_mult[0]
+                            max = d2_mult[-1]
+                            if "0" == d1_min:
+                                min = d1_min
+                            if "*" == d1_max:
+                                max = d1_max
+                            elif "*" != max:
+                                if int(d1_max) > int(max):
                                     max = d1_max
-                                elif "*" != max:
-                                    if int(d1_max) > int(max):
-                                        max = d1_max
-                                multiplicity = f"{min}..{max}"
-                                record["multiplicity"] = multiplicity
-                                self.trace_print(f'record["multiplicity"] = {multiplicity}')
-                            elif "definition" == item[0]:
-                                record["definition"] = (
-                                    f'{d1["definition"]}\n{record["definition"]}'
-                                )
+                            multiplicity = f"{min}..{max}"
+                            record["multiplicity"] = multiplicity
+                            self.trace_print(f'record["multiplicity"] = {multiplicity}')
+                        elif "definition" == item[0]:
+                            record["definition"] = f'{d1["definition"]}\n{record["definition"]}'
                 self.object_class_dict[class_term]['properties'][p_term] = record
 
         return self.records
 
+    def check_if_specialized(self, class_term):
+        if '_' not in class_term:
+            return "", None
+        # self.debug_print(f"Check super class of '{class_term}'")
+        """
+        Example: "Apple_ Banana_ Orange"
+        Iteratively strip one prefix level to traverse the superclass chain:
+          "Apple_ Banana_ Orange" -> "Banana_ Orange" -> "Orange"
+        At each step, check whether the current remainder exists in:
+          (1) abstract_class_dict, then (2) object_class_dict.
+        """
+        superclass = None
+        sup_class_term = class_term
+        while "_" in sup_class_term:
+            sup_class_term = sup_class_term[2 + sup_class_term.index("_") :].strip()
+            if not sup_class_term:
+                break
+            if sup_class_term in self.abstract_class_dict:
+                _class = self.abstract_class_dict[sup_class_term]
+                _properties = {
+                    k: v
+                    for k, v in _class["properties"].items()
+                    if (v.get("multiplicity") or "").split("..")[-1] != "0"
+                }
+                if len(_class["properties"])!=len(_properties):
+                    _class["properties"] = _properties
+                superclass = copy.deepcopy(_class)
+                break
+            if sup_class_term in self.object_class_dict:
+                _class = self.object_class_dict[sup_class_term]
+                _properties = {
+                    k: v
+                    for k, v in _class["properties"].items()
+                    if (v.get("multiplicity") or "").split("..")[-1] != "0"
+                }
+                if len(_class["properties"])!=len(_properties):
+                    _class["properties"] = _properties
+                superclass = copy.deepcopy(_class)
+                break
+        # If nothing matched, normalise to blank.
+        if not sup_class_term or (
+            sup_class_term not in self.abstract_class_dict
+            and sup_class_term not in self.object_class_dict
+        ):
+            sup_class_term = ""
+        return sup_class_term, superclass
+
     def process_record2(self):
         """
-        Pass 2: Register properties, derive abstract classes, and build the flattened FSM output.
+        Pass 2: Derive abstract classes, normalise associations, and build the flattened FSM output.
 
         Main steps:
-        1) Derive abstract (super) classes from underscore-based class-term chaining and
-        aggregate inherited properties across subclasses.
-        2) Filter abstract classes: keep only those having module "In All Contexts".
-        3) Normalise association targets (associated_class) so they resolve to registered class terms.
+        1) Build abstract (super) classes by aggregating properties across superclass chains:
+        - For class terms containing "_": aggregate into each suffix term in the chain.
+        - For classes in module "In All Contexts" (with >= 3 properties): aggregate into itself.
+        2) Prune/label abstract-class properties:
+        - keep abstract classes only if at least one property is inherited by > AT_LEAST classes,
+        - label abstract-class properties as:
+            'Shared' (inherited count > AT_LEAST) or 'Aligned Pool' (otherwise).
+        3) Normalise association targets (associated_class) where possible to match registered class terms,
+        adjusting the property_term prefix when the associated class term is specialised.
         4) Build self.FSM_list:
-        - emit abstract classes and their shared/aligned properties,
+        - emit abstract classes + their properties,
         - emit each concrete class,
-        - emit a 'Specialized' marker when a class specialises an abstract superclass,
+        - emit a 'Specialized' marker row when a class specialises a known (abstract or concrete) superclass,
         - emit class properties with inheritance status flags:
-            Shared, Aligned, Extension, Inheritance, Modified[...], Prohibited.
+            Extension / Inheritance / Modified[...] / Aligned,
+            and emit inherited-but-missing superclass properties as Prohibited (multiplicity set to 0).
         """
-        # AT_LEAST = 1
-        N = 1000
-        N2 = 2000
+        AT_LEAST = 3
+        N  = 5000
         self.current_class = None
 
         # property_type priority (Attributes first)
         PT_ORDER = {
-            "Attribute(PK)": 0,
-            "Attribute": 1,
-            # The rest are at the back (add here if necessary)
-            "Reference": 2,
-            "Reference Association": 2,
-            "Aggregation": 3,
-            "Composition": 4,
+            "Attribute(PK)": 1,
+            "Attribute": 2,
+            "Reference": 3,
+            "Reference Association": 3,
+            "Aggregation": 4,
+            "Composition": 5
         }
 
         # multiplicity priority (Attributes first)
         MULT_ORDER = {
-            "1": 0,
-            "1..1": 0,
-            "0..1": 1,
-            "1..*": 2,
-            "0..*": 3,
-            "0": 4,
+            "1": 1,
+            "1..1": 1,
+            "0..1": 2,
+            "1..*": 3,
+            "0..*": 4,
+            "0": 5
         }
 
         # inheritance priority (Attributes first)
         INHR_ORDER = {
-            "Shared": 0,
-            "Aligned": 1,
+            "Shared": 1,
+            "Aligned Pool": 2
         }
+
         INHR_ORDER2 = {
-            "Inheritance": 0,
+            "Inheritance": 1,
             "Modified": 1,
             "Aligned": 2,
             "Extension": 3,
-            "Prohibited": 4,
+            "Prohibited": 4
         }
 
         def sort_properties(d: dict) -> OrderedDict:
@@ -774,60 +777,70 @@ class Processor:
                 mult = v.get("multiplicity", "")
                 inhr = v.get("inherited", "")
                 prop = v.get("property_term", "")
-                assoc = v.get("associated_class", "")
+                representation_term = v.get("representation_term", "")
                 id = v.get("id", "")
+
+                if '_' in representation_term:
+                    dtype = representation_term[2+representation_term.index('_') :]
+                    dq = representation_term.replace(dtype, "")[:-2]
+                else:
+                    dq = ""
+                    dtype = representation_term
+
+                associated_class = v.get("associated_class", "")
+                if "_" in associated_class:
+                    assoc = associated_class[2 + associated_class.index("_"):]
+                    aq = associated_class.replace(assoc, "")[:-2]   # FIX: replace assoc, not dtype
+                else:
+                    aq = ""
+                    assoc = associated_class
+
                 if str(inhr).startswith("Modified"): inhr = "Modified"
+
                 # Since sequence is a string, convert it to an int
                 # (if it is missing or invalid, convert it to a larger value)
                 try:
-                    seq = int(v.get("sequence", 10**9))
+                    seq = int(v.get("sequence", 10**6))
                 except Exception:
-                    seq = 10**9
+                    seq = 10**6
 
-                if "Abstract Class"==v.get("module", ""):
-                    # if "Composition"==v.get("property_type", ""):
+                module = str(v.get("module", ""))
+
+                is_abstract = module.startswith("Abstract Class")
+                if is_abstract:
                     order = (
                         INHR_ORDER.get(inhr, 99),  # 1) Inheritance priority
                         PT_ORDER.get(pt, 99),      # 2) Attribute priority
-                        seq                        # 4) sequence
+                        (dtype or "").lower(),     # 3) representation term alphabetical
+                        (dq or "").lower(),        # 4) data type qualifier alphabetical
+                        (assoc or "").lower(),     # 5) associated class alphabetical
+                        (aq or "").lower(),        # 6) associated class qualifier alphabetical
+                        (prop or "").lower(),      # 7) property_term alphabetical
+                        seq
                     )
-                    # else:
-                    #     order = (
-                    #         INHR_ORDER.get(inhr, 99),  # 1) Inheritance priority
-                    #         PT_ORDER.get(pt, 99),      # 2) Attribute priority
-                    #         seq                        # 4) sequence
-                    #     )
                 else:
-                    # if "Composition"==v.get("property_type", ""):
                     order = (
                         INHR_ORDER2.get(inhr, 99), # 1) Inheritance priority
                         PT_ORDER.get(pt, 99),      # 2) Attribute priority
-                        (id or "").lower(),        # 4) property_term alphabetical
-                    )
-                    # else:
-                    #     order = (
-                    #         INHR_ORDER2.get(inhr, 99), # 1) Inheritance priority
-                    #         PT_ORDER.get(pt, 99),      # 2) Attribute priority
-                    #         (id or "").lower(),        # 4) property_term alphabetical
-                    #         # seq                        # 4) sequence
-                    #     )
-                order = (
-                    INHR_ORDER.get(inhr, 99),  # 1) Inheritance priority
-                    PT_ORDER.get(pt, 99),      # 2) Attribute priority
-                    (id or "").lower(),        # 4) property_term alphabetical
-                )
+                        (dtype or "").lower(),     # 3) representation term alphabetical
+                        (dq or "").lower(),        # 4) data type  alphabetical
+                        (assoc or "").lower(),     # 5) associated class alphabetical
+                        (aq or "").lower(),        # 6) associated class qualifier alphabetical
+                        (prop or "").lower(),      # 7) property_term alphabetical
+                        seq
+                   )
+
                 return order
 
             return OrderedDict(sorted(d.items(), key=key_fn))
 
         def _superclass_chain(class_term: str, SELF=False):
             """
-            Yield superclass terms by repeatedly applying:
+            Yield superclass terms by repeatedly stripping the leading prefix up to and including "_ ":
                 term = term[2 + term.index("_"):]
             until no underscore remains.
 
-            This matches the project's class naming convention where a specialised class term
-            embeds its superclass term after the first underscore.
+            Note: this yields the raw remainder (not .strip()).
             """
             term = class_term
             if SELF: yield term  # include itself first
@@ -835,7 +848,9 @@ class Processor:
                 term = term[2 + term.index("_"):]
                 yield term
 
-        def _ensure_abstract_class(superclass_term: str, object_class: dict, N: int) -> int:
+        def _ensure_abstract_class(
+            superclass_term: str, object_class: dict, N: int
+        ) -> int:
             """
             Create an entry in self.abstract_class_dict for the given superclass_term if it does not exist.
             Returns the updated N.
@@ -844,19 +859,28 @@ class Processor:
                 return N
 
             superclass = copy.deepcopy(object_class)
+            module = object_class["module"]
+            if "Abstract Class" not in module:
+                superclass["module"] = f"Abstract Class({module})"
+            else:
+                superclass["module"] = f"{superclass['module'][: -1]} & {module})"
             superclass["property_type"] = "Abstract Class"
             superclass["class_term"] = superclass_term
-            superclass["module"] = "Abstract Class"
-            superclass["id"] = f"UN{N}"
-            N += 1
+            superclass["id"] = f"{self.module_code}{str(N).zfill(4)}"
 
             # Initialise container for aggregated properties.
             superclass["properties"] = {}
 
-            self.abstract_class_dict[superclass_term] = superclass
-            self.debug_print(f"{superclass['id']} self.abstract_class_dict['{superclass_term}']")
+            if superclass_term not in self.abstract_class_dict:
+                self.abstract_class_dict[superclass_term] = superclass
+                self.debug_print(f"{superclass['id']} self.abstract_class_dict['{superclass_term}']")
 
             return N
+
+        def mult_max(mult: str) -> str:
+            if not mult:
+                return ""
+            return mult.split("..")[-1]  # "0", "1", "*"
 
         def _merge_properties_into_abstract(superclass_term: str, properties: dict, N: int, Shared=False) -> int:
             """
@@ -867,46 +891,74 @@ class Processor:
             - If the property does not exist yet, add it with inherited=1.
             - Copy each property before editing to avoid mutating the source dictionaries.
             """
-            n = 1
-            abs_props = self.abstract_class_dict[superclass_term]["properties"]
-            for _, prop0 in properties.items():
+            if superclass_term in self.abstract_class_dict:
+                superclass = self.abstract_class_dict[superclass_term]
+                sup_props = superclass["properties"]
+            else:
+                return N
+
+            class_id = [x['id'] for x in sup_props.values()]
+            if len(class_id) > 0:
+                class_id = class_id[0][:6]
+            else:
+                class_id = f"{self.module_code}{str(N).zfill(4)}"
+
+            for p_term, prop0 in properties.items():
+                if mult_max(prop0.get("multiplicity", "")) == "0":
+                    continue
                 prop = copy.deepcopy(prop0)  # Do not mutate the source property object.
+                prop["class_term"] = superclass_term
+                module = prop["module"]
                 p_term = self.getproperty_term(prop)
+                prop_module = re.findall(r"'([^']*)'", prop['module'])
+                sup_module = re.findall(r"'([^']*)'", superclass['module'])
+                if "Abstract Class" not in module:
+                    prop["module"] = f"Abstract Class({module})"
+                else:
+                    prop["module"] = f"{prop['module'][: -1]} & {module})"
 
                 # Rewrite class/module/id for the abstract-class context.
-                prop["class_term"] = superclass_term
-                prop["module"] = "Abstract Class"
-                prop["id"] = f"UN{N}_{str(n).zfill(2)}"
+                if (
+                    len(sup_props) == 0
+                    or p_term not in sup_props
+                    or "inherited" not in sup_props[p_term]
+                ):
+                    # New property
+                    n = 1 + len(sup_props)
+                    prop["id"] = f"{class_id}_{str(n).zfill(3)}"
+                    sup_props[p_term] = prop
+                    sup_props[p_term]["inherited"] = 1
+                else:
+                    prop_id = [v["id"] for k, v in sup_props.items() if p_term == k][0]
+                    prop["id"] = prop_id
+                    sup_props[p_term]["inherited"] += 1
 
-                if p_term not in abs_props:
-                    abs_props[p_term] = prop
+                sup_prop = sup_props[p_term]
+                if "inherited" in sup_prop and sup_prop["inherited"] > 1:
+                    sup_mult = sup_prop["multiplicity"]
+                    sup_min = sup_mult[0]
+                    sup_max = sup_mult[-1]
+                    mult = prop["multiplicity"]
+                    min = mult[0]
+                    max = mult[-1]
+                    if "0" != min:
+                        min = sup_min
+                    if "*" != max:
+                        if "*" != sup_max:
+                            if int(sup_max) > int(max):
+                                max = sup_max
+                    sup_prop["multiplicity"] = f"{min}..{max}"
 
-                abs_props[p_term]["inherited"] = "Shared" if Shared else "Aligned"
-
-                abs_mult = abs_props[p_term]['multiplicity']
-                abs_min = abs_mult[0]
-                abs_max = abs_mult[-1]
-                mult = prop['multiplicity']
-                min = mult[0]
-                max = mult[-1]
-                if "0"!=min:
-                    min = abs_min
-                if "*"!=max:
-                    if "*"!=abs_max:
-                        if int(abs_max) > int(max):
-                            max = abs_max
-                abs_props[p_term]['multiplicity'] = f'{min}..{max}'
-
-                # Append definition only if it is not a duplicate of the current last line.
-                new_def = prop.get("definition", "")
-                if new_def:
-                    current_def = abs_props[p_term].get("definition", "")
-                    last_line = current_def.split("\n")[-1] if current_def else ""
-                    if new_def != last_line:
-                        abs_props[p_term]["definition"] = (current_def + "\n" + new_def).strip()
-
-                n += 1
-
+                    # Append definition only if it is not a duplicate of the current last line.
+                    new_def = prop.get("definition", "")
+                    if new_def:
+                        current_def = sup_prop.get("definition", "")
+                        last_line = current_def.split("\n")[-1] if current_def else ""
+                        if new_def != last_line:
+                            sup_prop["definition"] = (
+                                current_def + "\n" + new_def
+                            ).strip()
+            N += 1
             return N
 
         # ----------------------------
@@ -915,17 +967,30 @@ class Processor:
         self.trace_print("** Define abstract class.")
 
         self.abstract_class_dict = {}
+        self.super_class_dict = {}
         for class_term, object_class in self.object_class_dict.items():
-            # Only classes that belongs to "In All Contexts" participate in the superclass chain.
-            if "In All Contexts"==object_class['module']:
+            # Classes with class term containing "_" participate in the superclass chain.
+            if "_" in class_term:
+                # Take properties from the current object_class.
+                properties = copy.deepcopy(object_class["properties"])
+                # Build/merge abstract classes for every superclass term in the chain.
+                for superclass_term in _superclass_chain(class_term):
+                    N = _ensure_abstract_class(superclass_term, object_class, N)
+                    N = _merge_properties_into_abstract(
+                        superclass_term, properties, N, True
+                    )
+            # Classes that belongs to "In All Contexts" participate in the superclass chain.
+            elif "In All Contexts" == object_class["module"]:
                 # Always take properties from the current object_class.
                 properties = copy.deepcopy(object_class["properties"])
-
-            # Build/merge abstract classes for every superclass term in the chain.
-            for superclass_term in _superclass_chain(class_term):
-                N = _ensure_abstract_class(superclass_term, object_class, N)
-                N = _merge_properties_into_abstract(superclass_term, properties, N)
-
+                if len(properties) < 3:
+                    continue
+                # Build/merge abstract classes for every superclass term in the chain.
+                for superclass_term in _superclass_chain(class_term, True):
+                    N = _ensure_abstract_class(superclass_term, object_class, N)
+                    N = _merge_properties_into_abstract(
+                        superclass_term, properties, N, True
+                    )
 
         remove_superclass_list = []
         for class_term, object_class in self.abstract_class_dict.items():
@@ -934,121 +999,97 @@ class Processor:
                 for k, v in self.abstract_class_dict[class_term]
                 .get("properties", {})
                 .items()
-                if v["inherited"] >= AT_LEAST
+                if v["inherited"] > AT_LEAST
             }
-            if not props:
+            if props:
+                for k, prop in (
+                    self.abstract_class_dict[class_term].get("properties", {}).items()
+                ):
+                    self.abstract_class_dict[class_term]["properties"][k][
+                        "inherited"
+                    ] = ("Shared" if k in props.keys() else "Aligned Pool")
+            else:
                 remove_superclass_list.append(class_term)
-        
+
         for class_term in remove_superclass_list:
             del self.abstract_class_dict[class_term]
 
         for class_term, object_class in self.object_class_dict.items():
-            properties = copy.deepcopy(object_class['properties'])
+            properties = copy.deepcopy(object_class["properties"])
             for _, property in properties.items():
-                property_term = property['property_term']
-                associated_class = property['associated_class']
+                property_term = property["property_term"]
+                associated_class = property["associated_class"]
                 if associated_class:
-                    a_class = [k for k in self.object_class_dict.keys() if k==associated_class] 
-                    if a_class:
+                    a_class = [
+                        k
+                        for k in self.object_class_dict.keys()
+                        if k == associated_class
+                    ]
+                    if len(a_class) > 0:
                         as_class = a_class[0]
                     else:
-                        while '_' in associated_class:
-                            as_class = associated_class[2+associated_class.index('_')]
-                            if as_class:
-                                a_class = [k for k in self.object_class_dict.keys() if k==as_class]
-                                if a_class:
-                                    as_class = a_class[0]
-                                    pr_term = associated_class.replace(as_class,"")
-                                    break
-                    if as_class:
+                        as_class, _ = self.check_if_specialized(associated_class)
+                    if len(as_class) > 0:
                         if associated_class != as_class:
-                            property['property_term'] = associated_class.replace(as_class,"").strip()[:-1]
-                            property['associated_class'] = as_class
+                            property["property_term"] = (
+                                f'{property_term}_ {associated_class.replace(as_class,"").strip()[:-1]}'
+                            )
+                            property["associated_class"] = as_class
                     else:
-                        self.error_print(f"{property['associated_class']} not in self.object_class_dict.")
+                        self.error_print(
+                            f"'{property['associated_class']}' not in self.object_class_dict."
+                        )
 
         """
-        Prepare the BSM List.
+        Prepare the FSM List.
         """
-        self.trace_print("** Prepare the BSM List.")
+        self.trace_print("** Prepare the FSM output list.")
+        # ----------------------------
+        # Append abstract class to FSM_list
+        # ----------------------------
+        self.trace_print("** Append abstract class to FSM_list.")
         self.FSM_list = []
         for class_term, object_class in self.abstract_class_dict.items():
-            self.trace_print(f"-- {class_term}")
+            self.debug_print(f"-- {class_term}")
             properties = copy.deepcopy(object_class['properties'])
 
             self.FSM_list.append(object_class)
 
-            prop_dict = {}
+            for p_term, prop in sort_properties(properties).items():
+                self.FSM_list.append(prop)
 
-            for p_term, property in properties.items():
-
-                p_type = property['property_type']
-
-                if 'Attribute'==p_type:
-                    if property not in self.FSM_list:
-                        prop_dict[p_term] = property
-                else:
-                    associated_class = property['associated_class']
-                    if associated_class in self.abstract_class_dict:
-                        if property not in self.FSM_list:
-                            prop_dict[p_term] = property
-                    elif '_' in associated_class:
-                        a_class = associated_class[2+associated_class.rindex("_"):]
-                        if a_class in self.abstract_class_dict:
-                            if property not in self.FSM_list:
-                                property_term = associated_class[:associated_class.rindex("_")]
-                                property['property_term'] = property_term
-                                property['associated_class'] = a_class
-                                prop_dict[p_term] = property
-
-            class_id = object_class['id']
-            n = 0
-            for p_term, property in sort_properties(prop_dict).items():
-                n += 1
-                p_id = f'{class_id}_{str(n).zfill(2)}'
-                property['id'] = p_id
-                self.FSM_list.append(property)
-
-            if 'Class' in self.FSM_list[-1]['property_type']:
-                del self.FSM_list[-1]
-
-        self.trace_print("** Define object class.")
+        # ----------------------------
+        # Append object class to FSM_list
+        # ----------------------------
+        self.trace_print("** Append object class to FSM_list.")
         for class_term, object_class in self.object_class_dict.items():
-            self.trace_print(f"-- {class_term}")
+            self.debug_print(f"-- {class_term}")
 
             self.FSM_list.append(object_class)
 
+            # ----------------------------
+            # Check if specialized
+            # ----------------------------
             specialized = None
             specialized_props = None
+            sup_class_term, specialized = self.check_if_specialized(class_term)
+            if len(sup_class_term) > 0 and sup_class_term!=class_term:
+                specialized['level'] = 2
+                specialized['property_type'] = 'Specialized'
+                specialized['class_term'] = class_term
+                specialized['associated_class'] = sup_class_term
+                specialized['multiplicity'] = '1'
 
-            if '_' in class_term:
-                s_class_term = class_term[2+class_term.rindex("_"):]
-                if s_class_term in self.abstract_class_dict:
-                    specialized = copy.deepcopy(self.abstract_class_dict[s_class_term])
-                    specialized['level'] = 2
-                    specialized['property_type'] = 'Specialized'
-                    specialized['class_term'] = class_term
-                    specialized['associated_class'] = s_class_term
-                    specialized['multiplicity'] = '1'
+                specialized_props = copy.deepcopy(specialized.get("properties", {}))
+                self.FSM_list.append(specialized)
 
-                    self.FSM_list.append(specialized)
-
-                    specialized_props = copy.deepcopy(
-                        {
-                            k: v
-                            for k, v in self.abstract_class_dict[s_class_term]
-                            .get("properties", {})
-                            .items()
-                        }
-                    )
-
-            prop_dict = {}
             properties = copy.deepcopy(object_class['properties'])
+            # 1) assign inherited flags first
             for p_term, prop in properties.items():
-                prop["inherited"] = "Extension"
-
                 if specialized_props:
                     if p_term in specialized_props:
+                        sp_id = specialized_props[p_term].get("id", "")
+                        prop["id"] += f"({sp_id})"
                         specialized_mult = specialized_props[p_term].get("multiplicity", "0")
                         prop["inherited"] = (
                             "Inheritance"
@@ -1057,24 +1098,30 @@ class Processor:
                         )
                     else:
                         prop["inherited"] = "Aligned"
-
-                prop_dict[p_term] = prop
-
-            for p_term, prop in sort_properties(prop_dict).items():
+                else:
+                    prop["inherited"] = "Extension"
+            # 2) then sort + append
+            for p_term, prop in sort_properties(properties).items():
                 self.FSM_list.append(prop)
 
             if specialized_props:
-                for p_term, s_prop in sort_properties(specialized_props).items():
+                prohibited_props = {}
+                # 1) assign inherited flags first
+                for p_term, s_prop in specialized_props.items():
                     if p_term not in properties:
                         prop = copy.deepcopy(s_prop)
                         prop["class_term"] = class_term
                         prop["inherited"] = "Prohibited"
-
-                        self.FSM_list.append(prop)
+                        prop["multiplicity"] = "0"
+                        prohibited_props[p_term] = prop
+                # 2) then sort + append
+                for p_term, prop in sort_properties(prohibited_props).items():
+                    self.FSM_list.append(prop)
 
         return self.FSM_list
 
     def write_csv(self, csv_file):
+        self.trace_print(f"Write {csv_file}")
 
         records = [{k: v for k, v in d.items() if k in self.out_header} for d in self.FSM_list]
 
@@ -1154,10 +1201,12 @@ def main():
             debug = args.debug
         )
     else:
-        BASE_DIR = "TEST/"
+        BASE_DIR = "UNECE/"
         args = {
             "BIE_file": f"{BASE_DIR}MRBIE-D25A.csv",
-            "FSM_file": f"{BASE_DIR}FSM-D25A.csv",
+            "FSM_file": f"{BASE_DIR}FSM-D25A_2026-01-20.csv",
+            # "BIE_file": f"{BASE_DIR}MRBIE-D25A.csv",
+            # "FSM_file": f"{BASE_DIR}FSM-D25A.csv",
             "encoding": "utf-8",
         }
         processor = Processor(
