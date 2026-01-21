@@ -659,9 +659,29 @@ class Processor:
                             self.trace_print(f'record["multiplicity"] = {multiplicity}')
                         elif "definition" == item[0]:
                             record["definition"] = f'{d1["definition"]}\n{record["definition"]}'
+                            if d1['module']!=d2['definition']:
+                                record['multiplicity'] = self.merge_abstract_class_modules(d1["definition"], record["definition"])
+
                 self.object_class_dict[class_term]['properties'][p_term] = record
 
         return self.records
+
+    def merge_abstract_class_modules(self, a: str, b: str) -> str:
+        def extract_items(s: str) -> list[str]:
+            m = re.match(r"^\s*Abstract Class\((.*)\)\s*$", s)
+            if not m:
+                raise ValueError(f"Not an Abstract Class(...) string: {s!r}")
+            inner = m.group(1)
+            # In case s contains " & ".
+            parts = [p.strip() for p in inner.split("&")]
+            return [p for p in parts if p]
+        items = []
+        seen = set()
+        for x in extract_items(a) + extract_items(b):
+            if x not in seen:
+                seen.add(x)
+                items.append(x)
+        return f"Abstract Class({ ' & '.join(items) })"
 
     def check_if_specialized(self, class_term):
         if '_' not in class_term:
@@ -958,6 +978,9 @@ class Processor:
                             sup_prop["definition"] = (
                                 current_def + "\n" + new_def
                             ).strip()
+
+                    if sup_prop['module']!=prop['module']:
+                        sup_prop['module'] = self.merge_abstract_class_modules(sup_prop['module'], prop['module'])
             N += 1
             return N
 
